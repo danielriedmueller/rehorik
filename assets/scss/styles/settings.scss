@@ -1,0 +1,59 @@
+$primary-color: #C6b480;
+$secondary-color: #59293a;
+
+$font-family-body: "DIN Offc W01 Cond";
+$font-family-headline: "DIN W01 Cond Medium";
+
+$font-color: #3c3c3b;
+$font-color-accent: $primary-color;
+$font-color-accent-light: #ccb57d;
+$font-color-accent-dark: #996b23;
+
+// Product colors
+$product-default-color: $primary-color;
+$product-default-body-text-color: $font-color;
+$product-default-header-text-color: #fff;
+$product-filterkaffee-color: $secondary-color;
+$product-espresso-color: #393e1c;
+$product-crema-color: #003c4a;
+$product-alternative-body-text-color: #fff;
+$product-alternative-header-text-color: $primary-color;
+
+$font-size-large: 27px;
+$font-size: 20px;
+$font-size-small: 16px;
+$font-size-very-small: 13px;
+
+$menu-color: #e9e9e7;
+$menu-hover-color: #b0b2b1;
+$menu-height: 50px;
+$sub-menu-width: 250px;
+$small-breakpoint: 767px;
+$menu-small-breakpoint: 981px;
+
+$burger-color: #2c2d2d;
+$burger-height: 32px;
+
+$cart-title-section-height: 140px;
+$product-thumbnail-width: 100px;
+$product-category-width: 235px;
+$product-height: 475px;
+$spacing: 30px;
+$spacing-l: 50px;
+$spacing-xl: 70px;
+$spacing-xxl: 100px;
+$spacing-s: 20px;
+$spacing-xs: 15px;
+$spacing-xxs: 8px;
+$spacing-xxxs: 3px;
+$input-height: 35px;
+
+$button-border-radius: 10px;
+$tab-border-radius: 15px;
+
+$logo-size: 36px;
+
+$cart-coupon-width: 300px;
+$cart-coupon-width-broad: 380px;
+
+$hugo-head-size: 75px

@@ -1,0 +1,12 @@
+.woocommerce div.product form.cart {
+  margin-bottom: 0;
+
+  table.rehorik-variations.variations {
+    margin-bottom: 0;
+
+    tbody tr:last-child td {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+

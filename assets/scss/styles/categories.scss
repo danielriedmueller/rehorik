@@ -1,0 +1,20 @@
+.woocommerce #main-content .container {
+  ul.rehorik-products.products {
+    li.product-category.product {
+      width: 100% !important;
+
+      img, h2.woocommerce-loop-category__title {
+        margin: 0 !important;
+      }
+
+      h2.woocommerce-loop-category__title {
+        position: absolute;
+        bottom: 0;
+        color: $font-color-accent;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        padding: $spacing-s;
+      }
+    }
+  }
+}

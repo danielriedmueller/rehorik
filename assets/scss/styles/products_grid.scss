@@ -1,0 +1,92 @@
+.woocommerce #page-container {
+
+  ul.products.rehorik-products {
+    display: -ms-grid;
+    display: grid;
+    justify-content: center;
+    gap: $spacing;
+    margin-bottom: $spacing-l;
+
+    li {
+      float: none;
+      margin: 0 !important;
+    }
+
+    &::before, &::after {
+      content: none;
+    }
+  }
+
+  div {
+    /**
+     * Products loop
+     */
+    ul.products.rehorik-products {
+      -ms-grid-columns: $product-category-width $product-category-width $product-category-width;
+      grid-template-columns: $product-category-width $product-category-width $product-category-width;
+
+      @media all and (max-width: 973px) {
+        -ms-grid-columns: $product-category-width $product-category-width;
+        grid-template-columns: $product-category-width $product-category-width;
+      }
+
+      @media all and (max-width: 640px) {
+        -ms-grid-columns: $product-category-width;
+        grid-template-columns: $product-category-width;
+      }
+    }
+
+    /**
+     * Category and shop page loop
+     */
+  }
+
+  /**
+   * Best selling products loop
+   */
+  div#rehorik-best-selling-products {
+    ul.products.rehorik-products {
+      -ms-grid-columns: $product-category-width $product-category-width $product-category-width $product-category-width;
+      grid-template-columns: $product-category-width $product-category-width $product-category-width $product-category-width;
+
+      @media all and (max-width: 1145px) {
+        -ms-grid-columns: $product-category-width $product-category-width $product-category-width;
+        grid-template-columns: $product-category-width $product-category-width $product-category-width;
+      }
+
+      @media all and (max-width: 880px) {
+        -ms-grid-columns: $product-category-width $product-category-width;
+        grid-template-columns: $product-category-width $product-category-width;
+      }
+
+      @media all and (max-width: 640px) {
+        -ms-grid-columns: $product-category-width;
+        grid-template-columns: $product-category-width;
+      }
+    }
+  }
+}
+
+/**
+ * Shop page
+ */
+.shop.woocommerce #page-container {
+    /**
+     * Products loop
+     */
+    ul.products.rehorik-products {
+      -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      @media all and (max-width: 973px) {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: $spacing-l;
+      }
+
+      @media all and (max-width: 640px) {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+      }
+    }
+}

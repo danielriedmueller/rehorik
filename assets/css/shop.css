@@ -1,0 +1,1374 @@
+.woocommerce a.remove {
+  display: block;
+  font-size: 19px;
+  height: auto;
+  width: auto;
+  text-align: center;
+  line-height: 1;
+  border-radius: 100%;
+  color: #333 !important;
+  text-decoration: none;
+  font-weight: normal;
+  border: 0;
+}
+.woocommerce .woocommerce-error, .woocommerce .woocommerce-info, .woocommerce .woocommerce-message {
+  background-color: #fff !important;
+  color: #3c3c3b !important;
+  border: 1px solid #c6b480 !important;
+}
+.woocommerce .woocommerce-error a, .woocommerce .woocommerce-info a, .woocommerce .woocommerce-message a {
+  color: #c6b480 !important;
+}
+.woocommerce .woocommerce-error a.button, .woocommerce .woocommerce-info a.button, .woocommerce .woocommerce-message a.button {
+  color: #996b23 !important;
+}
+@media all and (max-width: 767px) {
+  .woocommerce .woocommerce-error a.button, .woocommerce .woocommerce-info a.button, .woocommerce .woocommerce-message a.button {
+    color: #996b23 !important;
+    float: none;
+    display: block;
+    text-align: center;
+  }
+}
+#main-content .container {
+  padding-top: 0 !important;
+}
+#main-content .container::before {
+  content: none;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product {
+  overflow: hidden;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #c6b480;
+  background-color: #c6b480;
+  color: #3c3c3b;
+}
+@media all and (min-width: 768px) {
+  #main-content .container ul.products.rehorik-products li.product.rehorik-product, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product {
+    width: 235px !important;
+    height: 475px;
+  }
+}
+@media all and (max-width: 767px) {
+  #main-content .container ul.products.rehorik-products li.product.rehorik-product, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product {
+    width: 100% !important;
+    height: 100%;
+    padding-bottom: 15px;
+  }
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product tr.seperator td hr {
+  border-color: #c6b480;
+  margin: 8px 0;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product a {
+  color: #3c3c3b;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product h2 {
+  color: #fff;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema {
+  color: #fff;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso a, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee a, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema a {
+  color: #fff;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso h2, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee h2, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema h2 {
+  color: #c6b480;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso tr.seperator td hr, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee tr.seperator td hr, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema tr.seperator td hr {
+  border-color: #c6b480;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema {
+  background-color: #003c4a;
+  border-color: #003c4a;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso {
+  background-color: #393e1c;
+  border-color: #393e1c;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee {
+  background-color: #59293a;
+  border-color: #59293a;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product a {
+  font-weight: bold;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product a > span, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product a > span {
+  background-color: #fff;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product a > span img, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product a > span img {
+  margin: 0 auto 20px auto !important;
+  width: 233px;
+  height: 233px;
+  object-fit: contain;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product a h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product a h2 {
+  text-transform: uppercase;
+  font-size: 27px;
+  padding: 0 15px;
+  word-break: break-word;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes {
+  padding: 0 20px;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-min-price, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-min-price {
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: 3px;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-min-price > span, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-min-price > span {
+  font-weight: bold;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table {
+  width: 100%;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table tr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table tr {
+  margin: 0;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table tr td, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table tr td {
+  text-align: left;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  vertical-align: top;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table tr td:first-child:not([colspan="2"]), #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table tr td:first-child:not([colspan="2"]) {
+  text-align: right;
+  padding-right: 3px;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-flavours-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-flavours-list {
+  font-size: 13px;
+  font-weight: normal;
+  text-transform: none;
+  line-height: 13px;
+  padding-left: 3px;
+}
+.woocommerce .products ul, .woocommerce ul.products {
+  margin: 0;
+}
+.woocommerce #page-container {
+  /**
+   * Best selling products loop
+   */
+}
+.woocommerce #page-container ul.products.rehorik-products {
+  display: -ms-grid;
+  display: grid;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.woocommerce #page-container ul.products.rehorik-products li {
+  float: none;
+  margin: 0 !important;
+}
+.woocommerce #page-container ul.products.rehorik-products::before, .woocommerce #page-container ul.products.rehorik-products::after {
+  content: none;
+}
+.woocommerce #page-container div {
+  /**
+   * Products loop
+   */
+  /**
+   * Category and shop page loop
+   */
+}
+.woocommerce #page-container div ul.products.rehorik-products {
+  -ms-grid-columns: 235px 235px 235px;
+  grid-template-columns: 235px 235px 235px;
+}
+@media all and (max-width: 973px) {
+  .woocommerce #page-container div ul.products.rehorik-products {
+    -ms-grid-columns: 235px 235px;
+    grid-template-columns: 235px 235px;
+  }
+}
+@media all and (max-width: 640px) {
+  .woocommerce #page-container div ul.products.rehorik-products {
+    -ms-grid-columns: 235px;
+    grid-template-columns: 235px;
+  }
+}
+.woocommerce #page-container div#rehorik-best-selling-products ul.products.rehorik-products {
+  -ms-grid-columns: 235px 235px 235px 235px;
+  grid-template-columns: 235px 235px 235px 235px;
+}
+@media all and (max-width: 1145px) {
+  .woocommerce #page-container div#rehorik-best-selling-products ul.products.rehorik-products {
+    -ms-grid-columns: 235px 235px 235px;
+    grid-template-columns: 235px 235px 235px;
+  }
+}
+@media all and (max-width: 880px) {
+  .woocommerce #page-container div#rehorik-best-selling-products ul.products.rehorik-products {
+    -ms-grid-columns: 235px 235px;
+    grid-template-columns: 235px 235px;
+  }
+}
+@media all and (max-width: 640px) {
+  .woocommerce #page-container div#rehorik-best-selling-products ul.products.rehorik-products {
+    -ms-grid-columns: 235px;
+    grid-template-columns: 235px;
+  }
+}
+/**
+ * Shop page
+ */
+.shop.woocommerce #page-container {
+  /**
+   * Products loop
+   */
+}
+.shop.woocommerce #page-container ul.products.rehorik-products {
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media all and (max-width: 973px) {
+  .shop.woocommerce #page-container ul.products.rehorik-products {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px;
+  }
+}
+@media all and (max-width: 640px) {
+  .shop.woocommerce #page-container ul.products.rehorik-products {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+header#main-header.rehorik-header {
+  background: none #e9e9e7;
+  transition: none;
+  padding: 0;
+  min-height: 50px;
+}
+header#main-header.rehorik-header .container {
+  position: relative;
+}
+@media all and (min-width: 982px) {
+  header#main-header.rehorik-header .container:before {
+    content: "";
+    width: 36px;
+    height: 36px;
+    background: transparent url("../img/svg/logo.svg") no-repeat left top;
+    background-size: 36px;
+    position: absolute;
+    left: -56px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+  }
+}
+header#main-header.rehorik-header nav#top-menu-nav {
+  height: 100%;
+  line-height: inherit;
+}
+header#main-header.rehorik-header nav#top-menu-nav ul#top-menu {
+  line-height: inherit;
+}
+header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li {
+  line-height: inherit;
+  padding: 0;
+  margin-right: 8px;
+}
+header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li a {
+  padding: 0 15px;
+  height: 50px;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li.menu-item-has-children a {
+  padding: 0 31px 0 15px;
+}
+header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li.menu-item-has-children a::after {
+  right: 8px;
+}
+header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li.menu-item-has-children:hover, header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li.menu-item-has-children.current-menu-item, header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li.menu-item-has-children.current-menu-parent {
+  background-color: #b0b2b1;
+}
+header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li:not(.menu-item-has-children):hover a, header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li:not(.menu-item-has-children).current-menu-item a {
+  background-color: #b0b2b1;
+}
+header#main-header.rehorik-header nav#top-menu-nav li.current-menu-item a, header#main-header.rehorik-header nav#top-menu-nav li.current-menu-parent a {
+  color: #3c3c3b !important;
+}
+header#main-header.rehorik-header nav#top-menu-nav ul.sub-menu {
+  background-color: #e9e9e7;
+  border: 0;
+  padding: 0;
+  width: 250px;
+}
+header#main-header.rehorik-header nav#top-menu-nav ul.sub-menu li, header#main-header.rehorik-header nav#top-menu-nav ul.sub-menu li a {
+  width: 100%;
+}
+header#main-header.rehorik-header #rehorik-mobile-nav {
+  display: none;
+}
+@media all and (max-width: 981px) {
+  header#main-header.rehorik-header {
+    padding: 0;
+  }
+  header#main-header.rehorik-header #rehorik-mobile-nav {
+    display: block;
+    height: 50px;
+  }
+  header#main-header.rehorik-header #rehorik-mobile-nav .mobile_nav {
+    background-color: transparent;
+    padding: 0;
+  }
+  header#main-header.rehorik-header #rehorik-mobile-nav .mobile_nav .mobile_menu_bar {
+    height: 32px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+  }
+  header#main-header.rehorik-header #rehorik-mobile-nav .mobile_nav .mobile_menu_bar::before {
+    color: #2c2d2d;
+  }
+  header#main-header.rehorik-header #rehorik-mobile-nav ul#mobile_menu {
+    top: 50px;
+    border: 0;
+    padding: 0;
+  }
+  header#main-header.rehorik-header #rehorik-mobile-nav ul#mobile_menu .menu-item-has-children > a {
+    background-color: #b0b2b1;
+  }
+}
+.woocommerce-cart.woocommerce-page #content-area.cart table.cart-table {
+  width: 100%;
+  border: none;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart table.cart-table th {
+  padding: 0 0 20px 0;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart table.cart-table td {
+  border-top: 1px solid #c6b480;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart table.cart-table tbody tr:last-child td {
+  border-bottom: 1px solid #c6b480;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart table.cart-table td {
+  padding: 30px 0;
+}
+@media all and (max-width: 767px) {
+  .woocommerce-cart.woocommerce-page #content-area.cart table.cart-table th.product-thumbnail, .woocommerce-cart.woocommerce-page #content-area.cart table.cart-table td.product-thumbnail {
+    display: none;
+  }
+}
+.woocommerce-cart.woocommerce-page #content-area.cart table.cart-table .container, .woocommerce-cart.woocommerce-page #content-area.cart table.cart-table .et_pb_section, .woocommerce-cart.woocommerce-page #content-area.cart table.cart-table .et_pb_row, .woocommerce-cart.woocommerce-page #content-area.cart table.cart-table .et_pb_column .et_pb_row_inner {
+  padding: 0;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart table.cart-table .product-name a {
+  color: #c6b480;
+  margin: 0 0 8px 0;
+  display: block;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart table.cart-table .product-thumbnail a img {
+  object-fit: contain;
+  width: 100px;
+  margin-right: 30px;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .product-name a.remove {
+  text-align: left;
+  display: inline-block;
+  border-radius: 0;
+  position: relative;
+  margin: 20px 0 0 0;
+  padding-left: 21px;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .product-name a.remove:hover {
+  background-color: transparent;
+  color: grey !important;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .product-name a.remove .close {
+  position: absolute;
+  left: -8px;
+  top: 1px;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .product-name a.remove .close:hover {
+  opacity: 1;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .product-name a.remove .close:before, .woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .product-name a.remove .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 18px;
+  width: 2px;
+  background-color: #333;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .product-name a.remove .close:before {
+  transform: rotate(45deg);
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .product-name a.remove .close:after {
+  transform: rotate(-45deg);
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .single-price-info, .woocommerce-cart.woocommerce-page #content-area.cart .units-info, .woocommerce-cart.woocommerce-page #content-area.cart .variation {
+  color: #c6b480;
+  padding-bottom: 0;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .variation {
+  margin: 0;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart dl.variation dt {
+  font-weight: normal;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals {
+  width: 300px;
+  margin: 30px 30px 0 auto;
+  line-height: 23px;
+}
+@media all and (max-width: 767px) {
+  .woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals {
+    width: 100%;
+  }
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table {
+  width: 100%;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table ul#shipping_method li {
+  line-height: 23px;
+  margin: 0;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table th, .woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table td {
+  font-weight: normal;
+  vertical-align: top;
+  padding: 0 0 15px 0;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table tr td {
+  text-align: right;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table tr.shipping td {
+  padding-bottom: 15px;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table tr:last-child td, .woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table tr:last-child th {
+  padding: 0 0 30px 0;
+  font-weight: bold;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals .checkout-button.button.alt.wc-forward {
+  margin-bottom: 3px;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals ul#shipping_method .amount {
+  font-weight: normal;
+}
+.woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals .rehorik-shipping-rest-amount {
+  color: #c6b480;
+  font-size: 20px;
+  margin-top: 15px;
+}
+.cart .woocommerce table.cart-table .rehorik-coupon-row-small {
+  display: none;
+}
+@media all and (max-width: 767px) {
+  .cart .woocommerce table.cart-table .rehorik-coupon-row-small {
+    display: table-row;
+  }
+}
+.cart .woocommerce table.cart-table .rehorik-coupon-row {
+  display: none;
+}
+@media all and (min-width: 768px) {
+  .cart .woocommerce table.cart-table .rehorik-coupon-row {
+    display: table-row;
+  }
+}
+.cart .woocommerce table.cart-table .rehorik-coupon-container {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+}
+@media all and (max-width: 767px) {
+  .cart .woocommerce table.cart-table .rehorik-coupon-container {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+.cart .woocommerce table.cart-table button.button[name="apply_coupon"][type="submit"] {
+  border-radius: 0;
+  width: unset;
+}
+.cart .woocommerce table.cart-table .rehorik-coupon {
+  width: 380px;
+}
+@media all and (max-width: 767px) {
+  .cart .woocommerce table.cart-table .rehorik-coupon {
+    width: 300px;
+    margin-bottom: 30px;
+  }
+}
+.cart .woocommerce table.cart-table .rehorik-coupon label {
+  border: 1px solid #c6b480;
+  border-radius: 10px;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.cart .woocommerce table.cart-table .rehorik-coupon label input.input-text {
+  height: 35px;
+  background-color: transparent;
+  border-radius: 10px;
+  color: #c6b480;
+  padding: 0;
+  border: none;
+  text-align: center;
+  flex-grow: 1;
+  font-size: 20px;
+}
+.cart .woocommerce table.cart-table .rehorik-coupon ::placeholder {
+  /* Firefox, Chrome, Opera */
+  color: #c6b480;
+}
+.cart .woocommerce table.cart-table .rehorik-coupon :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #c6b480;
+}
+.cart .woocommerce table.cart-table .rehorik-coupon ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #c6b480;
+}
+.cart .woocommerce button.button[name="apply_coupon"][type="submit"], .cart .woocommerce button.button[name="update_cart"][type="submit"], .cart .woocommerce a.checkout-button.button.alt.wc-forward {
+  padding: 1px 30px !important;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  background-color: #c6b480;
+  text-align: center;
+  width: 300px;
+}
+#main-content .container::before {
+  content: none;
+}
+#main-content .container #sidebar.rehorik-sidebar {
+  background: transparent url("../img/strichl-muster.png") repeat-x left top;
+  padding: 80px 0 0 0;
+  color: #ccb57d;
+}
+#main-content .container #sidebar.rehorik-sidebar::after {
+  content: "";
+  background: transparent url("../img/strichl-muster.png") repeat-x left top;
+  height: 142px;
+  max-height: 142px;
+  width: 100%;
+  display: block;
+}
+#main-content .container #sidebar.rehorik-sidebar h4, #main-content .container #sidebar.rehorik-sidebar li, #main-content .container #sidebar.rehorik-sidebar a {
+  font-size: 20px;
+  color: #ccb57d;
+}
+#main-content .container #sidebar.rehorik-sidebar li {
+  margin-bottom: 0;
+}
+#main-content .container #sidebar.rehorik-sidebar h1, #main-content .container #sidebar.rehorik-sidebar h2, #main-content .container #sidebar.rehorik-sidebar h3, #main-content .container #sidebar.rehorik-sidebar h4 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#main-content .container #sidebar.rehorik-sidebar > div {
+  background-color: #fff;
+  width: 100%;
+  margin: 0;
+}
+#main-content .container #sidebar.rehorik-sidebar > div .widgettitle, #main-content .container #sidebar.rehorik-sidebar > div .product-categories {
+  padding: 20px 0;
+}
+#main-content .container #sidebar.rehorik-sidebar > div .widgettitle {
+  border-bottom: 1px solid #c6b480;
+}
+#rehorik-best-selling-products-outer {
+  background: transparent url("../img/Textur-Gold.jpg") repeat 0 0;
+  padding: 50px;
+  margin: 50px 0 0 0;
+}
+#rehorik-best-selling-products-outer #rehorik-best-selling-products {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+#rehorik-best-selling-products-outer #rehorik-best-selling-products h1 {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 70px 0;
+}
+.woocommerce div.product form.cart {
+  margin-bottom: 0;
+}
+.woocommerce div.product form.cart table.rehorik-variations.variations {
+  margin-bottom: 0;
+}
+.woocommerce div.product form.cart table.rehorik-variations.variations tbody tr:last-child td {
+  padding-bottom: 0 !important;
+}
+div.rehorik-cup-of-coffee-price-outer {
+  color: #ccb57d;
+  font-size: 16px;
+  margin-bottom: 30px;
+  margin-top: 3px;
+}
+div.rehorik-product div.rehorik-product-summary.summary {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 100px;
+}
+div.rehorik-product div.rehorik-product-summary.summary h1 {
+  color: #ccb57d;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-left: -30px;
+}
+@media all and (max-width: 767px) {
+  div.rehorik-product div.rehorik-product-summary.summary {
+    margin-top: 50px;
+    padding-left: 0;
+  }
+  div.rehorik-product div.rehorik-product-summary.summary h1 {
+    margin-left: 0;
+  }
+}
+div.rehorik-product div.rehorik-product-summary.summary p.price {
+  display: inline;
+  color: #3c3c3b;
+  font-weight: bold;
+  margin-right: 3px;
+}
+div.rehorik-product-meta.product_meta {
+  border: none;
+  margin-top: 3px;
+  padding: 0;
+}
+div.rehorik-product-meta.product_meta span, div.rehorik-product-meta.product_meta p {
+  font-size: 20px;
+  line-height: 12px;
+  margin: 0;
+}
+.woocommerce-page .rehorik-product-attributes table tr td:first-child {
+  font-size: 16px;
+  line-height: 16px;
+}
+.woocommerce-page .rehorik-product-attribute-label {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "DIN W01 Cond Medium";
+}
+.woocommerce-page td.rehorik-product-attribute-label {
+  text-align: right;
+}
+.woocommerce-page .rehorik-tabs-panel hr {
+  border-width: 2px;
+}
+.woocommerce-page div.product-rehorik-attribute-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.woocommerce-page div.product-rehorik-attribute-container div.rehorik-product-attribute-item {
+  display: inline-block;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+@media all and (min-width: 768px) {
+  .woocommerce-page div.product-rehorik-attribute-container div.rehorik-product-attribute-item:not(:nth-child(3)) {
+    border-right: 2px solid #c6b480;
+  }
+}
+@media all and (max-width: 767px) {
+  .woocommerce-page div.product-rehorik-attribute-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .woocommerce-page div.product-rehorik-attribute-container div.rehorik-product-attribute-item:not(:nth-child(2)) {
+    border-right: 2px solid #c6b480;
+  }
+}
+.rehorik-hugo-head {
+  width: 75px;
+  height: 75px;
+  background-size: 75px;
+  background-image: url("../img/svg/hugo_head.svg");
+  position: absolute;
+  bottom: -100px;
+  right: -30px;
+}
+body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper {
+  border: none;
+}
+body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs::before {
+  content: none;
+}
+body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs {
+  background-color: transparent !important;
+}
+body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
+  border: 1px solid #c6b480 !important;
+  border-bottom: none !important;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: transparent none !important;
+  margin: 0;
+}
+body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab']:last-child {
+  margin-left: -4px;
+}
+body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] a {
+  color: #c6b480 !important;
+  text-transform: uppercase !important;
+}
+body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active {
+  background: #c6b480 none !important;
+}
+body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active a {
+  color: #fff !important;
+  text-transform: uppercase;
+}
+@media all and (max-width: 767px) {
+  body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
+    border-bottom: none !important;
+  }
+  body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab']:last-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    margin-left: 0;
+  }
+}
+body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
+  padding: 70px;
+  background-color: #c6b480;
+  border: 1px solid #c6b480;
+  border-top: none;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: #fff;
+}
+@media all and (max-width: 767px) {
+  body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
+    padding: 50px 0;
+    border-top-right-radius: 0;
+  }
+  body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel#tab-description {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-crema div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
+  border-color: #003c4a;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-crema div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] a {
+  color: #003c4a !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-crema div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active {
+  background-color: #003c4a !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-crema div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active a {
+  color: #fff !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-crema div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
+  background-color: #003c4a;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-espresso div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
+  border-color: #393e1c;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-espresso div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] a {
+  color: #393e1c !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-espresso div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active {
+  background-color: #393e1c !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-espresso div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active a {
+  color: #fff !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-espresso div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
+  background-color: #393e1c;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
+  border-color: #59293a;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] a {
+  color: #59293a !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active {
+  background-color: #59293a !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active a {
+  color: #fff !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
+  background-color: #59293a;
+}
+.rehorik-product-attributes table tr td.rehorik-product-strength-flavour-label-first, .rehorik-product-attributes table tr td.rehorik-product-strength-flavour-label-first ~ td {
+  padding-bottom: 8px !important;
+}
+.rehorik-product-attributes table tr td.rehorik-product-strength-flavour-label-first {
+  vertical-align: bottom !important;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 20px;
+  grid-row-gap: 20px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-attribute-label {
+  text-align: right;
+  margin-right: 20px;
+  line-height: 20px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-attribute-label:first-child {
+  align-self: end;
+}
+@media all and (max-width: 767px) {
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer {
+    padding: 0 20px;
+  }
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container {
+  padding-left: 0;
+  height: 48px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container > span {
+  margin-right: 15px;
+  height: 48px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container > span:last-child {
+  margin-right: 0;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-1 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 17px;
+  width: 17px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-1-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 17px;
+  width: 17px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-1 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 17px;
+  background-position: left top;
+  width: 17px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-1-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 17px;
+  background-position: left top;
+  width: 17px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-2 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 20px;
+  width: 20px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-2-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 20px;
+  width: 20px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-2 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 20px;
+  background-position: left top;
+  width: 20px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-2-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 20px;
+  background-position: left top;
+  width: 20px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-3 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 23px;
+  width: 23px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-3-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 23px;
+  width: 23px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-3 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 23px;
+  background-position: left top;
+  width: 23px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-3-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 23px;
+  background-position: left top;
+  width: 23px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-4 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 26px;
+  width: 26px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-4-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 26px;
+  width: 26px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-4 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 26px;
+  background-position: left top;
+  width: 26px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-4-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 26px;
+  background-position: left top;
+  width: 26px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-5 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 29px;
+  width: 29px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-5-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 29px;
+  width: 29px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-5 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 29px;
+  background-position: left top;
+  width: 29px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-5-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 29px;
+  background-position: left top;
+  width: 29px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-6 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 32px;
+  width: 32px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-6-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 32px;
+  width: 32px;
+  background-position: left bottom;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-6 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 32px;
+  background-position: left top;
+  width: 32px;
+}
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-6-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 32px;
+  background-position: left top;
+  width: 32px;
+}
+@media all and (max-width: 767px) {
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container {
+    height: 33px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container > span {
+    margin-right: 8px;
+    height: 33px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-1 {
+    background-size: 7px;
+    width: 7px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-1-filled {
+    background-size: 7px;
+    width: 7px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-1 {
+    background-size: 7px;
+    width: 7px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-1-filled {
+    background-size: 7px;
+    width: 7px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-2 {
+    background-size: 10px;
+    width: 10px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-2-filled {
+    background-size: 10px;
+    width: 10px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-2 {
+    background-size: 10px;
+    width: 10px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-2-filled {
+    background-size: 10px;
+    width: 10px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-3 {
+    background-size: 13px;
+    width: 13px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-3-filled {
+    background-size: 13px;
+    width: 13px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-3 {
+    background-size: 13px;
+    width: 13px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-3-filled {
+    background-size: 13px;
+    width: 13px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-4 {
+    background-size: 16px;
+    width: 16px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-4-filled {
+    background-size: 16px;
+    width: 16px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-4 {
+    background-size: 16px;
+    width: 16px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-4-filled {
+    background-size: 16px;
+    width: 16px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-5 {
+    background-size: 19px;
+    width: 19px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-5-filled {
+    background-size: 19px;
+    width: 19px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-5 {
+    background-size: 19px;
+    width: 19px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-5-filled {
+    background-size: 19px;
+    width: 19px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-6 {
+    background-size: 22px;
+    width: 22px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-strength-6-filled {
+    background-size: 22px;
+    width: 22px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-6 {
+    background-size: 22px;
+    width: 22px;
+  }
+  .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container .rehorik-coffee-flavour-6-filled {
+    background-size: 22px;
+    width: 22px;
+  }
+}
+.rehorik-product-strength-flavour-container {
+  padding-left: 3px;
+  height: 23px;
+}
+.rehorik-product-strength-flavour-container > span {
+  margin-right: 4px;
+  height: 23px;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+.rehorik-product-strength-flavour-container > span:last-child {
+  margin-right: 0;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-1 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 9px;
+  width: 9px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-1-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 9px;
+  width: 9px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-1 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 9px;
+  width: 9px;
+  background-position: left top;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-1-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 9px;
+  width: 9px;
+  background-position: left top;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-2 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 10px;
+  width: 10px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-2-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 10px;
+  width: 10px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-2 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 10px;
+  width: 10px;
+  background-position: left top;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-2-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 10px;
+  width: 10px;
+  background-position: left top;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-3 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 11px;
+  width: 11px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-3-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 11px;
+  width: 11px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-3 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 11px;
+  width: 11px;
+  background-position: left top;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-3-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 11px;
+  width: 11px;
+  background-position: left top;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-4 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 12px;
+  width: 12px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-4-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 12px;
+  width: 12px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-4 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 12px;
+  width: 12px;
+  background-position: left top;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-4-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 12px;
+  width: 12px;
+  background-position: left top;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-5 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 13px;
+  width: 13px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-5-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 13px;
+  width: 13px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-5 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 13px;
+  width: 13px;
+  background-position: left top;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-5-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 13px;
+  width: 13px;
+  background-position: left top;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-6 {
+  background-image: url("../img/svg/strength.svg");
+  background-size: 14px;
+  width: 14px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-strength-6-filled {
+  background-image: url("../img/svg/strength_filled.svg");
+  background-size: 14px;
+  width: 14px;
+  background-position: left bottom;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-6 {
+  background-image: url("../img/svg/flavour.svg");
+  background-size: 14px;
+  width: 14px;
+  background-position: left top;
+}
+.rehorik-product-strength-flavour-container .rehorik-coffee-flavour-6-filled {
+  background-image: url("../img/svg/flavour_filled.svg");
+  background-size: 14px;
+  width: 14px;
+  background-position: left top;
+}
+.banner-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent url("../img/stripes.png") repeat left top;
+  width: 100%;
+  height: 35px;
+}
+.banner-outer > * {
+  font-size: 20px;
+  padding: 20px !important;
+  color: #c6b480;
+  background-color: #fff;
+  font-weight: bold;
+}
+.entry-content .woocommerce .woocommerce-billing-fields, .entry-content .woocommerce #payment.woocommerce-checkout-payment {
+  margin-bottom: 50px;
+}
+.entry-content .woocommerce .woocommerce-order.rehorik-order address {
+  padding: 20px;
+  margin: 20px 0;
+}
+.entry-content .woocommerce .woocommerce-order.rehorik-order ul.rehorik-order-overview.order_details, .entry-content .woocommerce .woocommerce-order.rehorik-order ul.wc-bacs-bank-details.order_details.bacs_details {
+  margin: 50px 0 !important;
+  padding: 0 !important;
+}
+.entry-content .woocommerce .woocommerce-order.rehorik-order ul.rehorik-order-overview.order_details li, .entry-content .woocommerce .woocommerce-order.rehorik-order ul.wc-bacs-bank-details.order_details.bacs_details li {
+  border-right: 1px solid #c6b480;
+  margin: 0 8px 0 0;
+}
+@media all and (max-width: 767px) {
+  .entry-content .woocommerce .woocommerce-order.rehorik-order ul.rehorik-order-overview.order_details li, .entry-content .woocommerce .woocommerce-order.rehorik-order ul.wc-bacs-bank-details.order_details.bacs_details li {
+    float: none;
+    border: none;
+    margin-bottom: 8px;
+  }
+}
+.entry-content .woocommerce .woocommerce-order.rehorik-order > p, .entry-content .woocommerce .woocommerce-order.rehorik-order > section {
+  margin-bottom: 50px;
+}
+.entry-content .woocommerce .woocommerce-order.rehorik-order .woocommerce-bacs-bank-details h3.wc-bacs-bank-details-account-name {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.entry-content .woocommerce table.woocommerce-table.woocommerce-table--order-details.shop_table.order_details {
+  padding: 20px 0;
+}
+.woocommerce #main-content .container ul.rehorik-products.products li.product-category.product {
+  width: 100% !important;
+}
+.woocommerce #main-content .container ul.rehorik-products.products li.product-category.product img, .woocommerce #main-content .container ul.rehorik-products.products li.product-category.product h2.woocommerce-loop-category__title {
+  margin: 0 !important;
+}
+.woocommerce #main-content .container ul.rehorik-products.products li.product-category.product h2.woocommerce-loop-category__title {
+  position: absolute;
+  bottom: 0;
+  color: #c6b480;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 20px;
+}
+.woocommerce.shop #main-content #left-area {
+  padding: 0;
+  float: none;
+  width: 100%;
+}
+@media all and (min-width: 768px) {
+  .woocommerce.shop #main-content ul.rehorik-products.products.columns-3 li.product-category.product {
+    margin: 0 8px 8px 0;
+    width: 32%;
+  }
+}
+pre {
+  font-size: 10px;
+  line-height: 12px;
+}
+.woocommerce-page .et_pb_section_1.et_pb_section {
+  padding: 0 !important;
+}
+.woocommerce-page .et_pb_section {
+  padding: 0 0 30px 0;
+}
+.woocommerce-page #content-area {
+  margin: 70px 0;
+}
+@media all and (max-width: 767px) {
+  .woocommerce-page #content-area #left-area {
+    margin-bottom: 50px;
+  }
+}
+.woocommerce-page h1 {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.woocommerce-page h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 20px;
+  letter-spacing: 0.8px;
+}
+.woocommerce-page a {
+  color: #996b23;
+}
+.woocommerce-page .woocommerce .woocommerce-error a, .woocommerce-page .woocommerce .woocommerce-info a, .woocommerce-page .woocommerce .woocommerce-message a {
+  color: #996b23;
+}
+.woocommerce-page hr {
+  border: none;
+  border-top: 1px solid #c6b480;
+}
+.woocommerce-page #content-area table td, .woocommerce-page #content-area table th {
+  padding: 0 15px 20px 15px;
+  vertical-align: top;
+}
+.woocommerce-page #et-boc > div > div.et_pb_with_background {
+  padding-top: 50px !important;
+}
+.page-title {
+  margin-bottom: 50px;
+  color: #fff;
+  text-align: center;
+  background-color: #c6b480;
+  padding: 40px;
+  text-transform: uppercase;
+}

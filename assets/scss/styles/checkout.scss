@@ -1,0 +1,50 @@
+.entry-content {
+  .woocommerce {
+    .woocommerce-billing-fields,
+    #payment.woocommerce-checkout-payment {
+      margin-bottom: $spacing-l;
+    }
+
+    .woocommerce-order.rehorik-order {
+      address {
+        padding: $spacing-s;
+        margin: $spacing-s 0;
+      }
+
+      ul.rehorik-order-overview.order_details, ul.wc-bacs-bank-details.order_details.bacs_details {
+        margin: $spacing-l 0 !important;
+        padding: 0 !important;
+
+        li {
+          border-right: 1px solid $primary-color;
+          margin: 0 $spacing-xxs 0 0;
+        }
+
+        @media all and (max-width: $small-breakpoint) {
+          li {
+            float: none;
+            border: none;
+            margin-bottom: $spacing-xxs;
+          }
+        }
+      }
+
+      > p, > section {
+        margin-bottom: $spacing-l;
+      }
+
+      .woocommerce-bacs-bank-details {
+        h3.wc-bacs-bank-details-account-name {
+          font-size: $font-size;
+          margin-bottom: $spacing-xs;
+        }
+      }
+    }
+
+    table.woocommerce-table.woocommerce-table--order-details.shop_table.order_details {
+      padding: $spacing-s 0;
+    }
+  }
+}
+
+

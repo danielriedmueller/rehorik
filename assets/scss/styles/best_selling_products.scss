@@ -1,0 +1,18 @@
+#rehorik-best-selling-products-outer {
+  background: transparent url("../img/Textur-Gold.jpg") repeat 0 0;
+  padding: $spacing-l;
+  margin: $spacing-l 0 0 0;
+
+  #rehorik-best-selling-products {
+    max-width: 1080px;
+    margin: 0 auto;
+
+    h1 {
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0 0 $spacing-xl 0;
+    }
+  }
+}
+

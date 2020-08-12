@@ -1,0 +1,100 @@
+@import "styles/settings";
+@import "styles/woocommerce";
+@import "styles/container";
+@import "styles/products";
+@import "styles/products_grid";
+@import "styles/header";
+@import "styles/header_mobile";
+@import "styles/cart/cart";
+@import "styles/cart/cart_totals";
+@import "styles/cart/coupon";
+@import "styles/cart/button";
+@import "styles/sidebar";
+@import "styles/best_selling_products";
+@import "styles/product/variations";
+@import "styles/product/cup_of_coffee_price";
+@import "styles/product/summary";
+@import "styles/product/meta";
+@import "styles/product/attributes";
+@import "styles/product/hugo_head";
+@import "styles/product/tabs";
+@import "styles/product/additional_information_tab";
+@import "styles/product/coffee-strength-flavour";
+@import "styles/banner";
+@import "styles/checkout";
+@import "styles/categories";
+@import "styles/shop_page";
+
+pre {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.woocommerce-page {
+  // revert overwritten divi custom css for woocommerce pages
+  .et_pb_section_1.et_pb_section {
+    padding: 0 !important;
+  }
+
+  .et_pb_section {
+    padding: 0 0 $spacing 0;
+  }
+
+  #content-area {
+    margin: $spacing-xl 0;
+
+    #left-area {
+      @media all and (max-width: $small-breakpoint) {
+        margin-bottom: $spacing-l;
+      }
+    }
+  }
+
+  h1 {
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
+    letter-spacing: 0.8px;
+  }
+
+  a {
+    color: $font-color-accent-dark;
+  }
+
+  .woocommerce .woocommerce-error,
+  .woocommerce .woocommerce-info,
+  .woocommerce .woocommerce-message {
+    a {
+      color: $font-color-accent-dark;
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid $primary-color;
+  }
+
+  #content-area table td, #content-area table th {
+    padding: 0 $spacing-xs $spacing-s $spacing-xs;
+    vertical-align: top;
+  }
+
+  #et-boc > div > div.et_pb_with_background {
+    padding-top: $spacing-l !important;
+  }
+}
+
+.page-title {
+  margin-bottom: $spacing-l;
+  color: #fff;
+  text-align: center;
+  background-color: $primary-color;
+  padding: 40px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,145 @@
+#main-content .container,
+#rehorik-best-selling-products {
+  ul.products.rehorik-products {
+
+    li.product.rehorik-product {
+      overflow: hidden;
+      text-align: center;
+
+      border-radius: $button-border-radius;
+      border: 1px solid $primary-color;
+
+      @media all and (min-width: $small-breakpoint + 1) {
+        width: $product-category-width !important;
+        height: $product-height;
+      }
+
+      @media all and (max-width: $small-breakpoint) {
+        width: 100% !important;
+        height: 100%;
+        padding-bottom: $spacing-xs;
+      }
+
+      background-color: $product-default-color;
+      color: $product-default-body-text-color;
+
+      tr.seperator td hr {
+        border-color: $primary-color;
+        margin: $spacing-xxs 0;
+      }
+
+      a {
+        color: $product-default-body-text-color;
+      }
+
+      h2 {
+        color: $product-default-header-text-color;
+      }
+
+      &:not(.product-of-month) {
+        &.product_cat-espresso,
+        &.product_cat-filterkaffee,
+        &.product_cat-crema {
+          color: $product-alternative-body-text-color;
+
+          a {
+            color: $product-alternative-body-text-color;
+          }
+
+          h2 {
+            color: $product-alternative-header-text-color;
+          }
+
+          tr.seperator td hr {
+            border-color: $primary-color;
+          }
+        }
+
+        &.product_cat-crema {
+          background-color: $product-crema-color;
+          border-color: $product-crema-color;
+        }
+
+        &.product_cat-espresso {
+          background-color: $product-espresso-color;
+          border-color: $product-espresso-color;
+        }
+
+        &.product_cat-filterkaffee {
+          background-color: $product-filterkaffee-color;
+          border-color: $product-filterkaffee-color;
+        }
+      }
+
+      a {
+        font-weight: bold;
+
+        > span {
+          background-color: #fff;
+
+          img {
+            margin: 0 auto $spacing-s auto !important;
+            width: $product-category-width - 2;
+            height: $product-category-width - 2;
+            object-fit: contain;
+          }
+        }
+
+        h2 {
+          text-transform: uppercase;
+          font-size: $font-size-large;
+          padding: 0 $spacing-xs;
+          word-break: break-word;
+        }
+      }
+
+      .rehorik-product-attributes {
+        padding: 0 $spacing-s;
+
+        .rehorik-product-min-price {
+          font-size: $font-size-small;
+          margin-bottom: $spacing-s;
+          margin-top: $spacing-xxxs;
+
+          > span {
+            font-weight: bold;
+          }
+        }
+
+        table {
+          width: 100%;
+
+          tr {
+            margin: 0;
+          }
+
+          tr td {
+            text-align: left;
+            padding: 0;
+            text-transform: uppercase;
+            font-size: $font-size-small;
+            font-weight: bold;
+            vertical-align: top;
+          }
+
+          tr td:first-child:not([colspan="2"]) {
+            text-align: right;
+            padding-right: $spacing-xxxs;
+          }
+
+          td.rehorik-product-flavours-list {
+            font-size: $font-size-very-small;
+            font-weight: normal;
+            text-transform: none;
+            line-height: $font-size-very-small;
+            padding-left: $spacing-xxxs;
+          }
+        }
+      }
+    }
+  }
+}
+
+.woocommerce .products ul, .woocommerce ul.products {
+  margin: 0;
+}

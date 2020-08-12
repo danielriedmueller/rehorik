@@ -1,0 +1,77 @@
+.cart .woocommerce {
+  table.cart-table {
+    .rehorik-coupon-row-small {
+      display: none;
+
+      @media all and (max-width: $small-breakpoint) {
+        display: table-row;
+      }
+    }
+
+    .rehorik-coupon-row {
+      display: none;
+
+      @media all and (min-width: $small-breakpoint + 1) {
+        display: table-row;
+      }
+    }
+
+    .rehorik-coupon-container {
+      display: flex;
+      justify-content: space-between;
+      padding-right: $spacing;
+
+      @media all and (max-width: $small-breakpoint) {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+
+    button.button[name="apply_coupon"][type="submit"] {
+      border-radius: 0;
+      width: unset;
+    }
+
+    .rehorik-coupon {
+      @media all and (max-width: $small-breakpoint) {
+        width: $cart-coupon-width;
+        margin-bottom: $spacing;
+      }
+      width: $cart-coupon-width-broad;
+
+      label {
+        border: 1px solid $primary-color;
+        border-radius: $button-border-radius;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        input.input-text {
+          height: $input-height;
+          background-color: transparent;
+          border-radius: $button-border-radius;
+          color: $font-color-accent;
+          padding: 0;
+          border: none;
+          text-align: center;
+          flex-grow: 1;
+          font-size: $font-size;
+        }
+      }
+
+      ::placeholder  { /* Firefox, Chrome, Opera */
+        color: $font-color-accent;
+      }
+
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $font-color-accent;
+      }
+
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color: $font-color-accent;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.woocommerce-cart.woocommerce-page #content-area.cart {
+  .woocommerce .cart-collaterals {
+    div.rehorik-cart-totals {
+      width: $cart-coupon-width;
+      margin: $spacing $spacing 0 auto;
+
+      @media all and (max-width: $small-breakpoint) {
+        width: 100%;
+      }
+
+      $lineHeight: 23px;
+      line-height: $lineHeight;
+
+      table {
+        width: 100%;
+
+        ul#shipping_method li {
+          line-height: $lineHeight;
+          margin: 0;
+        }
+
+        th, td {
+          font-weight: normal;
+          vertical-align: top;
+          padding: 0 0 $spacing-xs 0;
+        }
+
+        tr td {
+          text-align: right;
+        }
+
+        tr.shipping td {
+          padding-bottom: $spacing-xs;
+        }
+
+        tr:last-child {
+          td, th {
+            padding: 0 0 $spacing 0;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .checkout-button.button.alt.wc-forward {
+        margin-bottom: $spacing-xxxs;
+      }
+
+      ul#shipping_method .amount {
+        font-weight: normal;
+      }
+
+      .rehorik-shipping-rest-amount {
+        color: $font-color-accent;
+        font-size: $font-size;
+        margin-top: $spacing-xs;
+      }
+    }
+  }
+}
+
+

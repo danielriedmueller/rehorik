@@ -1,0 +1,16 @@
+.cart .woocommerce {
+  button.button[name="apply_coupon"][type="submit"],
+  button.button[name="update_cart"][type="submit"],
+  a.checkout-button.button.alt.wc-forward {
+    padding: 1px $spacing !important;
+    font-weight: bold;
+    font-size: $font-size;
+    color: #fff;
+    border: none;
+    border-radius: $button-border-radius;
+    background-color: $primary-color;
+    text-align: center;
+    width: $cart-coupon-width;
+  }
+}
+

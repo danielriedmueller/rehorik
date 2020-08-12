@@ -1,0 +1,48 @@
+.woocommerce-page {
+  .rehorik-product-attributes table tr td:first-child {
+    font-size: $font-size-small;
+    line-height: $font-size-small;
+  }
+
+  .rehorik-product-attribute-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: $font-family-headline;
+  }
+
+  td.rehorik-product-attribute-label {
+    text-align: right;
+  }
+
+  .rehorik-tabs-panel hr {
+    border-width: 2px;
+  }
+
+  div.product-rehorik-attribute-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    div.rehorik-product-attribute-item {
+      display: inline-block;
+      padding: $spacing-s;
+      margin-bottom: $spacing;
+      text-align: center;
+
+      @media all and (min-width: $small-breakpoint + 1) {
+        &:not(:nth-child(3)) {
+          border-right: 2px solid $primary-color;
+        }
+      }
+    }
+
+    @media all and (max-width: $small-breakpoint) {
+      grid-template-columns: 1fr 1fr;
+
+      div.rehorik-product-attribute-item {
+        &:not(:nth-child(2)) {
+          border-right: 2px solid $primary-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+div.rehorik-product div.rehorik-product-summary.summary {
+  position: relative;
+  padding-left: $spacing;
+  margin-bottom: $spacing-xxl;
+
+  h1 {
+    color: $font-color-accent-light;
+    text-transform: uppercase;
+    margin-bottom: $spacing-s;
+    margin-left: -$spacing;
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    margin-top: $spacing-l;
+    padding-left: 0;
+    h1 {
+      margin-left: 0;
+    }
+  }
+
+  p.price {
+    display: inline;
+    color: $font-color;
+    font-weight: bold;
+    margin-right: $spacing-xxxs;
+  }
+}

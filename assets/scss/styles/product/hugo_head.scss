@@ -1,0 +1,10 @@
+.rehorik-hugo-head {
+  width: $hugo-head-size;
+  height: $hugo-head-size;
+  background-size: $hugo-head-size;
+  background-image: url("../img/svg/hugo_head.svg");
+
+  position: absolute;
+  bottom: -$spacing-xxl;
+  right: -$spacing;
+}

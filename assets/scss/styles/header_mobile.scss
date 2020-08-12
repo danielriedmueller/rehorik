@@ -1,0 +1,40 @@
+header#main-header.rehorik-header {
+  #rehorik-mobile-nav {
+    display: none;
+  }
+  @media all and (max-width: $menu-small-breakpoint) {
+    padding: 0;
+
+    #rehorik-mobile-nav {
+      display: block;
+      height: $menu-height;
+
+      .mobile_nav {
+        background-color: transparent;
+        padding: 0;
+
+        .mobile_menu_bar{
+          &::before {
+            color: $burger-color;
+          }
+
+          height: $burger-height;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          margin: auto 0;
+        }
+      }
+
+      ul#mobile_menu {
+        top: $menu-height;
+        border: 0;
+        padding: 0;
+
+        .menu-item-has-children > a {
+          background-color: $menu-hover-color;
+        }
+      }
+    }
+  }
+}
