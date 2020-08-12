@@ -47,7 +47,7 @@
 @media all and (min-width: 768px) {
   #main-content .container ul.products.rehorik-products li.product.rehorik-product, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product {
     width: 235px !important;
-    height: 475px;
+    height: 495px;
   }
 }
 @media all and (max-width: 767px) {
@@ -66,6 +66,14 @@
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product h2 {
   color: #fff;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product div.rehorik-product-origin-country, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product div.rehorik-product-origin-country {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  font-family: "DIN Offc W01 Cond";
+  margin-bottom: 3px;
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema {
   color: #fff;

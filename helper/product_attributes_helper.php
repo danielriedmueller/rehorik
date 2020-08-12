@@ -33,3 +33,35 @@ function getProductOfTheMonthClass(WC_Product_Variable $product): string
 {
     return isProductOfTheMonth($product) ? "product-of-month" : "";
 }
+
+function getOriginCountry(WC_Product_Variable $product): string
+{
+    $attributeArr = getAttributeArray($product, ORIGIN_COUNTRY_ATTRIBUTE_SLUG);
+
+    if (sizeof($attributeArr) > MAX_DISPLAY_ORIGIN_COUNTRIES) {
+        return "Blend";
+    }
+
+    return implode(", ", $attributeArr);
+}
+
+/**
+ * Returns a single product attribute as array.
+ */
+function getAttributeArray(WC_Product_Variable $product, string $attribute): array
+{
+    $attributes = $product->get_attributes();
+    $attribute  = sanitize_title( $attribute );
+
+    if ( isset( $attributes[$attribute] ) ) {
+        $attribute_object = $attributes[$attribute];
+    } elseif ( isset( $attributes['pa_' . $attribute] ) ) {
+        $attribute_object = $attributes['pa_' . $attribute];
+    } else {
+        return [];
+    }
+
+    return $attribute_object->is_taxonomy()
+        ? wc_get_product_terms( $product->get_id(), $attribute_object->get_name(), array( 'fields' => 'names' ) )
+        : $attribute_object->get_options();
+}

@@ -1,7 +1,6 @@
 #main-content .container,
 #rehorik-best-selling-products {
   ul.products.rehorik-products {
-
     li.product.rehorik-product {
       overflow: hidden;
       text-align: center;
@@ -34,6 +33,15 @@
 
       h2 {
         color: $product-default-header-text-color;
+      }
+
+      div.rehorik-product-origin-country {
+        text-transform: uppercase;
+        font-size: $font-size-small;
+        font-weight: bold;
+        background-color: transparent;
+        font-family: $font-family-body;
+        margin-bottom: $spacing-xxxs;
       }
 
       &:not(.product-of-month) {

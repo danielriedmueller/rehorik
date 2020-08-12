@@ -8,11 +8,13 @@ define('WP_SCSS_ALWAYS_RECOMPILE', true);
 define('ONE_CUP_OF_COFFEE_IN_GRAMS', 10);
 define('FREE_SHIPPING_AMOUNT', 49);
 define('MAX_COFFEE_STRENGTH_FLAVOUR_ATTRIBUTE', 6);
+define('MAX_DISPLAY_ORIGIN_COUNTRIES', 1);
 define('STRENGTH_ATTRIBUTE_SLUG', 'attribute_pa_kaffee-staerke');
 define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'attribute_pa_kaffee-aromenvielfalt');
 define('BEAN_COMPOSITION_ATTRIBUTE_SLUG', 'attribute_pa_bohnenkompositionen');
 define('COFFEE_TYPE_ATTRIBUTE_SLUG', 'attribute_pa_kaffee-sorte');
 define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
+define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-ursprungsland');
 define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
 
 $priority = 1000;
