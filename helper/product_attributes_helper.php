@@ -24,14 +24,26 @@ function extractOtherAttributes(array $productAttributes): array
 
 function isProductOfTheMonth(WC_Product_Variable $product): bool
 {
-    $value = $product->get_attribute( PRODUCT_OF_MONTH_ATTRIBUTE_SLUG);
+    $value = strtolower($product->get_attribute( PRODUCT_OF_MONTH_ATTRIBUTE_SLUG));
 
-    return $value === "Ja" ? true : false;
+    return $value === "ja" ? true : false;
+}
+
+function hasBiosigil(WC_Product_Variable $product): bool
+{
+    $value = strtolower($product->get_attribute( BIOSIGIL_SLUG));
+
+    return $value === "ja" ? true : false;
 }
 
 function getProductOfTheMonthClass(WC_Product_Variable $product): string
 {
     return isProductOfTheMonth($product) ? "product-of-month" : "";
+}
+
+function getBiosigilClass(WC_Product_Variable $product): string
+{
+    return hasBiosigil($product) ? "biosigil" : "";
 }
 
 function getOriginCountry(WC_Product_Variable $product): string

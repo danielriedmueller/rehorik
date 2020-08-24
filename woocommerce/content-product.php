@@ -28,7 +28,8 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 ?>
 <li <?php wc_product_class([
     'rehorik-product',
-    getProductOfTheMonthClass($product)
+    getProductOfTheMonthClass($product),
+    getBiosigilClass($product)
 ], $product); ?>>
 	<?php
 	/**

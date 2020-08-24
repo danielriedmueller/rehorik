@@ -30,6 +30,7 @@ if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
+require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php');
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'rehorik-product', $product ); ?>>
 
@@ -58,6 +59,10 @@ if ( post_password_required() ) {
 		 * @hooked WC_Structured_Data::generate_product_data() - 60
 		 */
 		do_action( 'woocommerce_single_product_summary' );
+
+		if (hasBiosigil($product)) {
+            ?><div class="biosigil-container"></div><?php
+        }
 		?>
         <div class="rehorik-hugo-head"></div>
 	</div>

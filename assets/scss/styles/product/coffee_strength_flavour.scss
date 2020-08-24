@@ -168,3 +168,23 @@
     }
   }
 }
+
+.product-of-month .rehorik-product-strength-flavour-container {
+  @for $i from 1 through 6 {
+    .rehorik-coffee-strength-#{$i} {
+      background-image: url("../img/svg/strength_white.svg");
+    }
+
+    .rehorik-coffee-strength-#{$i}-filled {
+      background-image: url("../img/svg/strength_filled_white.svg");
+    }
+
+    .rehorik-coffee-flavour-#{$i} {
+      background-image: url("../img/svg/flavour_white.svg");
+    }
+
+    .rehorik-coffee-flavour-#{$i}-filled {
+      background-image: url("../img/svg/flavour_filled_white.svg");
+    }
+  }
+}

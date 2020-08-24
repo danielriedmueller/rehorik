@@ -14,7 +14,8 @@ define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'attribute_pa_kaffee-aromenvielfalt');
 define('BEAN_COMPOSITION_ATTRIBUTE_SLUG', 'attribute_pa_bohnenkompositionen');
 define('COFFEE_TYPE_ATTRIBUTE_SLUG', 'attribute_pa_kaffee-sorte');
 define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
-define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-ursprungsland');
+define('BIOSIGIL_SLUG', 'pa_biosiegel');
+define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-herkunft');
 define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
 
 $priority = 1000;
