@@ -1,11 +1,11 @@
 .biosigil-container {
-  width: 100px;
-  height: 65px;
-  background: transparent url("../img/biosiegel.svg") no-repeat center center;
+  width: 80px;
+  height: 75px;
+  background: transparent url("../img/biosiegel.svg") no-repeat center top;
 
   position: absolute;
   bottom: -$spacing-xxl;
-  right: $hugo-head-size - $spacing-s;
+  right: $hugo-head-size - $spacing-xs;
 }
 
 .biosigil .et_shop_image::before {
@@ -13,8 +13,8 @@
   display: block;
   position: absolute;
   top: 0;
-  right: $spacing-xs;
-  width: 65px;
-  height: 43px;
+  right: $spacing-s;
+  width: 50px;
+  height: 33px;
   background: transparent url("../img/biosiegel.svg") no-repeat center center;
 }

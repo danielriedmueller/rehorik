@@ -7,7 +7,7 @@ header#main-header.rehorik-header {
   .container {
     position: relative;
 
-    @media all and (min-width: $menu-small-breakpoint + 1) {
+    @media all and (min-width: $medium-breakpoint + 1) {
       &:before {
         content: "";
         width: $logo-size;

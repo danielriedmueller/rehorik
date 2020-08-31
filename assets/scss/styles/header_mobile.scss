@@ -2,7 +2,7 @@ header#main-header.rehorik-header {
   #rehorik-mobile-nav {
     display: none;
   }
-  @media all and (max-width: $menu-small-breakpoint) {
+  @media all and (max-width: $medium-breakpoint) {
     padding: 0;
 
     #rehorik-mobile-nav {
