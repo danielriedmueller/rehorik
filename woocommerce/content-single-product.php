@@ -60,10 +60,14 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 		 */
 		do_action( 'woocommerce_single_product_summary' );
 
-		if (hasBiosigil($product)) {
-            ?><div class="biosigil-container"></div><?php
-        }
 		?>
+
+        <div class="sigil-container<?php echo sprintf(
+                " %s %s",
+                getBiosigilClass($product),
+                getProductOfTheMonthClass($product)
+        ); ?>"></div>
+
         <div class="rehorik-hugo-head"></div>
 	</div>
 

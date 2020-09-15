@@ -1,0 +1,57 @@
+.sigil-container {
+  $sigilWidth: 113px;
+  $sigilHeight: 75px;
+  $spaceToHugoHead: 44px;
+
+  &.biosigil::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: $sigilWidth;
+    height: $sigilHeight;
+    background: transparent url("../img/biosiegel.svg") no-repeat center top;
+
+    bottom: -$spacing-xxl;
+    right: $spaceToHugoHead + $spacing-s;
+  }
+
+  &.product-of-month::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: $sigilWidth;
+    height: $sigilHeight;
+    background: transparent url("../img/productofmonth.svg") no-repeat center top;
+    bottom: -$spacing-xxl;
+  }
+
+  &.product-of-month.biosigil::after {
+    right: $spaceToHugoHead + $spacing-s + $sigilWidth + $spacing-s;
+  }
+
+  &.product-of-month:not(.biosigil)::after {
+    right: $spaceToHugoHead + $spacing-s;
+  }
+}
+
+.biosigil .et_shop_image::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: $spacing-s;
+  width: 50px;
+  height: 33px;
+  background: transparent url("../img/biosiegel.svg") no-repeat center center;
+}
+
+.product-of-month .et_shop_image::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: $spacing-s;
+  width: 50px;
+  height: 33px;
+  background: transparent url("../img/productofmonth.svg") no-repeat center center;
+}
