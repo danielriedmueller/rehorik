@@ -1,0 +1,10 @@
+.product-of-month .et_shop_image::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: $spacing-s;
+  width: 50px;
+  height: 33px;
+  background: transparent url("../img/productofmonth.svg") no-repeat center center;
+}
