@@ -30,6 +30,71 @@
     text-align: center;
   }
 }
+@media (min-width: 1025px) {
+  .et_left_sidebar #left-area {
+    float: right;
+    padding-left: 5.5%;
+  }
+  #left-area {
+    width: 79.125%;
+    padding-bottom: 23px;
+  }
+  #sidebar {
+    float: left;
+    width: 20.875%;
+  }
+  .et_non_fixed_nav.et_transparent_nav.et_show_nav.et_secondary_nav_enabled.et_header_style_centered #page-container, .et_non_fixed_nav.et_transparent_nav.et_show_nav.et_header_style_centered #page-container, .et_fixed_nav.et_show_nav.et_secondary_nav_enabled.et_header_style_centered #page-container, .et_fixed_nav.et_show_nav.et_header_style_centered #page-container {
+    padding-top: 136px;
+  }
+}
+@media (max-width: 1024px) {
+  .et_left_sidebar #sidebar {
+    margin-right: 0;
+    border-right: none;
+  }
+  .et_left_sidebar #left-area {
+    margin-left: 0;
+  }
+  .et_right_sidebar #left-area, .et_right_sidebar #sidebar, .et_left_sidebar #left-area, .et_left_sidebar #sidebar {
+    width: auto;
+    float: none;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  #sidebar, #left-area {
+    width: 100% !important;
+  }
+  .et_header_style_centered #et-top-navigation .et-cart-info {
+    display: none;
+  }
+  #et-top-navigation .et-cart-info {
+    margin-top: 5px;
+  }
+  .et_header_style_centered nav#top-menu-nav {
+    display: none;
+  }
+  #et-top-navigation {
+    margin-right: 0;
+  }
+  .et_non_fixed_nav.et_transparent_nav #main-header, .et_non_fixed_nav.et_transparent_nav #top-header, .et_fixed_nav #main-header, .et_fixed_nav #top-header {
+    position: absolute;
+  }
+  .et_header_style_centered #main-header .mobile_nav {
+    display: block;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  .et_header_style_centered .et_menu_container .mobile_menu_bar {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+  }
+  .et_header_style_centered .et_menu_container .mobile_menu_bar, .et_header_style_split .et_menu_container .mobile_menu_bar {
+    opacity: 1;
+  }
+}
 #main-content .container {
   padding-top: 0 !important;
 }
@@ -255,7 +320,7 @@ header#main-header.rehorik-header {
 header#main-header.rehorik-header .container {
   position: relative;
 }
-@media all and (min-width: 982px) {
+@media all and (min-width: 1025px) {
   header#main-header.rehorik-header .container:before {
     content: "";
     width: 36px;
@@ -314,7 +379,7 @@ header#main-header.rehorik-header nav#top-menu-nav ul.sub-menu li, header#main-h
 header#main-header.rehorik-header #rehorik-mobile-nav {
   display: none;
 }
-@media all and (max-width: 981px) {
+@media all and (max-width: 1024px) {
   header#main-header.rehorik-header {
     padding: 0;
   }
@@ -498,12 +563,14 @@ header#main-header.rehorik-header #rehorik-mobile-nav {
   width: unset;
 }
 .cart .woocommerce table.cart-table .rehorik-coupon {
+  margin-right: 30px;
   width: 380px;
 }
 @media all and (max-width: 767px) {
   .cart .woocommerce table.cart-table .rehorik-coupon {
     width: 300px;
     margin-bottom: 30px;
+    margin-right: 0;
   }
 }
 .cart .woocommerce table.cart-table .rehorik-coupon label {
@@ -520,7 +587,7 @@ header#main-header.rehorik-header #rehorik-mobile-nav {
   background-color: transparent;
   border-radius: 10px;
   color: #c6b480;
-  padding: 0;
+  padding: 0 0 5px 0;
   border: none;
   text-align: center;
   flex-grow: 1;
@@ -1398,23 +1465,146 @@ body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaf
     width: 32%;
   }
 }
-.biosigil-container {
-  width: 100px;
-  height: 65px;
-  background: transparent url("../img/biosiegel.svg") no-repeat center center;
+.sigil-container.biosigil::before {
+  content: "";
+  display: block;
   position: absolute;
+  width: 113px;
+  height: 75px;
+  background: transparent url("../img/biosiegel.svg") no-repeat center top;
   bottom: -100px;
-  right: 55px;
+  right: 64px;
+}
+.sigil-container.product-of-month::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 113px;
+  height: 75px;
+  background: transparent url("../img/productofmonth.svg") no-repeat center top;
+  bottom: -100px;
+}
+.sigil-container.product-of-month.biosigil::after {
+  right: 197px;
+}
+.sigil-container.product-of-month:not(.biosigil)::after {
+  right: 64px;
 }
 .biosigil .et_shop_image::before {
   content: "";
   display: block;
   position: absolute;
   top: 0;
-  right: 15px;
-  width: 65px;
-  height: 43px;
+  right: 20px;
+  width: 50px;
+  height: 33px;
   background: transparent url("../img/biosiegel.svg") no-repeat center center;
+}
+.product-of-month .et_shop_image::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 50px;
+  height: 33px;
+  background: transparent url("../img/productofmonth.svg") no-repeat center center;
+}
+#tribe-events-pg-template, .tribe-events-pg-template {
+  width: 80%;
+  max-width: 1080px;
+  margin: auto;
+  font-family: "DIN Offc W01 Cond";
+}
+.tribe-common h2.tribe-common-h5, .single-tribe_events h1.tribe-events-single-event-title {
+  color: #c6b480;
+  font-size: 46px !important;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  font-family: "DIN Offc W01 Cond";
+}
+form#tribe-tickets.tribe-common.tribe-tickets {
+  border-color: #c6b480;
+  width: 100%;
+  margin: 30px 0;
+  max-width: unset;
+}
+form#tribe-tickets.tribe-common.tribe-tickets * {
+  border-color: #c6b480;
+}
+#tribe-modal__cart.tribe-modal-cart.tribe-modal__cart {
+  font-family: "DIN Offc W01 Cond";
+}
+#tribe-modal__cart.tribe-modal-cart.tribe-modal__cart * {
+  border-color: #c6b480;
+}
+.tribe-events-single-section.tribe-events-event-meta.primary {
+  font-family: "DIN Offc W01 Cond";
+  font-size: 16px;
+  font-style: normal;
+}
+li.menu-item.rehorik-calendar-icon a {
+  font-size: 0 !important;
+}
+li.menu-item.rehorik-calendar-icon a::before {
+  font-family: 'ETmodules' !important;
+  font-size: 16px;
+  content: "\e023";
+}
+button.tribe-common-c-btn, a.tribe-common-c-btn, .tribe-common.tribe-events button.tribe-common-c-btn, .tribe-tickets__item__attendee__fields__footer button.tribe-common-c-btn, form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy {
+  font-family: "DIN Offc W01 Cond";
+  background-color: #c6b480;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 1px 30px !important;
+  border-radius: 10px;
+}
+button.tribe-common-c-btn:hover, a.tribe-common-c-btn:hover, .tribe-common.tribe-events button.tribe-common-c-btn:hover, .tribe-tickets__item__attendee__fields__footer button.tribe-common-c-btn:hover, form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy:hover {
+  color: #996b23;
+  background-color: #c6b480 !important;
+}
+.tribe-common button.tribe-common-c-btn-link {
+  font-family: "DIN Offc W01 Cond";
+  color: #996b23;
+  font-size: 20px;
+}
+.tribe-common button.tribe-common-c-btn-link:hover {
+  color: #ccb57d;
+}
+.tribe-common.tribe-events .tribe-common--breakpoint-medium.tribe-common .tribe-common-form-control-text__input, .tribe-common.tribe-events .tribe-common-form-control-text__input, .tribe-common.tribe-events .tribe-common-c-btn, .tribe-common.tribe-events a.tribe-common-c-btn, .tribe-common.tribe-events .tribe-events-c-view-selector__list-item-text, .tribe-common.tribe-events .tribe-common-h3 {
+  font-family: "DIN Offc W01 Cond";
+  font-size: 20px;
+}
+.tribe-common.tribe-events .tribe-events-c-events-bar {
+  border: 1px solid #c6b480;
+}
+.tribe-common.tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date, .tribe-common.tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link {
+  color: #996b23;
+}
+.tribe-common.tribe-events .tribe-events-c-ical__link {
+  background-color: #c6b480;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 2px 20px;
+  border-radius: 0;
+  border: none;
+  color: #fff;
+}
+.tribe-common.tribe-events .tribe-events-c-ical__link::before {
+  content: none;
+}
+.tribe-common.tribe-events .tribe-events-c-ical__link:hover {
+  color: #996b23;
+}
+.tribe-events-notices {
+  margin-bottom: 50px;
+}
+a.tribe-events-ical.tribe-events-button, a.tribe-events-gcal.tribe-events-button {
+  color: #c6b480;
+}
+a.tribe-events-ical.tribe-events-button:hover, a.tribe-events-gcal.tribe-events-button:hover {
+  color: #996b23;
 }
 pre {
   font-size: 10px;
@@ -1437,6 +1627,7 @@ pre {
 .woocommerce-page h1 {
   font-weight: bold;
   letter-spacing: 1px;
+  font-size: 46px;
 }
 .woocommerce-page h2 {
   text-transform: uppercase;

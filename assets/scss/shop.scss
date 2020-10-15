@@ -26,6 +26,7 @@
 @import "styles/categories";
 @import "styles/shop_page";
 @import "styles/product/sigils";
+@import "styles/events";
 
 pre {
   font-size: 10px;
@@ -55,12 +56,13 @@ pre {
   h1 {
     font-weight: bold;
     letter-spacing: 1px;
+    font-size: $font-size-h1;
   }
 
   h2 {
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 30px;
+    font-size: $font-size-h2;
     margin-bottom: 20px;
     letter-spacing: 0.8px;
   }

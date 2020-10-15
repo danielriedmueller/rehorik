@@ -1,0 +1,131 @@
+#tribe-events-pg-template, .tribe-events-pg-template {
+  width: 80%;
+  max-width: 1080px;
+  margin: auto;
+  font-family: "DIN Offc W01 Cond";
+}
+.tribe-common h2.tribe-common-h5,
+.single-tribe_events h1.tribe-events-single-event-title {
+  color: $font-color-accent;
+  font-size: $font-size-h1 !important;
+  font-weight: bold;
+  margin: 0 0 $spacing-s 0;
+  font-family: "DIN Offc W01 Cond";
+}
+
+form#tribe-tickets.tribe-common.tribe-tickets {
+  border-color: $primary-color;
+  * {
+    border-color: $primary-color;
+  }
+
+  width: 100%;
+  margin: $spacing 0;
+  max-width: unset;
+}
+
+#tribe-modal__cart.tribe-modal-cart.tribe-modal__cart {
+  * {
+    border-color: $primary-color;
+  }
+
+  font-family: "DIN Offc W01 Cond";
+}
+
+.tribe-events-single-section.tribe-events-event-meta.primary {
+  font-family: "DIN Offc W01 Cond";
+  font-size: $font-size-small;
+  font-style: normal;
+}
+
+// Navigation menu item
+li.menu-item.rehorik-calendar-icon {
+  a {
+    font-size: 0 !important;
+
+    &::before {
+      font-family: 'ETmodules' !important;
+      font-size: 16px;
+      content: "\e023";
+    }
+  }
+}
+
+button.tribe-common-c-btn,
+a.tribe-common-c-btn,
+.tribe-common.tribe-events button.tribe-common-c-btn,
+.tribe-tickets__item__attendee__fields__footer button.tribe-common-c-btn,
+form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy {
+  font-family: "DIN Offc W01 Cond";
+  background-color: $primary-color;
+  font-weight: bold;
+  font-size: $font-size;
+  text-transform: uppercase;
+  padding: 1px 30px !important;
+  border-radius: 10px;
+
+  &:hover {
+    color: $font-color-accent-dark;
+    background-color: $primary-color !important;
+  }
+}
+
+.tribe-common button.tribe-common-c-btn-link {
+  font-family: "DIN Offc W01 Cond";
+  color: $font-color-accent-dark;
+  font-size: $font-size;
+
+  &:hover {
+    color: $font-color-accent-light;
+  }
+}
+
+.tribe-common.tribe-events {
+  .tribe-common--breakpoint-medium.tribe-common .tribe-common-form-control-text__input,
+  .tribe-common-form-control-text__input,
+  .tribe-common-c-btn, a.tribe-common-c-btn,
+  .tribe-events-c-view-selector__list-item-text,
+  .tribe-common-h3 {
+    font-family: "DIN Offc W01 Cond";
+    font-size: $font-size;
+  }
+
+  .tribe-events-c-events-bar {
+    border: 1px solid $primary-color;
+  }
+
+  .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date,
+  .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link {
+    color: $font-color-accent-dark;
+  }
+
+  .tribe-events-c-ical__link {
+    &::before {
+      content: none;
+    }
+
+    background-color: $primary-color;
+    font-size: $font-size-small;
+    font-weight: normal;
+    padding: 2px $spacing-s;
+    border-radius: 0;
+    border: none;
+    color: #fff;
+
+    &:hover {
+      color: $font-color-accent-dark;
+    }
+  }
+}
+
+.tribe-events-notices {
+  margin-bottom: $spacing-l;
+}
+
+a.tribe-events-ical.tribe-events-button, a.tribe-events-gcal.tribe-events-button {
+  color: $font-color-accent;
+
+  &:hover {
+    color: $font-color-accent-dark;
+  }
+}

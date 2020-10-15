@@ -17,6 +17,7 @@ define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
 define('BIOSIGIL_SLUG', 'pa_biosiegel');
 define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-herkunft');
 define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
+define('TICKET_CATEGORY_SLUG', 'ticket');
 
 $priority = 1000;
 
@@ -39,7 +40,9 @@ add_action('et_before_main_content', function () {
     }
 }, $priority);
 
-// Adds class to body classes for shop page only.
+/**
+ * Adds class to body classes for shop page only.
+ */
 add_filter('body_class', function ($classes) {
     if (is_shop()) {
         return array_merge($classes, array('shop'));
@@ -48,10 +51,14 @@ add_filter('body_class', function ($classes) {
     return $classes;
 });
 
-// Removes breadcrumb
+/**
+ * Removes breadcrumb.
+ */
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 
-// Removes page title in content area
+/**
+ * Removes page title in content area.
+ */
 add_filter('woocommerce_show_page_title', function () {
     return false;
 }, $priority);
@@ -63,7 +70,9 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('hello', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
 }, $priority);
 
-// Adds mobile nav
+/**
+ * Adds mobile nav.
+ */
 function et_add_child_mobile_navigation()
 {
     if (is_customize_preview() || ('slide' !== et_get_option('header_style', 'left') && 'fullscreen' !== et_get_option('header_style', 'left'))) {
@@ -72,6 +81,9 @@ function et_add_child_mobile_navigation()
 }
 add_action('et_header_top', 'et_add_child_mobile_navigation');
 
+/**
+ * Adds price for one coup of coffee.
+ */
 add_action('render_one_cup_of_coffee_price', function ($product) {
     if (!isItCoffee($product)) return;
 
@@ -146,6 +158,11 @@ add_action('render_rest_amount_for_free_shipping', function () {
     }
 }, $priority, 1);
 
+/**
+ * @param $full_label
+ * @param $method
+ * @return string
+ */
 function remove_shipping_method_label($full_label, $method)
 {
     $label = "";
@@ -169,5 +186,36 @@ function remove_shipping_method_label($full_label, $method)
 }
 add_filter('woocommerce_cart_shipping_method_full_label', 'remove_shipping_method_label', 10, 2);
 
-// Remove product category count
+/**
+ * Remove product category count.
+ */
 add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
+
+
+/**
+ * Add category to tickets.
+ *
+ * @param $post_id
+ * @param $ticket
+ * @param $raw_data
+ * @param $class_name
+ */
+function add_category_to_tickets( $post_id, $ticket, $raw_data, $class_name ) {
+
+    //hardcoded for WooCommerce only
+    if ( 'Tribe__Tickets_Plus__Commerce__WooCommerce__Main' != $class_name ) {
+        return;
+    }
+
+    if ( ! class_exists( 'Tribe__Events__Main' ) ) {
+        return;
+    }
+
+    //bail out if not a valid ticket
+    if ( empty( $ticket ) || ! isset( $ticket->ID ) ) {
+        return;
+    }
+
+    wp_add_object_terms( $ticket->ID, TICKET_CATEGORY_SLUG, 'product_cat' );
+}
+add_action( 'event_tickets_after_save_ticket', 'add_category_to_tickets');

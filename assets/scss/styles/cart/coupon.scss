@@ -36,7 +36,9 @@
       @media all and (max-width: $small-breakpoint) {
         width: $cart-coupon-width;
         margin-bottom: $spacing;
+        margin-right: 0;
       }
+      margin-right: $spacing;
       width: $cart-coupon-width-broad;
 
       label {
@@ -53,7 +55,7 @@
           background-color: transparent;
           border-radius: $button-border-radius;
           color: $font-color-accent;
-          padding: 0;
+          padding: 0 0 5px 0;
           border: none;
           text-align: center;
           flex-grow: 1;
