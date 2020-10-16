@@ -193,30 +193,9 @@ add_filter('woocommerce_cart_shipping_method_full_label', 'remove_shipping_metho
  */
 add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
 
-/**
- * Add category to tickets.
- *
- * @param $post_id
- * @param $ticket
- * @param $raw_data
- * @param $class_name
- */
-function add_category_to_tickets( $post_id, $ticket, $raw_data, $class_name ) {
-
-    //hardcoded for WooCommerce only
-    if ( 'Tribe__Tickets_Plus__Commerce__WooCommerce__Main' != $class_name ) {
-        return;
+function tribe_events_add_product_category_to_tickets($event_id, $ticket, $raw_data, $classname) {
+    if ( ! empty( $ticket ) && isset( $ticket->ID ) ) {
+        wp_add_object_terms( $ticket->ID, TICKET_CATEGORY_SLUG, 'product_cat' );
     }
-
-    if ( ! class_exists( 'Tribe__Events__Main' ) ) {
-        return;
-    }
-
-    //bail out if not a valid ticket
-    if ( empty( $ticket ) || ! isset( $ticket->ID ) ) {
-        return;
-    }
-
-    wp_add_object_terms( $ticket->ID, TICKET_CATEGORY_SLUG, 'product_cat' );
 }
-add_action( 'event_tickets_after_save_ticket', 'add_category_to_tickets');
+add_action( 'event_tickets_after_save_ticket', 'tribe_events_add_product_category_to_tickets', 10, 4);
