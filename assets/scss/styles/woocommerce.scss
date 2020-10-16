@@ -25,12 +25,12 @@
     border: 1px solid $primary-color !important;
 
     a.button {
-      color: $font-color-accent-dark !important;
+      color: #fff !important;
     }
 
     @media all and (max-width: $small-breakpoint) {
       a.button {
-        color: $font-color-accent-dark !important;
+        color: #fff !important;
         float: none;
         display: block;
         text-align: center;

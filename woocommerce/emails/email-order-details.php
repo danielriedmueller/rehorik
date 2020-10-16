@@ -11,7 +11,7 @@
  * the readme will list any important changes.
  *
  * @see https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates/Emails
+ * @package WooCommerce\Templates\Emails
  * @version 3.7.0
  */
 
@@ -35,7 +35,7 @@ do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plai
 	?>
 </h2>
 
-<div style="margin-bottom: 12px;">
+<div style="margin-bottom: 40px;">
 	<table class="td" cellspacing="0" cellpadding="6" style="width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" border="1">
 		<thead>
 			<tr>

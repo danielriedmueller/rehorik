@@ -13,15 +13,14 @@ function getCategoryTreeDepth($termId, $taxonomy = "product_cat"): int
     return sizeof(explode($seperator, $parentsList)) - 1;
 };
 
-function isItCoffee($product): bool
+function isItCategory($product, $categorySlug): bool
 {
-    $coffeeCategorySlug = "kaffee";
     $taxonomy = 'product_cat';
     $seperator = ";";
     $allCategories = [];
 
     foreach ($product->get_category_ids() as $category_id) {
-        $term = get_term($category_id, $taxonomy );
+        $term = get_term($category_id, $taxonomy);
         $allCategories[] = $term->slug;
         $parents = get_term_parents_list($category_id, $taxonomy, [
             'format' => 'slug',
@@ -33,7 +32,7 @@ function isItCoffee($product): bool
 
     }
 
-    return in_array($coffeeCategorySlug, $allCategories);
+    return in_array($categorySlug, $allCategories);
 }
 
 // Overwrites category link function for link to lieferservice page

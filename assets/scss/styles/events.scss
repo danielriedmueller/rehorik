@@ -64,7 +64,7 @@ form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy {
   padding: 1px 30px !important;
   border-radius: 10px;
 
-  &:hover {
+  &:hover, &:active, &:focus {
     color: $font-color-accent-dark;
     background-color: $primary-color !important;
   }
@@ -75,7 +75,7 @@ form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy {
   color: $font-color-accent-dark;
   font-size: $font-size;
 
-  &:hover {
+  &:hover, &:active, &:focus{
     color: $font-color-accent-light;
   }
 }
@@ -112,7 +112,7 @@ form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy {
     border: none;
     color: #fff;
 
-    &:hover {
+    &:hover, &:active, &:focus {
       color: $font-color-accent-dark;
     }
   }
@@ -125,7 +125,7 @@ form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy {
 a.tribe-events-ical.tribe-events-button, a.tribe-events-gcal.tribe-events-button {
   color: $font-color-accent;
 
-  &:hover {
+  &:hover, &:active, &:focus {
     color: $font-color-accent-dark;
   }
 }

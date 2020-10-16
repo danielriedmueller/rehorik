@@ -18,6 +18,8 @@ define('BIOSIGIL_SLUG', 'pa_biosiegel');
 define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-herkunft');
 define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
 define('TICKET_CATEGORY_SLUG', 'ticket');
+define('COFFEE_CATEGORY_SLUG', 'kaffee');
+
 
 $priority = 1000;
 
@@ -85,7 +87,7 @@ add_action('et_header_top', 'et_add_child_mobile_navigation');
  * Adds price for one coup of coffee.
  */
 add_action('render_one_cup_of_coffee_price', function ($product) {
-    if (!isItCoffee($product)) return;
+    if (!isItCategory($product, COFFEE_CATEGORY_SLUG)) return;
 
     $woocommerceGzProduct = wc_gzd_get_product($product);
 
@@ -190,7 +192,6 @@ add_filter('woocommerce_cart_shipping_method_full_label', 'remove_shipping_metho
  * Remove product category count.
  */
 add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
-
 
 /**
  * Add category to tickets.
