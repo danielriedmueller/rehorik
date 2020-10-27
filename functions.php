@@ -19,6 +19,8 @@ define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-herkunft');
 define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
 define('TICKET_CATEGORY_SLUG', 'ticket');
 define('COFFEE_CATEGORY_SLUG', 'kaffee');
+define('EVENT_TICKET_SHOULD_BE_PRINTED_SLUG', 'soll-das-ticket-ausgedruckt-werden');
+define('EVENT_TICKET_TELEPHONE_SLUG', 'telefon');
 
 
 $priority = 1000;
@@ -199,3 +201,23 @@ function tribe_events_add_product_category_to_tickets($event_id, $ticket, $raw_d
     }
 }
 add_action( 'event_tickets_after_save_ticket', 'tribe_events_add_product_category_to_tickets', 10, 4);
+
+/**
+ * Adds information to event attendees list table
+ */
+function add_information_to_event_attendees_table($output, $item) {
+    if (!empty($item['attendee_meta'])) {
+        if (!empty($item['attendee_meta'][EVENT_TICKET_TELEPHONE_SLUG])) {
+            $purchaser_phone = $item['attendee_meta'][EVENT_TICKET_TELEPHONE_SLUG]["value"];
+            $output = $output . "<div class='purchaser_phone'>Telefon: {$purchaser_phone}</div>";
+        }
+
+        if (!empty($item['attendee_meta'][EVENT_TICKET_SHOULD_BE_PRINTED_SLUG])) {
+            $purchaser_print_ticket = array_values($item['attendee_meta'][EVENT_TICKET_SHOULD_BE_PRINTED_SLUG]["value"])[0];
+            $output = $output . "<div class='purchaser_print_ticket'>Ticket drucken: {$purchaser_print_ticket}</div>";
+        }
+    }
+
+    return $output;
+}
+add_filter('event_tickets_attendees_table_primary_info_column', 'add_information_to_event_attendees_table', 10, 2);
