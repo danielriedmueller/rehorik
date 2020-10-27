@@ -52,10 +52,11 @@ foreach ( $items as $item_id => $item ) :
 		// Event location and date
         if (isItCategory($product, TICKET_CATEGORY_SLUG)) {
             $event = tribe_events_get_ticket_event($product->get_id());
+            $title = $event->post_title;
             $location = tribe_get_venue($event->ID);
             $date = tribe_get_start_date($event->ID);
 
-            echo sprintf('<div><strong>Ort:</strong> %s, <br><strong>Zeit:</strong> %s</div>', $location, $date);
+            echo sprintf('<div>Name: %s,<br>Ort: %s,<br>Zeit: %s</div>', $title, $location, $date);
         }
 
 		// SKU.
