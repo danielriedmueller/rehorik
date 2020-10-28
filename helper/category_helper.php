@@ -35,13 +35,20 @@ function isItCategory($product, $categorySlug): bool
     return in_array($categorySlug, $allCategories);
 }
 
-// Overwrites category link function for link to lieferservice page
-function woocommerce_template_loop_category_link_open( $category ) {
+/**
+ * Overwrites category link function for link to lieferservice page
+ *
+ * @param $category
+ */
+function woocommerce_template_loop_category_link_open($category) {
+    /*
     if (is_shop() && $category->slug === DELIVERY_CATEGORY_SLUG) {
         echo '<a href="' . get_page_link(8570) . '">';
     } else {
-        echo '<a href="' . esc_url( get_term_link( $category, 'product_cat' ) ) . '">';
+
     }
+    */
+    echo '<a href="' . esc_url( get_term_link( $category, 'product_cat' ) ) . '">';
 }
 
 function woocommerce_get_product_subcategories( $parent_id = 0 ) {
