@@ -1465,6 +1465,7 @@ body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaf
   color: #c6b480;
   width: 100%;
   padding: 20px;
+  background: transparent url("../img/Schwarz_50_60x1px.png") repeat-x 0 0;
 }
 .woocommerce.shop #main-content #left-area {
   padding: 0;
