@@ -16,11 +16,11 @@
       display: block;
     }
 
-    color: $font-color-accent-light;
+    color: $font-color-accent;
 
     h4, li, a {
       font-size: $font-size;
-      color: $font-color-accent-light;
+      color: $font-color-accent;
     }
 
     li {
@@ -37,12 +37,16 @@
       width: 100%;
       margin: 0;
 
-      .widgettitle, .product-categories {
+      .widgettitle, ul.product-categories {
         padding: $spacing-s 0;
       }
 
       .widgettitle {
         border-bottom: 1px solid $primary-color;
+      }
+
+      ul.product-categories li.current-cat > a, ul.product-categories > li:hover > a {
+        color: $font-color-accent-dark;
       }
     }
   }

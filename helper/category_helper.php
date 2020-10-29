@@ -35,22 +35,6 @@ function isItCategory($product, $categorySlug): bool
     return in_array($categorySlug, $allCategories);
 }
 
-/**
- * Overwrites category link function for link to lieferservice page
- *
- * @param $category
- */
-function woocommerce_template_loop_category_link_open($category) {
-    /*
-    if (is_shop() && $category->slug === DELIVERY_CATEGORY_SLUG) {
-        echo '<a href="' . get_page_link(8570) . '">';
-    } else {
-
-    }
-    */
-    echo '<a href="' . esc_url( get_term_link( $category, 'product_cat' ) ) . '">';
-}
-
 function woocommerce_get_product_subcategories( $parent_id = 0 ) {
     $parent_id          = absint( $parent_id );
     $cache_key          = apply_filters( 'woocommerce_get_product_subcategories_cache_key', 'product-category-hierarchy-' . $parent_id, $parent_id );
@@ -77,20 +61,34 @@ function woocommerce_get_product_subcategories( $parent_id = 0 ) {
     }
 
     if ( apply_filters( 'woocommerce_product_subcategories_hide_empty', true ) ) {
-        $cat = wp_list_filter(
-            $product_categories,
-            array('slug' => DELIVERY_CATEGORY_SLUG),
-            'AND'
-        );
-
         $product_categories = wp_list_filter(
             $product_categories,
             array('count' => 0),
             'NOT'
         );
-
-        $product_categories = array_merge($product_categories, $cat);
     }
 
     return $product_categories;
+}
+
+/**
+ * Show the subcategory title in the product loop.
+ *
+ * @param object $category Category object.
+ */
+function woocommerce_template_loop_category_title( $category ) {
+    ?>
+    <h2 class="woocommerce-loop-category__title">
+        <span>
+            <?php
+            echo esc_html( $category->name );
+
+            if ( $category->count > 0 ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . esc_html( $category->count ) . ')</mark>', $category );
+            }
+            ?>
+        </span>
+    </h2>
+    <?php
 }

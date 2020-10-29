@@ -1,5 +1,6 @@
 @import "styles/settings";
 @import "styles/woocommerce";
+@import "styles/divi";
 @import "styles/layout";
 @import "styles/container";
 @import "styles/products";
@@ -19,7 +20,6 @@
 @import "styles/product/attributes";
 @import "styles/product/hugo_head";
 @import "styles/product/tabs";
-@import "styles/product/additional_information_tab";
 @import "styles/product/coffee_strength_flavour";
 @import "styles/banner";
 @import "styles/checkout";
@@ -27,6 +27,7 @@
 @import "styles/shop_page";
 @import "styles/product/sigils";
 @import "styles/events";
+@import "styles/product/additional_info";
 
 pre {
   font-size: 10px;
