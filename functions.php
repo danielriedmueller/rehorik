@@ -16,9 +16,13 @@ define('COFFEE_TYPE_ATTRIBUTE_SLUG', 'attribute_pa_kaffee-sorte');
 define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
 define('BIOSIGIL_SLUG', 'pa_biosiegel');
 define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-herkunft');
-define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
+define('DELIVERY_ATTRIBUTE_SLUG', 'pa_lieferservice');
+define('DELIVERY_CATEGORY_URL', 'produkt-kategorie/lieferservice');
 define('TICKET_CATEGORY_SLUG', 'ticket');
 define('COFFEE_CATEGORY_SLUG', 'kaffee');
+define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
+define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
+define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
 define('EVENT_TICKET_SHOULD_BE_PRINTED_SLUG', 'soll-das-ticket-ausgedruckt-werden');
 define('EVENT_TICKET_TELEPHONE_SLUG', 'telefon');
 
@@ -221,3 +225,19 @@ function add_information_to_event_attendees_table($output, $item) {
     return $output;
 }
 add_filter('event_tickets_attendees_table_primary_info_column', 'add_information_to_event_attendees_table', 10, 2);
+
+
+/**
+ * Set delivery option to yes, if previous page was delivery category page
+ */
+function set_delivery_service_variation_default_value($args) {
+    if ($args['attribute'] === DELIVERY_ATTRIBUTE_SLUG) {
+        $referer = $_SERVER['HTTP_REFERER'];
+        if (substr_count($referer, DELIVERY_CATEGORY_URL) === 1) {
+            $args['selected'] = 'ja';
+        }
+    }
+
+    return $args;
+}
+add_filter('woocommerce_dropdown_variation_attribute_options_args', 'set_delivery_service_variation_default_value', 10, 1);
