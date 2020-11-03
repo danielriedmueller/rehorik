@@ -824,7 +824,7 @@ body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-t
   }
 }
 body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
-  padding: 70px;
+  padding: 50px 70px;
   background-color: #c6b480;
   border: 1px solid #c6b480;
   border-top: none;
@@ -1621,6 +1621,12 @@ a.tribe-events-ical.tribe-events-button:hover, a.tribe-events-gcal.tribe-events-
 }
 .product p.wc-gzd-additional-info {
   margin-bottom: 0;
+}
+.rehorik-product-additional-information-category {
+  font-family: "DIN W01 Cond Medium";
+  font-size: 30px;
+  color: #c6b480;
+  margin-bottom: 30px;
 }
 pre {
   font-size: 10px;

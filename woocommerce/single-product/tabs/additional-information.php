@@ -20,5 +20,7 @@ defined( 'ABSPATH' ) || exit;
 global $product;
 
 ?>
-
+<div class="rehorik-product-additional-information-category">
+    <?php echo getPrimaryCoffeeCategory($product) ?>
+</div>
 <?php do_action( 'woocommerce_product_additional_information', $product ); ?>

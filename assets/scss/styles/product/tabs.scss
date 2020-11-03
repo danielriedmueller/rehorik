@@ -51,7 +51,7 @@ body.woocommerce #content-area div.rehorik-product.product {
     }
 
     .rehorik-tabs-panel.woocommerce-Tabs-panel {
-      padding: $spacing-xl;
+      padding: $spacing-l $spacing-xl;
       background-color: $product-default-color;
       border: 1px solid $product-default-color;
       border-top: none;

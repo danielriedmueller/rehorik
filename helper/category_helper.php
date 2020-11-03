@@ -62,7 +62,7 @@ function getPrimaryCoffeeCategory(WC_Product $product): string
         $name = getCategoryNameBySlug(COFFEE_CREMA_CATEGORY_SLUG);
     }
 
-    return $name ? sprintf('%s - ', $name) : "";
+    return $name ?? "";
 }
 
 /**

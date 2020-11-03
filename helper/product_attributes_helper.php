@@ -13,10 +13,12 @@ function extractOtherAttributes(array $productAttributes): array
     unset($productAttributes[STRENGTH_ATTRIBUTE_SLUG]);
     unset($productAttributes[FLAVOUR_VARIETY_ATTRIBUTE_SLUG]);
 
-    if ($productAttributes[BEAN_COMPOSITION_ATTRIBUTE_SLUG]
-        && $productAttributes[COFFEE_TYPE_ATTRIBUTE_SLUG]) {
-        $productAttributes[COFFEE_TYPE_ATTRIBUTE_SLUG]['label'] = $productAttributes[BEAN_COMPOSITION_ATTRIBUTE_SLUG]['value'];
-        unset($productAttributes[BEAN_COMPOSITION_ATTRIBUTE_SLUG]);
+    if (isset($productAttributes[BEAN_COMPOSITION_ATTRIBUTE_SLUG])) {
+        if ($productAttributes[BEAN_COMPOSITION_ATTRIBUTE_SLUG]
+            && $productAttributes[COFFEE_TYPE_ATTRIBUTE_SLUG]) {
+            $productAttributes[COFFEE_TYPE_ATTRIBUTE_SLUG]['label'] = $productAttributes[BEAN_COMPOSITION_ATTRIBUTE_SLUG]['value'];
+            unset($productAttributes[BEAN_COMPOSITION_ATTRIBUTE_SLUG]);
+        }
     }
 
     return $productAttributes;

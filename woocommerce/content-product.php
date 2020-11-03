@@ -47,9 +47,10 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
+	$category = getPrimaryCoffeeCategory($product);
     echo sprintf(
         '<div class="rehorik-product-origin-country">%s%s</div>',
-        getPrimaryCoffeeCategory($product),
+        empty($category) ? "" : $category . " - ",
         getOriginCountry($product)
     );
 
