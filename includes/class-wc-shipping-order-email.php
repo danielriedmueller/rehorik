@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 0.1
  * @extends \WC_Email
  */
-class WC_Delivery_Order_Email extends WC_Email_New_Order
+class WC_Shipping_Order_Email extends WC_Email_New_Order
 {
     /**
      * Set email defaults
@@ -19,19 +19,13 @@ class WC_Delivery_Order_Email extends WC_Email_New_Order
         parent::__construct();
 
         // set ID, this simply needs to be a unique name
-        $this->id = 'wc_delivery_order';
+        $this->id = 'wc_shipping_order';
 
         // this is the title in WooCommerce Email settings
-        $this->title = 'Lieferservicebestellung';
+        $this->title = 'Versandbestellung';
 
         // this is the description in WooCommerce email settings
-        $this->description = 'Lieferservice Email wird gesendet, wenn ein Nutzer ein Produkt als Lieferung bestellt hat.';
-
-        // these are the default heading and subject lines that can be overridden using the settings
-        $this->heading = 'Lieferservicebestellung';
-        $this->subject = 'Lieferservicebestellung';
-
-        $this->recipient = DELIVERY_ORDER_EMAIL;
+        $this->description = 'Versandbestellung Email wird gesendet, wenn ein Nutzer ein Produkt zum Versenden bestellt hat.';
     }
 
     /**
@@ -61,7 +55,7 @@ class WC_Delivery_Order_Email extends WC_Email_New_Order
     }
 
     /**
-     * Remove non-delivery items from order
+     * Remove delivery items from order
      *
      * @param WC_Order $order
      * @return WC_Order
@@ -69,7 +63,7 @@ class WC_Delivery_Order_Email extends WC_Email_New_Order
     private function filterOrderItems(WC_Order $order) {
         foreach ($order->get_items() as $item_id => $item) {
             $isDelivery = $item->get_meta(DELIVERY_ATTRIBUTE_SLUG);
-            if (!$isDelivery) {
+            if ($isDelivery) {
                 $order->remove_item($item_id);
             }
         }
