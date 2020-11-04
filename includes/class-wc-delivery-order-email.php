@@ -30,8 +30,6 @@ class WC_Delivery_Order_Email extends WC_Email_New_Order
         // these are the default heading and subject lines that can be overridden using the settings
         $this->heading = 'Lieferservicebestellung';
         $this->subject = 'Lieferservicebestellung';
-
-        $this->recipient = DELIVERY_ORDER_EMAIL;
     }
 
     /**
