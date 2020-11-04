@@ -25,6 +25,7 @@ define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
 define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
 define('EVENT_TICKET_SHOULD_BE_PRINTED_SLUG', 'soll-das-ticket-ausgedruckt-werden');
 define('EVENT_TICKET_TELEPHONE_SLUG', 'telefon');
+define('DELIVERY_ORDER_EMAIL', 'it@rehorik.de');
 
 
 $priority = 1000;
@@ -35,6 +36,7 @@ $baseDir = get_stylesheet_directory();
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/filter/product_tabs.php');
+
 
 // Adds page title to the top on woocommerce pages
 add_action('et_before_main_content', function () {
@@ -199,6 +201,13 @@ add_filter('woocommerce_cart_shipping_method_full_label', 'remove_shipping_metho
  */
 add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
 
+/**
+ * TODO: add action ist falsch
+ * @param $event_id
+ * @param $ticket
+ * @param $raw_data
+ * @param $classname
+ */
 function tribe_events_add_product_category_to_tickets($event_id, $ticket, $raw_data, $classname) {
     if ( ! empty( $ticket ) && isset( $ticket->ID ) ) {
         wp_add_object_terms( $ticket->ID, TICKET_CATEGORY_SLUG, 'product_cat' );
@@ -241,3 +250,18 @@ function set_delivery_service_variation_default_value($args) {
     return $args;
 }
 add_filter('woocommerce_dropdown_variation_attribute_options_args', 'set_delivery_service_variation_default_value', 10, 1);
+
+/**
+ * Add a custom email to the list of emails WooCommerce should load
+ *
+ * @since 0.1
+ * @param array $email_classes available email classes
+ * @return array filtered available email classes
+ */
+function add_delivery_order_woocommerce_email( $email_classes ) {
+    require( 'includes/class-wc-delivery-order-email.php' );
+    $email_classes['WC_Expedited_Order_Email'] = new WC_Delivery_Order_Email();
+
+    return $email_classes;
+}
+add_filter( 'woocommerce_email_classes', 'add_delivery_order_woocommerce_email', 10, 1 );
