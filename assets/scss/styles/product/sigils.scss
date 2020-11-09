@@ -55,3 +55,14 @@
   height: 33px;
   background: transparent url("../img/productofmonth.svg") no-repeat center center;
 }
+
+// Wein des Monats Bild
+.rehorik-product.product_cat-wein {
+  .sigil-container.product-of-month::after {
+    background: transparent url("../img/wineofmonth.svg") no-repeat center top;
+  }
+}
+
+.rehorik-product.product_cat-wein.product-of-month .et_shop_image::after {
+  background: transparent url("../img/wineofmonth.svg") no-repeat center center;
+}

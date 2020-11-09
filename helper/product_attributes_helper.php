@@ -2,22 +2,29 @@
 
 function extractStrengthAndFlavourAttributes(array $productAttributes): array
 {
-    return [
-        'strength' => $productAttributes[STRENGTH_ATTRIBUTE_SLUG],
-        'flavour' => $productAttributes[FLAVOUR_VARIETY_ATTRIBUTE_SLUG]
-    ];
+    $attributes = [];
+
+    if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX.STRENGTH_ATTRIBUTE_SLUG])) {
+        $attributes['strength'] =  $productAttributes[ATTRIBUTE_SLUG_PREFIX.STRENGTH_ATTRIBUTE_SLUG];
+    }
+
+    if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX.FLAVOUR_VARIETY_ATTRIBUTE_SLUG])) {
+        $attributes['flavour'] =  $productAttributes[ATTRIBUTE_SLUG_PREFIX.FLAVOUR_VARIETY_ATTRIBUTE_SLUG];
+    }
+
+    return $attributes;
 }
 
 function extractOtherAttributes(array $productAttributes): array
 {
-    unset($productAttributes[STRENGTH_ATTRIBUTE_SLUG]);
-    unset($productAttributes[FLAVOUR_VARIETY_ATTRIBUTE_SLUG]);
+    unset($productAttributes[ATTRIBUTE_SLUG_PREFIX.STRENGTH_ATTRIBUTE_SLUG]);
+    unset($productAttributes[ATTRIBUTE_SLUG_PREFIX.FLAVOUR_VARIETY_ATTRIBUTE_SLUG]);
 
-    if (isset($productAttributes[BEAN_COMPOSITION_ATTRIBUTE_SLUG])) {
-        if ($productAttributes[BEAN_COMPOSITION_ATTRIBUTE_SLUG]
-            && $productAttributes[COFFEE_TYPE_ATTRIBUTE_SLUG]) {
-            $productAttributes[COFFEE_TYPE_ATTRIBUTE_SLUG]['label'] = $productAttributes[BEAN_COMPOSITION_ATTRIBUTE_SLUG]['value'];
-            unset($productAttributes[BEAN_COMPOSITION_ATTRIBUTE_SLUG]);
+    if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX.BEAN_COMPOSITION_ATTRIBUTE_SLUG])) {
+        if ($productAttributes[ATTRIBUTE_SLUG_PREFIX.BEAN_COMPOSITION_ATTRIBUTE_SLUG]
+            && $productAttributes[ATTRIBUTE_SLUG_PREFIX.COFFEE_TYPE_ATTRIBUTE_SLUG]) {
+            $productAttributes[ATTRIBUTE_SLUG_PREFIX.COFFEE_TYPE_ATTRIBUTE_SLUG]['label'] = $productAttributes[ATTRIBUTE_SLUG_PREFIX.BEAN_COMPOSITION_ATTRIBUTE_SLUG]['value'];
+            unset($productAttributes[ATTRIBUTE_SLUG_PREFIX.BEAN_COMPOSITION_ATTRIBUTE_SLUG]);
         }
     }
 
@@ -33,7 +40,7 @@ function isProductOfTheMonth(WC_Product $product): bool
 
 function hasBiosigil(WC_Product $product): bool
 {
-    $value = strtolower($product->get_attribute( BIOSIGIL_SLUG));
+    $value = strtolower($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
 
     return $value === "ja" ? true : false;
 }

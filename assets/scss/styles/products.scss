@@ -27,7 +27,6 @@
         margin: $spacing-xxs 0;
       }
 
-
       a {
         color: $product-default-body-text-color;
       }
@@ -41,14 +40,15 @@
         font-size: $font-size-small;
         font-weight: bold;
         background-color: transparent;
-        font-family: $font-family-body;
-        margin-bottom: $spacing-xxxs;
+        font-family: $font-family-headline;
+        margin-bottom: $spacing-xxs;
       }
 
       &:not(.product-of-month) {
         &.product_cat-espresso,
         &.product_cat-filterkaffee,
-        &.product_cat-crema {
+        &.product_cat-crema,
+        &.product_cat-wein {
           color: $product-alternative-body-text-color;
 
           a {
@@ -78,6 +78,11 @@
           background-color: $product-filterkaffee-color;
           border-color: $product-filterkaffee-color;
         }
+
+        &.product_cat-wein {
+          background-color: $product-wein-color;
+          border-color: $product-wein-color;
+        }
       }
 
       a {
@@ -87,7 +92,7 @@
           background-color: #fff;
 
           img {
-            margin: 0 auto $spacing-s auto !important;
+            margin: 0 auto $spacing-xxs auto !important;
             width: $product-category-width - 2;
             height: $product-category-width - 2;
             object-fit: contain;
@@ -107,8 +112,8 @@
 
         .rehorik-product-min-price {
           font-size: $font-size-small;
-          margin-bottom: $spacing-s;
           margin-top: $spacing-xxxs;
+          font-family: $font-family-headline;
 
           > span {
             font-weight: bold;
@@ -129,6 +134,7 @@
             font-size: $font-size-small;
             font-weight: bold;
             vertical-align: top;
+            font-family: $font-family-headline;
           }
 
           tr td:first-child:not([colspan="2"]) {
@@ -136,13 +142,29 @@
             padding-right: $spacing-xxxs;
           }
 
-          td.rehorik-product-flavours-list {
-            font-size: $font-size-very-small;
+          td.rehorik-product-flavours-list, td.rehorik-product-varieties-list {
+            font-size: $font-size-small;
             font-weight: normal;
             text-transform: none;
-            line-height: $font-size-very-small;
+            line-height: $font-size-small;
             padding-left: $spacing-xxxs;
+            width: 118px;
+            font-family: $font-family-body;
           }
+
+          td.rehorik-product-varieties-list {
+            padding-bottom: $spacing-xxs;
+          }
+        }
+
+        .rehorik-product-ausbau {
+          position: absolute;
+          bottom: $spacing-xxs;
+          left: 0;
+          right: 0;
+          text-transform: uppercase;
+          font-size: $font-size-small;
+          font-family: $font-family-body;
         }
       }
     }

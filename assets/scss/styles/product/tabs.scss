@@ -139,5 +139,27 @@ body.woocommerce #content-area div.rehorik-product.product {
       background-color: $product-filterkaffee-color;
     }
   }
+
+  &.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper {
+    ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
+      border-color: $product-wein-color;
+
+      a {
+        color: $product-wein-color !important;
+      }
+
+      &.active {
+        background-color: $product-wein-color !important;
+
+        a {
+          color: #fff !important;
+        }
+      }
+    }
+
+    .rehorik-tabs-panel.woocommerce-Tabs-panel {
+      background-color: $product-wein-color;
+    }
+  }
 }
 

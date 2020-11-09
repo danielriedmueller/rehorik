@@ -115,7 +115,7 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
   #main-content .container ul.products.rehorik-products li.product.rehorik-product, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product {
     width: 100% !important;
     height: 100%;
-    padding-bottom: 15px;
+    padding-bottom: 17px;
   }
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product tr.seperator td hr {
@@ -130,22 +130,22 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product div.rehorik-product-origin-country, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product div.rehorik-product-origin-country {
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   background-color: transparent;
-  font-family: "DIN Offc W01 Cond";
-  margin-bottom: 3px;
+  font-family: "DIN W01 Cond Medium";
+  margin-bottom: 8px;
 }
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema {
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein {
   color: #fff;
 }
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso a, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee a, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema a {
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso a, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee a, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema a, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein a {
   color: #fff;
 }
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso h2, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee h2, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema h2 {
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso h2, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee h2, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema h2, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein h2 {
   color: #c6b480;
 }
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso tr.seperator td hr, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee tr.seperator td hr, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema tr.seperator td hr {
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso tr.seperator td hr, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee tr.seperator td hr, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema tr.seperator td hr, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein tr.seperator td hr {
   border-color: #c6b480;
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema {
@@ -160,6 +160,10 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
   background-color: #59293a;
   border-color: #59293a;
 }
+#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein {
+  background-color: #393536;
+  border-color: #393536;
+}
 #main-content .container ul.products.rehorik-products li.product.rehorik-product a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product a {
   font-weight: bold;
 }
@@ -167,7 +171,7 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
   background-color: #fff;
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product a > span img, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product a > span img {
-  margin: 0 auto 20px auto !important;
+  margin: 0 auto 8px auto !important;
   width: 233px;
   height: 233px;
   object-fit: contain;
@@ -175,16 +179,16 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
 #main-content .container ul.products.rehorik-products li.product.rehorik-product a h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product a h2 {
   text-transform: uppercase;
   font-size: 27px;
-  padding: 0 15px;
+  padding: 0 17px;
   word-break: break-word;
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes {
   padding: 0 20px;
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-min-price, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-min-price {
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 15px;
   margin-top: 3px;
+  font-family: "DIN W01 Cond Medium";
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-min-price > span, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-min-price > span {
   font-weight: bold;
@@ -199,20 +203,35 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
   text-align: left;
   padding: 0;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   vertical-align: top;
+  font-family: "DIN W01 Cond Medium";
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table tr td:first-child:not([colspan="2"]), #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table tr td:first-child:not([colspan="2"]) {
   text-align: right;
   padding-right: 3px;
 }
-#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-flavours-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-flavours-list {
-  font-size: 13px;
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-flavours-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-flavours-list, #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-varieties-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-varieties-list {
+  font-size: 15px;
   font-weight: normal;
   text-transform: none;
-  line-height: 13px;
+  line-height: 15px;
   padding-left: 3px;
+  width: 118px;
+  font-family: "DIN Offc W01 Cond";
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-varieties-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-varieties-list {
+  padding-bottom: 8px;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-ausbau, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-ausbau {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: "DIN Offc W01 Cond";
 }
 .woocommerce .products ul, .woocommerce ul.products {
   margin: 0;
@@ -343,13 +362,13 @@ header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li {
   margin-right: 8px;
 }
 header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li a {
-  padding: 0 15px;
+  padding: 0 17px;
   height: 50px;
   line-height: 50px;
   text-transform: uppercase;
 }
 header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li.menu-item-has-children a {
-  padding: 0 31px 0 15px;
+  padding: 0 33px 0 17px;
 }
 header#main-header.rehorik-header nav#top-menu-nav ul#top-menu li.menu-item-has-children a::after {
   right: 8px;
@@ -504,13 +523,13 @@ header#main-header.rehorik-header #rehorik-mobile-nav {
 .woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table th, .woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table td {
   font-weight: normal;
   vertical-align: top;
-  padding: 0 0 15px 0;
+  padding: 0 0 17px 0;
 }
 .woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table tr td {
   text-align: right;
 }
 .woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table tr.shipping td {
-  padding-bottom: 15px;
+  padding-bottom: 17px;
 }
 .woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table tr:last-child td, .woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals table tr:last-child th {
   padding: 0 0 30px 0;
@@ -525,7 +544,7 @@ header#main-header.rehorik-header #rehorik-mobile-nav {
 .woocommerce-cart.woocommerce-page #content-area.cart .woocommerce .cart-collaterals div.rehorik-cart-totals .rehorik-shipping-rest-amount {
   color: #c6b480;
   font-size: 20px;
-  margin-top: 15px;
+  margin-top: 17px;
 }
 .cart .woocommerce table.cart-table .rehorik-coupon-row-small {
   display: none;
@@ -693,7 +712,7 @@ header#main-header.rehorik-header #rehorik-mobile-nav {
 }
 div.rehorik-cup-of-coffee-price-outer {
   color: #996b23;
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 30px;
   margin-top: 3px;
 }
@@ -734,8 +753,8 @@ div.rehorik-product-meta.product_meta span, div.rehorik-product-meta.product_met
   margin: 0;
 }
 .woocommerce-page .rehorik-product-attributes table tr td:first-child {
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 15px;
+  line-height: 15px;
 }
 .woocommerce-page .rehorik-product-attribute-label {
   text-transform: uppercase;
@@ -889,6 +908,21 @@ body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaf
 body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
   background-color: #59293a;
 }
+body.woocommerce #content-area div.rehorik-product.product.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
+  border-color: #393536;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] a {
+  color: #393536 !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active {
+  background-color: #393536 !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active a {
+  color: #fff !important;
+}
+body.woocommerce #content-area div.rehorik-product.product.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
+  background-color: #393536;
+}
 .rehorik-product-attributes table tr td.rehorik-product-strength-flavour-label-first, .rehorik-product-attributes table tr td.rehorik-product-strength-flavour-label-first ~ td {
   padding-bottom: 8px !important;
 }
@@ -919,7 +953,7 @@ body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaf
   height: 48px;
 }
 .rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer .rehorik-product-strength-flavour-container > span {
-  margin-right: 15px;
+  margin-right: 17px;
   height: 48px;
   display: inline-block;
   background-repeat: no-repeat;
@@ -1448,7 +1482,7 @@ body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaf
 }
 .entry-content .woocommerce .woocommerce-order.rehorik-order .woocommerce-bacs-bank-details h3.wc-bacs-bank-details-account-name {
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
 }
 .entry-content .woocommerce table.woocommerce-table.woocommerce-table--order-details.shop_table.order_details {
   padding: 20px 0;
@@ -1523,6 +1557,12 @@ body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaf
   height: 33px;
   background: transparent url("../img/productofmonth.svg") no-repeat center center;
 }
+.rehorik-product.product_cat-wein .sigil-container.product-of-month::after {
+  background: transparent url("../img/wineofmonth.svg") no-repeat center top;
+}
+.rehorik-product.product_cat-wein.product-of-month .et_shop_image::after {
+  background: transparent url("../img/wineofmonth.svg") no-repeat center center;
+}
 #tribe-events-pg-template, .tribe-events-pg-template {
   width: 80%;
   max-width: 1080px;
@@ -1553,7 +1593,7 @@ form#tribe-tickets.tribe-common.tribe-tickets * {
 }
 .tribe-events-single-section.tribe-events-event-meta.primary {
   font-family: "DIN Offc W01 Cond";
-  font-size: 16px;
+  font-size: 15px;
   font-style: normal;
 }
 li.menu-item.rehorik-calendar-icon a {
@@ -1597,7 +1637,7 @@ button.tribe-common-c-btn:hover, a.tribe-common-c-btn:hover, .tribe-common.tribe
 }
 .tribe-common.tribe-events .tribe-events-c-ical__link {
   background-color: #c6b480;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: normal;
   padding: 2px 20px;
   border-radius: 0;
@@ -1669,7 +1709,7 @@ pre {
   border-top: 1px solid #c6b480;
 }
 .woocommerce-page #content-area table td, .woocommerce-page #content-area table th {
-  padding: 0 15px 20px 15px;
+  padding: 0 17px 20px 17px;
   vertical-align: top;
 }
 .woocommerce-page #et-boc > div > div.et_pb_with_background {

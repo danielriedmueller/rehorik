@@ -9,23 +9,34 @@ define('ONE_CUP_OF_COFFEE_IN_GRAMS', 10);
 define('FREE_SHIPPING_AMOUNT', 49);
 define('MAX_COFFEE_STRENGTH_FLAVOUR_ATTRIBUTE', 6);
 define('MAX_DISPLAY_ORIGIN_COUNTRIES', 1);
-define('STRENGTH_ATTRIBUTE_SLUG', 'attribute_pa_kaffee-staerke');
-define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'attribute_pa_kaffee-aromenvielfalt');
-define('BEAN_COMPOSITION_ATTRIBUTE_SLUG', 'attribute_pa_bohnenkompositionen');
-define('COFFEE_TYPE_ATTRIBUTE_SLUG', 'attribute_pa_kaffee-sorte');
-define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
-define('BIOSIGIL_SLUG', 'pa_biosiegel');
-define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-herkunft');
-define('DELIVERY_ATTRIBUTE_SLUG', 'pa_lieferservice');
 define('DELIVERY_CATEGORY_URL', 'produkt-kategorie/lieferservice');
+define('EVENT_TICKET_SHOULD_BE_PRINTED_SLUG', 'soll-das-ticket-ausgedruckt-werden');
+define('EVENT_TICKET_TELEPHONE_SLUG', 'telefon');
+define('DELIVERY_ORDER_EMAIL', 'it@rehorik.de');
+
+// Categories
 define('TICKET_CATEGORY_SLUG', 'ticket');
 define('COFFEE_CATEGORY_SLUG', 'kaffee');
 define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
 define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
 define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
-define('EVENT_TICKET_SHOULD_BE_PRINTED_SLUG', 'soll-das-ticket-ausgedruckt-werden');
-define('EVENT_TICKET_TELEPHONE_SLUG', 'telefon');
-define('DELIVERY_ORDER_EMAIL', 'it@rehorik.de');
+
+// Attributes
+define('DELIVERY_ATTRIBUTE_SLUG', 'pa_lieferservice');
+define('STRENGTH_ATTRIBUTE_SLUG', 'pa_kaffee-staerke');
+define('VARIETIES_ATTRIBUTE_SLUG', 'pa_kaffee-sorte');
+define('AUSBAU_ATTRIBUTE_SLUG', 'pa_ausbau');
+define('FLAVOUR_ATTRIBUTE_SLUG', 'pa_kaffee-aromen');
+define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'pa_kaffee-aromenvielfalt');
+define('BEAN_COMPOSITION_ATTRIBUTE_SLUG', 'pa_bohnenkompositionen');
+define('COFFEE_TYPE_ATTRIBUTE_SLUG', 'pa_kaffee-sorte');
+define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-herkunft');
+define('REGION_ATTRIBUTE_SLUG', 'pa_region');
+define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
+define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
+
+// In $productAttributes array, slugs are prefixed by wordpress
+define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
 
 
 $priority = 1000;
