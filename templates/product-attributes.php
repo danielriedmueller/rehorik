@@ -7,6 +7,7 @@ $strength = $product->get_attribute(STRENGTH_ATTRIBUTE_SLUG);
 $flavoursvariety = $product->get_attribute(FLAVOUR_VARIETY_ATTRIBUTE_SLUG);
 $flavours = $product->get_attribute(FLAVOUR_ATTRIBUTE_SLUG);
 $varieties = $product->get_attribute(VARIETIES_ATTRIBUTE_SLUG);
+$grapeVariety = $product->get_attribute(GRAPE_VARIETY_ATTRIBUTE_SLUG);
 $ausbau = $product->get_attribute(AUSBAU_ATTRIBUTE_SLUG);
 
 ?>
@@ -32,7 +33,13 @@ $ausbau = $product->get_attribute(AUSBAU_ATTRIBUTE_SLUG);
                 </tr>
                 <tr>
                     <td><?php echo wc_attribute_label(VARIETIES_ATTRIBUTE_SLUG) ?></td>
-                    <td class="rehorik-product-varieties-list"><?php echo $varieties ?></td>
+                    <td class="rehorik-product-varieties-list">
+                        <?php echo sprintf(
+                            '%s%s',
+                            $varieties,
+                            empty($grapeVariety) ? "" : ", " . $grapeVariety,
+                        ); ?>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo wc_attribute_label(FLAVOUR_ATTRIBUTE_SLUG) ?></td>

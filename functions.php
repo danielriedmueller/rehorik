@@ -17,6 +17,7 @@ define('DELIVERY_ORDER_EMAIL', 'it@rehorik.de');
 // Categories
 define('TICKET_CATEGORY_SLUG', 'ticket');
 define('COFFEE_CATEGORY_SLUG', 'kaffee');
+define('WINE_CATEGORY_SLUG', 'wein');
 define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
 define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
 define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
@@ -25,15 +26,19 @@ define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
 define('DELIVERY_ATTRIBUTE_SLUG', 'pa_lieferservice');
 define('STRENGTH_ATTRIBUTE_SLUG', 'pa_kaffee-staerke');
 define('VARIETIES_ATTRIBUTE_SLUG', 'pa_kaffee-sorte');
+define('GRAPE_VARIETY_ATTRIBUTE_SLUG', 'pa_rebsorte');
 define('AUSBAU_ATTRIBUTE_SLUG', 'pa_ausbau');
 define('FLAVOUR_ATTRIBUTE_SLUG', 'pa_kaffee-aromen');
 define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'pa_kaffee-aromenvielfalt');
 define('BEAN_COMPOSITION_ATTRIBUTE_SLUG', 'pa_bohnenkompositionen');
-define('COFFEE_TYPE_ATTRIBUTE_SLUG', 'pa_kaffee-sorte');
 define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-herkunft');
 define('REGION_ATTRIBUTE_SLUG', 'pa_region');
 define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
 define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
+define('ALCOHOL_ATTRIBUTE_SLUG', 'pa_alkoholgehalt');
+define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
+define('WINERY_ATTRIBUTE_SLUG', 'pa_weingut');
+define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
 
 // In $productAttributes array, slugs are prefixed by wordpress
 define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');

@@ -33,6 +33,10 @@
           border-right: 2px solid $primary-color;
         }
       }
+
+      .rehorik-product-attribute-value p {
+        padding-bottom: 0;
+      }
     }
 
     @media all and (max-width: $small-breakpoint) {

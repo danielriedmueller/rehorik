@@ -31,7 +31,6 @@ function isItCategory($product, $categorySlug): bool
             'inclusive' => false
         ]);
         $allCategories = array_merge($allCategories, explode($seperator, $parents));
-
     }
 
     return in_array($categorySlug, $allCategories);
@@ -66,12 +65,44 @@ function getPrimaryCoffeeCategory(WC_Product $product): string
 }
 
 /**
+ * Returns Subcategory of Product
+ *
+ * @param WC_Product $product
+ * @return string
+ */
+function getSubCategory(WC_Product $product): string
+{
+    if (isItCategory($product, COFFEE_CATEGORY_SLUG)) {
+        return getPrimaryCoffeeCategory($product);
+    }
+
+    if (isItCategory($product, WINE_CATEGORY_SLUG)) {
+        return "";
+    }
+
+    $name = getCategoryNameByID($product->get_category_ids()[1]);
+
+    return $name ?? "";
+}
+
+/**
  * @param string $slug
  * @return string|null
  */
 function getCategoryNameBySlug(string $slug)
 {
     $cat = get_term_by('slug', $slug, 'product_cat');
+
+    return $cat ? $cat->name : false;
+}
+
+/**
+ * @param int $id
+ * @return string|null
+ */
+function getCategoryNameByID(int $id)
+{
+    $cat = get_term_by('id', $id, 'product_cat');
 
     return $cat ? $cat->name : false;
 }

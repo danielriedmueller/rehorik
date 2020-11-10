@@ -19,11 +19,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+global $product;
+
+?>
+<div class="rehorik-product-short-description">
+    <?php
+        if ($alcohol = $product->get_attribute(ALCOHOL_ATTRIBUTE_SLUG)){
+            echo sprintf("<div><b>%s</b> %s</div>", $alcohol, "Alkohol");
+        }
+
+        if ($winery = $product->get_attribute(WINERY_ATTRIBUTE_SLUG)){
+            echo sprintf("<div><b>%s</b> %s</div>", "Weingut", $winery);
+        }
+
+        if ($manufacturer = $product->get_attribute(MANUFACTURER_ATTRIBUTE_SLUG)){
+            echo sprintf("<div><b>%s</b> %s</div>", "Hersteller", $manufacturer);
+        }
+
+        if ($fillingQuantity = $product->get_attribute(FILLING_QUANTITY_ATTRIBUTE_SLUG)){
+            echo sprintf("<div><b>%s</b> %s</div>", "Füllmenge", $fillingQuantity);
+        }
+
+        if ($ausbau = $product->get_attribute(AUSBAU_ATTRIBUTE_SLUG)){
+            echo sprintf("<div><b>%s</b> %s</div>", "Ausbau", $ausbau);
+        }
+    ?>
+</div>
+<?php
 global $post;
 
 $short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
-
-if ( ! $short_description ) {
+if (!$short_description) {
 	return;
 }
 

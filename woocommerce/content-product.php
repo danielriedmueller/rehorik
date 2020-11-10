@@ -47,14 +47,9 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
-	$category = getPrimaryCoffeeCategory($product);
-	$region = $product->get_attribute(REGION_ATTRIBUTE_SLUG);
     echo sprintf(
-        '<div class="rehorik-product-origin-country">%s%s%s</div>',
-        empty($category) ? "" : $category . " - ",
-        getOriginCountry($product),
-        empty($region) ? "" : " - " .  $region
-
+        '<div class="rehorik-product-origin-country">%s</div>',
+        getOriginCountry($product)
     );
 
 	/**

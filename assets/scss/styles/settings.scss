@@ -9,15 +9,15 @@ $font-color-accent: $primary-color;
 $font-color-accent-dark: #996b23;
 
 // Product colors
-$product-default-color: $primary-color;
 $product-default-body-text-color: $font-color;
 $product-default-header-text-color: #fff;
 $product-filterkaffee-color: $secondary-color;
 $product-espresso-color: #393e1c;
 $product-crema-color: #003c4a;
-$product-wein-color: #393536;
+$product-default-color: #393536;
 $product-alternative-body-text-color: #fff;
 $product-alternative-header-text-color: $primary-color;
+$product-of-month-color: $primary-color;
 
 $font-size-large: 27px;
 $font-size: 20px;
@@ -39,7 +39,8 @@ $burger-height: 32px;
 $cart-title-section-height: 140px;
 $product-thumbnail-width: 100px;
 $product-category-width: 235px;
-$product-height: 495px;
+$product-height: 505px;
+
 $spacing: 30px;
 $spacing-l: 50px;
 $spacing-xl: 70px;

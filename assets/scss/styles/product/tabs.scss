@@ -7,16 +7,14 @@ body.woocommerce #content-area div.rehorik-product.product {
     }
 
     ul.rehorik-tabs-header.tabs.wc-tabs {
-      background-color: transparent !important;
+      background: transparent none;
 
       li[role='tab'] {
-        border: 1px solid $product-default-color !important;
         border-bottom: none !important;
         border-top-right-radius: $tab-border-radius;
         border-top-left-radius: $tab-border-radius;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        background: transparent none !important;
 
         margin: 0;
 
@@ -25,17 +23,7 @@ body.woocommerce #content-area div.rehorik-product.product {
         }
 
         a {
-          color: $product-default-color !important;
-          text-transform: uppercase !important;
-        }
-
-        &.active {
-          background: $product-default-color none !important;
-
-          a {
-            color: #fff !important;
-            text-transform: uppercase;
-          }
+          text-transform: uppercase;
         }
 
         @media all and (max-width: $small-breakpoint) {
@@ -52,7 +40,6 @@ body.woocommerce #content-area div.rehorik-product.product {
 
     .rehorik-tabs-panel.woocommerce-Tabs-panel {
       padding: $spacing-l $spacing-xl;
-      background-color: $product-default-color;
       border: 1px solid $product-default-color;
       border-top: none;
       border-top-right-radius: $tab-border-radius;
@@ -71,94 +58,6 @@ body.woocommerce #content-area div.rehorik-product.product {
       }
 
       color: #fff;
-    }
-  }
-
-  &.product_cat-crema div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper {
-    ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
-      border-color: $product-crema-color;
-
-      a {
-        color: $product-crema-color !important;
-      }
-
-      &.active {
-        background-color: $product-crema-color !important;
-
-        a {
-          color: #fff !important;
-        }
-      }
-    }
-
-    .rehorik-tabs-panel.woocommerce-Tabs-panel {
-      background-color: $product-crema-color;
-    }
-  }
-
-  &.product_cat-espresso div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper {
-    ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
-      border-color: $product-espresso-color;
-
-      a {
-        color: $product-espresso-color !important;
-      }
-
-      &.active {
-        background-color: $product-espresso-color !important;
-
-        a {
-          color: #fff !important;
-        }
-      }
-    }
-
-    .rehorik-tabs-panel.woocommerce-Tabs-panel {
-      background-color: $product-espresso-color;
-    }
-  }
-
-  &.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper {
-    ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
-      border-color: $product-filterkaffee-color;
-
-      a {
-        color: $product-filterkaffee-color !important;
-      }
-
-      &.active {
-        background-color: $product-filterkaffee-color !important;
-
-        a {
-          color: #fff !important;
-        }
-      }
-    }
-
-    .rehorik-tabs-panel.woocommerce-Tabs-panel {
-      background-color: $product-filterkaffee-color;
-    }
-  }
-
-  &.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper {
-    ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
-      border-color: $product-wein-color;
-
-      a {
-        color: $product-wein-color !important;
-      }
-
-      &.active {
-        background-color: $product-wein-color !important;
-
-        a {
-          color: #fff !important;
-        }
-      }
-    }
-
-    .rehorik-tabs-panel.woocommerce-Tabs-panel {
-      background-color: $product-wein-color;
     }
   }
 }

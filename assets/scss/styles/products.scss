@@ -6,7 +6,6 @@
       text-align: center;
 
       border-radius: $button-border-radius;
-      border: 1px solid $primary-color;
 
       @media all and (min-width: $small-breakpoint + 1) {
         width: $product-category-width !important;
@@ -16,23 +15,7 @@
       @media all and (max-width: $small-breakpoint) {
         width: 100% !important;
         height: 100%;
-        padding-bottom: $spacing-xs;
-      }
-
-      background-color: $product-default-color;
-      color: $product-default-body-text-color;
-
-      tr.seperator td hr {
-        border-color: #fff;
-        margin: $spacing-xxs 0;
-      }
-
-      a {
-        color: $product-default-body-text-color;
-      }
-
-      h2 {
-        color: $product-default-header-text-color;
+        padding-bottom: $spacing;
       }
 
       div.rehorik-product-origin-country {
@@ -42,47 +25,6 @@
         background-color: transparent;
         font-family: $font-family-headline;
         margin-bottom: $spacing-xxs;
-      }
-
-      &:not(.product-of-month) {
-        &.product_cat-espresso,
-        &.product_cat-filterkaffee,
-        &.product_cat-crema,
-        &.product_cat-wein {
-          color: $product-alternative-body-text-color;
-
-          a {
-            color: $product-alternative-body-text-color;
-          }
-
-          h2 {
-            color: $product-alternative-header-text-color;
-          }
-
-          tr.seperator td hr {
-            border-color: $primary-color;
-          }
-        }
-
-        &.product_cat-crema {
-          background-color: $product-crema-color;
-          border-color: $product-crema-color;
-        }
-
-        &.product_cat-espresso {
-          background-color: $product-espresso-color;
-          border-color: $product-espresso-color;
-        }
-
-        &.product_cat-filterkaffee {
-          background-color: $product-filterkaffee-color;
-          border-color: $product-filterkaffee-color;
-        }
-
-        &.product_cat-wein {
-          background-color: $product-wein-color;
-          border-color: $product-wein-color;
-        }
       }
 
       a {
@@ -165,6 +107,10 @@
           text-transform: uppercase;
           font-size: $font-size-small;
           font-family: $font-family-body;
+
+          @media all and (max-width: $small-breakpoint) {
+            bottom: 0;
+          }
         }
       }
     }

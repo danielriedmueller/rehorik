@@ -101,32 +101,19 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
   overflow: hidden;
   text-align: center;
   border-radius: 10px;
-  border: 1px solid #c6b480;
-  background-color: #c6b480;
-  color: #3c3c3b;
 }
 @media all and (min-width: 768px) {
   #main-content .container ul.products.rehorik-products li.product.rehorik-product, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product {
     width: 235px !important;
-    height: 495px;
+    height: 505px;
   }
 }
 @media all and (max-width: 767px) {
   #main-content .container ul.products.rehorik-products li.product.rehorik-product, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product {
     width: 100% !important;
     height: 100%;
-    padding-bottom: 17px;
+    padding-bottom: 30px;
   }
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product tr.seperator td hr {
-  border-color: #fff;
-  margin: 8px 0;
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product a {
-  color: #3c3c3b;
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product h2 {
-  color: #fff;
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product div.rehorik-product-origin-country, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product div.rehorik-product-origin-country {
   text-transform: uppercase;
@@ -135,34 +122,6 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
   background-color: transparent;
   font-family: "DIN W01 Cond Medium";
   margin-bottom: 8px;
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein {
-  color: #fff;
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso a, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee a, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema a, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein a {
-  color: #fff;
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso h2, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee h2, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema h2, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein h2, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein h2 {
-  color: #c6b480;
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso tr.seperator td hr, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee tr.seperator td hr, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema tr.seperator td hr, #main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein tr.seperator td hr, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein tr.seperator td hr {
-  border-color: #c6b480;
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-crema {
-  background-color: #003c4a;
-  border-color: #003c4a;
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-espresso {
-  background-color: #393e1c;
-  border-color: #393e1c;
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-filterkaffee {
-  background-color: #59293a;
-  border-color: #59293a;
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product:not(.product-of-month).product_cat-wein {
-  background-color: #393536;
-  border-color: #393536;
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product a, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product a {
   font-weight: bold;
@@ -232,6 +191,11 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
   text-transform: uppercase;
   font-size: 15px;
   font-family: "DIN Offc W01 Cond";
+}
+@media all and (max-width: 767px) {
+  #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-ausbau, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-ausbau {
+    bottom: 0;
+  }
 }
 .woocommerce .products ul, .woocommerce ul.products {
   margin: 0;
@@ -683,7 +647,7 @@ header#main-header.rehorik-header #rehorik-mobile-nav {
 #main-content .container #sidebar.rehorik-sidebar > div .widgettitle {
   border-bottom: 1px solid #c6b480;
 }
-#main-content .container #sidebar.rehorik-sidebar > div ul.product-categories li.current-cat > a, #main-content .container #sidebar.rehorik-sidebar > div ul.product-categories > li:hover > a {
+#main-content .container #sidebar.rehorik-sidebar > div li:hover > a, #main-content .container #sidebar.rehorik-sidebar > div ul.product-categories li.current-cat > a, #main-content .container #sidebar.rehorik-sidebar > div ul.product-categories > li:hover > a, #main-content .container #sidebar.rehorik-sidebar > div li.current-label-parent a {
   color: #996b23;
 }
 #rehorik-best-selling-products-outer {
@@ -782,6 +746,9 @@ div.rehorik-product-meta.product_meta span, div.rehorik-product-meta.product_met
     border-right: 2px solid #c6b480;
   }
 }
+.woocommerce-page div.product-rehorik-attribute-container div.rehorik-product-attribute-item .rehorik-product-attribute-value p {
+  padding-bottom: 0;
+}
 @media all and (max-width: 767px) {
   .woocommerce-page div.product-rehorik-attribute-container {
     grid-template-columns: 1fr 1fr;
@@ -806,30 +773,20 @@ body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-t
   content: none;
 }
 body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs {
-  background-color: transparent !important;
+  background: transparent none;
 }
 body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
-  border: 1px solid #c6b480 !important;
   border-bottom: none !important;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  background: transparent none !important;
   margin: 0;
 }
 body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab']:last-child {
   margin-left: -4px;
 }
 body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] a {
-  color: #c6b480 !important;
-  text-transform: uppercase !important;
-}
-body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active {
-  background: #c6b480 none !important;
-}
-body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active a {
-  color: #fff !important;
   text-transform: uppercase;
 }
 @media all and (max-width: 767px) {
@@ -844,8 +801,7 @@ body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-t
 }
 body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
   padding: 50px 70px;
-  background-color: #c6b480;
-  border: 1px solid #c6b480;
+  border: 1px solid #393536;
   border-top: none;
   border-top-right-radius: 15px;
   border-top-left-radius: 0;
@@ -862,66 +818,6 @@ body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-t
     padding-left: 20px;
     padding-right: 20px;
   }
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-crema div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
-  border-color: #003c4a;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-crema div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] a {
-  color: #003c4a !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-crema div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active {
-  background-color: #003c4a !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-crema div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active a {
-  color: #fff !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-crema div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
-  background-color: #003c4a;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-espresso div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
-  border-color: #393e1c;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-espresso div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] a {
-  color: #393e1c !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-espresso div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active {
-  background-color: #393e1c !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-espresso div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active a {
-  color: #fff !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-espresso div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
-  background-color: #393e1c;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
-  border-color: #59293a;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] a {
-  color: #59293a !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active {
-  background-color: #59293a !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active a {
-  color: #fff !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-filterkaffee div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
-  background-color: #59293a;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] {
-  border-color: #393536;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] a {
-  color: #393536 !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active {
-  background-color: #393536 !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'].active a {
-  color: #fff !important;
-}
-body.woocommerce #content-area div.rehorik-product.product.product_cat-wein div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper .rehorik-tabs-panel.woocommerce-Tabs-panel {
-  background-color: #393536;
 }
 .rehorik-product-attributes table tr td.rehorik-product-strength-flavour-label-first, .rehorik-product-attributes table tr td.rehorik-product-strength-flavour-label-first ~ td {
   padding-bottom: 8px !important;
@@ -1667,6 +1563,114 @@ a.tribe-events-ical.tribe-events-button:hover, a.tribe-events-gcal.tribe-events-
   font-size: 30px;
   color: #c6b480;
   margin-bottom: 30px;
+}
+.rehorik-product-short-description {
+  margin: 17px 0;
+}
+#main-content .container li.rehorik-product, #rehorik-best-selling-products li.rehorik-product {
+  background-color: #393536;
+  border: 1px solid #393536;
+  color: #fff;
+}
+#main-content .container li.rehorik-product a, #rehorik-best-selling-products li.rehorik-product a {
+  color: #fff;
+}
+#main-content .container li.rehorik-product h2, #rehorik-best-selling-products li.rehorik-product h2 {
+  color: #c6b480;
+}
+#main-content .container li.rehorik-product tr.seperator td hr, #rehorik-best-selling-products li.rehorik-product tr.seperator td hr {
+  border-color: #c6b480;
+}
+#main-content .container li.rehorik-product.product_cat-crema, #rehorik-best-selling-products li.rehorik-product.product_cat-crema {
+  background-color: #003c4a;
+  border-color: #003c4a;
+}
+#main-content .container li.rehorik-product.product_cat-espresso, #rehorik-best-selling-products li.rehorik-product.product_cat-espresso {
+  background-color: #393e1c;
+  border-color: #393e1c;
+}
+#main-content .container li.rehorik-product.product_cat-filterkaffee, #rehorik-best-selling-products li.rehorik-product.product_cat-filterkaffee {
+  background-color: #59293a;
+  border-color: #59293a;
+}
+#main-content .container li.rehorik-product.product-of-month, #rehorik-best-selling-products li.rehorik-product.product-of-month {
+  background-color: #c6b480;
+  color: #3c3c3b;
+  border-color: #c6b480;
+}
+#main-content .container li.rehorik-product.product-of-month a, #rehorik-best-selling-products li.rehorik-product.product-of-month a {
+  color: #3c3c3b;
+}
+#main-content .container li.rehorik-product.product-of-month h2, #rehorik-best-selling-products li.rehorik-product.product-of-month h2 {
+  color: #fff;
+}
+#main-content .container li.rehorik-product.product-of-month tr.seperator td hr, #rehorik-best-selling-products li.rehorik-product.product-of-month tr.seperator td hr {
+  border-color: #fff;
+  margin: 8px 0;
+}
+body.woocommerce #content-area div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'] {
+  border: 1px solid #393536 !important;
+}
+body.woocommerce #content-area div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'].active {
+  background-color: #393536 !important;
+}
+body.woocommerce #content-area div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'].active a {
+  color: #fff !important;
+}
+body.woocommerce #content-area div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'] a {
+  color: #393536 !important;
+}
+body.woocommerce #content-area div.rehorik-product-tabs div.rehorik-tabs-panel {
+  background-color: #393536;
+  border-color: #393536;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-crema div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'] {
+  border-color: #003c4a !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-crema div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'].active {
+  background-color: #003c4a !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-crema div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'].active a {
+  color: #fff !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-crema div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'] a {
+  color: #003c4a !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-crema div.rehorik-product-tabs div.rehorik-tabs-panel {
+  background-color: #003c4a;
+  border-color: #003c4a;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-espresso div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'] {
+  border-color: #393e1c !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-espresso div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'].active {
+  background-color: #393e1c !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-espresso div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'].active a {
+  color: #fff !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-espresso div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'] a {
+  color: #393e1c !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-espresso div.rehorik-product-tabs div.rehorik-tabs-panel {
+  background-color: #393e1c;
+  border-color: #393e1c;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'] {
+  border-color: #59293a !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'].active {
+  background-color: #59293a !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'].active a {
+  color: #fff !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'] a {
+  color: #59293a !important;
+}
+body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.rehorik-product-tabs div.rehorik-tabs-panel {
+  background-color: #59293a;
+  border-color: #59293a;
 }
 pre {
   font-size: 10px;
