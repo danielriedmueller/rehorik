@@ -37,7 +37,7 @@ $ausbau = $product->get_attribute(AUSBAU_ATTRIBUTE_SLUG);
                         <?php echo sprintf(
                             '%s%s',
                             $varieties,
-                            empty($grapeVariety) ? "" : ", " . $grapeVariety,
+                            empty($grapeVariety) ? "" : ", " . $grapeVariety
                         ); ?>
                     </td>
                 </tr>

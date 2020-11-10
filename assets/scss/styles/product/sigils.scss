@@ -57,12 +57,15 @@
 }
 
 // Wein des Monats Bild
-.rehorik-product.product_cat-wein {
+.rehorik-product.product_cat-wein, .rehorik-product.product_cat-wein-spirits-co {
   .sigil-container.product-of-month::after {
     background: transparent url("../img/wineofmonth.svg") no-repeat center top;
   }
 }
 
-.rehorik-product.product_cat-wein.product-of-month .et_shop_image::after {
-  background: transparent url("../img/wineofmonth.svg") no-repeat center center;
+.rehorik-product.product_cat-wein.product-of-month,
+.rehorik-product.product_cat-wein-spirits-co.product-of-month {
+  .et_shop_image::after {
+    background: transparent url("../img/wineofmonth.svg") no-repeat center center;
+  }
 }

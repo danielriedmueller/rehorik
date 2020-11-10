@@ -1453,10 +1453,10 @@ body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-t
   height: 33px;
   background: transparent url("../img/productofmonth.svg") no-repeat center center;
 }
-.rehorik-product.product_cat-wein .sigil-container.product-of-month::after {
+.rehorik-product.product_cat-wein .sigil-container.product-of-month::after, .rehorik-product.product_cat-wein-spirits-co .sigil-container.product-of-month::after {
   background: transparent url("../img/wineofmonth.svg") no-repeat center top;
 }
-.rehorik-product.product_cat-wein.product-of-month .et_shop_image::after {
+.rehorik-product.product_cat-wein.product-of-month .et_shop_image::after, .rehorik-product.product_cat-wein-spirits-co.product-of-month .et_shop_image::after {
   background: transparent url("../img/wineofmonth.svg") no-repeat center center;
 }
 #tribe-events-pg-template, .tribe-events-pg-template {
@@ -1572,7 +1572,7 @@ a.tribe-events-ical.tribe-events-button:hover, a.tribe-events-gcal.tribe-events-
   border: 1px solid #393536;
   color: #fff;
 }
-#main-content .container li.rehorik-product a, #rehorik-best-selling-products li.rehorik-product a {
+#main-content .container li.rehorik-product a, #rehorik-best-selling-products li.rehorik-product a, #main-content .container li.rehorik-product td, #rehorik-best-selling-products li.rehorik-product td {
   color: #fff;
 }
 #main-content .container li.rehorik-product h2, #rehorik-best-selling-products li.rehorik-product h2 {
@@ -1598,7 +1598,7 @@ a.tribe-events-ical.tribe-events-button:hover, a.tribe-events-gcal.tribe-events-
   color: #3c3c3b;
   border-color: #c6b480;
 }
-#main-content .container li.rehorik-product.product-of-month a, #rehorik-best-selling-products li.rehorik-product.product-of-month a {
+#main-content .container li.rehorik-product.product-of-month a, #rehorik-best-selling-products li.rehorik-product.product-of-month a, #main-content .container li.rehorik-product.product-of-month td, #rehorik-best-selling-products li.rehorik-product.product-of-month td {
   color: #3c3c3b;
 }
 #main-content .container li.rehorik-product.product-of-month h2, #rehorik-best-selling-products li.rehorik-product.product-of-month h2 {

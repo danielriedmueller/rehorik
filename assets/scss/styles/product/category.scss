@@ -5,7 +5,7 @@
     border: 1px solid $product-default-color;
     color: $product-alternative-body-text-color;
 
-    a {
+    a, td {
       color: $product-alternative-body-text-color;
     }
 
@@ -37,7 +37,7 @@
       color: $product-default-body-text-color;
       border-color: $primary-color;
 
-      a {
+      a, td {
         color: $product-default-body-text-color;
       }
 
