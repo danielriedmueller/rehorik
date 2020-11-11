@@ -52,7 +52,9 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 			</tbody>
 		</table>
 
-        <?php do_action('render_one_cup_of_coffee_price', $product); ?>
+        <div class="rehorik-variations-after-container">
+            <?php do_action('render_one_cup_of_coffee_price', $product); ?>
+        </div>
 
 		<div class="single_variation_wrap">
 			<?php
