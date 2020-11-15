@@ -76,7 +76,7 @@ function getSubCategory(WC_Product $product): string
         return getPrimaryCoffeeCategory($product);
     }
 
-    if (isItCategory($product, WINE_CATEGORY_SLUG)) {
+    if (isItCategory($product, WINE_SPIRITS_CO_CATEGORY_SLUG)) {
         return "";
     }
 
@@ -139,12 +139,20 @@ function woocommerce_get_product_subcategories($parent_id = 0)
         }
     }
 
-    if (apply_filters('woocommerce_product_subcategories_hide_empty', true)) {
+    if ( apply_filters( 'woocommerce_product_subcategories_hide_empty', true ) ) {
+        $cat = wp_list_filter(
+            $product_categories,
+            array('slug' => DELIVERY_CATEGORY_SLUG),
+            'AND'
+        );
+
         $product_categories = wp_list_filter(
             $product_categories,
             array('count' => 0),
             'NOT'
         );
+
+        $product_categories = array_merge($product_categories, $cat);
     }
 
     return $product_categories;
@@ -173,4 +181,13 @@ function woocommerce_template_loop_category_title($category)
         </span>
     </h2>
     <?php
+}
+
+// Overwrites category link function for link to lieferservice page
+function woocommerce_template_loop_category_link_open( $category ) {
+    if (is_shop() && $category->slug === DELIVERY_CATEGORY_SLUG) {
+        echo '<a href="' . get_page_link(8570) . '">';
+    } else {
+        echo '<a href="' . esc_url( get_term_link( $category, 'product_cat' ) ) . '">';
+    }
 }

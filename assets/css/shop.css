@@ -674,11 +674,13 @@ header#main-header.rehorik-header #rehorik-mobile-nav {
 .woocommerce div.product form.cart table.rehorik-variations.variations tbody tr:last-child td {
   padding-bottom: 0 !important;
 }
+.woocommerce div.product form.cart div.rehorik-variations-after-container {
+  margin-bottom: 30px;
+  margin-top: 3px;
+}
 div.rehorik-cup-of-coffee-price-outer {
   color: #996b23;
   font-size: 15px;
-  margin-bottom: 30px;
-  margin-top: 3px;
 }
 div.rehorik-product div.rehorik-product-summary.summary {
   position: relative;
@@ -1563,6 +1565,7 @@ a.tribe-events-ical.tribe-events-button:hover, a.tribe-events-gcal.tribe-events-
   font-size: 30px;
   color: #c6b480;
   margin-bottom: 30px;
+  text-transform: uppercase;
 }
 .rehorik-product-short-description {
   margin: 17px 0;
@@ -1671,6 +1674,9 @@ body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.
 body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.rehorik-product-tabs div.rehorik-tabs-panel {
   background-color: #59293a;
   border-color: #59293a;
+}
+.page-id-681 #main-content, .page-id-682 #main-content, .page-id-680 #main-content, .page-id-13644 #main-content {
+  margin: 50px 0;
 }
 pre {
   font-size: 10px;

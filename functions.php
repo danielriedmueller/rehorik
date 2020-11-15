@@ -17,10 +17,11 @@ define('DELIVERY_ORDER_EMAIL', 'it@rehorik.de');
 // Categories
 define('TICKET_CATEGORY_SLUG', 'ticket');
 define('COFFEE_CATEGORY_SLUG', 'kaffee');
-define('WINE_CATEGORY_SLUG', 'wein');
+define('WINE_SPIRITS_CO_CATEGORY_SLUG', 'wein-spirits-co');
 define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
 define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
 define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
+define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
 
 // Attributes
 define('DELIVERY_ATTRIBUTE_SLUG', 'pa_lieferservice');
@@ -218,41 +219,6 @@ add_filter('woocommerce_cart_shipping_method_full_label', 'remove_shipping_metho
 add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
 
 /**
- * TODO: add action ist falsch
- * @param $event_id
- * @param $ticket
- * @param $raw_data
- * @param $classname
- */
-function tribe_events_add_product_category_to_tickets($event_id, $ticket, $raw_data, $classname) {
-    if ( ! empty( $ticket ) && isset( $ticket->ID ) ) {
-        wp_add_object_terms( $ticket->ID, TICKET_CATEGORY_SLUG, 'product_cat' );
-    }
-}
-add_action( 'event_tickets_after_save_ticket', 'tribe_events_add_product_category_to_tickets', 10, 4);
-
-/**
- * Adds information to event attendees list table
- */
-function add_information_to_event_attendees_table($output, $item) {
-    if (!empty($item['attendee_meta'])) {
-        if (!empty($item['attendee_meta'][EVENT_TICKET_TELEPHONE_SLUG])) {
-            $purchaser_phone = $item['attendee_meta'][EVENT_TICKET_TELEPHONE_SLUG]["value"];
-            $output = $output . "<div class='purchaser_phone'>Telefon: {$purchaser_phone}</div>";
-        }
-
-        if (!empty($item['attendee_meta'][EVENT_TICKET_SHOULD_BE_PRINTED_SLUG])) {
-            $purchaser_print_ticket = array_values($item['attendee_meta'][EVENT_TICKET_SHOULD_BE_PRINTED_SLUG]["value"])[0];
-            $output = $output . "<div class='purchaser_print_ticket'>Ticket drucken: {$purchaser_print_ticket}</div>";
-        }
-    }
-
-    return $output;
-}
-add_filter('event_tickets_attendees_table_primary_info_column', 'add_information_to_event_attendees_table', 10, 2);
-
-
-/**
  * Set delivery option to yes, if previous page was delivery category page
  */
 function set_delivery_service_variation_default_value($args) {
@@ -266,22 +232,3 @@ function set_delivery_service_variation_default_value($args) {
     return $args;
 }
 add_filter('woocommerce_dropdown_variation_attribute_options_args', 'set_delivery_service_variation_default_value', 10, 1);
-
-/**
- * Add a two custom email to the list of emails WooCommerce should load
- * One includes all delivery, the other non delivery
- *
- * @since 0.1
- * @param array $email_classes available email classes
- * @return array filtered available email classes
- */
-function split_order_woocommerce_email( $email_classes ) {
-    require( 'includes/class-wc-delivery-order-email.php' );
-    require( 'includes/class-wc-shipping-order-email.php' );
-    $email_classes['WC_Delivery_Order_Email'] = new WC_Delivery_Order_Email();
-    $email_classes['WC_Shipping_Order_Email'] = new WC_Shipping_Order_Email();
-    unset($email_classes['WC_Email_New_Order']);
-
-    return $email_classes;
-}
-add_filter( 'woocommerce_email_classes', 'split_order_woocommerce_email', 10, 1 );

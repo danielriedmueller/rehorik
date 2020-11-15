@@ -1,5 +1,12 @@
 <?php
-    if (is_woocommerce() || is_checkout() || is_cart()) {
+    if (is_woocommerce()
+        || is_checkout()
+        || is_cart()
+        || is_page('Widerrufsbelehrung')
+        || is_page('Impressum')
+        || is_page('Datenschutz')
+        || is_page('AGB')
+    ) {
         echo do_shortcode('[et_pb_section global_module="720"][/et_pb_section]');
     }
 ?>
