@@ -44,6 +44,8 @@ define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
 // In $productAttributes array, slugs are prefixed by wordpress
 define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
 
+define('DELIVERY_SHIPPING_CLASS_SLUG', 'lieferservice');
+
 
 $priority = 1000;
 
@@ -232,3 +234,23 @@ function set_delivery_service_variation_default_value($args) {
     return $args;
 }
 add_filter('woocommerce_dropdown_variation_attribute_options_args', 'set_delivery_service_variation_default_value', 10, 1);
+
+/**
+ * Add a custom email to the list of emails WooCommerce should load
+ *
+ * @since 0.1
+ * @param array $email_classes available email classes
+ * @return array filtered available email classes
+ */
+function split_order_woocommerce_email( $email_classes ) {
+    require( 'includes/class-wc-delivery-order-email.php' );
+    require( 'includes/class-wc-shipping-order-email.php' );
+    $email_classes['WC_Delivery_Order_Email'] = new WC_Delivery_Order_Email();
+    $email_classes['WC_Shipping_Order_Email'] = new WC_Shipping_Order_Email();
+    unset($email_classes['WC_Email_New_Order']);
+
+    add_option('rh_delivery_email', DELIVERY_ORDER_EMAIL);
+
+    return $email_classes;
+}
+add_filter( 'woocommerce_email_classes', 'split_order_woocommerce_email', 10, 1 );

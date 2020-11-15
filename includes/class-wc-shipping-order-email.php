@@ -3,31 +3,14 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * A custom Delivery Order WooCommerce Email class
+ * A custom Shipping Order WooCommerce Email class,
+ * filters delivery order items
  *
  * @since 0.1
  * @extends \WC_Email
  */
 class WC_Shipping_Order_Email extends WC_Email_New_Order
 {
-    /**
-     * Set email defaults
-     *
-     * @since 0.1
-     */
-    public function __construct() {
-        parent::__construct();
-
-        // set ID, this simply needs to be a unique name
-        $this->id = 'wc_shipping_order';
-
-        // this is the title in WooCommerce Email settings
-        $this->title = 'Versandbestellung';
-
-        // this is the description in WooCommerce email settings
-        $this->description = 'Versandbestellung Email wird gesendet, wenn ein Nutzer ein Produkt zum Versenden bestellt hat.';
-    }
-
     /**
      * Trigger the sending of this email.
      *
@@ -62,8 +45,7 @@ class WC_Shipping_Order_Email extends WC_Email_New_Order
      */
     private function filterOrderItems(WC_Order $order) {
         foreach ($order->get_items() as $item_id => $item) {
-            $isDelivery = $item->get_meta(DELIVERY_ATTRIBUTE_SLUG);
-            if ($isDelivery) {
+            if ($item->get_product()->get_shipping_class() === DELIVERY_SHIPPING_CLASS_SLUG) {
                 $order->remove_item($item_id);
             }
         }
@@ -71,23 +53,4 @@ class WC_Shipping_Order_Email extends WC_Email_New_Order
         return $order;
     }
 
-    /**
-     * Get email subject.
-     *
-     * @since  3.1.0
-     * @return string
-     */
-    public function get_default_subject() {
-        return __( '[{site_title}]: New order #{order_number}', 'woocommerce' );
-    }
-
-    /**
-     * Get email heading.
-     *
-     * @since  3.1.0
-     * @return string
-     */
-    public function get_default_heading() {
-        return __( 'New Order: #{order_number}', 'woocommerce' );
-    }
 }
