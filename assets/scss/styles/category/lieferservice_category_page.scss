@@ -1,0 +1,154 @@
+$spacing-ls: 40px;
+$line-height: 22px;
+
+.rehorik-lieferservice-category-header {
+  position: relative;
+  margin-top: -$spacing-l;
+
+  ul#slider, ul#slider li, ul#slider li img {
+    width: 100%;
+  }
+
+  ul#slider img {
+    height: 600px;
+    object-fit: cover;
+  }
+
+  #slider > .tns-item {
+    line-height: 0;
+    vertical-align: middle;
+  }
+
+  #tns-controls-container {
+    button {
+      background: transparent url("../img/lieferservice/pfeil_weiss.svg") no-repeat 0 0;
+      border: none;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 350px;
+      cursor: pointer;
+    }
+
+    button[data-controls="prev"] {
+      left: 75px;
+    }
+
+    button[data-controls="next"] {
+      transform: rotate(180deg);
+      right: 75px;
+    }
+  }
+
+  .quality-text {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    max-width: 660px;
+    top: 0;
+    z-index: 1000;
+
+    h4 {
+      color: $font-color-accent;
+      text-transform: uppercase;
+      line-height: $line-height;
+      margin: $spacing-ls $spacing-ls 0 $spacing-ls;
+    }
+
+    .quality-text-content {
+      margin: 0 $spacing-ls $spacing-ls $spacing-ls;
+      font-size: $font-size-small;
+      line-height: $line-height;
+      display: flex;
+      text-align: justify;
+
+      > div {
+        flex: 1 1 0;
+        width: 0;
+      }
+
+      > div:first-child {
+        margin-right: $spacing-xs;
+      }
+    }
+  }
+
+  .quality-text-background {
+    background-color: #fff;
+    opacity: 0.65;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .order-instructions-outer {
+    padding: $spacing-ls 0;
+    background: $secondary-color none;
+
+    .order-instructions {
+      background: transparent url("../img/strichl-riesig-weiss.png") no-repeat 0 0;
+      color: #fff;
+
+      > div {
+        padding: $spacing;
+        background-color: $secondary-color;
+        width: 350px;
+        text-align: center;
+        margin: $spacing-l auto;
+
+        h4 {
+          color: #fff;
+          text-transform: uppercase;
+          line-height: 30px;
+        }
+
+        > div {
+          font-size: $font-size-small;
+          line-height: $line-height;
+        }
+      }
+    }
+  }
+}
+
+.rehorik-lieferservice-category-footer {
+  background: $primary-color none;
+  padding: $spacing;
+
+  > div {
+    display: flex;
+    color: #fff;
+    justify-content: center;
+
+    > h4 {
+      text-transform: uppercase;
+      margin-right: $spacing-s;
+      color: #fff;
+    }
+
+    > div {
+      font-size: $font-size-small;
+      line-height: $line-height;
+      position: relative;
+    }
+  }
+
+  .category-gap-filler {
+    background: transparent url("../img/lieferservice/Lieferservice_Lueckenfueller-freigestellt.png") no-repeat right bottom;
+    position: absolute;
+    width: 319px;
+    height: 289px;
+    top: -289px - $spacing;
+    right: -289px  - $spacing-s;
+
+    @media all and (max-width: $medium-breakpoint) {
+      display: none;
+    }
+  }
+}

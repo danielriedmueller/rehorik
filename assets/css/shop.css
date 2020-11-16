@@ -209,7 +209,7 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
   display: -ms-grid;
   display: grid;
   justify-content: center;
-  gap: 30px;
+  gap: 8px;
   margin-bottom: 50px;
 }
 .woocommerce #page-container ul.products.rehorik-products li {
@@ -1593,8 +1593,8 @@ a.tribe-events-ical.tribe-events-button:hover, a.tribe-events-gcal.tribe-events-
   border-color: #393e1c;
 }
 #main-content .container li.rehorik-product.product_cat-filterkaffee, #rehorik-best-selling-products li.rehorik-product.product_cat-filterkaffee {
-  background-color: #59293a;
-  border-color: #59293a;
+  background-color: #560023;
+  border-color: #560023;
 }
 #main-content .container li.rehorik-product.product-of-month, #rehorik-best-selling-products li.rehorik-product.product-of-month {
   background-color: #c6b480;
@@ -1660,23 +1660,151 @@ body.woocommerce #content-area div.rehorik-product.product_cat-espresso div.reho
   border-color: #393e1c;
 }
 body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'] {
-  border-color: #59293a !important;
+  border-color: #560023 !important;
 }
 body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'].active {
-  background-color: #59293a !important;
+  background-color: #560023 !important;
 }
 body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'].active a {
   color: #fff !important;
 }
 body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.rehorik-product-tabs ul.rehorik-tabs-header li[role='tab'] a {
-  color: #59293a !important;
+  color: #560023 !important;
 }
 body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.rehorik-product-tabs div.rehorik-tabs-panel {
-  background-color: #59293a;
-  border-color: #59293a;
+  background-color: #560023;
+  border-color: #560023;
 }
 .page:not(.et_pb_pagebuilder_layout) #main-content {
   margin: 50px 0;
+}
+.rehorik-lieferservice-category-header {
+  position: relative;
+  margin-top: -50px;
+}
+.rehorik-lieferservice-category-header ul#slider, .rehorik-lieferservice-category-header ul#slider li, .rehorik-lieferservice-category-header ul#slider li img {
+  width: 100%;
+}
+.rehorik-lieferservice-category-header ul#slider img {
+  height: 600px;
+  object-fit: cover;
+}
+.rehorik-lieferservice-category-header #slider > .tns-item {
+  line-height: 0;
+  vertical-align: middle;
+}
+.rehorik-lieferservice-category-header #tns-controls-container button {
+  background: transparent url("../img/lieferservice/pfeil_weiss.svg") no-repeat 0 0;
+  border: none;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 350px;
+  cursor: pointer;
+}
+.rehorik-lieferservice-category-header #tns-controls-container button[data-controls="prev"] {
+  left: 75px;
+}
+.rehorik-lieferservice-category-header #tns-controls-container button[data-controls="next"] {
+  transform: rotate(180deg);
+  right: 75px;
+}
+.rehorik-lieferservice-category-header .quality-text {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  max-width: 660px;
+  top: 0;
+  z-index: 1000;
+}
+.rehorik-lieferservice-category-header .quality-text h4 {
+  color: #c6b480;
+  text-transform: uppercase;
+  line-height: 22px;
+  margin: 40px 40px 0 40px;
+}
+.rehorik-lieferservice-category-header .quality-text .quality-text-content {
+  margin: 0 40px 40px 40px;
+  font-size: 15px;
+  line-height: 22px;
+  display: flex;
+  text-align: justify;
+}
+.rehorik-lieferservice-category-header .quality-text .quality-text-content > div {
+  flex: 1 1 0;
+  width: 0;
+}
+.rehorik-lieferservice-category-header .quality-text .quality-text-content > div:first-child {
+  margin-right: 17px;
+}
+.rehorik-lieferservice-category-header .quality-text-background {
+  background-color: #fff;
+  opacity: 0.65;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.rehorik-lieferservice-category-header .order-instructions-outer {
+  padding: 40px 0;
+  background: #560023 none;
+}
+.rehorik-lieferservice-category-header .order-instructions-outer .order-instructions {
+  background: transparent url("../img/strichl-riesig-weiss.png") no-repeat 0 0;
+  color: #fff;
+}
+.rehorik-lieferservice-category-header .order-instructions-outer .order-instructions > div {
+  padding: 30px;
+  background-color: #560023;
+  width: 350px;
+  text-align: center;
+  margin: 50px auto;
+}
+.rehorik-lieferservice-category-header .order-instructions-outer .order-instructions > div h4 {
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 30px;
+}
+.rehorik-lieferservice-category-header .order-instructions-outer .order-instructions > div > div {
+  font-size: 15px;
+  line-height: 22px;
+}
+.rehorik-lieferservice-category-footer {
+  background: #c6b480 none;
+  padding: 30px;
+}
+.rehorik-lieferservice-category-footer > div {
+  display: flex;
+  color: #fff;
+  justify-content: center;
+}
+.rehorik-lieferservice-category-footer > div > h4 {
+  text-transform: uppercase;
+  margin-right: 20px;
+  color: #fff;
+}
+.rehorik-lieferservice-category-footer > div > div {
+  font-size: 15px;
+  line-height: 22px;
+  position: relative;
+}
+.rehorik-lieferservice-category-footer .category-gap-filler {
+  background: transparent url("../img/lieferservice/Lieferservice_Lueckenfueller-freigestellt.png") no-repeat right bottom;
+  position: absolute;
+  width: 319px;
+  height: 289px;
+  top: -319px;
+  right: -309px;
+}
+@media all and (max-width: 1024px) {
+  .rehorik-lieferservice-category-footer .category-gap-filler {
+    display: none;
+  }
 }
 pre {
   font-size: 10px;

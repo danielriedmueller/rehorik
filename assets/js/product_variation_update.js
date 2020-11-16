@@ -1,4 +1,5 @@
 (function () {
+    console.log("foo")
     var $ = jQuery;
     var $form = $(".variations_form.cart");
     var $priceEl = $('.rehorik-price-unit');

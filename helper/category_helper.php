@@ -139,22 +139,6 @@ function woocommerce_get_product_subcategories($parent_id = 0)
         }
     }
 
-    if ( apply_filters( 'woocommerce_product_subcategories_hide_empty', true ) ) {
-        $cat = wp_list_filter(
-            $product_categories,
-            array('slug' => DELIVERY_CATEGORY_SLUG),
-            'AND'
-        );
-
-        $product_categories = wp_list_filter(
-            $product_categories,
-            array('count' => 0),
-            'NOT'
-        );
-
-        $product_categories = array_merge($product_categories, $cat);
-    }
-
     return $product_categories;
 }
 
