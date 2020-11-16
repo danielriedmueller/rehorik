@@ -247,7 +247,6 @@ function split_order_woocommerce_email( $email_classes ) {
     require( 'includes/class-wc-shipping-order-email.php' );
     $email_classes['WC_Delivery_Order_Email'] = new WC_Delivery_Order_Email();
     $email_classes['WC_Shipping_Order_Email'] = new WC_Shipping_Order_Email();
-    unset($email_classes['WC_Email_New_Order']);
 
     add_option('rh_delivery_email', DELIVERY_ORDER_EMAIL);
 

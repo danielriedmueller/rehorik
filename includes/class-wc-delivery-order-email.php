@@ -19,7 +19,7 @@ class WC_Delivery_Order_Email extends WC_Email
         // set ID, this simply needs to be a unique name
         $this->id = 'wc_delivery_order';
         // this is the title in WooCommerce Email settings
-        $this->title = 'Lieferservicebestellung';
+        $this->title = 'Neue Lieferservicebestellung';
         // this is the description in WooCommerce email settings
         $this->description = 'Lieferservice Email wird gesendet, wenn ein Nutzer ein Produkt als Lieferung bestellt hat.';
         // these are the default heading and subject lines that can be overridden using the settings
@@ -65,13 +65,14 @@ class WC_Delivery_Order_Email extends WC_Email
         }
 
         if ( is_a( $order, 'WC_Order' ) ) {
-            $this->object                         = $this->filterOrderItems($order);
+            $this->object = $order;
+            $filteredOrder = $this->filterOrderItems(clone $order);
             $this->placeholders['{order_date}']   = wc_format_datetime( $this->object->get_date_created() );
             $this->placeholders['{order_number}'] = $this->object->get_order_number();
         }
-
-        if (sizeof($this->object->get_items()) > 0 && $this->is_enabled() && $this->get_recipient() ) {
-            $this->send( $this->get_recipient(), $this->get_subject(), $this->get_content(), $this->get_headers(), $this->get_attachments() );
+        
+        if ($filteredOrder->get_item_count() > 0 && $this->is_enabled() && $this->get_recipient() ) {
+            $this->send( $this->get_recipient(), $this->get_subject(), $this->get_filtered_content($filteredOrder), $this->get_headers(), $this->get_attachments() );
         }
 
         $this->restore_locale();
@@ -91,6 +92,64 @@ class WC_Delivery_Order_Email extends WC_Email
         }
 
         return $order;
+    }
+
+    /**
+     * Get email content.
+     *
+     * @param WC_Order $order
+     * @return string
+     */
+    public function get_filtered_content(WC_Order $order) {
+        $this->sending = true;
+
+        if ( 'plain' === $this->get_email_type() ) {
+            $email_content = wordwrap( preg_replace( $this->plain_search, $this->plain_replace, wp_strip_all_tags( $this->get_filtered_content_plain($order) ) ), 70 );
+        } else {
+            $email_content = $this->get_filtered_content_html($order);
+        }
+
+        return $email_content;
+    }
+
+    /**
+     * Get content html.
+     *
+     * @param WC_Order $order
+     * @return string
+     */
+    public function get_filtered_content_html(WC_Order $order) {
+        return wc_get_template_html(
+            $this->template_html,
+            array(
+                'order'              => $order,
+                'email_heading'      => $this->get_heading(),
+                'additional_content' => $this->get_additional_content(),
+                'sent_to_admin'      => true,
+                'plain_text'         => false,
+                'email'              => $this,
+            )
+        );
+    }
+
+    /**
+     * Get content plain.
+     *
+     * @param WC_Order $order
+     * @return string
+     */
+    public function get_filtered_content_plain(WC_Order $order) {
+        return wc_get_template_html(
+            $this->template_plain,
+            array(
+                'order'              => $order,
+                'email_heading'      => $this->get_heading(),
+                'additional_content' => $this->get_additional_content(),
+                'sent_to_admin'      => true,
+                'plain_text'         => true,
+                'email'              => $this,
+            )
+        );
     }
 
     /**
