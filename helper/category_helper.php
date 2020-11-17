@@ -139,6 +139,14 @@ function woocommerce_get_product_subcategories($parent_id = 0)
         }
     }
 
+    if ( apply_filters( 'woocommerce_product_subcategories_hide_empty', true ) ) {
+        $product_categories = wp_list_filter(
+            $product_categories,
+            array('count' => 0),
+            'NOT'
+        );
+    }
+
     return $product_categories;
 }
 
@@ -165,13 +173,4 @@ function woocommerce_template_loop_category_title($category)
         </span>
     </h2>
     <?php
-}
-
-// Overwrites category link function for link to lieferservice page
-function woocommerce_template_loop_category_link_open( $category ) {
-    if (is_shop() && $category->slug === DELIVERY_CATEGORY_SLUG) {
-        echo '<a href="' . get_page_link(8570) . '">';
-    } else {
-        echo '<a href="' . esc_url( get_term_link( $category, 'product_cat' ) ) . '">';
-    }
 }

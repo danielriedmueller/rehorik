@@ -38,6 +38,16 @@ $line-height: 22px;
       transform: rotate(180deg);
       right: 75px;
     }
+
+    @media all and (max-width: $small-breakpoint) {
+      display: none;
+    }
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    .tns-outer {
+      padding-top: 15em !important;
+    }
   }
 
   .quality-text {
@@ -85,6 +95,10 @@ $line-height: 22px;
     z-index: -1;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+
+    @media all and (max-width: $small-breakpoint) {
+      display: none;
+    }
   }
 
   .order-instructions-outer {
@@ -98,9 +112,13 @@ $line-height: 22px;
       > div {
         padding: $spacing;
         background-color: $secondary-color;
-        width: 350px;
+
         text-align: center;
         margin: $spacing-l auto;
+
+        @media all and (min-width: $small-breakpoint + 1) {
+          width: 350px;
+        }
 
         h4 {
           color: #fff;
@@ -125,6 +143,10 @@ $line-height: 22px;
     display: flex;
     color: #fff;
     justify-content: center;
+
+    @media all and (max-width: $small-breakpoint) {
+      flex-direction: column;
+    }
 
     > h4 {
       text-transform: uppercase;
