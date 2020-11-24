@@ -29,6 +29,9 @@ define('STRENGTH_ATTRIBUTE_SLUG', 'pa_kaffee-staerke');
 define('VARIETIES_ATTRIBUTE_SLUG', 'pa_kaffee-sorte');
 define('GRAPE_VARIETY_ATTRIBUTE_SLUG', 'pa_rebsorte');
 define('AUSBAU_ATTRIBUTE_SLUG', 'pa_ausbau');
+define('HERSTELLUNG_ATTRIBUTE_SLUG', 'pa_herstellung');
+define('MILCHART_ATTRIBUTE_SLUG', 'pa_milchart');
+define('FETT_ATTRIBUTE_SLUG', 'pa_fett');
 define('FLAVOUR_ATTRIBUTE_SLUG', 'pa_kaffee-aromen');
 define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'pa_kaffee-aromenvielfalt');
 define('BEAN_COMPOSITION_ATTRIBUTE_SLUG', 'pa_bohnenkompositionen');
@@ -98,7 +101,11 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1, 'all');
     wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
     wp_enqueue_script('hello', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
-    wp_enqueue_script('slider-js', $assetsDir . 'js/tiny_slider.js', null, 1, true);
+
+    // Slider only on delivery category page
+    if (is_product_category('lieferservice')) {
+        wp_enqueue_script('slider-js', $assetsDir . 'js/tiny_slider.js', null, 1, true);
+    }
 }, $priority);
 
 /**
@@ -110,6 +117,7 @@ function et_add_child_mobile_navigation()
         echo '<div id="rehorik-mobile-nav"><div class="mobile_nav closed"><span class="mobile_menu_bar mobile_menu_bar_toggle"></span></div></div>';
     }
 }
+
 add_action('et_header_top', 'et_add_child_mobile_navigation');
 
 /**
@@ -212,20 +220,25 @@ function remove_shipping_method_label($full_label, $method)
                 $label .= ' <small>' . WC()->countries->ex_tax_or_vat() . '</small>';
             }
         }
+
+        return $label;
     }
-    return $label;
+
+    return $full_label;
 }
+
 add_filter('woocommerce_cart_shipping_method_full_label', 'remove_shipping_method_label', 10, 2);
 
 /**
  * Remove product category count.
  */
-add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
+add_filter('woocommerce_subcategory_count_html', '__return_false');
 
 /**
  * Set delivery option to yes, if previous page was delivery category page
  */
-function set_delivery_service_variation_default_value($args) {
+function set_delivery_service_variation_default_value($args)
+{
     if ($args['attribute'] === DELIVERY_ATTRIBUTE_SLUG) {
         $referer = $_SERVER['HTTP_REFERER'];
         if (substr_count($referer, DELIVERY_CATEGORY_URL) === 1) {
@@ -235,18 +248,20 @@ function set_delivery_service_variation_default_value($args) {
 
     return $args;
 }
+
 add_filter('woocommerce_dropdown_variation_attribute_options_args', 'set_delivery_service_variation_default_value', 10, 1);
 
 /**
  * Add a custom email to the list of emails WooCommerce should load
  *
- * @since 0.1
  * @param array $email_classes available email classes
  * @return array filtered available email classes
+ * @since 0.1
  */
-function split_order_woocommerce_email( $email_classes ) {
-    require( 'includes/class-wc-delivery-order-email.php' );
-    require( 'includes/class-wc-shipping-order-email.php' );
+function split_order_woocommerce_email($email_classes)
+{
+    require('includes/class-wc-delivery-order-email.php');
+    require('includes/class-wc-shipping-order-email.php');
     $email_classes['WC_Delivery_Order_Email'] = new WC_Delivery_Order_Email();
     $email_classes['WC_Shipping_Order_Email'] = new WC_Shipping_Order_Email();
 
@@ -254,4 +269,5 @@ function split_order_woocommerce_email( $email_classes ) {
 
     return $email_classes;
 }
-add_filter( 'woocommerce_email_classes', 'split_order_woocommerce_email', 10, 1 );
+
+add_filter('woocommerce_email_classes', 'split_order_woocommerce_email', 10, 1);

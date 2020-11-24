@@ -42,7 +42,7 @@ $otherAttributes = extractOtherAttributes($product_attributes);
 </div>
 
 <hr>
-<div class="product-rehorik-attribute-container">
+<div class="product-rehorik-attribute-container item-count-<?= sizeof($otherAttributes) ?>">
     <?php foreach ($otherAttributes as $product_attribute_key => $product_attribute) : ?>
         <div class="rehorik-product-attribute-item">
             <div class="rehorik-product-attribute-label">

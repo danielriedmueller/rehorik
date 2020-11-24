@@ -112,12 +112,11 @@ $line-height: 22px;
       > div {
         padding: $spacing;
         background-color: $secondary-color;
-
         text-align: center;
-        margin: $spacing-l auto;
 
         @media all and (min-width: $small-breakpoint + 1) {
           width: 350px;
+          margin: $spacing-l auto;
         }
 
         h4 {

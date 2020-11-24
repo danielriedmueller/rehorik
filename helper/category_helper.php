@@ -13,8 +13,6 @@ function getCategoryTreeDepth($termId, $taxonomy = "product_cat"): int
     return sizeof(explode($seperator, $parentsList)) - 1;
 }
 
-;
-
 function isItCategory($product, $categorySlug): bool
 {
     $taxonomy = 'product_cat';
@@ -80,9 +78,16 @@ function getSubCategory(WC_Product $product): string
         return "";
     }
 
-    $name = getCategoryNameByID($product->get_category_ids()[1]);
+    $terms = get_the_terms( $product->get_id(), 'product_cat' );
+    $term_ids = wp_list_pluck($terms,'term_id');
+    $parents = array_filter(wp_list_pluck($terms,'parent'));
+    $term_ids_not_parents = array_diff($term_ids,  $parents);
+    $terms_not_parents = array_intersect_key($terms,  $term_ids_not_parents);
+    $terms_not_parents_names = array_map(function ($a) {
+        return $a->name;
+    }, $terms_not_parents);
 
-    return $name ?? "";
+    return implode(', ', $terms_not_parents_names);
 }
 
 /**
@@ -92,17 +97,6 @@ function getSubCategory(WC_Product $product): string
 function getCategoryNameBySlug(string $slug)
 {
     $cat = get_term_by('slug', $slug, 'product_cat');
-
-    return $cat ? $cat->name : false;
-}
-
-/**
- * @param int $id
- * @return string|null
- */
-function getCategoryNameByID(int $id)
-{
-    $cat = get_term_by('id', $id, 'product_cat');
 
     return $cat ? $cat->name : false;
 }

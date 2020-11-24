@@ -20,7 +20,7 @@
 
       div.rehorik-product-origin-country {
         text-transform: uppercase;
-        font-size: $font-size-small;
+        font-size: $font-size-very-small;
         font-weight: bold;
         background-color: transparent;
         font-family: $font-family-headline;
@@ -53,7 +53,7 @@
         padding: 0 $spacing-s;
 
         .rehorik-product-min-price {
-          font-size: $font-size-small;
+          font-size: $font-size-very-small;
           margin-top: $spacing-xxxs;
           font-family: $font-family-headline;
 
@@ -73,7 +73,7 @@
             text-align: left;
             padding: 0;
             text-transform: uppercase;
-            font-size: $font-size-small;
+            font-size: $font-size-very-small;
             font-weight: bold;
             vertical-align: top;
             font-family: $font-family-headline;
@@ -82,13 +82,14 @@
           tr td:first-child:not([colspan="2"]) {
             text-align: right;
             padding-right: $spacing-xxxs;
+            padding-bottom: $spacing-xxs;
           }
 
           td.rehorik-product-flavours-list, td.rehorik-product-varieties-list {
-            font-size: $font-size-small;
+            font-size: $font-size-very-small;
             font-weight: normal;
             text-transform: none;
-            line-height: $font-size-small;
+            line-height: $font-size-very-small;
             padding-left: $spacing-xxxs;
             width: 118px;
             font-family: $font-family-body;
@@ -105,7 +106,7 @@
           left: 0;
           right: 0;
           text-transform: uppercase;
-          font-size: $font-size-small;
+          font-size: $font-size-very-small;
           font-family: $font-family-body;
 
           @media all and (max-width: $small-breakpoint) {

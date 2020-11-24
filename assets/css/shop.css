@@ -170,6 +170,7 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
 #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table tr td:first-child:not([colspan="2"]), #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table tr td:first-child:not([colspan="2"]) {
   text-align: right;
   padding-right: 3px;
+  padding-bottom: 8px;
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-flavours-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-flavours-list, #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-varieties-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-varieties-list {
   font-size: 15px;
@@ -735,18 +736,31 @@ div.rehorik-product-meta.product_meta span, div.rehorik-product-meta.product_met
 }
 .woocommerce-page div.product-rehorik-attribute-container {
   display: grid;
+}
+.woocommerce-page div.product-rehorik-attribute-container:not(.item-count-2):not(.item-count-1) {
   grid-template-columns: 1fr 1fr 1fr;
+}
+@media all and (min-width: 768px) {
+  .woocommerce-page div.product-rehorik-attribute-container:not(.item-count-2):not(.item-count-1) div.rehorik-product-attribute-item:not(:nth-child(3n + 3)) {
+    border-right: 2px solid #c6b480;
+  }
+}
+.woocommerce-page div.product-rehorik-attribute-container.item-count-2 {
+  grid-template-columns: 1fr 1fr;
+}
+@media all and (min-width: 768px) {
+  .woocommerce-page div.product-rehorik-attribute-container.item-count-2 div.rehorik-product-attribute-item:not(:nth-child(2)) {
+    border-right: 2px solid #c6b480;
+  }
+}
+.woocommerce-page div.product-rehorik-attribute-container.item-count-1 {
+  grid-template-columns: 1fr;
 }
 .woocommerce-page div.product-rehorik-attribute-container div.rehorik-product-attribute-item {
   display: inline-block;
   padding: 20px;
   margin-bottom: 30px;
   text-align: center;
-}
-@media all and (min-width: 768px) {
-  .woocommerce-page div.product-rehorik-attribute-container div.rehorik-product-attribute-item:not(:nth-child(3)) {
-    border-right: 2px solid #c6b480;
-  }
 }
 .woocommerce-page div.product-rehorik-attribute-container div.rehorik-product-attribute-item .rehorik-product-attribute-value p {
   padding-bottom: 0;
@@ -1491,7 +1505,7 @@ form#tribe-tickets.tribe-common.tribe-tickets * {
 }
 .tribe-events-single-section.tribe-events-event-meta.primary {
   font-family: "DIN Offc W01 Cond";
-  font-size: 15px;
+  font-size: 17px;
   font-style: normal;
 }
 li.menu-item.rehorik-calendar-icon a {
@@ -1535,7 +1549,7 @@ button.tribe-common-c-btn:hover, a.tribe-common-c-btn:hover, .tribe-common.tribe
 }
 .tribe-common.tribe-events .tribe-events-c-ical__link {
   background-color: #c6b480;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: normal;
   padding: 2px 20px;
   border-radius: 0;
@@ -1737,7 +1751,7 @@ body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.
 }
 .rehorik-lieferservice-category-header .quality-text .quality-text-content {
   margin: 0 40px 40px 40px;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 22px;
   display: flex;
   text-align: justify;
@@ -1776,9 +1790,13 @@ body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.
 .rehorik-lieferservice-category-header .order-instructions-outer .order-instructions > div {
   padding: 30px;
   background-color: #560023;
-  width: 350px;
   text-align: center;
-  margin: 50px auto;
+}
+@media all and (min-width: 768px) {
+  .rehorik-lieferservice-category-header .order-instructions-outer .order-instructions > div {
+    width: 350px;
+    margin: 50px auto;
+  }
 }
 .rehorik-lieferservice-category-header .order-instructions-outer .order-instructions > div h4 {
   color: #fff;
@@ -1786,7 +1804,7 @@ body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.
   line-height: 30px;
 }
 .rehorik-lieferservice-category-header .order-instructions-outer .order-instructions > div > div {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 22px;
 }
 .rehorik-lieferservice-category-footer {
@@ -1809,7 +1827,7 @@ body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.
   color: #fff;
 }
 .rehorik-lieferservice-category-footer > div > div {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 22px;
   position: relative;
 }
@@ -1825,6 +1843,12 @@ body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.
   .rehorik-lieferservice-category-footer .category-gap-filler {
     display: none;
   }
+}
+.rehorik-product.product .woocommerce-variation-description p {
+  font-size: 17px;
+  border: 1px solid #c6b480;
+  padding: 17px;
+  margin-bottom: 30px !important;
 }
 pre {
   font-size: 10px;

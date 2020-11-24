@@ -16,7 +16,7 @@ function extractStrengthAndFlavourAttributes(array $productAttributes): array
 }
 
 /**
- * Returns only Herkunft, Sorte Aromen
+ * Returns only Herkunft, Sorte, Aromen, Fett
  * If Bohnenkomposition is present, it becomes the label for Sorte
  * If Rebsorte is present, add id to Sorte
  * If Herkunft und Region is present, add Region to Herkunft
@@ -56,7 +56,8 @@ function extractOtherAttributes(array $productAttributes): array
         return in_array($key, [
             ATTRIBUTE_SLUG_PREFIX.ORIGIN_COUNTRY_ATTRIBUTE_SLUG,
             ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG,
-            ATTRIBUTE_SLUG_PREFIX.FLAVOUR_ATTRIBUTE_SLUG
+            ATTRIBUTE_SLUG_PREFIX.FLAVOUR_ATTRIBUTE_SLUG,
+            ATTRIBUTE_SLUG_PREFIX.FETT_ATTRIBUTE_SLUG,
         ]);
     }, ARRAY_FILTER_USE_KEY));
 }
