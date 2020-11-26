@@ -90,7 +90,6 @@ if (is_product_category('Lieferservice')) {
     get_template_part('templates/best-selling-products');
 }
 
-
 /**
  * Hook: woocommerce_sidebar.
  *

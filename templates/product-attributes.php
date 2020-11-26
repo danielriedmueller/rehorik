@@ -10,6 +10,7 @@ $varieties = $product->get_attribute(VARIETIES_ATTRIBUTE_SLUG);
 $grapeVariety = $product->get_attribute(GRAPE_VARIETY_ATTRIBUTE_SLUG);
 $ausbau = $product->get_attribute(AUSBAU_ATTRIBUTE_SLUG);
 $herstellung = $product->get_attribute(HERSTELLUNG_ATTRIBUTE_SLUG);
+$manufacturer = $product->get_attribute(MANUFACTURER_ATTRIBUTE_SLUG);
 $milchart = $product->get_attribute(MILCHART_ATTRIBUTE_SLUG);
 
 ?>
@@ -48,6 +49,12 @@ $milchart = $product->get_attribute(MILCHART_ATTRIBUTE_SLUG);
                 <tr>
                     <td><?= wc_attribute_label(FLAVOUR_ATTRIBUTE_SLUG) ?></td>
                     <td class="rehorik-product-flavours-list"><?= $flavours ?></td>
+                </tr>
+            <?php endif; ?>
+            <?php if($manufacturer): ?>
+                <tr>
+                    <td><?= wc_attribute_label(MANUFACTURER_ATTRIBUTE_SLUG) ?></td>
+                    <td class="rehorik-product-flavours-list"><?= $manufacturer ?></td>
                 </tr>
             <?php endif; ?>
             <?php if($milchart): ?>

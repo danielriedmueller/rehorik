@@ -140,22 +140,9 @@ $line-height: 22px;
 
   > div {
     display: flex;
-    color: #fff;
     justify-content: center;
 
-    @media all and (max-width: $small-breakpoint) {
-      flex-direction: column;
-    }
-
-    > h4 {
-      text-transform: uppercase;
-      margin-right: $spacing-s;
-      color: #fff;
-    }
-
     > div {
-      font-size: $font-size-small;
-      line-height: $line-height;
       position: relative;
     }
   }
@@ -166,7 +153,7 @@ $line-height: 22px;
     width: 319px;
     height: 289px;
     top: -289px - $spacing;
-    right: -289px  - $spacing-s;
+    right: -590px  - $spacing-s;
 
     @media all and (max-width: $medium-breakpoint) {
       display: none;

@@ -7,19 +7,16 @@
             <div>
                 Seit einiger Zeit bieten wir für Sie einen Lieferdienst an.<br>
                 <b>DOCH WAS STECKT DAHINTER?</b><br>
-                Die Grundidee unseres Lieferservices ist es, Ihnen eine regionale Plattform (oder: ein regionales Netzwerk) mit nachhaltigen
-                Produkten aus unserer Region zu bieten. In Zusammenarbeit mit
-                der Metzgerei Stierstorfer, der Bäckerei Freisleben und dem Gemüsehof Köstlmeier ist es uns ein großes Anliegen, Ihnen die
-                Regensburger Genusswelten näherzubringen und unser fein
-                ausgewähltes Produktsortiment mit Ihnen zu teilen.
+                Die Grundidee unseres Lieferservices ist es, Ihnen ein regionales Netzwerk mit nachhaltigen Produkten
+                aus unserer Region zu bieten. In Zusammenarbeit mit der Metzgerei Stierstorfer, der Bäckerei Freisleben
+                und dem Gemüsehof Köstlmeier ist es uns ein großes Anliegen, Ihnen die Regensburger Genusswelten
+                näherzubringen und unser fein ausgewähltes Produktsortiment mit Ihnen zu teilen.
             </div>
             <div>
-                Die Kooperation mit der Firma Kairos GmbH, welche unsere
-                Pakete innerhalb Regensburgs mit ihren Lastenfahrrädern ausliefern rundet für uns den Gedanken eines nachhaltigen Lieferservices perfekt ab.<br>
-                Überzeugen Sie sich selbst und bestellen Sie bei uns einmalig
-                ihr Probierpaket mit 10 % Rabatt??<br>
-                Gerne beraten wir Sie telefonisch und stellen gemeinsam mit
-                Ihnen ein Paket zusammen.
+                Die Kooperation mit dem Fahrradkurier "Feine Fracht" rundet für uns den Gedanken eines nachhaltigen
+                Lieferservices perfekt ab.<br>
+                Gerne beraten wir Sie auch telefonisch und stellen gemeinsam mit Ihnen ein individuelles Paket
+                zusammen.
             </div>
         </div>
         <div class="quality-text-background"></div>
@@ -49,3 +46,4 @@
         </div>
     </div>
 </div>
+

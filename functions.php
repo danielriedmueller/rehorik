@@ -49,7 +49,6 @@ define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
 
 define('DELIVERY_SHIPPING_CLASS_SLUG', 'lieferservice');
 
-
 $priority = 1000;
 
 // In case of an child them use get stylesheet directory

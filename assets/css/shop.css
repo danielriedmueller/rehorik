@@ -1813,22 +1813,9 @@ body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.
 }
 .rehorik-lieferservice-category-footer > div {
   display: flex;
-  color: #fff;
   justify-content: center;
 }
-@media all and (max-width: 767px) {
-  .rehorik-lieferservice-category-footer > div {
-    flex-direction: column;
-  }
-}
-.rehorik-lieferservice-category-footer > div > h4 {
-  text-transform: uppercase;
-  margin-right: 20px;
-  color: #fff;
-}
 .rehorik-lieferservice-category-footer > div > div {
-  font-size: 17px;
-  line-height: 22px;
   position: relative;
 }
 .rehorik-lieferservice-category-footer .category-gap-filler {
@@ -1837,7 +1824,7 @@ body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.
   width: 319px;
   height: 289px;
   top: -319px;
-  right: -309px;
+  right: -610px;
 }
 @media all and (max-width: 1024px) {
   .rehorik-lieferservice-category-footer .category-gap-filler {
