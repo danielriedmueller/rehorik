@@ -15,7 +15,7 @@
   }
 
   .rehorik-tabs-panel hr {
-    border-width: 2px;
+    border-width: 3px;
   }
 
   div.product-rehorik-attribute-container {
@@ -27,7 +27,7 @@
       @media all and (min-width: $small-breakpoint + 1) {
         div.rehorik-product-attribute-item {
           &:not(:nth-child(3n + 3)) {
-            border-right: 2px solid $primary-color;
+            border-right: 3px solid $primary-color;
           }
         }
       }
@@ -39,7 +39,7 @@
       @media all and (min-width: $small-breakpoint + 1) {
         div.rehorik-product-attribute-item {
           &:not(:nth-child(2)) {
-            border-right: 2px solid $primary-color;
+            border-right: 3px solid $primary-color;
           }
         }
       }
@@ -65,7 +65,7 @@
 
       div.rehorik-product-attribute-item {
         &:not(:nth-child(2)) {
-          border-right: 2px solid $primary-color;
+          border-right: 3px solid $primary-color;
         }
       }
     }

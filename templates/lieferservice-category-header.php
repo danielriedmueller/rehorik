@@ -37,11 +37,12 @@
         <div class="order-instructions">
             <div>
                 <h4>BESTELLT, VERPACKT & AUF DEM WEG ZU DIR!</h4>
-                <div>Bestellen Sie telefonisch unter 0941/59975895
-                    Oder per Mail: lieferservice@rehorik.de
-                    Bestellungen werden bis jeweils Montag 12 Uhr und Mittwoch 12 Uhr
-                    angenommen. Die Auslieferung erfolgt am Folgetag, jeweils dienstags und
-                    donnerstags ab 13 Uhr – ausgeschlossen davon sind Feiertage.</div>
+                <div>Bestellen Sie telefonisch bis jeweils Montag 12 Uhr und Mittwoch 12 Uhr unter <a href="tel:0941/59975895">0941/59975895</a>
+                    oder jederzeit im Onlineshop.<br>
+                    Die Auslieferung erfolgt am Folgetag, jeweils dienstags und
+                    donnerstags ab 13 Uhr – ausgeschlossen davon sind Feiertage.
+                    Unsere Bestellliste zum Download, finden Sie <a href="<?php echo get_stylesheet_directory_uri() ?>/assets/document/Flyer Lieferservice Website DIN A4.pdf">hier</a>.
+                </div>
             </div>
         </div>
     </div>

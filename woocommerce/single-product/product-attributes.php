@@ -39,9 +39,11 @@ $otherAttributes = extractOtherAttributes($product_attributes);
                 $product_attribute_key
             ); ?>
     <?php endforeach; ?>
-</div>
 
-<hr>
+</div>
+<?php if (!empty($strengthAndFlavour)): ?>
+    <hr>
+<?php endif; ?>
 <div class="product-rehorik-attribute-container item-count-<?= sizeof($otherAttributes) ?>">
     <?php foreach ($otherAttributes as $product_attribute_key => $product_attribute) : ?>
         <div class="rehorik-product-attribute-item">

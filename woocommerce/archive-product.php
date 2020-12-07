@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
-if (is_product_category('Lieferservice')) {
+if (is_product_category(DELIVERY_SHIPPING_CLASS_SLUG)) {
     get_template_part('templates/lieferservice-category-header');
 }
 

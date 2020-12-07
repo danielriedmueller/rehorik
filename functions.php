@@ -43,6 +43,7 @@ define('ALCOHOL_ATTRIBUTE_SLUG', 'pa_alkoholgehalt');
 define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
 define('WINERY_ATTRIBUTE_SLUG', 'pa_weingut');
 define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
+define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
 
 // In $productAttributes array, slugs are prefixed by wordpress
 define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');

@@ -172,7 +172,7 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
   padding-right: 3px;
   padding-bottom: 8px;
 }
-#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-flavours-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-flavours-list, #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-varieties-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-varieties-list {
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-attribute-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-attribute-list, #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-gift-content-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-gift-content-list {
   font-size: 15px;
   font-weight: normal;
   text-transform: none;
@@ -180,9 +180,13 @@ table.cart th, #main-content table.cart th, table.cart td, #main-content table.c
   padding-left: 3px;
   width: 118px;
   font-family: "DIN Offc W01 Cond";
-}
-#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-varieties-list, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-varieties-list {
   padding-bottom: 8px;
+}
+#main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-attribute-list ul, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes table td.rehorik-product-attribute-list ul {
+  text-align: left;
+  padding: 0;
+  font-size: 15px;
+  line-height: 17px;
 }
 #main-content .container ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-ausbau, #rehorik-best-selling-products ul.products.rehorik-products li.product.rehorik-product .rehorik-product-attributes .rehorik-product-ausbau {
   position: absolute;
@@ -732,7 +736,7 @@ div.rehorik-product-meta.product_meta span, div.rehorik-product-meta.product_met
   text-align: right;
 }
 .woocommerce-page .rehorik-tabs-panel hr {
-  border-width: 2px;
+  border-width: 3px;
 }
 .woocommerce-page div.product-rehorik-attribute-container {
   display: grid;
@@ -742,7 +746,7 @@ div.rehorik-product-meta.product_meta span, div.rehorik-product-meta.product_met
 }
 @media all and (min-width: 768px) {
   .woocommerce-page div.product-rehorik-attribute-container:not(.item-count-2):not(.item-count-1) div.rehorik-product-attribute-item:not(:nth-child(3n + 3)) {
-    border-right: 2px solid #c6b480;
+    border-right: 3px solid #c6b480;
   }
 }
 .woocommerce-page div.product-rehorik-attribute-container.item-count-2 {
@@ -750,7 +754,7 @@ div.rehorik-product-meta.product_meta span, div.rehorik-product-meta.product_met
 }
 @media all and (min-width: 768px) {
   .woocommerce-page div.product-rehorik-attribute-container.item-count-2 div.rehorik-product-attribute-item:not(:nth-child(2)) {
-    border-right: 2px solid #c6b480;
+    border-right: 3px solid #c6b480;
   }
 }
 .woocommerce-page div.product-rehorik-attribute-container.item-count-1 {
@@ -770,7 +774,7 @@ div.rehorik-product-meta.product_meta span, div.rehorik-product-meta.product_met
     grid-template-columns: 1fr 1fr;
   }
   .woocommerce-page div.product-rehorik-attribute-container div.rehorik-product-attribute-item:not(:nth-child(2)) {
-    border-right: 2px solid #c6b480;
+    border-right: 3px solid #c6b480;
   }
 }
 .rehorik-hugo-head {
@@ -1788,7 +1792,7 @@ body.woocommerce #content-area div.rehorik-product.product_cat-filterkaffee div.
   color: #fff;
 }
 .rehorik-lieferservice-category-header .order-instructions-outer .order-instructions > div {
-  padding: 30px;
+  padding: 17px;
   background-color: #560023;
   text-align: center;
 }

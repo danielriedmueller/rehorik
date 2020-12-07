@@ -85,7 +85,7 @@
             padding-bottom: $spacing-xxs;
           }
 
-          td.rehorik-product-flavours-list, td.rehorik-product-varieties-list {
+          td.rehorik-product-attribute-list, td.rehorik-product-gift-content-list {
             font-size: $font-size-very-small;
             font-weight: normal;
             text-transform: none;
@@ -93,10 +93,14 @@
             padding-left: $spacing-xxxs;
             width: 118px;
             font-family: $font-family-body;
+            padding-bottom: $spacing-xxs;
           }
 
-          td.rehorik-product-varieties-list {
-            padding-bottom: $spacing-xxs;
+          td.rehorik-product-attribute-list ul {
+            text-align: left;
+            padding: 0;
+            font-size: $font-size-very-small;
+            line-height: $font-size-small;
           }
         }
 
