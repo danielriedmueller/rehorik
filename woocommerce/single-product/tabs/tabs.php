@@ -27,7 +27,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see woocommerce_default_product_tabs()
  */
 $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
-
 if ( ! empty( $product_tabs ) ) : ?>
 
 	<div class="rehorik-product-tabs woocommerce-tabs wc-tabs-wrapper">

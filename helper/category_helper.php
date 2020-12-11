@@ -87,7 +87,11 @@ function getSubCategory(WC_Product $product): string
         return $a->name;
     }, $terms_not_parents);
 
-    return implode(', ', $terms_not_parents_names);
+    if (sizeof($terms_not_parents_names) > 0) {
+        return $terms_not_parents_names[array_key_first($terms_not_parents_names)];
+    }
+
+    return "";
 }
 
 /**

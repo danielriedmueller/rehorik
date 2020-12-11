@@ -50,6 +50,14 @@ define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
 
 define('DELIVERY_SHIPPING_CLASS_SLUG', 'lieferservice');
 
+// All product attributes that appear in information tab on product detail page
+define('INFORMATION_TAB_ATTRIBUTES', [
+    ORIGIN_COUNTRY_ATTRIBUTE_SLUG,
+    VARIETIES_ATTRIBUTE_SLUG,
+    FLAVOUR_ATTRIBUTE_SLUG,
+    FETT_ATTRIBUTE_SLUG,
+]);
+
 $priority = 1000;
 
 // In case of an child them use get stylesheet directory
@@ -271,3 +279,27 @@ function split_order_woocommerce_email($email_classes)
 }
 
 add_filter('woocommerce_email_classes', 'split_order_woocommerce_email', 10, 1);
+
+/**
+ * Removes empty tabs in product detail view
+ *
+ * @param $woocommerce_default_product_tabs
+ * @return mixed
+ */
+function filter_woocommerce_product_tabs( $woocommerce_default_product_tabs ) {
+    global $product;
+
+    if (empty($product->get_description())) {
+        unset($woocommerce_default_product_tabs['description']);
+    }
+
+    $attributes = array_filter($product->get_attributes(), function ($attribute) {
+        return in_array($attribute, INFORMATION_TAB_ATTRIBUTES);
+    }, ARRAY_FILTER_USE_KEY);
+    if (empty($attributes)) {
+        unset($woocommerce_default_product_tabs['additional_information']);
+    }
+
+    return $woocommerce_default_product_tabs;
+};
+add_filter( 'woocommerce_product_tabs', 'filter_woocommerce_product_tabs', 98);

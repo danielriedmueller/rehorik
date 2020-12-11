@@ -53,12 +53,7 @@ function extractOtherAttributes(array $productAttributes): array
     }
 
     return array_values(array_filter($productAttributes, function ($key) {
-        return in_array($key, [
-            ATTRIBUTE_SLUG_PREFIX.ORIGIN_COUNTRY_ATTRIBUTE_SLUG,
-            ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG,
-            ATTRIBUTE_SLUG_PREFIX.FLAVOUR_ATTRIBUTE_SLUG,
-            ATTRIBUTE_SLUG_PREFIX.FETT_ATTRIBUTE_SLUG,
-        ]);
+        return in_array(str_replace(ATTRIBUTE_SLUG_PREFIX, "", $key), INFORMATION_TAB_ATTRIBUTES);
     }, ARRAY_FILTER_USE_KEY));
 }
 

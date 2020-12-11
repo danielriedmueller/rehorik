@@ -18,7 +18,7 @@ body.woocommerce #content-area div.rehorik-product.product {
 
         margin: 0;
 
-        &:last-child {
+        &:last-child:not(:first-child) {
           margin-left: -4px;
         }
 

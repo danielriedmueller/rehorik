@@ -803,7 +803,7 @@ body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-t
   border-bottom-right-radius: 0;
   margin: 0;
 }
-body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab']:last-child {
+body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab']:last-child:not(:first-child) {
   margin-left: -4px;
 }
 body.woocommerce #content-area div.rehorik-product.product div.rehorik-product-tabs.woocommerce-tabs.wc-tabs-wrapper ul.rehorik-tabs-header.tabs.wc-tabs li[role='tab'] a {
