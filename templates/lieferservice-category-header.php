@@ -3,10 +3,10 @@
 <div class="rehorik-lieferservice-category-header">
     <div class="quality-text">
         <h4>Qualität für Zuhause</h4>
+        <div>Seit einiger Zeit bieten wir für Sie einen Lieferdienst an.</div>
+        <div><b>DOCH WAS STECKT DAHINTER?</b></div>
         <div class="quality-text-content">
             <div>
-                Seit einiger Zeit bieten wir für Sie einen Lieferdienst an.<br>
-                <b>DOCH WAS STECKT DAHINTER?</b><br>
                 Die Grundidee unseres Lieferservices ist es, Ihnen ein regionales Netzwerk mit nachhaltigen Produkten
                 aus unserer Region zu bieten. In Zusammenarbeit mit der Metzgerei Stierstorfer, der Bäckerei Freisleben
                 und dem Gemüsehof Köstlmeier ist es uns ein großes Anliegen, Ihnen die Regensburger Genusswelten
@@ -15,7 +15,8 @@
             <div>
                 Die Kooperation mit dem Fahrradkurier "Feine Fracht" rundet für uns den Gedanken eines nachhaltigen
                 Lieferservices perfekt ab.<br>
-                Gerne beraten wir Sie auch telefonisch und stellen gemeinsam mit Ihnen ein individuelles Paket
+                Gerne beraten wir Sie auch per Telefon: <a href="tel:0941/59975895">0941/59975895</a>
+                oder per Email: <a href="mailto:lieferservice@rehorik.de">lieferservice@rehorik.de</a> und stellen gemeinsam mit Ihnen ein individuelles Paket
                 zusammen.
             </div>
         </div>
@@ -36,8 +37,8 @@
     <div class="order-instructions-outer">
         <div class="order-instructions">
             <div>
-                <h4>BESTELLT, VERPACKT & AUF DEM WEG ZU DIR!</h4>
-                <div>Bestellen Sie telefonisch bis jeweils Montag 12 Uhr und Mittwoch 12 Uhr unter <a href="tel:0941/59975895">0941/59975895</a>
+                <h3>BESTELLT, VERPACKT <br>& AUF DEM WEG ZU DIR!</h3>
+                <div>Bestellen Sie bis jeweils Montag 12 Uhr und Mittwoch 12 Uhr per Telefon: <a href="tel:0941/59975895">0941/59975895</a> oder per Email: <a href="mailto:lieferservice@rehorik.de">lieferservice@rehorik.de</a>
                     oder jederzeit im Onlineshop.<br>
                     Die Auslieferung erfolgt am Folgetag, jeweils dienstags und
                     donnerstags ab 13 Uhr – ausgeschlossen davon sind Feiertage.

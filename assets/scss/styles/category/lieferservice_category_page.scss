@@ -1,5 +1,5 @@
 $spacing-ls: 40px;
-$line-height: 22px;
+$line-height: 26px;
 
 .rehorik-lieferservice-category-header {
   position: relative;
@@ -60,16 +60,16 @@ $line-height: 22px;
     top: 0;
     z-index: 1000;
 
+    padding: $spacing-ls;
+
     h4 {
       color: $font-color-accent;
       text-transform: uppercase;
       line-height: $line-height;
-      margin: $spacing-ls $spacing-ls 0 $spacing-ls;
     }
 
     .quality-text-content {
-      margin: 0 $spacing-ls $spacing-ls $spacing-ls;
-      font-size: $font-size-small;
+      font-size: $font-size;
       line-height: $line-height;
       display: flex;
       text-align: justify;
@@ -95,6 +95,10 @@ $line-height: 22px;
     z-index: -1;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -$spacing-ls;
+    margin-right: -$spacing-ls;
 
     @media all and (max-width: $small-breakpoint) {
       display: none;
@@ -110,23 +114,22 @@ $line-height: 22px;
       color: #fff;
 
       > div {
-        padding: $spacing-xs;
+        padding: $spacing;
         background-color: $secondary-color;
         text-align: center;
 
         @media all and (min-width: $small-breakpoint + 1) {
-          width: 350px;
+          width: 600px;
           margin: $spacing-l auto;
         }
 
-        h4 {
+        h3 {
           color: #fff;
           text-transform: uppercase;
-          line-height: 30px;
         }
 
         > div {
-          font-size: $font-size-small;
+          font-size: $font-size;
           line-height: $line-height;
         }
       }

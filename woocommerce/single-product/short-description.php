@@ -20,32 +20,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
+$productAtrributes = $product->get_attributes();
+
+// Only show attributes not used otherwise on detail page
+foreach (array_merge(INFORMATION_TAB_ATTRIBUTES, [STRENGTH_ATTRIBUTE_SLUG, FLAVOUR_VARIETY_ATTRIBUTE_SLUG]) as $attr) {
+    unset($productAtrributes[$attr]);
+}
 
 ?>
 <div class="rehorik-product-short-description">
     <?php
-        if ($alcohol = $product->get_attribute(ALCOHOL_ATTRIBUTE_SLUG)){
-            echo sprintf("<div><b>%s</b> %s</div>", $alcohol, "Alkohol");
+        foreach ($productAtrributes as $attributeName => $attribute) {
+            if ($attribute->get_visible() && $value = $product->get_attribute($attributeName)) {
+                echo sprintf("<div><b>%s</b> %s</div>", wc_attribute_label($attributeName), $value);
+            }
         }
 
-        if ($winery = $product->get_attribute(WINERY_ATTRIBUTE_SLUG)){
-            echo sprintf("<div><b>%s</b> %s</div>", wc_attribute_label(WINERY_ATTRIBUTE_SLUG), $winery);
-        }
-
-        if ($manufacturer = $product->get_attribute(MANUFACTURER_ATTRIBUTE_SLUG)){
-            echo sprintf("<div><b>%s</b> %s</div>", wc_attribute_label(MANUFACTURER_ATTRIBUTE_SLUG), $manufacturer);
-        }
-
-        if ($milchart = $product->get_attribute(MILCHART_ATTRIBUTE_SLUG)){
-            echo sprintf("<div><b>%s</b> %s</div>", wc_attribute_label(MILCHART_ATTRIBUTE_SLUG), $milchart);
-        }
-
-        if ($herstellung = $product->get_attribute(HERSTELLUNG_ATTRIBUTE_SLUG)){
-            echo sprintf("<div><b>%s</b> %s</div>", wc_attribute_label(HERSTELLUNG_ATTRIBUTE_SLUG), $herstellung);
-        }
-
-        if ($fillingQuantity = $product->get_attribute(FILLING_QUANTITY_ATTRIBUTE_SLUG)){
-            echo sprintf("<div><b>%s</b> %s</div>", wc_attribute_label(FILLING_QUANTITY_ATTRIBUTE_SLUG), $fillingQuantity);
+        if (isItCategory($product, WINE_CATEGORY_SLUGS[0]) || isItCategory($product, WINE_CATEGORY_SLUGS[1]) || isItCategory($product, WINE_CATEGORY_SLUGS[2])) {
+            echo "<div>enthält Sulfite</div>";
         }
     ?>
 </div>

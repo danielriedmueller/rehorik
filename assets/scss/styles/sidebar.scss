@@ -48,7 +48,8 @@
       li:hover > a,
       ul.product-categories li.current-cat > a,
       ul.product-categories > li:hover > a,
-      li.current-label-parent a {
+      li.current-label-parent a,
+      ul.product-categories .current-cat-parent > a {
         color: $font-color-accent-dark;
       }
     }

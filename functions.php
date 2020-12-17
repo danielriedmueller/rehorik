@@ -3,8 +3,6 @@ show_admin_bar(true);
 
 require_once('sig_functions.php');
 
-define('WP_SCSS_ALWAYS_RECOMPILE', true);
-
 define('ONE_CUP_OF_COFFEE_IN_GRAMS', 10);
 define('FREE_SHIPPING_AMOUNT', 49);
 define('MAX_COFFEE_STRENGTH_FLAVOUR_ATTRIBUTE', 6);
@@ -22,6 +20,11 @@ define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
 define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
 define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
 define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
+define('WINE_CATEGORY_SLUGS', [
+    'rotwein',
+    'likoer',
+    'weisswein-rose'
+]);
 
 // Attributes
 define('DELIVERY_ATTRIBUTE_SLUG', 'pa_lieferservice');
@@ -40,6 +43,7 @@ define('REGION_ATTRIBUTE_SLUG', 'pa_region');
 define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
 define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
 define('ALCOHOL_ATTRIBUTE_SLUG', 'pa_alkoholgehalt');
+define('WEIGHT_ATTRIBUTE_SLUG', 'pa_gewicht');
 define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
 define('WINERY_ATTRIBUTE_SLUG', 'pa_weingut');
 define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
