@@ -202,3 +202,47 @@ function woocommerce_template_loop_category_title($category)
     </h2>
     <?php
 }
+
+/**
+ * Returns one product subcategory for onlineshop or delivery
+ * depending on $referer Page
+ * The first element is used in sidebar product category list
+ * Checks if its for delivery or shipping
+ *
+ * @param $terms
+ * @return array
+ */
+function findShoptypeAwareProductSubcategory($terms) {
+    $referer = $_SERVER['HTTP_REFERER'];
+
+    $term_ids = wp_list_pluck($terms,'term_id');
+    $parents = array_filter(wp_list_pluck($terms,'parent'));
+    $term_ids_not_parents = array_diff($term_ids,  $parents);
+    $terms_not_parents = array_intersect_key($terms,  $term_ids_not_parents);
+
+    $shoptypeAwareSubcategory = [];
+    $seperator = ";";
+
+    foreach ($terms_not_parents as $key => $term) {
+        $parentSlugs = explode($seperator, get_term_parents_list($term->term_id, 'product_cat', [
+            'format' => 'slug',
+            'separator' => $seperator,
+            'link' => false,
+            'inclusive' => false
+        ]));
+        if (in_array(DELIVERY_CATEGORY_SLUG, $parentSlugs)) {
+            $shoptypeAwareSubcategory[DELIVERY_CATEGORY_SLUG] = $term;
+        } else {
+            $shoptypeAwareSubcategory[ONLINESHOP_CATEGORY_SLUG] = $term;
+        }
+    }
+
+    // Is delivery
+    if (substr_count($referer, DELIVERY_CATEGORY_URL) === 1) {
+        if (isset($shoptypeAwareSubcategory[DELIVERY_CATEGORY_SLUG])) {
+            return [$shoptypeAwareSubcategory[DELIVERY_CATEGORY_SLUG]];
+        }
+    }
+
+    return [$shoptypeAwareSubcategory[ONLINESHOP_CATEGORY_SLUG]];
+}

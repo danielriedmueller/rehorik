@@ -22,6 +22,7 @@ define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
 define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
 define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
 define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
+define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
 define('WINE_CATEGORY_SLUGS', [
     'rotwein',
     'likoer',
@@ -309,3 +310,15 @@ function filter_woocommerce_product_tabs( $woocommerce_default_product_tabs ) {
     return $woocommerce_default_product_tabs;
 };
 add_filter( 'woocommerce_product_tabs', 'filter_woocommerce_product_tabs', 98);
+
+// define the woocommerce_get_product_terms callback
+function filter_woocommerce_get_product_terms( $terms, $product_id, $taxonomy, $args ) {
+    if ($taxonomy === "product_cat") {
+        return findShoptypeAwareProductSubcategory($terms);
+    }
+
+    return $terms;
+};
+
+// add the filter
+add_filter( 'woocommerce_get_product_terms', 'filter_woocommerce_get_product_terms', 10, 4 );
