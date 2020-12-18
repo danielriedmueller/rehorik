@@ -3,6 +3,8 @@ show_admin_bar(true);
 
 require_once('sig_functions.php');
 
+define('WP_SCSS_ALWAYS_RECOMPILE', true);
+
 define('ONE_CUP_OF_COFFEE_IN_GRAMS', 10);
 define('FREE_SHIPPING_AMOUNT', 49);
 define('MAX_COFFEE_STRENGTH_FLAVOUR_ATTRIBUTE', 6);

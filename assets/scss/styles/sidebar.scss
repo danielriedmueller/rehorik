@@ -37,12 +37,37 @@
       width: 100%;
       margin: 0;
 
-      .widgettitle, ul.product-categories {
-        padding: $spacing-s 0;
+      ul.product-categories {
+        padding-top: $spacing-s;
+
+        > li {
+          > a {
+            text-transform: uppercase;
+            padding-bottom: $spacing-s;
+            display: block;
+            width: 100%;
+            line-height: 1em;
+          }
+
+          &:nth-child(2) > a {
+            border-top: 1px solid $primary-color;
+            padding-top: $spacing-s;
+            border-bottom: 0;
+          }
+
+          > ul.children {
+            border-top: 1px solid $primary-color;
+            padding: $spacing-s 0;
+
+            > li {
+              margin: 0;
+            }
+          }
+        }
       }
 
       .widgettitle {
-        border-bottom: 1px solid $primary-color;
+        display: none;
       }
 
       li:hover > a,

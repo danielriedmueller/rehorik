@@ -8,4 +8,8 @@
   color: $primary-color;
   margin-bottom: $spacing;
   text-transform: uppercase;
+
+  @media all and (max-width: $small-breakpoint) {
+    padding: 0 $spacing-s;
+  }
 }

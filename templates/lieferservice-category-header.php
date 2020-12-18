@@ -20,7 +20,6 @@
                 zusammen.
             </div>
         </div>
-        <div class="quality-text-background"></div>
     </div>
     <ul id="slider">
         <li>

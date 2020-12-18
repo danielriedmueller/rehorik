@@ -105,8 +105,33 @@ function getCategoryNameBySlug(string $slug)
     return $cat ? $cat->name : false;
 }
 
+function getShopFrontPageCategories()
+{
+    $parentCategories = get_categories([
+        'parent' => 0,
+        'hide_empty' => 0,
+        'hierarchical' => 1,
+        'taxonomy' => 'product_cat'
+    ]);
+
+    $onlineshopCategoryKey = array_search('onlineshop', array_column($parentCategories, 'slug'));
+    $onlineshopCategories = get_categories(           [
+        'parent' => $parentCategories[$onlineshopCategoryKey]->term_id,
+        'hide_empty' => 1,
+        'hierarchical' => 1,
+        'taxonomy' => 'product_cat',
+        'pad_counts' => 1
+    ]);
+
+    $deliveryCategoryKey = array_search('lieferservice', array_column($parentCategories, 'slug'));
+    $onlineshopCategories[] = $parentCategories[$deliveryCategoryKey];
+
+    return $onlineshopCategories;
+}
+
 /**
  * Overridden woocommerce function
+ * Onlineshp category id = 659
  *
  * @param int $parent_id
  * @return array|false|mixed
@@ -114,6 +139,11 @@ function getCategoryNameBySlug(string $slug)
 function woocommerce_get_product_subcategories($parent_id = 0)
 {
     $parent_id = absint($parent_id);
+
+    if ($parent_id === 0) {
+        return getShopFrontPageCategories();
+    }
+
     $cache_key = apply_filters('woocommerce_get_product_subcategories_cache_key', 'product-category-hierarchy-' . $parent_id, $parent_id);
     $product_categories = $cache_key ? wp_cache_get($cache_key, 'product_cat') : false;
 

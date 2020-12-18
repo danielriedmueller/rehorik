@@ -116,6 +116,13 @@
         }
       }
     }
+
+    @media all and (max-width: $very-small-breakpoint) {
+      > span {
+        margin-right: $spacing-xxxs;
+        height: 19px;
+      }
+    }
   }
 }
 
