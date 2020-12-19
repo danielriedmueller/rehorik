@@ -1,6 +1,6 @@
 #tribe-events-pg-template, .tribe-events-pg-template {
-  width: 80%;
-  max-width: 1080px;
+  width: $container-width;
+  max-width: $max-width;
   margin: auto;
   font-family: "DIN Offc W01 Cond";
 }

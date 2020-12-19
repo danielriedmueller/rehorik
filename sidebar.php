@@ -4,7 +4,7 @@ if ((is_single() || is_page()) && in_array(get_post_meta(get_queried_object_id()
     return;
 }
 
-if (is_shop()) {
+if (is_shop() && !is_search()) {
     return;
 }
 

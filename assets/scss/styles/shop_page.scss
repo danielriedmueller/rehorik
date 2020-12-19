@@ -1,4 +1,4 @@
-.woocommerce.shop #main-content {
+.woocommerce.shop:not(.search) #main-content {
 
   // make shop page fullwidth, after sidebar is removed
   #left-area {

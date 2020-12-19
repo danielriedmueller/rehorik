@@ -77,14 +77,7 @@ require_once($baseDir . '/filter/product_tabs.php');
 
 // Adds page title to the top on woocommerce pages
 add_action('et_before_main_content', function () {
-    if (is_woocommerce()) {
-        $pageTitle = woocommerce_page_title(false);
-        echo "<h1 class='page-title'>${pageTitle}</h1>";
-    }
-    if (is_cart() || is_checkout()) {
-        $pageTitle = get_the_title();
-        echo "<h1 class='page-title'>${pageTitle}</h1>";
-    }
+    echo get_template_part('templates/page-title');
 }, $priority);
 
 /**
@@ -97,6 +90,20 @@ add_filter('body_class', function ($classes) {
 
     return $classes;
 });
+
+/**
+ * Adds search widget area
+ */
+if (function_exists('register_sidebar')) {
+    register_sidebar([
+        'id' => 'productsearch',
+        'name' => 'Produktsuche',
+        'before_widget' => '<div class = "rehorik-product-search-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ]);
+}
 
 /**
  * Removes breadcrumb.
@@ -165,8 +172,8 @@ add_action('render_one_cup_of_coffee_price', function ($product) {
         }
 
         if (is_array($unitPrice) && array_key_exists('price', $unitPrice)) {
-            $min = min($unitPrice['price']);
-            $max = max($unitPrice['price']);
+            $min = min(array_filter($unitPrice['price']));
+            $max = max(array_filter($unitPrice['price']));
 
             $priceForOneCupMin = $min * $multiplier * $unitBase;
             $priceForOneCupMax = $max * $multiplier * $unitBase;

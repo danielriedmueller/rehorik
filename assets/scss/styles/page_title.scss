@@ -1,0 +1,19 @@
+.page-title-outer {
+  background-color: $primary-color;
+  margin-bottom: $spacing-l;
+
+  .page-title {
+    position: relative;
+    text-align: center;
+    background-color: $primary-color;
+    padding: $spacing;
+    width: $container-width;
+    max-width: $max-width;
+    margin: auto;
+
+    h1 {
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+}
