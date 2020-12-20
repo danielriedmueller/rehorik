@@ -234,6 +234,7 @@
 	<?php ob_start(); ?>
 		<header id="main-header" class="rehorik-header" data-height-onload="<?php echo esc_attr( et_get_option( 'menu_height', '66' ) ); ?>">
 			<div class="container clearfix et_menu_container">
+                <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
 				<div id="et-top-navigation" data-height="<?php echo esc_attr( et_get_option( 'menu_height', '66' ) ); ?>" data-fixed-height="<?php echo esc_attr( et_get_option( 'minimized_menu_height', '40' ) ); ?>">
 					<?php if ( ! $et_slide_header || is_customize_preview() ) : ?>
 						<nav id="top-menu-nav">
@@ -264,7 +265,7 @@
 					<?php
 					if ( ! $et_top_info_defined && ( ! $et_slide_header || is_customize_preview() ) ) {
 						et_show_cart_total( array(
-							'no_text' => true,
+							'no_text' => false,
 						) );
 					}
 					?>

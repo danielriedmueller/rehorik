@@ -72,6 +72,8 @@ $baseDir = get_stylesheet_directory();
 
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
+require_once($baseDir . '/helper/woocommerce_functions.php');
+require_once($baseDir . '/helper/divi_functions.php');
 require_once($baseDir . '/filter/product_tabs.php');
 
 
@@ -318,7 +320,15 @@ function filter_woocommerce_product_tabs( $woocommerce_default_product_tabs ) {
 };
 add_filter( 'woocommerce_product_tabs', 'filter_woocommerce_product_tabs', 98);
 
-// define the woocommerce_get_product_terms callback
+/**
+ *  Define the woocommerce_get_product_terms callback
+ *
+ * @param $terms
+ * @param $product_id
+ * @param $taxonomy
+ * @param $args
+ * @return array
+ */
 function filter_woocommerce_get_product_terms( $terms, $product_id, $taxonomy, $args ) {
     if ($taxonomy === "product_cat") {
         return findShoptypeAwareProductSubcategory($terms);
@@ -326,6 +336,5 @@ function filter_woocommerce_get_product_terms( $terms, $product_id, $taxonomy, $
 
     return $terms;
 };
+add_filter( 'woocommerce_get_product_terms', 'filter_woocommerce_get_product_terms', 10, 4);
 
-// add the filter
-add_filter( 'woocommerce_get_product_terms', 'filter_woocommerce_get_product_terms', 10, 4 );

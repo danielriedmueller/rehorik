@@ -8,8 +8,7 @@ header#main-header.rehorik-header {
     position: relative;
 
     @media all and (min-width: $medium-breakpoint + 1) {
-      &:before {
-        content: "";
+      #rehorik-logo {
         width: $logo-size;
         height: $logo-size;
         background: transparent url("../img/svg/logo.svg") no-repeat left top;

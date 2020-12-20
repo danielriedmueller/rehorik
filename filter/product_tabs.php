@@ -3,7 +3,6 @@
 /**
  * Rename product data tabs
  */
-
 function woo_rename_tabs( $tabs ) {
 
     $tabs['description']['title'] = 'Beschreibung';
