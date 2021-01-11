@@ -57,6 +57,7 @@
 		<?php ob_start(); ?>
 		<div id="top-header"<?php echo $et_top_info_defined ? '' : 'style="display: none;"'; ?>>
 			<div class="container clearfix">
+            <a href="">LOGO</a>
 
 			<?php if ( $et_contact_info_defined ) : ?>
 
