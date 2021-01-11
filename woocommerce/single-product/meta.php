@@ -23,7 +23,6 @@ global $product;
 ?>
 
 <div class="rehorik-product-meta product_meta">
-
 	<?php do_action( 'woocommerce_product_meta_start' ); ?>
 
 	<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) : ?>
@@ -32,6 +31,15 @@ global $product;
 
 	<?php endif; ?>
 
+    <?php
+    foreach (WINE_CATEGORY_SLUGS as $wineCategorySlug) {
+        if (isItCategory($product, $wineCategorySlug)) {
+            echo "<div>enthält Sulfite</div>";
+            break;
+        }
+    }
+    ?>
 
-	<?php do_action( 'woocommerce_product_meta_end' ); ?>
+
+    <?php do_action( 'woocommerce_product_meta_end' ); ?>
 </div>

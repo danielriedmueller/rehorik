@@ -35,10 +35,6 @@ foreach (array_merge(INFORMATION_TAB_ATTRIBUTES, [STRENGTH_ATTRIBUTE_SLUG, FLAVO
                 echo sprintf("<div><b>%s</b> %s</div>", wc_attribute_label($attributeName), $value);
             }
         }
-
-        if (isItCategory($product, WINE_CATEGORY_SLUGS[0]) || isItCategory($product, WINE_CATEGORY_SLUGS[1]) || isItCategory($product, WINE_CATEGORY_SLUGS[2])) {
-            echo "<div>enthält Sulfite</div>";
-        }
     ?>
 </div>
 <?php

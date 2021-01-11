@@ -26,7 +26,8 @@ define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
 define('WINE_CATEGORY_SLUGS', [
     'rotwein',
     'likoer',
-    'weisswein-rose'
+    'weisswein-rose',
+    'champagner-und-sekt'
 ]);
 
 // Attributes
