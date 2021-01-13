@@ -78,10 +78,16 @@ require_once($baseDir . '/helper/divi_functions.php');
 require_once($baseDir . '/filter/product_tabs.php');
 
 
-// Adds page title to the top on woocommerce pages
+/**
+ *  Adds page title to the top on woocommerce pages
+ */
 add_action('et_before_main_content', function () {
     echo get_template_part('templates/page-title');
-}, $priority);
+}, 10, 3);
+
+add_action( 'tribe_template_after_include:events/month/mobile-events', function( $file, $name, $template ) {
+    echo '<button>My Button</button>';
+}, 10, 3 );
 
 /**
  * Adds class to body classes for shop page only.
@@ -142,7 +148,6 @@ function et_add_child_mobile_navigation()
         echo '<div id="rehorik-mobile-nav"><div class="mobile_nav closed"><span class="mobile_menu_bar mobile_menu_bar_toggle"></span></div></div>';
     }
 }
-
 add_action('et_header_top', 'et_add_child_mobile_navigation');
 
 /**
