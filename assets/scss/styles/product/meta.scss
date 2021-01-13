@@ -2,7 +2,7 @@ div.rehorik-product-meta.product_meta {
   border: none;
   margin-top: $spacing-xxxs;
   padding: 0;
-  line-height: 22px;
+  line-height: $line-height-narrow;
 
   span, p, div {
     margin: 0;

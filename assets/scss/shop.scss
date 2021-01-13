@@ -44,6 +44,11 @@ pre {
   line-height: 12px;
 }
 
+html body {
+  color: $font-color;
+  font-weight: normal;
+}
+
 .woocommerce-page {
   // revert overwritten divi custom css for woocommerce pages
   .et_pb_section_1.et_pb_section {
@@ -107,4 +112,8 @@ pre {
 
 #page-container {
   padding-top: $spacing-l !important;
+}
+
+.rehorik-font-bold {
+  font-weight: bold;
 }

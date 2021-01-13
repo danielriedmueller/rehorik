@@ -36,10 +36,10 @@
  */
 
 if (
-	! empty( $must_login )
-	|| $is_modal
+    ! empty( $must_login )
+    || $is_modal
 ) {
-	return;
+    return;
 }
 
 /**
@@ -51,11 +51,20 @@ if (
  *
  * @since 4.11.3
  */
+$button_classes = apply_filters(
+    'tribe_tickets_ticket_block_submit_classes',
+    [
+        'rehorik-tribe-event-tickets-add-to-cart-button',
+        'tribe-common-c-btn',
+        'tribe-common-c-btn--small',
+        'tribe-tickets__tickets-buy',
+    ]
+);
 ?>
 <button
-	id="tribe-tickets__tickets-buy"
-    class="rehorik-tickets-submit-button"
-	type="submit"
-	name="<?php echo esc_html( $submit_button_name ); ?>"
-	<?php tribe_disabled( true ); ?>
+    <?php tribe_classes( $button_classes ); ?>
+        id="tribe-tickets__tickets-buy"
+        type="submit"
+        name="<?php echo esc_html( $submit_button_name ); ?>"
+    <?php tribe_disabled( true ); ?>
 >In den Warenkorb</button>

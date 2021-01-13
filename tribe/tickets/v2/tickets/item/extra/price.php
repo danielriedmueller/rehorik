@@ -1,9 +1,10 @@
 <?php
 /**
  * Block: Tickets
+ * Extra column, price
  *
  * Override this template in your own theme by creating a file at:
- * [your-theme]/tribe/tickets/v2/tickets.php
+ * [your-theme]/tribe/tickets/v2/tickets/item/extra/price.php
  *
  * See more documentation about our views templating system.
  *
@@ -14,6 +15,7 @@
  * @version 5.0.3
  *
  * @var Tribe__Tickets__Editor__Template   $this                        [Global] Template object.
+ * @var int                                $post_id                     [Global] The current Post ID to which tickets are attached.
  * @var Tribe__Tickets__Tickets            $provider                    [Global] The tickets provider class.
  * @var string                             $provider_id                 [Global] The tickets provider class name.
  * @var Tribe__Tickets__Ticket_Object[]    $tickets                     [Global] List of tickets.
@@ -24,6 +26,7 @@
  * @var bool                               $is_sale_future              [Global] True if no ticket sale dates have started yet.
  * @var Tribe__Tickets__Commerce__Currency $currency                    [Global] Tribe Currency object.
  * @var Tribe__Tickets__Tickets_Handler    $handler                     [Global] Tribe Tickets Handler object.
+ * @var Tribe__Tickets__Privacy            $privacy                     [Global] Tribe Tickets Privacy object.
  * @var int                                $threshold                   [Global] The count at which "number of tickets left" message appears.
  * @var bool                               $show_original_price_on_sale [Global] Show original price on sale.
  * @var null|bool                          $is_mini                     [Global] If in "mini cart" context.
@@ -31,62 +34,41 @@
  * @var string                             $submit_button_name          [Global] The button name for the tickets block.
  * @var string                             $cart_url                    [Global] Link to Cart (could be empty).
  * @var string                             $checkout_url                [Global] Link to Checkout (could be empty).
- * @var WP_Post                            $post                        The post object.
- * @var int                                $post_id                     The post ID.
+ * @var Tribe__Tickets__Ticket_Object      $ticket                      The ticket object.
+ * @var int                                $key                         Ticket Item index.
+ * @var string                             $data_available              Boolean string.
+ * @var bool                               $has_shared_cap              True if ticket has shared capacity.
+ * @var string                             $data_has_shared_cap         True text if ticket has shared capacity.
+ * @var string                             $currency_symbol             The ticket's currency symbol, e.g. '$'.
+ * @var bool                               $show_unlimited              Whether to allow showing of "unlimited".
+ * @var int                                $available_count             The quantity of Available tickets based on the Attendees number.
+ * @var bool                               $is_unlimited                Whether the ticket has unlimited quantity.
+ * @var int                                $max_at_a_time               The maximum quantity able to be purchased in a single Add to Cart action.
  */
 
-// We don't display anything if there is no provider or tickets.
-if ( ! $is_sale_future && ( ! $provider || ! $tickets ) ) {
-	return false;
-}
-
 $classes = [
-    'rehorik-tribe-event-tickets',
-    'tribe-common',
-    'event-tickets',
-    'tribe-tickets__tickets-wrapper',
+	'rehorik-tribe-events-extra-price'
 ];
 
+$has_suffix = ! empty( $ticket->price_suffix );
 ?>
 <div <?php tribe_classes( $classes ); ?>>
-    <form
-            id="tribe-tickets__tickets-form"
-            action="<?php echo esc_url( $provider->get_cart_url() ); ?>"
-            class="rehorik-tribe-event-tickets-form tickets__tickets-form tribe-tickets__form"
-            method="post"
-            enctype='multipart/form-data'
-            data-provider="<?php echo esc_attr( $provider->class_name ); ?>"
-            autocomplete="off"
-            data-provider-id="<?php echo esc_attr( $provider->orm_provider ); ?>"
-            data-post-id="<?php echo esc_attr( $post_id ); ?>"
-            novalidate
-    >
-		<input type="hidden" name="tribe_tickets_saving_attendees" value="1"/>
-		<input type="hidden" name="tribe_tickets_ar" value="1"/>
-		<input type="hidden" name="tribe_tickets_ar_data" value="" id="tribe_tickets_block_ar_data"/>
-
-
-		<?php $this->template( 'v2/tickets/commerce/fields' ); ?>
-
-		<?php $this->template( 'v2/tickets/items' ); ?>
-
-        <?php $this->template( 'v2/tickets/footer' ); ?>
-
-		<?php $this->template( 'v2/tickets/item/inactive' ); ?>
-
-		<?php $this->template( 'v2/components/loader/loader' ); ?>
-
-	</form>
-
-	<?php
-	/**
-	 * Allows injection of additional markup after the form tag but within the div of this template.
-	 *
-	 * @since 5.0.3
-	 *
-	 * @see  Tribe__Template\do_entry_point()
-	 * @link https://docs.theeventscalendar.com/reference/classes/tribe__template/do_entry_point/
-	 */
-	$this->do_entry_point( 'after_form' );
-	?>
+    <span class="rehorik-font-bold">Kosten</span>
+	<?php if ( ! empty( $ticket->on_sale ) ) : ?>
+		<span class="tribe-common-b2 tribe-tickets__tickets-original-price">
+			<?php echo $currency->get_formatted_currency_with_symbol( $ticket->regular_price, $post_id, $provider->class_name ); ?>
+		</span>
+	<?php endif; ?>
+	<span class="tribe-tickets__tickets-sale-price">
+		<?php echo $currency->get_formatted_currency_with_symbol( $ticket->price, $post_id, $provider->class_name ); ?>
+		<?php if ( $has_suffix ) : ?>
+			<span class="tribe-tickets__tickets-sale-price-suffix tribe-common-b2">
+				<?php
+				// This suffix contains HTML to be output.
+				// phpcs:ignore
+				echo $ticket->price_suffix;
+				?>
+			</span>
+		<?php endif; ?>
+	</span>
 </div>

@@ -46,7 +46,7 @@
             padding-bottom: $spacing-s;
             display: block;
             width: 100%;
-            line-height: 1em;
+            line-height: $line-height-large;
           }
 
           &:nth-child(2) > a {

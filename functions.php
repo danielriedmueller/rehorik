@@ -82,13 +82,10 @@ require_once($baseDir . '/filter/product_tabs.php');
  *  Adds page title to the top on woocommerce pages
  */
 add_action('et_before_main_content', function () {
-    echo get_template_part('templates/page-title');
-}, 10, 3);
-
-add_action( 'tribe_template_after_include:events/month/mobile-events', function( $file, $name, $template ) {
-    echo '<button>My Button</button>';
-}, 10, 3 );
-
+    if (is_woocommerce() || is_cart() || is_checkout()) {
+        echo get_template_part('templates/page-title');
+    }
+}, $priority);
 /**
  * Adds class to body classes for shop page only.
  */

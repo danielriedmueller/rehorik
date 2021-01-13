@@ -36,16 +36,3 @@
     }
   }
 }
-
-#tribe-events input.tribe-events-button,
-.tribe-events-button,
-#tribe-bar-form .tribe-bar-submit input[type=submit]{
-  padding: 1px $spacing !important;
-  font-weight: bold;
-  font-size: $font-size;
-  color: #fff;
-  border: none;
-  border-radius: $button-border-radius;
-  background: $primary-color none;
-  text-align: center;
-}

@@ -1,9 +1,10 @@
 <?php
 /**
  * Block: Tickets
+ * Footer
  *
  * Override this template in your own theme by creating a file at:
- * [your-theme]/tribe/tickets/v2/tickets.php
+ * [your-theme]/tribe/tickets/v2/tickets/footer.php
  *
  * See more documentation about our views templating system.
  *
@@ -31,62 +32,21 @@
  * @var string                             $submit_button_name          [Global] The button name for the tickets block.
  * @var string                             $cart_url                    [Global] Link to Cart (could be empty).
  * @var string                             $checkout_url                [Global] Link to Checkout (could be empty).
- * @var WP_Post                            $post                        The post object.
- * @var int                                $post_id                     The post ID.
  */
 
-// We don't display anything if there is no provider or tickets.
-if ( ! $is_sale_future && ( ! $provider || ! $tickets ) ) {
-	return false;
+// Bail if there are no tickets and we're not in mini context.
+if (
+	! $is_mini
+	&& empty( $tickets_on_sale )
+) {
+	return;
 }
 
-$classes = [
-    'rehorik-tribe-event-tickets',
-    'tribe-common',
-    'event-tickets',
-    'tribe-tickets__tickets-wrapper',
-];
-
 ?>
-<div <?php tribe_classes( $classes ); ?>>
-    <form
-            id="tribe-tickets__tickets-form"
-            action="<?php echo esc_url( $provider->get_cart_url() ); ?>"
-            class="rehorik-tribe-event-tickets-form tickets__tickets-form tribe-tickets__form"
-            method="post"
-            enctype='multipart/form-data'
-            data-provider="<?php echo esc_attr( $provider->class_name ); ?>"
-            autocomplete="off"
-            data-provider-id="<?php echo esc_attr( $provider->orm_provider ); ?>"
-            data-post-id="<?php echo esc_attr( $post_id ); ?>"
-            novalidate
-    >
-		<input type="hidden" name="tribe_tickets_saving_attendees" value="1"/>
-		<input type="hidden" name="tribe_tickets_ar" value="1"/>
-		<input type="hidden" name="tribe_tickets_ar_data" value="" id="tribe_tickets_block_ar_data"/>
-
-
-		<?php $this->template( 'v2/tickets/commerce/fields' ); ?>
-
-		<?php $this->template( 'v2/tickets/items' ); ?>
-
-        <?php $this->template( 'v2/tickets/footer' ); ?>
-
-		<?php $this->template( 'v2/tickets/item/inactive' ); ?>
-
-		<?php $this->template( 'v2/components/loader/loader' ); ?>
-
-	</form>
-
-	<?php
-	/**
-	 * Allows injection of additional markup after the form tag but within the div of this template.
-	 *
-	 * @since 5.0.3
-	 *
-	 * @see  Tribe__Template\do_entry_point()
-	 * @link https://docs.theeventscalendar.com/reference/classes/tribe__template/do_entry_point/
-	 */
-	$this->do_entry_point( 'after_form' );
-	?>
+<div class="rehorik-tribe-event-footer tribe-tickets__tickets-footer">
+	<?php $this->template( 'v2/tickets/footer/return-to-cart' ); ?>
+	<?php $this->template( 'v2/tickets/footer/quantity' ); ?>
+	<?php $this->template( 'v2/tickets/footer/total' ); ?>
+	<?php $this->template( 'v2/tickets/submit' ); ?>
+    <div class="rehorik-hugo-head"></div>
 </div>

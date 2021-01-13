@@ -18,7 +18,7 @@
   .woocommerce-message {
     background-color: #fff !important;
     color: $font-color !important;
-    line-height: 46px;
+    line-height: $line-height-large;
 
     a {
       color: $font-color-accent !important;
