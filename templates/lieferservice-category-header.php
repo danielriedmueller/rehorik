@@ -42,6 +42,7 @@
                     Die Auslieferung erfolgt am Folgetag, jeweils dienstags und
                     donnerstags ab 13 Uhr – ausgeschlossen davon sind Feiertage.
                     Unsere Bestellliste zum Download, finden Sie <a href="<?php echo get_stylesheet_directory_uri() ?>/assets/document/Flyer Lieferservice Website DIN A4.pdf">hier</a>.
+                    Die Versandkosten betragen 5,8 €, kostenloser Versand ab 49 €.
                 </div>
             </div>
         </div>
