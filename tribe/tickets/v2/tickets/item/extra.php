@@ -75,11 +75,6 @@ $classes = [];
 
 ?>
 <div <?php tribe_classes( $classes ); ?>>
-
 	<?php $this->template( 'v2/tickets/item/extra/price' ); ?>
-
-	<?php $this->template( 'v2/tickets/item/extra/available' ); ?>
-
 	<?php $this->template( 'v2/tickets/item/extra/description-toggle' ); ?>
-
 </div>

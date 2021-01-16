@@ -1,0 +1,29 @@
+.rehorik-tribe-events-main #tribe-events {
+  .rehorik-tribe-events-single {
+    .rehorik-tribe-events-single-event-content,
+    .rehorik-tribe-events-single-event-info {
+      @media all and (min-width: $small-breakpoint + 1) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        > div:first-child {
+          flex-basis: 35%;
+          margin-right: $spacing-xl;
+        }
+
+        > div:last-child {
+          flex-basis: 65%;
+        }
+      }
+    }
+
+    .rehorik-tribe-events-single-event-content {
+      margin-top: $spacing-l;
+    }
+
+    .rehorik-tribe-events-single-description {
+      text-align: justify;
+    }
+  }
+}

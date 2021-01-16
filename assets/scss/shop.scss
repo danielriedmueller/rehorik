@@ -36,8 +36,15 @@
 @import "styles/product_search";
 @import "styles/page_title";
 @import "styles/cart/cart-info";
+@import "styles/events/menu";
 @import "styles/events/events";
+@import "styles/events/single_event";
 @import "styles/events/calendar";
+@import "styles/events/info";
+@import "styles/events/meta";
+@import "styles/events/item";
+@import "styles/events/footer";
+@import "styles/events/orders";
 
 pre {
   font-size: 10px;
@@ -112,8 +119,4 @@ html body {
 
 #page-container {
   padding-top: $spacing-l !important;
-}
-
-.rehorik-font-bold {
-  font-weight: bold;
 }

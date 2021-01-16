@@ -1,0 +1,36 @@
+.rehorik-tribe-events-main #tribe-events #tribe-events-content {
+  .tribe-back {
+    margin-bottom: $spacing-s;
+  }
+
+  .tribe-tickets {
+    h2 {
+      margin-top: $spacing;
+    }
+  }
+
+  .tribe-submit-tickets-form button {
+    color: #ededed;
+    font-family: "DIN Offc W01 Cond";
+    padding: 0.3em 1em;
+    background: #c6b480 none;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 1.7em;
+    border: 2px solid;
+    border-radius: 3px;
+    transition: all 0.2s;
+    text-align: center;
+    box-shadow: none;
+    text-shadow: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #996b23;
+      background-color: #c6b480;
+    }
+  }
+}

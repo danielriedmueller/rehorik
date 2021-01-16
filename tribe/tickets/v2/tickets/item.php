@@ -110,14 +110,13 @@ $has_shared_cap = isset( $has_shared_cap ) ? $has_shared_cap : $this->get( 'has_
 	<?php endif; ?>
 >
     <div>
-        <?php
-        $this->template( 'v2/tickets/item/content/description' );
-        ?>
+        <?php $this->template( 'v2/tickets/item/content', $context ); ?>
+        <?php $this->template( 'v2/tickets/item/content/description' ); ?>
     </div>
     <div>
-        <?php $this->template( 'v2/tickets/item/content', $context ); ?>
         <?php $this->template( 'v2/tickets/item/quantity', $context ); ?>
         <?php $this->template( 'v2/tickets/item/quantity-mini', $context ); ?>
         <?php $this->template( 'v2/tickets/item/opt-out', $context ); ?>
+        <?php $this->template( 'v2/tickets/item/extra/available' ); ?>
     </div>
 </div>

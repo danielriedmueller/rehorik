@@ -1,0 +1,46 @@
+.rehorik-tribe-events-main #tribe-events {
+  .rehorik-tribe-events-single {
+    .rehorik-tribe-events-single-event-info-outer {
+      border-top: 1px solid $primary-color;
+      margin-top: $spacing-s;
+      padding-top: $spacing-s;
+
+      img {
+        margin-top: 5px;
+      }
+
+      h2 {
+        margin-bottom: $spacing-s - 5px;
+        padding: 0;
+        text-transform: uppercase;
+      }
+
+      .rehorik-tribe-events-single-event-info {
+        text-align: justify;
+
+        color: $font-color-accent;
+
+        p {
+          margin: 0;
+          padding: 0;
+          color: $font-color;
+          line-height: $line-height;
+
+          a {
+            color: $font-color;
+          }
+        }
+
+        p:last-of-type {
+          margin-bottom: $spacing-s;
+        }
+
+        @media all and (max-width: $small-breakpoint) {
+          div:first-child {
+            margin-bottom: $spacing-s;
+          }
+        }
+      }
+    }
+  }
+}

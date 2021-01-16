@@ -52,7 +52,7 @@ $classes = [
     <form
             id="tribe-tickets__tickets-form"
             action="<?php echo esc_url( $provider->get_cart_url() ); ?>"
-            class="rehorik-tribe-event-tickets-form tickets__tickets-form tribe-tickets__form"
+            class="rehorik-tribe-event-tickets-form tribe-tickets__tickets-form tribe-tickets__form"
             method="post"
             enctype='multipart/form-data'
             data-provider="<?php echo esc_attr( $provider->class_name ); ?>"
@@ -61,21 +61,23 @@ $classes = [
             data-post-id="<?php echo esc_attr( $post_id ); ?>"
             novalidate
     >
-		<input type="hidden" name="tribe_tickets_saving_attendees" value="1"/>
-		<input type="hidden" name="tribe_tickets_ar" value="1"/>
-		<input type="hidden" name="tribe_tickets_ar_data" value="" id="tribe_tickets_block_ar_data"/>
+        <div></div>
+        <div>
+            <input type="hidden" name="tribe_tickets_saving_attendees" value="1"/>
+            <input type="hidden" name="tribe_tickets_ar" value="1"/>
+            <input type="hidden" name="tribe_tickets_ar_data" value="" id="tribe_tickets_block_ar_data"/>
 
 
-		<?php $this->template( 'v2/tickets/commerce/fields' ); ?>
+            <?php $this->template( 'v2/tickets/commerce/fields' ); ?>
 
-		<?php $this->template( 'v2/tickets/items' ); ?>
+            <?php $this->template( 'v2/tickets/items' ); ?>
 
-        <?php $this->template( 'v2/tickets/footer' ); ?>
+            <?php $this->template( 'v2/tickets/footer' ); ?>
 
-		<?php $this->template( 'v2/tickets/item/inactive' ); ?>
+            <?php $this->template( 'v2/tickets/item/inactive' ); ?>
 
-		<?php $this->template( 'v2/components/loader/loader' ); ?>
-
+            <?php $this->template( 'v2/components/loader/loader' ); ?>
+        </div>
 	</form>
 
 	<?php
