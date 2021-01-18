@@ -23,7 +23,7 @@ global $product;
 $productAtrributes = $product->get_attributes();
 
 // Only show attributes not used otherwise on detail page
-foreach (array_merge(INFORMATION_TAB_ATTRIBUTES, [STRENGTH_ATTRIBUTE_SLUG, FLAVOUR_VARIETY_ATTRIBUTE_SLUG]) as $attr) {
+foreach (array_merge(INFORMATION_TAB_ATTRIBUTES, [STRENGTH_ATTRIBUTE_SLUG, FLAVOUR_VARIETY_ATTRIBUTE_SLUG, PRODUCT_OF_MONTH_ATTRIBUTE_SLUG]) as $attr) {
     unset($productAtrributes[$attr]);
 }
 
