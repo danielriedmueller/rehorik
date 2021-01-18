@@ -66,7 +66,7 @@ $event_id = get_the_ID();
                 <p><b>VERANSTALTER:</b> Rehorik GmbH</p>
                 <p><b>TELEFON:</b> <a href="tel:+49941 / 51727">0941 / 51727</a></p>
                 <p><b>E-MAIL:</b> <a href="mailto:events@rehorik.de">events@rehorik.de</a></p>
-                Die Veranstaltung findet in den Geschäftsräumen der Fa. Rehorik, Am Brixener Hof 7 statt.
+                Die Veranstaltung findet in den Geschäftsräumen der Fa. Rehorik statt.
                 Eine Absage kann spätestens 24 Std. vor Veranstaltungsbeginn erfolgen. Bei späterer Absage oder
                 Fernbleiben fällt die volle Seminargebühr an. Das Ticket verliert in diesem Fall seine Gültigkeit.
                 Die Teilnahme am Seminar ist nur durch Abgabe des Tickets
