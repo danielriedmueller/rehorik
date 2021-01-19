@@ -38,17 +38,20 @@ $event_id = get_the_ID();
 	<?php while ( have_posts() ) :  the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class('rehorik-tribe-events-single-event-content'); ?>>
 			<!-- Event featured image, but exclude link -->
-			<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
             <div>
                 <!-- Event content -->
                 <?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
                 <div class="rehorik-tribe-events-single-description">
                     <?php the_content(); ?>
                 </div>
+            </div>
+            <div>
+                <?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
+            </div>
+            <div>
                 <!-- .tribe-events-single-event-description -->
                 <?php tribe_get_template_part( 'modules/meta' ); ?>
                 <?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
-
                 <!-- Calendar links -->
                 <?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
             </div>

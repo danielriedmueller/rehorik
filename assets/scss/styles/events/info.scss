@@ -16,6 +16,12 @@
       }
 
       .rehorik-tribe-events-single-event-info {
+        @media all and (min-width: $small-breakpoint + 1) {
+          display: grid;
+          grid-template-columns: 3fr 5fr;
+          column-gap: $spacing-xl;
+        }
+
         text-align: justify;
 
         color: $font-color-accent;

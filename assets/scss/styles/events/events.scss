@@ -16,6 +16,7 @@
     .rehorik-tribe-event-tickets {
       .rehorik-tribe-event-tickets-form {
         padding: 0;
+        margin: 0;
         border: none;
         max-width: unset;
       }
@@ -44,6 +45,7 @@
       font-family: $font-family-body;
       font-size: $font-size;
       color: $font-color;
+      line-height: $line-height-narrow;
     }
 
     .tribe-tickets__tickets-item-content-title,
