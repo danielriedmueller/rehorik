@@ -343,3 +343,11 @@ function filter_woocommerce_get_product_terms( $terms, $product_id, $taxonomy, $
 };
 add_filter( 'woocommerce_get_product_terms', 'filter_woocommerce_get_product_terms', 10, 4);
 
+/**
+ * Add ticket category to created ticket products
+ */
+add_action('event_tickets_after_save_ticket', function ($event_id, $ticket, $raw_data, $classname) {
+    if (!empty($ticket) && isset($ticket->ID)) {
+        wp_add_object_terms($ticket->ID, TICKET_CATEGORY_SLUG, 'product_cat');
+    }
+}, 10, 4);
