@@ -326,6 +326,8 @@
 		 * @param string $main_header
 		 */
 		echo et_core_intentionally_unescaped( apply_filters( 'et_html_main_header', $main_header ), 'html' );
+
+        echo get_template_part('templates/social-media-icons');
 	?>
 		<div id="et-main-area">
 	<?php
