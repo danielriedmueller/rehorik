@@ -1,15 +1,12 @@
-<?php
-if (current_user_can(PERMISSION_VIEW_VIEW_ATTENDEE_LIST)) {
-    $event_id = get_the_ID();
-    $attendees = tribe_tickets_get_attendees($event_id);
-
-    ?>
+<?php if (current_user_can(PERMISSION_VIEW_VIEW_ATTENDEE_LIST)): ?>
+    <?php $attendees = tribe_tickets_get_attendees( get_the_ID()); ?>
     <div class="rehorik-tribe-events-attendee-list">
         <h2>Teilnehmerliste</h2>
-        <? if(sizeof($attendees) > 0): ?>
+        <?php if(sizeof($attendees) > 0): ?>
             <div class="table-outer">
                 <table>
                     <thead>
+                    <tr>
                     <tr>
                         <th>Ticket</th>
                         <th>Bestellstatus</th>
@@ -33,10 +30,8 @@ if (current_user_can(PERMISSION_VIEW_VIEW_ATTENDEE_LIST)) {
                     </tbody>
                 </table>
             </div>
-        <? else: ?>
+        <?php else: ?>
             <p>Es sind noch keine Teilnehmer angemeldet.</p>
-        <? endif; ?>
+        <?php endif; ?>
     </div>
-    <?php
-}
-?>
+<?php endif; ?>
