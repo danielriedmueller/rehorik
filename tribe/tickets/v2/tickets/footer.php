@@ -41,7 +41,6 @@ if (
 ) {
 	return;
 }
-
 ?>
 <div class="rehorik-tribe-event-footer tribe-tickets__tickets-footer">
 	<?php $this->template( 'v2/tickets/footer/return-to-cart' ); ?>

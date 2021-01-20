@@ -66,6 +66,8 @@ define('INFORMATION_TAB_ATTRIBUTES', [
     FETT_ATTRIBUTE_SLUG,
 ]);
 
+define('PERMISSION_VIEW_VIEW_ATTENDEE_LIST', 'teilnehmerliste_bei_events_anschauen');
+
 $priority = 1000;
 
 // In case of an child them use get stylesheet directory

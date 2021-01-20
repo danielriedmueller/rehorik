@@ -36,28 +36,9 @@
       }
     }
   }
-
-  button.rehorik-tribe-event-tickets-add-to-cart-button {
-    color: $font-color-light;
-    font-family: $font-family-body;
-    padding: $button-padding;
-    background: $primary-color none;
-    font-weight: normal;
-    font-style: normal;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: $font-size;
-    line-height: $button-lineheight;
-    border: 2px solid;
-    border-radius: $button-border-radius;
-    transition: all 0.2s;
-    text-align: center;
-    box-shadow: none;
-    text-shadow: none;
-
-    &:hover {
-      color: $font-color-accent-dark;
-      background-color: $primary-color;
-    }
+}
+.tribe-dialog__wrapper.tribe-modal__wrapper--ar {
+  .rehorik-hugo-head {
+    display: none;
   }
 }
