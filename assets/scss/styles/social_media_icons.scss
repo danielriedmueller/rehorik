@@ -1,0 +1,78 @@
+#rehorik-social-media-icons {
+  position: fixed;
+  right: $spacing;
+  top: $menu-height + $spacing-l;
+  z-index: 100;
+  transition: all 0.25s ease 0s;
+  background: #fff none;
+  border-radius: $button-border-radius;
+  padding: $spacing-xxs;
+
+  $size: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .fb, .yt, .instagram {
+    flex: 0 0 $size;
+    width: $size;
+    height: $size;
+    background-size: $size;
+    background: transparent none no-repeat center center;
+
+    &:not(:last-child) {
+      margin: 0 $spacing-xs 0 0;
+    }
+  }
+
+  .fb {
+    background-image: url("../img/svg/facebook.svg");
+
+    &:hover {
+      background-image: url("../img/svg/facebook_color.svg");
+    }
+  }
+
+  .yt {
+    background-image: url("../img/svg/youtube.svg");
+
+    &:hover {
+      background-image: url("../img/svg/youtube_color.svg");
+    }
+  }
+
+  .instagram {
+    background-image: url("../img/svg/instagram.svg");
+
+    &:hover {
+      background-image: url("../img/svg/instagram_color.svg");
+    }
+  }
+
+  &.visible {
+    top: $menu-height + $spacing-l;
+  }
+
+  &.hidden {
+    top: $menu-height - $spacing-xxs;
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    flex-direction: column;
+    right: $spacing-xxs;
+    .fb, .yt, .instagram {
+      &:not(:last-child) {
+        margin: 0 0 $spacing-xxs 0;
+      }
+    }
+
+    top: -110px  - $spacing-xxs;
+    &.visible {
+      top: $spacing-xxs;
+    }
+
+    &.hidden {
+      top: -110px - $spacing-xxs;
+    }
+  }
+}
