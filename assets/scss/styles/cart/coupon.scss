@@ -43,7 +43,7 @@
 
       label {
         border: 1px solid $primary-color;
-        border-radius: $button-border-radius;
+        border-radius: $border-radius;
         padding: 0;
         width: 100%;
         display: flex;
@@ -53,7 +53,7 @@
         input.input-text {
           height: $input-height;
           background-color: transparent;
-          border-radius: $button-border-radius;
+          border-radius: $border-radius;
           color: $font-color-accent;
           padding: 0 0 5px 0;
           border: none;

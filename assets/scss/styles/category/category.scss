@@ -2,7 +2,6 @@
 #rehorik-best-selling-products {
   li.rehorik-product {
     background-color: $product-default-color;
-    border: 1px solid $product-default-color;
     color: $product-alternative-body-text-color;
 
     a, td {
@@ -19,23 +18,19 @@
 
     &.product_cat-crema {
       background-color: $product-crema-color;
-      border-color: $product-crema-color;
     }
 
     &.product_cat-espresso {
       background-color: $product-espresso-color;
-      border-color: $product-espresso-color;
     }
 
     &.product_cat-filterkaffee {
       background-color: $product-filterkaffee-color;
-      border-color: $product-filterkaffee-color;
     }
 
     &.product-of-month {
       background-color: $product-of-month-color;
       color: $product-default-body-text-color;
-      border-color: $primary-color;
 
       a, td {
         color: $product-default-body-text-color;
