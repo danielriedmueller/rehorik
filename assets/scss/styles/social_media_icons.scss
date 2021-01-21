@@ -80,9 +80,22 @@
   @media all and (max-width: $small-breakpoint) {
     left: 0;
     right: 0;
-    top: 212px;
+    top: 88px;
     margin-left: auto;
     margin-right: auto;
     width: 135px;
+  }
+}
+
+.woocommerce-page {
+  #rehorik-social-media-icons-outer {
+    @media all and (max-width: $small-breakpoint) {
+      left: 0;
+      right: 0;
+      top: 212px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 135px;
+    }
   }
 }
