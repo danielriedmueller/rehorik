@@ -7,8 +7,9 @@
  * @since 0.1
  */
 function split_order_woocommerce_email($email_classes) {
-    require('../includes/class-wc-delivery-order-email.php');
-    require('../includes/class-wc-shipping-order-email.php');
+    $baseDir = get_stylesheet_directory();
+    require($baseDir . '/includes/class-wc-delivery-order-email.php');
+    require($baseDir . '/includes/class-wc-shipping-order-email.php');
     $email_classes['WC_Delivery_Order_Email'] = new WC_Delivery_Order_Email();
     $email_classes['WC_Shipping_Order_Email'] = new WC_Shipping_Order_Email();
 

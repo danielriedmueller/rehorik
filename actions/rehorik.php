@@ -32,13 +32,10 @@ add_action('render_one_cup_of_coffee_price', function ($product) {
             $min = min(array_filter($unitPrice['price']));
             $max = max(array_filter($unitPrice['price']));
 
-            $priceForOneCupMin = $min * $multiplier * $unitBase;
-            $priceForOneCupMax = $max * $multiplier * $unitBase;
+            $priceForOneCupMin =  number_format($min * $multiplier * $unitBase, 2);
+            $priceForOneCupMax = number_format($max * $multiplier * $unitBase, 2);
 
-            $formattedPriceRange = wc_format_price_range(
-                $priceForOneCupMin,
-                $priceForOneCupMax
-            );
+            $formattedPriceRange = wc_format_price_range($priceForOneCupMin, $priceForOneCupMax);
         }
 
         if (!empty($formattedPriceRange)) {

@@ -35,9 +35,9 @@
 
           img {
             margin: 0 auto $spacing-xxs auto !important;
-            width: $product-category-width - 2;
-            height: $product-category-width - 2;
-            object-fit: contain;
+            width: $product-category-width;
+            height: auto;
+            object-fit: cover;
           }
         }
 
