@@ -5,11 +5,11 @@
     window.onscroll = function() {
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
-            socialMediaIcons.classList.remove("visible");
-            socialMediaIcons.classList.add("hidden");
-        } else {
             socialMediaIcons.classList.remove("hidden");
             socialMediaIcons.classList.add("visible");
+        } else {
+            socialMediaIcons.classList.remove("visible");
+            socialMediaIcons.classList.add("hidden");
         }
         prevScrollpos = currentScrollPos;
     }

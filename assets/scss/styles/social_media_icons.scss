@@ -1,78 +1,88 @@
-#rehorik-social-media-icons {
-  position: fixed;
-  right: $spacing;
-  top: $menu-height + $spacing-l;
+#rehorik-social-media-icons-outer {
+  position: absolute;
+  left: $spacing-l;
+  height: 100%;
+  top: 84px;
   z-index: 100;
-  transition: all 0.25s ease 0s;
-  background: #fff none;
-  border-radius: $border-radius;
-  padding: $spacing-xxs;
+  
+  > #rehorik-social-media-icons {
+    position: sticky;
+    left: 0;
+    top: $menu-height + $spacing-s;
 
-  $size: 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+    transition: all 0.25s ease 0s;
+    background: transparent url("../img/Weiss_1px.png") repeat 0 0;
+    border-radius: $border-radius;
+    padding: $spacing-xxs;
 
-  .fb, .yt, .instagram {
-    flex: 0 0 $size;
-    width: $size;
-    height: $size;
-    background-size: $size;
-    background: transparent none no-repeat center center;
+    $size: 25px;
+    $size-small: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 
-    &:not(:last-child) {
-      margin: 0 $spacing-xs 0 0;
-    }
-  }
-
-  .fb {
-    background-image: url("../img/svg/facebook.svg");
-
-    &:hover {
-      background-image: url("../img/svg/facebook_color.svg");
-    }
-  }
-
-  .yt {
-    background-image: url("../img/svg/youtube.svg");
-
-    &:hover {
-      background-image: url("../img/svg/youtube_color.svg");
-    }
-  }
-
-  .instagram {
-    background-image: url("../img/svg/instagram.svg");
-
-    &:hover {
-      background-image: url("../img/svg/instagram_color.svg");
-    }
-  }
-
-  &.visible {
-    top: $menu-height + $spacing-l;
-  }
-
-  &.hidden {
-    top: $menu-height - $spacing-xxs;
-  }
-
-  @media all and (max-width: $small-breakpoint) {
-    flex-direction: column;
-    right: $spacing-xxs;
     .fb, .yt, .instagram {
+      flex: 0 0 $size;
+      width: $size;
+      height: $size;
+      background-size: $size;
+      background: transparent none no-repeat center center;
+
       &:not(:last-child) {
-        margin: 0 0 $spacing-xxs 0;
+        margin: 0 $spacing-xs 0 0;
       }
     }
 
-    top: -110px  - $spacing-xxs;
-    &.visible {
-      top: $spacing-xxs;
+    .fb {
+      background-image: url("../img/svg/facebook.svg");
+
+      &:hover {
+        background-image: url("../img/svg/facebook_color.svg");
+      }
     }
 
-    &.hidden {
-      top: -110px - $spacing-xxs;
+    .yt {
+      background-image: url("../img/svg/youtube.svg");
+
+      &:hover {
+        background-image: url("../img/svg/youtube_color.svg");
+      }
     }
+
+    .instagram {
+      background-image: url("../img/svg/instagram.svg");
+
+      &:hover {
+        background-image: url("../img/svg/instagram_color.svg");
+      }
+    }
+  }
+
+  $large-breakpoint: 1450px;
+  @media all and (max-width: $large-breakpoint) {
+    left: $spacing-s;
+  }
+
+  @media all and (max-width: $medium-breakpoint) {
+    > #rehorik-social-media-icons {
+      top: $spacing-s;
+
+      &.visible {
+        top: $spacing-xs;
+      }
+
+      &.hidden {
+        top: -45px;
+      }
+    }
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    left: 0;
+    right: 0;
+    top: 212px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 135px;
   }
 }

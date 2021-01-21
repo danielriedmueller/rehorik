@@ -27,6 +27,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php echo get_template_part('templates/social-media-icons'); ?>
 <?php
 	$product_tour_enabled = et_builder_is_product_tour_enabled();
 	$page_container_style = $product_tour_enabled ? ' style="padding-top: 0px;"' : ''; ?>
@@ -326,8 +327,6 @@
 		 * @param string $main_header
 		 */
 		echo et_core_intentionally_unescaped( apply_filters( 'et_html_main_header', $main_header ), 'html' );
-
-        echo get_template_part('templates/social-media-icons');
 	?>
 		<div id="et-main-area">
 	<?php
