@@ -1,0 +1,10 @@
+.rehorik-tribe-events-attendee-registration {
+  .rehorik-tribe-events-attendee-tickets-container .tribe-tickets__attendee-tickets-item--has-focus {
+    border-left-color: $primary-color;
+
+    &:before, &:after {
+      background-color: $primary-color;
+    }
+  }
+}
+
