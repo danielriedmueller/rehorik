@@ -11,8 +11,8 @@ body.woocommerce #content-area div.rehorik-product.product {
 
       li[role='tab'] {
         border-bottom: none !important;
-        border-top-right-radius: $tab-border-radius;
-        border-top-left-radius: $tab-border-radius;
+        border-top-right-radius: $border-radius;
+        border-top-left-radius: $border-radius;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
 
@@ -42,10 +42,10 @@ body.woocommerce #content-area div.rehorik-product.product {
       padding: $spacing-l $spacing-xl;
       border: 1px solid $product-default-color;
       border-top: none;
-      border-top-right-radius: $tab-border-radius;
+      border-top-right-radius: $border-radius;
       border-top-left-radius: 0;
-      border-bottom-left-radius: $tab-border-radius;
-      border-bottom-right-radius: $tab-border-radius;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
 
       @media all and (max-width: $small-breakpoint) {
         padding: $spacing-l 0;

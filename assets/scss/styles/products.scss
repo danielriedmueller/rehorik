@@ -5,7 +5,7 @@
       overflow: hidden;
       text-align: center;
 
-      border-radius: $button-border-radius;
+      border-radius: $border-radius;
 
       @media all and (min-width: $small-breakpoint + 1) {
         width: $product-category-width !important;
