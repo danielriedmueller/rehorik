@@ -4,4 +4,3 @@
     <a class="yt" href="https://www.youtube.com/channel/UCX4FUu5RRb_rFNVWTRTeD0g" target="_blank" title="Rehorik YouTube"></a>
     <a class="fb" href="https://de-de.facebook.com/rehorik.feinkostgeschaeft" target="_blank" title="Rehorik Facebook"></a>
 </div>
-
