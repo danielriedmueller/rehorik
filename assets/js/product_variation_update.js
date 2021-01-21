@@ -8,11 +8,15 @@
     var adjustedPriceString = '';
     var divider = 100;
 
+    function round(value, decimals) {
+        return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+    }
+
     var updatePrice = function () {
         priceArr = $priceEl.text().match(/[+-]?([0-9]*[,])?[0-9]+/g);
         adjustedPriceArr = priceArr.map(function(x) {
             var res = x.replace(',', '.') / divider;
-            return res.toFixed(2).toString().replace('.', ',') + ' €';
+            return round(res, 2).toFixed(1).toString().replace('.', ',') + ' €';
         });
         adjustedPriceString = adjustedPriceArr.join(' - ');
         $cupOfCoffeEl.html(adjustedPriceString)
