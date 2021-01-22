@@ -15,7 +15,7 @@ define('EVENT_TICKET_TELEPHONE_SLUG', 'telefon');
 define('DELIVERY_ORDER_EMAIL', 'it@rehorik.de');
 
 // Categories
-define('TICKET_CATEGORY_SLUG', 'ticket');
+define('TICKET_CATEGORY_SLUG', 'events-seminare');
 define('COFFEE_CATEGORY_SLUG', 'kaffee');
 define('WINE_SPIRITS_CO_CATEGORY_SLUG', 'wein-spirits-co');
 define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');

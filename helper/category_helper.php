@@ -105,6 +105,11 @@ function getCategoryNameBySlug(string $slug)
     return $cat ? $cat->name : false;
 }
 
+/**
+ * Decides wich categories should display on shop front page
+ *
+ * @return array
+ */
 function getShopFrontPageCategories()
 {
     $parentCategories = get_categories([
@@ -114,7 +119,7 @@ function getShopFrontPageCategories()
         'taxonomy' => 'product_cat'
     ]);
 
-    $onlineshopCategoryKey = array_search('onlineshop', array_column($parentCategories, 'slug'));
+    $onlineshopCategoryKey = array_search(ONLINESHOP_CATEGORY_SLUG, array_column($parentCategories, 'slug'));
     $onlineshopCategories = get_categories(           [
         'parent' => $parentCategories[$onlineshopCategoryKey]->term_id,
         'hide_empty' => 1,
@@ -123,8 +128,13 @@ function getShopFrontPageCategories()
         'pad_counts' => 1
     ]);
 
-    $deliveryCategoryKey = array_search('lieferservice', array_column($parentCategories, 'slug'));
+    // Add delivery category
+    $deliveryCategoryKey = array_search(DELIVERY_CATEGORY_SLUG, array_column($parentCategories, 'slug'));
     $onlineshopCategories[] = $parentCategories[$deliveryCategoryKey];
+
+    // Add ticket category
+    $eventsCategoryKey = array_search(TICKET_CATEGORY_SLUG, array_column($parentCategories, 'slug'));
+    $onlineshopCategories[] = $parentCategories[$eventsCategoryKey];
 
     return $onlineshopCategories;
 }
