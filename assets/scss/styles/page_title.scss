@@ -1,6 +1,27 @@
 .page-title-outer {
-  background-color: $primary-color;
+  background: $primary-color none;
   margin-bottom: $spacing-l;
+  position: relative;
+
+  &:before, &:after {
+    content: "";
+    display: block;
+    background: transparent url("../img/striche-weiß-40px-06.png") no-repeat center center;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 401px;
+    height: 41px;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
 
   .page-title {
     position: relative;
@@ -14,6 +35,7 @@
     h1 {
       color: #fff;
       text-transform: uppercase;
+      letter-spacing: 0;
     }
   }
 }

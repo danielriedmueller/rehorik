@@ -50,30 +50,44 @@ $line-height: 26px;
     }
   }
 
-  .quality-text {
-    background: transparent url("../img/Weiss_1px.png") repeat 0 0;
-    border-bottom-left-radius: $spacing-s;
-    border-bottom-right-radius: $spacing-s;
+  .quality-text-outer {
+    max-width: $max-width;
+    width: 80%;
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    bottom: 0;
     left: 0;
     right: 0;
-    max-width: 660px;
-    top: 0;
+  }
+
+  .quality-text {
+    background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+    border-top-left-radius: $border-radius-large;
+    border-top-right-radius: $border-radius-large;
+    position: absolute;
+    right: 36px;
+    width: 100%;
+    max-width: 589px;
+    bottom: 0;
     z-index: 1000;
+    color: #fff;
+    padding: $spacing-ls - 4px $spacing-ls;
 
-    padding: $spacing-ls;
+    a {
+      font-family: $font-family-body;
+    }
 
-    h4 {
+    h3 {
+      font-weight: normal;
       color: $font-color-accent;
-      text-transform: uppercase;
-      line-height: $line-height;
+      padding: 0;
+      text-align: center;
+      padding-bottom: 25px;
     }
 
     .quality-text-content {
-      font-size: $font-size;
-      line-height: $line-height;
+      font-size: 17px;
+      line-height: 24px;
       display: flex;
       text-align: justify;
 
@@ -83,66 +97,53 @@ $line-height: 26px;
       }
 
       > div:first-child {
-        margin-right: $spacing-xs;
-      }
-    }
-  }
-
-  .order-instructions-outer {
-    padding: $spacing-ls 0;
-    background: $secondary-color none;
-
-    .order-instructions {
-      background: transparent url("../img/strichl-riesig-weiss.png") no-repeat 0 0;
-      color: #fff;
-
-      > div {
-        padding: $spacing;
-        background-color: $secondary-color;
-        text-align: center;
-
-        @media all and (min-width: $small-breakpoint + 1) {
-          width: 600px;
-          margin: $spacing-l auto;
-        }
-
-        h3 {
-          color: #fff;
-          text-transform: uppercase;
-        }
-
-        > div {
-          font-size: $font-size;
-          line-height: $line-height;
-        }
+        margin-right: $spacing-s;
       }
     }
   }
 }
 
 .rehorik-lieferservice-category-footer {
-  background: $primary-color none;
-  padding: $spacing;
+  background: $grey none;
 
-  > div {
-    display: flex;
-    justify-content: center;
+  .order-instructions {
+    max-width: $max-width;
+    width: 80%;
+    margin: auto;
+    padding-right: 36px;
+    padding-left: 360px;
+    padding-top: $spacing-ls - 4px;
+    padding-bottom: $spacing-ls - 2px;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      background: transparent url("../img/lieferservice/Lieferservice_Lueckenfueller-freigestellt.png") no-repeat left bottom;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 319px;
+      height: 289px;
+    }
+
+    h3 {
+      font-weight: normal;
+      color: $font-color-accent;
+      padding: 0;
+      text-align: left;
+      padding-bottom: 25px;
+    }
 
     > div {
-      position: relative;
-    }
-  }
+      a {
+        font-family: $font-family-body;
+      }
 
-  .category-gap-filler {
-    background: transparent url("../img/lieferservice/Lieferservice_Lueckenfueller-freigestellt.png") no-repeat right bottom;
-    position: absolute;
-    width: 319px;
-    height: 289px;
-    top: -289px - $spacing;
-    right: -590px  - $spacing-s;
-
-    @media all and (max-width: $medium-breakpoint) {
-      display: none;
+      color: #fff;
+      font-size: 17px;
+      line-height: 24px;
+      text-align: justify;
     }
   }
 }

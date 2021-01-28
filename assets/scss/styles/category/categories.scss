@@ -8,7 +8,10 @@
       }
 
       h2.woocommerce-loop-category__title {
+        font-size: $font-size;
+        font-weight: normal;
         position: absolute;
+        text-align: center;
         bottom: 0;
         color: $font-color-accent;
         width: 100%;
