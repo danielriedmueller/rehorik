@@ -53,9 +53,12 @@ add_filter('woocommerce_cart_shipping_method_full_label', 'remove_shipping_metho
 function set_delivery_service_variation_default_value($args)
 {
     if ($args['attribute'] === DELIVERY_ATTRIBUTE_SLUG) {
-        $referer = $_SERVER['HTTP_REFERER'];
-        if (substr_count($referer, DELIVERY_CATEGORY_URL) === 1) {
-            $args['selected'] = 'ja';
+        if (isset($_SERVER['HTTP_REFERER'])) {
+            $referer = $_SERVER['HTTP_REFERER'];
+
+            if (substr_count($referer, DELIVERY_CATEGORY_URL) === 1) {
+                $args['selected'] = 'ja';
+            }
         }
     }
 
