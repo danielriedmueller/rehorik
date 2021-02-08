@@ -8,7 +8,8 @@
   }
 }
 
-.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer {
+.rehorik-tabs-panel .rehorik-product-strength-flavour-container-outer,
+.rehorik-product-additional-information-container .rehorik-product-strength-flavour-container-outer {
   display: grid;
   grid-template-columns: auto 1fr;
   row-gap: $spacing-s;

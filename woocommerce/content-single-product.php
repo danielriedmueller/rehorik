@@ -69,6 +69,7 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
         ); ?>"></div>
 
         <div class="rehorik-hugo-head"></div>
+
 	</div>
 
 	<?php
