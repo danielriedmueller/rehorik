@@ -29,7 +29,8 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 <li <?php wc_product_class([
     'rehorik-product',
     getProductOfTheMonthClass($product),
-    getBiosigilClass($product)
+    getBiosigilClass($product),
+    getIsEventOnlineClass($product)
 ], $product); ?>>
 	<?php
 	/**
@@ -75,6 +76,11 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
 
-    get_template_part('templates/product-attributes');
+    if (isItCategory($product, TICKET_CATEGORY_SLUG)) {
+        get_template_part('templates/product-event-attributes');
+    } else {
+        get_template_part('templates/product-attributes');
+    }
+
 	?>
 </li>

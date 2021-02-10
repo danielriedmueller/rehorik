@@ -71,6 +71,14 @@ function hasBiosigil(WC_Product $product): bool
     return $value === "ja" ? true : false;
 }
 
+function isEventOnline(WC_Product $product): bool
+{
+    $event = tribe_events_get_ticket_event($product->get_id());
+    $isOnline = get_post_meta($event->ID, ONLINE_META_KEY);
+
+    return !!$isOnline;
+}
+
 function getProductOfTheMonthClass(WC_Product $product): string
 {
     return isProductOfTheMonth($product) ? "product-of-month" : "";
@@ -79,6 +87,11 @@ function getProductOfTheMonthClass(WC_Product $product): string
 function getBiosigilClass(WC_Product $product): string
 {
     return hasBiosigil($product) ? "biosigil" : "";
+}
+
+function getIsEventOnlineClass(WC_Product $product): string
+{
+    return isEventOnline($product) ? "event-online" : "";
 }
 
 function getOriginCountry(WC_Product $product): string

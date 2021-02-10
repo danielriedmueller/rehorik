@@ -56,6 +56,17 @@
   background: transparent url("../img/productofmonth.svg") no-repeat center center;
 }
 
+.event-online .et_shop_image::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: $spacing-s;
+  width: 50px;
+  height: 33px;
+  background: transparent url("../img/online.svg") no-repeat center center;
+}
+
 // Wein des Monats Bild
 .rehorik-product.product_cat-wein, .rehorik-product.product_cat-wein-spirits-co {
   .sigil-container.product-of-month::after {

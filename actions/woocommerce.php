@@ -21,6 +21,12 @@ add_action('event_tickets_after_save_ticket', function ($event_id, $ticket, $raw
     if (!empty($ticket) && isset($ticket->ID)) {
         $cat = get_term_by( 'slug', TICKET_CATEGORY_SLUG, 'product_cat' );
         $product = wc_get_product( $ticket->ID );
+
+        $thumbnailId = get_post_thumbnail_id($event_id);
+        if ($thumbnailId) {
+            set_post_thumbnail($ticket->ID, $thumbnailId);
+        }
+
         $product->set_category_ids([$cat->term_id]);
         $product->set_catalog_visibility('visible');
         $product->save();

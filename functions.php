@@ -46,12 +46,16 @@ define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-herkunft');
 define('REGION_ATTRIBUTE_SLUG', 'pa_region');
 define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
 define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
+
 define('ALCOHOL_ATTRIBUTE_SLUG', 'pa_alkoholgehalt');
 define('WEIGHT_ATTRIBUTE_SLUG', 'pa_gewicht');
 define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
 define('WINERY_ATTRIBUTE_SLUG', 'pa_weingut');
 define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
 define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
+
+// For Events which are only virtual online events
+define('ONLINE_META_KEY', 'Online');
 
 // In $productAttributes array, slugs are prefixed by wordpress
 define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
