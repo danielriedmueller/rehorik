@@ -45,6 +45,10 @@ pre {
   line-height: 12px;
 }
 
+html, body {
+  height: 100%;
+}
+
 .woocommerce-page {
   // revert overwritten divi custom css for woocommerce pages
   .et_pb_section_1.et_pb_section {
