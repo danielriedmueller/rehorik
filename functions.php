@@ -74,7 +74,6 @@ $baseDir = get_stylesheet_directory();
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');
-require_once($baseDir . '/helper/divi_functions.php');
 require_once($baseDir . '/filter/product_tabs.php');
 require_once($baseDir . '/filter/shop.php');
 require_once($baseDir . '/filter/categories.php');
@@ -95,6 +94,12 @@ add_action('wp_enqueue_scripts', function () {
     if (is_product_category('lieferservice')) {
         wp_enqueue_script('slider-js', $assetsDir . 'js/tiny_slider.js', null, 1, true);
     }
+});
+
+add_action('init', function() {
+    register_nav_menus([
+        'main'   => 'Hauptmenü'
+    ]);
 });
 
 /**
