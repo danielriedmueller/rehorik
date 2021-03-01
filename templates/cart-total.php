@@ -9,6 +9,6 @@ $url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->ge
 $url = esc_url($url);
 
 ?>
-<a href="<?= $url ?>" class="rehorik-cart-info et-cart-info">
+<a href="<?= $url ?>" class="rehorik-cart-info">
     <span></span><?= $items_number ?>
 </a>

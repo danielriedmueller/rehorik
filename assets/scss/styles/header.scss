@@ -1,3 +1,19 @@
+header.rehorik-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  ul.menu {
+    li {
+      display: inline;
+    }
+
+    ul.sub-menu {
+      display: none;
+    }
+  }
+}
+
 header#main-header.rehorik-header {
   background: none $menu-color;
   transition: none;

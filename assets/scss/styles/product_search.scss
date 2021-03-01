@@ -1,11 +1,4 @@
 .rehorik-product-search-widget {
-  @media all and (min-width: $small-breakpoint + 1) {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-
   form.rehorik-product-search-form {
     input, button {
       border: 1px solid $secondary-color;
