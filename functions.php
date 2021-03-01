@@ -81,6 +81,7 @@ require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');
 require_once($baseDir . '/helper/divi_functions.php');
+require_once($baseDir . '/hooks/events.php');
 require_once($baseDir . '/filter/product_tabs.php');
 require_once($baseDir . '/filter/shop.php');
 require_once($baseDir . '/filter/categories.php');
@@ -116,3 +117,10 @@ if (function_exists('register_sidebar')) {
         'after_title' => '</h3>',
     ]);
 }
+
+add_action('init', function() {
+    if (!wp_next_scheduled( 'rh_past_events_cron_hook') ) {
+        wp_schedule_event(time(), 'twicedaily', 'rh_past_events_cron_hook');
+    }
+});
+
