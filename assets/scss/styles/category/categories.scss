@@ -2,6 +2,8 @@
   ul.rehorik-products.products {
     li.product-category.product {
       width: 100% !important;
+      max-height: 473px;
+      overflow: hidden;
 
       img, h2.woocommerce-loop-category__title {
         margin: 0 !important;
