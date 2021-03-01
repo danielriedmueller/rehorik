@@ -31,8 +31,7 @@
                 <div>Bestellen Sie bis jeweils Montag 12 Uhr und Mittwoch 12 Uhr per Telefon: <a href="tel:0941/51727">0941/51727</a> oder per Email: <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a>
                     oder jederzeit im Onlineshop.<br>
                     Die Auslieferung erfolgt am Folgetag, jeweils dienstags und
-                    donnerstags ab 13 Uhr – ausgeschlossen davon sind Feiertage.
-                    Unsere Bestellliste zum Download, finden Sie <a href="<?php echo get_stylesheet_directory_uri() ?>/assets/document/Flyer Lieferservice Website DIN A4.pdf">hier</a>.
+                    donnerstags ab 13 Uhr – ausgeschlossen davon sind Feiertage.<br>
                     Die Versandkosten betragen 5,8 €, kostenloser Versand ab 49 €.
                 </div>
             </div>
