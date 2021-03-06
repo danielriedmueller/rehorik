@@ -27,7 +27,7 @@
       @media all and (min-width: $small-breakpoint + 1) {
         div.rehorik-product-attribute-item {
           &:not(:nth-child(3n + 3)) {
-            border-right: 3px solid $primary-color;
+            border-right: 3px solid $beigegold;
           }
         }
       }
@@ -39,7 +39,7 @@
       @media all and (min-width: $small-breakpoint + 1) {
         div.rehorik-product-attribute-item {
           &:not(:nth-child(2)) {
-            border-right: 3px solid $primary-color;
+            border-right: 3px solid $beigegold;
           }
         }
       }
@@ -65,7 +65,7 @@
 
       div.rehorik-product-attribute-item {
         &:not(:nth-child(2)) {
-          border-right: 3px solid $primary-color;
+          border-right: 3px solid $beigegold;
         }
       }
     }

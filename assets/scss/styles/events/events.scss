@@ -14,9 +14,9 @@
 }
 
 form#tribe-tickets.tribe-common.tribe-tickets {
-  border-color: $primary-color;
+  border-color: $beigegold;
   * {
-    border-color: $primary-color;
+    border-color: $beigegold;
   }
 
   width: 100%;
@@ -26,7 +26,7 @@ form#tribe-tickets.tribe-common.tribe-tickets {
 
 #tribe-modal__cart.tribe-modal-cart.tribe-modal__cart {
   * {
-    border-color: $primary-color;
+    border-color: $beigegold;
   }
 
   font-family: "DIN Offc W01 Cond";
@@ -57,7 +57,7 @@ a.tribe-common-c-btn,
 .tribe-tickets__item__attendee__fields__footer button.tribe-common-c-btn,
 form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy {
   font-family: "DIN Offc W01 Cond";
-  background-color: $primary-color;
+  background-color: $beigegold;
   font-weight: bold;
   font-size: $font-size;
   text-transform: uppercase;
@@ -66,7 +66,7 @@ form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy {
 
   &:hover, &:active, &:focus {
     color: $font-color-accent-dark;
-    background-color: $primary-color !important;
+    background-color: $beigegold !important;
   }
 }
 
@@ -91,7 +91,7 @@ form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy {
   }
 
   .tribe-events-c-events-bar {
-    border: 1px solid $primary-color;
+    border: 1px solid $beigegold;
   }
 
   .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date,
@@ -104,7 +104,7 @@ form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy {
       content: none;
     }
 
-    background-color: $primary-color;
+    background-color: $beigegold;
     font-size: $font-size-small;
     font-weight: normal;
     padding: 2px $spacing-s;

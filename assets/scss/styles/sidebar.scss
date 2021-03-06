@@ -50,13 +50,13 @@
           }
 
           &:nth-child(2) > a {
-            border-top: 1px solid $primary-color;
+            border-top: 1px solid $beigegold;
             padding-top: $spacing-s;
             border-bottom: 0;
           }
 
           > ul.children {
-            border-top: 1px solid $primary-color;
+            border-top: 1px solid $beigegold;
             padding: $spacing-s 0;
 
             > li {

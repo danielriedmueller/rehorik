@@ -90,7 +90,7 @@ $line-height: 26px;
 
   .order-instructions-outer {
     padding: $spacing-ls 0;
-    background: $secondary-color none;
+    background: $weinrot none;
 
     .order-instructions {
       background: transparent url("../img/strichl-riesig-weiss.png") no-repeat 0 0;
@@ -98,7 +98,7 @@ $line-height: 26px;
 
       > div {
         padding: $spacing;
-        background-color: $secondary-color;
+        background-color: $weinrot;
         text-align: center;
 
         @media all and (min-width: $small-breakpoint + 1) {
@@ -121,7 +121,7 @@ $line-height: 26px;
 }
 
 .rehorik-lieferservice-category-footer {
-  background: $primary-color none;
+  background: $beigegold none;
   padding: $spacing;
 
   > div {
