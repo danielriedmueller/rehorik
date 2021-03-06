@@ -2,22 +2,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
 <div class="rehorik-lieferservice-category-header">
     <div class="quality-text">
-        <h4>Qualität für Zuhause</h4>
-        <div>Seit einiger Zeit bieten wir für Sie einen Lieferdienst an.</div>
-        <div><b>DOCH WAS STECKT DAHINTER?</b></div>
+        <h4>Unser Lieferservice: vielseitig & nachhaltig.<br>Direkt zu euch nach Hause.</h4>
         <div class="quality-text-content">
             <div>
-                Die Grundidee unseres Lieferservices ist es, Ihnen ein regionales Netzwerk mit nachhaltigen Produkten
-                aus unserer Region zu bieten. In Zusammenarbeit mit der Metzgerei Stierstorfer, der Bäckerei Freisleben
-                und dem Gemüsehof Köstlmeier ist es uns ein großes Anliegen, Ihnen die Regensburger Genusswelten
-                näherzubringen und unser fein ausgewähltes Produktsortiment mit Ihnen zu teilen.
+                Wir kommen zu euch, und zwar mit dem Fahrradkurier „Feine Fracht“ aus Regensburg. Im Gepäck haben wir, was auch immer ihr euch wünscht: Kaffee aus aller Welt, erstklassige Weine und Spirituosen, erlesene Käsesorten und Delikatessen.
             </div>
             <div>
-                Die Kooperation mit dem Fahrradkurier "Feine Fracht" rundet für uns den Gedanken eines nachhaltigen
-                Lieferservices perfekt ab.<br>
-                Gerne beraten wir Sie auch per Telefon: <a href="tel:0941/59975895">0941/59975895</a>
-                oder per Email: <a href="mailto:lieferservice@rehorik.de">lieferservice@rehorik.de</a> und stellen gemeinsam mit Ihnen ein individuelles Paket
-                zusammen.
+                Bestellt einfach in unserem Onlineshop. Und wenn ihr etwas Spezielles sucht oder eine Beratung braucht, dann ruft uns gerne an unter <a href="tel:0941/51727">0941/51727</a> oder schreibt uns eine E-Mail: <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a>.
             </div>
         </div>
     </div>
@@ -37,11 +28,10 @@
         <div class="order-instructions">
             <div>
                 <h3>BESTELLT, VERPACKT <br>& AUF DEM WEG ZU DIR!</h3>
-                <div>Bestellen Sie bis jeweils Montag 12 Uhr und Mittwoch 12 Uhr per Telefon: <a href="tel:0941/59975895">0941/59975895</a> oder per Email: <a href="mailto:lieferservice@rehorik.de">lieferservice@rehorik.de</a>
+                <div>Bestellen Sie bis jeweils Montag 12 Uhr und Mittwoch 12 Uhr per Telefon: <a href="tel:0941/51727">0941/51727</a> oder per Email: <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a>
                     oder jederzeit im Onlineshop.<br>
                     Die Auslieferung erfolgt am Folgetag, jeweils dienstags und
-                    donnerstags ab 13 Uhr – ausgeschlossen davon sind Feiertage.
-                    Unsere Bestellliste zum Download, finden Sie <a href="<?php echo get_stylesheet_directory_uri() ?>/assets/document/Flyer Lieferservice Website DIN A4.pdf">hier</a>.
+                    donnerstags ab 13 Uhr – ausgeschlossen davon sind Feiertage.<br>
                     Die Versandkosten betragen 5,8 €, kostenloser Versand ab 49 €.
                 </div>
             </div>
