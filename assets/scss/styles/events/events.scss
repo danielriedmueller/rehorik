@@ -38,19 +38,6 @@ form#tribe-tickets.tribe-common.tribe-tickets {
   font-style: normal;
 }
 
-// Navigation menu item
-li.menu-item.rehorik-calendar-icon {
-  a {
-    font-size: 0 !important;
-
-    &::before {
-      font-family: 'ETmodules' !important;
-      font-size: 16px;
-      content: "\e023";
-    }
-  }
-}
-
 button.tribe-common-c-btn,
 a.tribe-common-c-btn,
 .tribe-common.tribe-events button.tribe-common-c-btn,

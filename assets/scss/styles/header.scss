@@ -1,19 +1,205 @@
 header.rehorik-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: $weinrot;
+  z-index: 10;
+  padding: 0;
+
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 
   ul.menu {
+    display: flex;
+
     li {
-      display: inline;
+      height: $menu-height;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      padding-left: $spacing;
+      padding-right: $spacing;
+      position: relative;
+    }
+
+    li.menu-item {
+      text-transform: uppercase;
+
+      a {
+        color: $font-color-accent;
+        font-size: $font-size;
+      }
+    }
+
+    li.menu-item-has-children {
+      &:hover {
+        background-color: $beigegold;
+
+        a {
+          color: $weinrot;
+        }
+
+        > ul.sub-menu {
+          display: grid;
+        }
+      }
+    }
+
+    // Calendar menu item
+    li.menu-item.rehorik-calendar-icon {
+      a {
+        font-size: 0;
+        background: transparent url("../img/kalender-16px.svg") no-repeat center center;
+        background-size: $menu-icon-size;
+        width: $menu-icon-size;
+        height: $menu-icon-size;
+      }
     }
 
     ul.sub-menu {
+      position: absolute;
+      top: $menu-height;
+      left: 0;
+      background: transparent url("../img/gold-transparent80-1px.png") repeat center center;
+      border-bottom-right-radius: $border-radius;
       display: none;
+      grid-template-columns: 1fr 1fr;
+
+      li.menu-item {
+        text-transform: none;
+        white-space: nowrap;
+
+        &:hover {
+          background-color: transparent;
+
+          a {
+            border-bottom: 1px solid $weinrot;
+          }
+        }
+      }
+    }
+  }
+
+  .rehorik-cart-info {
+    background: transparent url("../img/warenkorb-16px.svg") no-repeat center center;
+    background-size: $menu-icon-size;
+    width: $menu-icon-size;
+    height: $menu-icon-size;
+    padding-left: $spacing;
+    padding-right: $spacing;
+  }
+
+  .hamburger, input[type="checkbox"] {
+    display: none;
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    padding-left: $spacing;
+    padding-right: $spacing;
+    height: $menu-height;
+
+    .hamburger, input[type="checkbox"], input[type="checkbox"]:checked ~ .menu-hauptmenue-container {
+      display: block;
+    }
+
+    input[type="checkbox"] {
+      margin-left: -33px;
+      opacity: 0;
+      width: $menu-icon-size;
+      height: $menu-icon-size;
+      z-index: 20;
+    }
+
+    .hamburger {
+      background: transparent url("../img/menue-16px.svg") no-repeat center center;
+      background-size: $menu-icon-size;
+      width: $menu-icon-size;
+      height: $menu-icon-size;
+      padding-left: $spacing;
+      padding-right: $spacing;
+      z-index: 10;
+    }
+
+    .rehorik-product-search-widget {
+      position: absolute;
+      left: 0;
+
+      &::after, .rehorik-product-search-form {
+        left: 0;
+        right: unset;
+        width: 100vw;
+        border-bottom-left-radius: $border-radius;
+      }
+    }
+
+    .menu-hauptmenue-container {
+      display: none;
+      position: absolute;
+      top: $menu-height;
+      left: 0;
+      background-color: transparent;
+      width: 100%;
+
+      ul.menu {
+        flex-direction: column;
+        background-color: transparent;
+
+        > li {
+          background-color: $weinrot;
+        }
+
+        li.menu-item-has-children {
+          > a {
+            width:1px;
+            white-space: nowrap;
+          }
+
+
+          &.et-show-dropdown, &:hover {
+            height: auto;
+            padding-top: 16px;
+            background: transparent url("../img/gold-transparent80-1px.png") repeat center center;
+
+            a {
+              color: $weinrot;
+            }
+
+            > ul.sub-menu {
+              background: transparent;
+              display: grid;
+              position: relative;
+              top: 0;
+              left: 0;
+
+              li {
+                padding-left: 0;
+              }
+            }
+          }
+        }
+
+        // Calendar menu item
+        li.menu-item.rehorik-calendar-icon {
+          a {
+            font-size: $font-size;
+            background: none;
+            width: auto;
+            height: auto;
+          }
+        }
+      }
     }
   }
 }
 
+body.admin-bar header.rehorik-header {
+  top: 32px;
+}
+/*
 header#main-header.rehorik-header {
   background: none $menu-color;
   transition: none;
@@ -100,3 +286,4 @@ header#main-header.rehorik-header {
     }
   }
 }
+*/

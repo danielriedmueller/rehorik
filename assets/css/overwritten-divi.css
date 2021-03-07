@@ -1,3 +1,7 @@
+.et_non_fixed_nav.et_transparent_nav.et_show_nav.et_header_style_centered #page-container, .et_fixed_nav.et_show_nav.et_header_style_centered #page-container {
+    padding-top: 60px;
+}
+
 .breite-liste li.ecs-event{display:flex;padding: 1rem 0 0.7rem 0.5rem;}
 .breite-liste li.ecs-event .duration.time, .breite-liste li.ecs-event h4{font-size: 20px; line-height: 1em; margin-left: 16px;}
 
@@ -57,7 +61,6 @@ p.price-unit::before {content: "Grundpreis: ";}
 form input.input.et_pb_contact_captcha{border: 2px solid #ceb67f;}
 
 /* mega menu */
-.menu-item > a{font-size: 20px !important;}
 .mega-link > a {
     font-size: 24px !important;
     font-family:"DIN W01 Cond Medium";

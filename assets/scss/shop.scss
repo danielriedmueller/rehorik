@@ -111,5 +111,6 @@ html, body {
 }
 
 #page-container {
-  padding-top: $spacing-l !important;
+  padding-top: $menu-height;
+  margin-top: 0 !important;
 }

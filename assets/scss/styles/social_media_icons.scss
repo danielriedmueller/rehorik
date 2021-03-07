@@ -64,6 +64,8 @@
   }
 
   @media all and (max-width: $medium-breakpoint) {
+    display: none;
+
     > #rehorik-social-media-icons {
       top: $spacing-s;
 

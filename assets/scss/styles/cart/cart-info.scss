@@ -1,20 +1,13 @@
 .rehorik-cart-info {
-  span:before {
-    content: "\e07a";
-    font-family: 'ETmodules' !important;
-    font-size: 16px;
-  }
-
   .rehorik-cart-info-number {
     display: inline-block;
-    color: #fff;
-    $size: $spacing-s;
+    color: $weinrot;
+    $size: $spacing;
     width: $size;
     height: $size;
     border-radius: $size;
     line-height: $size;
-    background-color: $weinrot;
-    padding-right: 1px;
-    transform: translate(-6px, -1px);
+    background-color: $beigegold;
+    text-align: center;
   }
 }
