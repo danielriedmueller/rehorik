@@ -1,0 +1,31 @@
+#rehorik-logo {
+  width: $logo-size;
+  height: $logo-size;
+  background: transparent url("../img/svg/logo.svg") no-repeat left top;
+  background-size: $logo-size;
+  position: absolute;
+  left: 150px + $spacing;
+  top: $menu-height + $spacing-l;
+  bottom: 0;
+}
+
+.slider-claim {
+  position: absolute;
+  bottom: $spacing-l;
+  right: 115px;
+
+  h2 {
+    color: #fff;
+    margin-bottom: $spacing;
+    text-transform: uppercase;
+    padding: 0;
+    font-weight: bold;
+    font-family: $font-family-body;
+  }
+
+  .button:nth-child(2) {
+    background-color: $weinrot;
+    color: $beigegold;
+    margin-left: $spacing-xs;
+  }
+}

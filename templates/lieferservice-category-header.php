@@ -1,5 +1,4 @@
 <?php ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
 <div class="rehorik-lieferservice-category-header">
     <div class="quality-text">
         <h4>Unser Lieferservice: vielseitig & nachhaltig.<br>Direkt zu euch nach Hause.</h4>
@@ -12,18 +11,12 @@
             </div>
         </div>
     </div>
-    <ul id="slider">
-        <li>
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/lieferservice/header_lieferservice_1920x600px_v1.jpg">
-        </li>
-        <li>
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/lieferservice/header_lieferservice_1920x600px_v2.jpg">
-        </li>
-    </ul>
-    <div id="tns-controls-container">
-        <button></button>
-        <button></button>
-    </div>
+    <?php
+        get_template_part('templates/slider', null, ['images' => [
+            '/assets/img/lieferservice/header_lieferservice_1920x600px_v1.jpg',
+            '/assets/img/lieferservice/header_lieferservice_1920x600px_v2.jpg'
+        ]]);
+    ?>
     <div class="order-instructions-outer">
         <div class="order-instructions">
             <div>

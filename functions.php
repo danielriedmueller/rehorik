@@ -1,5 +1,5 @@
 <?php
-show_admin_bar(false);
+show_admin_bar(true);
 
 require_once('sig_functions.php');
 
@@ -86,12 +86,13 @@ add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
     wp_enqueue_style('divi', $assetsDir . 'css/overwritten-divi.css', false, 1, 'all');
     wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.1, 'all');
-    wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
 
     // Slider only on delivery category page
-    if (is_product_category('lieferservice')) {
+    if (is_product_category('lieferservice') || is_front_page()) {
+        wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
+        wp_enqueue_script('tiny-slider-js', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', null, 1, true);
         wp_enqueue_script('slider-js', $assetsDir . 'js/tiny_slider.js', null, 1, true);
     }
 });

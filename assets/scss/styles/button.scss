@@ -1,3 +1,15 @@
+button, a.button {
+  border-radius: $button-border-radius;
+  text-align: center;
+  color: #fff;
+  border: none;
+  font-size: $font-size;
+  background-color: $beigegold;
+  padding: $spacing-s $spacing;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
 .cart .woocommerce {
   button.button[name="apply_coupon"][type="submit"],
   button.button[name="update_cart"][type="submit"],

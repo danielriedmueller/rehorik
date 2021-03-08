@@ -1,8 +1,8 @@
 #rehorik-social-media-icons-outer {
   position: absolute;
-  left: $spacing-l;
+  left: 0;
   height: 100%;
-  top: 84px;
+  top: $menu-height + $spacing-l;
   z-index: 100;
   
   > #rehorik-social-media-icons {
@@ -12,8 +12,9 @@
 
     transition: all 0.25s ease 0s;
     background: transparent url("../img/Weiss_1px.png") repeat 0 0;
-    border-radius: $border-radius;
-    padding: $spacing-xxs;
+    border-bottom-right-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
 
     $size: 25px;
     $size-small: 20px;

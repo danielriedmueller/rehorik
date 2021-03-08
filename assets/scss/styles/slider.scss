@@ -1,0 +1,45 @@
+ul#slider, ul#slider li, ul#slider li img {
+  width: 100%;
+}
+
+ul#slider img {
+  height: 600px;
+  object-fit: cover;
+}
+
+#slider > .tns-item {
+  line-height: 0;
+  vertical-align: middle;
+  position: relative;
+}
+
+#tns-controls-container {
+  button {
+    background: transparent url("../img/lieferservice/pfeil_weiss.svg") no-repeat 0 0;
+    border: none;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 350px;
+    cursor: pointer;
+  }
+
+  button[data-controls="prev"] {
+    left: 75px;
+  }
+
+  button[data-controls="next"] {
+    transform: rotate(180deg);
+    right: 75px;
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    display: none;
+  }
+}
+
+@media all and (max-width: $small-breakpoint) {
+  .tns-outer {
+    padding-top: 15em !important;
+  }
+}

@@ -9,3 +9,8 @@ table.cart tr,
 #content-area table th {
   padding: 0;
 }
+
+.et_pb_gutters3.et_left_sidebar.woocommerce-page #main-content ul.products li.product,
+.et_pb_gutters3.et_right_sidebar.woocommerce-page #main-content ul.products li.product {
+  width: 100%;
+}
