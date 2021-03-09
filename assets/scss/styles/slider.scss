@@ -5,6 +5,7 @@ ul#slider, ul#slider li, ul#slider li img {
 ul#slider img {
   height: 600px;
   object-fit: cover;
+  object-position: 95% 50%;
 }
 
 #slider > .tns-item {
@@ -17,29 +18,40 @@ ul#slider img {
   button {
     background: transparent url("../img/lieferservice/pfeil_weiss.svg") no-repeat 0 0;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+    background-size: 25px;
     position: absolute;
-    top: 350px;
+    top: 400px;
     cursor: pointer;
+    padding: 0;
   }
 
+  $spaceToBorder: $spacing-s;
   button[data-controls="prev"] {
-    left: 75px;
+    left: $spaceToBorder;
   }
 
   button[data-controls="next"] {
     transform: rotate(180deg);
-    right: 75px;
+    right: $spaceToBorder;
   }
 
   @media all and (max-width: $small-breakpoint) {
-    display: none;
-  }
-}
+    button {
+      width: 30px;
+      height: 30px;
+      background-size: 17px;
+      top: $menu-height + $logo-size-small + $spacing + $spacing + 65px;
+    }
 
-@media all and (max-width: $small-breakpoint) {
-  .tns-outer {
-    padding-top: 15em !important;
+    $spaceToBorderSmall: $spacing-xs;
+    button[data-controls="prev"] {
+      left: $spaceToBorderSmall;
+    }
+
+    button[data-controls="next"] {
+      right: $spaceToBorderSmall;
+    }
   }
 }

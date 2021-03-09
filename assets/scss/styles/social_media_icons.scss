@@ -3,12 +3,15 @@
   left: 0;
   height: 100%;
   top: $menu-height + $spacing-l;
-  z-index: 100;
-  
+  z-index: 1;
+  width: 0;
+  overflow: visible;
+
   > #rehorik-social-media-icons {
     position: sticky;
     left: 0;
     top: $menu-height + $spacing-s;
+    width: 136px;
 
     transition: all 0.25s ease 0s;
     background: transparent url("../img/Weiss_1px.png") repeat 0 0;
@@ -16,13 +19,13 @@
     border-top-right-radius: $border-radius;
     padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
 
-    $size: 25px;
-    $size-small: 20px;
+
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 
     .fb, .yt, .instagram {
+      $size: 25px;
       flex: 0 0 $size;
       width: $size;
       height: $size;
@@ -59,46 +62,26 @@
     }
   }
 
-  $large-breakpoint: 1450px;
-  @media all and (max-width: $large-breakpoint) {
-    left: $spacing-s;
-  }
 
-  @media all and (max-width: $medium-breakpoint) {
-    display: none;
+  @media all and (max-width: $small-breakpoint) {
+    top: $menu-height + $logo-size-small + $spacing + $spacing;
 
     > #rehorik-social-media-icons {
-      top: $spacing-s;
-
-      &.visible {
-        top: $spacing-xs;
-      }
+      padding: 6px 10px 6px 11px;
+      width: 115px;
 
       &.hidden {
         top: -45px;
       }
-    }
-  }
 
-  @media all and (max-width: $small-breakpoint) {
-    left: 0;
-    right: 0;
-    top: 88px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 135px;
-  }
-}
-
-.woocommerce-page {
-  #rehorik-social-media-icons-outer {
-    @media all and (max-width: $small-breakpoint) {
-      left: 0;
-      right: 0;
-      top: 212px;
-      margin-left: auto;
-      margin-right: auto;
-      width: 135px;
+      .fb, .yt, .instagram {
+        $size-small: 20px;
+        flex: 0 0 $size-small;
+        width: $size-small;
+        height: $size-small;
+        background-size: $size-small;
+      }
     }
+
   }
 }
