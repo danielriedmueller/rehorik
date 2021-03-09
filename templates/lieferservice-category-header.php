@@ -15,22 +15,9 @@
     </div>
     <?php
         get_template_part('templates/slider', null, ['images' => [
-            '/assets/img/lieferservice/header_lieferservice_1920x600px_v1.jpg',
-            '/assets/img/lieferservice/header_lieferservice_1920x600px_v2.jpg'
+            '/assets/img/lieferservice/lieferservice-header-600px-v1.jpg',
+            '/assets/img/lieferservice/lieferservice-header-600px-v2.jpg'
         ]]);
     ?>
-    <div class="order-instructions-outer">
-        <div class="order-instructions">
-            <div>
-                <h3>BESTELLT, VERPACKT <br>& AUF DEM WEG ZU DIR!</h3>
-                <div>Bestellen Sie bis jeweils Montag 12 Uhr und Mittwoch 12 Uhr per Telefon: <a href="tel:0941/51727">0941/51727</a> oder per Email: <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a>
-                    oder jederzeit im Onlineshop.<br>
-                    Die Auslieferung erfolgt am Folgetag, jeweils dienstags und
-                    donnerstags ab 13 Uhr – ausgeschlossen davon sind Feiertage.<br>
-                    Die Versandkosten betragen 5,8 €, kostenloser Versand ab 49 €.
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
