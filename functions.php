@@ -1,5 +1,5 @@
 <?php
-show_admin_bar(true);
+show_admin_bar(false);
 
 require_once('sig_functions.php');
 
@@ -74,7 +74,6 @@ $baseDir = get_stylesheet_directory();
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');
-require_once($baseDir . '/helper/divi_functions.php');
 require_once($baseDir . '/filter/product_tabs.php');
 require_once($baseDir . '/filter/shop.php');
 require_once($baseDir . '/filter/categories.php');
@@ -87,14 +86,21 @@ add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
     wp_enqueue_style('divi', $assetsDir . 'css/overwritten-divi.css', false, 1, 'all');
     wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.1, 'all');
-    wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
 
     // Slider only on delivery category page
-    if (is_product_category('lieferservice')) {
+    if (is_product_category('lieferservice') || is_front_page()) {
+        wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
+        wp_enqueue_script('tiny-slider-js', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', null, 1, true);
         wp_enqueue_script('slider-js', $assetsDir . 'js/tiny_slider.js', null, 1, true);
     }
+});
+
+add_action('init', function() {
+    register_nav_menus([
+        'main'   => 'Hauptmenü'
+    ]);
 });
 
 /**

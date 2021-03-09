@@ -1,23 +1,28 @@
-.woocommerce #main-content .container {
-  ul.rehorik-products.products {
-    li.product-category.product {
-      width: 100% !important;
+ul.rehorik-products.products {
+  li.product-category.product {
+    position: relative;
+    max-height: 473px;
+    overflow: hidden;
 
-      img, h2.woocommerce-loop-category__title {
-        margin: 0 !important;
-      }
+    img, h2.woocommerce-loop-category__title {
+      margin: 0 !important;
+    }
 
-      h2.woocommerce-loop-category__title {
-        font-size: $font-size;
-        font-weight: normal;
-        position: absolute;
-        text-align: center;
-        bottom: 0;
-        color: $font-color-accent;
-        width: 100%;
-        padding: $spacing-s;
-        background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
-      }
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h2.woocommerce-loop-category__title {
+      position: absolute;
+      bottom: 0;
+      color: $font-color-accent;
+      width: 100%;
+      padding: $spacing-s;
+      background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+      font-size: $font-size;
+      font-weight: normal;
+      text-align: center;
     }
   }
 }

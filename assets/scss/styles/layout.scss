@@ -13,10 +13,6 @@
     float: left;
     width: 20.875%;
   }
-
-  .et_non_fixed_nav.et_transparent_nav.et_show_nav.et_secondary_nav_enabled.et_header_style_centered #page-container, .et_non_fixed_nav.et_transparent_nav.et_show_nav.et_header_style_centered #page-container, .et_fixed_nav.et_show_nav.et_secondary_nav_enabled.et_header_style_centered #page-container, .et_fixed_nav.et_show_nav.et_header_style_centered #page-container {
-    padding-top: 136px;
-  }
 }
 
 @media (max-width: $medium-breakpoint) {
@@ -64,7 +60,7 @@
     display: block;
     text-align: left;
     background-color: #000;
-    border-radius: $button-border-radius;
+    border-radius: $border-radius;
     padding: 5px 10px;
   }
 

@@ -1,18 +1,19 @@
 .page-title-outer {
-  background: $primary-color none;
-  margin-bottom: $spacing-l;
+  background-color: $beigegold;
+  margin-bottom: $spacing-xxl;
   position: relative;
 
   &:before, &:after {
     content: "";
     display: block;
-    background: transparent url("../img/striche-weiß-40px-06.png") no-repeat center center;
+    background: transparent url("../img/striche-weiss-40px-06.png") no-repeat center center;
     position: absolute;
     bottom: 0;
     top: 0;
     margin: auto;
     width: 401px;
     height: 41px;
+    z-index: 10;
   }
 
   &:before {
@@ -26,9 +27,8 @@
   .page-title {
     position: relative;
     text-align: center;
-    background-color: $primary-color;
+    background-color: $beigegold;
     padding: $spacing;
-    width: $container-width;
     max-width: $max-width;
     margin: auto;
 
@@ -36,6 +36,15 @@
       color: #fff;
       text-transform: uppercase;
       letter-spacing: 0;
+      padding: 0;
+    }
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    margin-bottom: $spacing-l;
+
+    &:before, &:after {
+      width: 60px;
     }
   }
 }

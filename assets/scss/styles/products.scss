@@ -1,121 +1,122 @@
-#main-content .container,
-#rehorik-best-selling-products {
-  ul.products.rehorik-products {
-    li.product.rehorik-product {
-      overflow: hidden;
-      text-align: center;
+ul.products.rehorik-products {
+  li.product.rehorik-product {
+    overflow: hidden;
+    text-align: center;
 
-      border-radius: $border-radius;
+    border-radius: $border-radius;
 
-      @media all and (min-width: $small-breakpoint + 1) {
-        width: $product-category-width !important;
-        height: $product-height;
+    @media all and (min-width: $small-breakpoint + 1) {
+      width: $product-category-width !important;
+      height: $product-height;
+
+      img {
+        width: auto;
+      }
+    }
+
+    @media all and (max-width: $small-breakpoint) {
+      width: 100% !important;
+      height: 100%;
+      padding-bottom: $spacing;
+    }
+
+    div.rehorik-product-origin-country {
+      text-transform: uppercase;
+      font-size: $font-size-very-small;
+      font-weight: bold;
+      background-color: transparent;
+      font-family: $font-family-headline;
+      margin-bottom: $spacing-xxs;
+    }
+
+    a {
+      font-weight: bold;
+
+      > span {
+        background-color: #fff;
+
+        img {
+          margin: 0 auto $spacing-xxs auto !important;
+          width: $product-category-width;
+          height: auto;
+          object-fit: cover;
+        }
       }
 
-      @media all and (max-width: $small-breakpoint) {
-        width: 100% !important;
-        height: 100%;
-        padding-bottom: $spacing;
-      }
-
-      div.rehorik-product-origin-country {
+      h2 {
         text-transform: uppercase;
-        font-size: $font-size-very-small;
-        font-weight: bold;
-        background-color: transparent;
-        font-family: $font-family-headline;
-        margin-bottom: $spacing-xxs;
+        font-size: $font-size-large;
+        padding: 0 $spacing-xs;
+        word-break: break-word;
       }
+    }
 
-      a {
-        font-weight: bold;
+    .rehorik-product-attributes {
+      padding: 0 $spacing-s;
+
+      .rehorik-product-min-price {
+        font-size: $font-size-very-small;
+        margin-top: $spacing-xxxs;
+        font-family: $font-family-headline;
 
         > span {
-          background-color: #fff;
-
-          img {
-            margin: 0 auto $spacing-xxs auto !important;
-            width: $product-category-width;
-            height: auto;
-            object-fit: cover;
-          }
-        }
-
-        h2 {
-          text-transform: uppercase;
-          font-size: $font-size-large;
-          padding: 0 $spacing-xs;
-          word-break: break-word;
+          font-weight: bold;
         }
       }
 
-      .rehorik-product-attributes {
-        padding: 0 $spacing-s;
+      table {
+        width: 100%;
 
-        .rehorik-product-min-price {
-          font-size: $font-size-very-small;
-          margin-top: $spacing-xxxs;
-          font-family: $font-family-headline;
-
-          > span {
-            font-weight: bold;
-          }
+        tr {
+          margin: 0;
         }
 
-        table {
-          width: 100%;
-
-          tr {
-            margin: 0;
-          }
-
-          tr td {
-            text-align: left;
-            padding: 0;
-            text-transform: uppercase;
-            font-size: $font-size-very-small;
-            font-weight: bold;
-            vertical-align: top;
-            font-family: $font-family-headline;
-          }
-
-          tr td:first-child:not([colspan="2"]) {
-            text-align: right;
-            padding-right: $spacing-xxxs;
-            padding-bottom: $spacing-xxs;
-          }
-
-          td.rehorik-product-attribute-list, td.rehorik-product-gift-content-list {
-            font-size: $font-size-very-small;
-            font-weight: normal;
-            text-transform: none;
-            line-height: $font-size-very-small;
-            padding-left: $spacing-xxxs;
-            width: 118px;
-            font-family: $font-family-body;
-            padding-bottom: $spacing-xxs;
-          }
-
-          td.rehorik-product-attribute-list ul {
-            text-align: left;
-            padding: 0;
-            font-size: $font-size-very-small;
-            line-height: $font-size-small;
-          }
-        }
-
-        .rehorik-product-ausbau {
-          position: absolute;
-          bottom: $spacing-xxs;
-          left: 0;
-          right: 0;
+        tr td {
+          text-align: left;
+          padding: 0;
           text-transform: uppercase;
           font-size: $font-size-very-small;
-          font-family: $font-family-body;
+          font-weight: bold;
+          vertical-align: top;
+          font-family: $font-family-headline;
+        }
 
-          @media all and (max-width: $small-breakpoint) {
-            bottom: 0;
-          }
+        tr td:first-child:not([colspan="2"]) {
+          text-align: right;
+          padding-right: $spacing-xxxs;
+          padding-bottom: $spacing-xxs;
+        }
+
+        td.rehorik-product-attribute-list, td.rehorik-product-gift-content-list {
+          font-size: $font-size-very-small;
+          font-weight: normal;
+          text-transform: none;
+          line-height: $font-size-very-small;
+          padding-left: $spacing-xxxs;
+          width: 118px;
+          font-family: $font-family-body;
+          padding-bottom: $spacing-xxs;
+        }
+
+        td.rehorik-product-attribute-list ul {
+          text-align: left;
+          padding: 0;
+          font-size: $font-size-very-small;
+          line-height: $font-size-small;
+        }
+      }
+
+      .rehorik-product-ausbau {
+        position: absolute;
+        bottom: $spacing-xxs;
+        left: 0;
+        right: 0;
+        text-transform: uppercase;
+        font-size: $font-size-very-small;
+        font-family: $font-family-body;
+
+        @media all and (max-width: $small-breakpoint) {
+          bottom: 0;
         }
       }
     }

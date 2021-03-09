@@ -1,0 +1,57 @@
+ul#slider, ul#slider li, ul#slider li img {
+  width: 100%;
+}
+
+ul#slider img {
+  height: 600px;
+  object-fit: cover;
+  object-position: 95% 50%;
+}
+
+#slider > .tns-item {
+  line-height: 0;
+  vertical-align: middle;
+  position: relative;
+}
+
+#tns-controls-container {
+  button {
+    background: transparent url("../img/lieferservice/pfeil_weiss.svg") no-repeat 0 0;
+    border: none;
+    width: 45px;
+    height: 45px;
+    background-size: 25px;
+    position: absolute;
+    top: 400px;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  $spaceToBorder: $spacing-s;
+  button[data-controls="prev"] {
+    left: $spaceToBorder;
+  }
+
+  button[data-controls="next"] {
+    transform: rotate(180deg);
+    right: $spaceToBorder;
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    button {
+      width: 30px;
+      height: 30px;
+      background-size: 17px;
+      top: $menu-height + $logo-size-small + $spacing + $spacing + 65px;
+    }
+
+    $spaceToBorderSmall: $spacing-xs;
+    button[data-controls="prev"] {
+      left: $spaceToBorderSmall;
+    }
+
+    button[data-controls="next"] {
+      right: $spaceToBorderSmall;
+    }
+  }
+}

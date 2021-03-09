@@ -1,28 +1,31 @@
 $max-width: 1080px;
 $container-width: 80%;
 
-$primary-color: #C6b480;
-$secondary-color: #660032;
-$grey: #3c3c3b;
+$weinrot: #5C0D2F;
+$hellbraun: #996B23;
+$dunkelbraun: #663700;
+$hellgrau: #500030;
+$beigegold: #CEB67F;
 
 $font-family-body: "DIN Offc W01 Cond";
 $font-family-headline: "DIN W01 Cond Medium";
 
-$font-color: $grey;
-$font-color-accent: $primary-color;
-$font-color-accent-dark: #996b23;
+$font-color: #3c3c3b;
+$font-color-accent: $beigegold;
+$font-color-accent-dark: $hellbraun;
 
 // Product colors
 $product-default-body-text-color: $font-color;
 $product-default-header-text-color: #fff;
-$product-filterkaffee-color: $secondary-color;
+$product-filterkaffee-color: $weinrot;
 $product-espresso-color: #393e1c;
 $product-crema-color: #003c4a;
 $product-default-color: #393536;
 $product-alternative-body-text-color: #fff;
-$product-alternative-header-text-color: $primary-color;
-$product-of-month-color: $primary-color;
+$product-alternative-header-text-color: $beigegold;
+$product-of-month-color: $beigegold;
 
+$font-size-very-large: 52px;
 $font-size-large: 27px;
 $font-size: 20px;
 $font-size-small: 17px;
@@ -32,7 +35,8 @@ $font-size-h2: 30px;
 
 $menu-color: #e9e9e7;
 $menu-hover-color: #b0b2b1;
-$menu-height: 50px;
+$menu-height: 60px;
+$menu-icon-size: 16px;
 $sub-menu-width: 250px;
 $small-breakpoint: 767px;
 $very-small-breakpoint: 375px;
@@ -46,21 +50,21 @@ $product-thumbnail-width: 100px;
 $product-category-width: 235px;
 $product-height: 515px;
 
-$spacing: 30px;
+$spacing: 25px;
 $spacing-l: 50px;
 $spacing-xl: 70px;
-$spacing-xxl: 100px;
+$spacing-xxl: 92px;
 $spacing-s: 20px;
-$spacing-xs: 17px;
+$spacing-xs: 15px;
 $spacing-xxs: 8px;
 $spacing-xxxs: 3px;
 $input-height: 35px;
 
-$button-border-radius: 3px;
-$border-radius: 10px;
+$border-radius: 8px;
 $border-radius-large: 17px;
 
-$logo-size: 45px;
+$logo-size: 135px;
+$logo-size-small: 80px;
 
 $cart-coupon-width: 300px;
 $cart-coupon-width-broad: 380px;

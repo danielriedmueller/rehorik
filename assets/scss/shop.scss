@@ -12,6 +12,7 @@
 @import "styles/cart/coupon";
 @import "styles/button";
 @import "styles/sidebar";
+@import "styles/front_page";
 @import "styles/best_selling_products";
 @import "styles/product/variations";
 @import "styles/product/cup_of_coffee_price";
@@ -39,10 +40,15 @@
 @import "styles/events/events";
 @import "styles/events/calendar";
 @import "styles/social_media_icons";
+@import "styles/slider";
 
 pre {
   font-size: 10px;
   line-height: 12px;
+}
+
+html, body {
+  height: 100%;
 }
 
 .woocommerce-page {
@@ -93,7 +99,7 @@ pre {
 
   hr {
     border: none;
-    border-top: 1px solid $primary-color;
+    border-top: 1px solid $beigegold;
   }
 
   #content-area table td, #content-area table th {
@@ -107,5 +113,6 @@ pre {
 }
 
 #page-container {
-  padding-top: $spacing-l !important;
+  padding-top: $menu-height;
+  margin-top: 0 !important;
 }

@@ -1,14 +1,13 @@
 .rehorik-cart-info {
   .rehorik-cart-info-number {
     display: inline-block;
-    color: #fff;
-    $size: $spacing-s;
+    color: $weinrot;
+    $size: $spacing;
     width: $size;
     height: $size;
     border-radius: $size;
     line-height: $size;
-    background-color: $secondary-color;
-    padding-right: 1px;
-    transform: translate(-6px, -1px);
+    background-color: $beigegold;
+    text-align: center;
   }
 }

@@ -2,14 +2,9 @@
 <div class="page-title-outer">
     <div class='page-title'>
         <?php
-            if (is_woocommerce() && is_active_sidebar('productsearch')) {
+            if (is_woocommerce()) {
                 $pageTitle = woocommerce_page_title(false);
-                ?>
-                    <h1><?php echo $pageTitle ?></h1>
-                    <?php if (is_active_sidebar('productsearch')) {
-                        dynamic_sidebar('productsearch');
-                    } ?>
-                <?php
+                ?><h1><?= $pageTitle ?></h1><?php
             }
 
             if (is_cart() || is_checkout()) {

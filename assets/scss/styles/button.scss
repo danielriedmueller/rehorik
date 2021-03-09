@@ -1,3 +1,15 @@
+button, a.button {
+  border-radius: $border-radius;
+  text-align: center;
+  color: #fff;
+  border: none;
+  font-size: $font-size;
+  background-color: $beigegold;
+  padding: $spacing-s $spacing;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
 .cart .woocommerce {
   button.button[name="apply_coupon"][type="submit"],
   button.button[name="update_cart"][type="submit"],
@@ -8,7 +20,7 @@
     color: #fff;
     border: none;
     border-radius: $border-radius;
-    background-color: $primary-color;
+    background-color: $beigegold;
     text-align: center;
     width: $cart-coupon-width;
   }
@@ -46,6 +58,6 @@
   color: #fff;
   border: none;
   border-radius: $border-radius;
-  background: $primary-color none;
+  background: $beigegold none;
   text-align: center;
 }

@@ -1,36 +1,74 @@
 .rehorik-product-search-widget {
-  @media all and (min-width: $small-breakpoint + 1) {
+  position: relative;
+  height: $menu-height;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  padding-left: $spacing;
+  padding-right: $spacing;
+
+  &::before {
+    content: '';
+    display: block;
+    background: transparent url("../img/lupe-16px.svg") no-repeat center center;
+    background-size: $menu-icon-size;
+    width: $menu-icon-size;
+    height: $menu-icon-size;
+  }
+
+  // enlarges hover area
+  &::after {
+    content: '';
+    display: block;
+    width: 220px;
+    height: $spacing * 2;
     position: absolute;
+    top: $menu-height;
     right: 0;
-    top: 50%;
-    transform: translate(0, -50%);
+    z-index: -1;
+  }
+
+  &:hover {
+    background-color: $beigegold;
+
+    &::before {
+      background: transparent url("../img/lupe-rot-16px.svg") no-repeat center center;
+    }
+
+    form.rehorik-product-search-form {
+      display: flex;
+    }
   }
 
   form.rehorik-product-search-form {
-    input, button {
-      border: 1px solid $secondary-color;
-      border-radius: $button-border-radius;
-      font-size: $font-size-small;
-      padding: $spacing-xxxs $spacing-xs;
-      text-transform: uppercase;
-    }
+    display: none;
+    position: absolute;
+    top: $menu-height;
+    right: 0;
+    background: transparent url("../img/gold-transparent80-1px.png") repeat center center;
+    border-bottom-right-radius: $border-radius;
+    padding-left: $spacing;
+    padding-right: $spacing;
+    height: $spacing * 2;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 
     input {
-      border-right: 0;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      text-align: center;
+      border: none;
+      background-color: transparent;
+      font-size: $font-size;
+      font-family: $font-family-headline;
+      color: $weinrot;
     }
 
     button {
-      font-weight: bold;
-      background-color: $secondary-color;
-      color: #fff;
-      border-left: none;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      cursor: pointer;
-      margin-left: -4px;
+      display: none;
     }
+  }
+
+  ::placeholder {
+    color:    $weinrot;
   }
 }
