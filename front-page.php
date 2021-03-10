@@ -3,7 +3,7 @@ get_header();
 ?>
 <ul id="slider">
     <li>
-        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/frontpage/startseite-header-kaffee-1920x600px.jpg" />
+        <div class="frontpage-slider-image-1"></div>
         <div class="slider-claim">
             <h2>Kaffeerösterei seit 1928</h2>
             <div>
@@ -13,7 +13,7 @@ get_header();
         </div>
     </li>
     <li>
-        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/frontpage/startseite-header-roesterei-1920x600px.jpg" />
+        <div class="frontpage-slider-image-2"></div>
         <div class="slider-claim">
             <h2>TRADITION, QUALITÄT, & LEIDENSCHAFT</h2>
             <div>
@@ -23,9 +23,9 @@ get_header();
         </div>
     </li>
     <li>
-        <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/frontpage/startseite-header-wein-1920x600px.jpg" />
+        <div class="frontpage-slider-image-3"></div>
         <div class="slider-claim">
-            <h2>WIR KÖNNEN AUCH WEIN.</h2>
+            <h2>WIR KÖNNEN AUCH WEIN</h2>
             <div>
                 <a class="button" href="<?= get_term_link( get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Zur Weinauswahl</a>
                 <a class="button" href="<?= get_term_link( get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Und Spirituosen</a>

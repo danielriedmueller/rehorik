@@ -10,6 +10,7 @@ header.rehorik-header {
   justify-content: center;
   align-items: center;
 
+  .menu ul,
   ul.menu {
     display: flex;
 
@@ -34,8 +35,13 @@ header.rehorik-header {
     }
 
     li.menu-item-has-children {
+      background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right 20px;
+      background-size: 10px;
+      padding-right: $spacing + 10px;
+
       &:hover {
         background-color: $beigegold;
+        background-image: url("../img/pfeil-rot-unten.svg");
 
         a {
           color: $weinrot;
