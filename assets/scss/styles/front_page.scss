@@ -65,12 +65,22 @@
     padding: $spacing;
     width: 200px;
     text-align: center;
+
+    &:hover {
+      background-color: $weinrot;
+      color: $beigegold;
+    }
   }
 
   .button:nth-child(2) {
     background-color: $weinrot;
     color: $beigegold;
     margin-left: $spacing;
+
+    &:hover {
+      background-color: $beigegold;
+      color: #fff;
+    }
   }
 
   @media all and (max-width: $small-breakpoint) {
