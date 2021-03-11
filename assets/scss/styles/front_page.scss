@@ -17,6 +17,35 @@
   }
 }
 
+.frontpage-slider-image-1,
+.frontpage-slider-image-2,
+.frontpage-slider-image-3 {
+  width: auto;
+  height: 600px;
+  background: transparent url("../img/frontpage/startseite-header-kaffee-1920x600px.jpg") no-repeat center center;
+
+  @media all and (max-width: $small-breakpoint) {
+    height: 485px;
+    background-image: url("../img/frontpage/header-mobil-kaffee-375x485px.png");
+  }
+}
+
+.frontpage-slider-image-2 {
+  background-image: url("../img/frontpage/startseite-header-roesterei-1920x600px.jpg");
+
+  @media all and (max-width: $small-breakpoint) {
+    background-image: url("../img/frontpage/header-mobil-roesterei-375x485px.png");
+  }
+}
+
+.frontpage-slider-image-3 {
+  background: url("../img/frontpage/startseite-header-wein-1920x600px.jpg");
+
+  @media all and (max-width: $small-breakpoint) {
+    background-image: url("../img/frontpage/header-mobil-wein-375x485px.png");
+  }
+}
+
 .slider-claim {
   position: absolute;
   bottom: $spacing-l;
@@ -36,12 +65,22 @@
     padding: $spacing;
     width: 200px;
     text-align: center;
+
+    &:hover {
+      background-color: $weinrot;
+      color: $beigegold;
+    }
   }
 
   .button:nth-child(2) {
     background-color: $weinrot;
     color: $beigegold;
     margin-left: $spacing;
+
+    &:hover {
+      background-color: $beigegold;
+      color: #fff;
+    }
   }
 
   @media all and (max-width: $small-breakpoint) {
