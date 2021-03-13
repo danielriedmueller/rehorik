@@ -5,18 +5,21 @@ ul#slider, ul#slider li, ul#slider li img {
 ul#slider img {
   height: 600px;
   object-fit: cover;
-  object-position: 95% 50%;
 }
 
 #slider > .tns-item {
   line-height: 0;
   vertical-align: middle;
   position: relative;
+
+  div {
+    background-size: cover;
+  }
 }
 
 #tns-controls-container {
   button {
-    background: transparent url("../img/lieferservice/pfeil_weiss.svg") no-repeat 0 0;
+    background: transparent url("../img/pfeil_weiss.svg") no-repeat 0 0;
     border: none;
     width: 45px;
     height: 45px;
@@ -42,7 +45,7 @@ ul#slider img {
       width: 30px;
       height: 30px;
       background-size: 17px;
-      top: $menu-height + $logo-size-small + $spacing + $spacing + 65px;
+      top: 190px;
     }
 
     $spaceToBorderSmall: $spacing-xs;

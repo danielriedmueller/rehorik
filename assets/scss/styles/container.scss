@@ -1,4 +1,12 @@
 #main-content .container {
+  margin-top: $spacing-xxxl;
+
+  @media all and (max-width: $small-breakpoint) {
+    margin-top: $spacing-l;
+    width: 100%;
+    padding: 0 $spacing-l;
+  }
+
   padding-top: 0 !important;
 
   &::before {

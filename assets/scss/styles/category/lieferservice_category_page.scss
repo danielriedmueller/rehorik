@@ -1,52 +1,55 @@
-$spacing-ls: 40px;
-$line-height: 26px;
+.rehorik-lieferservice-category-header,
+.rehorik-lieferservice-category-footer {
+  color: #fff;
+  font-size: $font-size-small;
+  line-height: 24px;
+  text-align: justify;
 
-.rehorik-lieferservice-category-header {
-  position: relative;
-  margin-top: -$spacing-xl;
-
-  ul#slider, ul#slider li, ul#slider li img {
-    width: 100%;
+  h4 {
+    font-weight: normal;
+    color: $font-color-accent;
+    padding: 0;
+    text-align: center;
+    padding-bottom: $spacing;
   }
 
-  ul#slider img {
-    height: 600px;
-    object-fit: cover;
-  }
-
-  #slider > .tns-item {
-    line-height: 0;
-    vertical-align: middle;
-  }
-
-  #tns-controls-container {
-    button {
-      background: transparent url("../img/lieferservice/pfeil_weiss.svg") no-repeat 0 0;
-      border: none;
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      top: 350px;
-      cursor: pointer;
-    }
-
-    button[data-controls="prev"] {
-      left: 75px;
-    }
-
-    button[data-controls="next"] {
-      transform: rotate(180deg);
-      right: 75px;
-    }
-
-    @media all and (max-width: $small-breakpoint) {
-      display: none;
-    }
+  a {
+    font-family: $font-family-body;
   }
 
   @media all and (max-width: $small-breakpoint) {
-    .tns-outer {
-      padding-top: 15em !important;
+    font-size: $font-size-very-small;
+    line-height: $font-size-very-small + 2px;
+    text-align: left;
+
+    h4 {
+      text-align: left;
+      font-size: $font-size-small;
+      line-height: $font-size-small + 2px;
+      padding-bottom: $spacing-s;
+    }
+  }
+}
+.rehorik-lieferservice-category-header {
+  position: relative;
+
+  .lieferservice-slider-image-1,
+  .lieferservice-slider-image-2 {
+    width: auto;
+    height: 600px;
+    background: transparent url("../img/lieferservice/lieferservice-header-600px-v1.jpg") no-repeat center center;
+
+    @media all and (max-width: $small-breakpoint) {
+      height: 485px;
+      background-image: url("../img/lieferservice/lieferservice-header-mobil-375x485px-v1.png");
+    }
+  }
+
+  .lieferservice-slider-image-2 {
+    background-image: url("../img/lieferservice/lieferservice-header-600px-v2.jpg");
+
+    @media all and (max-width: $small-breakpoint) {
+      background-image: url("../img/lieferservice/lieferservice-header-mobil-375x485px-v2.png");
     }
   }
 
@@ -58,63 +61,67 @@ $line-height: 26px;
     bottom: 0;
     left: 0;
     right: 0;
+
+    @media all and (max-width: $small-breakpoint) {
+      width: 100%;
+    }
   }
 
   .quality-text {
     background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+    width: 100%;
+    z-index: 9;
+    padding: $spacing-l;
     border-top-left-radius: $border-radius-large;
     border-top-right-radius: $border-radius-large;
-    position: absolute;
-    right: 36px;
-    width: 100%;
-    max-width: 589px;
-    bottom: 0;
-    z-index: 9;
-    color: #fff;
-    padding: $spacing-ls - 4px $spacing-ls;
 
-    a {
-      font-family: $font-family-body;
+    @media all and (min-width: $small-breakpoint + 1) {
+      max-width: 589px;
+      position: absolute;
+      right: $spacing-l;
+      bottom: 0;
     }
 
-    h4 {
-      font-weight: normal;
-      color: $font-color-accent;
-      padding: 0;
-      text-align: center;
-      padding-bottom: 25px;
-    }
 
     .quality-text-content {
-      font-size: 17px;
-      line-height: 24px;
-      display: flex;
-      text-align: justify;
+      @media all and (min-width: $small-breakpoint + 1) {
+        display: flex;
 
-      > div {
-        flex: 1 1 0;
-        width: 0;
-      }
+        > div {
+          flex: 1 1 0;
+          width: 0;
+        }
 
-      > div:first-child {
-        margin-right: $spacing-s;
+        > div:first-child {
+          margin-right: $spacing-s;
+        }
       }
+    }
+
+    @media all and (max-width: $small-breakpoint) {
+      padding: $spacing-s;
     }
   }
 }
 
 .rehorik-lieferservice-category-footer {
   background: $hellgrau none;
+  $heikoHeightMobil: 240px;
+
+  @media all and (max-width: $small-breakpoint) {
+    margin-top: $heikoHeightMobil + $spacing-l;
+  }
 
   .order-instructions {
-    max-width: $max-width;
-    width: 80%;
-    margin: auto;
-    padding-right: 36px;
-    padding-left: 360px;
-    padding-top: $spacing-ls - 4px;
-    padding-bottom: $spacing-ls - 2px;
     position: relative;
+    padding: $spacing-l $spacing;
+
+    @media all and (min-width: $small-breakpoint + 1) {
+      max-width: $max-width;
+      width: 80%;
+      margin: auto;
+      padding: $spacing-l $spacing-l $spacing-l 360px;
+    }
 
     &:before {
       content: "";
@@ -125,25 +132,15 @@ $line-height: 26px;
       bottom: 0;
       width: 319px;
       height: 289px;
-    }
 
-    h3 {
-      font-weight: normal;
-      color: $font-color-accent;
-      padding: 0;
-      text-align: left;
-      padding-bottom: 25px;
-    }
-
-    > div {
-      a {
-        font-family: $font-family-body;
+      @media all and (max-width: $small-breakpoint) {
+        width: 220px;
+        height: $heikoHeightMobil;
+        top: -$heikoHeightMobil;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
       }
-
-      color: #fff;
-      font-size: 17px;
-      line-height: 24px;
-      text-align: justify;
     }
   }
 }

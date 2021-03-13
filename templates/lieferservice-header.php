@@ -1,6 +1,18 @@
 <?php ?>
 <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
 <div class="rehorik-lieferservice-category-header">
+    <ul id="slider">
+        <li>
+            <div class="lieferservice-slider-image-1"></div>
+        </li>
+        <li>
+            <div class="lieferservice-slider-image-2"></div>
+        </li>
+    </ul>
+    <div id="tns-controls-container">
+        <button></button>
+        <button></button>
+    </div>
     <div class="quality-text-outer">
         <div class="quality-text">
             <h4>Unser Lieferservice: vielseitig & nachhaltig.<br>Direkt zu euch nach Hause.</h4>
@@ -14,11 +26,5 @@
             </div>
         </div>
     </div>
-    <?php
-        get_template_part('templates/slider', null, ['images' => [
-            '/assets/img/lieferservice/lieferservice-header-600px-v1.jpg',
-            '/assets/img/lieferservice/lieferservice-header-600px-v2.jpg'
-        ]]);
-    ?>
 </div>
 

@@ -7,12 +7,13 @@
   left: 150px + $spacing;
   top: $menu-height + $spacing-xl;
   bottom: 0;
+  z-index: 9;
 
   @media all and (max-width: $small-breakpoint) {
     width: $logo-size-small;
     height: $logo-size-small;
     background-size: $logo-size-small;
     left: $spacing-l;
-    top: $menu-height + $spacing-l;
+    top: $spacing-l;
   }
 }

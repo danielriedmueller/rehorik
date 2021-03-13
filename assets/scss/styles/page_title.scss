@@ -1,19 +1,14 @@
 .page-title-outer {
   background-color: $beigegold;
-  margin-bottom: $spacing-xxxl;
   position: relative;
+  padding: $spacing-l 0;
+  display: flex;
 
   &:before, &:after {
     content: "";
     display: block;
-    background: transparent url("../img/striche-weiss-40px-06.png") no-repeat center center;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    margin: auto;
+    background: transparent url("../img/striche-weiss-80px.png") no-repeat center center;
     width: 401px;
-    height: 41px;
-    z-index: 9;
   }
 
   &:before {
@@ -28,7 +23,6 @@
     position: relative;
     text-align: center;
     background-color: $beigegold;
-    padding: $spacing;
     max-width: $max-width;
     margin: auto;
 
@@ -37,14 +31,19 @@
       text-transform: uppercase;
       letter-spacing: 0;
       padding: 0;
+      margin: 0 $spacing-xs;
+
     }
   }
 
   @media all and (max-width: $small-breakpoint) {
-    margin-bottom: $spacing-xl;
-
     &:before, &:after {
       width: 60px;
+    }
+
+    .page-title h1 {
+      font-size: $font-size-h2;
+      line-height: 35px;
     }
   }
 }

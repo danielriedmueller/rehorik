@@ -63,8 +63,6 @@ html, body {
   }
 
   #content-area {
-    margin: $spacing-xxl 0;
-
     #left-area {
       @media all and (max-width: $small-breakpoint) {
         margin-bottom: $spacing-xl;

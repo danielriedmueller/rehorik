@@ -23,8 +23,8 @@ ul.products.rehorik-products {
   }
 
   @media all and (max-width: 640px) {
-    -ms-grid-columns: $product-category-width;
-    grid-template-columns: $product-category-width;
+    -ms-grid-columns: 100%;
+    grid-template-columns: 100%;
   }
 }
 
