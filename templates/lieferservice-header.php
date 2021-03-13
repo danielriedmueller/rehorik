@@ -1,4 +1,5 @@
 <?php ?>
+<a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
 <div class="rehorik-lieferservice-category-header">
     <div class="quality-text-outer">
         <div class="quality-text">

@@ -2,7 +2,7 @@
   .woocommerce {
     .woocommerce-billing-fields,
     #payment.woocommerce-checkout-payment {
-      margin-bottom: $spacing-l;
+      margin-bottom: $spacing-xl;
     }
 
     .woocommerce-order.rehorik-order {
@@ -12,7 +12,7 @@
       }
 
       ul.rehorik-order-overview.order_details, ul.wc-bacs-bank-details.order_details.bacs_details {
-        margin: $spacing-l 0 !important;
+        margin: $spacing-xl 0 !important;
         padding: 0 !important;
 
         li {
@@ -30,7 +30,7 @@
       }
 
       > p, > section {
-        margin-bottom: $spacing-l;
+        margin-bottom: $spacing-xl;
       }
 
       .woocommerce-bacs-bank-details {

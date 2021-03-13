@@ -1,6 +1,6 @@
 .page-title-outer {
   background-color: $beigegold;
-  margin-bottom: $spacing-xxl;
+  margin-bottom: $spacing-xxxl;
   position: relative;
 
   &:before, &:after {
@@ -41,7 +41,7 @@
   }
 
   @media all and (max-width: $small-breakpoint) {
-    margin-bottom: $spacing-l;
+    margin-bottom: $spacing-xl;
 
     &:before, &:after {
       width: 60px;

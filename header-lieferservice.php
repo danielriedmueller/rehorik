@@ -9,6 +9,6 @@
             <?php get_template_part('templates/menu'); ?>
             <div id="et-main-area">
                 <?php
-                get_template_part('templates/lieferservice-category-header');
+                get_template_part('templates/lieferservice-header');
                 do_action( 'et_before_main_content' );
                 ?>

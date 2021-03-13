@@ -1,7 +1,7 @@
 div.rehorik-product div.rehorik-product-summary.summary {
   position: relative;
   padding-left: $spacing;
-  margin-bottom: $spacing-xxl;
+  margin-bottom: $spacing-xxxl;
 
   h1 {
     color: $font-color-accent;
@@ -11,7 +11,7 @@ div.rehorik-product div.rehorik-product-summary.summary {
   }
 
   @media all and (max-width: $small-breakpoint) {
-    margin-top: $spacing-l;
+    margin-top: $spacing-xl;
     padding-left: 0;
     h1 {
       margin-left: 0;

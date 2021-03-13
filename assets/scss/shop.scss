@@ -12,6 +12,7 @@
 @import "styles/cart/coupon";
 @import "styles/button";
 @import "styles/sidebar";
+@import "styles/rehorik_logo";
 @import "styles/front_page";
 @import "styles/best_selling_products";
 @import "styles/product/variations";
@@ -62,11 +63,11 @@ html, body {
   }
 
   #content-area {
-    margin: $spacing-xl 0;
+    margin: $spacing-xxl 0;
 
     #left-area {
       @media all and (max-width: $small-breakpoint) {
-        margin-bottom: $spacing-l;
+        margin-bottom: $spacing-xl;
       }
     }
   }
@@ -108,7 +109,7 @@ html, body {
   }
 
   #et-boc > div > div.et_pb_with_background {
-    padding-top: $spacing-l !important;
+    padding-top: $spacing-xl !important;
   }
 }
 

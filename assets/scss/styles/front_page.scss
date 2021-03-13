@@ -1,22 +1,3 @@
-#rehorik-logo {
-  width: $logo-size;
-  height: $logo-size;
-  background: transparent url("../img/svg/logo.svg") no-repeat left top;
-  background-size: $logo-size;
-  position: absolute;
-  left: 150px + $spacing;
-  top: $menu-height + $spacing-l;
-  bottom: 0;
-
-  @media all and (max-width: $small-breakpoint) {
-    width: $logo-size-small;
-    height: $logo-size-small;
-    background-size: $logo-size-small;
-    left: 10px + $spacing;
-    top: $menu-height + 10px + $spacing;
-  }
-}
-
 .frontpage-slider-image-1,
 .frontpage-slider-image-2,
 .frontpage-slider-image-3 {
@@ -48,7 +29,7 @@
 
 .slider-claim {
   position: absolute;
-  bottom: $spacing-l;
+  bottom: $spacing-xl;
   right: 130px;
 
   h2 {

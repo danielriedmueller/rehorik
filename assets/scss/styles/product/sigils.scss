@@ -11,7 +11,7 @@
     height: $sigilHeight;
     background: transparent url("../img/biosiegel.svg") no-repeat center top;
 
-    bottom: -$spacing-xxl;
+    bottom: -$spacing-xxxl;
     right: $spaceToHugoHead + $spacing-s;
   }
 
@@ -22,7 +22,7 @@
     width: $sigilWidth;
     height: $sigilHeight;
     background: transparent url("../img/productofmonth.svg") no-repeat center top;
-    bottom: -$spacing-xxl;
+    bottom: -$spacing-xxxl;
   }
 
   &.product-of-month.biosigil::after {

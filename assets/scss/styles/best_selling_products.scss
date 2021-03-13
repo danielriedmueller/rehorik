@@ -1,7 +1,7 @@
 #rehorik-best-selling-products-outer {
   background: transparent url("../img/Textur-Gold.jpg") repeat 0 0;
-  padding: $spacing-l;
-  margin: $spacing-xxl 0 0 0;
+  padding: $spacing-xl;
+  margin: $spacing-xxxl 0 0 0;
 
   #rehorik-best-selling-products {
     max-width: 1080px;
@@ -11,12 +11,12 @@
       color: #fff;
       text-align: center;
       text-transform: uppercase;
-      margin: 0 0 $spacing-xl 0;
+      margin: 0 0 $spacing-xxl 0;
     }
   }
 
   @media all and (max-width: $small-breakpoint) {
-    margin: $spacing-l 0 0 0;
+    margin: $spacing-xl 0 0 0;
   }
 }
 
