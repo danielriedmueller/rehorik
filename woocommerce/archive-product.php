@@ -17,10 +17,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
-get_header( 'shop' );
-
 if (is_product_category(DELIVERY_SHIPPING_CLASS_SLUG)) {
-    get_template_part('templates/lieferservice-category-header');
+    get_header( 'lieferservice' );
+} else {
+    get_header( 'shop' );
 }
 
 /**

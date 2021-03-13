@@ -8,4 +8,7 @@
         <div id="page-container">
             <?php get_template_part('templates/menu'); ?>
             <div id="et-main-area">
-                <?php do_action( 'et_before_main_content' ); ?>
+                <?php
+                get_template_part('templates/lieferservice-category-header');
+                do_action( 'et_before_main_content' );
+                ?>
