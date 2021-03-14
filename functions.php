@@ -1,5 +1,5 @@
 <?php
-show_admin_bar(true);
+show_admin_bar(false);
 
 require_once('sig_functions.php');
 
@@ -78,6 +78,7 @@ define('AGB_PAGE_ID', 13644);
 define('WIDERRUFSBELEHRUNG_PAGE_ID', 682);
 define('IMPRESSUM_PAGE_ID', 681);
 define('DATENSCHUTZ_PAGE_ID', 680);
+define('STAMMHAUS_PAGE_ID', 2);
 
 $priority = 1000;
 

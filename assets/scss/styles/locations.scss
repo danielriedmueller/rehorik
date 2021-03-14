@@ -36,8 +36,33 @@
         padding: 0;
       }
 
-      &:not(:last-child) {
-        margin-right: $spacing-l;
+      @media all and (min-width: $small-breakpoint + 1) {
+        &:not(:last-child) {
+          margin-right: $spacing-l;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    padding: $spacing-l $spacing-xxl $spacing-xxl $spacing-xxl;
+
+    h1 {
+      margin-bottom: $spacing-l;
+    }
+
+    > div {
+      flex-direction: column;
+
+      > div {
+        &:first-child {
+          margin-bottom: $spacing-l;
+        }
+
+        &:nth-child(3),
+        &:nth-child(4) {
+          display: none;
+        }
       }
     }
   }

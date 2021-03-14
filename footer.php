@@ -1,15 +1,3 @@
-<?php
-    if (is_woocommerce()
-        || is_checkout()
-        || is_cart()
-        || is_page('Widerrufsbelehrung')
-        || is_page('Impressum')
-        || is_page('Datenschutz')
-        || is_page('AGB')
-    ) {
-        echo do_shortcode('[et_pb_section global_module="720"][/et_pb_section]');
-    }
-?>
 <?php get_template_part('templates/rehorik-locations'); ?>
 <footer>
     <div>
@@ -20,7 +8,7 @@
         <div>
             <h2>Versand</h2>
             <p>Wir versenden mit Citymail</p>
-            <img alt="Logo Citymail" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-web-citymail.svg' ?>">
+            <p><img alt="Logo Citymail" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-web-citymail.svg' ?>"></p>
             <p>Versandkosten: 5,80 €</p>
             <p>Kostenloser Versand ab: 49 €</p>
             <p><small>* Alle Preise sind inkl. MwSt., zzgl. Versand</small></p>
@@ -46,7 +34,7 @@
             <p><a href="<?= get_page_link(LOGIN_PAGE_ID) ?>">Kundenlogin</a></p>
             <p><b>Probleme bei der Anmeldung?</b></p>
             <p>Senden Sie uns bitte ein Email an</p>
-            <p><a href="mailto:<?= IT_SUPPORT_EMAIL ?>"><?= IT_SUPPORT_EMAIL ?></p>
+            <p><a href="mailto:<?= IT_SUPPORT_EMAIL ?>"><?= IT_SUPPORT_EMAIL ?></a></p>
             <p>Vielen Dank!</p>
         </div>
     </div>

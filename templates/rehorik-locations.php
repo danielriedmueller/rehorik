@@ -1,11 +1,12 @@
 <?php ?>
 <div id="locations">
-    <h1>Rehorik Standorte</h1>
+    <h1 class="hide-for-mobile">Rehorik Standorte</h1>
+    <h1 class="hide-for-desktop">Standorte</h1>
     <div>
         <div>
             <img alt="Standort Stammhaus" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-stammhaus.png' ?>">
             <h2>Stammhaus</h2>
-            <p>Mit <a href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Kaffeerösteri</a> | <a href="<?= get_page_link(CAFE_190_PAGE_ID) ?>">Cafe 190°</a>| <a href="#">Weinkeller</a>| <a href="#">Käseladen</a></p>
+            <p>Mit <a href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Kaffeerösteri</a> | <a href="<?= get_page_link(CAFE_190_PAGE_ID) ?>">Cafe 190°</a> | <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>#weinkeller">Weinkeller</a> | <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>#kaeseladen">Käseladen</a></p>
             <p>Am Brixener Hof 7</p>
             <p>93047 Regensburg</p>
         </div>
