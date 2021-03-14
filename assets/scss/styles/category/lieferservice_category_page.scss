@@ -9,7 +9,7 @@
     font-weight: normal;
     color: $font-color-accent;
     padding: 0;
-    text-align: center;
+    text-align: left;
     padding-bottom: $spacing;
   }
 
@@ -23,7 +23,6 @@
     text-align: left;
 
     h4 {
-      text-align: left;
       font-size: $font-size-small;
       line-height: $font-size-small + 2px;
       padding-bottom: $spacing-s;

@@ -1,4 +1,4 @@
-#main-content .container {
+#main-content .container, .container {
   margin-top: $spacing-xxxl;
 
   @media all and (max-width: $small-breakpoint) {
