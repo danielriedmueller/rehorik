@@ -21,10 +21,9 @@
                     Wir kommen zu euch, und zwar mit dem Fahrradkurier „Feine Fracht“ aus Regensburg. Im Gepäck haben wir, was auch immer ihr euch wünscht: Kaffee aus aller Welt, erstklassige Weine und Spirituosen, erlesene Käsesorten und Delikatessen.
                 </div>
                 <div>
-                    Bestellt einfach in unserem Onlineshop. Und wenn ihr etwas Spezielles sucht oder eine Beratung braucht, dann ruft uns gerne an unter <a href="tel:0941/51727">0941/51727</a> oder schreibt uns eine E-Mail: <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a>.
+                    Bestellt einfach in unserem Onlineshop. Und wenn ihr etwas Spezielles sucht oder eine Beratung braucht, dann ruft uns gerne an unter <a href="tel:0941/51727">0941/51727</a> oder schreibt uns eine E-Mail: <a href="mailto:<?= DELIVERY_ORDER_EMAIL ?>"><?= DELIVERY_ORDER_EMAIL ?></a>.
                 </div>
             </div>
         </div>
     </div>
 </div>
-

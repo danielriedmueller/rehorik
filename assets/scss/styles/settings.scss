@@ -12,7 +12,7 @@ $lila: #2d253c;
 $font-family-body: "DIN Offc W01 Cond";
 $font-family-headline: "DIN W01 Cond Medium";
 
-$font-color: #3c3c3b;
+$font-color: $hellgrau;
 $font-color-accent: $beigegold;
 $font-color-accent-dark: $hellbraun;
 
@@ -21,7 +21,7 @@ $product-default-body-text-color: $font-color;
 $product-default-header-text-color: #fff;
 $product-filterkaffee-color: $weinrot;
 $product-espresso-color: #393e1c;
-$product-crema-color: #003c4a;
+$product-crema-color: $tuerkis;
 $product-default-color: #393536;
 $product-alternative-body-text-color: #fff;
 $product-alternative-header-text-color: $beigegold;
@@ -33,21 +33,15 @@ $font-size: 20px;
 $font-size-small: 17px;
 $font-size-very-small: 15px;
 $font-size-h1: 46px;
-$font-size-h2: 30px;
+$font-size-h2: 31px;
 
-$menu-color: #e9e9e7;
-$menu-hover-color: #b0b2b1;
 $menu-height: 60px;
 $menu-icon-size: 16px;
-$sub-menu-width: 250px;
+
 $small-breakpoint: 767px;
 $very-small-breakpoint: 375px;
 $medium-breakpoint: 1024px;
 
-$burger-color: #2c2d2d;
-$burger-height: 32px;
-
-$cart-title-section-height: 140px;
 $product-thumbnail-width: 100px;
 $product-category-width: 235px;
 $product-height: 515px;

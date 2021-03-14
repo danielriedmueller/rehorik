@@ -10,58 +10,47 @@
         echo do_shortcode('[et_pb_section global_module="720"][/et_pb_section]');
     }
 ?>
-
-<?php if ( 'on' == et_get_option( 'divi_back_to_top', 'false' ) ) : ?>
-	<span class="et_pb_scroll_top et-pb-icon"></span>
-<?php endif;
-
-if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
-
-        <footer id="main-footer">
-            <?php get_sidebar( 'footer' ); ?>
-
-		<?php
-			if ( has_nav_menu( 'footer-menu' ) ) : ?>
-
-				<div id="et-footer-nav">
-					<div class="container">
-						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'footer-menu',
-								'depth'          => '1',
-								'menu_class'     => 'bottom-nav',
-								'container'      => '',
-								'fallback_cb'    => '',
-							) );
-						?>
-					</div>
-				</div> <!-- #et-footer-nav -->
-
-			<?php endif; ?>
-
-				<div id="footer-bottom">
-
-<!-- Mein Footer aus dem Builder -->
-				<?php echo do_shortcode('[et_pb_section global_module="494"][/et_pb_section]');?>
-<!-- Mein Footer ende -->
-
-					<div class="container clearfix">
-				<?php
-					if ( false !== et_get_option( 'show_footer_social_icons', true ) ) {
-						get_template_part( 'includes/social_icons', 'footer' );
-					}
-
-					echo et_get_footer_credits();
-				?>
-					</div>	<!-- .container -->
-				</div>
-			</footer> <!-- #main-footer -->
-		</div> <!-- #et-main-area -->
-
-<?php endif; // ! is_page_template( 'page-template-blank.php' ) ?>
-
-	</div> <!-- #page-container -->
-
-	<?php wp_footer(); ?>
+<?php get_template_part('templates/rehorik-locations'); ?>
+<footer>
+    <div>
+        <div>
+            <h2>Zahlungsarten</h2>
+            <p>Vorkasse, Paypal</p>
+        </div>
+        <div>
+            <h2>Versand</h2>
+            <p>Wir versenden mit Citymail</p>
+            <img alt="Logo Citymail" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-web-citymail.svg' ?>">
+            <p>Versandkosten: 5,80 €</p>
+            <p>Kostenloser Versand ab: 49 €</p>
+            <p><small>* Alle Preise sind inkl. MwSt., zzgl. Versand</small></p>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h2>Kontakt</h2>
+            <p><a href="<?= get_page_link(KARRIERE_PAGE_ID) ?>">Karriere</a></p>
+            <p><a href="<?= get_page_link(KONTAKT_PAGE_ID) ?>">Kontaktformular</a></p>
+        </div>
+        <div>
+            <h2>Rechtliches</h2>
+            <p><a href="<?= get_page_link(WIDERRUFSBELEHRUNG_PAGE_ID) ?>">Widerrufsbelehrung</a></p>
+            <p><a href="<?= get_page_link(DATENSCHUTZ_PAGE_ID) ?>">Datenschutz</a></p>
+            <p><a href="<?= get_page_link(IMPRESSUM_PAGE_ID) ?>">Impressum</a></p>
+            <p><a href="<?= get_page_link(AGB_PAGE_ID) ?>">AGBs</a></p>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h2>Anmeldung</h2>
+            <p><a href="<?= get_page_link(LOGIN_PAGE_ID) ?>">Kundenlogin</a></p>
+            <p><b>Probleme bei der Anmeldung?</b></p>
+            <p>Senden Sie uns bitte ein Email an</p>
+            <p><a href="mailto:<?= IT_SUPPORT_EMAIL ?>"><?= IT_SUPPORT_EMAIL ?></p>
+            <p>Vielen Dank!</p>
+        </div>
+    </div>
+</footer>
+<?php wp_footer(); ?>
 </body>
 </html>

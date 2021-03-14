@@ -6,7 +6,8 @@
 @import "styles/products";
 @import "styles/products_grid";
 @import "styles/header";
-@import "styles/header_mobile";
+@import "styles/footer";
+@import "styles/locations";
 @import "styles/cart/cart";
 @import "styles/cart/cart_totals";
 @import "styles/cart/coupon";
@@ -50,6 +51,18 @@ pre {
 
 html, body {
   height: 100%;
+}
+
+h1 {
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
 }
 
 .woocommerce-page {

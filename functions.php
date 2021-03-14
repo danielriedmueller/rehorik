@@ -1,5 +1,5 @@
 <?php
-show_admin_bar(false);
+show_admin_bar(true);
 
 require_once('sig_functions.php');
 
@@ -12,7 +12,9 @@ define('MAX_DISPLAY_ORIGIN_COUNTRIES', 1);
 define('DELIVERY_CATEGORY_URL', 'produkt-kategorie/lieferservice');
 define('EVENT_TICKET_SHOULD_BE_PRINTED_SLUG', 'soll-das-ticket-ausgedruckt-werden');
 define('EVENT_TICKET_TELEPHONE_SLUG', 'telefon');
-define('DELIVERY_ORDER_EMAIL', 'it@rehorik.de');
+define('DELIVERY_ORDER_EMAIL', 'kaffee@rehorik.de');
+define('SHIPPING_ORDER_EMAIL', 'kaffee@rehorik.de');
+define('IT_SUPPORT_EMAIL', 'it@rehorik.de');
 
 // Categories
 define('TICKET_CATEGORY_SLUG', 'ticket');
@@ -65,6 +67,17 @@ define('INFORMATION_TAB_ATTRIBUTES', [
     FLAVOUR_ATTRIBUTE_SLUG,
     FETT_ATTRIBUTE_SLUG,
 ]);
+
+// Pages
+define('ROESTEREI_PAGE_ID', 40);
+define('CAFE_190_PAGE_ID', 44);
+define('LOGIN_PAGE_ID', 667);
+define('KONTAKT_PAGE_ID', 121);
+define('KARRIERE_PAGE_ID', 119);
+define('AGB_PAGE_ID', 13644);
+define('WIDERRUFSBELEHRUNG_PAGE_ID', 682);
+define('IMPRESSUM_PAGE_ID', 681);
+define('DATENSCHUTZ_PAGE_ID', 680);
 
 $priority = 1000;
 
