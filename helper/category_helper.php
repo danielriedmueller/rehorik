@@ -213,6 +213,9 @@ function woocommerce_template_loop_category_title($category)
  * @return array
  */
 function findShoptypeAwareProductSubcategory($terms) {
+    if (!isset($_SERVER['HTTP_REFERER'])) {
+        return $terms;
+    }
     $referer = $_SERVER['HTTP_REFERER'];
 
     $term_ids = wp_list_pluck($terms,'term_id');

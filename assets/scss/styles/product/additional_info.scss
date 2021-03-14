@@ -13,3 +13,44 @@
     padding: 0 $spacing-s;
   }
 }
+
+.rehorik-product-additional-information-container {
+  padding: $spacing-l $spacing-xl;
+  border: 1px solid $product-default-color;
+  border-top: none;
+  border-radius: $border-radius;
+  color: #fff;
+  margin: $spacing 0;
+
+  hr {
+    border-width: 3px !important;
+  }
+}
+
+body.woocommerce #content-area {
+  .rehorik-product-additional-information-container {
+    background-color: $product-default-color;
+    border-color: $product-default-color;
+  }
+
+  div.rehorik-product.product_cat-crema {
+    .rehorik-product-additional-information-container {
+      background-color: $product-crema-color;
+      border-color: $product-crema-color;
+    }
+  }
+
+  div.rehorik-product.product_cat-espresso {
+    .rehorik-product-additional-information-container {
+      background-color: $product-espresso-color;
+      border-color: $product-espresso-color;
+    }
+  }
+
+  div.rehorik-product.product_cat-filterkaffee {
+    .rehorik-product-additional-information-container {
+      background-color: $product-filterkaffee-color;
+      border-color: $product-filterkaffee-color;
+    }
+  }
+}

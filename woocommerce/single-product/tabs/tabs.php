@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Single Product tabs
@@ -27,6 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see woocommerce_default_product_tabs()
  */
 $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
+global $product;
 if ( ! empty( $product_tabs ) ) : ?>
 
 	<div class="rehorik-product-tabs woocommerce-tabs wc-tabs-wrapper">
@@ -53,3 +55,12 @@ if ( ! empty( $product_tabs ) ) : ?>
 	</div>
 
 <?php endif; ?>
+
+<div class="rehorik-product-additional-information-container">
+    <div class="rehorik-product-additional-information-category">
+        <?php echo getPrimaryCoffeeCategory($product) ?>
+    </div>
+
+    <?php do_action( 'woocommerce_product_additional_information', $product ); ?>
+    <?php echo apply_filters( 'the_content', $product->get_description() ) ?>
+</div>
