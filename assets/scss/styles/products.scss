@@ -1,4 +1,4 @@
-#page-container ul.products.rehorik-products {
+#page-container #main-content ul.products.rehorik-products {
   li.product.rehorik-product {
     overflow: hidden;
     text-align: center;
@@ -47,6 +47,7 @@
         text-transform: uppercase;
         font-size: $font-size-large;
         padding: 0 $spacing-xs;
+        margin: 0;
         word-break: break-word;
       }
     }
