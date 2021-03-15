@@ -63,18 +63,6 @@ h1 {
 h2 {
   font-size: $font-size-h2;
 }
-@media all and (max-width: $small-breakpoint) {
-  .hide-for-mobile {
-    display: none;
-  }
-}
-
-@media all and (min-width: $small-breakpoint + 1) {
-  .hide-for-desktop {
-    display: none;
-  }
-}
-
 
 .woocommerce-page #main-content {
   // revert overwritten divi custom css for woocommerce pages

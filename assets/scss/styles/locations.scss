@@ -49,6 +49,10 @@
 
     h1 {
       margin-bottom: $spacing-l;
+
+      > span {
+        display: none;
+      }
     }
 
     > div {

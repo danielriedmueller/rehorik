@@ -1,7 +1,6 @@
 <?php ?>
 <div id="locations">
-    <h1 class="hide-for-mobile">Rehorik Standorte</h1>
-    <h1 class="hide-for-desktop">Standorte</h1>
+    <h1><span>Rehorik</span> Standorte</h1>
     <div>
         <div>
             <img alt="Standort Stammhaus" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-stammhaus.png' ?>">
