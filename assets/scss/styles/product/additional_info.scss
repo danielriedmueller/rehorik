@@ -25,6 +25,10 @@
   hr {
     border-width: 3px !important;
   }
+
+  @media all and (max-width: $small-breakpoint) {
+    padding: $spacing $spacing-l;
+  }
 }
 
 body.woocommerce #content-area {

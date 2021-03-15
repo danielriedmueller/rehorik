@@ -19,3 +19,27 @@
   }
 }
 
+/**
+ * Best selling products loop
+ */
+div#rehorik-best-selling-products {
+  ul.products.rehorik-products {
+    -ms-grid-columns: $product-category-width $product-category-width $product-category-width $product-category-width;
+    grid-template-columns: $product-category-width $product-category-width $product-category-width $product-category-width;
+
+    @media all and (max-width: 1145px) {
+      -ms-grid-columns: $product-category-width $product-category-width $product-category-width;
+      grid-template-columns: $product-category-width $product-category-width $product-category-width;
+    }
+
+    @media all and (max-width: 880px) {
+      -ms-grid-columns: $product-category-width $product-category-width;
+      grid-template-columns: $product-category-width $product-category-width;
+    }
+
+    @media all and (max-width: 640px) {
+      -ms-grid-columns: $product-category-width;
+      grid-template-columns: $product-category-width;
+    }
+  }
+}

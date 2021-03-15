@@ -59,13 +59,8 @@
       flex-direction: column;
 
       > div {
-        &:first-child {
+        &:not(:last-child) {
           margin-bottom: $spacing-l;
-        }
-
-        &:nth-child(3),
-        &:nth-child(4) {
-          display: none;
         }
       }
     }

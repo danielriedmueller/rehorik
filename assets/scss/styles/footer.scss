@@ -31,10 +31,6 @@ footer {
   @media all and (max-width: $small-breakpoint) {
     padding: $spacing-l $spacing-xxl 240px $spacing-xxl;
     flex-direction: column;
-
-    div:not(:first-child) {
-      display: none;
-    }
   }
 
   background: transparent url("../img/footer/footer-web-1920px.png") no-repeat bottom right;

@@ -26,7 +26,17 @@
   }
 
   @media all and (max-width: $small-breakpoint) {
-    padding: 0 $spacing-s;
+    padding: 0;
+    grid-template-columns: 1fr;
+    grid-row-gap: $spacing-xxs;
+
+    .rehorik-product-attribute-label {
+      text-align: left;
+
+      &:nth-last-of-type(2) {
+        margin-top: $spacing-xs;
+      }
+    }
   }
 
   .rehorik-product-strength-flavour-container {
@@ -57,6 +67,10 @@
         background-size: $bgSize;
         width: $bgSize;
         background-position: left bottom;
+
+        @media all and (max-width: $small-breakpoint) {
+          background-position: left top;
+        }
       }
 
       .rehorik-coffee-strength-#{$i}-filled {
@@ -64,6 +78,10 @@
         background-size: $bgSize;
         width: $bgSize;
         background-position: left bottom;
+
+        @media all and (max-width: $small-breakpoint) {
+          background-position: left top;
+        }
       }
 
       .rehorik-coffee-flavour-#{$i} {
@@ -117,16 +135,10 @@
         }
       }
     }
-
-    @media all and (max-width: $very-small-breakpoint) {
-      > span {
-        margin-right: $spacing-xxxs;
-        height: 19px;
-      }
-    }
   }
 }
 
+// Category view
 .rehorik-product-strength-flavour-container {
   $width: 15px;
   $height: 23px;
