@@ -105,11 +105,17 @@
 
 .rehorik-lieferservice-category-footer {
   background: $hellgrau none;
-  $heikoHeightMobil: 240px;
+  $heikoHeightSmall: 220px;
+  $heikoHeightVerySmall: 180px;
 
   @media all and (max-width: $small-breakpoint) {
-    margin-top: $heikoHeightMobil + $spacing-l;
+    margin-top: $heikoHeightSmall + $spacing-l;
   }
+
+  @media all and (max-width: $very-small-breakpoint) {
+    margin-top: $heikoHeightVerySmall + $spacing-l;
+  }
+
 
   .order-instructions {
     position: relative;
@@ -133,12 +139,20 @@
       height: 289px;
 
       @media all and (max-width: $small-breakpoint) {
-        width: 220px;
-        height: $heikoHeightMobil;
-        top: -$heikoHeightMobil;
+        background-image:url("../img/lieferservice/lieferservice-lastenrad-220px.png");
+        width: 240px;
+        height: $heikoHeightSmall;
+        top: -$heikoHeightSmall;
         margin: 0 auto;
         left: 0;
         right: 0;
+      }
+
+      @media all and (max-width: $very-small-breakpoint) {
+        background-image:url("../img/lieferservice/lieferservice-lastenrad-180px.png");
+        width: 196px;
+        height: $heikoHeightVerySmall;
+        top: -$heikoHeightVerySmall;
       }
     }
   }
