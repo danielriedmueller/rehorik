@@ -2,8 +2,11 @@ ul.rehorik-products.products {
   li.product-category.product {
     position: relative;
     max-height: 473px;
-    overflow: hidden;
-    margin: 0 !important;
+
+    a {
+      display: block;
+      height: 100%;
+    }
 
     img, h2.woocommerce-loop-category__title {
       margin: 0 !important;
@@ -11,7 +14,10 @@ ul.rehorik-products.products {
 
     img {
       height: 100%;
-      object-fit: cover;
+      object-fit: fill;
+      padding: 0;
+      margin: 0;
+      display: block;
     }
 
     h2.woocommerce-loop-category__title {
