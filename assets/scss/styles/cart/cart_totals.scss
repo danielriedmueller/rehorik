@@ -11,8 +11,10 @@
       $lineHeight: 23px;
       line-height: $lineHeight;
 
-      table {
+      table.shop_table.shop_table_responsive.rehorik-shop-table {
         width: 100%;
+        border: none;
+        margin-bottom: 0 !important;
 
         ul#shipping_method li {
           line-height: $lineHeight;
@@ -23,6 +25,8 @@
           font-weight: normal;
           vertical-align: top;
           padding: 0 0 $spacing-xs 0;
+          border: none;
+          background-color: transparent !important;
         }
 
         tr td {
@@ -39,10 +43,18 @@
             font-weight: bold;
           }
         }
+
+        @media all and (max-width: $small-breakpoint) {
+          tr td::before, .woocommerce-page table.shop_table_responsive tr td::before {
+            font-weight: normal;
+            content: attr(data-title);
+          }
+        }
       }
 
       .checkout-button.button.alt.wc-forward {
         margin-bottom: $spacing-xxxs;
+        color: #fff;
       }
 
       ul#shipping_method .amount {
