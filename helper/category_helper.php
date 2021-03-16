@@ -37,7 +37,7 @@ function isItCategory($product, $categorySlug): bool
 
 /**
  * Vollautomat, Espresso, Filterkaffee,
- * return only one.
+ * return the first two of them.
  *
  * Hierarchy
  *  - 1. Filterkaffee
@@ -47,19 +47,23 @@ function isItCategory($product, $categorySlug): bool
  * @param WC_Product $product
  * @return string
  */
-function getPrimaryCoffeeCategory(WC_Product $product): string
+function getCoffeeCategories(WC_Product $product): string
 {
-    $name = null;
+    $terms = get_the_terms( $product->get_id(), 'product_cat' );
+    $term_ids = wp_list_pluck($terms,'term_id');
+    $parents = array_filter(wp_list_pluck($terms,'parent'));
+    $term_ids_not_parents = array_diff($term_ids,  $parents);
+    $terms_not_parents = array_intersect_key($terms,  $term_ids_not_parents);
+    $filtered_terms = array_filter($terms_not_parents, function($a) {
+        return in_array($a->slug, [
+                COFFEE_FILTERKAFFEE_CATEGORY_SLUG, COFFEE_ESPRESSO_CATEGORY_SLUG, COFFEE_CREMA_CATEGORY_SLUG
+        ]);
+    });
+    $filtered_terms_names = array_unique(array_map(function ($a) {
+        return $a->name;
+    }, $filtered_terms));
 
-    if (isItCategory($product, COFFEE_FILTERKAFFEE_CATEGORY_SLUG)) {
-        $name = getCategoryNameBySlug(COFFEE_FILTERKAFFEE_CATEGORY_SLUG);
-    } elseif (isItCategory($product, COFFEE_ESPRESSO_CATEGORY_SLUG)) {
-        $name = getCategoryNameBySlug(COFFEE_ESPRESSO_CATEGORY_SLUG);
-    } elseif (isItCategory($product, COFFEE_CREMA_CATEGORY_SLUG)) {
-        $name = getCategoryNameBySlug(COFFEE_CREMA_CATEGORY_SLUG);
-    }
-
-    return $name ?? "";
+    return sizeof($filtered_terms_names) > 0 ? implode(" & ", $filtered_terms_names) : "";
 }
 
 /**
@@ -71,7 +75,7 @@ function getPrimaryCoffeeCategory(WC_Product $product): string
 function getSubCategory(WC_Product $product): string
 {
     if (isItCategory($product, COFFEE_CATEGORY_SLUG)) {
-        return getPrimaryCoffeeCategory($product);
+        return getCoffeeCategories($product);
     }
 
     if (isItCategory($product, WINE_SPIRITS_CO_CATEGORY_SLUG)) {

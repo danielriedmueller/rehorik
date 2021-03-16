@@ -1,3 +1,5 @@
+@import "../mixins";
+
 #main-content .container,
 #rehorik-best-selling-products {
   li.rehorik-product {
@@ -28,6 +30,18 @@
       background-color: $product-filterkaffee-color;
     }
 
+    &.product_cat-crema.product_cat-espresso {
+      @include productLinearGradient($product-espresso-color, $product-crema-color);
+    }
+
+    &.product_cat-crema.product_cat-filterkaffee {
+      @include productLinearGradient($product-filterkaffee-color, $product-crema-color);
+    }
+
+    &.product_cat-espresso.product_cat-filterkaffee {
+      @include productLinearGradient($product-filterkaffee-color, $product-espresso-color);
+    }
+
     &.product-of-month {
       background-color: $product-of-month-color;
       color: $product-default-body-text-color;
@@ -47,102 +61,46 @@
     }
   }
 }
+
 body.woocommerce #content-area {
-  div.rehorik-product-tabs {
-    ul.rehorik-tabs-header li[role='tab'] {
-      border: 1px solid $product-default-color !important;
-
-      &.active {
-        background-color: $product-default-color !important;
-
-        a {
-          color: #fff !important;
-        }
-      }
-
-      a {
-        color: $product-default-color !important;
-      }
-    }
-
-    div.rehorik-tabs-panel {
-      background-color: $product-default-color;
-      border-color: $product-default-color;
-    }
+  .rehorik-product-additional-information-container {
+    background-color: $product-default-color;
+    border: none;
   }
 
   div.rehorik-product.product_cat-crema {
-    div.rehorik-product-tabs {
-      ul.rehorik-tabs-header li[role='tab'] {
-        border-color: $product-crema-color !important;
-
-        &.active {
-          background-color: $product-crema-color !important;
-
-          a {
-            color: #fff !important;
-          }
-        }
-
-        a {
-          color: $product-crema-color !important;
-        }
-      }
-
-      div.rehorik-tabs-panel {
-        background-color: $product-crema-color;
-        border-color: $product-crema-color;
-      }
+    .rehorik-product-additional-information-container {
+      background-color: $product-crema-color;
     }
   }
 
   div.rehorik-product.product_cat-espresso {
-    div.rehorik-product-tabs {
-      ul.rehorik-tabs-header li[role='tab'] {
-        border-color: $product-espresso-color !important;
-
-        &.active {
-          background-color: $product-espresso-color !important;
-
-          a {
-            color: #fff !important;
-          }
-        }
-
-        a {
-          color: $product-espresso-color !important;
-        }
-      }
-
-      div.rehorik-tabs-panel {
-        background-color: $product-espresso-color;
-        border-color: $product-espresso-color;
-      }
+    .rehorik-product-additional-information-container {
+      background-color: $product-espresso-color;
     }
   }
 
   div.rehorik-product.product_cat-filterkaffee {
-    div.rehorik-product-tabs {
-      ul.rehorik-tabs-header li[role='tab'] {
-        border-color: $product-filterkaffee-color !important;;
+    .rehorik-product-additional-information-container {
+      background-color: $product-filterkaffee-color;
+    }
+  }
 
-        &.active {
-          background-color: $product-filterkaffee-color !important;
+  div.rehorik-product.product_cat-crema.product_cat-espresso {
+    .rehorik-product-additional-information-container {
+      @include productLinearGradient($product-espresso-color, $product-crema-color);
+    }
+  }
 
-          a {
-            color: #fff !important;
-          }
-        }
+  div.rehorik-product.product_cat-crema.product_cat-filterkaffee {
+    .rehorik-product-additional-information-container {
+      @include productLinearGradient($product-filterkaffee-color, $product-crema-color);
+    }
+  }
 
-        a {
-          color: $product-filterkaffee-color !important;;
-        }
-      }
-
-      div.rehorik-tabs-panel {
-        background-color: $product-filterkaffee-color;
-        border-color: $product-filterkaffee-color;
-      }
+  div.rehorik-product.product_cat-espresso.product_cat-filterkaffee {
+    .rehorik-product-additional-information-container {
+      @include productLinearGradient($product-filterkaffee-color, $product-espresso-color);
     }
   }
 }
