@@ -1,8 +1,9 @@
 #rehorik-social-media-icons-outer {
+  $height: 41px;
   position: absolute;
   left: 0;
   height: 100%;
-  top: $menu-height + $spacing-xl;
+  top: $menu-height + $logo-size + $spacing-xl - $height;
   z-index: 1;
   width: 0;
   overflow: visible;

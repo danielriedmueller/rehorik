@@ -56,11 +56,14 @@ if ( ! empty( $product_tabs ) ) : ?>
 
 <?php endif; ?>
 
-<div class="rehorik-product-additional-information-container">
-    <div class="rehorik-product-additional-information-category">
-        <?php echo getPrimaryCoffeeCategory($product) ?>
-    </div>
+<div class="rehorik-product-additional-information-container-outer">
+    <input class="expand-button" type="checkbox">
+    <div class="rehorik-product-additional-information-container">
+        <div class="rehorik-product-additional-information-category">
+            <?php echo getPrimaryCoffeeCategory($product) ?>
+        </div>
 
-    <?php do_action( 'woocommerce_product_additional_information', $product ); ?>
-    <?php echo apply_filters( 'the_content', $product->get_description() ) ?>
+        <?php do_action( 'woocommerce_product_additional_information', $product ); ?>
+        <?php echo apply_filters( 'the_content', $product->get_description() ) ?>
+    </div>
 </div>

@@ -40,7 +40,7 @@
 
       @media all and (min-width: $small-breakpoint + 1) {
         &:not(:last-child) {
-          margin-right: $spacing-l;
+          margin-right: $spacing-xl;
         }
       }
     }
