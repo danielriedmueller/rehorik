@@ -33,7 +33,7 @@ global $product;
     <input class="expand-button" type="checkbox">
     <div class="rehorik-product-additional-information-container">
         <div class="rehorik-product-additional-information-category">
-            <?php echo getPrimaryCoffeeCategory($product) ?>
+            <?php echo getCoffeeCategories($product) ?>
         </div>
 
         <?php do_action( 'woocommerce_product_additional_information', $product ); ?>
