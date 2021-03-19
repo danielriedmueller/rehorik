@@ -48,16 +48,3 @@ button, a.button {
     }
   }
 }
-
-#tribe-events input.tribe-events-button,
-.tribe-events-button,
-#tribe-bar-form .tribe-bar-submit input[type=submit]{
-  padding: 1px $spacing !important;
-  font-weight: bold;
-  font-size: $font-size;
-  color: #fff;
-  border: none;
-  border-radius: $border-radius;
-  background: $beigegold none;
-  text-align: center;
-}

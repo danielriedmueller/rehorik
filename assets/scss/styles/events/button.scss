@@ -1,0 +1,26 @@
+.rehorik-tribe-events-main #tribe-events .rehorik-tribe-event-tickets {
+
+  button.rehorik-tribe-event-tickets-add-to-cart-button,
+  button.tribe-tickets__tickets-buy {
+    color: $font-color;
+    font-family: $font-family-body;
+    padding: $spacing-s $spacing;
+    background: $weinrot none;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: $font-size;
+    border: 2px solid;
+    border-radius: $border-radius;
+    transition: all 0.2s;
+    text-align: center;
+    box-shadow: none;
+    text-shadow: none;
+
+    &:hover {
+      color: $font-color-accent-dark;
+      background-color: $weinrot;
+    }
+  }
+}

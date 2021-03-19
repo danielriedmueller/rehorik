@@ -1,118 +1,120 @@
-#tribe-events-pg-template, .tribe-events-pg-template {
+#tribe-events-pg-template.rehorik-tribe-events-main {
   width: $container-width;
   max-width: $max-width;
-  margin: auto;
-  font-family: "DIN Offc W01 Cond";
-}
-.tribe-common h2.tribe-common-h5,
-.single-tribe_events h1.tribe-events-single-event-title {
-  color: $font-color-accent;
-  font-size: $font-size-h1 !important;
-  font-weight: bold;
-  margin: 0 0 $spacing-s 0;
-  font-family: "DIN Offc W01 Cond";
-}
+  margin: 0 auto $spacing auto;
+  padding: 0;
+  line-height: $line-height-narrow;
 
-form#tribe-tickets.tribe-common.tribe-tickets {
-  border-color: $beigegold;
-  * {
-    border-color: $beigegold;
-  }
+  #tribe-events {
+    padding: 0;
 
-  width: 100%;
-  margin: $spacing 0;
-  max-width: unset;
-}
-
-#tribe-modal__cart.tribe-modal-cart.tribe-modal__cart {
-  * {
-    border-color: $beigegold;
-  }
-
-  font-family: "DIN Offc W01 Cond";
-}
-
-.tribe-events-single-section.tribe-events-event-meta.primary {
-  font-family: "DIN Offc W01 Cond";
-  font-size: $font-size-small;
-  font-style: normal;
-}
-
-button.tribe-common-c-btn,
-a.tribe-common-c-btn,
-.tribe-common.tribe-events button.tribe-common-c-btn,
-.tribe-tickets__item__attendee__fields__footer button.tribe-common-c-btn,
-form#tribe-tickets.tribe-common.tribe-tickets button.tribe-tickets__buy {
-  font-family: "DIN Offc W01 Cond";
-  background-color: $beigegold;
-  font-weight: bold;
-  font-size: $font-size;
-  text-transform: uppercase;
-  padding: 1px 30px !important;
-  border-radius: 10px;
-
-  &:hover, &:active, &:focus {
-    color: $font-color-accent-dark;
-    background-color: $beigegold !important;
-  }
-}
-
-.tribe-common button.tribe-common-c-btn-link {
-  font-family: "DIN Offc W01 Cond";
-  color: $font-color-accent-dark;
-  font-size: $font-size;
-
-  &:hover, &:active, &:focus{
-    color: $font-color-accent;
-  }
-}
-
-.tribe-common.tribe-events {
-  .tribe-common--breakpoint-medium.tribe-common .tribe-common-form-control-text__input,
-  .tribe-common-form-control-text__input,
-  .tribe-common-c-btn, a.tribe-common-c-btn,
-  .tribe-events-c-view-selector__list-item-text,
-  .tribe-common-h3 {
-    font-family: "DIN Offc W01 Cond";
-    font-size: $font-size;
-  }
-
-  .tribe-events-c-events-bar {
-    border: 1px solid $beigegold;
-  }
-
-  .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date,
-  .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link {
-    color: $font-color-accent-dark;
-  }
-
-  .tribe-events-c-ical__link {
-    &::before {
-      content: none;
+    #tribe-events-content {
+      padding: 0;
+      margin: 0 0 $spacing-l 0;
     }
 
-    background-color: $beigegold;
-    font-size: $font-size-small;
-    font-weight: normal;
-    padding: 2px $spacing-s;
-    border-radius: 0;
-    border: none;
-    color: #fff;
-
-    &:hover, &:active, &:focus {
-      color: $font-color-accent-dark;
+    .rehorik-tribe-event-tickets {
+      .rehorik-tribe-event-tickets-form {
+        padding: 0;
+        margin: 0;
+        border: none;
+        max-width: unset;
+      }
     }
-  }
-}
 
-.tribe-events-notices {
-  margin-bottom: $spacing-xl;
-}
+    h1.tribe-events-single-event-title {
+      color: $font-color-accent;
+      font-size: $font-size-h1;
+      font-weight: bold;
+      margin: 0 0 $spacing-xxs 0;
+      font-family: $font-family-headline;
+      text-transform: uppercase;
+    }
 
-a.tribe-events-ical.tribe-events-button, a.tribe-events-gcal.tribe-events-button {
-  color: $font-color-accent;
+    h2, .tribe-events-cost {
+      font-family: $font-family-body;
+      font-size: $font-size-large;
+      font-weight: bold;
+      color: $font-color;
+      padding: 0;
+    }
 
-  &:hover, &:active, &:focus {
-    color: $font-color-accent-dark;
+    .tribe-common-h7 {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: $font-family-body;
+      font-size: $font-size;
+      color: $font-color;
+      line-height: $line-height-narrow;
+    }
+
+    .tribe-tickets__tickets-item-content-title,
+    .rehorik-tribe-events-extra-price {
+      background: transparent url("../img/thumbnail_striche-textkasten-50px.png") repeat-x 0 0;
+      padding: $spacing-xxs;
+      margin: 0 0 $spacing-s 0;
+    }
+
+    .rehorik-tribe-events-extra-price {
+      > span:first-child {
+        margin-right: $spacing-xxs;
+      }
+    }
+
+    .tribe-common-h4 {
+      font-family: $font-family-body;
+      font-size: $font-size;
+      color: $font-color;
+      font-weight: normal;
+      line-height: $line-height-narrow;
+    }
+
+    .tribe-events-cost {
+      font-weight: normal;
+
+      @media all and (min-width: $small-breakpoint + 1) {
+        margin-left: $spacing-xxs;
+      }
+    }
+
+    .tribe-events-schedule.tribe-clearfix {
+      margin: 0;
+    }
+
+    .tribe-tickets__tickets-item-quantity {
+      display: block;
+
+      $height: 49px;
+      .tribe-tickets__tickets-item-quantity-number {
+        $width: 60px;
+        height: $height;
+        width: $width;
+
+        input.rehorik-tribe-events-number-input {
+          font-weight: 500 !important;
+          font-size: 20px !important;
+          color: #fff !important;
+          border-radius: 3px;
+          -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+          border: none !important;
+          background-color: $hellgrau;
+          height: 49px;
+          width: $width;
+          text-align: center;
+          padding: 2px;
+          font-family: $font-family-body;
+        }
+      }
+
+      .tribe-tickets__tickets-item-quantity-add,
+      .tribe-tickets__tickets-item-quantity-remove {
+        color: $font-color-accent-dark;
+        font-size: $font-size-h1;
+        width: 30px;
+        margin: 0;
+        transform: translate(0, 5px);
+      }
+    }
   }
 }

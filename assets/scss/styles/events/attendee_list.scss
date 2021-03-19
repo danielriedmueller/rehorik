@@ -1,0 +1,21 @@
+.rehorik-tribe-events-attendee-list {
+  margin-bottom: $spacing-l;
+
+  .table-outer {
+    overflow-x: auto;
+  }
+
+  table {
+    margin-top: $spacing-s;
+    text-align: left;
+
+    td, th {
+      padding: $spacing-xs;
+    }
+  }
+
+  table, th, td {
+    border: 1px solid $weinrot;
+    border-collapse: collapse;
+  }
+}

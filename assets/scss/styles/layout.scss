@@ -1,3 +1,7 @@
+.mt {
+  margin-top: $spacing;
+}
+
 @media (min-width: $medium-breakpoint + 1) {
   .et_left_sidebar #left-area {
     float: right;

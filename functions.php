@@ -17,7 +17,7 @@ define('SHIPPING_ORDER_EMAIL', 'kaffee@rehorik.de');
 define('IT_SUPPORT_EMAIL', 'it@rehorik.de');
 
 // Categories
-define('TICKET_CATEGORY_SLUG', 'ticket');
+define('TICKET_CATEGORY_SLUG', 'events-seminare');
 define('COFFEE_CATEGORY_SLUG', 'kaffee');
 define('WINE_SPIRITS_CO_CATEGORY_SLUG', 'wein-spirits-co');
 define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
@@ -48,12 +48,16 @@ define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-herkunft');
 define('REGION_ATTRIBUTE_SLUG', 'pa_region');
 define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
 define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
+
 define('ALCOHOL_ATTRIBUTE_SLUG', 'pa_alkoholgehalt');
 define('WEIGHT_ATTRIBUTE_SLUG', 'pa_gewicht');
 define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
 define('WINERY_ATTRIBUTE_SLUG', 'pa_weingut');
 define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
 define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
+
+// For Events which are only virtual online events
+define('ONLINE_META_KEY', 'Online');
 
 // In $productAttributes array, slugs are prefixed by wordpress
 define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
@@ -80,6 +84,8 @@ define('IMPRESSUM_PAGE_ID', 681);
 define('DATENSCHUTZ_PAGE_ID', 680);
 define('STAMMHAUS_PAGE_ID', 2);
 
+define('PERMISSION_VIEW_VIEW_ATTENDEE_LIST', 'teilnehmerliste_bei_events_anschauen');
+
 $priority = 1000;
 
 // In case of an child them use get stylesheet directory
@@ -88,6 +94,7 @@ $baseDir = get_stylesheet_directory();
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');
+require_once($baseDir . '/hooks/events.php');
 require_once($baseDir . '/filter/product_tabs.php');
 require_once($baseDir . '/filter/shop.php');
 require_once($baseDir . '/filter/categories.php');
@@ -130,3 +137,10 @@ if (function_exists('register_sidebar')) {
         'after_title' => '</h3>',
     ]);
 }
+
+add_action('init', function() {
+    if (!wp_next_scheduled( 'rh_past_events_cron_hook') ) {
+        wp_schedule_event(time(), 'twicedaily', 'rh_past_events_cron_hook');
+    }
+});
+

@@ -1,0 +1,44 @@
+#tribe-events-pg-template.rehorik-tribe-events-main #tribe-events .rehorik-tribe-event-tickets .rehorik-tribe-event-tickets-form {
+  .rehorik-tribe-event-footer {
+    border: none;
+    position: relative;
+    padding-right: 90px;
+
+    @media all and (max-width: $small-breakpoint) {
+      display: block;
+
+      .tribe-common-b2 {
+        text-align: left;
+        margin: 0 0 $spacing-xxs 0;
+      }
+    }
+
+    .rehorik-hugo-head {
+      bottom: -17px;
+      right: 0;
+    }
+
+    .tribe-common-b2.tribe-tickets__tickets-footer-total,
+    .tribe-common-b2.tribe-tickets__tickets-footer-quantity {
+      span {
+        font-family: $font-family-body;
+        font-size: $font-size;
+        color: $font-color;
+        font-weight: normal;
+        line-height: $line-height-narrow;
+      }
+      > span:first-child {
+        font-weight: bold;
+      }
+
+      > span:last-child {
+        font-weight: normal;
+      }
+    }
+  }
+}
+.tribe-dialog__wrapper.tribe-modal__wrapper--ar {
+  .rehorik-hugo-head {
+    display: none;
+  }
+}

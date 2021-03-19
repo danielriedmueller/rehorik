@@ -40,17 +40,30 @@
 @import "styles/page_title";
 @import "styles/cart/cart_info";
 @import "styles/events/events";
+@import "styles/events/single_event";
 @import "styles/events/calendar";
+@import "styles/events/info";
+@import "styles/events/meta";
+@import "styles/events/item";
+@import "styles/events/footer";
+@import "styles/events/orders";
+@import "styles/events/attendee_list";
+@import "styles/events/attendee_registration";
+@import "styles/events/button";
 @import "styles/social_media_icons";
 @import "styles/slider";
 @import "styles/mixins";
+@import "styles/events/notices";
+@import "styles/events/checkout";
 
 pre {
   font-size: 10px;
   line-height: 12px;
 }
 
-html, body {
+html body {
+  color: $font-color;
+  font-weight: normal;
   height: 100%;
 }
 

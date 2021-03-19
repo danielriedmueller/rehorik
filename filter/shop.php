@@ -65,3 +65,28 @@ function set_delivery_service_variation_default_value($args)
     return $args;
 }
 add_filter('woocommerce_dropdown_variation_attribute_options_args', 'set_delivery_service_variation_default_value', 10, 1);
+
+/**
+ * Remove event coupon payment (or actually cheque) gateway from other product categories
+ */
+function allow_coupon_payment_gateway_only_for_events($available_gateways)
+{
+    if (!is_checkout()) return $available_gateways;
+
+    $unset = false;
+    $cat = get_term_by( 'slug', TICKET_CATEGORY_SLUG, 'product_cat' );
+
+    foreach (WC()->cart->get_cart_contents() as $key => $values) {
+        $terms = get_the_terms($values['product_id'], 'product_cat');
+        foreach ($terms as $term) {
+            if ($cat->term_id !== $term->term_id) {
+                $unset = true;
+                break;
+            }
+        }
+    }
+    if ($unset == true) unset($available_gateways['cheque']);
+
+    return $available_gateways;
+}
+add_filter('woocommerce_available_payment_gateways', 'allow_coupon_payment_gateway_only_for_events');

@@ -8,8 +8,7 @@
         width: 100%;
       }
 
-      $lineHeight: 23px;
-      line-height: $lineHeight;
+      line-height: $line-height-narrow;
 
       table.shop_table.shop_table_responsive.rehorik-shop-table {
         width: 100%;
@@ -17,7 +16,7 @@
         margin-bottom: 0 !important;
 
         ul#shipping_method li {
-          line-height: $lineHeight;
+          line-height: $line-height-narrow;
           margin: 0;
         }
 

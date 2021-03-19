@@ -1,0 +1,21 @@
+.tribe-checkout-backlinks {
+   a {
+     display: inline-block;
+     padding: $spacing-s $spacing;
+     font-size: $font-size;
+     color: $font-color !important;
+     border: none;
+     border-radius: $border-radius;
+     background-color: $weinrot;
+     text-align: center;
+     margin-bottom: $spacing-s;
+
+     &:hover {
+       color: $font-color-accent-dark !important;
+     }
+
+     &:first-child {
+       margin-right: $spacing-s;
+     }
+   }
+}
