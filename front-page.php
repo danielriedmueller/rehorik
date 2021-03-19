@@ -8,7 +8,7 @@ get_header( );
             <h2>Kaffeerösterei seit 1928</h2>
             <div>
                 <a class="button" href="<?= get_term_link( get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Zum Kaffee</a>
-                <a class="button" href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Unsere Kugelröster</a>
+                <a class="button" href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Unser Kugelröster</a>
             </div>
         </div>
     </li>
