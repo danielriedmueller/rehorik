@@ -1,0 +1,3 @@
+@mixin productLinearGradient($color-left, $color-right) {
+  background: linear-gradient(90deg,  $color-left 50%, $color-right 50%);
+}
