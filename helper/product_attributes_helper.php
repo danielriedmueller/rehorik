@@ -73,6 +73,8 @@ function hasBiosigil(WC_Product $product): bool
 
 function isEventOnline(WC_Product $product): bool
 {
+    if (!function_exists('tribe_events_get_ticket_event')) return false;
+
     $event = tribe_events_get_ticket_event($product->get_id());
 
     if(!$event) {

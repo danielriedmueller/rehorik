@@ -79,7 +79,6 @@ header.rehorik-header {
 
       li.menu-item {
         text-transform: none;
-        padding: 0;
 
         &:hover {
           background-color: transparent;
@@ -185,7 +184,7 @@ header.rehorik-header {
               left: 0;
 
               li {
-                padding-left: 0;
+                padding: 0;
               }
             }
           }
