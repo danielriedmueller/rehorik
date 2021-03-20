@@ -27,8 +27,6 @@
     margin: auto;
 
     h1 {
-      color: #fff;
-      padding: 0;
       margin: 0 $spacing-xs;
     }
   }
@@ -36,11 +34,6 @@
   @media all and (max-width: $small-breakpoint) {
     &:before, &:after {
       width: 60px;
-    }
-
-    .page-title h1 {
-      font-size: $font-size-h2;
-      line-height: 35px;
     }
   }
 }

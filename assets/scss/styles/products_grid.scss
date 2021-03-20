@@ -28,11 +28,33 @@ ul.products.rehorik-products {
   }
 }
 
+/**
+ * Best selling products loop
+ */
+div#rehorik-best-selling-products {
+  ul.products.rehorik-products {
+    -ms-grid-columns: $product-category-width $product-category-width $product-category-width $product-category-width !important;
+    grid-template-columns: $product-category-width $product-category-width $product-category-width $product-category-width !important;;
 
+    @media all and (max-width: 1145px) {
+      -ms-grid-columns: $product-category-width $product-category-width $product-category-width !important;;
+      grid-template-columns: $product-category-width $product-category-width $product-category-width !important;;
+    }
 
+    @media all and (max-width: 880px) {
+      -ms-grid-columns: $product-category-width $product-category-width !important;;
+      grid-template-columns: $product-category-width $product-category-width !important;;
+    }
+
+    @media all and (max-width: 640px) {
+      -ms-grid-columns: $product-category-width !important;;
+      grid-template-columns: $product-category-width !important;;
+    }
+  }
+}
 
 /**
- * Shop page
+ * Shop page and Front page
  */
 .shop.woocommerce #page-container,
 .home #page-container {
@@ -40,18 +62,18 @@ ul.products.rehorik-products {
    * Products loop
    */
   ul.products.rehorik-products {
-    -ms-grid-columns: $product-category-width $product-category-width $product-category-width;
-    grid-template-columns: $product-category-width $product-category-width $product-category-width;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     @media all and (max-width: 973px) {
-      -ms-grid-columns: $product-category-width $product-category-width;
-      grid-template-columns: $product-category-width $product-category-width;
+      -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       margin-bottom: $spacing-xl;
     }
 
     @media all and (max-width: 640px) {
-      -ms-grid-columns: $product-category-width;
-      grid-template-columns: $product-category-width;
+      -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
     }
   }
 }

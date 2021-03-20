@@ -1,13 +1,18 @@
 #main-content .container, .container {
-  margin-top: $spacing-xxxl;
+  padding: $section-padding-top-bottom 0;
 
   @media all and (max-width: $small-breakpoint) {
-    margin-top: $spacing-l;
     width: 100%;
-    padding: 0 $spacing-l;
+    padding: $section-padding-small $section-padding-small;
   }
 
-  padding-top: 0 !important;
+  > h1 {
+    margin-bottom: $section-padding-top-bottom;
+
+    @media all and (max-width: $small-breakpoint) {
+      margin-bottom: $section-padding-small;
+    }
+  }
 
   &::before {
     content: none;

@@ -5,7 +5,7 @@ get_header( );
     <li>
         <div class="frontpage-slider-image-1"></div>
         <div class="slider-claim">
-            <h2>Kaffeerösterei seit 1928</h2>
+            <h1>Kaffeerösterei seit 1928</h1>
             <div>
                 <a class="button" href="<?= get_term_link( get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Zum Kaffee</a>
                 <a class="button" href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Unser Kugelröster</a>
@@ -15,7 +15,7 @@ get_header( );
     <li>
         <div class="frontpage-slider-image-2"></div>
         <div class="slider-claim">
-            <h2>TRADITION, QUALITÄT, & LEIDENSCHAFT</h2>
+            <h1>TRADITION, QUALITÄT, & LEIDENSCHAFT</h1>
             <div>
                 <a class="button" href="<?= get_term_link( get_term_by('slug', COFFEE_FILTERKAFFEE_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Hier gibts Filterkaffee</a>
                 <a class="button" href="<?= get_term_link( get_term_by('slug', COFFEE_ESPRESSO_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Und hier Espresso</a>
@@ -25,7 +25,7 @@ get_header( );
     <li>
         <div class="frontpage-slider-image-3"></div>
         <div class="slider-claim">
-            <h2>WIR KÖNNEN AUCH WEIN</h2>
+            <h1>WIR KÖNNEN AUCH WEIN</h1>
             <div>
                 <a class="button" href="<?= get_term_link( get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Zur Weinauswahl</a>
                 <a class="button" href="<?= get_term_link( get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Und Spirituosen</a>

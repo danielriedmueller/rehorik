@@ -1,68 +1,52 @@
 #locations {
-  $small-breakpoint: 889px;
   background: $hellgrau none;
-  padding: $spacing-xxl $spacing-xxxl $spacing-xxxl $spacing-xxxl;
 
-  h1, h2, p {
-    color: #fff;
-  }
-
-  h1 {
-    text-align: center;
-    margin-bottom: $spacing-xxl;
-  }
-
-  > div {
-    display: flex;
-    justify-content: center;
-
+  .container {
     > div {
-      flex: 0 0 188px;
-      width: 188px;
+      display: flex;
+      justify-content: space-around;
 
-      img {
-        width: 100%;
-        display: block;
-      }
+      > div {
+        flex: 0 0 $footer-items-width;
+        width: $footer-items-width;
 
-      h2 {
-        margin: $spacing 0;
-        padding: 0;
-        line-height: 25px;
-        font-size: $font-size-h2;
-      }
+        img {
+          width: 100%;
+          display: block;
+        }
 
-      p, a {
-        font-size: $font-size-small;
-        line-height: 23px;
-        padding: 0;
-      }
+        h2 {
+          margin: $spacing 0;
+          padding: 0;
+          line-height: 25px;
+          font-size: $font-size-h2;
+          color: #fff;
+        }
 
-      @media all and (min-width: $small-breakpoint + 1) {
-        &:not(:last-child) {
-          margin-right: $spacing-xl;
+        p, a {
+          font-size: $font-size-small;
+          line-height: 23px;
+          padding: 0;
+          color: #fff;
         }
       }
     }
-  }
 
-  @media all and (max-width: $small-breakpoint) {
-    padding: $spacing-l $spacing-xxl $spacing-xxl $spacing-xxl;
-
-    h1 {
-      margin-bottom: $spacing-l;
-
-      > span {
-        display: none;
+    @media all and (max-width: $small-breakpoint) {
+      h1 {
+        > span {
+          display: none;
+        }
       }
-    }
-
-    > div {
-      flex-direction: column;
 
       > div {
-        &:not(:last-child) {
-          margin-bottom: $spacing-l;
+        flex-direction: column;
+        align-items: center;
+
+        > div {
+          &:not(:last-child) {
+            margin-bottom: $spacing-l;
+          }
         }
       }
     }

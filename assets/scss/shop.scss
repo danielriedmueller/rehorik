@@ -56,12 +56,28 @@
 @import "styles/events/notices";
 @import "styles/events/checkout";
 
+@font-face {
+  font-family: "DIN Offc W01 Cond";
+  src: url(../fonts/cond.eot),
+  url(../fonts/cond.ttf),
+  url(../fonts/cond.woff),
+  url(../fonts/cond.woff2)
+}
+
+@font-face {
+  font-family: "DIN W01 Cond Medium";
+  src: url(../fonts/cond-medium.eot),
+  url(../fonts/cond-medium.ttf),
+  url(../fonts/cond-medium.woff),
+  url(../fonts/cond-medium.woff2)
+}
+
 pre {
   font-size: 10px;
   line-height: 12px;
 }
 
-html body {
+html, body {
   color: $font-color;
   font-weight: normal;
   height: 100%;
@@ -72,6 +88,16 @@ h1 {
   font-weight: bold;
   letter-spacing: 2px;
   font-size: $font-size-h1;
+  text-align: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: #fff !important;
+
+  @media all and (max-width: $small-breakpoint) {
+    font-size: $font-size-h2 !important;
+    letter-spacing: 1px;
+    line-height: 25px;
+  }
 }
 
 h2 {
