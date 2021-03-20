@@ -4,7 +4,8 @@ div.rehorik-product div.rehorik-product-summary.summary {
   margin-bottom: $spacing-xxxl;
 
   h1 {
-    color: $font-color-accent;
+    color: $font-color-accent !important;
+    text-align: left;
     text-transform: uppercase;
     margin-bottom: $spacing-s;
     margin-left: -$spacing;

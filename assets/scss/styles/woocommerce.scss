@@ -43,3 +43,12 @@
     }
   }
 }
+
+.woocommerce .quantity input.qty,
+.woocommerce-page .quantity input.qty,
+.woocommerce #content .quantity input.qty,
+.woocommerce-page #content .quantity input.qty,
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+  border-radius: $border-radius;
+  background-color: $hellgrau !important;
+}

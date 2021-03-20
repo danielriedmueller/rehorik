@@ -16,6 +16,7 @@
 
 .rehorik-product-additional-information-container-outer {
   position: relative;
+
   .rehorik-product-additional-information-container {
     padding: $spacing-l $spacing-xl;
     border: 1px solid $product-default-color;
@@ -24,8 +25,8 @@
     color: #fff;
     margin: $spacing 0;
 
-    max-height: 300px;
-    overflow: hidden;
+    //max-height: 300px;
+    //overflow: hidden;
 
     hr {
       border-width: 3px !important;
@@ -37,6 +38,7 @@
   }
 
   input.expand-button {
+    display: none;
     position: absolute;
     top: 250px;
     background-color: #fff;

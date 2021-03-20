@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 echo get_template_part('templates/page-title');
 ?>
-<main id="tribe-events-pg-template" class="rehorik-tribe-events-main">
+<main id="tribe-events-pg-template" class="rehorik-tribe-events-main container">
 	<?php tribe_events_before_html(); ?>
 	<?php tribe_get_view(); ?>
 	<?php tribe_events_after_html(); ?>

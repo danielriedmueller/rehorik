@@ -19,11 +19,14 @@ $website = tribe_get_venue_website_link();
 ?>
 
 <div class="rehorik-tribe-events-meta-venue">
-    <div><span><b>Ort</b></span><span><?php echo tribe_get_venue(); ?></span></div>
-    <?php if ( tribe_address_exists() ) : ?>
-        <div><span><b>Adresse</b></span><span><?php echo tribe_get_full_address(); ?></span></div>
-        <?php if ( tribe_show_google_map_link() ) : ?>
-            <?php echo tribe_get_map_link_html(); ?>
+    <div>
+        <span><b>Ort</b></span>
+        <span><?php echo tribe_get_venue(); ?></span>
+        <?php if ( tribe_address_exists() ) : ?>
+            <span> | <?php echo tribe_get_full_address(); ?></span>
         <?php endif; ?>
+    </div>
+    <?php if ( tribe_show_google_map_link() ) : ?>
+        <?php echo tribe_get_map_link_html(); ?>
     <?php endif; ?>
 </div>
