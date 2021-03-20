@@ -1,6 +1,7 @@
-.rehorik-tribe-events-main .tribe-events-notices {
-  border-radius: 0;
-  border-color: $weinrot;
-  background-color: transparent;
+.rehorik-tribe-events-main .tribe-events-notices,
+.tribe-common .tribe-tickets__notice--error {
+  border-radius: 0 !important;
+  border: 1px solid $beigegold;
+  background-color: transparent !important;
   color: $font-color;
 }

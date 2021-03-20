@@ -44,6 +44,10 @@
     table.woocommerce-table.woocommerce-table--order-details.shop_table.order_details {
       padding: $spacing-s 0;
     }
+
+    table.shop_table.woocommerce-checkout-review-order-table {
+      padding: $spacing-s;
+    }
   }
 }
 

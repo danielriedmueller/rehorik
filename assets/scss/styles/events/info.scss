@@ -2,8 +2,8 @@
   .rehorik-tribe-events-single {
     .rehorik-tribe-events-single-event-info-outer {
       border-top: 1px solid $weinrot;
-      margin-top: $spacing-s;
-      padding-top: $spacing-s;
+      margin-top: $spacing;
+      padding-top: $spacing;
 
       img {
         margin-top: 5px;
@@ -27,7 +27,7 @@
         color: $font-color-accent;
 
         p {
-          margin: 0;
+          margin: 0 0 $spacing-xxxs;
           padding: 0;
           color: $font-color;
           line-height: $line-height;

@@ -1,26 +1,39 @@
-.rehorik-tribe-events-main #tribe-events .rehorik-tribe-event-tickets {
+.tribe-common-c-btn.tribe-common-c-btn--small.tribe-tickets__registration-submit,
+.rehorik-tribe-events-main #tribe-events .rehorik-tribe-event-tickets button.rehorik-tribe-event-tickets-add-to-cart-button,
+.rehorik-tribe-events-main #tribe-events .rehorik-tribe-event-tickets button.tribe-tickets__tickets-buy,
+.tribe-checkout-backlinks a {
+  color: #fff !important;
+  font-family: $font-family-body;
+  background: $beigegold none;
+  font-size: $font-size;
+  border-radius: $border-radius;
+  transition: all 0.2s;
+  text-align: center;
+  box-shadow: none;
+  text-shadow: none;
+  font-weight: normal;
+  padding: $spacing-s $spacing;
+  border: none;
+  line-height: 0;
+  text-decoration: none;
+  display: inline-block;
 
-  button.rehorik-tribe-event-tickets-add-to-cart-button,
-  button.tribe-tickets__tickets-buy {
-    color: $font-color;
-    font-family: $font-family-body;
-    padding: $spacing-s $spacing;
-    background: $weinrot none;
-    font-weight: normal;
-    font-style: normal;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: $font-size;
-    border: 2px solid;
-    border-radius: $border-radius;
-    transition: all 0.2s;
-    text-align: center;
-    box-shadow: none;
-    text-shadow: none;
+  &:hover {
+    color: $font-color-accent-dark;
+    background-color: $weinrot;
+  }
+}
 
-    &:hover {
-      color: $font-color-accent-dark;
-      background-color: $weinrot;
+
+.tribe-events-button {
+  background-color: $hellgrau !important;
+}
+
+.tribe-checkout-backlinks {
+  margin-bottom: $spacing-s;
+  a {
+    &:first-child {
+      margin-right: $spacing-s;
     }
   }
 }

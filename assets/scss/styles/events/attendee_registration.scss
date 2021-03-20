@@ -1,10 +1,19 @@
-.rehorik-tribe-events-attendee-registration {
-  .rehorik-tribe-events-attendee-tickets-container .tribe-tickets__attendee-tickets-item--has-focus {
-    border-left-color: $weinrot;
+.tribe-tickets__form.tribe-tickets__attendee-tickets-item.tribe-tickets__attendee-tickets-item--has-required-meta,
+.rehorik-tribe-events-attendee-registration .rehorik-tribe-events-attendee-tickets-container .tribe-tickets__attendee-tickets-item--has-focus {
+  border-left-color: $weinrot;
 
-    &:before, &:after {
-      background-color: $weinrot;
-    }
+  &:before, &:after {
+    background-color: $weinrot;
   }
 }
 
+body.page-tribe-attendee-registration .tribe-tickets__registration {
+  .tribe-common-b1, .tribe-common-form-control-text__input {
+    font-family: $font-family-body !important;
+    font-size: $font-size !important;
+  }
+}
+
+.tribe-tickets__registration-footer {
+  display: block !important;
+}

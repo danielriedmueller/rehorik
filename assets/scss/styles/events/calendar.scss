@@ -1,3 +1,15 @@
+#tribe-events-pg-template.rehorik-tribe-events-main {
+  h1.tribe-events-page-title {
+    color: $font-color !important;
+    text-align: left;
+    font-size: $font-size-h2;
+    margin-bottom: $spacing-l;
+    text-transform: unset;
+    font-weight: normal;
+  }
+}
+
+
 #tribe-bar-form .tribe-bar-submit input[type=submit].tribe-events-button {
   color: #ededed;
   font-family: "DIN Offc W01 Cond";

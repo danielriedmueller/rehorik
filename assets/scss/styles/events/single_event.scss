@@ -1,5 +1,11 @@
 .rehorik-tribe-events-main #tribe-events {
   .rehorik-tribe-events-single {
+    h1.tribe-events-single-event-title {
+      color: $font-color-accent !important;
+      text-align: left;
+      margin-bottom: $spacing-xxs;
+    }
+
     .rehorik-tribe-events-single-event-content {
       @media all and (min-width: $small-breakpoint + 1) {
         display: grid;

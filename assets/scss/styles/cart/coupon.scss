@@ -12,7 +12,7 @@
     }
 
     button.button[name="apply_coupon"][type="submit"] {
-      border-radius: 0;
+      border-radius: 0 !important;
       width: unset;
     }
 

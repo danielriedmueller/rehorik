@@ -1,5 +1,5 @@
 button, a.button {
-  border-radius: $border-radius;
+  border-radius: $border-radius !important;
   text-align: center;
   color: #fff;
   border: none;
@@ -7,7 +7,12 @@ button, a.button {
   background-color: $beigegold;
   padding: $spacing-s $spacing;
   text-transform: uppercase;
-  display: inline-block;
+  text-decoration: none;
+
+  &:hover {
+    color: $font-color-accent-dark;
+    background-color: $weinrot;
+  }
 }
 
 .cart .woocommerce {

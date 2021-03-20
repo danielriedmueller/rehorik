@@ -1,0 +1,14 @@
+.tribe-dialog__wrapper.tribe-modal__wrapper--ar {
+  font-family: $font-family-body !important;
+
+  h4.tribe-common-b1.tribe-common-b1--bold.tribe-tickets__attendee-tickets-item-title {
+    font-family: $font-family-headline;
+    font-size: $font-size-large !important;
+    color: $font-color-accent;
+  }
+
+  div.tribe-common-b1, div.tribe-common-b2, .tribe-common-h5, .tribe-common-form-control-text__input {
+    font-family: $font-family-body !important;
+    font-size: $font-size !important;
+  }
+}

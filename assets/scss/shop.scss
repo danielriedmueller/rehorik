@@ -33,7 +33,6 @@
 @import "styles/product/additional_info";
 @import "styles/product/short_description";
 @import "styles/category/category";
-@import "styles/no_divi";
 @import "styles/category/lieferservice_category_page";
 @import "styles/product/variation_description";
 @import "styles/product_search";
@@ -50,11 +49,11 @@
 @import "styles/events/attendee_list";
 @import "styles/events/attendee_registration";
 @import "styles/events/button";
+@import "styles/events/modal";
 @import "styles/social_media_icons";
 @import "styles/slider";
 @import "styles/mixins";
 @import "styles/events/notices";
-@import "styles/events/checkout";
 
 @font-face {
   font-family: "DIN Offc W01 Cond";
