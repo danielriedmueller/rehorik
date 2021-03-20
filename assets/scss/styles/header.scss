@@ -21,7 +21,6 @@ header.rehorik-header {
       align-content: center;
       flex-direction: column;
       padding-left: $spacing;
-      padding-right: $spacing;
       position: relative;
     }
 
@@ -76,11 +75,11 @@ header.rehorik-header {
       display: none;
       grid-template-columns: 1fr 1fr;
       grid-row-gap: $spacing-xxs;
+      grid-column-gap: $spacing-xxs;
 
       li.menu-item {
         text-transform: none;
-        padding-bottom: $spacing-xs;
-        padding-top: $spacing-xs;
+        padding: 0;
 
         &:hover {
           background-color: transparent;
@@ -165,10 +164,8 @@ header.rehorik-header {
 
         li.menu-item-has-children {
           > a {
-            width:1px;
-            white-space: nowrap;
+            margin-bottom: $spacing-s;
           }
-
 
           &.et-show-dropdown, &:hover {
             height: auto;

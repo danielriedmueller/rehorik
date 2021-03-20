@@ -136,10 +136,6 @@ function getShopFrontPageCategories()
     $deliveryCategoryKey = array_search(DELIVERY_CATEGORY_SLUG, array_column($parentCategories, 'slug'));
     $onlineshopCategories[] = $parentCategories[$deliveryCategoryKey];
 
-    // Add ticket category
-    $eventsCategoryKey = array_search(TICKET_CATEGORY_SLUG, array_column($parentCategories, 'slug'));
-    $onlineshopCategories[] = $parentCategories[$eventsCategoryKey];
-
     return $onlineshopCategories;
 }
 
