@@ -1,3 +1,4 @@
+.rehorik-tribe-event-tickets a.tribe-common-c-btn.tribe-common-c-btn--small,
 .tribe-common-c-btn.tribe-common-c-btn--small.tribe-tickets__registration-submit,
 .rehorik-tribe-events-main #tribe-events .rehorik-tribe-event-tickets button.rehorik-tribe-event-tickets-add-to-cart-button,
 .rehorik-tribe-events-main #tribe-events .rehorik-tribe-event-tickets button.tribe-tickets__tickets-buy,
@@ -17,6 +18,7 @@
   line-height: 0;
   text-decoration: none;
   display: inline-block;
+  text-transform: uppercase;
 
   &:hover {
     color: $font-color-accent-dark;
