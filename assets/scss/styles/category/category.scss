@@ -43,7 +43,7 @@
     }
 
     &.product-of-month {
-      background-color: $product-of-month-color;
+      background: none $product-of-month-color no-repeat center center !important;
       color: $product-default-body-text-color;
 
       a, td {
