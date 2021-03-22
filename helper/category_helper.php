@@ -59,6 +59,16 @@ function getCoffeeCategories(WC_Product $product): string
                 COFFEE_FILTERKAFFEE_CATEGORY_SLUG, COFFEE_ESPRESSO_CATEGORY_SLUG, COFFEE_CREMA_CATEGORY_SLUG
         ]);
     });
+
+    //Filter crema category if multiple categories
+    if (sizeof($filtered_terms) > 1) {
+        $filtered_terms = array_filter($filtered_terms, function($a) {
+            return in_array($a->slug, [
+                COFFEE_FILTERKAFFEE_CATEGORY_SLUG, COFFEE_ESPRESSO_CATEGORY_SLUG
+            ]);
+        });
+    }
+
     $filtered_terms_names = array_unique(array_map(function ($a) {
         return $a->name;
     }, $filtered_terms));
