@@ -32,3 +32,15 @@ add_action('event_tickets_after_save_ticket', function ($event_id, $ticket, $raw
         $product->save();
     }
 }, 10, 4);
+
+// define the woocommerce_before_variations_form callback
+function action_woocommerce_before_variations_form(  ) {
+    echo get_template_part('templates/product-single-attributes');
+};
+
+// add the action
+add_action( 'woocommerce_before_variations_form', 'action_woocommerce_before_variations_form', 10, 0 );
+
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_product_additional_information', 'woocommerce_template_single_excerpt', 50 );

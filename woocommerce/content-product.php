@@ -79,7 +79,7 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
     if (isItCategory($product, TICKET_CATEGORY_SLUG)) {
         get_template_part('templates/product-event-attributes');
     } else {
-        get_template_part('templates/product-attributes');
+        get_template_part('templates/product-list-attributes');
     }
 
 	?>
