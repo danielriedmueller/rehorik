@@ -97,6 +97,7 @@ function allow_coupon_payment_gateway_only_for_events($available_gateways)
  */
 add_filter('woocommerce_shipping_methods', function ($methods) {
     $methods[DELIVERY_SHIPPING_METHOD] = 'WC_Shipping_Bike';
+    $methods[FREE_SHIPPING_DELIVERY_SHIPPING_METHOD] = 'WC_Shipping_Free_Shipping_Bike';
 
     return $methods;
 });
@@ -118,20 +119,16 @@ add_filter( 'woocommerce_package_rates', function ($rates) {
  * only copy opening php tag if needed
  * Displays shipping estimates for WC shipping rates
  */
-function sv_shipping_method_estimate_label( $label, $method ) {
-
+add_filter( 'woocommerce_cart_shipping_method_full_label', function($label, $method) {
     $label .= '<br /><small>';
 
-    switch ( $method->method_id ) {
-        case 'bike':
-            $label .= 'DI. und DO. ab 13 Uhr ';
-            break;
-
-        default:
-            $label .= '2-3 Tage versandfertig';
+    if ($method->method_id === FREE_SHIPPING_DELIVERY_SHIPPING_METHOD
+        || $method->method_id === DELIVERY_SHIPPING_METHOD) {
+        $label .= 'DI. und DO. ab 13 Uhr ';
+    } else {
+        $label .= '2-3 Tage versandfertig';
     }
 
     $label .= '</small>';
     return $label;
-}
-add_filter( 'woocommerce_cart_shipping_method_full_label', 'sv_shipping_method_estimate_label', 10, 2 );
+}, 10, 2 );

@@ -15,11 +15,6 @@
         border: none;
         margin-bottom: 0 !important;
 
-        ul#shipping_method li {
-          line-height: $line-height-narrow;
-          margin: 0;
-        }
-
         th, td {
           font-weight: normal;
           vertical-align: top;
@@ -54,10 +49,6 @@
       .checkout-button.button.alt.wc-forward {
         margin-bottom: $spacing-xxxs;
         color: #fff;
-      }
-
-      ul#shipping_method .amount {
-        font-weight: normal;
       }
 
       .rehorik-shipping-rest-amount {
