@@ -15,6 +15,7 @@ define('EVENT_TICKET_TELEPHONE_SLUG', 'telefon');
 define('DELIVERY_ORDER_EMAIL', 'kaffee@rehorik.de');
 define('SHIPPING_ORDER_EMAIL', 'kaffee@rehorik.de');
 define('IT_SUPPORT_EMAIL', 'it@rehorik.de');
+define('DELIVERY_SHIPPING_METHOD', 'bike');
 
 // Categories
 define('TICKET_CATEGORY_SLUG', 'events-seminare');
@@ -91,6 +92,7 @@ $priority = 1000;
 // In case of an child them use get stylesheet directory
 $baseDir = get_stylesheet_directory();
 
+require_once($baseDir . '/includes/class-wc-shipping-bike.php');
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');

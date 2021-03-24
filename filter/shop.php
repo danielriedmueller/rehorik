@@ -22,6 +22,7 @@ add_filter('woocommerce_show_page_title', function () {
  * @param $method
  * @return string
  */
+/*
 function remove_shipping_method_label($full_label, $method) {
     $label = "";
     $has_cost = 0 < $method->cost;
@@ -46,6 +47,7 @@ function remove_shipping_method_label($full_label, $method) {
     return $full_label;
 }
 add_filter('woocommerce_cart_shipping_method_full_label', 'remove_shipping_method_label', 10, 2);
+*/
 
 /**
  * Set delivery option to yes, if previous page was delivery category page
@@ -89,4 +91,47 @@ function allow_coupon_payment_gateway_only_for_events($available_gateways)
 
     return $available_gateways;
 }
-add_filter('woocommerce_available_payment_gateways', 'allow_coupon_payment_gateway_only_for_events');
+
+/**
+ * Add bike delivery shipping method
+ */
+add_filter('woocommerce_shipping_methods', function ($methods) {
+    $methods[DELIVERY_SHIPPING_METHOD] = 'WC_Shipping_Bike';
+
+    return $methods;
+});
+
+/**
+ * Bike delivery shipping method only available for products with category lieferservice
+ */
+add_filter( 'woocommerce_package_rates', function ($rates) {
+    foreach (WC()->cart->get_cart() as $values) {
+        if (!isItCategory($values['data'], DELIVERY_CATEGORY_SLUG)) {
+            unset($rates[DELIVERY_SHIPPING_METHOD]);
+        }
+    }
+
+    return $rates;
+});
+
+/**
+ * only copy opening php tag if needed
+ * Displays shipping estimates for WC shipping rates
+ */
+function sv_shipping_method_estimate_label( $label, $method ) {
+
+    $label .= '<br /><small>';
+
+    switch ( $method->method_id ) {
+        case 'bike':
+            $label .= 'DI. und DO. ab 13 Uhr ';
+            break;
+
+        default:
+            $label .= '2-3 Tage versandfertig';
+    }
+
+    $label .= '</small>';
+    return $label;
+}
+add_filter( 'woocommerce_cart_shipping_method_full_label', 'sv_shipping_method_estimate_label', 10, 2 );

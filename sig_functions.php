@@ -21,6 +21,7 @@ add_action( 'wp_loaded', 'child_remove_parent_function' );
  * @param array $rates Array of rates found for the package.
  * @return array
  */
+/*
 function my_hide_shipping_when_free_is_available( $rates ) {
     $free = array();
     foreach ( $rates as $rate_id => $rate ) {
@@ -32,6 +33,7 @@ function my_hide_shipping_when_free_is_available( $rates ) {
     return ! empty( $free ) ? $free : $rates;
 }
 add_filter( 'woocommerce_package_rates', 'my_hide_shipping_when_free_is_available', 100 );
+*/
 
 /* ----------------------------------------------------------------------------------- */
 // Add Divi Builder to TEC Post Types
