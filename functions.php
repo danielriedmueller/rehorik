@@ -16,7 +16,9 @@ define('DELIVERY_ORDER_EMAIL', 'kaffee@rehorik.de');
 define('SHIPPING_ORDER_EMAIL', 'kaffee@rehorik.de');
 define('IT_SUPPORT_EMAIL', 'it@rehorik.de');
 define('DELIVERY_SHIPPING_METHOD', 'bike');
-define('FREE_SHIPPING_DELIVERY_SHIPPING_METHOD', 'free_shipping_bike');
+define('STANDARD_SHIPPING_METHOD', 'flat_rate');
+define('FREE_DELIVERY_SHIPPING_METHOD', 'free_shipping_bike');
+define('FREE_STANDARD_SHIPPING_METHOD', 'free_shipping');
 
 // Categories
 define('TICKET_CATEGORY_SLUG', 'events-seminare');

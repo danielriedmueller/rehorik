@@ -97,19 +97,45 @@ function allow_coupon_payment_gateway_only_for_events($available_gateways)
  */
 add_filter('woocommerce_shipping_methods', function ($methods) {
     $methods[DELIVERY_SHIPPING_METHOD] = 'WC_Shipping_Bike';
-    $methods[FREE_SHIPPING_DELIVERY_SHIPPING_METHOD] = 'WC_Shipping_Free_Shipping_Bike';
+    $methods[FREE_DELIVERY_SHIPPING_METHOD] = 'WC_Shipping_Free_Shipping_Bike';
 
     return $methods;
 });
 
 /**
  * Bike delivery shipping method only available for products with category lieferservice
+ * Standard delivery shipping method only available for products with category onlineshop
  */
-add_filter( 'woocommerce_package_rates', function ($rates) {
+add_filter('woocommerce_package_rates', function ($rates) {
+    $unsetBikeShipping = false;
+    $unsetStandardShipping = false;
+
     foreach (WC()->cart->get_cart() as $values) {
         if (!isItCategory($values['data'], DELIVERY_CATEGORY_SLUG)) {
-            unset($rates[DELIVERY_SHIPPING_METHOD]);
+            $unsetBikeShipping = true;
         }
+
+        if (!isItCategory($values['data'], ONLINESHOP_CATEGORY_SLUG)) {
+            $unsetStandardShipping = true;
+        }
+    }
+
+    if ($unsetBikeShipping || $unsetStandardShipping) {
+        $rates = array_filter($rates, function ($rate) use ($unsetStandardShipping, $unsetBikeShipping) {
+            if (($rate->method_id === DELIVERY_SHIPPING_METHOD
+                    || $rate->method_id === FREE_DELIVERY_SHIPPING_METHOD)
+                && $unsetBikeShipping) {
+                return false;
+            }
+
+            if (($rate->method_id === STANDARD_SHIPPING_METHOD
+                    || $rate->method_id === FREE_STANDARD_SHIPPING_METHOD)
+                && $unsetStandardShipping) {
+                return false;
+            }
+
+            return true;
+        });
     }
 
     return $rates;
@@ -119,10 +145,10 @@ add_filter( 'woocommerce_package_rates', function ($rates) {
  * only copy opening php tag if needed
  * Displays shipping estimates for WC shipping rates
  */
-add_filter( 'woocommerce_cart_shipping_method_full_label', function($label, $method) {
+add_filter('woocommerce_cart_shipping_method_full_label', function($label, $method) {
     $label .= '<br /><small>';
 
-    if ($method->method_id === FREE_SHIPPING_DELIVERY_SHIPPING_METHOD
+    if ($method->method_id === FREE_DELIVERY_SHIPPING_METHOD
         || $method->method_id === DELIVERY_SHIPPING_METHOD) {
         $label .= 'DI. und DO. ab 13 Uhr ';
     } else {

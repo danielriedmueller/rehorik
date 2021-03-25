@@ -36,7 +36,7 @@ class WC_Shipping_Free_Shipping_Bike extends WC_Shipping_Method {
 	 * @param int $instance_id Shipping method instance.
 	 */
 	public function __construct( $instance_id = 0 ) {
-		$this->id                 = FREE_SHIPPING_DELIVERY_SHIPPING_METHOD;
+		$this->id                 = FREE_DELIVERY_SHIPPING_METHOD;
 		$this->instance_id        = absint( $instance_id );
 		$this->method_title       = 'Kostenloser Versand Bikekurier';
 		$this->method_description = 'Kostenloser Versand bei Bikekurier';
