@@ -1,3 +1,11 @@
 .rehorik-product-single-attributes {
   margin-bottom: $spacing-s;
+
+  > div {
+    margin-bottom: $spacing-s;
+
+    b {
+      margin-right: $spacing-xs;
+    }
+  }
 }
