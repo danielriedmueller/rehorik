@@ -64,8 +64,6 @@ define('ONLINE_META_KEY', 'Online');
 // In $productAttributes array, slugs are prefixed by wordpress
 define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
 
-define('DELIVERY_SHIPPING_CLASS_SLUG', 'lieferservice');
-
 // All product attributes that appear in information tab on product detail page
 define('INFORMATION_TAB_ATTRIBUTES', [
     ORIGIN_COUNTRY_ATTRIBUTE_SLUG,
@@ -102,7 +100,6 @@ require_once($baseDir . '/hooks/events.php');
 require_once($baseDir . '/filter/product_tabs.php');
 require_once($baseDir . '/filter/shop.php');
 require_once($baseDir . '/filter/categories.php');
-require_once($baseDir . '/filter/emails.php');
 require_once($baseDir . '/actions/divi.php');
 require_once($baseDir . '/actions/woocommerce.php');
 require_once($baseDir . '/actions/rehorik.php');
