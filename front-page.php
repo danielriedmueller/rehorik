@@ -42,6 +42,7 @@ get_header( );
     <div class='page-title'><h1>Shop</h1></div>
 </div>
 <div class="container">
+    <div class="rehorik-hint">Die Auslieferung mit unserem Bikekurier macht am Dienstag, den 6. April, eine Pause. Nächster Ausliefertag ist Donnerstag, 8. April.</div>
     <ul class="rehorik-products products">
         <?php
         $product_categories = getShopFrontPageCategories( );

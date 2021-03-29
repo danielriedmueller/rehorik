@@ -161,3 +161,11 @@ h2 {
   padding-top: $menu-height;
   margin-top: 0 !important;
 }
+
+.rehorik-hint {
+  font-size: $font-size;
+  border: 1px solid $weinrot;
+  padding: $spacing-xs;
+  margin-bottom: $spacing-l;
+  text-align: center;
+}
