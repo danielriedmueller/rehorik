@@ -33,5 +33,52 @@
       margin: 5px 0 0 0;
       padding: 0;
     }
+
+    &.event-online {
+      h1.tribe-events-single-event-title {
+        position: relative;
+        padding-left: 50px + $spacing-xs;
+      }
+
+      h1.tribe-events-single-event-title::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 33px;
+        background: transparent url("../img/online.svg") no-repeat center center;
+      }
+    }
+
+    &.event-canceled {
+      h1.tribe-events-single-event-title::before {
+        content: "Veranstaltung abgesagt";
+        display: block;
+        position: absolute;
+        font-size: $font-size;
+        top: 0;
+        right: 0;
+        border: 1px solid $weinrot;
+        background-color: $weinrot;
+        width: auto;
+        color: #fff;
+        padding: $spacing-xxs;
+      }
+
+      @media all and (max-width: $small-breakpoint) {
+        h1.tribe-events-single-event-title {
+          padding-top: 50px;
+        }
+        h1.tribe-events-single-event-title::before {
+          left: 0;
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+        }
+      }
+    }
   }
 }

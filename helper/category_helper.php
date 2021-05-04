@@ -15,6 +15,12 @@ function getCategoryTreeDepth($termId, $taxonomy = "product_cat"): int
 
 function isItCategory($product, $categorySlug): bool
 {
+    if (is_a($product, 'WC_Product_Variation')) {
+        $product = wc_get_product($product->get_parent_id());
+    }
+
+    if (!$product) return false;
+
     $taxonomy = 'product_cat';
     $seperator = ";";
     $allCategories = [];
@@ -33,7 +39,6 @@ function isItCategory($product, $categorySlug): bool
 
     return in_array($categorySlug, $allCategories);
 }
-
 
 /**
  * Vollautomat, Espresso, Filterkaffee,

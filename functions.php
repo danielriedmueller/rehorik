@@ -15,6 +15,10 @@ define('EVENT_TICKET_TELEPHONE_SLUG', 'telefon');
 define('DELIVERY_ORDER_EMAIL', 'kaffee@rehorik.de');
 define('SHIPPING_ORDER_EMAIL', 'kaffee@rehorik.de');
 define('IT_SUPPORT_EMAIL', 'it@rehorik.de');
+define('DELIVERY_SHIPPING_METHOD', 'bike');
+define('STANDARD_SHIPPING_METHOD', 'flat_rate');
+define('FREE_DELIVERY_SHIPPING_METHOD', 'free_shipping_bike');
+define('FREE_STANDARD_SHIPPING_METHOD', 'free_shipping');
 
 // Categories
 define('TICKET_CATEGORY_SLUG', 'events-seminare');
@@ -33,7 +37,6 @@ define('WINE_CATEGORY_SLUGS', [
 ]);
 
 // Attributes
-define('DELIVERY_ATTRIBUTE_SLUG', 'pa_lieferservice');
 define('STRENGTH_ATTRIBUTE_SLUG', 'pa_kaffee-staerke');
 define('VARIETIES_ATTRIBUTE_SLUG', 'pa_kaffee-sorte');
 define('GRAPE_VARIETY_ATTRIBUTE_SLUG', 'pa_rebsorte');
@@ -58,11 +61,10 @@ define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
 
 // For Events which are only virtual online events
 define('ONLINE_META_KEY', 'Online');
+define('CANCELED_META_KEY', 'Abgesagt');
 
 // In $productAttributes array, slugs are prefixed by wordpress
 define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
-
-define('DELIVERY_SHIPPING_CLASS_SLUG', 'lieferservice');
 
 // All product attributes that appear in information tab on product detail page
 define('INFORMATION_TAB_ATTRIBUTES', [
@@ -83,6 +85,9 @@ define('WIDERRUFSBELEHRUNG_PAGE_ID', 682);
 define('IMPRESSUM_PAGE_ID', 681);
 define('DATENSCHUTZ_PAGE_ID', 680);
 define('STAMMHAUS_PAGE_ID', 2);
+define('DEZ_PAGE_ID', 489);
+define('WEINGALERIE_PAGE_ID', 487);
+define('BARISTASTORE_PAGE_ID', 1535);
 
 define('PERMISSION_VIEW_VIEW_ATTENDEE_LIST', 'teilnehmerliste_bei_events_anschauen');
 
@@ -91,6 +96,8 @@ $priority = 1000;
 // In case of an child them use get stylesheet directory
 $baseDir = get_stylesheet_directory();
 
+require_once($baseDir . '/includes/class-wc-shipping-bike.php');
+require_once($baseDir . '/includes/class-wc-shipping-free-shipping-bike.php');
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');
@@ -98,7 +105,6 @@ require_once($baseDir . '/hooks/events.php');
 require_once($baseDir . '/filter/product_tabs.php');
 require_once($baseDir . '/filter/shop.php');
 require_once($baseDir . '/filter/categories.php');
-require_once($baseDir . '/filter/emails.php');
 require_once($baseDir . '/actions/divi.php');
 require_once($baseDir . '/actions/woocommerce.php');
 require_once($baseDir . '/actions/rehorik.php');
@@ -106,7 +112,7 @@ require_once($baseDir . '/actions/rehorik.php');
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
     wp_enqueue_style('divi', $assetsDir . 'css/overwritten-divi.css', false, 1.1, 'all');
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.7, 'all');
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.9, 'all');
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
 

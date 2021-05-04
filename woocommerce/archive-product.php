@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if (is_product_category(DELIVERY_SHIPPING_CLASS_SLUG)) {
+if (is_product_category(DELIVERY_CATEGORY_SLUG)) {
     get_header( 'lieferservice' );
 } else {
     get_header( 'shop' );
@@ -83,7 +83,7 @@ if ( woocommerce_product_loop() ) {
  */
 do_action( 'woocommerce_after_main_content' );
 
-if (is_product_category(DELIVERY_SHIPPING_CLASS_SLUG)) {
+if (is_product_category(DELIVERY_CATEGORY_SLUG)) {
     get_template_part('templates/lieferservice-footer');
 } else {
     get_template_part('templates/best-selling-products');
