@@ -50,25 +50,6 @@ add_filter('woocommerce_cart_shipping_method_full_label', 'remove_shipping_metho
 */
 
 /**
- * Set delivery option to yes, if previous page was delivery category page
- */
-function set_delivery_service_variation_default_value($args)
-{
-    if ($args['attribute'] === DELIVERY_ATTRIBUTE_SLUG) {
-        if (isset($_SERVER['HTTP_REFERER'])) {
-            $referer = $_SERVER['HTTP_REFERER'];
-
-            if (substr_count($referer, DELIVERY_CATEGORY_URL) === 1) {
-                $args['selected'] = 'ja';
-            }
-        }
-    }
-
-    return $args;
-}
-add_filter('woocommerce_dropdown_variation_attribute_options_args', 'set_delivery_service_variation_default_value', 10, 1);
-
-/**
  * Remove event coupon payment (or actually cheque) gateway from other product categories
  */
 function allow_coupon_payment_gateway_only_for_events($available_gateways)

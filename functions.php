@@ -37,7 +37,6 @@ define('WINE_CATEGORY_SLUGS', [
 ]);
 
 // Attributes
-define('DELIVERY_ATTRIBUTE_SLUG', 'pa_lieferservice');
 define('STRENGTH_ATTRIBUTE_SLUG', 'pa_kaffee-staerke');
 define('VARIETIES_ATTRIBUTE_SLUG', 'pa_kaffee-sorte');
 define('GRAPE_VARIETY_ATTRIBUTE_SLUG', 'pa_rebsorte');
@@ -62,6 +61,7 @@ define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
 
 // For Events which are only virtual online events
 define('ONLINE_META_KEY', 'Online');
+define('CANCELED_META_KEY', 'Abgesagt');
 
 // In $productAttributes array, slugs are prefixed by wordpress
 define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
@@ -85,6 +85,9 @@ define('WIDERRUFSBELEHRUNG_PAGE_ID', 682);
 define('IMPRESSUM_PAGE_ID', 681);
 define('DATENSCHUTZ_PAGE_ID', 680);
 define('STAMMHAUS_PAGE_ID', 2);
+define('DEZ_PAGE_ID', 489);
+define('WEINGALERIE_PAGE_ID', 487);
+define('BARISTASTORE_PAGE_ID', 1535);
 
 define('PERMISSION_VIEW_VIEW_ATTENDEE_LIST', 'teilnehmerliste_bei_events_anschauen');
 
@@ -109,7 +112,7 @@ require_once($baseDir . '/actions/rehorik.php');
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
     wp_enqueue_style('divi', $assetsDir . 'css/overwritten-divi.css', false, 1.1, 'all');
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.7, 'all');
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.9, 'all');
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
 

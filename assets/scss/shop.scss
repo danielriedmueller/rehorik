@@ -104,6 +104,11 @@ h2 {
   font-size: $font-size-h2;
 }
 
+hr {
+  border: none;
+  border-top: 1px solid $beigegold;
+}
+
 .woocommerce-page #main-content {
   // revert overwritten divi custom css for woocommerce pages
   .et_pb_section_1.et_pb_section {
@@ -138,11 +143,6 @@ h2 {
     a {
       color: $font-color-accent-dark;
     }
-  }
-
-  hr {
-    border: none;
-    border-top: 1px solid $beigegold;
   }
 
   /*
