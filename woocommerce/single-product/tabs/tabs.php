@@ -30,7 +30,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 ?>
 <div class="rehorik-product-additional-information-container-outer">
-    <input class="expand-button" type="checkbox">
     <div class="rehorik-product-additional-information-container">
         <div class="rehorik-product-additional-information-category">
             <?php echo getCoffeeCategories($product) ?>

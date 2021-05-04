@@ -26,26 +26,10 @@ if (!$product_attributes) {
 $baseDir = get_stylesheet_directory();
 require_once($baseDir . '/helper/product_attributes_helper.php');
 
-$strengthAndFlavour = extractStrengthAndFlavourAttributes($product_attributes);
-$otherAttributes = extractOtherAttributes($product_attributes);
-
+$attributes = extractOtherAttributes($product_attributes);
 ?>
-<div class="rehorik-product-strength-flavour-container-outer">
-    <?php foreach ($strengthAndFlavour as $product_attribute_key => $product_attribute) : ?>
-            <div class="rehorik-product-attribute-label"><?php echo wp_kses_post( $product_attribute['label'] ); ?></div>
-            <?php do_action(
-                'render_product_attribute_strength_flavour',
-                $product_attribute['value'],
-                $product_attribute_key
-            ); ?>
-    <?php endforeach; ?>
-
-</div>
-<?php if (!empty($strengthAndFlavour)): ?>
-    <hr>
-<?php endif; ?>
-<div class="rehorik-product-attribute-container item-count-<?= sizeof($otherAttributes) ?>">
-    <?php foreach ($otherAttributes as $product_attribute_key => $product_attribute) : ?>
+<div class="rehorik-product-attribute-container item-count-<?= sizeof($attributes) ?>">
+    <?php foreach ($attributes as $product_attribute_key => $product_attribute) : ?>
         <div class="rehorik-product-attribute-item">
             <div class="rehorik-product-attribute-label">
                 <?php echo wp_kses_post( $product_attribute['label'] ); ?>

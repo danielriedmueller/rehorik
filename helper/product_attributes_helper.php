@@ -1,20 +1,4 @@
 <?php
-
-function extractStrengthAndFlavourAttributes(array $productAttributes): array
-{
-    $attributes = [];
-
-    if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX.STRENGTH_ATTRIBUTE_SLUG])) {
-        $attributes['strength'] =  $productAttributes[ATTRIBUTE_SLUG_PREFIX.STRENGTH_ATTRIBUTE_SLUG];
-    }
-
-    if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX.FLAVOUR_VARIETY_ATTRIBUTE_SLUG])) {
-        $attributes['flavour'] =  $productAttributes[ATTRIBUTE_SLUG_PREFIX.FLAVOUR_VARIETY_ATTRIBUTE_SLUG];
-    }
-
-    return $attributes;
-}
-
 /**
  * Returns only Herkunft, Sorte, Aromen, Fett
  * If Bohnenkomposition is present, it becomes the label for Sorte
