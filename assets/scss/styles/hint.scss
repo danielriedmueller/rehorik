@@ -1,0 +1,71 @@
+.rehorik-hint {
+  color: $beigegold;
+  position: absolute;
+  left: 0;
+  bottom: -$spacing-l - $hint-height;
+  font-weight: bold;
+  z-index: 100;
+
+  input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $hint-height;
+    width: $hint-width;
+    opacity: 0;
+    margin: 0;
+
+    &:checked ~ div {
+      display: block;
+    }
+
+    &:checked + div {
+      background-image: url("../img/pfeil-gold-oben.svg");
+      border-bottom-right-radius: 0;
+    }
+
+    @media all and (min-width: $small-breakpoint + 1) {
+      &:checked {
+        width: $hint-width-large;
+      }
+
+      &:checked ~ div {
+        width: $hint-width-large;
+      }
+    }
+  }
+
+
+  div:first-of-type {
+    width: $hint-width;
+    background-color: $weinrot;
+    background: $weinrot url("../img/pfeil-gold-unten.svg") no-repeat right 42px center;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    text-transform: uppercase;
+    padding: 6px $spacing-l 0;
+    height: $hint-height;
+    background-size: 9px;
+    cursor: pointer;
+  }
+
+  div:last-of-type {
+    width: $hint-width;
+    display: none;
+    padding: $spacing-xs $spacing-l;
+    background-color: rgba(92, 13, 47, 0.85);
+    border-bottom-right-radius: $border-radius;
+    position: absolute;
+    top: $hint-height;
+    left: 0;
+    font-size: $font-size-small;
+  }
+}
+
+.hint-margin-top {
+  margin-top: $hint-height;
+
+  @media all and (max-width: $small-breakpoint) {
+    margin-top: $hint-height + $spacing-l;
+  }
+}

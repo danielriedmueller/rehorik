@@ -40,13 +40,18 @@ get_header( );
 <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
 <div class="page-title-outer">
     <div class='page-title'><h1>Shop</h1></div>
-</div>
-<div class="container">
     <div class="rehorik-hint">
-        Besuchen Sie uns gerne vor Ort in unseren Filialen, ein Termin oder negativer Corona-Test ist nicht nötig.
-        <hr>
-        Momentan können leider keine Veranstaltungen vor Ort stattfinden. Unsere virtuellen Kursangebote finden Sie <a href="<?= get_page_link(42) ?>">hier</a>.
+        <input type="checkbox">
+        <div>Aktuelle Informationen</div>
+        <div>
+            Besuchen Sie uns gerne vor Ort in unseren Filialen, ein Termin oder negativer Corona-Test ist nicht nötig.
+            <br>
+            <br>
+            Momentan können leider keine Veranstaltungen vor Ort stattfinden. Unsere virtuellen Kursangebote finden Sie <a href="<?= get_page_link(42) ?>">hier</a>.
+        </div>
     </div>
+</div>
+<div class="container hint-margin-top">
     <ul class="rehorik-products products">
         <?php
         $product_categories = getShopFrontPageCategories( );
