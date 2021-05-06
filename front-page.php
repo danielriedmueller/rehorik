@@ -15,7 +15,7 @@ get_header( );
     <li>
         <div class="frontpage-slider-image-2"></div>
         <div class="slider-claim">
-            <h1>TRADITION, QUALITÄT, & LEIDENSCHAFT</h1>
+            <h1>TRADITION, QUALITÄT & LEIDENSCHAFT</h1>
             <div>
                 <a class="button" href="<?= get_term_link( get_term_by('slug', COFFEE_FILTERKAFFEE_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Hier gibts Filterkaffee</a>
                 <a class="button" href="<?= get_term_link( get_term_by('slug', COFFEE_ESPRESSO_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Und hier Espresso</a>

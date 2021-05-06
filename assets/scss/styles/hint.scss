@@ -4,9 +4,10 @@
   left: 0;
   bottom: -$spacing-l - $hint-height;
   font-weight: bold;
-  z-index: 100;
+  z-index: 9;
 
   input[type="checkbox"] {
+    cursor: pointer;
     position: absolute;
     top: 0;
     left: 0;
@@ -35,7 +36,6 @@
     }
   }
 
-
   div:first-of-type {
     width: $hint-width;
     background-color: $weinrot;
@@ -46,7 +46,6 @@
     padding: 6px $spacing-l 0;
     height: $hint-height;
     background-size: 9px;
-    cursor: pointer;
   }
 
   div:last-of-type {
