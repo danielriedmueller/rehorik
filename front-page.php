@@ -44,10 +44,9 @@ get_header( );
         <input type="checkbox">
         <div>Aktuelle Informationen</div>
         <div>
-            Besuchen Sie uns gerne vor Ort in unseren Filialen, ein Termin oder negativer Corona-Test ist nicht nötig.
+            Besucht uns gerne vor Ort in unseren Filialen, ein Termin oder negativer Corona-Test ist nicht nötig.
             <br>
-            <br>
-            Momentan können leider keine Veranstaltungen vor Ort stattfinden. Unsere virtuellen Kursangebote finden Sie <a href="<?= get_page_link(42) ?>">hier</a>.
+            Momentan können leider keine Veranstaltungen vor Ort stattfinden. Unsere virtuellen Kursangebote findet Ihr <a href="<?= get_page_link(42) ?>">hier</a>.
         </div>
     </div>
 </div>

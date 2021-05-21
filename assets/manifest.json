@@ -30,5 +30,10 @@
     "src": "/wp-content/themes/rehorik/assets/img/logos/logo_512px.png",
     "sizes": "512x512",
     "type": "image/png"
+  }, {
+    "src": "/wp-content/themes/rehorik/assets/img/logos/maskable_icon_192px.png",
+    "sizes": "192x192",
+    "type": "image/png",
+    "purpose": "any maskable"
   }]
 }
