@@ -49,15 +49,11 @@ get_template_part('templates/tribe-events-attendee-list');
             </div>
             <div>
                 <?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
-            </div>
-            <div>
                 <!-- .tribe-events-single-event-description -->
                 <?php tribe_get_template_part( 'modules/meta' ); ?>
                 <?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
                 <!-- Calendar links -->
                 <?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
-            </div>
-            <div>
                 <?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
             </div>
 		</div> <!-- #post-x -->

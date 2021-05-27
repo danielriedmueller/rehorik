@@ -13,6 +13,12 @@
         column-gap: $spacing-xl;
         row-gap: $spacing;
       }
+
+      @media all and (max-width: $small-breakpoint) {
+        div:first-child {
+          margin-bottom: $spacing;
+        }
+      }
     }
 
     .rehorik-tribe-events-single-event-content {
