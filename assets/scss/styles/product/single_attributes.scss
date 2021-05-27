@@ -1,11 +1,15 @@
-.rehorik-product-single-attributes {
-  margin-bottom: $spacing-s;
-
-  > div {
-    margin-bottom: $spacing-s;
-
-    b {
-      margin-right: $spacing-xs;
+#content-area table.rehorik-product-single-attributes {
+  tbody tr {
+    td:first-child {
+      padding-right: $spacing-xs;
     }
+  }
+
+  tbody tr:first-child td {
+    padding-top: $spacing-s;
+  }
+
+  tbody tr:last-child td {
+    padding-bottom: $spacing-s;
   }
 }

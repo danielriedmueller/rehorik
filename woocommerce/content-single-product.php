@@ -52,6 +52,7 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 		 * @hooked woocommerce_template_single_title - 5
 		 * @hooked woocommerce_template_single_rating - 10
 		 * @hooked woocommerce_template_single_price - 10
+         * @hooked rehorik_single_product_attributes - 15
 		 * @hooked woocommerce_template_single_excerpt - 20
 		 * @hooked woocommerce_template_single_add_to_cart - 30
 		 * @hooked woocommerce_template_single_meta - 40
@@ -59,7 +60,6 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 		 * @hooked WC_Structured_Data::generate_product_data() - 60
 		 */
 		do_action( 'woocommerce_single_product_summary' );
-
 		?>
 
         <div class="sigil-container<?php echo sprintf(
@@ -69,7 +69,6 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
         ); ?>"></div>
 
         <div class="rehorik-hugo-head"></div>
-
 	</div>
 
 	<?php
