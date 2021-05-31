@@ -21,13 +21,13 @@ define('FREE_DELIVERY_SHIPPING_METHOD', 'free_shipping_bike');
 define('FREE_STANDARD_SHIPPING_METHOD', 'free_shipping');
 
 // Categories
-define('TICKET_CATEGORY_SLUG', 'events-seminare');
 define('COFFEE_CATEGORY_SLUG', 'kaffee');
 define('WINE_SPIRITS_CO_CATEGORY_SLUG', 'wein-spirits-co');
 define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
 define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
 define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
 define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
+define('TICKET_CATEGORY_SLUG', 'events-seminare');
 define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
 define('WINE_CATEGORY_SLUGS', [
     'rotwein',

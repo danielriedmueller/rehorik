@@ -4,12 +4,12 @@
   }
 
   #sidebar.rehorik-sidebar {
-    background: transparent url("../img/strichl-muster.png") repeat-x left top;
+    background: transparent url("../img/strichl-muster.png") repeat-y left top;
     padding: 80px 0 0 0;
 
     &::after {
       content: "";
-      background: transparent url("../img/strichl-muster.png") repeat-x left top;
+      background: transparent url("../img/strichl-muster.png") repeat-y left top;
       height: 142px;
       max-height: 142px;
       width: 100%;

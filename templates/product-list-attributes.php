@@ -16,7 +16,7 @@ $attributes[VARIETIES_ATTRIBUTE_SLUG] = sprintf(
     '%s%s',
     $product->get_attribute(VARIETIES_ATTRIBUTE_SLUG),
     empty($grapeVariety) ? "" : ", " . $grapeVariety
-);;
+);
 $attributes[FLAVOUR_ATTRIBUTE_SLUG] = $product->get_attribute(FLAVOUR_ATTRIBUTE_SLUG);
 $attributes[MANUFACTURER_ATTRIBUTE_SLUG] = $product->get_attribute(MANUFACTURER_ATTRIBUTE_SLUG);
 $attributes[MILCHART_ATTRIBUTE_SLUG] = $product->get_attribute(MILCHART_ATTRIBUTE_SLUG);
