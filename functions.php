@@ -37,17 +37,17 @@ define('WINE_CATEGORY_SLUGS', [
 ]);
 
 // Attributes
-define('STRENGTH_ATTRIBUTE_SLUG', 'pa_kaffee-staerke');
-define('VARIETIES_ATTRIBUTE_SLUG', 'pa_kaffee-sorte');
+define('STRENGTH_ATTRIBUTE_SLUG', 'pa_staerke');
+define('VARIETIES_ATTRIBUTE_SLUG', 'pa_sorte');
 define('GRAPE_VARIETY_ATTRIBUTE_SLUG', 'pa_rebsorte');
 define('AUSBAU_ATTRIBUTE_SLUG', 'pa_ausbau');
 define('HERSTELLUNG_ATTRIBUTE_SLUG', 'pa_herstellung');
 define('MILCHART_ATTRIBUTE_SLUG', 'pa_milchart');
 define('FETT_ATTRIBUTE_SLUG', 'pa_fett');
-define('FLAVOUR_ATTRIBUTE_SLUG', 'pa_kaffee-aromen');
-define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'pa_kaffee-aromenvielfalt');
+define('FLAVOUR_ATTRIBUTE_SLUG', 'pa_aromen');
+define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'pa_aromenvielfalt');
 define('BEAN_COMPOSITION_ATTRIBUTE_SLUG', 'pa_bohnenkompositionen');
-define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_kaffee-herkunft');
+define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_herkunft');
 define('REGION_ATTRIBUTE_SLUG', 'pa_region');
 define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
 define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
