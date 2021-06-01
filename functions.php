@@ -27,7 +27,7 @@ define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
 define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
 define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
 define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
-define('TICKET_CATEGORY_SLUG', 'events-seminare');
+define('TICKET_CATEGORY_SLUG', 'veranstaltungen');
 define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
 define('WINE_CATEGORY_SLUGS', [
     'rotwein',
@@ -118,7 +118,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
 
     // Slider only on delivery category page
-    if (is_product_category('lieferservice') || is_front_page()) {
+    if (isProductCategory(DELIVERY_CATEGORY_SLUG) || isProductCategory(TICKET_CATEGORY_SLUG) || is_front_page()) {
         wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
         wp_enqueue_script('tiny-slider-js', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', null, 1, true);
         wp_enqueue_script('slider-js', $assetsDir . 'js/tiny_slider.js', null, 1, true);
@@ -129,6 +129,10 @@ add_action('init', function() {
     register_nav_menus([
         'main'   => 'Hauptmenü'
     ]);
+
+    if (!wp_next_scheduled( 'rh_past_events_cron_hook') ) {
+        wp_schedule_event(time(), 'twicedaily', 'rh_past_events_cron_hook');
+    }
 });
 
 /**
@@ -144,10 +148,3 @@ if (function_exists('register_sidebar')) {
         'after_title' => '</h3>',
     ]);
 }
-
-add_action('init', function() {
-    if (!wp_next_scheduled( 'rh_past_events_cron_hook') ) {
-        wp_schedule_event(time(), 'twicedaily', 'rh_past_events_cron_hook');
-    }
-});
-

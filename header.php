@@ -8,4 +8,12 @@
         <div id="page-container">
             <?php get_template_part('templates/menu'); ?>
             <div id="et-main-area">
-                <?php do_action( 'et_before_main_content' ); ?>
+                <?php
+                    if (isProductCategory(DELIVERY_CATEGORY_SLUG)) {
+                        get_template_part('templates/lieferservice-header');
+                    }
+                    if (isProductCategory(TICKET_CATEGORY_SLUG)) {
+                        get_template_part('templates/veranstaltungen-header');
+                    }
+                    do_action( 'et_before_main_content' );
+                ?>

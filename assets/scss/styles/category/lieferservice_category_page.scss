@@ -1,159 +1,28 @@
-.rehorik-lieferservice-category-header,
-.rehorik-lieferservice-category-footer {
-  color: #fff;
-  font-size: $font-size-small;
-  line-height: 24px;
-  text-align: justify;
-
-  h4 {
-    font-weight: normal;
-    color: $font-color-accent;
-    padding: 0;
-    text-align: left;
-    padding-bottom: $spacing;
-  }
-
-  a {
-    font-family: $font-family-body;
-  }
+.lieferservice-slider-image-1,
+.lieferservice-slider-image-2 {
+  background-image: url("../img/lieferservice/lieferservice-header-600px-v1.jpg");
 
   @media all and (max-width: $small-breakpoint) {
-    font-size: $font-size-very-small;
-    line-height: $font-size-very-small + 2px;
-    text-align: left;
-
-    h4 {
-      font-size: $font-size-small;
-      line-height: $font-size-small + 2px;
-      padding-bottom: $spacing-s;
-    }
-  }
-}
-.rehorik-lieferservice-category-header {
-  position: relative;
-
-  .lieferservice-slider-image-1,
-  .lieferservice-slider-image-2 {
-    width: auto;
-    height: 600px;
-    background: transparent url("../img/lieferservice/lieferservice-header-600px-v1.jpg") no-repeat center center;
-
-    @media all and (max-width: $small-breakpoint) {
-      height: 485px;
-      background-image: url("../img/lieferservice/lieferservice-header-mobil-375x485px-v1.png");
-    }
-  }
-
-  .lieferservice-slider-image-2 {
-    background-image: url("../img/lieferservice/lieferservice-header-600px-v2.jpg");
-
-    @media all and (max-width: $small-breakpoint) {
-      background-image: url("../img/lieferservice/lieferservice-header-mobil-375x485px-v2.png");
-    }
-  }
-
-  .quality-text-outer {
-    max-width: $max-width;
-    width: 80%;
-    position: absolute;
-    margin: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    @media all and (max-width: $small-breakpoint) {
-      width: 100%;
-    }
-  }
-
-  .quality-text {
-    background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
-    width: 100%;
-    z-index: 9;
-    padding: $spacing-l;
-    border-top-left-radius: $border-radius-large;
-    border-top-right-radius: $border-radius-large;
-
-    @media all and (min-width: $small-breakpoint + 1) {
-      max-width: 589px;
-      position: absolute;
-      right: $spacing-l;
-      bottom: 0;
-    }
-
-
-    .quality-text-content {
-      @media all and (min-width: $small-breakpoint + 1) {
-        display: flex;
-
-        > div {
-          flex: 1 1 0;
-          width: 0;
-        }
-
-        > div:first-child {
-          margin-right: $spacing-s;
-        }
-      }
-    }
-
-    @media all and (max-width: $small-breakpoint) {
-      padding: $spacing-s;
-    }
+    background-image: url("../img/lieferservice/lieferservice-header-mobil-375x485px-v1.png");
   }
 }
 
-.rehorik-lieferservice-category-footer {
-  background: $weinrot none;
-  $heikoHeightSmall: 220px;
-  $heikoHeightVerySmall: 180px;
+.lieferservice-slider-image-2 {
+  background-image: url("../img/lieferservice/lieferservice-header-600px-v2.jpg");
 
   @media all and (max-width: $small-breakpoint) {
-    margin-top: $heikoHeightSmall + $spacing-l;
+    background-image: url("../img/lieferservice/lieferservice-header-mobil-375x485px-v2.png");
+  }
+}
+
+.order-instructions:before {
+  background-image: url("../img/lieferservice/Lieferservice_Lueckenfueller-freigestellt.png");
+
+  @media all and (max-width: $small-breakpoint) {
+    background-image:url("../img/lieferservice/lieferservice-lastenrad-220px.png");
   }
 
   @media all and (max-width: $very-small-breakpoint) {
-    margin-top: $heikoHeightVerySmall + $spacing-l;
-  }
-
-
-  .order-instructions {
-    position: relative;
-    padding: $spacing-l $spacing;
-
-    @media all and (min-width: $small-breakpoint + 1) {
-      max-width: $max-width;
-      width: 80%;
-      margin: auto;
-      padding: $spacing-l $spacing-l $spacing-l 360px;
-    }
-
-    &:before {
-      content: "";
-      display: block;
-      background: transparent url("../img/lieferservice/Lieferservice_Lueckenfueller-freigestellt.png") no-repeat left bottom;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 319px;
-      height: 289px;
-
-      @media all and (max-width: $small-breakpoint) {
-        background-image:url("../img/lieferservice/lieferservice-lastenrad-220px.png");
-        width: 240px;
-        height: $heikoHeightSmall;
-        top: -$heikoHeightSmall;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-      }
-
-      @media all and (max-width: $very-small-breakpoint) {
-        background-image:url("../img/lieferservice/lieferservice-lastenrad-180px.png");
-        width: 196px;
-        height: $heikoHeightVerySmall;
-        top: -$heikoHeightVerySmall;
-      }
-    }
+    background-image:url("../img/lieferservice/lieferservice-lastenrad-180px.png");
   }
 }

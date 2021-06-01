@@ -2,6 +2,10 @@
 global $product;
 $event = tribe_events_get_ticket_event($product->get_id());
 
+if (!$event) {
+    return;
+}
+
 $location = tribe_get_venue($event->ID);
 $startDate = tribe_get_start_date($event->ID, false, 'd.m.Y');
 $endDate = tribe_get_start_date($event->ID, false, 'd.m.Y');
@@ -11,10 +15,7 @@ $endTime = tribe_get_end_time($event->ID);
 $date = $startDate === $endDate ? $startDate : sprintf('%s - %s', $startDate, $endDate);
 $time = sprintf('%s - %s', $startTime, $endTime);
 
-
 $price = wc_price($product->get_price());
-
-
 ?>
 <div class="rehorik-product-attributes">
     <div class='rehorik-product-min-price'><?= ($product->is_type('variable') ? "ab " : "") . $price . " *" ?></div>

@@ -13,6 +13,29 @@ function getCategoryTreeDepth($termId, $taxonomy = "product_cat"): int
     return sizeof(explode($seperator, $parentsList)) - 1;
 }
 
+/**
+ * Checks if category page belongs to category
+ *
+ * Extension of is_product_category
+ * Includes parent check
+ *
+ * @return bool
+ */
+function isProductCategory($slug):bool
+{
+    $cat = get_term_by( 'slug', $slug, 'product_cat' );
+    $isAncestor = term_is_ancestor_of($cat->term_id, get_queried_object()->term_id, 'product_cat');
+
+    return is_product_category($slug) || $isAncestor;
+}
+
+/**
+ * Checks if product belongs to category
+ *
+ * @param $product
+ * @param $categorySlug
+ * @return bool
+ */
 function isItCategory($product, $categorySlug): bool
 {
     if (is_a($product, 'WC_Product_Variation')) {
@@ -230,6 +253,11 @@ function woocommerce_template_loop_category_title($category)
         </span>
     </h2>
     <?php
+    if (!empty($category->description)) {
+        ?>
+            <div class="rehorik-category-description"><?= $category->description ?></div>
+        <?php
+    }
 }
 
 /**
@@ -277,4 +305,36 @@ function findShoptypeAwareProductSubcategory($terms) {
     }
 
     return [$shoptypeAwareSubcategory[ONLINESHOP_CATEGORY_SLUG]];
+}
+
+function syncEventCategoriesToProductCategories() {
+    //Map event catgegories with woocommerce categories
+    $eventCats = get_terms(TribeEvents::TAXONOMY, array('hide_empty' => 0));
+    $eventParentProductCat = get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat');
+
+    foreach ($eventCats as $eventCat) {
+        $existingCat = get_term_by('slug', $eventCat->slug, 'product_cat');
+
+        if ($eventCat->parent === 0) {
+            $productParentCat = $eventParentProductCat;
+        } else {
+            $eventParentCat = get_term($eventCat->parent, TribeEvents::TAXONOMY);
+            $productParentCat = get_term_by('slug', $eventParentCat->slug, 'product_cat');
+        }
+
+        if ($productParentCat) {
+            if (!$existingCat) {
+                wp_insert_term( $eventCat->name, 'product_cat', array(
+                    'parent' => $productParentCat->term_id, // optional
+                    'slug' => $eventCat->slug // optional
+                ));
+            } else {
+                wp_update_term($existingCat->term_id, 'product_cat', array(
+                    'name' => $eventCat->name,
+                    'parent' => $productParentCat->term_id, // optional
+                    'slug' => $eventCat->slug // optional
+                ));
+            }
+        }
+    }
 }

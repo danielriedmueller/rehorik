@@ -17,11 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if (is_product_category(DELIVERY_CATEGORY_SLUG)) {
-    get_header( 'lieferservice' );
-} else {
-    get_header( 'shop' );
-}
+get_header( 'shop' );
 
 /**
  * Hook: woocommerce_before_main_content.
@@ -83,8 +79,10 @@ if ( woocommerce_product_loop() ) {
  */
 do_action( 'woocommerce_after_main_content' );
 
-if (is_product_category(DELIVERY_CATEGORY_SLUG)) {
+if (isProductCategory(DELIVERY_CATEGORY_SLUG)) {
     get_template_part('templates/lieferservice-footer');
+} elseif (isProductCategory(TICKET_CATEGORY_SLUG)) {
+    get_template_part('templates/veranstaltungen-footer');
 } else {
     get_template_part('templates/best-selling-products');
 }
