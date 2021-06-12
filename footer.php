@@ -6,6 +6,7 @@
                 <div>
                     <h2>Zahlungsarten</h2>
                     <p>Vorkasse, Paypal</p>
+                    <p>Lastschrift, Kreditkarte</p>
                 </div>
                 <div>
                     <h2>Versand</h2>
