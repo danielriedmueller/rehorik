@@ -14,6 +14,50 @@ add_action('et_before_main_content', function () {
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 
 /**
+ * For offline event tickets sale.
+ * Only company user accounts are allowed to buy tickets by cheque
+ * In this case, set order to complete.
+ */
+add_action('woocommerce_thankyou', function ($order_id) {
+    if (!$order_id) {
+        return;
+    }
+
+    $order = new WC_Order($order_id);
+    if (!$order) {
+        return;
+    }
+
+    // Only paying cash, set order status
+    if ($order->get_payment_method() !== 'cheque') {
+        return;
+    }
+
+    $items = $order->get_items();
+
+    $updateOrderStatus = false;
+    foreach ($items as $item) {
+        $product = $item->get_product();
+
+        if ($product) {
+            /**
+             * @var WC_Product $product
+             */
+            $eventCatId = get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat' )->term_id;
+            $cats = $product->get_category_ids();
+            $virtual = $product->is_virtual();
+            if ($product->is_virtual() && in_array($eventCatId, $product->get_category_ids())) {
+                $updateOrderStatus = true;
+            }
+        }
+    }
+
+    if ($updateOrderStatus) {
+        $order->update_status( 'completed' );
+    }
+}, 10, 1);
+
+/**
  * Add ticket category to created ticket products
  * and set product_type to simple instead of virtual
  */
