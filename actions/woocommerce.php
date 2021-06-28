@@ -29,7 +29,7 @@ add_action('woocommerce_thankyou', function ($order_id) {
     }
 
     // Only paying cash, set order status
-    if ($order->get_payment_method() !== 'cheque') {
+    if ($order->get_payment_method() !== PAYMENT_METHOD_CASH) {
         return;
     }
 

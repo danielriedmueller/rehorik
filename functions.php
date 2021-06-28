@@ -63,6 +63,9 @@ define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
 define('ONLINE_META_KEY', 'Online');
 define('CANCELED_META_KEY', 'Abgesagt');
 
+// Payment methods
+define('PAYMENT_METHOD_CASH', 'cod');
+
 // In $productAttributes array, slugs are prefixed by wordpress
 define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
 
