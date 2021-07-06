@@ -65,6 +65,7 @@ define('CANCELED_META_KEY', 'Abgesagt');
 
 // Payment methods
 define('PAYMENT_METHOD_CASH', 'cod');
+define('PAYMENT_METHOD_DIRECT_TRANSFER', 'bacs');
 
 // In $productAttributes array, slugs are prefixed by wordpress
 define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
@@ -133,9 +134,13 @@ add_action('init', function() {
         'main'   => 'Hauptmenü'
     ]);
 
+    /*
+     * Temporarily Disabled
+     *
     if (!wp_next_scheduled( 'rh_past_events_cron_hook') ) {
         wp_schedule_event(time(), 'twicedaily', 'rh_past_events_cron_hook');
     }
+    */
 });
 
 /**

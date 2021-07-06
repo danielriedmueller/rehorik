@@ -46,6 +46,9 @@ get_template_part('templates/tribe-events-attendee-list');
                 <div class="rehorik-tribe-events-single-description">
                     <?php the_content(); ?>
                 </div>
+                <div class="rehorik-tribe-events-single-hint">
+                    Bitte beachtet, dass die Anmeldung verbindlich ist und nicht verschoben, storniert oder umgetauscht werden kann!
+                </div>
             </div>
             <div>
                 <?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>

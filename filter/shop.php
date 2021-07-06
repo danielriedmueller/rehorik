@@ -17,61 +17,23 @@ add_filter('woocommerce_show_page_title', function () {
     return false;
 });
 
-/**
- * @param $full_label
- * @param $method
- * @return string
- */
-/*
-function remove_shipping_method_label($full_label, $method) {
-    $label = "";
-    $has_cost = 0 < $method->cost;
-    $hide_cost = !$has_cost && in_array($method->get_method_id(), array('free_shipping', 'local_pickup'), true);
-
-    if ($has_cost && !$hide_cost) {
-        if (WC()->cart->display_prices_including_tax()) {
-            $label .= wc_price($method->cost + $method->get_shipping_tax());
-            if ($method->get_shipping_tax() > 0 && !wc_prices_include_tax()) {
-                $label .= ' <small>' . WC()->countries->inc_tax_or_vat() . '</small>';
-            }
-        } else {
-            $label .= ': ' . wc_price($method->cost);
-            if ($method->get_shipping_tax() > 0 && wc_prices_include_tax()) {
-                $label .= ' <small>' . WC()->countries->ex_tax_or_vat() . '</small>';
-            }
-        }
-
-        return $label;
-    }
-
-    return $full_label;
-}
-add_filter('woocommerce_cart_shipping_method_full_label', 'remove_shipping_method_label', 10, 2);
-*/
-
-/**
- * Remove event coupon payment (or actually cheque) gateway from other product categories
- */
-function allow_coupon_payment_gateway_only_for_events($available_gateways)
+function disallow_direct_transfer_payment_for_virtual_products($available_gateways)
 {
     if (!is_checkout()) return $available_gateways;
 
     $unset = false;
-    $cat = get_term_by( 'slug', TICKET_CATEGORY_SLUG, 'product_cat' );
-
     foreach (WC()->cart->get_cart_contents() as $key => $values) {
-        $terms = get_the_terms($values['product_id'], 'product_cat');
-        foreach ($terms as $term) {
-            if ($cat->term_id !== $term->term_id) {
-                $unset = true;
-                break;
-            }
+        $product = wc_get_product($values['product_id']);
+        if ($product->is_virtual()) {
+            $unset = true;
+            break;
         }
     }
-    if ($unset == true) unset($available_gateways['cheque']);
+    if ($unset == true) unset($available_gateways[PAYMENT_METHOD_DIRECT_TRANSFER]);
 
     return $available_gateways;
 }
+add_filter( 'woocommerce_available_payment_gateways', 'disallow_direct_transfer_payment_for_virtual_products');
 
 /**
  * Add bike delivery shipping method

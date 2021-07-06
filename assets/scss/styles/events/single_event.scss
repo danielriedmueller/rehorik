@@ -29,6 +29,12 @@
       text-align: justify;
     }
 
+    .rehorik-tribe-events-single-hint {
+      background-color: $beigegold;
+      padding: $spacing-s;
+      font-size: $font-size-small;
+    }
+
     @media all and (min-width: $small-breakpoint + 1) {
       .tribe-events-event-image, .tribe-events-event-image img {
         width: 600px;

@@ -44,8 +44,6 @@ add_action('woocommerce_thankyou', function ($order_id) {
              * @var WC_Product $product
              */
             $eventCatId = get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat' )->term_id;
-            $cats = $product->get_category_ids();
-            $virtual = $product->is_virtual();
             if ($product->is_virtual() && in_array($eventCatId, $product->get_category_ids())) {
                 $updateOrderStatus = true;
             }
