@@ -3,8 +3,6 @@ show_admin_bar(true);
 
 require_once('sig_functions.php');
 
-define('WP_SCSS_ALWAYS_RECOMPILE', true);
-
 define('ONE_CUP_OF_COFFEE_IN_GRAMS', 10);
 define('FREE_SHIPPING_AMOUNT', 49);
 define('MAX_COFFEE_STRENGTH_FLAVOUR_ATTRIBUTE', 6);
@@ -117,7 +115,6 @@ add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
     wp_enqueue_style('divi', $assetsDir . 'css/overwritten-divi.css', false, 1.1, 'all');
     wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.92, 'all');
-    wp_enqueue_script('main', $assetsDir . 'js/main.js', false, 1, false);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
 
