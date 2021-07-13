@@ -176,8 +176,7 @@ function getShopFrontPageCategories()
 
     // Add events category
     $eventsCategoryKey = array_search(TICKET_CATEGORY_SLUG, array_column($parentCategories, 'slug'));
-    // TODO: Uncomment this on ticket release
-    // $onlineshopCategories[] = $parentCategories[$eventsCategoryKey];
+    $onlineshopCategories[] = $parentCategories[$eventsCategoryKey];
 
     return $onlineshopCategories;
 }

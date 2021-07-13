@@ -70,13 +70,6 @@ get_template_part('templates/tribe-events-attendee-list');
                 <p><b>VERANSTALTER:</b> Rehorik GmbH</p>
                 <p><b>TELEFON:</b> <a href="tel:+49941 / 51727">0941 / 51727</a></p>
                 <p><b>E-MAIL:</b> <a href="mailto:events@rehorik.de">events@rehorik.de</a></p>
-                <?php if(!$isOnline): ?>
-                Die Veranstaltung findet in den Geschäftsräumen der Fa. Rehorik statt.
-                Eine Absage kann spätestens 24 Std. vor Veranstaltungsbeginn erfolgen. Bei späterer Absage oder
-                Fernbleiben fällt die volle Seminargebühr an. Das Ticket verliert in diesem Fall seine Gültigkeit.
-                Die Teilnahme am Seminar ist nur durch Abgabe des Tickets
-                möglich. | Das Ticket ist übertragbar.
-                <?php endif; ?>
             </div>
             <div>
                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/thumbnail_website-events-600px.jpg" alt="Rehorik Event Information Bild">
