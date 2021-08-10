@@ -18,15 +18,18 @@ function getCategoryTreeDepth($termId, $taxonomy = "product_cat"): int
  *
  * Extension of is_product_category
  * Includes parent check
- *
- * @return bool
  */
-function isProductCategory($slug):bool
+function isProductCategory($slug): bool
 {
-    $cat = get_term_by( 'slug', $slug, 'product_cat' );
+    $cat = get_term_by( 'slug', $slug, 'product_cat');
     $isAncestor = term_is_ancestor_of($cat->term_id, get_queried_object()->term_id, 'product_cat');
 
     return is_product_category($slug) || $isAncestor;
+}
+
+function getProductCategorySlug(): string
+{
+    return get_term(get_queried_object()->term_id)->slug;
 }
 
 /**

@@ -1,32 +1,93 @@
 .rehorik-custom-category-header {
-  .slider-image-1.lieferservice-slider-image-1,
-  .slider-image-1.lieferservice-slider-image-2 {
-    background-image: url("../img/lieferservice/lieferservice-header-600px-v1.jpg");
+  .header-image {
+    &.veranstaltungen {
+      background-image: url("../img/veranstaltungen/header/header-veranstaltungen-1920x600px.jpg");
 
-    @media all and (max-width: $small-breakpoint) {
-      background-image: url("../img/lieferservice/lieferservice-header-mobil-375x485px-v1.png");
+      @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+        background-image: url("../img/veranstaltungen/header/header-veranstaltungen-1080x600px.jpg");
+      }
+
+      @media all and (max-width: $small-breakpoint) {
+        background-image: url("../img/veranstaltungen/header/header-veranstaltungen-mobil-375x485px.jpg");
+      }
     }
-  }
 
-  .lieferservice-slider-image-2 {
-    background-image: url("../img/lieferservice/lieferservice-header-600px-v2.jpg");
+    &.events {
+      background-image: url("../img/veranstaltungen/header/events/header-veranstaltungen-rehorikevents-1920x600px.jpg");
 
-    @media all and (max-width: $small-breakpoint) {
-      background-image: url("../img/lieferservice/lieferservice-header-mobil-375x485px-v2.png");
+      @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+        background-image: url("../img/veranstaltungen/header/events/header-veranstaltungen-rehorikevents-1080x600px.jpg");
+      }
+
+      @media all and (max-width: $small-breakpoint) {
+        background-image: url("../img/veranstaltungen/header/events/header-veranstaltungen-rehorikevents-375x485px.jpg");
+      }
+    }
+
+    &.kaffee-seminare {
+      background-image: url("../img/veranstaltungen/header/kaffee-seminare/header-veranstaltungen-kaffee-1920x600px.jpg");
+
+      @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+        background-image: url("../img/veranstaltungen/header/kaffee-seminare/header-veranstaltungen-kaffee-1080x600px.jpg");
+      }
+
+      @media all and (max-width: $small-breakpoint) {
+        background-image: url("../img/veranstaltungen/header/kaffee-seminare/header-veranstaltungen-kaffee-mobil-375x485px.jpg");
+      }
+    }
+
+    &.spirituosen-seminare {
+      background-image: url("../img/veranstaltungen/header/spirituosen-seminare/header-veranstaltungen-spirits-1920x600px.jpg");
+
+      @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+        background-image: url("../img/veranstaltungen/header/spirituosen-seminare/header-veranstaltungen-spirits-1080x600px.jpg");
+      }
+
+      @media all and (max-width: $small-breakpoint) {
+        background-image: url("../img/veranstaltungen/header/spirituosen-seminare/header-veranstaltungen-spirits-mobil-375x485px.jpg");
+      }
+    }
+
+    &.virtuelle-events {
+      background-image: url("../img/veranstaltungen/header/virtuelle-events/header-veranstaltungen-virtuelleevents-1920x600px.jpg");
+
+      @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+        background-image: url("../img/veranstaltungen/header/virtuelle-events/header-veranstaltungen-virtuelleevents-1080x600px.jpg");
+      }
+
+      @media all and (max-width: $small-breakpoint) {
+        background-image: url("../img/veranstaltungen/header/virtuelle-events/header-veranstaltungen-virtuelleevents-mobil-375x485px.jpg");
+      }
+    }
+
+    &.wein {
+      background-image: url("../img/veranstaltungen/header/wein/header-veranstaltungen-wein-1920x600px.jpg");
+
+      @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+        background-image: url("../img/veranstaltungen/header/wein/header-veranstaltungen-wein-1080x600px.jpg");
+      }
+
+      @media all and (max-width: $small-breakpoint) {
+        background-image: url("../img/veranstaltungen/header/wein/header-veranstaltungen-wein-mobil-375x485px.jpg");
+      }
+    }
+
+    &.kulinarik-events {
+      background-image: url("../img/veranstaltungen/header/kulinarik/header-veranstaltungen-kulinarik-1920x600px.jpg");
+
+      @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+        background-image: url("../img/veranstaltungen/header/kulinarik/header-veranstaltungen-kulinarik-1080x600px.jpg");
+      }
+
+      @media all and (max-width: $small-breakpoint) {
+        background-image: url("../img/veranstaltungen/header/kulinarik/header-veranstaltungen-kulinarik-mobil-375x485px.jpg");
+      }
     }
   }
 }
 
 .rehorik-custom-category-footer {
   .order-instructions:before {
-    background-image: url("../img/lieferservice/Lieferservice_Lueckenfueller-freigestellt.png");
-
-    @media all and (max-width: $small-breakpoint) {
-      background-image:url("../img/lieferservice/lieferservice-lastenrad-220px.png");
-    }
-
-    @media all and (max-width: $very-small-breakpoint) {
-      background-image:url("../img/lieferservice/lieferservice-lastenrad-180px.png");
-    }
+    background-image: url("../img/veranstaltungen/rehorik-veranstaltungen-freistellerheiko.png");
   }
 }

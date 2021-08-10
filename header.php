@@ -13,7 +13,10 @@
                         get_template_part('templates/lieferservice-header');
                     }
                     if (isProductCategory(TICKET_CATEGORY_SLUG)) {
-                        get_template_part('templates/veranstaltungen-header');
+                        $eventCat = getProductCategorySlug();
+                        if (!empty($eventCat)) {
+                            get_template_part("templates/veranstaltungen/header-${eventCat}");
+                        }
                     }
                     do_action( 'et_before_main_content' );
                 ?>

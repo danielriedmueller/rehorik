@@ -194,10 +194,11 @@ header.rehorik-header {
         // Calendar menu item
         li.menu-item.rehorik-calendar-icon {
           a {
-            font-size: $font-size;
-            background: none;
-            width: auto;
-            height: auto;
+            font-size: 0;
+            background: transparent url("../img/kalender-16px.svg") no-repeat center center;
+            background-size: $menu-icon-size;
+            width: $menu-icon-size;
+            height: $menu-icon-size;
           }
         }
       }
