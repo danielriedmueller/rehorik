@@ -1,5 +1,5 @@
 <?php ?>
-<div class="rehorik-custom-category-footer">
+<div class="rehorik-custom-category-footer lieferservice">
     <div class="order-instructions">
         <h4>Bestellt, verpackt & auf dem Weg zu dir!</h4>
         <div>Bestellen Sie bis jeweils MO. 12 Uhr und MI. 12 Uhr per Telefon: <a href="tel:0941/51727">0941/51727</a> oder per Email: <a href="mailto:<?= DELIVERY_ORDER_EMAIL ?>"><?= DELIVERY_ORDER_EMAIL ?></a>

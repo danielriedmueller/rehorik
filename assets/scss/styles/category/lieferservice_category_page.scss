@@ -15,14 +15,16 @@
   }
 }
 
-.order-instructions:before {
-  background-image: url("../img/lieferservice/Lieferservice_Lueckenfueller-freigestellt.png");
+.rehorik-custom-category-footer.lieferservice {
+  .order-instructions:before {
+    background-image: url("../img/lieferservice/Lieferservice_Lueckenfueller-freigestellt.png");
 
-  @media all and (max-width: $small-breakpoint) {
-    background-image:url("../img/lieferservice/lieferservice-lastenrad-220px.png");
-  }
+    @media all and (max-width: $small-breakpoint) {
+      background-image:url("../img/lieferservice/lieferservice-lastenrad-220px.png");
+    }
 
-  @media all and (max-width: $very-small-breakpoint) {
-    background-image:url("../img/lieferservice/lieferservice-lastenrad-180px.png");
+    @media all and (max-width: $very-small-breakpoint) {
+      background-image:url("../img/lieferservice/lieferservice-lastenrad-180px.png");
+    }
   }
 }

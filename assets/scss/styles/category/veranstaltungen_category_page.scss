@@ -86,8 +86,34 @@
   }
 }
 
-.rehorik-custom-category-footer {
+.rehorik-custom-category-footer.veranstaltungen {
+  background-color: $beigegold;
+
+  h4 {
+    color: $font-color;
+  }
+
+  .order-instructions {
+    padding: $spacing-l $spacing;
+
+    @media all and (min-width: $small-breakpoint + 1) {
+      padding: $spacing-l $spacing-l $spacing-l 190px;
+    }
+  }
+
   .order-instructions:before {
-    background-image: url("../img/veranstaltungen/rehorik-veranstaltungen-freistellerheiko.png");
+    background-image: url("../img/veranstaltungen/rehorik-veranstaltungen-freistellerheiko-300px.png");
+    height: 300px;
+
+    @media all and (max-width: $small-breakpoint) {
+      background-image:url("../img/veranstaltungen/rehorik-veranstaltungen-freistellerheiko-220px.png");
+      height: 220px;
+    }
+
+    @media all and (max-width: $very-small-breakpoint) {
+      background-image:url("../img/veranstaltungen/rehorik-veranstaltungen-freistellerheiko-180px.png");
+      height: 180px;
+    }
   }
 }
+
