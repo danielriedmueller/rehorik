@@ -46,7 +46,7 @@
     position: absolute;
     top: $menu-height;
     right: 0;
-    background: transparent url("../img/gold-transparent90-1px.png") repeat center center;
+    background: rgba(206, 182, 127, 0.9) none;
     border-bottom-right-radius: $border-radius;
     padding-left: $spacing;
     padding-right: $spacing;
@@ -72,3 +72,8 @@
     color:    $weinrot;
   }
 }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgba(206, 182, 127, 0.97) inset;
+}
+
