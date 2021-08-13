@@ -1,6 +1,17 @@
+.tribe-common {
+  .tribe-common-h2,
+  .tribe-common-h3,
+  .tribe-common-h4,
+  .tribe-common-h5,
+  .tribe-common-h6,
+  .tribe-common-h7,
+  .tribe-common-h8 {
+    font-family: $font-family-body;
+  }
+}
+
 .tribe-common .tribe-common-h5,
 .tribe-common .tribe-common-h6 {
-  font-family: $font-family-body;
   font-size: $font-size-large !important;
   font-weight: bold;
   color: $font-color-accent;
@@ -10,7 +21,6 @@
 .tribe-common-h7 {
   text-transform: uppercase;
   font-weight: bold;
-  font-family: $font-family-body;
   font-size: $font-size;
   color: $font-color;
   line-height: $line-height-narrow;
@@ -58,7 +68,6 @@
     }
 
     .tribe-common-h4 {
-      font-family: $font-family-body;
       font-size: $font-size;
       color: $font-color;
       font-weight: normal;
