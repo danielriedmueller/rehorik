@@ -39,7 +39,7 @@ add_action('render_one_cup_of_coffee_price', function ($product) {
         }
 
         if (!empty($formattedPriceRange)) {
-            echo "<div class='rehorik-cup-of-coffee-price-outer'>Eine Tasse kaffee-seminare kostet nur <span class='rehorik-cup-of-coffee-price'>${formattedPriceRange}</span> (${oneCupOfCoffeeInGrams} g).</div>";
+            echo "<div class='rehorik-cup-of-coffee-price-outer'>Eine Tasse Kaffee kostet nur <span class='rehorik-cup-of-coffee-price'>${formattedPriceRange}</span> (${oneCupOfCoffeeInGrams} g).</div>";
         }
     }
 });
