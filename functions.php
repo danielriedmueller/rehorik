@@ -77,6 +77,7 @@ define('INFORMATION_TAB_ATTRIBUTES', [
 ]);
 
 // Pages
+define('NEUE_ROESTEREI_PAGE_ID', 21830);
 define('ROESTEREI_PAGE_ID', 40);
 define('CAFE_190_PAGE_ID', 44);
 define('LOGIN_PAGE_ID', 667);

@@ -1,6 +1,7 @@
 .frontpage-slider-image-1,
 .frontpage-slider-image-2,
-.frontpage-slider-image-3 {
+.frontpage-slider-image-3,
+.frontpage-slider-image-4 {
   width: auto;
   height: 600px;
   background: transparent url("../img/frontpage/startseite-header-kaffee-1920x600px.jpg") no-repeat center center;
@@ -42,6 +43,19 @@
   }
 }
 
+.frontpage-slider-image-4 {
+  background: url("../img/frontpage/header-neue-roesterei-1920x600px.jpg");
+
+  @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+    height: 600px;
+    background-image: url("../img/frontpage/header-neue-roesterei-1080x600px.jpg");
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    background-image: url("../img/frontpage/header-mobil-neue-roesterei-375x485px.jpg");
+  }
+}
+
 .slider-claim {
   position: absolute;
   bottom: $spacing-xl;
@@ -60,6 +74,14 @@
     &:hover {
       background-color: $weinrot;
       color: $beigegold;
+    }
+
+    &:first-child:last-child {
+      width: 100%;
+
+      @media all and (max-width: $small-breakpoint) {
+        max-width: 300px;
+      }
     }
   }
 
