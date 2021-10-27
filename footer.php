@@ -1,3 +1,4 @@
+<?php get_template_part('templates/newsletter-sign-up'); ?>
 <?php get_template_part('templates/rehorik-locations'); ?>
 <footer>
     <div class="container">

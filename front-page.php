@@ -44,9 +44,9 @@ get_header( );
         <input type="checkbox">
         <div>Aktuelle Informationen</div>
         <div>
-            Besucht uns gerne vor Ort in unseren Filialen, ein Termin oder negativer Corona-Test ist nicht nötig.
+            Endlich ist es soweit: die neuen Veranstaltungstermine sind online. Feiert, genießt & lernt mit uns.
             <br>
-            Momentan können leider keine Veranstaltungen vor Ort stattfinden. Unsere virtuellen Kursangebote findet Ihr <a href="<?= get_page_link(42) ?>">hier</a>.
+            Hier geht's zu den aktuellen <a href="/produkt-kategorie/veranstaltungen/">Events</a>.
         </div>
     </div>
 </div>

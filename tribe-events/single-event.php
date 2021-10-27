@@ -47,7 +47,7 @@ get_template_part('templates/tribe-events-attendee-list');
                     <?php the_content(); ?>
                 </div>
                 <div class="rehorik-tribe-events-single-hint">
-                    Für alle unsere Veranstaltungen gilt die 3G Regel - geimpft, genesen, getestet!
+                    Für alle unsere Veranstaltungen gilt die 3G+ Regel - geimpft, genesen, getestet (PCR)!
                     Vergesst euren Nachweis nicht, wir freuen uns auf Euch!<br>
                     Bitte beachtet, dass die Anmeldung verbindlich ist und nicht verschoben, storniert oder umgetauscht werden kann!
                 </div>

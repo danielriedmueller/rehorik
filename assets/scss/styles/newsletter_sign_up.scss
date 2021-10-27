@@ -1,0 +1,90 @@
+#newsletter-sign-up {
+  background-color: $weinrot;
+
+  .sib_loader {
+    display: none !important;
+  }
+
+  .container {
+    > div {
+      display: flex;
+      justify-content: space-around;
+
+      @media all and (max-width: $small-breakpoint) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .newsletter-sign-up-description {
+        h4 {
+          color: $font-color-accent;
+          line-height: $line-height-large;
+        }
+
+        p, a {
+          color: #fff;
+          font-size: $font-size;
+        }
+
+        padding-right: $spacing-xl;
+
+        @media all and (max-width: $small-breakpoint) {
+          padding-right: 0;
+        }
+      }
+
+      .newsletter-sign-up-form {
+        color: $font-color-accent;
+
+        @media all and (max-width: $small-breakpoint) {
+          margin-top: $spacing;
+        }
+
+        .sib-email-area {
+          label {
+            border: 2px solid $beigegold;
+            border-radius: $border-radius;
+            padding: 0;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+            background-color: $beigegold;
+
+            input {
+              font-size: $font-size;
+
+              padding: $spacing-xxs $spacing-xs;
+              border: 0;
+            }
+
+            input[type="email"] {
+              text-align: center;
+              flex-grow: 1;
+              color: $font-color-accent;
+              background-color: $weinrot;
+            }
+
+            input[type="submit"] {
+              color: #fff;
+              text-transform: uppercase;
+              font-weight: bold;
+              background-color: $beigegold;
+            }
+          }
+
+          ::placeholder { /* Firefox, Chrome, Opera */
+            color: $font-color-accent;
+          }
+
+          :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $font-color-accent;
+          }
+
+          ::-ms-input-placeholder { /* Microsoft Edge */
+            color: $font-color-accent;
+          }
+        }
+      }
+    }
+  }
+}
