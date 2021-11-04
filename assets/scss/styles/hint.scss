@@ -36,7 +36,7 @@
     }
   }
 
-  div:first-of-type {
+  > div:first-of-type {
     width: $hint-width;
     background-color: $weinrot;
     background: $weinrot url("../img/pfeil-gold-unten.svg") no-repeat right 42px center;
@@ -48,7 +48,7 @@
     background-size: 9px;
   }
 
-  div:last-of-type {
+  > div:last-of-type {
     width: $hint-width;
     display: none;
     padding: $spacing-xs $spacing-l;
