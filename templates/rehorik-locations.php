@@ -4,6 +4,12 @@
         <h1><span>Rehorik</span> Standorte</h1>
         <div>
             <div>
+                <a href="<?= get_page_link(NEUE_ROESTEREI_PAGE_ID) ?>"><img alt="Standort Rösterei & Kaffeehaus " src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-straubinger-strasse.jpg' ?>"></a>
+                <a href="<?= get_page_link(NEUE_ROESTEREI_PAGE_ID) ?>"><h2 class="title-row-span">Rösterei & Kaffeehaus</h2></a>
+                <p>Straubinger Strasse 62 A</p>
+                <p>93055 Regensburg</p>
+            </div>
+            <div>
                 <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>"><img alt="Standort Stammhaus" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-stammhaus.png' ?>"></a>
                 <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>"><h2>Stammhaus</h2></a>
                 <p>Mit <a href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Kaffeerösterei</a> | <a href="<?= get_page_link(CAFE_190_PAGE_ID) ?>">Café 190°</a> | <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>#weinkeller">Weinkeller</a> | <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>#kaeseladen">Käseladen</a></p>

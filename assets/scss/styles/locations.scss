@@ -18,14 +18,19 @@
         h2 {
           margin: $spacing 0;
           padding: 0;
-          line-height: 25px;
+          line-height: $line-height;
           font-size: $font-size-h2;
           color: #fff;
+
+          &.title-row-span {
+            line-height: $line-height-large;
+            margin-top: 21px;
+            margin-bottom: 18px;
+          }
         }
 
         p, a {
           font-size: $font-size-small;
-          line-height: 23px;
           padding: 0;
           color: #fff;
         }
