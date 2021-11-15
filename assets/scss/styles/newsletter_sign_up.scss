@@ -1,10 +1,6 @@
 #newsletter-sign-up {
   background-color: $weinrot;
 
-  .sib_loader {
-    display: none !important;
-  }
-
   .container {
     > div {
       display: flex;
@@ -34,54 +30,74 @@
       }
 
       .newsletter-sign-up-form {
-        color: $font-color-accent;
+        form#sib_signup_form_1 {
 
-        @media all and (max-width: $small-breakpoint) {
-          margin-top: $spacing;
-        }
+          .sib_loader {
+            display: none !important;
+          }
 
-        .sib-email-area {
-          label {
-            border: 2px solid $beigegold;
+          p.sib-alert-message {
+            padding: $spacing-xxs $spacing-xs;
+            margin-bottom: $spacing;
             border-radius: $border-radius;
-            padding: 0;
-            width: 100%;
-            display: flex;
-            overflow: hidden;
-            background-color: $beigegold;
+            border-width: 2px;
+          }
 
-            input {
-              font-size: $font-size;
+          p.sib-alert-message-success {
+            background-color: transparent;
+            border-color: $beigegold;
+            color: $font-color-accent;
+          }
 
-              padding: $spacing-xxs $spacing-xs;
-              border: 0;
-            }
+          color: $font-color-accent;
 
-            input[type="email"] {
-              text-align: center;
-              flex-grow: 1;
-              color: $font-color-accent;
-              background-color: $weinrot;
-            }
+          @media all and (max-width: $small-breakpoint) {
+            margin-top: $spacing;
+          }
 
-            input[type="submit"] {
-              color: #fff;
-              text-transform: uppercase;
-              font-weight: bold;
+          .sib-email-area {
+            label {
+              border: 2px solid $beigegold;
+              border-radius: $border-radius;
+              padding: 0;
+              width: 100%;
+              display: flex;
+              overflow: hidden;
               background-color: $beigegold;
+
+              input {
+                font-size: $font-size;
+                padding: $spacing-xxs $spacing-xs;
+                border: 0;
+              }
+
+              input[type="email"] {
+                text-align: center;
+                flex-grow: 1;
+                color: $font-color-accent;
+                background-color: $weinrot;
+              }
+
+              input[type="submit"] {
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: bold;
+                background-color: $beigegold;
+                cursor: pointer;
+              }
             }
-          }
 
-          ::placeholder { /* Firefox, Chrome, Opera */
-            color: $font-color-accent;
-          }
+            ::placeholder { /* Firefox, Chrome, Opera */
+              color: $font-color-accent;
+            }
 
-          :-ms-input-placeholder { /* Internet Explorer 10-11 */
-            color: $font-color-accent;
-          }
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+              color: $font-color-accent;
+            }
 
-          ::-ms-input-placeholder { /* Microsoft Edge */
-            color: $font-color-accent;
+            ::-ms-input-placeholder { /* Microsoft Edge */
+              color: $font-color-accent;
+            }
           }
         }
       }
