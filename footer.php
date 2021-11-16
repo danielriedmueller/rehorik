@@ -11,8 +11,8 @@
                 </div>
                 <div>
                     <h2>Versand</h2>
-                    <p>Wir versenden mit Citymail</p>
-                    <p><img alt="Logo Citymail" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-web-citymail.svg' ?>"></p>
+                    <p>Wir versenden mit DHL</p>
+                    <p><img alt="Logo DHL" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-dhl.svg' ?>"></p>
                     <p>Versandkosten: 5,80 €</p>
                     <p>Kostenloser Versand ab: 49 €</p>
                     <p><small>* Alle Preise sind inkl. MwSt., zzgl. Versand</small></p>
