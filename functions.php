@@ -27,6 +27,7 @@ define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
 define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
 define('TICKET_CATEGORY_SLUG', 'veranstaltungen');
 define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
+define('VIRTUAL_EVENTS_CATEGORY_SLUG', 'virtuelle-events');
 define('WINE_CATEGORY_SLUGS', [
     'rotwein',
     'likoer',
