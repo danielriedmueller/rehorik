@@ -3,6 +3,15 @@ get_header( );
 ?>
 <ul id="slider">
     <li>
+        <div class="frontpage-slider-image-5"></div>
+        <div class="slider-claim">
+            <h1>Es weihnachtet!</h1>
+            <div>
+                <a class="button" href="<?= get_term_link( get_term_by('slug', GIFTS_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Geschenke für Geniesser:innen</a>
+            </div>
+        </div>
+    </li>
+    <li>
         <div class="frontpage-slider-image-4"></div>
         <div class="slider-claim">
             <h1>Intergalaktisch gut!</h1>
