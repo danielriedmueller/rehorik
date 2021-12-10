@@ -16,6 +16,12 @@
 }
 
 .rehorik-custom-category-footer.lieferservice {
+  background-color: $beigegold;
+
+  h4 {
+    color: $font-color;
+  }
+
   .order-instructions:before {
     background-image: url("../img/lieferservice/Lieferservice_Lueckenfueller-freigestellt.png");
 
