@@ -222,14 +222,6 @@ function woocommerce_get_product_subcategories($parent_id = 0)
         }
     }
 
-    if ( apply_filters( 'woocommerce_product_subcategories_hide_empty', true ) ) {
-        $product_categories = wp_list_filter(
-            $product_categories,
-            array('count' => 0),
-            'NOT'
-        );
-    }
-
     return $product_categories;
 }
 

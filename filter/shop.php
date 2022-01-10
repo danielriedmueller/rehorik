@@ -57,7 +57,8 @@ add_filter('woocommerce_shipping_methods', function ($methods) {
 
 /**
  * Bike delivery shipping method only available for products with category lieferservice
- * Standard delivery shipping method only available for products with category onlineshop
+ * Standard delivery shipping method only available for products with category onlineshop or
+ * virtual events wich have degustation package (product is not virtual in this case)
  */
 add_filter('woocommerce_package_rates', function ($rates) {
     $unsetBikeShipping = false;
@@ -68,7 +69,8 @@ add_filter('woocommerce_package_rates', function ($rates) {
             $unsetBikeShipping = true;
         }
 
-        if (!isItCategory($values['data'], ONLINESHOP_CATEGORY_SLUG)) {
+        if (!isItCategory($values['data'], ONLINESHOP_CATEGORY_SLUG)
+            && !isItCategory($values['data'], VIRTUAL_EVENTS_CATEGORY_SLUG)) {
             $unsetStandardShipping = true;
         }
     }
