@@ -31,6 +31,11 @@ do_action( 'woocommerce_before_main_content' );
 <div id="main-content">
     <?php get_template_part('templates/page-title'); ?>
         <div class="container">
+            <?php
+                if (!is_shop() || is_search()) {
+                    get_sidebar();
+                }
+            ?>
             <div id="content-area">
                 <?php
                     if ( woocommerce_product_loop() ) {
@@ -77,8 +82,6 @@ do_action( 'woocommerce_before_main_content' );
                 ?>
             </div>
             <?php
-                get_sidebar();
-
                 /**
                  * Hook: woocommerce_after_main_content.
                  *

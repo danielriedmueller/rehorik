@@ -2,79 +2,15 @@
   margin-top: $spacing;
 }
 
-@media (min-width: $medium-breakpoint + 1) {
-  .et_left_sidebar #left-area {
-    float: right;
-    padding-left: 5.5%;
-  }
+#main-content .container {
+  display: flex;
 
-  #left-area {
-    width: 79.125%;
-    padding-bottom: 23px;
+  @media all and (max-width: $medium-breakpoint) {
+    flex-direction: column-reverse;
   }
 
   #sidebar {
-    float: left;
-    width: 20.875%;
-  }
-}
-
-@media (max-width: $medium-breakpoint) {
-  .et_left_sidebar #sidebar {
-    margin-right: 0;
-    border-right: none;
-  }
-
-  .et_left_sidebar #left-area {
-    margin-left: 0;
-  }
-
-  .et_right_sidebar #left-area, .et_right_sidebar #sidebar, .et_left_sidebar #left-area, .et_left_sidebar #sidebar {
-    width: auto;
-    float: none;
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  #sidebar, #left-area {
-    width: 100%;
-  }
-
-  .et_header_style_centered #et-top-navigation .et-cart-info {
-    display: none;
-  }
-
-  #et-top-navigation .et-cart-info {
-    margin-top: 5px;
-  }
-
-  .et_header_style_centered nav#top-menu-nav {
-    display: none;
-  }
-
-  #et-top-navigation {
-    margin-right: 0;
-  }
-
-  .et_non_fixed_nav.et_transparent_nav #main-header, .et_non_fixed_nav.et_transparent_nav #top-header, .et_fixed_nav #main-header, .et_fixed_nav #top-header {
-    position: absolute;
-  }
-
-  .et_header_style_centered #main-header .mobile_nav {
-    display: block;
-    text-align: left;
-    background-color: #000;
-    border-radius: $border-radius;
-    padding: 5px 10px;
-  }
-
-  .et_header_style_centered .et_menu_container .mobile_menu_bar {
-    position: absolute;
-    right: 5px;
-    top: 2px;
-  }
-
-  .et_header_style_centered .et_menu_container .mobile_menu_bar, .et_header_style_split .et_menu_container .mobile_menu_bar {
-    opacity: 1;
+    flex: 1 0 $sidebar-width;
+    margin-right: $spacing-xxl;
   }
 }

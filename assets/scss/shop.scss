@@ -27,7 +27,6 @@
 @import "styles/banner";
 @import "styles/checkout";
 @import "styles/category/categories";
-@import "styles/shop_page";
 @import "styles/product/sigils";
 @import "styles/product/additional_info";
 @import "styles/product/short_description";
@@ -151,7 +150,7 @@ p {
   padding: 0 0 $spacing-xxs 0;
 }
 
-ol, ul {
+ol, ul, {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -162,6 +161,10 @@ ol, ul {
   }
 }
 
+::marker {
+  display: none;
+}
+
 hr {
   border: none;
   border-top: 1px solid $beigegold;
@@ -169,10 +172,8 @@ hr {
 
 .woocommerce-page #main-content {
   #content-area {
-    #left-area {
       @media all and (max-width: $small-breakpoint) {
         margin-bottom: $spacing-xl;
-      }
     }
   }
 
