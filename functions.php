@@ -151,9 +151,14 @@ if (function_exists('register_sidebar')) {
     register_sidebar([
         'id' => 'productsearch',
         'name' => 'Produktsuche',
-        'before_widget' => '<div class = "rehorik-product-search-widget">',
+        'before_widget' => '<div class="rehorik-product-search-widget">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>',
+    ]);
+
+    register_sidebar([
+        'id' => 'productfilter',
+        'name' => 'Produktfilter'
     ]);
 }

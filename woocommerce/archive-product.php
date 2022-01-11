@@ -28,72 +28,80 @@ get_header( 'shop' );
  */
 do_action( 'woocommerce_before_main_content' );
 ?>
-<?php
+<div id="main-content">
+    <?php get_template_part('templates/page-title'); ?>
+        <div class="container">
+            <div id="content-area">
+                <?php
+                    if ( woocommerce_product_loop() ) {
+                        /**
+                         * Hook: woocommerce_before_shop_loop.
+                         *
+                         * @hooked woocommerce_output_all_notices - 10
+                         * @hooked woocommerce_result_count - 20
+                         * @hooked woocommerce_catalog_ordering - 30
+                         */
+                        do_action( 'woocommerce_before_shop_loop' );
 
-get_template_part('templates/page-title');
+                        woocommerce_product_loop_start();
 
-if ( woocommerce_product_loop() ) {
-	/**
-	 * Hook: woocommerce_before_shop_loop.
-	 *
-	 * @hooked woocommerce_output_all_notices - 10
-	 * @hooked woocommerce_result_count - 20
-	 * @hooked woocommerce_catalog_ordering - 30
-	 */
-	do_action( 'woocommerce_before_shop_loop' );
+                        if ( wc_get_loop_prop( 'total' ) ) {
+                            while ( have_posts() ) {
+                                the_post();
 
-	woocommerce_product_loop_start();
+                                /**
+                                 * Hook: woocommerce_shop_loop.
+                                 */
+                                do_action( 'woocommerce_shop_loop' );
 
-	if ( wc_get_loop_prop( 'total' ) ) {
-		while ( have_posts() ) {
-			the_post();
+                                wc_get_template_part( 'content', 'product' );
+                            }
+                        }
 
-			/**
-			 * Hook: woocommerce_shop_loop.
-			 */
-			do_action( 'woocommerce_shop_loop' );
+                        woocommerce_product_loop_end();
 
-			wc_get_template_part( 'content', 'product' );
-		}
-	}
+                        /**
+                         * Hook: woocommerce_after_shop_loop.
+                         *
+                         * @hooked woocommerce_pagination - 10
+                         */
+                        do_action( 'woocommerce_after_shop_loop' );
+                    } else {
+                        /**
+                         * Hook: woocommerce_no_products_found.
+                         *
+                         * @hooked wc_no_products_found - 10
+                         */
+                        do_action( 'woocommerce_no_products_found' );
+                    }
+                ?>
+            </div>
+            <?php
+                get_sidebar();
 
-	woocommerce_product_loop_end();
+                /**
+                 * Hook: woocommerce_after_main_content.
+                 *
+                 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+                 */
+                do_action( 'woocommerce_after_main_content' );
 
-	/**
-	 * Hook: woocommerce_after_shop_loop.
-	 *
-	 * @hooked woocommerce_pagination - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop' );
-} else {
-	/**
-	 * Hook: woocommerce_no_products_found.
-	 *
-	 * @hooked wc_no_products_found - 10
-	 */
-	do_action( 'woocommerce_no_products_found' );
-}
+                if (isProductCategory(DELIVERY_CATEGORY_SLUG)) {
+                    get_template_part('templates/lieferservice-footer');
+                } elseif (isProductCategory(TICKET_CATEGORY_SLUG)) {
+                    get_template_part('templates/veranstaltungen/veranstaltungen-footer');
+                } else {
+                    get_template_part('templates/best-selling-products');
+                }
 
-/**
- * Hook: woocommerce_after_main_content.
- *
- * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
- */
-do_action( 'woocommerce_after_main_content' );
+                /**
+                 * Hook: woocommerce_sidebar.
+                 *
+                 * @hooked woocommerce_get_sidebar - 10
+                 */
+                do_action( 'woocommerce_sidebar' );
 
-if (isProductCategory(DELIVERY_CATEGORY_SLUG)) {
-    get_template_part('templates/lieferservice-footer');
-} elseif (isProductCategory(TICKET_CATEGORY_SLUG)) {
-    get_template_part('templates/veranstaltungen/veranstaltungen-footer');
-} else {
-    get_template_part('templates/best-selling-products');
-}
-
-/**
- * Hook: woocommerce_sidebar.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-do_action( 'woocommerce_sidebar' );
-
-get_footer( 'shop' );
+                get_footer( 'shop' );
+            ?>
+    </div>
+</div>

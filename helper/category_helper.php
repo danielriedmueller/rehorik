@@ -22,7 +22,7 @@ function getCategoryTreeDepth($termId, $taxonomy = "product_cat"): int
 function isProductCategory($slug): bool
 {
     $cat = get_term_by( 'slug', $slug, 'product_cat');
-    $isAncestor = term_is_ancestor_of($cat->term_id, get_queried_object()->term_id, 'product_cat');
+    $isAncestor = term_is_ancestor_of($cat->term_id, get_queried_object_id(), 'product_cat');
 
     return is_product_category($slug) || $isAncestor;
 }
