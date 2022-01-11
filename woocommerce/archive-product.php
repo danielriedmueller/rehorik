@@ -28,8 +28,10 @@ get_header( 'shop' );
  */
 do_action( 'woocommerce_before_main_content' );
 ?>
-
 <?php
+
+get_template_part('templates/page-title');
+
 if ( woocommerce_product_loop() ) {
 	/**
 	 * Hook: woocommerce_before_shop_loop.

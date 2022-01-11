@@ -13,14 +13,14 @@
       table.shop_table.shop_table_responsive.rehorik-shop-table {
         width: 100%;
         border: none;
-        margin-bottom: 0 !important;
+        margin-bottom: 0;
 
         th, td {
           font-weight: normal;
           vertical-align: top;
           padding: 0 0 $spacing-xs 0;
           border: none;
-          background-color: transparent !important;
+          background-color: transparent;
         }
 
         tr td {

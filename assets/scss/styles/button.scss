@@ -1,5 +1,5 @@
 button, a.button {
-  border-radius: $border-radius !important;
+  border-radius: $border-radius;
   text-align: center;
   color: #fff;
   border: none;
@@ -19,7 +19,7 @@ button, a.button {
   button.button[name="apply_coupon"][type="submit"],
   button.button[name="update_cart"][type="submit"],
   a.checkout-button.button.alt.wc-forward {
-    padding: 1px $spacing !important;
+    padding: 1px $spacing;
     font-weight: bold;
     font-size: $font-size;
     color: #fff;
@@ -36,16 +36,16 @@ button, a.button {
   .woocommerce-info,
   .woocommerce-message {
     a.button {
-      color: #fff !important;
+      color: #fff;
     }
 
     a.button:hover {
-      color: $font-color-accent-dark !important;
+      color: $font-color-accent-dark;
     }
 
     @media all and (max-width: $small-breakpoint) {
       a.button {
-        color: #fff !important;
+        color: #fff;
         float: none;
         display: block;
         text-align: center;

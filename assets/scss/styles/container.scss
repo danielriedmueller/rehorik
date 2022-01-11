@@ -1,9 +1,9 @@
 #main-content .container, .container {
-  padding: $section-padding-top-bottom 0 !important;
+  padding: $section-padding-top-bottom 0;
 
   @media all and (max-width: $small-breakpoint) {
     width: 100%;
-    padding: $section-padding-small $section-padding-small !important;
+    padding: $section-padding-small $section-padding-small;
   }
 
   > h1 {

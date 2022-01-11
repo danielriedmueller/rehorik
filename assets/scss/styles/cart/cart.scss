@@ -26,10 +26,6 @@
       }
     }
 
-    .container, .et_pb_section, .et_pb_row, .et_pb_column .et_pb_row_inner {
-      padding: 0;
-    }
-
     .product-name {
       a {
         color: $font-color-accent;
@@ -57,7 +53,7 @@
 
     &:hover {
       background-color: transparent;
-      color: grey !important;
+      color: grey;
     }
 
     .close {

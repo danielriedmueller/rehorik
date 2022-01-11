@@ -1,6 +1,5 @@
 @import "styles/settings";
 @import "styles/woocommerce";
-@import "styles/divi";
 @import "styles/layout";
 @import "styles/container";
 @import "styles/products";
@@ -84,7 +83,33 @@ pre {
 html, body {
   color: $font-color;
   font-weight: normal;
+  font-family: $font-family-body;
+  font-size: $font-size;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  -webkit-text-size-adjust: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  line-height: 1.6em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, strong, a {
+  font-family: $font-family-headline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: $spacing-xxs;
+  font-weight: 500;
+  padding: 0 0 $spacing-xxs 0;
+  margin: 0;
+  vertical-align: baseline;
 }
 
 h1 {
@@ -93,7 +118,7 @@ h1 {
   letter-spacing: 2px;
   font-size: $font-size-h1;
   text-align: center;
-  margin-bottom: 0;
+  margin: 0 0 $spacing-xxl 0;
   padding-bottom: 0;
   color: #fff !important;
 
@@ -108,21 +133,41 @@ h2 {
   font-size: $font-size-h2;
 }
 
+h4 {
+  font-size: $font-size-large;
+}
+
+form input {
+  font-family: $font-family-body;
+}
+
+a {
+  text-decoration: none;
+  color: $hellbraun;
+}
+
+p {
+  margin: 0;
+  padding: 0 0 $spacing-xxs 0;
+}
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 hr {
   border: none;
   border-top: 1px solid $beigegold;
 }
 
 .woocommerce-page #main-content {
-  // revert overwritten divi custom css for woocommerce pages
-  .et_pb_section_1.et_pb_section {
-    padding: 0 !important;
-  }
-
-  .et_pb_section {
-    padding: 0 0 $spacing 0;
-  }
-
   #content-area {
     #left-area {
       @media all and (max-width: $small-breakpoint) {
@@ -148,20 +193,28 @@ hr {
       color: $font-color-accent-dark;
     }
   }
+}
 
-  /*
-  #content-area table td, #content-area table th {
-    padding: 0 $spacing-xs $spacing-s $spacing-xs;
-    vertical-align: top;
-  }
-  */
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-  #et-boc > div > div.et_pb_with_background {
-    padding-top: $spacing-xl !important;
-  }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 #page-container {
   padding-top: $menu-height;
-  margin-top: 0 !important;
+}
+
+#main-area {
+  position: relative;
+}
+
+.container {
+  width: $container-width;
+  max-width: $max-width;
+  margin: auto;
 }

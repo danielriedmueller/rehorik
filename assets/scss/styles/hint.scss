@@ -62,9 +62,9 @@
 }
 
 .hint-margin-top {
-  margin-top: $hint-height;
+  margin-top: $hint-height !important;
 
   @media all and (max-width: $small-breakpoint) {
-    margin-top: $hint-height + $spacing-l;
+    margin-top: $hint-height + $spacing-l !important;
   }
 }

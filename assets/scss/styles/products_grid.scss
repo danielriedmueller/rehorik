@@ -6,11 +6,6 @@ ul.products.rehorik-products,
   gap: $spacing-xxs;
   margin-bottom: $spacing-xl;
 
-  li {
-    float: none;
-    margin: 0 !important;
-  }
-
   &::before, &::after {
     content: none;
   }
