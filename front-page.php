@@ -3,6 +3,15 @@ get_header( );
 ?>
 <ul id="slider">
     <li>
+        <div class="frontpage-slider-image-4"></div>
+        <div class="slider-claim">
+            <h1>EL RUBI - MEHR ALS EIN EDELSTEIN</h1>
+            <div>
+                <a class="button" href="/produkt/el-rubi">Out now: Limited Edition Nr. 4 </a>
+            </div>
+        </div>
+    </li>
+    <li>
         <div class="frontpage-slider-image-1"></div>
         <div class="slider-claim">
             <h1>Kaffeerösterei seit 1928</h1>
