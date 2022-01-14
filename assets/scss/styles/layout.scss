@@ -1,16 +1,3 @@
 .mt {
   margin-top: $spacing;
 }
-
-#main-content .container {
-  display: flex;
-
-  @media all and (max-width: $medium-breakpoint) {
-    flex-direction: column-reverse;
-  }
-
-  #sidebar {
-    flex: 1 0 $sidebar-width;
-    margin-right: $spacing-xxl;
-  }
-}

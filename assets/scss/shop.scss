@@ -170,7 +170,7 @@ hr {
   border-top: 1px solid $beigegold;
 }
 
-.woocommerce-page #main-content {
+.woocommerce-page {
   #content-area {
       @media all and (max-width: $small-breakpoint) {
         margin-bottom: $spacing-xl;

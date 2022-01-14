@@ -1,7 +1,6 @@
 @import "../mixins";
 
-#main-content .container,
-#rehorik-best-selling-products {
+.container, #rehorik-best-selling-products {
   li.rehorik-product {
     background-color: $product-default-color;
     color: $product-alternative-body-text-color;
