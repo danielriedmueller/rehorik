@@ -1,5 +1,15 @@
-<?php get_template_part('templates/newsletter-sign-up'); ?>
-<?php get_template_part('templates/rehorik-locations'); ?>
+</div>
+<?php
+    if (isProductCategory(DELIVERY_CATEGORY_SLUG)) {
+    get_template_part('templates/lieferservice-footer');
+    } elseif (isProductCategory(TICKET_CATEGORY_SLUG)) {
+    get_template_part('templates/veranstaltungen/veranstaltungen-footer');
+    } else {
+    get_template_part('templates/best-selling-products');
+    }
+    get_template_part('templates/newsletter-sign-up');
+    get_template_part('templates/rehorik-locations');
+?>
 <footer>
     <div class="container">
         <div>

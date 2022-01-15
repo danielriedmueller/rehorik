@@ -30,34 +30,31 @@ ul.products.rehorik-products,
 div#rehorik-best-selling-products {
   ul.products.rehorik-products {
     -ms-grid-columns: $product-category-width $product-category-width $product-category-width $product-category-width !important;
-    grid-template-columns: $product-category-width $product-category-width $product-category-width $product-category-width !important;;
+    grid-template-columns: $product-category-width $product-category-width $product-category-width $product-category-width !important;
 
     @media all and (max-width: 1145px) {
-      -ms-grid-columns: $product-category-width $product-category-width $product-category-width !important;;
-      grid-template-columns: $product-category-width $product-category-width $product-category-width !important;;
+      -ms-grid-columns: $product-category-width $product-category-width $product-category-width !important;
+      grid-template-columns: $product-category-width $product-category-width $product-category-width !important;
     }
 
     @media all and (max-width: 880px) {
-      -ms-grid-columns: $product-category-width $product-category-width !important;;
-      grid-template-columns: $product-category-width $product-category-width !important;;
+      -ms-grid-columns: $product-category-width $product-category-width !important;
+      grid-template-columns: $product-category-width $product-category-width !important;
     }
 
     @media all and (max-width: 640px) {
-      -ms-grid-columns: $product-category-width !important;;
-      grid-template-columns: $product-category-width !important;;
+      -ms-grid-columns: $product-category-width !important;
+      grid-template-columns: $product-category-width !important;
     }
   }
 }
 
 /**
  * Shop page and Front page
+ * Products loop
  */
-.shop.woocommerce #page-container,
-.home #page-container {
-  /**
-   * Products loop
-   */
-  ul.products.rehorik-products {
+.shop.woocommerce #page-container ul.products.rehorik-products,
+.home #page-container ul.products.rehorik-products {
     -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
 
@@ -71,5 +68,4 @@ div#rehorik-best-selling-products {
       -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
     }
-  }
 }

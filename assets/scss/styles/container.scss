@@ -1,14 +1,12 @@
 .container {
-  display: flex;
+  width: $container-width;
+  max-width: $max-width;
+  margin: 0 auto;
   padding: $section-padding-top-bottom 0;
 
   @media all and (max-width: $small-breakpoint) {
     width: 100%;
     padding: $section-padding-small $section-padding-small;
-  }
-
-  @media all and (max-width: $medium-breakpoint) {
-    flex-direction: column-reverse;
   }
 
   > h1 {
@@ -21,5 +19,14 @@
 
   &::before {
     content: none;
+  }
+
+  &.flex {
+    display: flex;
+    flex-direction: row-reverse;
+
+    @media all and (max-width: $medium-breakpoint) {
+      flex-direction: column-reverse;
+    }
   }
 }

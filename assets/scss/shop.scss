@@ -1,6 +1,5 @@
 @import "styles/settings";
 @import "styles/woocommerce";
-@import "styles/layout";
 @import "styles/container";
 @import "styles/products";
 @import "styles/products_grid";
@@ -210,12 +209,6 @@ table {
   padding-top: $menu-height;
 }
 
-#main-area {
-  position: relative;
-}
-
-.container {
-  width: $container-width;
-  max-width: $max-width;
-  margin: auto;
+.mt {
+  margin-top: $spacing;
 }
