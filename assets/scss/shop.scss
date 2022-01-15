@@ -137,6 +137,15 @@ h4 {
 
 form input {
   font-family: $font-family-body;
+  border-radius: $border-radius;
+  font-size: $font-size;
+  color: #fff;
+  border: none;
+  box-shadow: none;
+  background-color: $hellgrau;
+  padding: 12px $spacing;
+  margin: 0;
+  line-height: 1;
 }
 
 a {

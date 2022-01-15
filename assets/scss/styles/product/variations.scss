@@ -1,5 +1,5 @@
 .woocommerce div.product form.cart {
-  margin-bottom: 0;
+  margin: $spacing 0 $spacing-xs;
 
   table.rehorik-variations.variations {
     margin-bottom: 0;
@@ -12,6 +12,17 @@
   div.rehorik-variations-after-container {
     margin-bottom: $spacing;
     margin-top: $spacing-xxxs;
+  }
+
+  div.quantity {
+    width: auto;
+    overflow: hidden;
+    margin: 0 $spacing-s 0 0;
+
+    @media all and (max-width: $small-breakpoint) {
+      margin: 0 0 $spacing-s 0 !important;
+      width: 100%;
+    }
   }
 }
 

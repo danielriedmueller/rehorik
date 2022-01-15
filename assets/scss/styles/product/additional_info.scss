@@ -1,5 +1,6 @@
 .product p.wc-gzd-additional-info {
   margin-bottom: 0;
+  padding: 0;
 }
 
 .rehorik-product-additional-information-category {
@@ -16,6 +17,7 @@
 
 .rehorik-product-additional-information-container-outer {
   position: relative;
+  clear: both;
 
   .rehorik-product-additional-information-container {
     padding: $spacing-l $spacing-xl;

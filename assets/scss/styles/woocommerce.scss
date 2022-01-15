@@ -39,15 +39,6 @@ li.widget.woocommerce {
   font-size: $font-size;
 }
 
-.woocommerce div.rehorik-product.product form.cart .woocommerce-variation-add-to-cart {
-  div.quantity {
-    @media all and (max-width: $small-breakpoint) {
-      margin: 0 0 $spacing-s 0 !important;
-      width: 100%;
-    }
-  }
-}
-
 .woocommerce .quantity input.qty,
 .woocommerce-page .quantity input.qty,
 .woocommerce #content .quantity input.qty,

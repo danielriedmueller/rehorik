@@ -1,11 +1,13 @@
-button, a.button {
+button, a.button, .woocommerce button.button, .woocommerce button.button.alt {
   border-radius: $border-radius;
   text-align: center;
   color: #fff;
   border: none;
+  font-family: $font-family-body;
+  font-weight: normal;
   font-size: $font-size;
   background-color: $beigegold;
-  padding: $spacing-s $spacing;
+  padding: $spacing-xs $spacing;
   text-transform: uppercase;
   text-decoration: none;
 
