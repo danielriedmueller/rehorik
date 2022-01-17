@@ -1,10 +1,11 @@
-.woocommerce-cart.woocommerce-page .content-area.cart {
+.woocommerce-cart.woocommerce-page {
   table.cart-table {
     width: 100%;
     border: none;
 
     th {
       padding: 0 0 $spacing-s 0;
+      text-align: left;
     }
 
     td {
@@ -33,12 +34,15 @@
       }
     }
 
-    .product-thumbnail img{
-      object-fit: contain;
-      width: $product-thumbnail-width;
-      margin-right: $spacing;
-    }
+    .product-thumbnail {
+      width: $product-thumbnail-width + $spacing-l;
 
+      img{
+        object-fit: contain;
+        width: $product-thumbnail-width;
+        margin-right: 0;
+      }
+    }
   }
 
   .woocommerce .product-name a.remove {
@@ -52,7 +56,7 @@
 
     &:hover {
       background-color: transparent;
-      color: grey;
+      color: grey !important;
     }
 
     .close {

@@ -1,34 +1,32 @@
-button, a.button, .woocommerce button.button, .woocommerce button.button.alt {
+button,
+a.button,
+.woocommerce button.button,
+.woocommerce button.button.alt,
+button.button[name="apply_coupon"][type="submit"],
+button.button[name="update_cart"][type="submit"],
+a.checkout-button.button.alt.wc-forward {
   border-radius: $border-radius;
   text-align: center;
-  color: #fff;
+  color: $product-default-header-text-color;
   border: none;
   font-family: $font-family-body;
-  font-weight: normal;
   font-size: $font-size;
   background-color: $beigegold;
   padding: $spacing-xs $spacing;
   text-transform: uppercase;
   text-decoration: none;
+  font-weight: bold;
 
   &:hover {
-    color: $font-color-accent-dark;
+    color: $product-default-header-text-color;
     background-color: $weinrot;
   }
 }
 
-.cart .woocommerce {
+.woocommerce-cart .woocommerce {
   button.button[name="apply_coupon"][type="submit"],
   button.button[name="update_cart"][type="submit"],
   a.checkout-button.button.alt.wc-forward {
-    padding: 1px $spacing;
-    font-weight: bold;
-    font-size: $font-size;
-    color: #fff;
-    border: none;
-    border-radius: $border-radius;
-    background-color: $beigegold;
-    text-align: center;
     width: $cart-coupon-width;
   }
 }

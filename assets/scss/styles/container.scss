@@ -28,5 +28,9 @@
     @media all and (max-width: $medium-breakpoint) {
       flex-direction: column-reverse;
     }
+
+    > *:only-child {
+      flex-basis: 100%;
+    }
   }
 }

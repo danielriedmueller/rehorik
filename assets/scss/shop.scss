@@ -139,13 +139,9 @@ form input {
   font-family: $font-family-body;
   border-radius: $border-radius;
   font-size: $font-size;
-  color: #fff;
-  border: none;
+  padding: $spacing-xs $spacing-s;
   box-shadow: none;
-  background-color: $hellgrau;
-  padding: 12px $spacing;
-  margin: 0;
-  line-height: 1;
+  outline: none;
 }
 
 a {
