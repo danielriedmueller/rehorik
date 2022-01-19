@@ -33,43 +33,44 @@ if ( post_password_required() ) {
 require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php');
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'rehorik-product', $product ); ?>>
+    <div class="rehorik-product-summary-outer">
+        <?php
+        /**
+         * Hook: woocommerce_before_single_product_summary.
+         *
+         * @hooked woocommerce_show_product_sale_flash - 10
+         * @hooked woocommerce_show_product_images - 20
+         */
+        do_action( 'woocommerce_before_single_product_summary' );
+        ?>
 
-	<?php
-	/**
-	 * Hook: woocommerce_before_single_product_summary.
-	 *
-	 * @hooked woocommerce_show_product_sale_flash - 10
-	 * @hooked woocommerce_show_product_images - 20
-	 */
-	do_action( 'woocommerce_before_single_product_summary' );
-	?>
+        <div class="rehorik-product-summary summary entry-summary">
+            <?php
+            /**
+             * Hook: woocommerce_single_product_summary.
+             *
+             * @hooked woocommerce_template_single_title - 5
+             * @hooked woocommerce_template_single_rating - 10
+             * @hooked woocommerce_template_single_price - 10
+             * @hooked rehorik_single_product_attributes - 15
+             * @hooked woocommerce_template_single_excerpt - 20
+             * @hooked woocommerce_template_single_add_to_cart - 30
+             * @hooked woocommerce_template_single_meta - 40
+             * @hooked woocommerce_template_single_sharing - 50
+             * @hooked WC_Structured_Data::generate_product_data() - 60
+             */
+            do_action( 'woocommerce_single_product_summary' );
+            ?>
 
-	<div class="rehorik-product-summary summary entry-summary">
-		<?php
-		/**
-		 * Hook: woocommerce_single_product_summary.
-		 *
-		 * @hooked woocommerce_template_single_title - 5
-		 * @hooked woocommerce_template_single_rating - 10
-		 * @hooked woocommerce_template_single_price - 10
-         * @hooked rehorik_single_product_attributes - 15
-		 * @hooked woocommerce_template_single_excerpt - 20
-		 * @hooked woocommerce_template_single_add_to_cart - 30
-		 * @hooked woocommerce_template_single_meta - 40
-		 * @hooked woocommerce_template_single_sharing - 50
-		 * @hooked WC_Structured_Data::generate_product_data() - 60
-		 */
-		do_action( 'woocommerce_single_product_summary' );
-		?>
+            <div class="sigil-container<?php echo sprintf(
+                    " %s %s",
+                    getBiosigilClass($product),
+                    getProductOfTheMonthClass($product)
+            ); ?>"></div>
 
-        <div class="sigil-container<?php echo sprintf(
-                " %s %s",
-                getBiosigilClass($product),
-                getProductOfTheMonthClass($product)
-        ); ?>"></div>
-
-        <div class="rehorik-hugo-head"></div>
-	</div>
+            <div class="rehorik-hugo-head"></div>
+        </div>
+    </div>
 
 	<?php
 	/**

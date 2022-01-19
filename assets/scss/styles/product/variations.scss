@@ -13,17 +13,16 @@
     margin-bottom: $spacing;
     margin-top: $spacing-xxxs;
   }
+
+  div.quantity {
+    margin: 0 $spacing-s 0 0;
+  }
 }
 
 div.quantity {
   width: auto;
   overflow: hidden;
   margin: 0 $spacing-s 0 0;
-
-  @media all and (max-width: $small-breakpoint) {
-    margin: 0 0 $spacing-s 0 !important;
-    width: 100%;
-  }
 
   input {
     font-family: $font-family-body;
@@ -35,7 +34,7 @@ div.quantity {
     background-color: $hellgrau;
     padding: $spacing-xxs 0 $spacing-xxs $spacing-xxs;
     margin: 0;
-    line-height: 1;
+    line-height: 1.7;
     width: 75px !important;
   }
 }

@@ -1,28 +1,50 @@
-div.rehorik-product div.rehorik-product-summary.summary {
-  position: relative;
-  padding-left: $spacing;
-  margin-bottom: $spacing-xxxl;
+div.rehorik-product-summary-outer {
+  display: flex;
+  margin-bottom: $spacing-l;
 
-  h1 {
-    color: $font-color-accent !important;
-    text-align: left;
-    text-transform: uppercase;
-    margin-bottom: $spacing-s;
-    margin-left: -$spacing;
+  > div {
+    float: none;
+  }
+
+  > div:first-child {
+    margin-right: $spacing-l;
   }
 
   @media all and (max-width: $small-breakpoint) {
-    margin-top: $spacing-xl;
-    padding-left: 0;
-    h1 {
-      margin-left: 0;
+    flex-direction: column;
+
+    > div:first-child {
+      margin-right: 0;
+      margin-bottom: 0;
     }
   }
 
-  p.price {
-    display: inline;
-    color: $font-color;
-    font-weight: bold;
-    margin-right: $spacing-xxxs;
+  div.rehorik-product-summary.summary {
+    position: relative;
+    padding-left: $spacing;
+    margin-bottom: $spacing-xxxl;
+
+    h1 {
+      color: $font-color-accent !important;
+      text-align: left;
+      text-transform: uppercase;
+      margin-bottom: $spacing-s;
+      margin-left: -$spacing;
+    }
+
+    @media all and (max-width: $small-breakpoint) {
+      margin-top: 0;
+      padding-left: 0;
+      h1 {
+        margin-left: 0;
+      }
+    }
+
+    p.price {
+      display: inline;
+      color: $font-color;
+      font-weight: bold;
+      margin-right: $spacing-xxxs;
+    }
   }
 }
