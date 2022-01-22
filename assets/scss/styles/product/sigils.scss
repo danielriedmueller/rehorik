@@ -34,7 +34,7 @@
   }
 }
 
-.biosigil .et_shop_image::before {
+.biosigil::before {
   content: "";
   display: block;
   position: absolute;
@@ -45,7 +45,7 @@
   background: transparent url("../img/biosiegel.svg") no-repeat center center;
 }
 
-.product-of-month .et_shop_image::after {
+.product-of-month::after {
   content: "";
   display: block;
   position: absolute;
@@ -56,7 +56,7 @@
   background: transparent url("../img/productofmonth.svg") no-repeat center center;
 }
 
-.event-online .et_shop_image::after {
+.event-online::after {
   content: "";
   display: block;
   position: absolute;
@@ -76,7 +76,7 @@
 
 .rehorik-product.product_cat-wein.product-of-month,
 .rehorik-product.product_cat-wein-spirits-co.product-of-month {
-  .et_shop_image::after {
+  &::after {
     background: transparent url("../img/wineofmonth.svg") no-repeat center center;
   }
 }
