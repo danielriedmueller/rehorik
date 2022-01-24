@@ -1,39 +1,72 @@
+// Product page
 .sigil-container {
-  $sigilWidth: 113px;
-  $sigilHeight: 75px;
+  $sigilHeight: $hugo-head-size;
+  $sigilWidth: $sigilHeight * 1.5;
   $spaceToHugoHead: 44px;
+  display: flex;
+  flex-direction: row;
+  margin-right: $spacing-xs;
 
-  &.biosigil::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: $sigilWidth;
-    height: $sigilHeight;
-    background: transparent url("../img/biosiegel.svg") no-repeat center top;
+  @media all and (max-width: $small-breakpoint) {
+    flex-direction: column;
 
-    bottom: -$spacing-xxxl;
-    right: $spaceToHugoHead + $spacing-s;
+    > div {
+      margin-right: 0;
+      margin-top: $spacing-xs;
+    }
   }
 
-  &.product-of-month::after {
-    content: "";
-    display: block;
-    position: absolute;
+  > .biosigil {
+    display: flex;
+    align-items: flex-end;
+    font-family: "Myriad Pro Regular", serif;
+    line-height: 7px;
+    font-size: 14px;
+    background: transparent url("../img/biosiegel.svg") no-repeat left top;
+    $bioSigilHeight: 0.81 * $sigilHeight;
+    $bioSigilWidth: $bioSigilHeight * 1.5;
+    @media all and (min-width: $small-breakpoint + 1) {
+      flex: 0 0 $bioSigilWidth;
+    }
+    width: $bioSigilWidth;
+    height: $sigilHeight;
+    background-size: $bioSigilWidth $bioSigilHeight;
+  }
+
+  > .biosigil-de {
+    $deBioSigilHeight: $sigilHeight;
+    $deBioSigilWidth: $deBioSigilHeight * 1.2;
+    @media all and (min-width: $small-breakpoint + 1) {
+      flex: 0 0 $deBioSigilWidth;
+    }
+    width: $deBioSigilWidth;
+    height: $deBioSigilHeight;
+    background: transparent url("../img/biosiegel-de.svg") no-repeat center center;
+    background-size: $deBioSigilWidth + 17px $deBioSigilHeight + 17px;
+  }
+
+  > .product-of-month {
+    @media all and (min-width: $small-breakpoint + 1) {
+      flex: 0 0 $sigilWidth;
+    }
     width: $sigilWidth;
     height: $sigilHeight;
     background: transparent url("../img/productofmonth.svg") no-repeat center top;
-    bottom: -$spacing-xxxl;
+    background-size: $sigilWidth $sigilHeight;
   }
 
-  &.product-of-month.biosigil::after {
-    right: $spaceToHugoHead + $spacing-s + $sigilWidth + $spacing-s;
-  }
-
-  &.product-of-month:not(.biosigil)::after {
-    right: $spaceToHugoHead + $spacing-s;
+  @media all and (min-width: $small-breakpoint + 1) {
+    align-items: flex-start;
+    justify-content: end;
+    position: absolute;
+    width: 100%;
+    bottom: -$hugo-head-size - $spacing-xl;
+    right: -$spacing-l + $hugo-head-size + $spaceToHugoHead;
+    height: $sigilHeight;
   }
 }
 
+// Category view
 .biosigil::before {
   content: "";
   display: block;
@@ -69,7 +102,7 @@
 
 // Wein des Monats Bild
 .rehorik-product.product_cat-wein, .rehorik-product.product_cat-wein-spirits-co {
-  .sigil-container.product-of-month::after {
+  .sigil-container .product-of-month {
     background: transparent url("../img/wineofmonth.svg") no-repeat center top;
   }
 }

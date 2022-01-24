@@ -22,7 +22,11 @@ div.rehorik-product-summary-outer {
   div.rehorik-product-summary.summary {
     position: relative;
     padding-left: $spacing;
-    margin-bottom: $spacing-xxxl;
+
+    margin-bottom: 0;
+    @media all and (min-width: $small-breakpoint + 1) {
+      margin-bottom: $spacing-xxxl;
+    }
 
     h1 {
       color: $font-color-accent !important;
