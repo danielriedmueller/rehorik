@@ -50,9 +50,9 @@ function isProductOfTheMonth(WC_Product $product): bool
 
 function hasBiosigil(WC_Product $product): bool
 {
-    $value = strtolower($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
+    $value = validateBiosigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
 
-    return $value === "ja" ? true : false;
+    return !empty($value);
 }
 
 function isEventOnline(WC_Product $product): bool
@@ -78,6 +78,57 @@ function getProductOfTheMonthClass(WC_Product $product): string
 function getBiosigilClass(WC_Product $product): string
 {
     return hasBiosigil($product) ? "biosigil" : "";
+}
+
+function getBiosigilControlcode(WC_Product $product): string
+{
+    $value = validateBiosigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
+
+    return !empty($value) ? $value : "";
+}
+
+/**
+ * Validates BioSigil-EU-Controlcode.
+ *
+ * If $value is three digits reference number, complete controlcode will be returned.
+ * If invalid, empty string will be returned.
+ *
+ * @param string $value
+ * @param string $defaultIsoPart
+ * @return string
+ */
+function validateBiosigilControlcode(
+    string $value,
+    string $defaultIsoPart = "DE-ÖKO-"
+): string {
+    if (empty($value)) {
+        return "";
+    }
+
+    $referenceNumberLength = 3;
+    $isoPartLength = mb_strlen($defaultIsoPart);
+
+    if (is_numeric($value)) {
+        if (mb_strlen($value) !== $referenceNumberLength) {
+            return "";
+        }
+
+        $value = $defaultIsoPart . $value;
+    }
+
+    if (mb_strlen($value) !== $isoPartLength + $referenceNumberLength) {
+        return "";
+    }
+
+    if (mb_substr($value, 2, 1) !== "-" || mb_substr($value, 6, 1) !== "-") {
+        return "";
+    }
+
+    if (!is_numeric(mb_substr($value, 7, 3))) {
+        return "";
+    }
+
+    return strtoupper($value);
 }
 
 function getIsEventOnlineClass(WC_Product $product): string
