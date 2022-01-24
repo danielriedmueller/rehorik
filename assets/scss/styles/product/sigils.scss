@@ -67,37 +67,39 @@
 }
 
 // Category view
-.biosigil::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: $spacing-s;
-  width: 50px;
-  height: 33px;
-  background: transparent url("../img/biosiegel.svg") no-repeat center center;
-}
+ul.rehorik-products {
+  .rehorik-product.biosigil::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: $spacing-s;
+    width: 50px;
+    height: 33px;
+    background: transparent url("../img/biosiegel.svg") no-repeat center center;
+  }
 
-.product-of-month::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: $spacing-s;
-  width: 50px;
-  height: 33px;
-  background: transparent url("../img/productofmonth.svg") no-repeat center center;
-}
+  .rehorik-product.product-of-month::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: $spacing-s;
+    width: 50px;
+    height: 33px;
+    background: transparent url("../img/productofmonth.svg") no-repeat center center;
+  }
 
-.event-online::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: $spacing-s;
-  width: 50px;
-  height: 33px;
-  background: transparent url("../img/online.svg") no-repeat center center;
+  .rehorik-product.event-online::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: $spacing-s;
+    width: 50px;
+    height: 33px;
+    background: transparent url("../img/online.svg") no-repeat center center;
+  }
 }
 
 // Wein des Monats Bild
