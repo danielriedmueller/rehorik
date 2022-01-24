@@ -15,11 +15,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
+require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php');
+
 $events_label_singular = tribe_get_event_label_singular();
 $events_label_plural   = tribe_get_event_label_plural();
 
 $event_id = get_the_ID();
-$isOnline = get_post_meta($event_id, ONLINE_META_KEY);
+$isOnline = isEventOnline($event_id);
 $isCanceled = get_post_meta($event_id, CANCELED_META_KEY);
 get_template_part('templates/tribe-events-attendee-list');
 ?>

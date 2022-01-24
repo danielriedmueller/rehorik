@@ -55,17 +55,16 @@ function hasBiosigil(WC_Product $product): bool
     return !empty($value);
 }
 
-function isEventOnline(WC_Product $product): bool
+function isEventOnline($eventId): bool
 {
     if (!function_exists('tribe_events_get_ticket_event')) return false;
 
-    $event = tribe_events_get_ticket_event($product->get_id());
-
-    if(!$event) {
-        return false;
+    $categories = tribe_get_event_cat_slugs($eventId);
+    if (in_array(VIRTUAL_EVENTS_CATEGORY_SLUG, $categories)) {
+        return true;
     }
 
-    $isOnline = get_post_meta($event->ID, ONLINE_META_KEY);
+    $isOnline = get_post_meta($eventId, ONLINE_META_KEY);
 
     return !!$isOnline;
 }
@@ -133,7 +132,13 @@ function validateBiosigilControlcode(
 
 function getIsEventOnlineClass(WC_Product $product): string
 {
-    return isEventOnline($product) ? "event-online" : "";
+    $event = tribe_events_get_ticket_event($product->get_id());
+
+    if(!$event) {
+        return "";
+    }
+
+    return isEventOnline($event->ID) ? "event-online" : "";
 }
 
 function getOriginCountry(WC_Product $product): string
