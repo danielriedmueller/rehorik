@@ -32,8 +32,15 @@ if ( post_password_required() ) {
 }
 require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php');
 ?>
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'rehorik-product', $product ); ?>>
-
+<div id="product-<?php the_ID(); ?>"
+    <?php
+        $class = 'rehorik-product';
+        if (isProductOfTheMonth($product)) {
+           $class .= " " . getProductOfTheMonthClass($product);
+        }
+        wc_product_class($class, $product);
+    ?>
+>
 	<?php
 	/**
 	 * Hook: woocommerce_before_single_product_summary.
@@ -62,15 +69,12 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 		do_action( 'woocommerce_single_product_summary' );
 		?>
 
-        <div class="sigil-container">
-            <?php if(isProductOfTheMonth($product)): ?>
-                <div class="<?=getProductOfTheMonthClass($product)?>"></div>
-            <?php endif; ?>
-            <?php if(hasBiosigil($product)): ?>
+        <?php if(hasBiosigil($product)): ?>
+            <div class="bio-sigil-container">
                 <div class="<?=getBiosigilClass($product)?>"><?=getBiosigilControlcode($product)?></div>
                 <div class="<?=getBiosigilClass($product)?>-de"></div>
-            <?php endif; ?>
-        </div>
+            </div>
+        <?php endif; ?>
 
         <div class="rehorik-hugo-head"></div>
 	</div>

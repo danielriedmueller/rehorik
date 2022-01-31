@@ -3,11 +3,12 @@
   height: $hugo-head-size;
   background-size: $hugo-head-size;
   background-image: url("../img/svg/hugo_head.svg");
-
   position: absolute;
-  bottom: -$hugo-head-size - $spacing-xl;
+  bottom: $spacing-xl - $hugo-head-size;
+  right: -$hugo-head-size / 2;
+
   @media all and (max-width: $small-breakpoint) {
     bottom: 0;
+    right: -$spacing-l;
   }
-  right: -$spacing-l;
 }

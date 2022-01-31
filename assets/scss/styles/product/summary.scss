@@ -4,7 +4,7 @@ div.rehorik-product div.rehorik-product-summary.summary {
 
   margin-bottom: 0;
   @media all and (min-width: $small-breakpoint + 1) {
-    margin-bottom: 150px;
+    margin-bottom: $spacing-xl;
   }
 
   h1 {

@@ -1,4 +1,7 @@
 <?php
+
+require_once('product_sigil_helper.php');
+
 /**
  * Returns only Herkunft, Sorte, Aromen, Fett
  * If Bohnenkomposition is present, it becomes the label for Sorte
@@ -39,106 +42,6 @@ function extractOtherAttributes(array $productAttributes): array
     return array_values(array_filter($productAttributes, function ($key) {
         return in_array(str_replace(ATTRIBUTE_SLUG_PREFIX, "", $key), INFORMATION_TAB_ATTRIBUTES);
     }, ARRAY_FILTER_USE_KEY));
-}
-
-function isProductOfTheMonth(WC_Product $product): bool
-{
-    $value = strtolower($product->get_attribute( PRODUCT_OF_MONTH_ATTRIBUTE_SLUG));
-
-    return $value === "ja" ? true : false;
-}
-
-function hasBiosigil(WC_Product $product): bool
-{
-    $value = validateBiosigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
-
-    return !empty($value);
-}
-
-function isEventOnline($eventId): bool
-{
-    if (!function_exists('tribe_events_get_ticket_event')) return false;
-
-    $categories = tribe_get_event_cat_slugs($eventId);
-    if (in_array(VIRTUAL_EVENTS_CATEGORY_SLUG, $categories)) {
-        return true;
-    }
-
-    $isOnline = get_post_meta($eventId, ONLINE_META_KEY);
-
-    return !!$isOnline;
-}
-
-function getProductOfTheMonthClass(WC_Product $product): string
-{
-    return isProductOfTheMonth($product) ? "product-of-month" : "";
-}
-
-function getBiosigilClass(WC_Product $product): string
-{
-    return hasBiosigil($product) ? "biosigil" : "";
-}
-
-function getBiosigilControlcode(WC_Product $product): string
-{
-    $value = validateBiosigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
-
-    return !empty($value) ? $value : "";
-}
-
-/**
- * Validates BioSigil-EU-Controlcode.
- *
- * If $value is three digits reference number, complete controlcode will be returned.
- * If invalid, empty string will be returned.
- *
- * @param string $value
- * @param string $defaultIsoPart
- * @return string
- */
-function validateBiosigilControlcode(
-    string $value,
-    string $defaultIsoPart = "DE-ÖKO-"
-): string {
-    if (empty($value)) {
-        return "";
-    }
-
-    $referenceNumberLength = 3;
-    $isoPartLength = mb_strlen($defaultIsoPart);
-
-    if (is_numeric($value)) {
-        if (mb_strlen($value) !== $referenceNumberLength) {
-            return "";
-        }
-
-        $value = $defaultIsoPart . $value;
-    }
-
-    if (mb_strlen($value) !== $isoPartLength + $referenceNumberLength) {
-        return "";
-    }
-
-    if (mb_substr($value, 2, 1) !== "-" || mb_substr($value, 6, 1) !== "-") {
-        return "";
-    }
-
-    if (!is_numeric(mb_substr($value, 7, 3))) {
-        return "";
-    }
-
-    return strtoupper($value);
-}
-
-function getIsEventOnlineClass(WC_Product $product): string
-{
-    $event = tribe_events_get_ticket_event($product->get_id());
-
-    if(!$event) {
-        return "";
-    }
-
-    return isEventOnline($event->ID) ? "event-online" : "";
 }
 
 function getOriginCountry(WC_Product $product): string
