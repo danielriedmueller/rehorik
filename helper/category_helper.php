@@ -21,8 +21,13 @@ function getCategoryTreeDepth($termId, $taxonomy = "product_cat"): int
  */
 function isProductCategory($slug): bool
 {
+    $queriedObject = get_queried_object();
+    if (!is_a($queriedObject, WP_Term::class)) {
+        return false;
+    }
+
     $cat = get_term_by( 'slug', $slug, 'product_cat');
-    $isAncestor = term_is_ancestor_of($cat->term_id, get_queried_object()->term_id, 'product_cat');
+    $isAncestor = term_is_ancestor_of($cat->term_id, $queriedObject->termId, 'product_cat');
 
     return is_product_category($slug) || $isAncestor;
 }
