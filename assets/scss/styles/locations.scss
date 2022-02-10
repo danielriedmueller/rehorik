@@ -3,8 +3,12 @@
 
   .container {
     > div {
-      display: flex;
-      justify-content: space-around;
+      display: grid;
+      grid-template-columns: $footer-items-width $footer-items-width $footer-items-width;
+      grid-template-rows: auto;
+      gap: $spacing $spacing-s;
+      justify-items: stretch;
+      justify-content: space-between;
 
       > div {
         flex: 0 0 $footer-items-width;
@@ -33,7 +37,21 @@
           font-size: $font-size-small;
           padding: 0;
           color: #fff;
+          line-height: $line-height-narrow;
         }
+      }
+    }
+
+    @media all and (max-width: $medium-breakpoint) {
+      h1 {
+        > span {
+          display: none;
+        }
+      }
+
+      > div {
+        grid-template-columns: $footer-items-width $footer-items-width;
+        justify-items: center;
       }
     }
 
@@ -45,14 +63,8 @@
       }
 
       > div {
-        flex-direction: column;
-        align-items: center;
-
-        > div {
-          &:not(:last-child) {
-            margin-bottom: $spacing-l;
-          }
-        }
+        grid-template-columns: 1fr;
+        justify-items: center;
       }
     }
   }

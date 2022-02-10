@@ -12,8 +12,15 @@
             <div>
                 <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>"><img alt="Standort Stammhaus" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-stammhaus.png' ?>"></a>
                 <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>"><h2>Stammhaus</h2></a>
-                <p>Mit <a href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Kaffeerösterei</a> | <a href="<?= get_page_link(CAFE_190_PAGE_ID) ?>">Café 190°</a> | <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>#weinkeller">Weinkeller</a> | <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>#kaeseladen">Käseladen</a></p>
+                <p>Mit <a href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Kaffeerösterei</a> | <a href="<?= get_page_link(CAFE_190_PAGE_ID) ?>">Café 190°</a> | <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>#weinkeller">Weinkeller</a></p>
                 <p>Am Brixener Hof 6</p>
+                <p>93047 Regensburg</p>
+            </div>
+            <div>
+                <a href="<?= get_page_link(OPENING_HOURS_PAGE_ID) ?>"><img alt="Standort Delicatessen Laden" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-delicatessen.jpg' ?>"></a>
+                <a href="<?= get_page_link(OPENING_HOURS_PAGE_ID) ?>"><h2>Delicatessen Laden</h2></a>
+                <p>Gegenüber vom Stammhaus</p>
+                <p>Am Brixener Hof 11</p>
                 <p>93047 Regensburg</p>
             </div>
             <div>
