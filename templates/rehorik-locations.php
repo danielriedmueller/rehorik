@@ -12,13 +12,13 @@
             <div>
                 <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>"><img alt="Standort Stammhaus" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-stammhaus.png' ?>"></a>
                 <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>"><h2>Stammhaus</h2></a>
-                <p>Mit <a href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Kaffeerösterei</a> | <a href="<?= get_page_link(CAFE_190_PAGE_ID) ?>">Café 190°</a> | <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>#weinkeller">Weinkeller</a></p>
+                <p>Mit <a href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Kaffeerösterei</a> | <a href="<?= get_page_link(CAFE_190_PAGE_ID) ?>">Café 190°</a> | <a href="<?= get_page_link(STAMMHAUS_PAGE_ID) ?>#weinkeller">Weinkeller</a> | <a href="<?= get_page_link(BARISTASTORE_PAGE_ID) ?>">Maschinenberatung</a></p>
                 <p>Am Brixener Hof 6</p>
                 <p>93047 Regensburg</p>
             </div>
             <div>
-                <a href="<?= get_page_link(OPENING_HOURS_PAGE_ID) ?>"><img alt="Standort Delicatessen Laden" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-delicatessen.jpg' ?>"></a>
-                <a href="<?= get_page_link(OPENING_HOURS_PAGE_ID) ?>"><h2>Delicatessen Laden</h2></a>
+                <a href="<?= get_page_link(OPENING_HOURS_PAGE_ID) ?>"><img alt="Standort Delicatessen" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-delicatessen.jpg' ?>"></a>
+                <a href="<?= get_page_link(OPENING_HOURS_PAGE_ID) ?>"><h2>Delicatessen</h2></a>
                 <p>Gegenüber vom Stammhaus</p>
                 <p>Am Brixener Hof 11</p>
                 <p>93047 Regensburg</p>
@@ -28,13 +28,6 @@
                 <a href="<?= get_page_link(WEINGALERIE_PAGE_ID) ?>"><h2>Gesandtenstraße</h2></a>
                 <p>Westliche Altstadt</p>
                 <p>Gesandtenstraße 16</p>
-                <p>93047 Regensburg</p>
-            </div>
-            <div>
-                <a href="<?= get_page_link(BARISTASTORE_PAGE_ID) ?>"><img alt="Standort Barista 120" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-120.png' ?>"></a>
-                <a href="<?= get_page_link(BARISTASTORE_PAGE_ID) ?>"><h2>Barista Store 120°</h2></a>
-                <p>Maschinenberatung | Kaffeeseminare</p>
-                <p>Am Brixener Hof 7</p>
                 <p>93047 Regensburg</p>
             </div>
             <div>

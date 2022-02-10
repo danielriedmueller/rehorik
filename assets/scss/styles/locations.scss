@@ -4,7 +4,7 @@
   .container {
     > div {
       display: grid;
-      grid-template-columns: $footer-items-width $footer-items-width $footer-items-width;
+      grid-template-columns: $footer-items-width $footer-items-width $footer-items-width $footer-items-width $footer-items-width;
       grid-template-rows: auto;
       gap: $spacing $spacing-s;
       justify-items: stretch;
@@ -25,6 +25,7 @@
           line-height: $line-height;
           font-size: $font-size-h2;
           color: #fff;
+          text-transform: uppercase;
 
           &.title-row-span {
             line-height: $line-height-large;
