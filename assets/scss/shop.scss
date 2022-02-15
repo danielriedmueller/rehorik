@@ -59,6 +59,7 @@
 @import "styles/cart/shipping";
 @import "styles/hint";
 @import "styles/newsletter_sign_up";
+@import "styles/sell_machines_advisory";
 
 @font-face {
   font-family: "DIN Offc W01 Cond";
@@ -111,6 +112,20 @@ h1 {
 
 h2 {
   font-size: $font-size-h2;
+}
+
+p {
+  padding-bottom: $spacing-xxs;
+
+  a {
+    font-family: $font-family-body;
+  }
+}
+
+span {
+  a {
+    font-family: $font-family-body;
+  }
 }
 
 hr {

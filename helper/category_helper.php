@@ -156,37 +156,29 @@ function getCategoryNameBySlug(string $slug)
 }
 
 /**
- * Decides wich categories should display on shop front page
+ * Decides which categories should display on shop front page
  *
  * @return array
  */
 function getShopFrontPageCategories()
 {
-    $parentCategories = get_categories([
-        'parent' => 0,
+    $frontPageCategories = [];
+
+    $categories = get_categories([
         'hide_empty' => 0,
-        'hierarchical' => 1,
         'taxonomy' => 'product_cat'
     ]);
 
-    $onlineshopCategoryKey = array_search(ONLINESHOP_CATEGORY_SLUG, array_column($parentCategories, 'slug'));
-    $onlineshopCategories = get_categories(           [
-        'parent' => $parentCategories[$onlineshopCategoryKey]->term_id,
-        'hide_empty' => 1,
-        'hierarchical' => 1,
-        'taxonomy' => 'product_cat',
-        'pad_counts' => 1
-    ]);
+    $keys = array_column($categories, 'slug');
 
-    // Add delivery category
-    $deliveryCategoryKey = array_search(DELIVERY_CATEGORY_SLUG, array_column($parentCategories, 'slug'));
-    $onlineshopCategories[] = $parentCategories[$deliveryCategoryKey];
+    $frontPageCategories[] = $categories[array_search(COFFEE_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(WINE_SPIRITS_CO_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(DELI_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(MACHINE_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(DELIVERY_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(TICKET_CATEGORY_SLUG, $keys)];
 
-    // Add events category
-    $eventsCategoryKey = array_search(TICKET_CATEGORY_SLUG, array_column($parentCategories, 'slug'));
-    $onlineshopCategories[] = $parentCategories[$eventsCategoryKey];
-
-    return $onlineshopCategories;
+    return $frontPageCategories;
 }
 
 /**
