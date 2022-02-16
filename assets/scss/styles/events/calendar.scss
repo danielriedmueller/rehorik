@@ -48,6 +48,7 @@
         font-size: $font-size-very-small;
         font-weight: normal;
         font-family: $font-family-body;
+        color: $font-color;
       }
 
       @media all and (max-width: $small-breakpoint) {

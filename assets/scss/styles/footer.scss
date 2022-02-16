@@ -1,8 +1,11 @@
 footer {
   padding-bottom: 240px;
 
-  .container {
+  h2 {
+    color: $font-color;
+  }
 
+  .container {
     > div {
       display: flex;
       justify-content: space-around;
