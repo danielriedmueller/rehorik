@@ -2,7 +2,7 @@
 <div id="sell-machines-advisory">
     <h4>Werdet zum Home Barista und holt Euch Eure Lieblingsmaschine</h4>
     <p><b>Wo:</b> Ausstellungsraum Rehorik Rösterei & Kaffeehaus | <a target="_blank" href="https://goo.gl/maps/7syuH8WaSkARVtDf6">Straubinger Straße 62a</a></p>
-    <p><b>Wie:</b> Einfach vorbeikommen oder persönlichen Beratungstermin vereinbaren unter <a href="mailto:<?= BARISTASTORE_EMAIL ?>"><?= BARISTASTORE_EMAIL ?></a>. Und los gehts!</p>
+    <p><b>Wie:</b> Zum Anschauen einfach vorbeikommen, für ein ausführliches Beratungsgespräch einen Termin unter <a href="mailto:<?= BARISTASTORE_EMAIL ?>"><?= BARISTASTORE_EMAIL ?></a> vereinbaren</p>
     <p><b>Was:</b></p>
     <div class="grid-dl">
         <div>

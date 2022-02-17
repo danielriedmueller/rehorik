@@ -27,7 +27,7 @@ function isProductCategory($slug): bool
     }
 
     $cat = get_term_by( 'slug', $slug, 'product_cat');
-    $isAncestor = term_is_ancestor_of($cat->term_id, $queriedObject->termId, 'product_cat');
+    $isAncestor = term_is_ancestor_of($cat->term_id, $queriedObject->term_id, 'product_cat');
 
     return is_product_category($slug) || $isAncestor;
 }
