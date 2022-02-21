@@ -42,6 +42,16 @@ $text_lighter_40 = wc_hex_lighter( $text, 40 );
 
 // !important; is a gmail hack to prevent styles being stripped if it doesn't like something.
 // body{padding: 0;} ensures proper scale/positioning of the email in the iOS native email app.
+
+$accent = '#CEB67F';
+$text_color = '#3c3c3b';
+$text_color_light = '#fff';
+
+$font_family = '‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif';
+$font_size = '12px';
+$font_size_small = '11px';
+$font_size_big = '26px';
+$spacing = '20px';
 ?>
 body {
 	padding: 0;
@@ -50,52 +60,62 @@ body {
 #wrapper {
 	background-color: <?php echo esc_attr( $bg ); ?>;
 	margin: 0;
-	padding: 70px 0;
+	padding: <?= $spacing ?> 0;
 	-webkit-text-size-adjust: none !important;
 	width: 100%;
 }
 
 #template_container {
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
-	background-color: <?php echo esc_attr( $body ); ?>;
-	border: 1px solid <?php echo esc_attr( $bg_darker_10 ); ?>;
-	border-radius: 3px !important;
+	box-shadow: none;
+	background-color: <?php echo esc_attr( $base ); ?>;
+	border: 0;
+	border-radius: 0;
 }
 
 #template_header {
 	background-color: <?php echo esc_attr( $base ); ?>;
-	border-radius: 3px 3px 0 0 !important;
-	color: <?php echo esc_attr( $base_text ); ?>;
-	border-bottom: 0;
-	font-weight: bold;
-	line-height: 100%;
+	border-radius: 0;
+	border: 0;
 	vertical-align: middle;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	padding: <?= $spacing ?>;
 }
 
 #template_header h1,
 #template_header h1 a {
-	color: <?php echo esc_attr( $base_text ); ?>;
+	color: <?= $accent ?>;
+	font-family: <?= $font_family ?>;
+	font-weight: bold;
+	line-height: 100%;
+	font-size: <?= $font_size_big ?>;
+	text-align: center;
+	text-transform: uppercase;
 }
 
-#template_header_image img {
-	margin-left: 0;
-	margin-right: 0;
+#template_header_image {
+	background-image: url(https://img.mailinblue.com/3459467/images/rnb/original/604f6fd6592e0e582b2c9d4b.png);
+	background-position: center top;
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding: <?= $spacing ?>;
 }
 
 #template_footer td {
 	padding: 0;
-	border-radius: 6px;
 }
 
 #template_footer #credit {
+    background-color: <?= $accent ?>;
 	border: 0;
-	color: <?php echo esc_attr( $text_lighter_40 ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 12px;
-	line-height: 150%;
+	color: <?= $text_color_light ?>;
+	font-family: <?= $font_family ?>;
+	font-size: <?= $font_size_small ?>;
 	text-align: center;
-	padding: 24px 0;
+}
+
+#template_footer #socialmedia {
+    background-color: <?= $accent ?>;
+    text-align: center;
+    padding: <?= $spacing ?> 0;
 }
 
 #template_footer #credit p {
@@ -107,15 +127,7 @@ body {
 }
 
 #body_content table td {
-	padding: 48px 48px 32px;
-}
-
-#body_content table td td {
-	padding: 12px;
-}
-
-#body_content table td th {
-	padding: 12px;
+	padding: <?= $spacing ?>;
 }
 
 #body_content td ul.wc-item-meta {
@@ -140,7 +152,7 @@ body {
 
 #body_content_inner {
 	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: <?= $font_family ?>;
 	font-size: 14px;
 	line-height: 150%;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
@@ -160,7 +172,7 @@ body {
 
 .text {
 	color: <?php echo esc_attr( $text ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: <?= $font_family ?>;
 }
 
 .link {
@@ -174,7 +186,7 @@ body {
 
 h1 {
 	color: <?php echo esc_attr( $base ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: <?= $font_family ?>;
 	font-size: 30px;
 	font-weight: 300;
 	line-height: 150%;
@@ -186,7 +198,7 @@ h1 {
 h2 {
 	color: <?php echo esc_attr( $base ); ?>;
 	display: block;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: <?= $font_family ?>;
 	font-size: 18px;
 	font-weight: bold;
 	line-height: 130%;
@@ -197,7 +209,7 @@ h2 {
 h3 {
 	color: <?php echo esc_attr( $base ); ?>;
 	display: block;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: <?= $font_family ?>;
 	font-size: 16px;
 	font-weight: bold;
 	line-height: 130%;
