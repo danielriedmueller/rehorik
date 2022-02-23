@@ -44,21 +44,24 @@ $text_lighter_40 = wc_hex_lighter( $text, 40 );
 // body{padding: 0;} ensures proper scale/positioning of the email in the iOS native email app.
 
 $accent = '#CEB67F';
+$primary = '#5C0D2F';
 $text_color = '#3c3c3b';
 $text_color_light = '#fff';
 
 $font_family = '‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif';
 $font_size = '12px';
 $font_size_small = '11px';
-$font_size_big = '26px';
+$font_size_h1 = '26px';
+$font_size_h2 = '18px';
 $spacing = '20px';
+$spacing_small = '10px';
 ?>
 body {
 	padding: 0;
 }
 
 #wrapper {
-	background-color: <?php echo esc_attr( $bg ); ?>;
+	background-color: #fff;
 	margin: 0;
 	padding: <?= $spacing ?> 0;
 	-webkit-text-size-adjust: none !important;
@@ -67,28 +70,17 @@ body {
 
 #template_container {
 	box-shadow: none;
-	background-color: <?php echo esc_attr( $base ); ?>;
+	background-color: #fff;
 	border: 0;
 	border-radius: 0;
 }
 
 #template_header {
-	background-color: <?php echo esc_attr( $base ); ?>;
+	background-color: #fff;
 	border-radius: 0;
 	border: 0;
 	vertical-align: middle;
-	padding: <?= $spacing ?>;
-}
-
-#template_header h1,
-#template_header h1 a {
-	color: <?= $accent ?>;
-	font-family: <?= $font_family ?>;
-	font-weight: bold;
-	line-height: 100%;
-	font-size: <?= $font_size_big ?>;
-	text-align: center;
-	text-transform: uppercase;
+	padding: 0 <?= $spacing ?>;
 }
 
 #template_header_image {
@@ -103,6 +95,10 @@ body {
 	padding: 0;
 }
 
+#template_footer p {
+	text-align: center;
+}
+
 #template_footer #credit {
     background-color: <?= $accent ?>;
 	border: 0;
@@ -112,18 +108,27 @@ body {
 	text-align: center;
 }
 
+#template_footer #owner {
+	border: 0;
+	font-family: <?= $font_family ?>;
+	font-size: <?= $font_size_small ?>;
+	text-align: center;
+	padding: <?= $spacing ?> 0;
+}
+
 #template_footer #socialmedia {
     background-color: <?= $accent ?>;
     text-align: center;
     padding: <?= $spacing ?> 0;
 }
 
-#template_footer #credit p {
-	margin: 0 0 16px;
+#body_content {
+	background-color: #fff;
 }
 
-#body_content {
-	background-color: <?php echo esc_attr( $body ); ?>;
+table,
+table th {
+	border: none;
 }
 
 #body_content table td {
@@ -146,8 +151,9 @@ body {
 	margin: 0;
 }
 
-#body_content p {
-	margin: 0 0 16px;
+p {
+	margin: 0 0 <?= $spacing ?>;
+	text-align: justify;
 }
 
 #body_content_inner {
@@ -159,24 +165,38 @@ body {
 }
 
 .td {
-	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
-	border: 1px solid <?php echo esc_attr( $body_darker_10 ); ?>;
-	vertical-align: middle;
+	border-bottom: 1px solid <?= $accent ?>;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	font-family: <?= $font_family ?> !important;
+	font-size: <?= $font_size ?>;
+	vertical-align: top;
+	padding: <?= $spacing_small ?> <?= $spacing ?> <?= $spacing_small ?> 0 !important;
 }
 
-.address {
-	padding: 12px;
-	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
-	border: 1px solid <?php echo esc_attr( $body_darker_10 ); ?>;
+table.td {
+	width: 100%;
+	border-bottom: none;
+}
+
+.address, address {
+	padding: <?= $spacing ?>;
+	margin: 0 <?= $spacing ?> 0 0;
+	color: <?= $text_color ?>;
+	border: 1px solid <?= $accent ?>;
+	font-style: normal;
+	font-family: <?= $font_family ?>;
+	font-size: <?= $font_size ?>;
 }
 
 .text {
-	color: <?php echo esc_attr( $text ); ?>;
+	color: <?= $text_color ?>;
 	font-family: <?= $font_family ?>;
 }
 
 .link {
-	color: <?php echo esc_attr( $link_color ); ?>;
+	color: <?= $text_color ?>;
 }
 
 #header_wrapper {
@@ -184,43 +204,48 @@ body {
 	display: block;
 }
 
-h1 {
-	color: <?php echo esc_attr( $base ); ?>;
+section {
+	padding: <?= $spacing ?>;
+	color: <?= $text_color_light ?>;
+	background-color: <?= $accent ?>;
+}
+
+h1, h2, h3 {
+	color: <?= $accent ?>;
 	font-family: <?= $font_family ?>;
-	font-size: 30px;
-	font-weight: 300;
-	line-height: 150%;
-	margin: 0;
-	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
-	text-shadow: 0 1px 0 <?php echo esc_attr( $base_lighter_20 ); ?>;
+	font-weight: bold;
+	line-height: 100%;
+	font-size: <?= $font_size_h1 ?>;
+	text-align: center;
+	text-transform: uppercase;
+	margin: <?= $spacing ?> 0;
 }
 
 h2 {
-	color: <?php echo esc_attr( $base ); ?>;
-	display: block;
-	font-family: <?= $font_family ?>;
-	font-size: 18px;
-	font-weight: bold;
-	line-height: 130%;
-	margin: 0 0 18px;
+	color: <?= $text_color ?>;
+	font-size: <?= $font_size_h2 ?>;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
 
 h3 {
-	color: <?php echo esc_attr( $base ); ?>;
-	display: block;
-	font-family: <?= $font_family ?>;
-	font-size: 16px;
-	font-weight: bold;
-	line-height: 130%;
-	margin: 16px 0 8px;
+	color: <?= $text_color ?>;
+	font-size: <?= $font_size ?>;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
 
-a {
-	color: <?php echo esc_attr( $link_color ); ?>;
+section h2,
+section h3 {
+	color: <?= $text_color_light ?>;
+}
+
+a, a[href] {
 	font-weight: normal;
 	text-decoration: underline;
+	color: <?= $primary ?> !important;
+}
+
+#template_footer a {
+	color: <?= $text_color_light ?> !important;
 }
 
 img {
