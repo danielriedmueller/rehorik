@@ -43,6 +43,8 @@ $text_lighter_40 = wc_hex_lighter( $text, 40 );
 // !important; is a gmail hack to prevent styles being stripped if it doesn't like something.
 // body{padding: 0;} ensures proper scale/positioning of the email in the iOS native email app.
 
+$email_width = '590px';
+
 $accent = '#CEB67F';
 $primary = '#5C0D2F';
 $text_color = '#3c3c3b';
@@ -54,6 +56,7 @@ $font_size_small = '11px';
 $font_size_h1 = '26px';
 $font_size_h2 = '18px';
 $spacing = '20px';
+$spacing_big = '100px';
 $spacing_small = '10px';
 ?>
 body {
@@ -66,6 +69,10 @@ body {
 	padding: <?= $spacing ?> 0;
 	-webkit-text-size-adjust: none !important;
 	width: 100%;
+}
+
+section, table td,table, #wrapper, body, div.ticket, div.qr-code {
+	box-sizing: border-box;
 }
 
 #template_container {
@@ -102,10 +109,10 @@ body {
 #template_footer #credit {
     background-color: <?= $accent ?>;
 	border: 0;
-	color: <?= $text_color_light ?>;
 	font-family: <?= $font_family ?>;
 	font-size: <?= $font_size_small ?>;
 	text-align: center;
+	padding: 0 0 <?= $spacing ?> 0;
 }
 
 #template_footer #owner {
@@ -114,6 +121,12 @@ body {
 	font-size: <?= $font_size_small ?>;
 	text-align: center;
 	padding: <?= $spacing ?> 0;
+
+}
+
+#template_footer #owner p {
+	color: <?= $text_color ?>;
+	margin: 0;
 }
 
 #template_footer #socialmedia {
@@ -126,13 +139,25 @@ body {
 	background-color: #fff;
 }
 
-table,
-table th {
-	border: none;
+.mt {
+	margin-top: <?= $spacing ?>;
 }
 
-#body_content table td {
-	padding: <?= $spacing ?>;
+.mb {
+	margin-bottom: <?= $spacing ?>;
+}
+
+table {
+	border: none;
+	font-family: <?= $font_family ?>;
+	font-size: <?= $font_size ?>;
+	color: <?= $text_color ?>;
+	padding: 0;
+	margin: 0;
+}
+
+table th {
+	border: none;
 }
 
 #body_content td ul.wc-item-meta {
@@ -152,7 +177,7 @@ table th {
 }
 
 p {
-	margin: 0 0 <?= $spacing ?>;
+	margin: 0;
 	text-align: justify;
 }
 
@@ -164,7 +189,14 @@ p {
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
 
-.td {
+table.table-details {
+	margin: 0 0 <?= $spacing ?>;
+}
+
+table.table-details > thead	 > tr > th,
+table.table-details > tfoot	 > tr > th,
+table.table-details > tfoot	 > tr > td,
+table.table-details > tbody > tr > td {
 	border-bottom: 1px solid <?= $accent ?>;
 	border-top: none;
 	border-left: none;
@@ -175,9 +207,8 @@ p {
 	padding: <?= $spacing_small ?> <?= $spacing ?> <?= $spacing_small ?> 0 !important;
 }
 
-table.td {
-	width: 100%;
-	border-bottom: none;
+.mb {
+	margin: 0 0 <?= $spacing ?> 0;
 }
 
 .address, address {
@@ -206,19 +237,93 @@ table.td {
 
 section {
 	padding: <?= $spacing ?>;
+	margin: <?= $spacing ?>;
 	color: <?= $text_color_light ?>;
 	background-color: <?= $accent ?>;
+	width: <?= $email_width ?>;
 }
 
-h1, h2, h3 {
+div.ticket {
+	width: <?= $email_width ?>;
+	margin: 0 0 <?= $spacing_big ?> 0;
+}
+
+div.ticket table td {
+	padding: 0 !important;
+}
+
+div.ticket table.ticket-details {
+	margin: <?= $spacing ?> 0;
+	padding: 0 <?= $spacing ?>;
+}
+
+div.ticket table.ticket-details td {
+	padding: 0 0 <?= $spacing ?> 0 !important;
+	font-family: <?= $font_family ?> !important;
+}
+
+div.ticket div.qr-code {
+	width: <?= $email_width ?>;
+	padding: <?= $spacing ?> !important;
+	background: <?= $accent ?> !important;
+}
+
+div.ticket div.qr-code table {
+	margin: 0 !important;
+	width: 100% !important;
+	padding: 0 !important;
+}
+
+div.ticket div.qr-code table td {
+	color: <?= $text_color ?> !important;
+	background: <?= $accent ?> !important;
+	font-family: <?= $font_family ?> !important;
+}
+
+div.ticket div.qr-code table td p,
+div.ticket div.qr-code table td h3 {
+	padding: 0 0 0 <?= $spacing ?> !important;
+}
+
+div.ticket div.qr-code table td h3 span {
+	font-family: <?= $font_family ?> !important;
+	font-weight: bold !important;
+	line-height: 100% !important;
+	text-align: left !important;
+	margin: 0 !important;
+	color: <?= $text_color ?> !important;
+	font-size: <?= $font_size_h2 ?> !important;
+	text-transform: uppercase;
+}
+
+div#ticket-bottom table {
+	width: <?= $email_width ?> !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+div#ticket-bottom td {
+	text-align: justify;
+	padding: <?= $spacing ?> !important;
+}
+
+div.ticket table.ticket-security-code td {
+	font-family: <?= $font_family ?> !important;
+	font-size: <?= $font_size_small ?> !important;
+}
+
+h1, h2, h3, h4 {
 	color: <?= $accent ?>;
 	font-family: <?= $font_family ?>;
 	font-weight: bold;
 	line-height: 100%;
 	font-size: <?= $font_size_h1 ?>;
 	text-align: center;
+	margin: <?= $spacing_small ?> 0;
+}
+
+h1, h2 {
 	text-transform: uppercase;
-	margin: <?= $spacing ?> 0;
 }
 
 h2 {
@@ -229,8 +334,12 @@ h2 {
 
 h3 {
 	color: <?= $text_color ?>;
-	font-size: <?= $font_size ?>;
+	font-size: <?= $font_size_h2 ?>;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
+}
+
+h4 {
+	font-size: <?= $font_size_h2 ?>;
 }
 
 section h2,
@@ -244,7 +353,19 @@ a, a[href] {
 	color: <?= $primary ?> !important;
 }
 
-#template_footer a {
+h1 a, h4 a {
+	text-decoration: none;
+	font-weight: bold;
+	color: <?= $accent ?> !important;
+}
+
+h2 a, h3 a {
+	text-decoration: none;
+	font-weight: bold;
+	color: <?= $text_color ?> !important;
+}
+
+#template_footer a, #template_footer td {
 	color: <?= $text_color_light ?> !important;
 }
 

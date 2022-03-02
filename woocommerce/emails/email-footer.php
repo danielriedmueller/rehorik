@@ -34,7 +34,7 @@ defined('ABSPATH') || exit;
 <tr>
     <td align="center" valign="top">
         <!-- Footer -->
-        <table border="0" cellpadding="10" cellspacing="0" width="590" id="template_footer">
+        <table border="0" cellpadding="10" cellspacing="0" width="590   " id="template_footer">
             <tr>
                 <td valign="top">
                     <table border="0" cellpadding="10" cellspacing="0" width="100%">
@@ -57,9 +57,7 @@ defined('ABSPATH') || exit;
                                     <br>
                                     Am Brixener Hof 6 &#183; 93047 Regensburg
                                     <br>
-                                    Tel: 0941/51727 &#183; Fax: 0941/53852
-                                    <br>
-                                    E-Mail: <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a> &#183; Internet: <a href="https://www.rehorik.de">www.rehorik.de</a>
+                                    <a href="tel:0941/7883530">0941/7883530</a> &#183; <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a> &#183; <a href="https://www.rehorik.de">www.rehorik.de</a>
                                 </p>
                             </td>
                         </tr>

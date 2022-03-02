@@ -49,9 +49,9 @@ get_template_part('templates/tribe-events-attendee-list');
                     <?php the_content(); ?>
                 </div>
                 <div class="rehorik-tribe-events-single-hint">
-                    Stand 15.02.2022: Alle geplanten Termine finden unter Vorbehalt statt.
+                    Stand 28.02.2022: Alle geplanten Termine finden unter Vorbehalt statt.
                     <br>Für alle unsere Veranstaltungen gelten die aktuellen Corona-Regelungen. Bitte denkt daran Eure Nachweise mitzunehmen, wir freuen uns auf Euch!
-                    <br>2G+ Regel - geimpft oder genesen plus negativen Schnelltestnachweis. Für Geboosterte entfällt der Schnelltest.
+                    <br>2G Regel - geimpft oder genesen.
                     <br>Bitte beachtet, dass die Anmeldung verbindlich ist und <b>nicht verschoben, storniert oder umgetauscht</b> werden kann!
                 </div>
             </div>
