@@ -27,7 +27,7 @@ footer {
           p {
             margin-bottom: $spacing-xs;
             padding: 0;
-            line-height: 1em;
+            line-height: $line-height;
           }
         }
       }

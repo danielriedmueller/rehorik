@@ -14,6 +14,7 @@ define('DELIVERY_ORDER_EMAIL', 'kaffee@rehorik.de');
 define('SHIPPING_ORDER_EMAIL', 'kaffee@rehorik.de');
 define('IT_SUPPORT_EMAIL', 'it@rehorik.de');
 define('BARISTASTORE_EMAIL', 'baristastore@rehorik.de');
+define('EVENT_EMAIL', 'events@rehorik.de');
 define('DELIVERY_SHIPPING_METHOD', 'bike');
 define('STANDARD_SHIPPING_METHOD', 'flat_rate');
 define('FREE_DELIVERY_SHIPPING_METHOD', 'free_shipping_bike');

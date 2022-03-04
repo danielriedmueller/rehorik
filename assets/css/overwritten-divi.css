@@ -52,8 +52,8 @@ ul.ecs-event-list li {list-style-type:none; border-bottom:1px solid #333333;padd
     font-family:"DIN Offc W01 Cond";
 }
 
-html, body, form input {font-family:"DIN Offc W01 Cond";}
-h1, h2, h3, h4, h5, h6, h7, strong, a {font-family:"DIN W01 Cond Medium";}
+html, body, form input, a {font-family:"DIN Offc W01 Cond";}
+h1, h2, h3, h4, h5, h6, h7, strong {font-family:"DIN W01 Cond Medium";}
 
 h1, h2, h3, h4, h5, h6 {
     color: #fff;

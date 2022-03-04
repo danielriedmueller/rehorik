@@ -39,7 +39,7 @@
                     <h2>Anmeldung</h2>
                     <p><a href="<?= get_page_link(LOGIN_PAGE_ID) ?>">Kundenlogin</a></p>
                     <p><b>Probleme bei der Anmeldung?</b></p>
-                    <p>Senden Sie uns bitte ein Email an</p>
+                    <p>Sende uns bitte ein Email an</p>
                     <p><a href="mailto:<?= IT_SUPPORT_EMAIL ?>"><?= IT_SUPPORT_EMAIL ?></a></p>
                     <p>Vielen Dank!</p>
                 </div>

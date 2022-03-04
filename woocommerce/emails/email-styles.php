@@ -237,10 +237,9 @@ table.table-details > tbody > tr > td {
 
 section {
 	padding: <?= $spacing ?>;
-	margin: <?= $spacing ?>;
+	margin: <?= $spacing ?> 0;
 	color: <?= $text_color_light ?>;
 	background-color: <?= $accent ?>;
-	width: <?= $email_width ?>;
 }
 
 div.ticket {
