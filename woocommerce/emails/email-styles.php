@@ -42,80 +42,122 @@ $text_lighter_40 = wc_hex_lighter( $text, 40 );
 
 // !important; is a gmail hack to prevent styles being stripped if it doesn't like something.
 // body{padding: 0;} ensures proper scale/positioning of the email in the iOS native email app.
+
+$email_width = '590px';
+
+$accent = '#CEB67F';
+$primary = '#5C0D2F';
+$text_color = '#3c3c3b';
+$text_color_light = '#fff';
+
+$font_family = '‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif';
+$font_size = '12px';
+$font_size_small = '11px';
+$font_size_h1 = '26px';
+$font_size_h2 = '18px';
+$spacing = '20px';
+$spacing_big = '100px';
+$spacing_small = '10px';
 ?>
 body {
 	padding: 0;
 }
 
 #wrapper {
-	background-color: <?php echo esc_attr( $bg ); ?>;
+	background-color: #fff;
 	margin: 0;
-	padding: 70px 0;
+	padding: <?= $spacing ?> 0;
 	-webkit-text-size-adjust: none !important;
 	width: 100%;
 }
 
+section, table td,table, #wrapper, body, div.ticket, div.qr-code {
+	box-sizing: border-box;
+}
+
 #template_container {
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
-	background-color: <?php echo esc_attr( $body ); ?>;
-	border: 1px solid <?php echo esc_attr( $bg_darker_10 ); ?>;
-	border-radius: 3px !important;
+	box-shadow: none;
+	background-color: #fff;
+	border: 0;
+	border-radius: 0;
 }
 
 #template_header {
-	background-color: <?php echo esc_attr( $base ); ?>;
-	border-radius: 3px 3px 0 0 !important;
-	color: <?php echo esc_attr( $base_text ); ?>;
-	border-bottom: 0;
-	font-weight: bold;
-	line-height: 100%;
+	background-color: #fff;
+	border-radius: 0;
+	border: 0;
 	vertical-align: middle;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	padding: 0 <?= $spacing ?>;
 }
 
-#template_header h1,
-#template_header h1 a {
-	color: <?php echo esc_attr( $base_text ); ?>;
-}
-
-#template_header_image img {
-	margin-left: 0;
-	margin-right: 0;
+#template_header_image {
+	background-image: url(https://img.mailinblue.com/3459467/images/rnb/original/604f6fd6592e0e582b2c9d4b.png);
+	background-position: center top;
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding: <?= $spacing ?>;
 }
 
 #template_footer td {
 	padding: 0;
-	border-radius: 6px;
+}
+
+#template_footer p {
+	text-align: center;
 }
 
 #template_footer #credit {
+    background-color: <?= $accent ?>;
 	border: 0;
-	color: <?php echo esc_attr( $text_lighter_40 ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 12px;
-	line-height: 150%;
+	font-family: <?= $font_family ?>;
+	font-size: <?= $font_size_small ?>;
 	text-align: center;
-	padding: 24px 0;
+	padding: 0 0 <?= $spacing ?> 0;
 }
 
-#template_footer #credit p {
-	margin: 0 0 16px;
+#template_footer #owner {
+	border: 0;
+	font-family: <?= $font_family ?>;
+	font-size: <?= $font_size_small ?>;
+	text-align: center;
+	padding: <?= $spacing ?> 0;
+
+}
+
+#template_footer #owner p {
+	color: <?= $text_color ?>;
+	margin: 0;
+}
+
+#template_footer #socialmedia {
+    background-color: <?= $accent ?>;
+    text-align: center;
+    padding: <?= $spacing ?> 0;
 }
 
 #body_content {
-	background-color: <?php echo esc_attr( $body ); ?>;
+	background-color: #fff;
 }
 
-#body_content table td {
-	padding: 48px 48px 32px;
+.mt {
+	margin-top: <?= $spacing ?>;
 }
 
-#body_content table td td {
-	padding: 12px;
+.mb {
+	margin-bottom: <?= $spacing ?>;
 }
 
-#body_content table td th {
-	padding: 12px;
+table {
+	border: none;
+	font-family: <?= $font_family ?>;
+	font-size: <?= $font_size ?>;
+	color: <?= $text_color ?>;
+	padding: 0;
+	margin: 0;
+}
+
+table th {
+	border: none;
 }
 
 #body_content td ul.wc-item-meta {
@@ -134,37 +176,58 @@ body {
 	margin: 0;
 }
 
-#body_content p {
-	margin: 0 0 16px;
+p {
+	margin: 0;
+	text-align: justify;
 }
 
 #body_content_inner {
 	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-family: <?= $font_family ?>;
 	font-size: 14px;
 	line-height: 150%;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
 
-.td {
-	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
-	border: 1px solid <?php echo esc_attr( $body_darker_10 ); ?>;
-	vertical-align: middle;
+table.table-details {
+	margin: 0 0 <?= $spacing ?>;
 }
 
-.address {
-	padding: 12px;
-	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
-	border: 1px solid <?php echo esc_attr( $body_darker_10 ); ?>;
+table.table-details > thead	 > tr > th,
+table.table-details > tfoot	 > tr > th,
+table.table-details > tfoot	 > tr > td,
+table.table-details > tbody > tr > td {
+	border-bottom: 1px solid <?= $accent ?>;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	font-family: <?= $font_family ?> !important;
+	font-size: <?= $font_size ?>;
+	vertical-align: top;
+	padding: <?= $spacing_small ?> <?= $spacing ?> <?= $spacing_small ?> 0 !important;
+}
+
+.mb {
+	margin: 0 0 <?= $spacing ?> 0;
+}
+
+.address, address {
+	padding: <?= $spacing ?>;
+	margin: 0 <?= $spacing ?> 0 0;
+	color: <?= $text_color ?>;
+	border: 1px solid <?= $accent ?>;
+	font-style: normal;
+	font-family: <?= $font_family ?>;
+	font-size: <?= $font_size ?>;
 }
 
 .text {
-	color: <?php echo esc_attr( $text ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	color: <?= $text_color ?>;
+	font-family: <?= $font_family ?>;
 }
 
 .link {
-	color: <?php echo esc_attr( $link_color ); ?>;
+	color: <?= $text_color ?>;
 }
 
 #header_wrapper {
@@ -172,43 +235,137 @@ body {
 	display: block;
 }
 
-h1 {
-	color: <?php echo esc_attr( $base ); ?>;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 30px;
-	font-weight: 300;
-	line-height: 150%;
-	margin: 0;
-	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
-	text-shadow: 0 1px 0 <?php echo esc_attr( $base_lighter_20 ); ?>;
+section {
+	padding: <?= $spacing ?>;
+	margin: <?= $spacing ?> 0;
+	color: <?= $text_color_light ?>;
+	background-color: <?= $accent ?>;
+}
+
+div.ticket {
+	width: <?= $email_width ?>;
+	margin: 0 0 <?= $spacing_big ?> 0;
+}
+
+div.ticket table td {
+	padding: 0 !important;
+}
+
+div.ticket table.ticket-details {
+	margin: <?= $spacing ?> 0;
+	padding: 0 <?= $spacing ?>;
+}
+
+div.ticket table.ticket-details td {
+	padding: 0 0 <?= $spacing ?> 0 !important;
+	font-family: <?= $font_family ?> !important;
+}
+
+div.ticket div.qr-code {
+	width: <?= $email_width ?>;
+	padding: <?= $spacing ?> !important;
+	background: <?= $accent ?> !important;
+}
+
+div.ticket div.qr-code table {
+	margin: 0 !important;
+	width: 100% !important;
+	padding: 0 !important;
+}
+
+div.ticket div.qr-code table td {
+	color: <?= $text_color ?> !important;
+	background: <?= $accent ?> !important;
+	font-family: <?= $font_family ?> !important;
+}
+
+div.ticket div.qr-code table td p,
+div.ticket div.qr-code table td h3 {
+	padding: 0 0 0 <?= $spacing ?> !important;
+}
+
+div.ticket div.qr-code table td h3 span {
+	font-family: <?= $font_family ?> !important;
+	font-weight: bold !important;
+	line-height: 100% !important;
+	text-align: left !important;
+	margin: 0 !important;
+	color: <?= $text_color ?> !important;
+	font-size: <?= $font_size_h2 ?> !important;
+	text-transform: uppercase;
+}
+
+div#ticket-bottom table {
+	width: <?= $email_width ?> !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+div#ticket-bottom td {
+	text-align: justify;
+	padding: <?= $spacing ?> !important;
+}
+
+div.ticket table.ticket-security-code td {
+	font-family: <?= $font_family ?> !important;
+	font-size: <?= $font_size_small ?> !important;
+}
+
+h1, h2, h3, h4 {
+	color: <?= $accent ?>;
+	font-family: <?= $font_family ?>;
+	font-weight: bold;
+	line-height: 100%;
+	font-size: <?= $font_size_h1 ?>;
+	text-align: center;
+	margin: <?= $spacing_small ?> 0;
+}
+
+h1, h2 {
+	text-transform: uppercase;
 }
 
 h2 {
-	color: <?php echo esc_attr( $base ); ?>;
-	display: block;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 18px;
-	font-weight: bold;
-	line-height: 130%;
-	margin: 0 0 18px;
+	color: <?= $text_color ?>;
+	font-size: <?= $font_size_h2 ?>;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
 
 h3 {
-	color: <?php echo esc_attr( $base ); ?>;
-	display: block;
-	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 16px;
-	font-weight: bold;
-	line-height: 130%;
-	margin: 16px 0 8px;
+	color: <?= $text_color ?>;
+	font-size: <?= $font_size_h2 ?>;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
 
-a {
-	color: <?php echo esc_attr( $link_color ); ?>;
+h4 {
+	font-size: <?= $font_size_h2 ?>;
+}
+
+section h2,
+section h3 {
+	color: <?= $text_color_light ?>;
+}
+
+a, a[href] {
 	font-weight: normal;
 	text-decoration: underline;
+	color: <?= $primary ?> !important;
+}
+
+h1 a, h4 a {
+	text-decoration: none;
+	font-weight: bold;
+	color: <?= $accent ?> !important;
+}
+
+h2 a, h3 a {
+	text-decoration: none;
+	font-weight: bold;
+	color: <?= $text_color ?> !important;
+}
+
+#template_footer a, #template_footer td {
+	color: <?= $text_color_light ?> !important;
 }
 
 img {

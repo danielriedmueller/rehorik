@@ -11,15 +11,15 @@
 
   .tribe-submit-tickets-form button {
     color: #ededed;
-    font-family: "DIN Offc W01 Cond";
+    font-family: $font-family-body;
     padding: 0.3em 1em;
-    background: #c6b480 none;
+    background: $beigegold none;
     font-weight: normal;
     font-style: normal;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 20px;
-    line-height: 1.7em;
+    font-size: $font-size;
+    line-height: $line-height;
     border: 2px solid;
     border-radius: 3px;
     transition: all 0.2s;
@@ -29,8 +29,8 @@
     cursor: pointer;
 
     &:hover {
-      color: #996b23;
-      background-color: #c6b480;
+      color: $hellbraun;
+      background-color: $beigegold;
     }
   }
 }

@@ -1,8 +1,11 @@
 footer {
   padding-bottom: 240px;
 
-  .container {
+  h2 {
+    color: $font-color;
+  }
 
+  .container {
     > div {
       display: flex;
       justify-content: space-around;
@@ -24,7 +27,7 @@ footer {
           p {
             margin-bottom: $spacing-xs;
             padding: 0;
-            line-height: 1em;
+            line-height: $line-height;
           }
         }
       }

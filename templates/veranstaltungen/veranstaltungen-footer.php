@@ -6,6 +6,7 @@
             Der nächste Junggesell:innenabschied soll ein richtiges Highlight werden?
             Wir erstellen Euer Wunschevent – ob Weinseminar, Online-Gin-Tasting oder Barista-Schulung.
             Ihr wollt Euch kulinarisch verwöhnen lassen, dann reserviert unser Café und wir erstellen zusammen das Menü.
+            Schreibt uns einfach unter <a href="mailto:<?= EVENT_EMAIL ?>"><?= EVENT_EMAIL ?></a>. Wir freuen uns auf euch!
         </div>
     </div>
 </div>

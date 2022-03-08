@@ -56,6 +56,7 @@
 @import "styles/cart/shipping";
 @import "styles/hint";
 @import "styles/newsletter_sign_up";
+@import "styles/sell_machines_advisory";
 
 @font-face {
   font-family: "DIN Offc W01 Cond";
@@ -115,6 +116,10 @@ h1, h2, h3, h4, h5, h6 {
   vertical-align: baseline;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+}
+
 h1 {
   text-transform: uppercase;
   font-weight: bold;
@@ -123,7 +128,6 @@ h1 {
   text-align: center;
   margin: 0 0 $spacing-xxl 0;
   padding-bottom: 0;
-  color: #fff !important;
 
   @media all and (max-width: $small-breakpoint) {
     font-size: $font-size-h2 !important;
@@ -157,6 +161,12 @@ a {
 p {
   margin: 0;
   padding: 0 0 $spacing-xxs 0;
+}
+
+span, p {
+  a {
+    font-family: $font-family-body;
+  }
 }
 
 ol, ul, {

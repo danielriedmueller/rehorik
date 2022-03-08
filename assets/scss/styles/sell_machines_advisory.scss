@@ -1,0 +1,75 @@
+div#sell-machines-advisory {
+  max-width: 600px;
+
+  p.center {
+    text-align: center;
+  }
+
+  a.button {
+    margin: $spacing;
+    background-color: $weinrot;
+    color: #fff;
+    font-family: $font-family-headline;
+  }
+
+  h4 {
+    padding-bottom: $spacing-s;
+    color: $font-color;
+  }
+
+  .grid-dl {
+    background: transparent url("../img/stripes-600px.png") no-repeat top center;
+    padding-top: 30px;
+    margin: 0 0 $spacing-s 0;
+
+    > div {
+      background-color: $beigegold;
+      padding: $spacing-s;
+
+      > dl {
+        margin: 0 0 $spacing-s 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        > dd {
+          margin-left: 0;
+          font-family: $font-family-headline;
+          color: #fff;
+        }
+
+        > dt {
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+
+        a {
+          color: #fff;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+    }
+  }
+
+  .flex-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+      flex: 1 1 auto;
+
+      &:not(:last-child) {
+        margin-right: $spacing-s;
+      }
+
+      > img {
+        max-width:100%;
+      }
+    }
+  }
+}

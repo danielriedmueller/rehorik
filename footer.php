@@ -41,7 +41,7 @@
                     <p><a href="<?= get_page_link(WIDERRUFSBELEHRUNG_PAGE_ID) ?>">Widerrufsbelehrung</a></p>
                     <p><a href="<?= get_page_link(DATENSCHUTZ_PAGE_ID) ?>">Datenschutz</a></p>
                     <p><a href="<?= get_page_link(IMPRESSUM_PAGE_ID) ?>">Impressum</a></p>
-                    <p><a href="<?= get_page_link(AGB_PAGE_ID) ?>">AGBs</a></p>
+                    <p><a href="<?= get_page_link(AGB_PAGE_ID) ?>">AGB</a></p>
                 </div>
             </div>
             <div>
@@ -49,7 +49,7 @@
                     <h2>Anmeldung</h2>
                     <p><a href="<?= get_page_link(LOGIN_PAGE_ID) ?>">Kundenlogin</a></p>
                     <p><b>Probleme bei der Anmeldung?</b></p>
-                    <p>Senden Sie uns bitte ein Email an</p>
+                    <p>Sende uns bitte ein Email an</p>
                     <p><a href="mailto:<?= IT_SUPPORT_EMAIL ?>"><?= IT_SUPPORT_EMAIL ?></a></p>
                     <p>Vielen Dank!</p>
                 </div>

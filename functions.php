@@ -13,6 +13,8 @@ define('EVENT_TICKET_TELEPHONE_SLUG', 'telefon');
 define('DELIVERY_ORDER_EMAIL', 'kaffee@rehorik.de');
 define('SHIPPING_ORDER_EMAIL', 'kaffee@rehorik.de');
 define('IT_SUPPORT_EMAIL', 'it@rehorik.de');
+define('BARISTASTORE_EMAIL', 'baristastore@rehorik.de');
+define('EVENT_EMAIL', 'events@rehorik.de');
 define('DELIVERY_SHIPPING_METHOD', 'bike');
 define('STANDARD_SHIPPING_METHOD', 'flat_rate');
 define('FREE_DELIVERY_SHIPPING_METHOD', 'free_shipping_bike');
@@ -24,8 +26,10 @@ define('WINE_SPIRITS_CO_CATEGORY_SLUG', 'wein-spirits-co');
 define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
 define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
 define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
+define('DELI_CATEGORY_SLUG', 'delikatessen-onlineshop');
 define('GIFTS_CATEGORY_SLUG', 'geschenke');
 define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
+define('MACHINE_CATEGORY_SLUG', 'maschinen-equipment');
 define('TICKET_CATEGORY_SLUG', 'veranstaltungen');
 define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
 define('VIRTUAL_EVENTS_CATEGORY_SLUG', 'virtuelle-events');
@@ -92,6 +96,7 @@ define('WIDERRUFSBELEHRUNG_PAGE_ID', 682);
 define('IMPRESSUM_PAGE_ID', 681);
 define('DATENSCHUTZ_PAGE_ID', 680);
 define('STAMMHAUS_PAGE_ID', 2);
+define('OPENING_HOURS_PAGE_ID', 11242);
 define('DEZ_PAGE_ID', 489);
 define('WEINGALERIE_PAGE_ID', 487);
 define('BARISTASTORE_PAGE_ID', 1535);
@@ -119,7 +124,8 @@ require_once($baseDir . '/actions/rehorik.php');
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.94, 'all');
+    wp_enqueue_style('divi', $assetsDir . 'css/overwritten-divi.css', false, 1.1, 'all');
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.97, 'all');
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
 

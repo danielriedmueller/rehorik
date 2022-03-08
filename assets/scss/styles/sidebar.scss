@@ -23,6 +23,7 @@
   h4, li, a {
     font-size: $font-size;
     color: $font-color-accent;
+    font-family: $font-family-headline;
   }
 
   h1, h2, h3, h4 {
@@ -39,7 +40,7 @@
         padding-bottom: $spacing-s;
         display: block;
         width: 100%;
-        line-height: 1em;
+        line-height: $line-height;
       }
 
       &:not(:first-child) > a {

@@ -4,7 +4,7 @@ $container-width: 80%;
 $weinrot: #5C0D2F;
 $hellbraun: #996B23;
 $dunkelbraun: #663700;
-$hellgrau: #3c3c3b;
+$grau: #3c3c3b;
 $beigegold: #CEB67F;
 $tuerkis: #003c4a;
 $lila: #2d253c;
@@ -12,7 +12,7 @@ $lila: #2d253c;
 $font-family-body: "DIN Offc W01 Cond";
 $font-family-headline: "DIN W01 Cond Medium";
 
-$font-color: $hellgrau;
+$font-color: $grau;
 $font-color-accent: $beigegold;
 $font-color-accent-dark: $hellbraun;
 
@@ -33,7 +33,7 @@ $font-size: 20px;
 $font-size-small: 17px;
 $font-size-very-small: 15px;
 $font-size-h1: 46px;
-$font-size-h2: 31px;
+$font-size-h2: 30px;
 
 $line-height-very-narrow: 17px;
 $line-height-narrow: 23px;
@@ -75,6 +75,7 @@ $cart-coupon-width: 300px;
 $cart-coupon-width-broad: 380px;
 
 $hugo-head-size: 90px;
+$sigil-size: 65px;
 $footer-items-width: 202px;
 $hint-width: 275px;
 $hint-width-large: 575px;

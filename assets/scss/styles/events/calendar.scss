@@ -12,15 +12,15 @@
 
 #tribe-bar-form .tribe-bar-submit input[type=submit].tribe-events-button {
   color: #ededed;
-  font-family: "DIN Offc W01 Cond";
+  font-family: $font-family-body;
   padding: 0.3em 1em;
-  background: #c6b480 none;
+  background: $beigegold none;
   font-weight: normal;
   font-style: normal;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 20px;
-  line-height: 1.7em;
+  line-height: $line-height;
   border: 2px solid;
   border-radius: 3px;
   transition: all 0.2s;
@@ -30,8 +30,8 @@
   cursor: pointer;
 
   &:hover {
-    color: #996b23;
-    background-color: #c6b480;
+    color: $hellbraun;
+    background-color: $beigegold;
   }
 }
 
@@ -48,6 +48,7 @@
         font-size: $font-size-very-small;
         font-weight: normal;
         font-family: $font-family-body;
+        color: $font-color;
       }
 
       @media all and (max-width: $small-breakpoint) {

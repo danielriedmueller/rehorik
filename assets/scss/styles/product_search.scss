@@ -1,5 +1,4 @@
 .rehorik-product-search-widget {
-  position: relative;
   height: $menu-height;
   display: flex;
   justify-content: center;
@@ -7,73 +6,51 @@
   flex-direction: column;
   padding-left: $spacing;
   padding-right: $spacing;
+}
 
-  &::before {
-    content: '';
-    display: block;
-    background: transparent url("../img/lupe-16px.svg") no-repeat center center;
-    background-size: $menu-icon-size;
-    width: $menu-icon-size;
-    height: $menu-icon-size;
+div.dgwt-wcas-details-right .dgwt-wcas-suggestions-wrapp {
+  border-radius: 0 0 0 $border-radius;
+  border-right-color: #eee;
+}
+
+div.dgwt-wcas-suggestions-wrapp,
+div.dgwt-wcas-details-wrapp {
+  font-family: $font-family-body;
+  font-size: $font-size;
+
+  .dgwt-wcas-details-main-image {
+    margin-top: $spacing;
   }
 
-  // enlarges hover area
-  &::after {
-    content: '';
-    display: block;
-    width: 220px;
-    height: $spacing * 2;
-    position: absolute;
-    top: $menu-height;
-    right: 0;
-    z-index: -1;
+  a.dgwt-wcas-details-post-title, a.dgwt-wcas-details-product-title {
+    font-size: $font-size;
+    font-family: $font-family-headline;
+    color: $font-color;
   }
 
-  &:hover {
-    background-color: $beigegold;
-
-    &::before {
-      background: transparent url("../img/lupe-rot-16px.svg") no-repeat center center;
-    }
-
-    form.rehorik-product-search-form {
-      display: flex;
-    }
+  .dgwt-wcas-st {
+    font-size: $font-size;
   }
 
-  form.rehorik-product-search-form {
-    display: none;
-    position: absolute;
-    top: $menu-height;
-    right: 0;
-    background: rgba(206, 182, 127, 0.9) none;
-    border-bottom-right-radius: $border-radius;
-    padding-left: $spacing;
-    padding-right: $spacing;
-    height: $spacing * 2;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-
-    input {
-      border: none;
-      background-color: transparent;
-      font-size: $font-size;
-      font-family: $font-family-headline;
-      color: $weinrot;
-    }
-
-    button {
-      display: none;
-    }
+  strong {
+    font-family: $font-family-body;
   }
 
-  ::placeholder {
-    color:    $weinrot;
+  a.button {
+    border: none;
+    background-color: transparent;
+    font-size: $font-size;
+    font-family: $font-family-headline;
+    color: $weinrot;
   }
 }
 
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px rgba(206, 182, 127, 0.97) inset;
+.dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input {
+  border-radius: $border-radius;
+  font-size: $font-size;
+}
+
+.dgwt-wcas-open .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input {
+  border-radius: $border-radius $border-radius 0 0;
 }
 

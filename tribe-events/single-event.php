@@ -15,11 +15,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
+require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php');
+
 $events_label_singular = tribe_get_event_label_singular();
 $events_label_plural   = tribe_get_event_label_plural();
 
 $event_id = get_the_ID();
-$isOnline = get_post_meta($event_id, ONLINE_META_KEY);
+$isOnline = isEventOnline($event_id);
 $isCanceled = get_post_meta($event_id, CANCELED_META_KEY);
 get_template_part('templates/tribe-events-attendee-list');
 ?>
@@ -47,9 +49,10 @@ get_template_part('templates/tribe-events-attendee-list');
                     <?php the_content(); ?>
                 </div>
                 <div class="rehorik-tribe-events-single-hint">
-                    Für alle unsere Veranstaltungen gelten die aktuellen Corona-Regelungen. Bitte denkt daran Eure Nachweise mitzunehmen, wir freuen uns auf Euch!
-                    <br>Stand 23.11.21: 2G+ Regel - geimpft oder genesen plus negativen Schnelltestnachweis.
-                    <br>Bitte beachtet, dass die Anmeldung verbindlich ist und nicht <b>verschoben, storniert oder umgetauscht</b> werden kann!
+                    Stand 28.02.2022: Alle geplanten Termine finden unter Vorbehalt statt.
+                    <br>Für alle unsere Veranstaltungen gelten die aktuellen Corona-Regelungen. Bitte denkt daran Eure Nachweise mitzunehmen, wir freuen uns auf Euch!
+                    <br>2G Regel - geimpft oder genesen.
+                    <br>Bitte beachtet, dass die Anmeldung verbindlich ist und <b>nicht verschoben, storniert oder umgetauscht</b> werden kann!
                 </div>
             </div>
             <div>
@@ -69,8 +72,8 @@ get_template_part('templates/tribe-events-attendee-list');
         <h2>Informationen zur Veranstaltung</h2>
         <div class="rehorik-tribe-events-single-event-info">
             <div>
-                <p><b>VERANSTALTER:</b> Rehorik GmbH</p>
-                <p><b>TELEFON:</b> <a href="tel:+49941 / 51727">0941 / 51727</a></p>
+                <p><b>VERANSTALTER:</b> Rehorik Rösterei & Feinkost GmbH</p>
+                <p><b>TELEFON:</b> <a href="tel:+49941 / 7883530">0941 / 7883530</a></p>
                 <p><b>E-MAIL:</b> <a href="mailto:events@rehorik.de">events@rehorik.de</a></p>
             </div>
             <div>

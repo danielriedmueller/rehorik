@@ -1,11 +1,21 @@
 .entry-content {
   .woocommerce {
+    .checkout {
+      h3 {
+        color: $font-color;
+      }
+    }
+
     .woocommerce-billing-fields,
     #payment.woocommerce-checkout-payment {
       margin-bottom: $spacing-xl;
     }
 
     .woocommerce-order.rehorik-order {
+      h2, h3 {
+        color: $font-color;
+      }
+
       address {
         padding: $spacing-s;
         margin: $spacing-s 0;

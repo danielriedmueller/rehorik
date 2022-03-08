@@ -114,6 +114,8 @@
   .order-instructions {
     position: relative;
     padding: $spacing-l $spacing;
+    font-size: $font-size;
+    line-height: $line-height;
 
     @media all and (min-width: $small-breakpoint + 1) {
       max-width: $max-width;
