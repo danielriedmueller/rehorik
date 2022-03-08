@@ -46,21 +46,19 @@ $sigilWidth: $sigilHeight * 1.5;
 }
 
 // Category view
-ul.rehorik-products {
-  .rehorik-product.biosigil::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: $spacing-s;
-    width: 50px;
-    height: 33px;
-    background: transparent url("../img/biosiegel.svg") no-repeat center center;
-  }
+.rehorik-product.biosigil::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: $spacing-s;
+  width: 50px;
+  height: 33px;
+  background: transparent url("../img/biosiegel.svg") no-repeat center center;
+}
 
 .rehorik-product.product-of-month {
-  > a > span.et_shop_image::after,
-  > div > div.images::after {
+  &::after {
     content: "";
     display: block;
     position: absolute;
@@ -73,29 +71,25 @@ ul.rehorik-products {
     background-image: url("../img/productofmonth.svg");
   }
 
-  > div > div.images::after {
-    width: $sigilWidth;
-    height: $sigilHeight;
-    background-size: $sigilWidth $sigilHeight;
-  }
-
-  &.product_cat-wein,
-  &.product_cat-wein-spirits-co {
-    > a > span.et_shop_image::after,
-    > div > div.images::after {
+  &.product_cat-wein::after,
+  &.product_cat-wein-spirits-co::after {
       background-image: url("../img/wineofmonth.svg");
-    }
   }
 }
 
-  .rehorik-product.event-online::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: $spacing-s;
-    width: 50px;
-    height: 33px;
-    background: transparent url("../img/online.svg") no-repeat center center;
-  }
+.single-product .rehorik-product.product-of-month::after {
+  width: $sigilWidth;
+  height: $sigilHeight;
+  background-size: $sigilWidth $sigilHeight;
+}
+
+.rehorik-product.event-online::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: $spacing-s;
+  width: 50px;
+  height: 33px;
+  background: transparent url("../img/online.svg") no-repeat center center;
 }

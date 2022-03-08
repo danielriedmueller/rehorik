@@ -17,6 +17,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
+if (isProductCategory(MACHINE_CATEGORY_SLUG)) {
+    get_template_part('templates/products/sell-machines-advisory');
+} else {
 ?>
 <p class="woocommerce-info">
     <?php
@@ -27,3 +30,4 @@ defined( 'ABSPATH' ) || exit;
         }
     ?>
 </p>
+<?php } ?>
