@@ -1,6 +1,17 @@
 div#sell-machines-advisory {
   max-width: 600px;
 
+  p.center {
+    text-align: center;
+  }
+
+  a.button {
+    margin: $spacing;
+    background-color: $weinrot;
+    color: #fff;
+    font-family: $font-family-headline;
+  }
+
   h4 {
     padding-bottom: $spacing-s;
     color: $font-color;
