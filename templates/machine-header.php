@@ -4,6 +4,6 @@
     <div class="header-image machine"></div>
     <div class="slider-claim">
         <h1>Werdet zum Home Barista und holt Euch Eure Lieblingsmaschine!</h1>
-        <div><a class="button" href="mailto:<?= BARISTASTORE_EMAIL ?>">Beratungstermin vereinbaren</a></div>
+        <div><a class="button" href="mailto:<?= BARISTASTORE_EMAIL ?>?subject=Beratungstermin%20Maschinen%20und%20Equipment">Beratungstermin vereinbaren</a></div>
     </div>
 </div>
