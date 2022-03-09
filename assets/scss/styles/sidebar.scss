@@ -50,6 +50,10 @@
             line-height: $line-height;
           }
 
+          > span.count {
+            display: none;
+          }
+
           &:not(:first-child) > a {
             border-top: 1px solid $beigegold;
             padding-top: $spacing-s;
@@ -62,6 +66,11 @@
 
             > li {
               margin: 0;
+
+              span.count {
+                font-size: $font-size-very-small;
+                color: $tuerkis;
+              }
             }
           }
         }
@@ -80,5 +89,9 @@
       }
     }
   }
+}
 
+//Anzahl der Produkte: Ausnahme bei Maschinen und Equipment
+ul.children > li.cat-item-231 > span.count {
+  display: none;
 }
