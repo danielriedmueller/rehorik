@@ -1,20 +1,8 @@
 <?php
 
 // Add admin field for cat video
-add_action('product_cat_add_form_fields', 'wh_taxonomy_add_new_meta_field', 10, 1);
 add_action('product_cat_edit_form_fields', 'wh_taxonomy_edit_meta_field', 10, 1);
 add_action('edited_product_cat', 'wh_save_taxonomy_custom_meta', 10, 1);
-add_action('create_product_cat', 'wh_save_taxonomy_custom_meta', 10, 1);
-
-//Product Cat Create page
-function wh_taxonomy_add_new_meta_field() {
-    ?>
-    <div class="form-field">
-        <label for="reh_cat_video">Video</label>
-        <input type="text" name="reh_cat_video" id="reh_cat_video">
-    </div>
-    <?php
-}
 
 //Product Cat Edit page
 function wh_taxonomy_edit_meta_field($term) {
