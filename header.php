@@ -9,9 +9,6 @@
             <?php get_template_part('templates/menu'); ?>
             <div id="et-main-area">
                 <?php
-                    if (isProductCategory(DELIVERY_CATEGORY_SLUG)) {
-                        get_template_part('templates/lieferservice-header');
-                    }
                     if (isProductCategory(MACHINE_CATEGORY_SLUG)) {
                         get_template_part('templates/machine-header');
                     }

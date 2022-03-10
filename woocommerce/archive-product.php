@@ -84,9 +84,7 @@ if (isProductCategory(MACHINE_CATEGORY_SLUG)) {
  */
 do_action( 'woocommerce_after_main_content' );
 
-if (isProductCategory(DELIVERY_CATEGORY_SLUG)) {
-    get_template_part('templates/lieferservice-footer');
-} elseif (isProductCategory(TICKET_CATEGORY_SLUG)) {
+if (isProductCategory(TICKET_CATEGORY_SLUG)) {
     get_template_part('templates/veranstaltungen/veranstaltungen-footer');
 } else {
     get_template_part('templates/best-selling-products');
