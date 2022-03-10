@@ -1,0 +1,27 @@
+#orderbird-chooser {
+  border: 1px solid $weinrot;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  h2 {
+    color: $beigegold;
+    width: 100%;
+    padding: $spacing-s;
+    background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+    font-size: $spacing-s;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  div {
+    flex-grow: 1;
+  }
+
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+}

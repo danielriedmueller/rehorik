@@ -4,7 +4,6 @@ ul.products.rehorik-products,
   display: grid;
   justify-content: center;
   gap: $spacing-xxs;
-  margin-bottom: $spacing-xl;
 
   li {
     float: none;
@@ -69,7 +68,6 @@ div#rehorik-best-selling-products {
     @media all and (max-width: 973px) {
       -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-      margin-bottom: $spacing-xl;
     }
 
     @media all and (max-width: 640px) {

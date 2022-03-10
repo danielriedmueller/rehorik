@@ -1,5 +1,5 @@
 <?php
-get_header( );
+get_header();
 ?>
 <ul id="slider">
     <li>
@@ -16,7 +16,8 @@ get_header( );
         <div class="slider-claim">
             <h1>Kaffeerösterei seit 1928</h1>
             <div>
-                <a class="button" href="<?= get_term_link( get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Zum Kaffee</a>
+                <a class="button" href="<?= get_term_link(get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'),
+                    'product_cat'); ?>">Zum Kaffee</a>
                 <a class="button" href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Unser Kugelröster</a>
             </div>
         </div>
@@ -26,8 +27,12 @@ get_header( );
         <div class="slider-claim">
             <h1>TRADITION, QUALITÄT & LEIDENSCHAFT</h1>
             <div>
-                <a class="button" href="<?= get_term_link( get_term_by('slug', COFFEE_FILTERKAFFEE_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Hier gibts Filterkaffee</a>
-                <a class="button" href="<?= get_term_link( get_term_by('slug', COFFEE_ESPRESSO_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Und hier Espresso</a>
+                <a class="button"
+                   href="<?= get_term_link(get_term_by('slug', COFFEE_FILTERKAFFEE_CATEGORY_SLUG, 'product_cat'),
+                       'product_cat'); ?>">Hier gibts Filterkaffee</a>
+                <a class="button"
+                   href="<?= get_term_link(get_term_by('slug', COFFEE_ESPRESSO_CATEGORY_SLUG, 'product_cat'),
+                       'product_cat'); ?>">Und hier Espresso</a>
             </div>
         </div>
     </li>
@@ -36,8 +41,12 @@ get_header( );
         <div class="slider-claim">
             <h1>WIR KÖNNEN AUCH WEIN</h1>
             <div>
-                <a class="button" href="<?= get_term_link( get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Zur Weinauswahl</a>
-                <a class="button" href="<?= get_term_link( get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'), 'product_cat' ); ?>">Und Spirituosen</a>
+                <a class="button"
+                   href="<?= get_term_link(get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'),
+                       'product_cat'); ?>">Zur Weinauswahl</a>
+                <a class="button"
+                   href="<?= get_term_link(get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'),
+                       'product_cat'); ?>">Und Spirituosen</a>
             </div>
         </div>
     </li>
@@ -60,7 +69,8 @@ get_header( );
             </div>
             <hr>
             <div>
-                Aufgrund von Lieferproblemen beim Rohkaffe kommt es bei einigen Kaffeesorten zu einer Versandverzögerung.
+                Aufgrund von Lieferproblemen beim Rohkaffe kommt es bei einigen Kaffeesorten zu einer
+                Versandverzögerung.
                 Wir bitten um Verständnis.
             </div>
         </div>
@@ -69,16 +79,19 @@ get_header( );
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
         <?php
-        $product_categories = getShopFrontPageCategories( );
-        foreach ( $product_categories as $category ) {
+        $product_categories = getShopFrontPageCategories();
+        foreach ($product_categories as $category) {
             wc_get_template(
                 'content-product_cat.php',
-                array(
+                [
                     'category' => $category,
-                )
+                ]
             );
         }
         ?>
+        <li class="product-category product">
+            <?php get_template_part('templates/orderbird-chooser'); ?>
+        </li>
     </ul>
 </div>
 <?php
