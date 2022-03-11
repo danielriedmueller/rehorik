@@ -1,11 +1,18 @@
 #orderbird-chooser {
-  border: 1px solid $weinrot;
+  background-color: $grau;
   display: flex;
-  flex-direction: column;
   height: 100%;
   width: 100%;
 
-  h2 {
+  @media all and (max-width: 973px) {
+    height: 100%;
+  }
+
+  @media all and (max-width: 640px) {
+    height: 617px;
+  }
+
+  h2, label > span {
     color: $beigegold;
     width: 100%;
     padding: $spacing-s;
@@ -14,10 +21,52 @@
     font-weight: normal;
     text-align: center;
     text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
   }
 
   div {
     flex-grow: 1;
+  }
+
+  label {
+    color: $grau;
+    font-weight: bold;
+    flex: 0 0 50%;
+
+    cursor: pointer;
+    position: relative;
+
+    span {
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:hover span {
+      background: none;
+    }
+
+    &:first-of-type {
+      border-right: 1px solid $beigegold;
+      background-image: url("../img/standorte/190-small.png");
+    }
+
+    &:last-of-type {
+      background-image: url("../img/standorte/straubinger-small.png");
+    }
+
+    background-size: cover;
+
+
+    input {
+      display: none;
+    }
+  }
+
+  #resmio {
+    display: none;
   }
 
   iframe {

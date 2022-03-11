@@ -1,11 +1,11 @@
 <?php ?>
 <div id="orderbird-chooser">
     <label for="cafe-190-grad">
-        Café 190°
+        <span>Café 190°</span>
         <input type="radio" id="cafe-190-grad" value="cafe-190-grad" name="orderbird-radio" />
     </label>
     <label for="rehorik-rosterei-kaffehaus">
-        Rösterei & Kaffeehaus
+        <span>Rösterei & <br> Kaffeehaus</span>
         <input type="radio" id="rehorik-rosterei-kaffehaus" value="rehorik-rosterei-kaffehaus" name="orderbird-radio" />
     </label>
     <div id="resmio"></div>

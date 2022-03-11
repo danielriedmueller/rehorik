@@ -78,6 +78,9 @@ get_header();
 </div>
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
+        <li class="product-category product">
+            <?php get_template_part('templates/orderbird-chooser'); ?>
+        </li>
         <?php
         $product_categories = getShopFrontPageCategories();
         foreach ($product_categories as $category) {
@@ -89,9 +92,6 @@ get_header();
             );
         }
         ?>
-        <li class="product-category product">
-            <?php get_template_part('templates/orderbird-chooser'); ?>
-        </li>
     </ul>
 </div>
 <?php

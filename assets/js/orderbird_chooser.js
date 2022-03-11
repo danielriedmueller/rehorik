@@ -15,7 +15,7 @@
         widgetContainer.innerHTML = '';
         if (this.widget) this.widget.remove();
         this.widget = document.createElement("script");
-        this.widget.src = "//static.resmio.com/static/de/widget.js#id=" + id;
+        this.widget.src = "//static.resmio.com/static/de/widget.js#id=" + id + "&color=%23ceb67f&width=275&height=400&fontSize=14px&facebookLogin=false&backgroundColor=%235c0d2f&commentsDisabled=true&newsletterSignup=false&linkBackgroundColor=%23ceb67f"
         head.appendChild(this.widget);
     }
 
