@@ -8,6 +8,9 @@ ul.products.rehorik-products,
   li {
     float: none;
     margin: 0 !important;
+    border: none;
+    border-radius: $border-radius;
+    overflow: hidden;
   }
 
   &::before, &::after {
