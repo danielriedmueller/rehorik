@@ -125,7 +125,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.97, 'all');
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
-    wp_enqueue_script('product-cat-video', $assetsDir . 'js/product_cat_video.js', false, 4, true);
+    wp_enqueue_script('product-cat-video', $assetsDir . 'js/product_cat_video.js', false, 1, true);
 
     if (is_front_page()) {
         wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
