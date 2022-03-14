@@ -1,43 +1,43 @@
-(() => {
-    const $ = jQuery;
-    const videos = $('video');
-    const videoContainer = $('.video');
+document.addEventListener('DOMContentLoaded', () => {
     const isPlayingCls = 'playing';
 
-    videoContainer.each((video, b) => {
-        console.log(video);
-        console.log(b);
+    Array.from(document.getElementsByTagName('video')).forEach(video => {
+        const link = video.parentElement;
+        const cat = link.parentElement;
+
         const button = document.createElement("button");
         button.classList.add('video-button');
-        button.onclick = (e) => {
-            if (button.classList.contains(isPlayingCls)) {
-                pauseVideo(button);
-            } else {
-                playVideo(button);
+
+        if (isTouchDevice()) {
+            button.onclick = () => {
+                if (button.classList.contains(isPlayingCls)) {
+                    toggleVideo(video, button, false);
+                } else {
+                    toggleVideo(video, button);
+                }
             }
+        } else {
+            button.style.pointerEvents = "none";
+            cat.onmouseenter = () => toggleVideo(video, button);
+            cat.onmouseleave = () => toggleVideo(video, button, false);
         }
 
-        $(video).parents('li').append(button);
-    });
+        cat.insertBefore(button, link);
+    })
 
-    // Desktop
-    videoContainer.hover(function() {
-        playVideo(this)
-    }, function () {
-        pauseVideo(this)
-    });
-
-    const playVideo = (el) => {
-        console.log(el);
-        var $button = $(el);
-        $button.parent('li').find('video').get(0).play();
-        $button.addClass(isPlayingCls);
+    const toggleVideo = (video, button, play = true) => {
+        if (play) {
+            video.play();
+            button.classList.add(isPlayingCls);
+        } else {
+            video.pause();
+            button.classList.remove(isPlayingCls);
+        }
     }
 
-    const pauseVideo = (el) => {
-        console.log(el);
-        var $button = $(el);
-        $button.parent('li').find('video').get(0).pause();
-        $button.removeClass(isPlayingCls);
+    function isTouchDevice() {
+        return (('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0));
     }
-})()
+});
