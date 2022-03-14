@@ -175,7 +175,6 @@ function getShopFrontPageCategories()
     $frontPageCategories[] = $categories[array_search(WINE_SPIRITS_CO_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(DELI_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(MACHINE_CATEGORY_SLUG, $keys)];
-    $frontPageCategories[] = $categories[array_search(DELIVERY_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(TICKET_CATEGORY_SLUG, $keys)];
 
     return $frontPageCategories;
@@ -253,50 +252,46 @@ function woocommerce_template_loop_category_title($category)
 }
 
 /**
- * Returns one product subcategory for onlineshop or delivery
- * depending on $referer Page
- * The first element is used in sidebar product category list
- * Checks if its for delivery or shipping
+ * Show subcategory thumbnails.
  *
- * @param $terms
- * @return array
+ * @param mixed $category Category.
  */
-function findShoptypeAwareProductSubcategory($terms) {
-    if (!isset($_SERVER['HTTP_REFERER'])) {
-        return $terms;
+function woocommerce_subcategory_thumbnail( $category ) {
+    $small_thumbnail_size = apply_filters( 'subcategory_archive_thumbnail_size', 'woocommerce_thumbnail' );
+    $dimensions           = wc_get_image_size( $small_thumbnail_size );
+    $thumbnail_id         = get_term_meta( $category->term_id, 'thumbnail_id', true );
+    $video                = get_term_meta( $category->term_id, 'reh_cat_video', true );
+
+    if ( $thumbnail_id ) {
+        $image        = wp_get_attachment_image_src( $thumbnail_id, $small_thumbnail_size );
+        $image        = $image[0];
+        $image_srcset = function_exists( 'wp_get_attachment_image_srcset' ) ? wp_get_attachment_image_srcset( $thumbnail_id, $small_thumbnail_size ) : false;
+        $image_sizes  = function_exists( 'wp_get_attachment_image_sizes' ) ? wp_get_attachment_image_sizes( $thumbnail_id, $small_thumbnail_size ) : false;
+    } else {
+        $image        = wc_placeholder_img_src();
+        $image_srcset = false;
+        $image_sizes  = false;
     }
-    $referer = $_SERVER['HTTP_REFERER'];
 
-    $term_ids = wp_list_pluck($terms,'term_id');
-    $parents = array_filter(wp_list_pluck($terms,'parent'));
-    $term_ids_not_parents = array_diff($term_ids,  $parents);
-    $terms_not_parents = array_intersect_key($terms,  $term_ids_not_parents);
+    if ( $image ) {
+        // Prevent esc_url from breaking spaces in urls for image embeds.
+        // Ref: https://core.trac.wordpress.org/ticket/23605.
+        $image = str_replace( ' ', '%20', $image );
 
-    $shoptypeAwareSubcategory = [];
-    $seperator = ";";
-
-    foreach ($terms_not_parents as $key => $term) {
-        $parentSlugs = explode($seperator, get_term_parents_list($term->term_id, 'product_cat', [
-            'format' => 'slug',
-            'separator' => $seperator,
-            'link' => false,
-            'inclusive' => false
-        ]));
-        if (in_array(DELIVERY_CATEGORY_SLUG, $parentSlugs)) {
-            $shoptypeAwareSubcategory[DELIVERY_CATEGORY_SLUG] = $term;
+        // Add responsive image markup if available.
+        if ( $image_srcset && $image_sizes ) {
+            echo '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $category->name ) . '" width="' . esc_attr( $dimensions['width'] ) . '" height="' . esc_attr( $dimensions['height'] ) . '" srcset="' . esc_attr( $image_srcset ) . '" sizes="' . esc_attr( $image_sizes ) . '" />';
         } else {
-            $shoptypeAwareSubcategory[ONLINESHOP_CATEGORY_SLUG] = $term;
+            echo '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $category->name ) . '" width="' . esc_attr( $dimensions['width'] ) . '" height="' . esc_attr( $dimensions['height'] ) . '" />';
         }
     }
 
-    // Is delivery
-    if (substr_count($referer, DELIVERY_CATEGORY_URL) === 1) {
-        if (isset($shoptypeAwareSubcategory[DELIVERY_CATEGORY_SLUG])) {
-            return [$shoptypeAwareSubcategory[DELIVERY_CATEGORY_SLUG]];
-        }
+    if ($video) {
+        echo(sprintf(
+                '<video muted loop playsinline preload="none"><source src="%s"/></video>',
+            wp_get_attachment_url($video)
+        ));
     }
-
-    return [$shoptypeAwareSubcategory[ONLINESHOP_CATEGORY_SLUG]];
 }
 
 function syncEventCategoriesToProductCategories() {

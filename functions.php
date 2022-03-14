@@ -28,7 +28,6 @@ define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
 define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
 define('DELI_CATEGORY_SLUG', 'delikatessen-onlineshop');
 define('GIFTS_CATEGORY_SLUG', 'geschenke');
-define('DELIVERY_CATEGORY_SLUG', 'lieferservice');
 define('MACHINE_CATEGORY_SLUG', 'maschinen-equipment');
 define('TICKET_CATEGORY_SLUG', 'veranstaltungen');
 define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
@@ -128,8 +127,10 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.97, 'all');
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
+    wp_enqueue_script('product-cat-video', $assetsDir . 'js/product_cat_video.js', false, 1, true);
 
-    if (isProductCategory(DELIVERY_CATEGORY_SLUG) || is_front_page()) {
+    if (is_front_page()) {
+        wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', false, 1, true);
         wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
         wp_enqueue_script('tiny-slider-js', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', null, 1, true);
         wp_enqueue_script('slider-js', $assetsDir . 'js/tiny_slider.js', null, 1, true);
@@ -140,14 +141,6 @@ add_action('init', function() {
     register_nav_menus([
         'main'   => 'Hauptmenü'
     ]);
-
-    /*
-     * Temporarily Disabled
-     *
-    if (!wp_next_scheduled( 'rh_past_events_cron_hook') ) {
-        wp_schedule_event(time(), 'twicedaily', 'rh_past_events_cron_hook');
-    }
-    */
 });
 
 /**

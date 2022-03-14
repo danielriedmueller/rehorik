@@ -1,4 +1,5 @@
 <?php
+require_once('admin/add_cat_video_field.php');
 /**
  * Removes breadcrumb.
  */

@@ -57,6 +57,7 @@
 @import "styles/hint";
 @import "styles/newsletter_sign_up";
 @import "styles/sell_machines_advisory";
+@import "styles/orderbird_chooser";
 
 @font-face {
   font-family: "DIN Offc W01 Cond";
@@ -132,7 +133,7 @@ h1 {
   @media all and (max-width: $small-breakpoint) {
     font-size: $font-size-h2 !important;
     letter-spacing: 1px;
-    line-height: 25px;
+    line-height: $line-height-large;
   }
 }
 

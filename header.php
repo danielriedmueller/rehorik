@@ -8,8 +8,8 @@
         <div id="page-container">
             <?php
                 get_template_part('templates/menu');
-                if (isProductCategory(DELIVERY_CATEGORY_SLUG)) {
-                    get_template_part('templates/lieferservice-header');
+                if (isProductCategory(MACHINE_CATEGORY_SLUG)) {
+                    get_template_part('templates/machine-header');
                 }
                 if (isProductCategory(TICKET_CATEGORY_SLUG)) {
                     $eventCat = getProductCategorySlug();

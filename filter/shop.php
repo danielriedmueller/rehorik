@@ -56,48 +56,6 @@ add_filter('woocommerce_shipping_methods', function ($methods) {
 });
 
 /**
- * Bike delivery shipping method only available for products with category lieferservice
- * Standard delivery shipping method only available for products with category onlineshop or
- * virtual events wich have degustation package (product is not virtual in this case)
- */
-add_filter('woocommerce_package_rates', function ($rates) {
-    $unsetBikeShipping = false;
-    $unsetStandardShipping = false;
-
-    foreach (WC()->cart->get_cart() as $values) {
-        if (!isItCategory($values['data'], DELIVERY_CATEGORY_SLUG)) {
-            $unsetBikeShipping = true;
-        }
-
-        if (!isItCategory($values['data'], ONLINESHOP_CATEGORY_SLUG)
-            && !isItCategory($values['data'], VIRTUAL_EVENTS_CATEGORY_SLUG)) {
-            $unsetStandardShipping = true;
-        }
-    }
-
-    if ($unsetBikeShipping || $unsetStandardShipping) {
-        $rates = array_filter($rates, function ($rate) use ($unsetStandardShipping, $unsetBikeShipping) {
-            if (($rate->method_id === DELIVERY_SHIPPING_METHOD
-                    || $rate->method_id === FREE_DELIVERY_SHIPPING_METHOD)
-                && $unsetBikeShipping) {
-                return false;
-            }
-
-            if (($rate->method_id === STANDARD_SHIPPING_METHOD
-                    || $rate->method_id === FREE_STANDARD_SHIPPING_METHOD)
-                && $unsetStandardShipping) {
-                return false;
-            }
-
-            return true;
-        });
-    }
-
-    return $rates;
-});
-
-/**
- * only copy opening php tag if needed
  * Displays shipping estimates for WC shipping rates
  */
 add_filter('woocommerce_cart_shipping_method_full_label', function($label, $method) {

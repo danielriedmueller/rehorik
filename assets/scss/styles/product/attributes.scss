@@ -56,6 +56,10 @@ div.rehorik-product-attribute-container {
     margin-bottom: $spacing;
     text-align: center;
 
+    .rehorik-product-attribute-label {
+      font-family: $font-family-headline;
+    }
+
     .rehorik-product-attribute-value p {
       padding-bottom: 0;
     }
