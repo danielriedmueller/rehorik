@@ -1,9 +1,24 @@
-(function () {
-    var $ = jQuery;
-    var videos = $('video');
-    var buttons = $('.video button');
-    var videoContainer = $('.video');
-    var isPlayingCls = 'playing';
+(() => {
+    const $ = jQuery;
+    const videos = $('video');
+    const videoContainer = $('.video');
+    const isPlayingCls = 'playing';
+
+    videoContainer.each((video, b) => {
+        console.log(video);
+        console.log(b);
+        const button = document.createElement("button");
+        button.classList.add('video-button');
+        button.onclick = (e) => {
+            if (button.classList.contains(isPlayingCls)) {
+                pauseVideo(button);
+            } else {
+                playVideo(button);
+            }
+        }
+
+        $(video).parents('li').append(button);
+    });
 
     // Desktop
     videoContainer.hover(function() {
@@ -12,33 +27,17 @@
         pauseVideo(this)
     });
 
-    // Mobile
-    videoContainer.waypoint({
-        handler: function() {
-            playVideo(this.element);
-        },
-        offset: '30%'
-    })
-
-    function playVideo(el) {
-        pauseAllVideos();
-        var video = $(el).children('video');
-        var button = $(el).children('button');
-        video.get(0).play();
-        button.addClass(isPlayingCls);
+    const playVideo = (el) => {
+        console.log(el);
+        var $button = $(el);
+        $button.parent('li').find('video').get(0).play();
+        $button.addClass(isPlayingCls);
     }
 
-    function pauseVideo(el) {
-        var video = $(el).children('video');
-        var button = $(el).children('button');
-        video.get(0).pause();
-        button.removeClass(isPlayingCls);
-    }
-
-    function pauseAllVideos() {
-        videos.each(function () {
-            $(this).get(0).pause();
-        })
-        buttons.removeClass(isPlayingCls);
+    const pauseVideo = (el) => {
+        console.log(el);
+        var $button = $(el);
+        $button.parent('li').find('video').get(0).pause();
+        $button.removeClass(isPlayingCls);
     }
 })()
