@@ -66,7 +66,21 @@ get_header( );
         </div>
     </div>
 </div>
-
+<div class="container hint-margin-top">
+    <ul class="rehorik-products products">
+        <?php
+        $product_categories = getShopFrontPageCategories( );
+        foreach ( $product_categories as $category ) {
+            wc_get_template(
+                'content-product_cat.php',
+                array(
+                    'category' => $category,
+                )
+            );
+        }
+        ?>
+    </ul>
+</div>
 <?php
 get_template_part('templates/best-selling-products');
 get_footer();
