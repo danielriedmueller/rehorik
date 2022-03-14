@@ -1,44 +1,43 @@
-(function () {
-    var $ = jQuery;
-    var videos = $('video');
-    var buttons = $('.video button');
-    var videoContainer = $('.video');
-    var isPlayingCls = 'playing';
+document.addEventListener('DOMContentLoaded', () => {
+    const isPlayingCls = 'playing';
 
-    // Desktop
-    videoContainer.hover(function() {
-        playVideo(this)
-    }, function () {
-        pauseVideo(this)
-    });
+    Array.from(document.getElementsByTagName('video')).forEach(video => {
+        const link = video.parentElement;
+        const cat = link.parentElement;
 
-    // Mobile
-    videoContainer.waypoint({
-        handler: function() {
-            playVideo(this.element);
-        },
-        offset: '30%'
+        const button = document.createElement("button");
+        button.classList.add('video-button');
+
+        if (isTouchDevice()) {
+            button.onclick = () => {
+                if (button.classList.contains(isPlayingCls)) {
+                    toggleVideo(video, button, false);
+                } else {
+                    toggleVideo(video, button);
+                }
+            }
+        } else {
+            button.style.pointerEvents = "none";
+            cat.onmouseenter = () => toggleVideo(video, button);
+            cat.onmouseleave = () => toggleVideo(video, button, false);
+        }
+
+        cat.insertBefore(button, link);
     })
 
-    function playVideo(el) {
-        pauseAllVideos();
-        var video = $(el).children('video');
-        var button = $(el).children('button');
-        video.get(0).play();
-        button.addClass(isPlayingCls);
+    const toggleVideo = (video, button, play = true) => {
+        if (play) {
+            video.play();
+            button.classList.add(isPlayingCls);
+        } else {
+            video.pause();
+            button.classList.remove(isPlayingCls);
+        }
     }
 
-    function pauseVideo(el) {
-        var video = $(el).children('video');
-        var button = $(el).children('button');
-        video.get(0).pause();
-        button.removeClass(isPlayingCls);
+    function isTouchDevice() {
+        return (('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0));
     }
-
-    function pauseAllVideos() {
-        videos.each(function () {
-            $(this).get(0).pause();
-        })
-        buttons.removeClass(isPlayingCls);
-    }
-})()
+});

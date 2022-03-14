@@ -288,7 +288,7 @@ function woocommerce_subcategory_thumbnail( $category ) {
 
     if ($video) {
         echo(sprintf(
-                '<div class="video"><button></button><video muted loop preload="none"><source src="%s" type="video/webm" /></video></div>',
+                '<video muted loop playsinline preload="none"><source src="%s"/></video>',
             wp_get_attachment_url($video)
         ));
     }
