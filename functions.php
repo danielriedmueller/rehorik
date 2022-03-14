@@ -138,14 +138,6 @@ add_action('init', function() {
     register_nav_menus([
         'main'   => 'Hauptmenü'
     ]);
-
-    /*
-     * Temporarily Disabled
-     *
-    if (!wp_next_scheduled( 'rh_past_events_cron_hook') ) {
-        wp_schedule_event(time(), 'twicedaily', 'rh_past_events_cron_hook');
-    }
-    */
 });
 
 /**
