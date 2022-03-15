@@ -11,11 +11,11 @@
 
   h2 {
     grid-area: footer;
-    border-top: 1px solid $beigegold;
     color: $beigegold;
     width: 100%;
     padding: $spacing-s;
-    background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+    background: rgba(0, 0, 0, 0.3) none;
+    backdrop-filter: blur(3px);
     font-size: $spacing-s;
     font-weight: normal;
     text-align: center;
@@ -23,21 +23,22 @@
   }
 
   label {
-    //background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
 
     h2 {
-      background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+      background: rgba(0, 0, 0, 0.3) none;
+      backdrop-filter: blur(3px);
       border: 1px solid $beigegold;
       width: 80%;
       line-height: $line-height;
     }
 
     &:hover {
-      background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+      background: rgba(0, 0, 0, 0.3) none;
+      backdrop-filter: blur(3px);
 
       h2 {
         background: none;

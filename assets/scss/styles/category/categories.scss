@@ -52,12 +52,12 @@ ul.rehorik-products.products {
       color: $font-color-accent;
       width: 100%;
       padding: $spacing-s;
-      background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+      background: rgba(0, 0, 0, 0.3) none;
+      backdrop-filter: blur(3px);
       font-size: $font-size;
       font-weight: normal;
       text-align: center;
       text-transform: uppercase;
-      border-top: 1px solid $beigegold;
     }
 
     div.rehorik-category-description {
