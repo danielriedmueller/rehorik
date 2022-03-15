@@ -1,16 +1,32 @@
 #orderbird-chooser {
   background-color: transparent;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 60px;
-  grid-template-areas:
-    "left right"
-    "footer footer";
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
 
+  .orderbird-location-names {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    h2 {
+      flex: 1 1 0;
+      background: rgba(0, 0, 0, 0.3) none;
+      backdrop-filter: blur(3px);
+      border: 1px solid $beigegold;
+      line-height: $line-height;
+      margin: $spacing-s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 25%;
+    }
+  }
+
   h2 {
-    grid-area: footer;
     color: $beigegold;
     width: 100%;
     padding: $spacing-s;
@@ -24,38 +40,22 @@
 
   label {
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../img/standorte/190-small.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    h2 {
-      background: rgba(0, 0, 0, 0.3) none;
-      backdrop-filter: blur(3px);
-      border: 1px solid $beigegold;
-      width: 80%;
-      line-height: $line-height;
+    &:nth-of-type(2) {
+      border-left: 1px solid $beigegold;
+      right: 0;
+      background-image: url("../img/standorte/straubinger-small.png");
     }
 
     &:hover {
-      background: rgba(0, 0, 0, 0.3) none;
-      backdrop-filter: blur(3px);
-
-      h2 {
-        background: none;
-      }
+      filter: sepia(80%);
     }
-
-    &:first-of-type {
-      grid-area: left;
-      border-right: 1px solid $beigegold;
-    }
-
-    &:last-of-type {
-      grid-area: right;
-    }
-
-    background-size: cover;
-
 
     input {
       display: none;
@@ -78,27 +78,6 @@
     h2, label, &::before, &::after {
       display: none;
     }
-  }
-
-  &::before, &::after {
-    content: "";
-    display: block;
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  &::before {
-    left: 0;
-    background-image: url("../img/standorte/190-small.png");
-  }
-
-  &::after {
-    right: 0;
-    background-image: url("../img/standorte/straubinger-small.png");
   }
 
   iframe {
