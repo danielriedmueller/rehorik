@@ -1,0 +1,103 @@
+#orderbird-chooser {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .orderbird-location-names {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    h2 {
+      flex: 1 1 0;
+      background: rgba(0, 0, 0, 0.3) none;
+      backdrop-filter: blur(3px);
+      line-height: $line-height;
+      margin: $spacing-s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 25%;
+    }
+  }
+
+  h2 {
+    color: $beigegold;
+    width: 100%;
+    padding: $spacing-s;
+    background: rgba(0, 0, 0, 0.3) none;
+    backdrop-filter: blur(3px);
+    font-size: $spacing-s;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  label {
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:hover {
+      filter: sepia(100%);
+    }
+
+    &:nth-of-type(1) {
+      left: 0;
+      background-image: url("../img/standorte/190-small.png");
+
+      &:hover~div h2:nth-child(1) {
+        color: #fff;
+      }
+    }
+
+    &:nth-of-type(2) {
+      right: 0;
+      border-left: 1px solid $beigegold;
+      background-image: url("../img/standorte/straubinger-small.png");
+
+      &:hover~div h2:nth-child(2) {
+        color: #fff;
+      }
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  .orderbird-widget {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.active {
+    display: block;
+
+    .orderbird-widget {
+      display: block;
+    }
+
+    h2, label, &::before, &::after {
+      display: none;
+    }
+  }
+
+  iframe {
+    height: 100%;
+    width: 100%;
+
+    .widget-header {
+      display: none;
+    }
+  }
+}

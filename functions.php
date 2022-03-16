@@ -128,6 +128,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('product-cat-video', $assetsDir . 'js/product_cat_video.js', false, 1, true);
 
     if (is_front_page()) {
+        wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', false, 1, true);
         wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
         wp_enqueue_script('tiny-slider-js', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', null, 1, true);
         wp_enqueue_script('slider-js', $assetsDir . 'js/tiny_slider.js', null, 1, true);
@@ -138,14 +139,6 @@ add_action('init', function() {
     register_nav_menus([
         'main'   => 'Hauptmenü'
     ]);
-
-    /*
-     * Temporarily Disabled
-     *
-    if (!wp_next_scheduled( 'rh_past_events_cron_hook') ) {
-        wp_schedule_event(time(), 'twicedaily', 'rh_past_events_cron_hook');
-    }
-    */
 });
 
 /**
