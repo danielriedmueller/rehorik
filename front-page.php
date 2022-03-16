@@ -3,7 +3,7 @@
     <?php get_template_part('templates/frontpage-header-item', null, [
             'id' => 5,
             'claim' => 'Heute ist Weltschlaftag!',
-            'text' => ' Oftmals sind es gerade die regelmäßigen Kaffeetrinker, die nach dem Genuss einer Tasse Kaffe vor dem Zubettgehen richtig gut schlafen können, weil das Gehirn durch das Koffein gut durchblutet wird. Außerdem tritt die Wirkung des Koffeins erst 20 Minuten nach dem Trinken ein.',
+            'text' => ' Oftmals sind es gerade die regelmäßigen Kaffeetrinker, die nach dem Genuss einer Tasse Kaffe vor dem Zubettgehen richtig gut schlafen können, weil das Gehirn durch das Koffein gut durchblutet wird.',
             'buttons' => [
                 '/produkt-kategorie/onlineshop/kaffee/' => 'Code: SCHLAF10'
             ]
@@ -72,9 +72,6 @@
 </div>
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
-        <li class="product-category product">
-            <?php get_template_part('templates/orderbird-chooser'); ?>
-        </li>
         <?php
         $product_categories = getShopFrontPageCategories();
         foreach ($product_categories as $category) {
