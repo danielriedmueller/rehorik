@@ -7,11 +7,15 @@
     tbody tr:last-child td {
       padding-bottom: 0 !important;
     }
+
+    th {
+      line-height: $line-height;
+    }
   }
 
   div.rehorik-variations-after-container {
     margin-bottom: $spacing;
-    margin-top: $spacing-xxxs;
+    margin-top: $spacing-s;
   }
 }
 
