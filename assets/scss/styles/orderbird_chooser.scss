@@ -16,7 +16,6 @@
       flex: 1 1 0;
       background: rgba(0, 0, 0, 0.3) none;
       backdrop-filter: blur(3px);
-      border: 1px solid $beigegold;
       line-height: $line-height;
       margin: $spacing-s;
       display: flex;
@@ -43,18 +42,31 @@
     width: 50%;
     height: 100%;
     position: absolute;
-    background-image: url("../img/standorte/190-small.png");
+
     background-repeat: no-repeat;
     background-size: cover;
 
-    &:nth-of-type(2) {
-      border-left: 1px solid $beigegold;
-      right: 0;
-      background-image: url("../img/standorte/straubinger-small.png");
+    &:hover {
+      filter: sepia(100%);
     }
 
-    &:hover {
-      filter: sepia(80%);
+    &:nth-of-type(1) {
+      left: 0;
+      background-image: url("../img/standorte/190-small.png");
+
+      &:hover~div h2:nth-child(1) {
+        color: #fff;
+      }
+    }
+
+    &:nth-of-type(2) {
+      right: 0;
+      border-left: 1px solid $beigegold;
+      background-image: url("../img/standorte/straubinger-small.png");
+
+      &:hover~div h2:nth-child(2) {
+        color: #fff;
+      }
     }
 
     input {
