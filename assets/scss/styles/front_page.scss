@@ -67,20 +67,12 @@
 }
 
 .slider-claim {
+  max-width: 500px;
   position: absolute;
   bottom: $spacing-xl;
   right: 130px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-
-  > div:first-child {
-    width: 100%;
-  }
-
-  > div:not(:first-child) {
-    flex: 1;
-  }
 
   .slider-title {
     margin-bottom: $spacing;
@@ -99,18 +91,22 @@
     margin-bottom: $spacing-s;
   }
 
-
-
   .button-container {
+    display: flex;
+    justify-content: space-around;
+
     .button {
+      font-family: $font-family-headline;
+      background-color: $weinrot;
+      color: $beigegold;
       padding: $spacing;
       min-width: 200px;
       text-align: center;
       display: inline-block;
 
       &:hover {
-        background-color: $weinrot;
-        color: $beigegold;
+        background-color: $beigegold;
+        color: #fff;
       }
 
       &:first-child:last-child {
@@ -123,13 +119,12 @@
     }
 
     .button:nth-child(2) {
-      background-color: $weinrot;
-      color: $beigegold;
-      margin-left: $spacing;
+      background-color: $beigegold;
+      color: $weinrot;
 
       &:hover {
-        background-color: $beigegold;
-        color: #fff;
+        background-color: $weinrot;
+        color: $beigegold;
       }
     }
   }
