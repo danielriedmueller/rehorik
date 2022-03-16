@@ -1,6 +1,7 @@
 .frontpage-slider-image-1,
 .frontpage-slider-image-2,
 .frontpage-slider-image-3,
+.frontpage-slider-image-5,
 .frontpage-slider-image-4 {
   width: auto;
   height: 600px;
@@ -21,7 +22,6 @@
   background-image: url("../img/frontpage/startseite-header-roesterei-1920x600px.jpg");
 
   @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
-    height: 600px;
     background-image: url("../img/frontpage/startseite-header-roesterei-1080x600px.jpg");
   }
 
@@ -34,7 +34,6 @@
   background: url("../img/frontpage/startseite-header-wein-1920x600px.jpg");
 
   @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
-    height: 600px;
     background-image: url("../img/frontpage/startseite-header-wein-1080x600px.jpg");
   }
 
@@ -47,7 +46,6 @@
   background: url("../img/frontpage/Produkt-Illustration-El-Rubi-header-1920x600px.jpg");
 
   @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
-    height: 600px;
     background-image: url("../img/frontpage/Produkt-Illustration-El-Rubi-header-1080x600px.jpg");
   }
 
@@ -56,10 +54,40 @@
   }
 }
 
+.frontpage-slider-image-5 {
+  background: url("../img/frontpage/Rabatt-Illustration-Weltschlaftag-header-1920x600px.jpg");
+
+  @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+    background-image: url("../img/frontpage/Rabatt-Illustration-Weltschlaftag-header-1080x600px.jpg");
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    background-image: url("../img/frontpage/Rabatt-Illustration-Weltschlaftag-header-375x485px.jpg");
+  }
+}
+
 .slider-claim {
   position: absolute;
   bottom: $spacing-xl;
   right: 130px;
+
+  display: flex;
+  flex-direction: column;
+
+  .slider-text {
+    background: rgba(0, 0, 0, 0.3) none;
+    backdrop-filter: blur(3px);
+    width: 100%;
+    z-index: 9;
+    padding: $spacing-l;
+    border-radius: $border-radius-large;
+    color: #fff;
+    font-size: $font-size-small;
+    line-height: $line-height-narrow;
+    text-align: justify;
+    margin-bottom: $spacing;
+    max-width: 460px;
+  }
 
   h1 {
     margin-bottom: $spacing;

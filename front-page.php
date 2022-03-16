@@ -1,55 +1,50 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
 <ul id="slider">
-    <li>
-        <div class="frontpage-slider-image-4"></div>
-        <div class="slider-claim">
-            <h1>EL RUBI - MEHR ALS EIN EDELSTEIN</h1>
-            <div>
-                <a class="button" href="/produkt/el-rubi">Out now: Limited Edition Nr. 4 </a>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="frontpage-slider-image-1"></div>
-        <div class="slider-claim">
-            <h1>Kaffeerösterei seit 1928</h1>
-            <div>
-                <a class="button" href="<?= get_term_link(get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'),
-                    'product_cat'); ?>">Zum Kaffee</a>
-                <a class="button" href="<?= get_page_link(ROESTEREI_PAGE_ID) ?>">Unser Kugelröster</a>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="frontpage-slider-image-2"></div>
-        <div class="slider-claim">
-            <h1>TRADITION, QUALITÄT & LEIDENSCHAFT</h1>
-            <div>
-                <a class="button"
-                   href="<?= get_term_link(get_term_by('slug', COFFEE_FILTERKAFFEE_CATEGORY_SLUG, 'product_cat'),
-                       'product_cat'); ?>">Hier gibts Filterkaffee</a>
-                <a class="button"
-                   href="<?= get_term_link(get_term_by('slug', COFFEE_ESPRESSO_CATEGORY_SLUG, 'product_cat'),
-                       'product_cat'); ?>">Und hier Espresso</a>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="frontpage-slider-image-3"></div>
-        <div class="slider-claim">
-            <h1>WIR KÖNNEN AUCH WEIN</h1>
-            <div>
-                <a class="button"
-                   href="<?= get_term_link(get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'),
-                       'product_cat'); ?>">Zur Weinauswahl</a>
-                <a class="button"
-                   href="<?= get_term_link(get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'),
-                       'product_cat'); ?>">Und Spirituosen</a>
-            </div>
-        </div>
-    </li>
+    <?php get_template_part('templates/frontpage-header-item', null, [
+            'id' => 5,
+            'claim' => 'Heute ist Weltschlaftag!',
+            'text' => ' Oftmals sind es gerade die regelmäßigen Kaffeetrinker, die nach dem Genuss einer Tasse Kaffe vor dem Zubettgehen richtig gut schlafen können, weil das Gehirn durch das Koffein gut durchblutet wird. Außerdem tritt die Wirkung des Koffeins erst 20 Minuten nach dem Trinken ein. Die vorherige Ermüdungsphase wird dann von vielen Menschen zum Einschlafen genutzt. Also nach dem Nachtkaffee sofort ins Bett legen und man schläft besser ein',
+            'buttons' => [
+                '/produkt-kategorie/onlineshop/kaffee/' => '10% auf unsere Kaffees',
+                '/produkt-kategorie/onlineshop/wein/' => '10% auf unsere Kaffees',
+            ]
+    ]) ?>
+    <?php get_template_part('templates/frontpage-header-item', null, [
+        'id' => 4,
+        'claim' => 'EL RUBI - MEHR ALS EIN EDELSTEIN',
+        'buttons' => [
+            '/produkt/el-rubi' => 'Out now: Limited Edition Nr. 4 '
+        ]
+    ]) ?>
+    <?php get_template_part('templates/frontpage-header-item', null, [
+        'id' => 1,
+        'claim' => 'Kaffeerösterei seit 1928',
+        'buttons' => [
+            get_term_link(get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'),
+                    'product_cat') => 'Zum Kaffee',
+            get_page_link(ROESTEREI_PAGE_ID) => 'Unser Kugelröster'
+        ]
+    ]) ?>
+    <?php get_template_part('templates/frontpage-header-item', null, [
+        'id' => 2,
+        'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
+        'buttons' => [
+            get_term_link(get_term_by('slug', COFFEE_FILTERKAFFEE_CATEGORY_SLUG, 'product_cat'),
+                'product_cat') => 'Hier gibts Filterkaffee',
+            get_term_link(get_term_by('slug', COFFEE_ESPRESSO_CATEGORY_SLUG, 'product_cat'),
+                'product_cat') => 'Und hier Espresso'
+        ]
+    ]) ?>
+    <?php get_template_part('templates/frontpage-header-item', null, [
+        'id' => 3,
+        'claim' => 'WIR KÖNNEN AUCH WEIN',
+        'buttons' => [
+            get_term_link(get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'),
+                'product_cat') => 'Zur Weinauswahl',
+            get_term_link(get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'),
+                'product_cat') => 'Und Spirituosen'
+        ]
+    ]) ?>
 </ul>
 <div id="tns-controls-container">
     <button></button>
@@ -78,6 +73,9 @@ get_header();
 </div>
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
+        <li class="product-category product">
+            <?php get_template_part('templates/orderbird-chooser'); ?>
+        </li>
         <?php
         $product_categories = getShopFrontPageCategories();
         foreach ($product_categories as $category) {
