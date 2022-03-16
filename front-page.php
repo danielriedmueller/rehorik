@@ -3,10 +3,9 @@
     <?php get_template_part('templates/frontpage-header-item', null, [
             'id' => 5,
             'claim' => 'Heute ist Weltschlaftag!',
-            'text' => ' Oftmals sind es gerade die regelmäßigen Kaffeetrinker, die nach dem Genuss einer Tasse Kaffe vor dem Zubettgehen richtig gut schlafen können, weil das Gehirn durch das Koffein gut durchblutet wird. Außerdem tritt die Wirkung des Koffeins erst 20 Minuten nach dem Trinken ein. Die vorherige Ermüdungsphase wird dann von vielen Menschen zum Einschlafen genutzt. Also nach dem Nachtkaffee sofort ins Bett legen und man schläft besser ein',
+            'text' => ' Oftmals sind es gerade die regelmäßigen Kaffeetrinker, die nach dem Genuss einer Tasse Kaffe vor dem Zubettgehen richtig gut schlafen können, weil das Gehirn durch das Koffein gut durchblutet wird. Außerdem tritt die Wirkung des Koffeins erst 20 Minuten nach dem Trinken ein.',
             'buttons' => [
-                '/produkt-kategorie/onlineshop/kaffee/' => '10% auf unsere Kaffees',
-                '/produkt-kategorie/onlineshop/wein/' => '10% auf unsere Kaffees',
+                '/produkt-kategorie/onlineshop/kaffee/' => 'Code: SCHLAF10'
             ]
     ]) ?>
     <?php get_template_part('templates/frontpage-header-item', null, [
