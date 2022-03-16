@@ -1,12 +1,14 @@
 div.rehorik-product-meta.product_meta {
   border: none;
-  margin-top: $spacing-xxxs;
+  margin-top: $spacing;
   padding: 0;
-  line-height: $line-height-narrow;
+  line-height: $line-height-narrow !important;
 
   span, p, div {
     margin: 0;
-    font-size: $font-size-small;
+    padding: 0;
+    font-size: $font-size-very-small;
+    line-height: $line-height-narrow !important;
   }
 
   .wc-gzd-additional-info {
