@@ -92,6 +92,12 @@
     color: #fff;
     font-size: $font-size;
     line-height: $line-height;
+
+    @media all and (max-width: $small-breakpoint) {
+      font-size: $font-size-small;
+      line-height: $line-height-narrow;
+    }
+
     text-align: justify;
     margin-bottom: $spacing-s;
   }
