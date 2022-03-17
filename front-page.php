@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <ul id="slider">
-    <?php get_template_part('templates/frontpage-header-item', null, [
+    <?php /* get_template_part('templates/frontpage-header-item', null, [
             'id' => 5,
             'claim' => 'Heute ist Weltschlaftag!',
             'text' => '
@@ -8,9 +8,9 @@
 <p>Kaffee kann Euren Schlaf durchaus begünstigen - und weil das so ist, bekommt Ihr am Weltschlaftag am 18. März 10% auf alle Kaffees in unserem Onlineshop! Nicht schläfrig sein &#128521;</p>
 ',
             'buttons' => [
-                '/produkt-kategorie/onlineshop/kaffee/' => 'Code: SCHLAF10'
+                '/produkt-kategorie/onlineshop/kaffee/' => 'Rabattcode: SCHLAF10'
             ]
-    ]) ?>
+    ]) */ ?>
     <?php get_template_part('templates/frontpage-header-item', null, [
         'id' => 4,
         'claim' => 'EL RUBI - MEHR ALS EIN EDELSTEIN',
