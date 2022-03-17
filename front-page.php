@@ -4,7 +4,7 @@
             'id' => 5,
             'claim' => 'Heute ist Weltschlaftag!',
             'text' => '
-Kaffee kann Euren Schlaf durchaus begünstigen - und weil das so ist, bekommt Ihr am Weltschlaftag am 18. März 10% auf alle Kaffees in unserem Onlineshop!<br>Nicht schläfrig sein ;)
+Kaffee kann Euren Schlaf durchaus begünstigen - und weil das so ist, bekommt Ihr am Weltschlaftag am 18. März 10% auf alle Kaffees in unserem Onlineshop! Nicht schläfrig sein ;)
 ',
             'buttons' => [
                 '/produkt-kategorie/onlineshop/kaffee/' => 'Rabattcode: SCHLAF10',

@@ -70,12 +70,10 @@
 
 .slider-claim {
   max-width: 500px;
+  display: inline-block;
   position: absolute;
   bottom: $spacing-xl;
   right: 130px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
   .slider-title {
     margin-bottom: $spacing;
@@ -84,7 +82,6 @@
       line-height: $line-height-very-large;
     }
 
-
     @media all and (max-width: $small-breakpoint) {
       margin-bottom: $spacing-s;
 
@@ -92,6 +89,15 @@
         line-height: $line-height-large
       }
     }
+  }
+
+  .auto-width {
+    display: flex;
+  }
+
+  .auto-width div {
+    flex-grow: 1;
+    width: 0;
   }
 
   .slider-text {
@@ -114,10 +120,9 @@
     margin-bottom: $spacing-s;
   }
 
-  .button-container {
+  .button-container div {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
 
     .button {
       font-family: $font-family-headline;
@@ -147,6 +152,19 @@
         color: $beigegold;
       }
     }
+
+    @media all and (max-width: $small-breakpoint) {
+      flex-direction: column;
+      align-items: center;
+
+      .button {
+        //width: 100%;
+      }
+
+      .button:first-child:not(:last-child) {
+        margin-bottom: $spacing-s;
+      }
+    }
   }
 
   @media all and (max-width: $small-breakpoint) {
@@ -154,22 +172,5 @@
     right: 0;
     padding: 0 $spacing-l;
     bottom: $spacing;
-
-    .button-container {
-      flex-direction: column;
-      align-items: center;
-
-      .button {
-        width: 100%;
-      }
-
-      .button:first-child:not(:last-child) {
-        margin-bottom: $spacing-s;
-      }
-    }
-
-    > div {
-      text-align: center;
-    }
   }
 }
