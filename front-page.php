@@ -3,7 +3,10 @@
     <?php get_template_part('templates/frontpage-header-item', null, [
             'id' => 5,
             'claim' => 'Heute ist Weltschlaftag!',
-            'text' => ' Oftmals sind es gerade die regelmäßigen Kaffeetrinker, die nach dem Genuss einer Tasse Kaffe vor dem Zubettgehen richtig gut schlafen können, weil das Gehirn durch das Koffein gut durchblutet wird.',
+            'text' => '
+<p>An alle Frühaufsteher, Morgenmuffel und Schnarchzapfen! Kaffee & Schlaf passt nicht zusammen? Das stimmt so nicht ganz!</p>
+<p>Kaffee kann Euren Schlaf durchaus begünstigen - und weil das so ist, bekommt Ihr am Weltschlaftag am 18. März 10% auf alle Kaffees in unserem Onlineshop! Nicht schläfrig sein &#128521;</p>
+',
             'buttons' => [
                 '/produkt-kategorie/onlineshop/kaffee/' => 'Code: SCHLAF10'
             ]
