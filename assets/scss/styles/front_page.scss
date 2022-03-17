@@ -2,18 +2,20 @@
   width: auto;
   height: 600px;
   background: transparent none no-repeat center center;
+
+  @media all and (max-width: $small-breakpoint) {
+    height: 485px;
+  }
 }
 
 .image-1 {
   background-image: url("../img/frontpage/startseite-header-kaffee-1920x600px.jpg");
 
   @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
-    height: 600px;
     background-image: url("../img/frontpage/startseite-header-kaffee-1080x600px.jpg");
   }
 
   @media all and (max-width: $small-breakpoint) {
-    height: 485px;
     background-image: url("../img/frontpage/startseite-header-mobil-kaffee-375x485px.jpg");
   }
 }
