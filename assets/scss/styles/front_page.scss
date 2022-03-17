@@ -107,6 +107,7 @@
     @media all and (max-width: $small-breakpoint) {
       font-size: $font-size-small;
       line-height: $line-height-narrow;
+      padding: $spacing-xs;
     }
 
     text-align: justify;
