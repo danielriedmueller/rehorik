@@ -21,25 +21,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 ?>
-
 <div class="rehorik-product-meta product_meta">
-	<?php do_action( 'woocommerce_product_meta_start' ); ?>
-
-	<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) : ?>
-
-		<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'woocommerce' ); ?> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'woocommerce' ); ?></span></span>
-
-	<?php endif; ?>
-
+    <?php if ( wc_gzd_get_product( $product )->has_unit() ) : ?>
+        <span class="rehorik-price-unit price-unit wc-gzd-additional-info">
+            <?php echo wc_gzd_get_product( $product )->get_unit_price_html(); ?>
+        </span>
+    <?php endif; ?>
+    <?php do_action( 'woocommerce_product_meta_start' ); ?>
     <?php
-    foreach (WINE_CATEGORY_SLUGS as $wineCategorySlug) {
-        if (isItCategory($product, $wineCategorySlug)) {
-            echo "<div>enthält Sulfite</div>";
-            break;
+        foreach (WINE_CATEGORY_SLUGS as $wineCategorySlug) {
+            if (isItCategory($product, $wineCategorySlug)) {
+                echo "<span>enthält Sulfite</span>";
+                break;
+            }
         }
-    }
     ?>
-
-
     <?php do_action( 'woocommerce_product_meta_end' ); ?>
 </div>

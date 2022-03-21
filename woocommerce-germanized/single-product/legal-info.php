@@ -31,5 +31,4 @@ global $product;
             <span class="wc-gzd-additional-info shipping-costs-info"><?php echo wc_gzd_get_product( $product )->get_shipping_costs_html(); ?></span>
 		<?php endif; ?>
     </p>
-    <p>kostenloser Versand ab 49 €</p>
 </div>

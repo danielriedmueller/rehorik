@@ -35,39 +35,43 @@
   font-size: $font-size;
 }
 
-.woocommerce div.rehorik-product.product form.cart .woocommerce-variation-add-to-cart {
-  div.quantity {
-    @media all and (max-width: $small-breakpoint) {
-      margin: 0 0 $spacing-s 0 !important;
-      width: 100%;
+.woocommerce div.rehorik-product.product form.cart {
+  margin: 0;
+
+  .woocommerce-variation-add-to-cart {
+    div.quantity {
+      @media all and (max-width: $small-breakpoint) {
+        margin: 0 0 $spacing-s 0 !important;
+        width: 100%;
+      }
     }
   }
-}
 
-.woocommerce .quantity input.qty,
-.woocommerce-page .quantity input.qty,
-.woocommerce #content .quantity input.qty,
-.woocommerce-page #content .quantity input.qty,
-.woocommerce-cart table.cart td.actions .coupon .input-text {
-  border-radius: $border-radius;
-  background-color: $grau !important;
-  color: #fff;
-  font-size: $font-size;
-  padding: $spacing-xxs;
-
-  &:focus {
+  .woocommerce .quantity input.qty,
+  .woocommerce-page .quantity input.qty,
+  .woocommerce #content .quantity input.qty,
+  .woocommerce-page #content .quantity input.qty,
+  .woocommerce-cart table.cart td.actions .coupon .input-text {
+    border-radius: $border-radius;
+    background-color: $grau !important;
     color: #fff;
+    font-size: $font-size;
+    padding: $spacing-xxs;
+
+    &:focus {
+      color: #fff;
+    }
   }
-}
 
-.woocommerce-page.et_pb_button_helper_class a.button {
-  background-color: $beigegold;
+  .woocommerce-page.et_pb_button_helper_class a.button {
+    background-color: $beigegold;
 
-  &:hover {
-    color: $dunkelbraun;
+    &:hover {
+      color: $dunkelbraun;
+    }
   }
-}
 
-.woocommerce-MyAccount-content h3 {
-  color: $font-color;
+  .woocommerce-MyAccount-content h3 {
+    color: $font-color;
+  }
 }

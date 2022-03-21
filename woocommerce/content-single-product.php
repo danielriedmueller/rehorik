@@ -51,12 +51,13 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 	do_action( 'woocommerce_before_single_product_summary' );
 	?>
 
-	<div class="rehorik-product-summary summary entry-summary">
+    <div class="rehorik-product-summary summary entry-summary">
 		<?php
 		/**
 		 * Hook: woocommerce_single_product_summary.
 		 *
 		 * @hooked woocommerce_template_single_title - 5
+         * @hooked rehorik_bio_sigil - 8
 		 * @hooked woocommerce_template_single_rating - 10
 		 * @hooked woocommerce_template_single_price - 10
          * @hooked rehorik_single_product_attributes - 15
@@ -68,13 +69,6 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 		 */
 		do_action( 'woocommerce_single_product_summary' );
 		?>
-
-        <?php if(hasBiosigil($product)): ?>
-            <div class="bio-sigil-container">
-                <div class="<?=getBiosigilClass($product)?>"><?=getBiosigilControlcode($product)?></div>
-                <div class="<?=getBiosigilClass($product)?>-de"></div>
-            </div>
-        <?php endif; ?>
 
         <div class="rehorik-hugo-head"></div>
 	</div>

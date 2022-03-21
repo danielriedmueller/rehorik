@@ -17,12 +17,4 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
-
-global $product;
 ?>
-
-<?php if ( wc_gzd_get_product( $product )->has_unit() ) : ?>
-    <span class="rehorik-price-unit price-unit wc-gzd-additional-info">
-        <?php echo wc_gzd_get_product( $product )->get_unit_price_html(); ?>
-    </span>
-<?php endif; ?>
