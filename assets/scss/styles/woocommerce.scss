@@ -47,22 +47,6 @@
     }
   }
 
-  .woocommerce .quantity input.qty,
-  .woocommerce-page .quantity input.qty,
-  .woocommerce #content .quantity input.qty,
-  .woocommerce-page #content .quantity input.qty,
-  .woocommerce-cart table.cart td.actions .coupon .input-text {
-    border-radius: $border-radius;
-    background-color: $grau !important;
-    color: #fff;
-    font-size: $font-size;
-    padding: $spacing-xxs;
-
-    &:focus {
-      color: #fff;
-    }
-  }
-
   .woocommerce-page.et_pb_button_helper_class a.button {
     background-color: $beigegold;
 
@@ -73,5 +57,26 @@
 
   .woocommerce-MyAccount-content h3 {
     color: $font-color;
+  }
+}
+
+body.rehorik.woocommerce,
+body.rehorik.woocommerce-page,
+body.rehorik.woocommerce-cart {
+  .quantity input.qty,
+  .quantity input.qty,
+  #content .quantity input.qty,
+  #content .quantity input.qty,
+  table.cart td.actions .coupon .input-text {
+    border-radius: $border-radius;
+    background-color: $grau !important;
+    color: #fff !important;
+    font-size: $font-size !important;
+    padding: $spacing-xxs;
+    height: 50px;
+
+    &:focus {
+      color: #fff;
+    }
   }
 }
