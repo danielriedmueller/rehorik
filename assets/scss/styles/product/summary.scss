@@ -36,8 +36,11 @@ div.rehorik-product div.rehorik-product-summary.summary {
     padding: $spacing-xxs $spacing-s $spacing-xxs ($spacing-s + $spacing-s + $spacing-xs) !important;
     background: $beigegold url("../img/warenkorb-white.svg") no-repeat left $spacing-s center;
     background-size: $spacing-s;
-    border-radius: $border-radius;
     margin-top: $spacing;
+    border-top-right-radius: $border-radius !important;
+    border-bottom-right-radius: $border-radius !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
 
     &:hover {
       background-color: $weinrot !important;
@@ -46,6 +49,11 @@ div.rehorik-product div.rehorik-product-summary.summary {
   }
 
   div.quantity {
-    margin-top: $spacing !important;
+    margin: $spacing 0 0 0 !important;
+
+    input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   }
 }
