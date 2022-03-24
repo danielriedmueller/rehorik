@@ -15,6 +15,10 @@ div.rehorik-product div.rehorik-product-summary.summary {
     padding: 0 !important;
   }
 
+  .bio-sigil-container {
+    margin-bottom: $spacing;
+  }
+
   @media all and (max-width: $small-breakpoint) {
     padding-left: 0;
     h1 {

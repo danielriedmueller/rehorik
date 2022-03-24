@@ -2,11 +2,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-column-gap: $spacing-l;
-  grid-row-gap: $spacing-l;
+  //grid-column-gap: $spacing-l;
+  //grid-row-gap: $spacing-l;
+  $grid-gap: $spacing-l;
   grid-template-areas:
+    "video summary"
     "gallery summary"
-    "video sigil"
     "information information";
 
   @media all and (max-width: $small-breakpoint) {
@@ -16,29 +17,26 @@
     grid-template-areas:
     "gallery"
     "summary"
-    "sigil"
     "video"
     "information";
   }
 
   .woocommerce-product-gallery {
     grid-area: gallery;
+    margin: 0 $grid-gap $grid-gap 0;
   }
 
   .rehorik-product-video {
     grid-area: video;
+
+    &:not(:empty) {
+      margin: 0 $grid-gap $grid-gap 0;
+    }
   }
 
   .rehorik-product-summary {
     grid-area: summary;
-  }
-
-  .bio-sigil-container {
-    grid-area: sigil;
-  }
-
-  .rehorik-product-single-attributes {
-    grid-area: attributes;
+    margin: 0 0 $grid-gap 0;
   }
 
   .rehorik-product-additional-information-container-outer {

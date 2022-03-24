@@ -3,11 +3,19 @@
   width: unset;
 
   .flex-viewport {
-    margin-bottom: $spacing;
+    margin-bottom: $spacing-xs;
   }
 
   ol.flex-control-nav.flex-control-thumbs {
     padding: 0 !important;
     margin: 0 !important;
+
+    li {
+      margin: 0 $spacing-xs 0 0 !important;
+
+      &:not(:last-child) {
+
+      }
+    }
   }
 }
