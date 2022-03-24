@@ -1,6 +1,6 @@
 <?php
 require_once('admin/add_cat_video_field.php');
-require_once('shop/single_product_summary_hooks.php');
+require_once('shop/single_product_hooks.php');
 
 /**
  * Adds page title to the top on woocommerce pages

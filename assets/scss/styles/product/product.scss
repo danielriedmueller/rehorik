@@ -2,11 +2,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-column-gap: $spacing;
-  grid-row-gap: $spacing;
+  grid-column-gap: $spacing-l;
+  grid-row-gap: $spacing-l;
   grid-template-areas:
     "gallery summary"
-    "sigil attributes"
+    "video sigil"
     "information information";
 
   @media all and (max-width: $small-breakpoint) {
@@ -17,12 +17,16 @@
     "gallery"
     "summary"
     "sigil"
-    "attributes"
+    "video"
     "information";
   }
 
   .woocommerce-product-gallery {
     grid-area: gallery;
+  }
+
+  .rehorik-product-video {
+    grid-area: video;
   }
 
   .rehorik-product-summary {

@@ -1,7 +1,7 @@
 .woocommerce div.product form.cart {
   margin-bottom: 0;
 
-  table.rehorik-variations.variations {
+  table.variations {
     margin: $spacing 0 0;
 
     tbody tr:last-child td {
@@ -9,7 +9,8 @@
     }
 
     th {
-      line-height: $line-height;
+      line-height: $line-height-very-narrow;
+      padding: 0 0 $spacing-xxs 0 !important;
     }
 
     th, td {
@@ -44,6 +45,9 @@
         font-size: $font-size-small;
       }
     }
+
+    .reset_variations {
+      display: none !important;
+    }
   }
 }
-

@@ -2,14 +2,17 @@ div.rehorik-product div.rehorik-product-summary.summary {
   position: relative;
   float: none;
   width: unset;
-
   margin-bottom: 0;
+
+  display: flex;
+  flex-direction: column;
 
   h1 {
     color: $font-color-accent !important;
     text-align: left;
     text-transform: uppercase;
-    margin-bottom: $spacing-s;
+    margin-bottom: $spacing;
+    padding: 0 !important;
   }
 
   @media all and (max-width: $small-breakpoint) {
@@ -20,6 +23,7 @@ div.rehorik-product div.rehorik-product-summary.summary {
   }
 
   p.price {
+    flex-grow: 1;
     display: inline;
     color: $font-color;
     font-size: $font-size-h2 !important;
@@ -31,8 +35,8 @@ div.rehorik-product div.rehorik-product-summary.summary {
   }
 
   button[type="submit"].single_add_to_cart_button {
-    padding: $spacing-xxs $spacing-s $spacing-xxs ($spacing-s + $spacing-s + $spacing-xs) !important;
-    background: $beigegold url("../img/warenkorb-white.svg") no-repeat left $spacing-s center;
+    padding: $spacing-xxs $spacing-s $spacing-xxs 37px !important;
+    background: $beigegold url("../img/warenkorb-white.svg") no-repeat left 10px center;
     background-size: $spacing-s;
     margin-top: $spacing;
     border-top-right-radius: $border-radius !important;
