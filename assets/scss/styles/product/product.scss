@@ -1,0 +1,43 @@
+.rehorik.single-product .rehorik-product.product.detail-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: $spacing;
+  grid-row-gap: $spacing;
+  grid-template-areas:
+    "gallery summary"
+    "sigil attributes"
+    "information information";
+
+  @media all and (max-width: $small-breakpoint) {
+    grid-template-columns: 1fr;
+    grid-column-gap: $spacing-s;
+    grid-row-gap: $spacing-s;
+    grid-template-areas:
+    "gallery"
+    "summary"
+    "sigil"
+    "attributes"
+    "information";
+  }
+
+  .woocommerce-product-gallery {
+    grid-area: gallery;
+  }
+
+  .rehorik-product-summary {
+    grid-area: summary;
+  }
+
+  .bio-sigil-container {
+    grid-area: sigil;
+  }
+
+  .rehorik-product-single-attributes {
+    grid-area: attributes;
+  }
+
+  .rehorik-product-additional-information-container-outer {
+    grid-area: information;
+  }
+}

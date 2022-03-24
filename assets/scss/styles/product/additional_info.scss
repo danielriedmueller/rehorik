@@ -33,7 +33,7 @@
     }
 
     @media all and (max-width: $small-breakpoint) {
-      padding: $spacing $spacing-l;
+      padding: 0;
     }
   }
 
@@ -49,4 +49,8 @@
   input.expand-button:checked ~ .rehorik-product-additional-information-container {
     max-height: unset;
   }
+}
+
+.rehorik.woocommerce .rehorik-product-additional-information-container-outer {
+  margin: 0;
 }

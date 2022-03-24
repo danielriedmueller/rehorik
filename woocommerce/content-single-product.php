@@ -34,7 +34,7 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 ?>
 <div id="product-<?php the_ID(); ?>"
     <?php
-        $class = 'rehorik-product';
+        $class = 'rehorik-product detail-view';
         if (isProductOfTheMonth($product)) {
            $class .= " " . getProductOfTheMonthClass($product);
         }
@@ -60,7 +60,6 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
          * @hooked rehorik_bio_sigil - 8
 		 * @hooked woocommerce_template_single_rating - 10
 		 * @hooked woocommerce_template_single_price - 10
-         * @hooked rehorik_single_product_attributes - 15
 		 * @hooked woocommerce_template_single_excerpt - 20
 		 * @hooked woocommerce_template_single_add_to_cart - 30
 		 * @hooked woocommerce_template_single_meta - 40
@@ -69,17 +68,14 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 		 */
 		do_action( 'woocommerce_single_product_summary' );
 		?>
-
-        <div class="rehorik-hugo-head"></div>
 	</div>
 
 	<?php
 	/**
 	 * Hook: woocommerce_after_single_product_summary.
-	 *
+     * @hooked rehorik_single_product_attributes - 5
 	 * @hooked woocommerce_output_product_data_tabs - 10
 	 * @hooked woocommerce_upsell_display - 15
-	 * @hooked woocommerce_output_related_products - 20
 	 */
 	do_action( 'woocommerce_after_single_product_summary' );
 	?>

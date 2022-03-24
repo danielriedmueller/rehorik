@@ -5,7 +5,6 @@ $sigilWidth: $sigilHeight * 1.5;
 .bio-sigil-container {
   display: flex;
   flex-direction: row;
-  margin: $spacing 0 0 0;
 
   > div:not(:last-child) {
     margin-right: $spacing-xs;

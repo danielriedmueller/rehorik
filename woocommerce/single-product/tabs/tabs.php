@@ -29,13 +29,24 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 global $product;
 ?>
-<div class="rehorik-product-additional-information-container-outer">
+<div class="rehorik-product-additional-information-container-outer woocommerce-tabs wc-tabs-wrapper">
+    <ul class="tabs wc-tabs" role="tablist">
+        <li class="details_tab" id="tab-title-details" role="tab" aria-controls="tab-details">
+            <a href="#tab-details">Beschreibung</a>
+        </li>
+        <li class="video_tab" id="tab-title-video" role="tab" aria-controls="tab-video">
+            <a href="#tab-video">Video</a>
+        </li>
+    </ul>
     <div class="rehorik-product-additional-information-container">
-        <div class="rehorik-product-additional-information-category">
-            <?php echo getCoffeeCategories($product) ?>
+        <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--details panel entry-content wc-tab" id="tab-details" role="tabpanel" aria-labelledby="tab-title-details">
+            <div class="rehorik-product-additional-information-category"><?php echo getCoffeeCategories($product) ?></div>
+            <?php do_action( 'woocommerce_product_additional_information', $product ); ?>
+            <?php echo apply_filters( 'the_content', $product->get_description() ) ?>
         </div>
-
-        <?php do_action( 'woocommerce_product_additional_information', $product ); ?>
-        <?php echo apply_filters( 'the_content', $product->get_description() ) ?>
+        <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--video panel entry-content wc-tab" id="tab-video" role="tabpanel" aria-labelledby="tab-title-video">
+            <?= $product->get_meta('Video') ?>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RdGTPwIeOu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
 </div>

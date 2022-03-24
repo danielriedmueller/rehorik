@@ -12,15 +12,17 @@ foreach (array_merge(INFORMATION_TAB_ATTRIBUTES, [BIOSIGIL_ATTRIBUTE_SLUG, BEAN_
 }
 
 ?>
-<table class="rehorik-product-single-attributes">
-    <tbody>
-        <?php
-            foreach ($productAtrributes as $attributeName => $attribute) {
-                if ($attribute->get_visible() && $value = $product->get_attribute($attributeName)) {
-                    echo sprintf("<tr><td><b>%s</b></td><td>%s</td></tr>", wc_attribute_label($attributeName), $value);
+<div class="rehorik-product-single-attributes">
+    <table>
+        <tbody>
+            <?php
+                foreach ($productAtrributes as $attributeName => $attribute) {
+                    if ($attribute->get_visible() && $value = $product->get_attribute($attributeName)) {
+                        echo sprintf("<tr><td><b>%s</b></td><td>%s</td></tr>", wc_attribute_label($attributeName), $value);
+                    }
                 }
-            }
-        ?>
-    </tbody>
-</table>
+            ?>
+        </tbody>
+    </table>
+</div>
 <?php

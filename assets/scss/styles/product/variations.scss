@@ -2,7 +2,6 @@
   margin-bottom: 0;
 
   table.rehorik-variations.variations {
-    display: block;
     margin: $spacing 0 0;
 
     tbody tr:last-child td {
@@ -23,6 +22,10 @@
       grid-row-gap: $spacing-xxs;
       grid-column-gap: $spacing-xxs;
       padding: 0 !important;
+
+      @media all and (max-width: $small-breakpoint) {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     li.variable-item {
