@@ -41,44 +41,10 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
         wc_product_class($class, $product);
     ?>
 >
-	<?php
-	/**
-	 * Hook: woocommerce_before_single_product_summary.
-	 *
-	 * @hooked woocommerce_show_product_sale_flash - 10
-	 * @hooked woocommerce_show_product_images - 20
-	 */
-	do_action( 'woocommerce_before_single_product_summary' );
-	?>
-
-    <div class="rehorik-product-summary summary entry-summary">
-		<?php
-		/**
-		 * Hook: woocommerce_single_product_summary.
-		 *
-		 * @hooked woocommerce_template_single_title - 5
-         * @hooked rehorik_bio_sigil - 8
-		 * @hooked woocommerce_template_single_rating - 10
-		 * @hooked woocommerce_template_single_price - 10
-		 * @hooked woocommerce_template_single_excerpt - 20
-		 * @hooked woocommerce_template_single_add_to_cart - 30
-		 * @hooked woocommerce_template_single_meta - 40
-		 * @hooked woocommerce_template_single_sharing - 50
-		 * @hooked WC_Structured_Data::generate_product_data() - 60
-		 */
-		do_action( 'woocommerce_single_product_summary' );
-		?>
-	</div>
-
-	<?php
-	/**
-	 * Hook: woocommerce_after_single_product_summary.
-     * @hooked rehorik_single_product_attributes - 5
-	 * @hooked woocommerce_output_product_data_tabs - 10
-	 * @hooked woocommerce_upsell_display - 15
-	 */
-	do_action( 'woocommerce_after_single_product_summary' );
-	?>
+    <?php do_action('rehorik_product_view'); ?>
+    <div class="rehorik-add-to-cart-container">
+        <?php do_action('rehorik_product_view_add_to_cart'); ?>
+    </div>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

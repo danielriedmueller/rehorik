@@ -5,9 +5,12 @@
   grid-template-areas:
     "gallery title"
     "gallery price"
-    "sigil summary"
-    "video summary"
-    "information information";
+    "gallery description"
+    "video addToCart"
+    "preperation addToCart"
+    "category ."
+    "attributes sigils"
+;
 
   @media all and (max-width: $small-breakpoint) {
     grid-template-columns: 1fr;
@@ -21,26 +24,17 @@
   }
 
   //Grid gap
-  //$grid-gap: $spacing-l;
-  $grid-gap: 0;
+  grid-gap: $spacing-l;
+  /*
+  $grid-gap: $spacing-l;
   .woocommerce-product-gallery {margin: 0 $grid-gap $grid-gap 0;}
   .rehorik-product-video:not(:empty)  {margin: 0 $grid-gap $grid-gap 0;}
   .rehorik-product-summary {margin: 0 0 $grid-gap 0;}
 
+   */
+
   .woocommerce-product-gallery {
     grid-area: gallery;
-  }
-
-  .rehorik-product-video {
-    grid-area: video;
-  }
-
-  .rehorik-product-summary {
-    grid-area: summary;
-  }
-
-  .rehorik-product-additional-information-container-outer {
-    grid-area: information;
   }
 
   h1.product_title {
@@ -55,8 +49,6 @@
   p.price {
     grid-area: price;
 
-    flex-grow: 1;
-    display: inline;
     color: $font-color;
     font-size: $font-size-h2 !important;
 
@@ -66,7 +58,31 @@
     }
   }
 
+  .rehorik-product-description {
+    grid-area: description;
+  }
+
+  .rehorik-add-to-cart-container {
+    grid-area: addToCart;
+  }
+
+  .rehorik-product-video {
+    grid-area: video;
+  }
+
+  .rehorik-preperation-recommendation {
+    grid-area: preperation;
+  }
+
   .bio-sigil-container {
-    grid-area: sigil;
+    grid-area: sigils;
+  }
+
+  .rehorik-product-category {
+    grid-area: category;
+  }
+
+  .woocommerce-product-attributes {
+    grid-area: attributes;
   }
 }
