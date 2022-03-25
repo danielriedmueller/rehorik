@@ -4,6 +4,7 @@
 
   .flex-viewport {
     margin-bottom: $spacing-xs;
+    border-radius: $border-radius;
   }
 
   ol.flex-control-nav.flex-control-thumbs {
@@ -12,10 +13,6 @@
 
     li {
       margin: 0 $spacing-xs 0 0 !important;
-
-      &:not(:last-child) {
-
-      }
     }
   }
 }

@@ -3,40 +3,8 @@ div.rehorik-product div.rehorik-product-summary.summary {
   float: none;
   width: unset;
   margin-bottom: 0;
-
   display: flex;
   flex-direction: column;
-
-  h1 {
-    color: $font-color-accent !important;
-    text-align: left;
-    text-transform: uppercase;
-    margin-bottom: $spacing;
-    padding: 0 !important;
-  }
-
-  .bio-sigil-container {
-    margin-bottom: $spacing;
-  }
-
-  @media all and (max-width: $small-breakpoint) {
-    padding-left: 0;
-    h1 {
-      margin-left: 0;
-    }
-  }
-
-  p.price {
-    flex-grow: 1;
-    display: inline;
-    color: $font-color;
-    font-size: $font-size-h2 !important;
-
-    > span {
-      font-size: $font-size-h2 !important;
-      font-weight: bold;
-    }
-  }
 
   button[type="submit"].single_add_to_cart_button {
     padding: $spacing-xxs $spacing-s $spacing-xxs 37px !important;

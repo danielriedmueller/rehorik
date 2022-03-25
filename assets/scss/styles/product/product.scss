@@ -2,12 +2,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  //grid-column-gap: $spacing-l;
-  //grid-row-gap: $spacing-l;
-  $grid-gap: $spacing-l;
   grid-template-areas:
+    "gallery title"
+    "gallery price"
+    "sigil summary"
     "video summary"
-    "gallery summary"
     "information information";
 
   @media all and (max-width: $small-breakpoint) {
@@ -21,25 +20,53 @@
     "information";
   }
 
+  //Grid gap
+  //$grid-gap: $spacing-l;
+  $grid-gap: 0;
+  .woocommerce-product-gallery {margin: 0 $grid-gap $grid-gap 0;}
+  .rehorik-product-video:not(:empty)  {margin: 0 $grid-gap $grid-gap 0;}
+  .rehorik-product-summary {margin: 0 0 $grid-gap 0;}
+
   .woocommerce-product-gallery {
     grid-area: gallery;
-    margin: 0 $grid-gap $grid-gap 0;
   }
 
   .rehorik-product-video {
     grid-area: video;
-
-    &:not(:empty) {
-      margin: 0 $grid-gap $grid-gap 0;
-    }
   }
 
   .rehorik-product-summary {
     grid-area: summary;
-    margin: 0 0 $grid-gap 0;
   }
 
   .rehorik-product-additional-information-container-outer {
     grid-area: information;
+  }
+
+  h1.product_title {
+    grid-area: title;
+
+    color: $font-color-accent !important;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 0 !important;
+  }
+
+  p.price {
+    grid-area: price;
+
+    flex-grow: 1;
+    display: inline;
+    color: $font-color;
+    font-size: $font-size-h2 !important;
+
+    > span {
+      font-size: $font-size-h2 !important;
+      font-weight: bold;
+    }
+  }
+
+  .bio-sigil-container {
+    grid-area: sigil;
   }
 }
