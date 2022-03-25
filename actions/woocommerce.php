@@ -1,6 +1,6 @@
 <?php
 require_once('admin/add_cat_video_field.php');
-require_once('shop/single_product_summary_hooks.php');
+require_once('shop/single_product_hooks.php');
 
 /**
  * Adds page title to the top on woocommerce pages
@@ -86,5 +86,3 @@ add_action('event_tickets_after_save_ticket', function ($event_id, $ticket, $raw
         $product->save();
     }
 }, 10, 4);
-
-add_action( 'woocommerce_product_additional_information', 'woocommerce_template_single_excerpt', 50 );

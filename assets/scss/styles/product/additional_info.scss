@@ -6,7 +6,6 @@
   font-family: $font-family-headline;
   font-size: $font-size-h2;
   color: $beigegold;
-  margin-bottom: $spacing;
   text-transform: uppercase;
 
   @media all and (max-width: $small-breakpoint) {
@@ -23,30 +22,17 @@
     border-top: none;
     border-radius: $border-radius;
     color: #fff;
-    margin: $spacing 0;
-
-    //max-height: 300px;
-    //overflow: hidden;
 
     hr {
       border-width: 3px !important;
     }
 
     @media all and (max-width: $small-breakpoint) {
-      padding: $spacing $spacing-l;
+      padding: 0;
     }
   }
+}
 
-  input.expand-button {
-    display: none;
-    position: absolute;
-    top: 250px;
-    background-color: #fff;
-    width: 50px;
-    height: 50px;
-  }
-
-  input.expand-button:checked ~ .rehorik-product-additional-information-container {
-    max-height: unset;
-  }
+.rehorik.woocommerce .rehorik-product-additional-information-container-outer {
+  margin: 0;
 }
