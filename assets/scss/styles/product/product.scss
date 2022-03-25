@@ -2,14 +2,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
+
   grid-template-areas:
     "gallery title"
     "gallery price"
     "gallery description"
-    "video addToCart"
-    "preperation addToCart"
-    "category ."
-    "attributes sigils"
+    "attributes addToCart"
+    "preperation video"
+    "sigils category"
 ;
 
   @media all and (max-width: $small-breakpoint) {
@@ -18,9 +18,15 @@
     grid-row-gap: $spacing-s;
     grid-template-areas:
     "gallery"
-    "summary"
+    "title"
+    "price"
+    "description"
+    "addToCart"
+    "attributes"
+    "preperation"
     "video"
-    "information";
+    "category"
+    "sigils"
   }
 
   //Grid gap
