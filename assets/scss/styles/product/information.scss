@@ -1,0 +1,105 @@
+@import "../mixins";
+
+.rehorik-product-information {
+  padding: $spacing-l $spacing-xl;
+  border: 1px solid $product-default-color;
+  border-top: none;
+  border-radius: $border-radius;
+  color: #fff;
+
+  hr {
+    border-width: 3px !important;
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    padding: 0;
+  }
+}
+
+body.woocommerce #content-area {
+  .rehorik-product-information {
+    background-color: $product-default-color;
+    border: none;
+  }
+
+  div.rehorik-product.product_cat-crema {
+    .rehorik-product-information {
+      background-color: $product-crema-color;
+    }
+  }
+
+  div.rehorik-product.product_cat-espresso {
+    .rehorik-product-information {
+      background-color: $product-espresso-color;
+    }
+  }
+
+  div.rehorik-product.product_cat-filterkaffee {
+    .rehorik-product-information {
+      background-color: $product-filterkaffee-color;
+    }
+  }
+
+  div.rehorik-product.product_cat-espresso.product_cat-filterkaffee {
+    .rehorik-product-information {
+      @include productLinearGradient($product-filterkaffee-color, $product-espresso-color);
+    }
+  }
+}
+
+div.rehorik-product-attribute-container {
+  display: grid;
+
+  &:not(.item-count-2):not(.item-count-1) {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media all and (min-width: $small-breakpoint + 1) {
+      div.rehorik-product-attribute-item {
+        &:not(:nth-child(3n + 3)) {
+          border-right: 3px solid $beigegold;
+        }
+      }
+    }
+  }
+
+  &.item-count-2 {
+    grid-template-columns: 1fr 1fr;
+
+    @media all and (min-width: $small-breakpoint + 1) {
+      div.rehorik-product-attribute-item {
+        &:not(:nth-child(2)) {
+          border-right: 3px solid $beigegold;
+        }
+      }
+    }
+  }
+
+  &.item-count-1 {
+    grid-template-columns: 1fr;
+  }
+
+  div.rehorik-product-attribute-item {
+    display: inline-block;
+    padding: $spacing-s;
+    margin-bottom: $spacing;
+    text-align: center;
+
+    .rehorik-product-attribute-label {
+      font-family: $font-family-headline;
+    }
+
+    .rehorik-product-attribute-value p {
+      padding-bottom: 0;
+    }
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    grid-template-columns: 1fr 1fr !important;
+
+    div.rehorik-product-attribute-item {
+      &:not(:nth-child(2)) {
+        border-right: 3px solid $beigegold;
+      }
+    }
+  }
+}

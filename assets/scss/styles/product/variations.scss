@@ -1,53 +1,96 @@
-.woocommerce div.product form.cart {
-  margin-bottom: 0;
+@import "../mixins";
 
-  table.variations {
+body.rehorik.woocommerce div.product.rehorik-product {
+  form.cart {
     margin-bottom: 0;
 
-    tbody tr:last-child td {
-      padding-bottom: 0 !important;
-    }
+    table.variations {
+      margin-bottom: 0;
 
-    th {
-      line-height: $line-height-very-narrow;
-      padding: 0 0 $spacing-xxs 0 !important;
-    }
+      tbody tr:last-child td {
+        padding-bottom: 0 !important;
+      }
 
-    th, td {
-      display: block;
-    }
+      th {
+        line-height: $line-height-very-narrow;
+        padding: 0 0 $spacing-xxs 0 !important;
+      }
 
-    ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-row-gap: $spacing-xxs;
-      grid-column-gap: $spacing-xxs;
-      padding: 0 !important;
+      th, td {
+        display: block;
+      }
 
-      @media all and (max-width: $small-breakpoint) {
-        grid-template-columns: 1fr 1fr;
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: $spacing-xxs;
+        grid-column-gap: $spacing-xxs;
+        padding: 0 !important;
+
+        @media all and (max-width: $small-breakpoint) {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      li.variable-item {
+        border: 1px solid $beigegold;
+        border-radius: $border-radius;
+        list-style: none;
+        padding: $spacing-xxs;
+        cursor: pointer;
+
+        &:hover, &.selected {
+          color: #fff;
+        }
+
+        .variable-item-contents {
+          font-size: $font-size-small;
+        }
+      }
+
+      .reset_variations {
+        display: none !important;
       }
     }
+  }
 
-    li.variable-item {
-      border: 1px solid $beigegold;
-      border-radius: $border-radius;
-      list-style: none;
-      padding: $spacing-xxs;
-      cursor: pointer;
+  form.cart table.variations li.variable-item {
+    &:hover, &.selected {
+      background-color: $product-default-color;
+    }
+  }
 
+  &.product_cat-crema {
+    form.cart table.variations li.variable-item {
       &:hover, &.selected {
-        color: #fff;
-        background-color: $weinrot;
-      }
-
-      .variable-item-contents {
-        font-size: $font-size-small;
+        background-color: $product-crema-color;
       }
     }
+  }
 
-    .reset_variations {
-      display: none !important;
+  &.product_cat-filterkaffee {
+    form.cart table.variations li.variable-item {
+      &:hover, &.selected {
+        background-color: $product-filterkaffee-color;
+      }
+    }
+  }
+
+
+  &.product_cat-espresso {
+    form.cart table.variations li.variable-item {
+      &:hover, &.selected {
+        background-color: $product-espresso-color;
+      }
+    }
+  }
+
+  &.product_cat-espresso.product_cat-filterkaffee {
+    form.cart table.variations li.variable-item {
+      &:hover, &.selected {
+        @include productLinearGradient($product-filterkaffee-color, $product-espresso-color);
+      }
     }
   }
 }
+

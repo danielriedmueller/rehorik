@@ -114,6 +114,7 @@ require_once($baseDir . '/hooks/events.php');
 require_once($baseDir . '/hooks/woocommerce.php');
 require_once($baseDir . '/filter/shop.php');
 require_once($baseDir . '/filter/categories.php');
+require_once($baseDir . '/filter/product_view.php');
 require_once($baseDir . '/actions/divi.php');
 require_once($baseDir . '/actions/woocommerce.php');
 require_once($baseDir . '/actions/rehorik.php');

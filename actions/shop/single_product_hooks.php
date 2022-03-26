@@ -2,35 +2,37 @@
 
 /**
  * Product Detail View Hooks
- *  - Gallery
- *  - Title
- *  - Price
- *  - Preperation Recommendation
- *  - Rehorik-add-to-cart-container (HTML Container)
- *      - Variations / Add to cart
- *      - Meta
- *      - Cup of Coffee
- *      - Hugo Head
- *  - Attributes
- *  - Category
- *  - Sigils
- *  - Description
- *  - Video
+ *  - woocommerce_show_product_images
+ *  - woocommerce_template_single_title
+ *  - woocommerce_template_single_price
+ *  - preparation_recommendation
+ *  - rehorik_product_view_add_to_cart
+ *      - woocommerce_template_single_add_to_cart
+ *      - woocommerce_template_single_meta
+ *      - cup_of_coffee
+ *      - hugo_head
+ *  - rehorik_product_information
+ *      - single_product_attributes (with category)
+ *      - description
+ *  - sigils
+ *  - product_video
  */
-add_action('rehorik_product_view', 'woocommerce_show_product_images', 1); // Gallery
+
 add_action('rehorik_product_view', 'woocommerce_template_single_title', 1); // Title
 add_action('rehorik_product_view', 'woocommerce_template_single_price', 1); // Price
-add_action('rehorik_product_view', 'sigils', 1); // Sigils
-add_action('rehorik_product_view', 'description', 1); // Description
 add_action('rehorik_product_view', 'product_video', 1); // Video
 add_action('rehorik_product_view', 'preparation_recommendation', 1); // Preperation Recommendation
-add_action('rehorik_product_view', 'single_product_attributes', 1); // Attributes
-add_action('rehorik_product_view', 'category', 1); // Category
+
+add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
+add_action('rehorik_product_view_gallery', 'sigils', 1); // Sigils
 
 add_action('rehorik_product_view_add_to_cart', 'hugo_head', 1); // Hugo Head
 add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_add_to_cart', 1); // Variations / Add to cart
 add_action('rehorik_product_view_add_to_cart', 'cup_of_coffee', 1); // Cup of Coffee
 add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_meta', 1); // Meta
+
+add_action('rehorik_product_information', 'description', 1); // Description
+add_action('rehorik_product_information', 'single_product_attributes', 1); // Attributes
 
 function description() {
     global $product;
@@ -38,20 +40,10 @@ function description() {
     echo sprintf('<div class="rehorik-product-description">%s</div>', $product->get_description());
 }
 
-function category() {
-    global $product;
-
-    // TODO Wine Categories?
-    echo sprintf(
-        '<div class="rehorik-product-category">%s</div>',
-        getCoffeeCategories($product)
-    );
-}
-
 function single_product_attributes() {
     global $product;
 
-    do_action( 'woocommerce_product_additional_information', $product );
+    wc_display_product_attributes($product);
 }
 
 function preparation_recommendation() {

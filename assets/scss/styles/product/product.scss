@@ -6,27 +6,15 @@
   grid-template-areas:
     "gallery title"
     "gallery price"
-    "gallery description"
-    "attributes addToCart"
+    "gallery addToCart"
     "preperation video"
-    "sigils category"
+    "information information"
 ;
 
   @media all and (max-width: $small-breakpoint) {
     grid-template-columns: 1fr;
     grid-column-gap: $spacing-s;
     grid-row-gap: $spacing-s;
-    grid-template-areas:
-    "gallery"
-    "title"
-    "price"
-    "description"
-    "addToCart"
-    "attributes"
-    "preperation"
-    "video"
-    "category"
-    "sigils"
   }
 
   //Grid gap
@@ -39,7 +27,7 @@
 
    */
 
-  .woocommerce-product-gallery {
+  .rehorik-product-view-gallery {
     grid-area: gallery;
   }
 
@@ -64,8 +52,8 @@
     }
   }
 
-  .rehorik-product-description {
-    grid-area: description;
+  .rehorik-product-information {
+    grid-area: information;
   }
 
   .rehorik-add-to-cart-container {
@@ -80,15 +68,7 @@
     grid-area: preperation;
   }
 
-  .bio-sigil-container {
-    grid-area: sigils;
-  }
-
   .rehorik-product-category {
     grid-area: category;
-  }
-
-  .woocommerce-product-attributes {
-    grid-area: attributes;
   }
 }

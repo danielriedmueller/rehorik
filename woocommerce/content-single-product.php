@@ -42,8 +42,17 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
     ?>
 >
     <?php do_action('rehorik_product_view'); ?>
+
+    <div class="rehorik-product-view-gallery">
+        <?php do_action('rehorik_product_view_gallery'); ?>
+    </div>
+
     <div class="rehorik-add-to-cart-container">
         <?php do_action('rehorik_product_view_add_to_cart'); ?>
+    </div>
+
+    <div class="rehorik-product-information">
+        <?php do_action('rehorik_product_information'); ?>
     </div>
 </div>
 

@@ -46,7 +46,7 @@ function extractOtherAttributes(array $productAttributes): array
 
 function getOriginCountry(WC_Product $product): string
 {
-    $category = getSubCategory($product);
+    $category = getSubCategories($product);
     $region = $product->get_attribute(REGION_ATTRIBUTE_SLUG);
 
     $attributeArr = getAttributeArray($product, ORIGIN_COUNTRY_ATTRIBUTE_SLUG);

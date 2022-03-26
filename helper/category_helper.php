@@ -113,19 +113,15 @@ function getCoffeeCategories(WC_Product $product): string
 }
 
 /**
- * Returns Subcategory of Product
+ * Returns Subcategories of Product
  *
  * @param WC_Product $product
  * @return string
  */
-function getSubCategory(WC_Product $product): string
+function getSubCategories(WC_Product $product): string
 {
     if (isItCategory($product, COFFEE_CATEGORY_SLUG)) {
         return getCoffeeCategories($product);
-    }
-
-    if (isItCategory($product, WINE_SPIRITS_CO_CATEGORY_SLUG)) {
-        return "";
     }
 
     $terms = get_the_terms( $product->get_id(), 'product_cat' );
@@ -138,7 +134,7 @@ function getSubCategory(WC_Product $product): string
     }, $terms_not_parents);
 
     if (sizeof($terms_not_parents_names) > 0) {
-        return $terms_not_parents_names[array_key_first($terms_not_parents_names)];
+        return join(', ', $terms_not_parents_names);
     }
 
     return "";
