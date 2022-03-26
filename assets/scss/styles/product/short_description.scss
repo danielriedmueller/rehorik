@@ -1,5 +1,4 @@
-.rehorik-preperation-recommendation {
-  height: 100%;
+.rehorik-preperation-recommendation:not(:empty) {
   padding: $spacing-s;
   background-color: $beigegold;
   border-radius: $border-radius;

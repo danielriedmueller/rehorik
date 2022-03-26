@@ -3,8 +3,9 @@
 /**
  * Product Detail View Hooks
  *  - woocommerce_show_product_images
- *  - woocommerce_template_single_title
- *  - woocommerce_template_single_price
+ *  - rehorik_product_view_title_price
+ *      - woocommerce_template_single_title
+ *      - woocommerce_template_single_price
  *  - preparation_recommendation
  *  - rehorik_product_view_add_to_cart
  *      - woocommerce_template_single_add_to_cart
@@ -18,10 +19,11 @@
  *  - product_video
  */
 
-add_action('rehorik_product_view', 'woocommerce_template_single_title', 1); // Title
-add_action('rehorik_product_view', 'woocommerce_template_single_price', 1); // Price
 add_action('rehorik_product_view', 'product_video', 1); // Video
 add_action('rehorik_product_view', 'preparation_recommendation', 1); // Preperation Recommendation
+
+add_action('rehorik_product_view_title_price', 'woocommerce_template_single_title', 1); // Title
+add_action('rehorik_product_view_title_price', 'woocommerce_template_single_price', 1); // Price
 
 add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
 add_action('rehorik_product_view_gallery', 'sigils', 1); // Sigils
