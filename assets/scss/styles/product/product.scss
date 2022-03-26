@@ -16,22 +16,16 @@
 
   //Grid gap
   $grid-gap: $spacing-l;
-  //grid-gap: $grid-gap;
-
   .rehorik-product-view-gallery {margin: 0 $grid-gap/2 $grid-gap/2 0;}
   .rehorik-product-view-title-price {margin: 0 0 $grid-gap/2 $grid-gap/2;}
   .rehorik-add-to-cart-container {margin: $grid-gap/2 0 $grid-gap/2 $grid-gap/2;}
   .rehorik-preperation-recommendation:not(:empty) {margin: $grid-gap/2 $grid-gap/2 $grid-gap/2 0;}
   .rehorik-product-video:not(:empty) {margin: $grid-gap/2 0 $grid-gap/2 $grid-gap/2;}
   .rehorik-product-information {margin: $grid-gap/2 0 0 0;}
+
+  .rehorik-product-description {padding: 0 $grid-gap/2 0 0;border-right: 1px solid $beigegold}
+  .rehorik-product-attributes {padding: 0 0 0 $grid-gap/2;}
   h1.product_title {margin: 0 0 $grid-gap 0;}
-  /*
-
-  .woocommerce-product-gallery
-  .rehorik-product-video:not(:empty)  {margin: 0 $grid-gap $grid-gap 0;}
-  .rehorik-product-summary {margin: 0 0 $grid-gap 0;}
-
-   */
 
   .rehorik-product-view-gallery {
     grid-area: gallery;

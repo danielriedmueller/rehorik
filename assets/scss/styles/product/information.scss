@@ -1,52 +1,55 @@
 @import "../mixins";
 
-.rehorik-product-information {
-  padding: $spacing-l $spacing-xl;
-  border: 1px solid $product-default-color;
-  border-top: none;
-  border-radius: $border-radius;
-  color: #fff;
-
-  hr {
-    border-width: 3px !important;
-  }
-
-  @media all and (max-width: $small-breakpoint) {
-    padding: 0;
-  }
-}
-
-body.woocommerce #content-area {
+div.rehorik-product {
   .rehorik-product-information {
+    padding: $spacing;
+    border-radius: $border-radius;
+    color: #fff;
+    display: flex;
+
+    > * {
+      flex: 0 0 50%;
+    }
+
+
+    hr {
+      border-width: 3px !important;
+    }
+
+    @media all and (max-width: $small-breakpoint) {
+      padding: 0;
+    }
+
     background-color: $product-default-color;
     border: none;
   }
 
-  div.rehorik-product.product_cat-crema {
+  &.product_cat-crema {
     .rehorik-product-information {
       background-color: $product-crema-color;
     }
   }
 
-  div.rehorik-product.product_cat-espresso {
+  &.product_cat-espresso {
     .rehorik-product-information {
       background-color: $product-espresso-color;
     }
   }
 
-  div.rehorik-product.product_cat-filterkaffee {
+  &.product_cat-filterkaffee {
     .rehorik-product-information {
       background-color: $product-filterkaffee-color;
     }
   }
 
-  div.rehorik-product.product_cat-espresso.product_cat-filterkaffee {
+  &.product_cat-espresso.product_cat-filterkaffee {
     .rehorik-product-information {
       @include productLinearGradient($product-filterkaffee-color, $product-espresso-color);
     }
   }
 }
 
+// TODO remove or reuse
 div.rehorik-product-attribute-container {
   display: grid;
 

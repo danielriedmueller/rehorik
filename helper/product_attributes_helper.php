@@ -81,3 +81,22 @@ function getAttributeArray(WC_Product $product, string $attribute): array
         ? wc_get_product_terms( $product->get_id(), $attribute_object->get_name(), array( 'fields' => 'names' ) )
         : $attribute_object->get_options();
 }
+
+/**
+ * Creates coffee beans and flowers on coffee detail page.
+ */
+function getStrengthFlavourHtml($level, $class) {
+    $level = strip_tags($level);
+
+    $result = '<div class="rehorik-product-strength-flavour-container">';
+    for ($i = 1; $i <= MAX_COFFEE_STRENGTH_FLAVOUR_ATTRIBUTE; $i++) {
+        if ($i <= (int)$level) {
+            $result .= "<span class='rehorik-coffee-${class}-${i}-filled'></span>";
+        } else {
+            $result .= "<span class='rehorik-coffee-${class}-${i}'></span>";
+        }
+    }
+    $result .= '</div>';
+
+    return $result;
+}

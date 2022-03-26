@@ -17,5 +17,18 @@ add_filter( 'woocommerce_display_product_attributes', function ($product_attribu
     unset($product_attributes['attribute_pa_product-of-month']);
     unset($product_attributes['weight']);
 
+    if (isset($product_attributes['attribute_' . STRENGTH_ATTRIBUTE_SLUG])) {
+        $product_attributes['attribute_' . STRENGTH_ATTRIBUTE_SLUG]['value'] = getStrengthFlavourHtml(
+            $product_attributes['attribute_' . STRENGTH_ATTRIBUTE_SLUG]['value'],
+            'strength');
+    }
+
+    if (isset($product_attributes['attribute_' . FLAVOUR_VARIETY_ATTRIBUTE_SLUG])) {
+        $product_attributes['attribute_' . FLAVOUR_VARIETY_ATTRIBUTE_SLUG]['value'] = getStrengthFlavourHtml(
+            $product_attributes['attribute_' . FLAVOUR_VARIETY_ATTRIBUTE_SLUG]['value'],
+            'flavour'
+        );
+    }
+
     return $product_attributes;
 }, 10, 2);

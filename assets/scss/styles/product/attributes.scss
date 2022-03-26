@@ -1,3 +1,14 @@
+// Product detail view
+.rehorik.single-product #main-content .rehorik-product.product.detail-view .rehorik-product-attributes {
+  table {
+    tr th {
+      padding-right: $spacing;
+      color: $beigegold;
+    }
+  }
+}
+
+// Overview
 .rehorik-products {
   .rehorik-product-attributes table tr td:first-child {
     font-size: $font-size-very-small;
