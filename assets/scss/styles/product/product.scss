@@ -31,7 +31,7 @@
   ;
 
     .rehorik-product-view-gallery {margin: 0 0 calc(var(--grid-gap) / 2) 0;}
-    .rehorik-product-view-title-price {margin: 0 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-product-view-title-price {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
     .rehorik-add-to-cart-container {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
     .rehorik-preperation-recommendation:not(:empty) {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
     .rehorik-product-video:not(:empty) {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}

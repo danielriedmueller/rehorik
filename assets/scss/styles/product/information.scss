@@ -18,6 +18,7 @@ div.rehorik-product {
       flex-direction: column;
 
       > *:first-child {
+        flex-shrink: 1;
         border-right: none;
         border-bottom: 1px solid $beigegold
       }
