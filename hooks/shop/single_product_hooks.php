@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Product Detail View Hooks
  *  - woocommerce_show_product_images
@@ -39,7 +38,16 @@ add_action('rehorik_product_information', 'single_product_attributes', 1); // At
 function description() {
     global $product;
 
-    echo sprintf('<div class="rehorik-product-description">%s</div>', $product->get_description());
+    $categories = getSubCategories($product);
+    if (!empty($categories)) {
+        echo sprintf(
+            '<div class="rehorik-product-description"><div class="rehorik-product-information-category">%s</div>%s</div>'
+            , $categories,
+            $product->get_description()
+        );
+    } else {
+        echo sprintf('<div class="rehorik-product-description">%s</div>', $product->get_description());
+    }
 }
 
 function single_product_attributes() {

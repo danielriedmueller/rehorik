@@ -38,15 +38,6 @@
 .woocommerce div.rehorik-product.product form.cart {
   margin: 0;
 
-  .woocommerce-variation-add-to-cart {
-    div.quantity {
-      @media all and (max-width: $small-breakpoint) {
-        margin: 0 0 $spacing-s 0 !important;
-        width: 100%;
-      }
-    }
-  }
-
   .woocommerce-page.et_pb_button_helper_class a.button {
     background-color: $beigegold;
 

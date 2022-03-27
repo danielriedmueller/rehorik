@@ -10,10 +10,7 @@ body.rehorik.woocommerce div.rehorik-product {
       background: $beigegold url("../img/warenkorb-white.svg") no-repeat left 10px center;
       background-size: $spacing-s;
       margin-top: $spacing;
-      border-top-right-radius: $border-radius !important;
-      border-bottom-right-radius: $border-radius !important;
-      border-top-left-radius: 0 !important;
-      border-bottom-left-radius: 0 !important;
+      border-radius: 0 $border-radius $border-radius 0 !important;
 
       &:hover {
         color: #fff !important;

@@ -5,7 +5,6 @@ require_once('sig_functions.php');
 
 define('ONE_CUP_OF_COFFEE_IN_GRAMS', 10);
 define('FREE_SHIPPING_AMOUNT', 49);
-define('MAX_COFFEE_STRENGTH_FLAVOUR_ATTRIBUTE', 6);
 define('MAX_DISPLAY_ORIGIN_COUNTRIES', 1);
 define('DELIVERY_CATEGORY_URL', 'produkt-kategorie/lieferservice');
 define('EVENT_TICKET_SHOULD_BE_PRINTED_SLUG', 'soll-das-ticket-ausgedruckt-werden');
@@ -39,29 +38,6 @@ define('WINE_CATEGORY_SLUGS', [
     'champagner-und-sekt'
 ]);
 
-// Attributes
-define('STRENGTH_ATTRIBUTE_SLUG', 'pa_staerke');
-define('VARIETIES_ATTRIBUTE_SLUG', 'pa_sorte');
-define('GRAPE_VARIETY_ATTRIBUTE_SLUG', 'pa_rebsorte');
-define('AUSBAU_ATTRIBUTE_SLUG', 'pa_ausbau');
-define('HERSTELLUNG_ATTRIBUTE_SLUG', 'pa_herstellung');
-define('MILCHART_ATTRIBUTE_SLUG', 'pa_milchart');
-define('FETT_ATTRIBUTE_SLUG', 'pa_fett');
-define('FLAVOUR_ATTRIBUTE_SLUG', 'pa_aromen');
-define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'pa_aromenvielfalt');
-define('BEAN_COMPOSITION_ATTRIBUTE_SLUG', 'pa_bohnenkompositionen');
-define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_herkunft');
-define('REGION_ATTRIBUTE_SLUG', 'pa_region');
-define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
-define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
-
-define('ALCOHOL_ATTRIBUTE_SLUG', 'pa_alkoholgehalt');
-define('WEIGHT_ATTRIBUTE_SLUG', 'pa_gewicht');
-define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
-define('WINERY_ATTRIBUTE_SLUG', 'pa_weingut');
-define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
-define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
-
 // For Events which are only virtual online events
 define('ONLINE_META_KEY', 'Online');
 define('CANCELED_META_KEY', 'Abgesagt');
@@ -69,17 +45,6 @@ define('CANCELED_META_KEY', 'Abgesagt');
 // Payment methods
 define('PAYMENT_METHOD_CASH', 'cod');
 define('PAYMENT_METHOD_DIRECT_TRANSFER', 'bacs');
-
-// In $productAttributes array, slugs are prefixed by wordpress
-define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
-
-// All product attributes that appear in information tab on product detail page
-define('INFORMATION_TAB_ATTRIBUTES', [
-    ORIGIN_COUNTRY_ATTRIBUTE_SLUG,
-    VARIETIES_ATTRIBUTE_SLUG,
-    FLAVOUR_ATTRIBUTE_SLUG,
-    FETT_ATTRIBUTE_SLUG,
-]);
 
 // Pages
 define('NEUE_ROESTEREI_PAGE_ID', 21830);

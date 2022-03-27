@@ -1,9 +1,35 @@
 // Product detail view
 .rehorik.single-product #main-content .rehorik-product.product.detail-view .rehorik-product-attributes {
   table {
+    width: 100%;
+
     tr th {
-      padding-right: $spacing;
+      padding: 0 $spacing 0 0;
       color: $beigegold;
+    }
+
+    tr {
+      &:not(:last-child) {
+        th, td {
+          padding-top: $spacing-xxs;
+          padding-bottom: $spacing-xxs;
+          border-bottom: 1px solid $beigegold;
+        }
+      }
+
+      &:first-child {
+        th, td {
+          padding-top: 0;
+          padding-bottom: $spacing-xxs;
+        }
+      }
+
+      &:last-child {
+        th, td {
+          padding-top:  $spacing-xxs;
+          padding-bottom: 0;
+        }
+      }
     }
   }
 }

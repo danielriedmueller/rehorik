@@ -8,24 +8,42 @@
     "information information"
 ;
 
+  --grid-gap: #{$spacing-l};
   @media all and (max-width: $small-breakpoint) {
-    grid-template-columns: 1fr;
-    grid-column-gap: $spacing-s;
-    grid-row-gap: $spacing-s;
+    --grid-gap: #{$spacing};
   }
 
-  //Grid gap
-  $grid-gap: $spacing-l;
-  .rehorik-product-view-gallery {margin: 0 $grid-gap/2 $grid-gap/2 0;}
-  .rehorik-product-view-title-price {margin: 0 0 $grid-gap/2 $grid-gap/2;}
-  .rehorik-add-to-cart-container {margin: $grid-gap/2 0 $grid-gap/2 $grid-gap/2;}
-  .rehorik-preperation-recommendation:not(:empty) {margin: $grid-gap/2 $grid-gap/2 $grid-gap/2 0;}
-  .rehorik-product-video:not(:empty) {margin: $grid-gap/2 0 $grid-gap/2 $grid-gap/2;}
-  .rehorik-product-information {margin: $grid-gap/2 0 0 0;}
+  .rehorik-product-view-gallery {margin: 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) 0;}
+  .rehorik-product-view-title-price {margin: 0 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2);}
+  .rehorik-add-to-cart-container {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2);}
+  .rehorik-preperation-recommendation:not(:empty) {margin: calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) 0;}
+  .rehorik-product-video:not(:empty) {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2);}
+  .rehorik-product-information {margin: calc(var(--grid-gap) / 2) 0 0 0;}
+  .rehorik-product-description {padding: calc(var(--grid-gap) / 2);}
+  .rehorik-product-attributes {padding: calc(var(--grid-gap) / 2);}
+  h1.product_title {margin: 0 0 var(--grid-gap) 0;}
 
-  .rehorik-product-description {padding: 0 $grid-gap/2 0 0;border-right: 1px solid $beigegold}
-  .rehorik-product-attributes {padding: 0 0 0 $grid-gap/2;}
-  h1.product_title {margin: 0 0 $grid-gap 0;}
+  @media all and (max-width: $small-breakpoint) {
+
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "gallery"
+    "title-price"
+    "add-to-cart"
+    "video"
+    "preperation"
+    "information"
+  ;
+
+    .rehorik-product-view-gallery {margin: 0 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-product-view-title-price {margin: 0 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-add-to-cart-container {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-preperation-recommendation:not(:empty) {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-product-video:not(:empty) {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-product-information {margin: calc(var(--grid-gap) / 2) 0 0 0;}
+    .rehorik-product-description {padding: 0 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-product-attributes {padding: calc(var(--grid-gap) / 2) 0 0 0;}
+  }
 
   .rehorik-product-view-gallery {
     grid-area: gallery;

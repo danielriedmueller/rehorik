@@ -6,7 +6,6 @@ $price = wc_price($product->get_price());
 $strength = $product->get_attribute(STRENGTH_ATTRIBUTE_SLUG);
 $flavoursvariety = $product->get_attribute(FLAVOUR_VARIETY_ATTRIBUTE_SLUG);
 
-
 $grapeVariety = $product->get_attribute(GRAPE_VARIETY_ATTRIBUTE_SLUG);
 $ausbau = $product->get_attribute(AUSBAU_ATTRIBUTE_SLUG);
 $giftContent = getAttributeArray($product, GIFT_CONTENT_ATTRIBUTE_SLUG);
