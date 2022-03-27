@@ -28,6 +28,7 @@ div.rehorik-product {
 
     .rehorik-product-description {
       text-align: justify;
+      font-size: $font-size-small;
     }
 
     .rehorik-product-information-category {
@@ -37,6 +38,7 @@ div.rehorik-product {
       font-family: $font-family-headline;
       border-bottom: 1px solid $beigegold;
       padding-bottom: $spacing-xxs;
+      margin-bottom: $spacing-xxs;
     }
   }
 

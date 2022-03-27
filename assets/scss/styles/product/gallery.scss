@@ -5,6 +5,10 @@
   .flex-viewport {
     margin-bottom: $spacing-xs;
     border-radius: $border-radius;
+
+    div {
+      border-radius: $border-radius;
+    }
   }
 
   ol.flex-control-nav.flex-control-thumbs {
