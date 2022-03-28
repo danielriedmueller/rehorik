@@ -32,7 +32,7 @@
     margin: 0;
     font-size: $font-size-large;
     font-family: $font-family-headline;
-    transform: translateY(-6px);
+    transform: translateY(-5px);
   }
 
   section.year {
@@ -80,7 +80,7 @@
         li span {
           max-width: 450px;
           font-size: $font-size;
-          transform: translateY(-10px);
+          transform: translateY(-9px);
           display: block;
         }
       }
