@@ -1,3 +1,134 @@
+#slider {
+  .slider-image {
+    width: auto;
+    height: 600px;
+    background: transparent none no-repeat center center;
+
+    @media all and (max-width: $small-breakpoint) {
+      height: 485px;
+    }
+  }
+
+  li .slider-image {
+    background-image: var(--image-large);
+
+    @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+      background-image: var(--image-medium);
+    }
+
+    @media all and (max-width: $small-breakpoint) {
+      background-image: var(--image-small);
+    }
+  }
+}
+
+.slider-claim {
+  max-width: 500px;
+  display: inline-block;
+  position: absolute;
+  bottom: $spacing-xl;
+  right: 130px;
+
+  .slider-title {
+    margin-bottom: $spacing;
+
+    h1 {
+      line-height: $line-height-very-large;
+    }
+
+    @media all and (max-width: $small-breakpoint) {
+      margin-bottom: $spacing-s;
+
+      h1 {
+        line-height: $line-height-large
+      }
+    }
+  }
+
+  .auto-width {
+    display: flex;
+  }
+
+  .auto-width div {
+    flex-grow: 1;
+    width: 0;
+  }
+
+  .slider-text {
+    background: rgba(0, 0, 0, 0.3) none;
+    backdrop-filter: blur(3px);
+    z-index: 9;
+    padding: $spacing-s;
+    border-radius: $border-radius-large;
+    color: #fff;
+    font-size: $font-size;
+    line-height: $line-height;
+
+    @media all and (max-width: $small-breakpoint) {
+      font-size: $font-size-small;
+      line-height: $line-height-narrow;
+      padding: $spacing-xs;
+    }
+
+    text-align: justify;
+    margin-bottom: $spacing-s;
+  }
+
+  .button-container div {
+    display: flex;
+    justify-content: space-between;
+
+    .button {
+      font-family: $font-family-headline;
+      background-color: $weinrot;
+      color: $beigegold;
+      padding: $spacing;
+      min-width: 200px;
+      text-align: center;
+      display: inline-block;
+
+      &:hover {
+        background-color: $beigegold;
+        color: #fff;
+      }
+
+      &:first-child:last-child {
+        width: 100%;
+      }
+    }
+
+    .button:nth-child(2) {
+      background-color: $beigegold;
+      color: $weinrot;
+
+      &:hover {
+        background-color: $weinrot;
+        color: $beigegold;
+      }
+    }
+
+    @media all and (max-width: $small-breakpoint) {
+      flex-direction: column;
+      align-items: center;
+
+      .button {
+        width: 100%;
+      }
+
+      .button:first-child:not(:last-child) {
+        margin-bottom: $spacing-s;
+      }
+    }
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    left: 0;
+    right: 0;
+    padding: 0 $spacing-xl;
+    bottom: $spacing;
+  }
+}
+
 ul#slider, ul#slider li, ul#slider li img {
   width: 100%;
 }
@@ -12,7 +143,7 @@ ul#slider img {
   vertical-align: middle;
   position: relative;
 
-  .frontpage-slider-image {
+  .slider-image {
     background-size: cover;
   }
 }
