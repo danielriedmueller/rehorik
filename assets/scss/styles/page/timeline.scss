@@ -1,0 +1,89 @@
+#timeline-outer {
+  $linewidth: 3px;
+  height: $timeline-height;
+  display: flex;
+  flex: auto;
+  overflow-y: auto;
+
+  // Horizontal line
+  #timeline {
+    position: relative;
+    display: table;
+    height: 100%;
+
+    div {
+      &:after {
+        content: '';
+        width: $linewidth;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 63px;
+        z-index: 1;
+        background: $beigegold;
+      }
+    }
+  }
+
+  h3 {
+    position: sticky;
+    top: 0;
+    color: $beigegold !important;
+    margin: 0;
+    font-size: $font-size-large;
+    font-family: $font-family-headline;
+    transform: translateY(-6px);
+  }
+
+  section.year {
+    position: relative;
+
+    section {
+      position: relative;
+      top: -37px;
+
+      ul {
+        list-style-type: none;
+        padding: 0 0 0 90px;
+
+        &:last-child {
+          margin: {
+            bottom: 0;
+          }
+        }
+
+        // Section line
+        &:first-of-type:after {
+          content: '';
+          width: 19px;
+          height: $linewidth;
+          background: $beigegold;
+          position: absolute;
+          left: 55px;
+          top: 0;
+          z-index: 2;
+        }
+
+        li img {
+          width: 250px;
+          transition: width 0.5s;
+
+          &:hover {
+            width: 800px;
+          }
+
+          &.narrow:hover {
+            width: 500px;
+          }
+        }
+
+        li span {
+          max-width: 450px;
+          font-size: $font-size;
+          transform: translateY(-10px);
+          display: block;
+        }
+      }
+    }
+  }
+}
