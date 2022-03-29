@@ -29,6 +29,7 @@ define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
 define('DELI_CATEGORY_SLUG', 'delikatessen-onlineshop');
 define('GIFTS_CATEGORY_SLUG', 'geschenke');
 define('MACHINE_CATEGORY_SLUG', 'maschinen-equipment');
+define('BLACK_AND_WINE', 'blackwine');
 define('TICKET_CATEGORY_SLUG', 'veranstaltungen');
 define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
 define('VIRTUAL_EVENTS_CATEGORY_SLUG', 'virtuelle-events');
