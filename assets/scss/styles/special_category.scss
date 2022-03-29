@@ -21,7 +21,7 @@ div#special-category {
     color: $font-color;
   }
 
-  .grid-dl {
+  .golden-box {
     background: transparent url("../img/stripes-600px.png") no-repeat top center;
     padding-top: 30px;
     margin: 0 0 $spacing-s 0;
@@ -29,32 +29,33 @@ div#special-category {
     > div {
       background-color: $beigegold;
       padding: $spacing-s;
+    }
+  }
 
-      > dl {
-        margin: 0 0 $spacing-s 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+  .grid-dl {
+    dl {
+      margin: 0 0 $spacing-s 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
 
-        > dd {
-          margin-left: 0;
-          font-family: $font-family-headline;
-          color: #fff;
-        }
-
-        > dt {
-          grid-column-start: 1;
-          grid-column-end: 3;
-        }
-
-        a {
-          color: #fff;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
+      > dd {
+        margin-left: 0;
+        font-family: $font-family-headline;
+        color: #fff;
       }
 
+      > dt {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      a {
+        color: #fff;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
@@ -72,7 +73,7 @@ div#special-category {
       }
 
       > img {
-        max-width:100%;
+        max-width: 100%;
       }
     }
   }

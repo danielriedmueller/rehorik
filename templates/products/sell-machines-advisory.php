@@ -3,7 +3,7 @@
     <p><b>Wo:</b> Ausstellungsraum Rehorik Rösterei & Kaffeehaus | <a target="_blank" href="https://goo.gl/maps/7syuH8WaSkARVtDf6">Straubinger Straße 62a</a></p>
     <p><b>Wie:</b> Zum Anschauen einfach vorbeikommen, für ein ausführliches Beratungsgespräch einen Termin unter <a href="mailto:<?= BARISTASTORE_EMAIL ?>?subject=Beratungstermin%20Maschinen%20und%20Equipment"><?= BARISTASTORE_EMAIL ?></a> vereinbaren</p>
     <p><b>Was:</b></p>
-    <div class="grid-dl">
+    <div class="grid-dl golden-box">
         <div>
             <dl>
                 <dt>Siebträgermaschinen</dt>
