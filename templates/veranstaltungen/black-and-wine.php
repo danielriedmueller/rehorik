@@ -2,10 +2,11 @@
 <div id="special-category">
     <p><b>Wo:</b> Rehorik Café 190°  | <a target="_blank" href="https://goo.gl/maps/nAmqc8nwH3hGWkWY6">Am Brixener Hof 6</a>.</p>
     <p><b>Preis:</b> 18 Euro, nur Abendkasse</p>
-    <p><b>Wann:</b> Jeden letzten Samstag im Monat</p>
+    <p><b>Wann:</b> Immer jeden letzten Samstag im Monat, ab 13:00 Uhr</p>
     <hr class="stripes">
+    <p><b>Was wir uns hier schon wieder ausgedacht haben?</b></p>
     <p>
-        Was wir uns hier schon wieder ausgedacht haben? Eigentlich ganz einfach: Ihr bekommt ein schwarzes Weinglas und eine Bewertungsskala. Dann verkostet Ihr Weine, ohne zu wissen, um was es sich handelt. Wichtig dabei ist es nicht, die Rebsorte zu erkennen oder das Anbaugebiet. Wichtig ist nur Euer Geschmack. Denn der Wein, der von Euch am besten bewertet wird, wird unser Wein des Monats.
+        Eigentlich ganz einfach: Ihr bekommt ein schwarzes Weinglas und eine Bewertungsskala. Dann verkostet Ihr Weine, ohne zu wissen, um was es sich handelt. Wichtig dabei ist es nicht, die Rebsorte zu erkennen oder das Anbaugebiet. Wichtig ist nur Euer Geschmack. Denn der Wein, der von Euch am besten bewertet wird, wird unser Wein des Monats.
         Und für alle Teilnehmer gibt’s sogar noch eine Belohnung oben drauf: Packt einfach den Bewertungsbogen, den ihr bekommen habt, ein und schaut bei einem unserer Standorte vorbei. Da bekommt Ihr dann 10% Rabatt auf unseren Wein des Monats.
     </p>
     <div class="flex-images mt">

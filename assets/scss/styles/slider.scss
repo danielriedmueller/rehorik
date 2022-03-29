@@ -82,7 +82,7 @@
       transition: none;
       font-family: $font-family-headline;
       background-color: $weinrot;
-      color: $beigegold;
+      color: $beigegold !important;
       padding: $spacing;
       min-width: 200px;
       text-align: center;
@@ -90,7 +90,7 @@
 
       &:hover {
         background-color: $beigegold;
-        color: #fff;
+        color: #fff !important;
       }
 
       &:first-child:last-child {
