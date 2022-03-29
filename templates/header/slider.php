@@ -1,5 +1,5 @@
 <?php
-$imgPathPrefix = 'url(../img/slider/';
+$imgPathPrefix = 'url(/wp-content/themes/rehorik/assets/img/slider/';
 $imgLargePathSuffix = '-1920x600px.jpg';
 $imgMediumPathSuffix = '-1080x600px.jpg';
 $imgSmallPathSuffix = '-375x485px.jpg';
@@ -31,7 +31,9 @@ $imgPathSuffix = ')';
         </li>
     <?php endforeach; ?>
 </ul>
-<div id="tns-controls-container">
-    <button></button>
-    <button></button>
-</div>
+<?php if(sizeof($args['items']) > 1): ?>
+    <div id="tns-controls-container">
+        <button></button>
+        <button></button>
+    </div>
+<?php endif; ?>

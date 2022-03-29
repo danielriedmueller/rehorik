@@ -73,38 +73,3 @@ div#sell-machines-advisory {
     }
   }
 }
-
-.rehorik-custom-category-header {
-  .header-image {
-    &.machine {
-      background-image: url("../img/maschinen/header/header-1920x600px-maschinen.jpg");
-
-      @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
-        background-image: url("../img/maschinen/header/header-1080x600px-maschinen.jpg");
-      }
-
-      @media all and (max-width: $small-breakpoint) {
-        background-image: url("../img/maschinen/header/header-mobil-375x485px-maschinen.jpg");
-      }
-    }
-  }
-
-  .slider-claim {
-    max-width: 548px;
-
-    div a.button {
-      background-color: $weinrot;
-      color: $beigegold;
-      margin-left: 0;
-      padding: $spacing !important;
-      line-height: 0 !important;
-
-      &:hover {
-        background-color: $beigegold !important;
-        color: #fff !important;
-        padding: $spacing !important;
-        line-height: 0 !important;
-      }
-    }
-  }
-}
