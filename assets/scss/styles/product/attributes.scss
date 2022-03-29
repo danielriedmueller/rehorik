@@ -8,6 +8,10 @@
       color: $beigegold;
     }
 
+    tr th, tr td {
+      line-height: $line-height;
+    }
+
     tr {
       &:not(:last-child) {
         th, td {
