@@ -5,7 +5,7 @@
   grid-template-areas:
     "gallery title-price"
     "gallery add-to-cart"
-    "preperation video"
+    "video ."
     "information information"
 ;
 
@@ -13,8 +13,8 @@
   .rehorik-product-view-gallery {margin: 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) 0;}
   .rehorik-product-view-title-price {margin: 0 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2);}
   .rehorik-add-to-cart-container {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2);}
-  .rehorik-preperation-recommendation:not(:empty) {margin: calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) 0;}
-  .rehorik-product-video:not(:empty) {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2);}
+  .rehorik-preperation-recommendation:not(:empty) {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) ;}
+  .rehorik-product-video:not(:empty) {margin: calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) 0;}
   .rehorik-product-information {margin: calc(var(--grid-gap) / 2) 0 0 0;}
   .rehorik-product-description {padding: var(--grid-gap) calc(var(--grid-gap) / 2) var(--grid-gap) var(--grid-gap);}
   .rehorik-product-attributes {padding: var(--grid-gap) var(--grid-gap) var(--grid-gap) calc(var(--grid-gap) / 2);}
