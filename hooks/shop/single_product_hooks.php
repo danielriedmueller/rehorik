@@ -19,7 +19,6 @@
  */
 
 add_action('rehorik_product_view', 'product_video', 1); // Video
-add_action('rehorik_product_view', 'preparation_recommendation', 1); // Preperation Recommendation
 
 add_action('rehorik_product_view_title_price', 'woocommerce_template_single_title', 1); // Title
 add_action('rehorik_product_view_title_price', 'woocommerce_template_single_price', 1); // Price
@@ -37,12 +36,14 @@ add_action('rehorik_product_information', 'single_product_attributes', 1); // At
 
 function description() {
     global $product;
+    global $post;
 
     $categories = getSubCategories($product);
     if (!empty($categories)) {
         echo sprintf(
-            '<div class="rehorik-product-description"><div class="rehorik-product-information-category">%s</div>%s</div>'
-            , $categories,
+            '<div class="rehorik-product-description"><div class="rehorik-product-information-category">%s</div><div class="rehorik-preperation-recommendation">%s</div>%s</div>',
+            $categories,
+            $post->post_excerpt,
             $product->get_description()
         );
     } else {
@@ -54,15 +55,6 @@ function single_product_attributes() {
     global $product;
 
     wc_display_product_attributes($product);
-}
-
-function preparation_recommendation() {
-    global $post;
-
-    echo sprintf(
-        '<div class="rehorik-preperation-recommendation">%s</div>',
-        $post->post_excerpt
-    );
 }
 
 function product_video() {
