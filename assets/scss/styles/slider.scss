@@ -79,6 +79,7 @@
     justify-content: space-between;
 
     .button {
+      transition: none;
       font-family: $font-family-headline;
       background-color: $weinrot;
       color: $beigegold;
