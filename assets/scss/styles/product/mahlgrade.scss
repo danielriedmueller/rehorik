@@ -12,15 +12,18 @@ body.rehorik.woocommerce div.product.rehorik-product form.cart {
     }
 
     $mahlgrade: [
-      "aeropress",
-      "filtermaschine",
-      "ganze-bohne",
-      "handfilter",
-      "herdkaennchen",
-      "karlsbader-kanne",
-      "siebtraeger",
-      "stempelkanne",
-      "tuerkisch-fein"
+      'aeropress',
+      'chemex-klein',
+      'chemex-gross',
+      'coldbrew',
+      'filtermaschine',
+      'ganze-bohne',
+      'handfilter',
+      'herdkaennchen',
+      'ibric',
+      'karlsbader',
+      'siebtraeger',
+      'stempelkanne'
     ];
 
     @each $mahlgrad in $mahlgrade {
