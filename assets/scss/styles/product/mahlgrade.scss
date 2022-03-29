@@ -28,10 +28,10 @@ body.rehorik.woocommerce div.product.rehorik-product form.cart {
 
     @each $mahlgrad in $mahlgrade {
       li[data-value='#{$mahlgrad}'] {
-        background-image: url("../img/mahlgrade/#{$mahlgrad}-Icons-200px.svg");
+        background-image: url("../img/mahlgrade/#{$mahlgrad}.svg");
 
         &:hover, &.selected {
-          background-image: url("../img/mahlgrade/selected/#{$mahlgrad}-Icons-200px.svg");
+          background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg");
         }
       }
     }
