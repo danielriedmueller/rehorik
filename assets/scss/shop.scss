@@ -15,22 +15,23 @@
 @import "styles/sidebar";
 @import "styles/rehorik_logo";
 @import "styles/best_selling_products";
+@import "styles/product/product";
+@import "styles/product/gallery";
+@import "styles/product/video";
 @import "styles/product/variations";
 @import "styles/product/cup_of_coffee_price";
-@import "styles/product/summary";
+@import "styles/product/add_to_cart";
 @import "styles/product/meta";
 @import "styles/product/attributes";
 @import "styles/product/hugo_head";
 @import "styles/product/tabs";
 @import "styles/product/coffee_strength_flavour";
-@import "styles/product/single_attributes";
 @import "styles/banner";
 @import "styles/checkout";
 @import "styles/category/categories";
 @import "styles/shop_page";
 @import "styles/product/sigils";
-@import "styles/product/additional_info";
-@import "styles/product/short_description";
+@import "styles/product/information";
 @import "styles/category/category";
 @import "styles/category/custom_category_page";
 @import "styles/category/lieferservice_category_page";
@@ -62,6 +63,7 @@
 @import "styles/orderbird_chooser";
 @import "styles/page/introduction";
 @import "styles/page/timeline";
+@import "styles/product/mahlgrade";
 
 @font-face {
   font-family: "DIN Offc W01 Cond";

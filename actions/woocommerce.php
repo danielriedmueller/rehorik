@@ -1,9 +1,10 @@
 <?php
 require_once('admin/add_cat_video_field.php');
+
 /**
  * Adds page title to the top on woocommerce pages
  */
-add_action('et_before_main_content', function () {
+remove_action('et_before_main_content', function () {
     if (is_woocommerce() || is_cart() || is_checkout()) {
         echo get_template_part('templates/page-title');
     }
@@ -84,11 +85,3 @@ add_action('event_tickets_after_save_ticket', function ($event_id, $ticket, $raw
         $product->save();
     }
 }, 10, 4);
-
-function rehorik_single_product_attributes(  ) {
-    echo get_template_part('templates/product-single-attributes');
-}
-add_action( 'woocommerce_single_product_summary', 'rehorik_single_product_attributes', 15, 0 );
-
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-add_action( 'woocommerce_product_additional_information', 'woocommerce_template_single_excerpt', 50 );

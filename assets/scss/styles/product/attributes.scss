@@ -1,3 +1,44 @@
+// Product detail view
+.rehorik.single-product #main-content .rehorik-product.product.detail-view .rehorik-product-attributes {
+  table {
+    width: 100%;
+
+    tr th {
+      padding: 0 $spacing 0 0;
+      color: $beigegold;
+    }
+
+    tr th, tr td {
+      line-height: $line-height;
+    }
+
+    tr {
+      &:not(:last-child) {
+        th, td {
+          padding-top: $spacing-xxs;
+          padding-bottom: $spacing-xxs;
+          border-bottom: 1px solid $beigegold;
+        }
+      }
+
+      &:first-child {
+        th, td {
+          padding-top: 0;
+          padding-bottom: $spacing-xxs;
+        }
+      }
+
+      &:last-child {
+        th, td {
+          padding-top:  $spacing-xxs;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// Overview
 .rehorik-products {
   .rehorik-product-attributes table tr td:first-child {
     font-size: $font-size-very-small;
@@ -16,63 +57,6 @@
 
   .rehorik-tabs-panel hr {
     border-width: 3px;
-  }
-}
-
-div.rehorik-product-attribute-container {
-  display: grid;
-
-  &:not(.item-count-2):not(.item-count-1) {
-    grid-template-columns: 1fr 1fr 1fr;
-
-    @media all and (min-width: $small-breakpoint + 1) {
-      div.rehorik-product-attribute-item {
-        &:not(:nth-child(3n + 3)) {
-          border-right: 3px solid $beigegold;
-        }
-      }
-    }
-  }
-
-  &.item-count-2 {
-    grid-template-columns: 1fr 1fr;
-
-    @media all and (min-width: $small-breakpoint + 1) {
-      div.rehorik-product-attribute-item {
-        &:not(:nth-child(2)) {
-          border-right: 3px solid $beigegold;
-        }
-      }
-    }
-  }
-
-  &.item-count-1 {
-    grid-template-columns: 1fr;
-  }
-
-  div.rehorik-product-attribute-item {
-    display: inline-block;
-    padding: $spacing-s;
-    margin-bottom: $spacing;
-    text-align: center;
-
-    .rehorik-product-attribute-label {
-      font-family: $font-family-headline;
-    }
-
-    .rehorik-product-attribute-value p {
-      padding-bottom: 0;
-    }
-  }
-
-  @media all and (max-width: $small-breakpoint) {
-    grid-template-columns: 1fr 1fr !important;
-
-    div.rehorik-product-attribute-item {
-      &:not(:nth-child(2)) {
-        border-right: 3px solid $beigegold;
-      }
-    }
   }
 }
 

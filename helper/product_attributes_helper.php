@@ -1,52 +1,35 @@
 <?php
-
 require_once('product_sigil_helper.php');
 
-/**
- * Returns only Herkunft, Sorte, Aromen, Fett
- * If Bohnenkomposition is present, it becomes the label for Sorte
- * If Rebsorte is present, add id to Sorte
- * If Herkunft und Region is present, add Region to Herkunft
- *
- * @param array $productAttributes
- * @return array
- */
-function extractOtherAttributes(array $productAttributes): array
-{
-    if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX.BEAN_COMPOSITION_ATTRIBUTE_SLUG])) {
-        if ($productAttributes[ATTRIBUTE_SLUG_PREFIX.BEAN_COMPOSITION_ATTRIBUTE_SLUG]
-            && $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]) {
-            $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]['label']
-                = $productAttributes[ATTRIBUTE_SLUG_PREFIX.BEAN_COMPOSITION_ATTRIBUTE_SLUG]['value'];
-        }
-    }
+// Attributes
+define('STRENGTH_ATTRIBUTE_SLUG', 'pa_staerke');
+define('VARIETIES_ATTRIBUTE_SLUG', 'pa_sorte');
+define('GRAPE_VARIETY_ATTRIBUTE_SLUG', 'pa_rebsorte');
+define('AUSBAU_ATTRIBUTE_SLUG', 'pa_ausbau');
+define('HERSTELLUNG_ATTRIBUTE_SLUG', 'pa_herstellung');
+define('MILCHART_ATTRIBUTE_SLUG', 'pa_milchart');
+define('FETT_ATTRIBUTE_SLUG', 'pa_fett');
+define('FLAVOUR_ATTRIBUTE_SLUG', 'pa_aromen');
+define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'pa_aromenvielfalt');
+define('BEAN_COMPOSITION_ATTRIBUTE_SLUG', 'pa_bohnenkompositionen');
+define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_herkunft');
+define('REGION_ATTRIBUTE_SLUG', 'pa_region');
+define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
+define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
+define('ALCOHOL_ATTRIBUTE_SLUG', 'pa_alkoholgehalt');
+define('WEIGHT_SLUG', 'weight');
+define('WEIGHT_ATTRIBUTE_SLUG', 'pa_gewicht');
+define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
+define('WINERY_ATTRIBUTE_SLUG', 'pa_weingut');
+define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
+define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
 
-    if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX.GRAPE_VARIETY_ATTRIBUTE_SLUG])) {
-        if ($productAttributes[ATTRIBUTE_SLUG_PREFIX.GRAPE_VARIETY_ATTRIBUTE_SLUG]
-            && $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]) {
-            $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]['value'] =
-            $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]['value']
-            . $productAttributes[ATTRIBUTE_SLUG_PREFIX.GRAPE_VARIETY_ATTRIBUTE_SLUG]['value'];
-        }
-    }
-
-    if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX.REGION_ATTRIBUTE_SLUG])) {
-        if ($productAttributes[ATTRIBUTE_SLUG_PREFIX.REGION_ATTRIBUTE_SLUG]
-            && $productAttributes[ATTRIBUTE_SLUG_PREFIX.ORIGIN_COUNTRY_ATTRIBUTE_SLUG]) {
-            $productAttributes[ATTRIBUTE_SLUG_PREFIX.ORIGIN_COUNTRY_ATTRIBUTE_SLUG]['value'] =
-                $productAttributes[ATTRIBUTE_SLUG_PREFIX.ORIGIN_COUNTRY_ATTRIBUTE_SLUG]['value']
-                . $productAttributes[ATTRIBUTE_SLUG_PREFIX.REGION_ATTRIBUTE_SLUG]['value'];
-        }
-    }
-
-    return array_values(array_filter($productAttributes, function ($key) {
-        return in_array(str_replace(ATTRIBUTE_SLUG_PREFIX, "", $key), INFORMATION_TAB_ATTRIBUTES);
-    }, ARRAY_FILTER_USE_KEY));
-}
+// In $productAttributes array, slugs are prefixed by wordpress
+define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
 
 function getOriginCountry(WC_Product $product): string
 {
-    $category = getSubCategory($product);
+    $category = getSubCategories($product);
     $region = $product->get_attribute(REGION_ATTRIBUTE_SLUG);
 
     $attributeArr = getAttributeArray($product, ORIGIN_COUNTRY_ATTRIBUTE_SLUG);
@@ -80,4 +63,24 @@ function getAttributeArray(WC_Product $product, string $attribute): array
     return $attribute_object->is_taxonomy()
         ? wc_get_product_terms( $product->get_id(), $attribute_object->get_name(), array( 'fields' => 'names' ) )
         : $attribute_object->get_options();
+}
+
+/**
+ * Creates coffee beans and flowers on coffee detail page.
+ */
+function getStrengthFlavourHtml($level, $class) {
+    $level = strip_tags($level);
+    $maxStrengthValue = 6;
+
+    $result = '<div class="rehorik-product-strength-flavour-container">';
+    for ($i = 1; $i <= $maxStrengthValue; $i++) {
+        if ($i <= (int)$level) {
+            $result .= "<span class='rehorik-coffee-${class}-${i}-filled'></span>";
+        } else {
+            $result .= "<span class='rehorik-coffee-${class}-${i}'></span>";
+        }
+    }
+    $result .= '</div>';
+
+    return $result;
 }

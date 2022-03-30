@@ -6,7 +6,6 @@ $price = wc_price($product->get_price());
 $strength = $product->get_attribute(STRENGTH_ATTRIBUTE_SLUG);
 $flavoursvariety = $product->get_attribute(FLAVOUR_VARIETY_ATTRIBUTE_SLUG);
 
-
 $grapeVariety = $product->get_attribute(GRAPE_VARIETY_ATTRIBUTE_SLUG);
 $ausbau = $product->get_attribute(AUSBAU_ATTRIBUTE_SLUG);
 $giftContent = getAttributeArray($product, GIFT_CONTENT_ATTRIBUTE_SLUG);
@@ -22,8 +21,6 @@ $attributes[MANUFACTURER_ATTRIBUTE_SLUG] = $product->get_attribute(MANUFACTURER_
 $attributes[MILCHART_ATTRIBUTE_SLUG] = $product->get_attribute(MILCHART_ATTRIBUTE_SLUG);
 $attributes[HERSTELLUNG_ATTRIBUTE_SLUG] = $product->get_attribute(HERSTELLUNG_ATTRIBUTE_SLUG);
 $attributes = array_filter($attributes);
-
-
 ?>
 <div class="rehorik-product-attributes">
     <div class='rehorik-product-min-price'><?= ($product->is_type('variable') ? "ab " : "") . $price . " *" ?></div>
@@ -32,13 +29,13 @@ $attributes = array_filter($attributes);
             <?php if($strength): ?>
                 <tr>
                     <td class="rehorik-product-strength-flavour-label-first"><?= wc_attribute_label(STRENGTH_ATTRIBUTE_SLUG) ?></td>
-                    <td><?php do_action('render_product_attribute_strength_flavour', $strength, 'strength'); ?></td>
+                    <td><?= getStrengthFlavourHtml($strength, 'strength') ?></td>
                 </tr>
             <?php endif; ?>
             <?php if($flavoursvariety): ?>
                 <tr>
                     <td class="rehorik-product-strength-flavour-label-second"><?= wc_attribute_label(FLAVOUR_VARIETY_ATTRIBUTE_SLUG) ?></td>
-                    <td><?php do_action('render_product_attribute_strength_flavour', $flavoursvariety, 'flavour'); ?></td>
+                    <td><?= getStrengthFlavourHtml($flavoursvariety, 'flavour'); ?></td>
                 </tr>
             <?php endif; ?>
             <?php if(!empty($attributes) || !empty($giftContent)): ?>

@@ -1,0 +1,89 @@
+.rehorik.single-product .rehorik-product.product.detail-view {
+  margin-bottom: $product-view-grid-gap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "gallery title-price"
+    "gallery add-to-cart"
+    "video ."
+    "information information"
+;
+
+  --grid-gap: #{$product-view-grid-gap};
+  .rehorik-product-view-gallery {margin: 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) 0;}
+  .rehorik-product-view-title-price {margin: 0 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2);}
+  .rehorik-add-to-cart-container {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2);}
+  .rehorik-product-video:not(:empty) {margin: calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) 0;}
+  .rehorik-product-information {margin: calc(var(--grid-gap) / 2) 0 0 0;}
+  .rehorik-product-description {padding: var(--grid-gap) calc(var(--grid-gap) / 2) var(--grid-gap) var(--grid-gap);}
+  .rehorik-product-attributes {padding: var(--grid-gap) var(--grid-gap) var(--grid-gap) calc(var(--grid-gap) / 2);}
+  h1.product_title {margin: 0 0 var(--grid-gap) 0;}
+
+  @media all and (max-width: $small-breakpoint) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "gallery"
+    "title-price"
+    "add-to-cart"
+    "video"
+    "preperation"
+    "information"
+  ;
+
+    .rehorik-product-view-gallery {margin: 0 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-product-view-title-price {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-add-to-cart-container {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-preperation-recommendation:not(:empty) {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-product-video:not(:empty) {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
+    .rehorik-product-information {margin: calc(var(--grid-gap) / 2) 0 0 0;}
+    .rehorik-product-description {padding: calc(var(--grid-gap) / 2);}
+    .rehorik-product-attributes {padding: calc(var(--grid-gap) / 2);}
+  }
+
+  .rehorik-product-view-gallery {
+    grid-area: gallery;
+  }
+
+  .rehorik-product-view-title-price {
+    grid-area: title-price;
+
+    h1.product_title {
+      color: $font-color-accent !important;
+      text-align: left;
+      text-transform: uppercase;
+      padding: 0 !important;
+    }
+
+    p.price {
+      color: $font-color;
+      font-size: $font-size-h2 !important;
+
+      > span {
+        font-size: $font-size-h2 !important;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .rehorik-product-information {
+    grid-area: information;
+  }
+
+  .rehorik-add-to-cart-container {
+    grid-area: add-to-cart;
+
+    align-self: end;
+  }
+
+  .rehorik-product-video {
+    grid-area: video;
+  }
+
+  .rehorik-preperation-recommendation {
+    grid-area: preperation;
+  }
+
+  .rehorik-product-category {
+    grid-area: category;
+  }
+}

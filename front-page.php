@@ -63,15 +63,15 @@ get_template_part('templates/header/slider', null, ['items' => [
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
         <?php
-        $product_categories = getShopFrontPageCategories();
-        foreach ($product_categories as $category) {
-            wc_get_template(
-                'content-product_cat.php',
-                [
-                    'category' => $category,
-                ]
-            );
-        }
+            $product_categories = getShopFrontPageCategories();
+            foreach ($product_categories as $category) {
+                wc_get_template(
+                    'content-product_cat.php',
+                    [
+                        'category' => $category,
+                    ]
+                );
+            }
         ?>
     </ul>
 </div>
