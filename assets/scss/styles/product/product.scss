@@ -19,7 +19,7 @@
   .rehorik-product-attributes {padding: var(--grid-gap);}
   h1.product_title {margin: 0 0 var(--grid-gap) 0;}
 
-  @media all and (max-width: $small-breakpoint) {
+  @media all and (max-width: $medium-breakpoint) {
     grid-template-columns: 1fr;
     grid-template-areas:
     "gallery"
