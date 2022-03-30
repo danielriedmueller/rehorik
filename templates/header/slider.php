@@ -1,5 +1,5 @@
 <?php
-$imgPathPrefix = 'url(../img/slider/';
+$imgPathPrefix = 'url(/wp-content/themes/rehorik/assets/img/slider/';
 $imgLargePathSuffix = '-1920x600px.jpg';
 $imgMediumPathSuffix = '-1080x600px.jpg';
 $imgSmallPathSuffix = '-375x485px.jpg';
@@ -19,19 +19,25 @@ $imgPathSuffix = ')';
                 <?php if (isset($item['text'])): ?>
                     <div class="auto-width slider-text"><div><?= $item['text'] ?></div></div>
                 <?php endif; ?>
-                <div class="slider-title"><h1><?= $item['claim'] ?></h1></div>
-                <div class="auto-width button-container">
-                    <div>
-                        <?php foreach ($item['buttons'] as $link => $text): ?>
-                            <a class="button" href="<?= $link ?>"><?= $text ?></a>
-                        <?php endforeach; ?>
+                <?php if (isset($item['claim'])): ?>
+                    <div class="slider-title"><h1><?= $item['claim'] ?></h1></div>
+                <?php endif; ?>
+                <?php if (isset($item['buttons'])): ?>
+                    <div class="auto-width button-container">
+                        <div>
+                            <?php foreach ($item['buttons'] as $link => $text): ?>
+                                <a class="button" href="<?= $link ?>"><?= $text ?></a>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
         </li>
     <?php endforeach; ?>
 </ul>
-<div id="tns-controls-container">
-    <button></button>
-    <button></button>
-</div>
+<?php if(sizeof($args['items']) > 1): ?>
+    <div id="tns-controls-container">
+        <button></button>
+        <button></button>
+    </div>
+<?php endif; ?>

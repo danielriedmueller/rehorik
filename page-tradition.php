@@ -4,18 +4,16 @@ get_template_part('templates/header/slider', null, [
     'items' => [
         [
             'claim' => 'Vom Ursprung inspiriert',
-            'img' => 'Produkt-Illustration-El-Rubi-header',
+            'img' => 'header-tradition',
             'buttons' => [
                 '/produkt/karlsbader-mischung' => 'Unsere Karslbader Mischung',
             ],
         ],
         [
-            'claim' => 'Kaffeerösterei seit 1928',
-            'img' => 'startseite-header-kaffee',
+            'claim' => 'Bis heute weitergelebt',
+            'img' => 'startseite-header-roesterei',
             'buttons' => [
-                get_term_link(get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'),
-                    'product_cat') => 'Zum Kaffee',
-                get_page_link(ROESTEREI_PAGE_ID) => 'Unser Kugelröster',
+                '/produkt/hochlandmischung' => 'Regensburger Mischung',
             ],
         ],
     ],
