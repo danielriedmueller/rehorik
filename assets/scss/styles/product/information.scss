@@ -43,6 +43,14 @@ div.rehorik-product {
       margin-bottom: $spacing-xxs;
       line-height: $line-height;
     }
+
+    .rehorik-preperation-recommendation:not(:empty) {
+      color: $beigegold;
+      border-bottom: 1px solid $beigegold;
+      padding-bottom: $spacing-xxs;
+      margin-bottom: $spacing-xxs;
+      line-height: $line-height;
+    }
   }
 
   &.product_cat-crema {

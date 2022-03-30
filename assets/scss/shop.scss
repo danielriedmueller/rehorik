@@ -32,7 +32,6 @@
 @import "styles/shop_page";
 @import "styles/product/sigils";
 @import "styles/product/information";
-@import "styles/product/short_description";
 @import "styles/category/category";
 @import "styles/category/custom_category_page";
 @import "styles/category/lieferservice_category_page";
@@ -139,12 +138,6 @@ span {
 hr {
   border: none;
   border-top: 1px solid $beigegold;
-
-  &.stripes {
-    border: none;
-    background: transparent url("../img/stripes-600px.png") no-repeat top center;
-    height: 30px;
-  }
 }
 
 .woocommerce-page #main-content {

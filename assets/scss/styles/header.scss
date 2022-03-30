@@ -106,7 +106,7 @@ header.rehorik-header {
     display: none;
   }
 
-  @media all and (max-width: $small-breakpoint) {
+  @media all and (max-width: $medium-breakpoint) {
     justify-content: flex-start;
     flex-direction: row-reverse;
     padding-left: $spacing;

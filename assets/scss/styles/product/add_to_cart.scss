@@ -13,7 +13,9 @@ body.rehorik.woocommerce div.rehorik-product {
       border-radius: 0 $border-radius $border-radius 0 !important;
 
       &:hover {
-        color: #fff !important;
+        color: $beigegold !important;
+        background: $weinrot url("../img/warenkorb-16px.svg") no-repeat left 10px center !important;
+        background-size: $spacing-s !important;
       }
     }
 
@@ -26,44 +28,4 @@ body.rehorik.woocommerce div.rehorik-product {
       }
     }
   }
-
-  div.rehorik-add-to-cart-container button[type="submit"].single_add_to_cart_button {
-    &:hover {
-      background-color: $product-default-color !important;
-    }
-  }
-
-  &.product_cat-crema {
-    div.rehorik-add-to-cart-container button[type="submit"].single_add_to_cart_button {
-      &:hover, {
-        background-color: $product-crema-color !important;
-      }
-    }
-  }
-
-  &.product_cat-filterkaffee {
-    div.rehorik-add-to-cart-container button[type="submit"].single_add_to_cart_button {
-      &:hover {
-        background-color: $product-filterkaffee-color !important;
-      }
-    }
-  }
-
-
-  &.product_cat-espresso {
-    div.rehorik-add-to-cart-container button[type="submit"].single_add_to_cart_button {
-      &:hover {
-        background-color: $product-espresso-color !important;
-      }
-    }
-  }
-
-  &.product_cat-espresso.product_cat-filterkaffee {
-    div.rehorik-add-to-cart-container button[type="submit"].single_add_to_cart_button {
-      &:hover {
-        @include productLinearGradient($product-filterkaffee-color, $product-espresso-color);
-      }
-    }
-  }
-
 }

@@ -124,6 +124,16 @@ function getSubCategories(WC_Product $product): string
         return getCoffeeCategories($product);
     }
 
+    // TODO Remove
+    if (isItCategory($product, WINE_CATEGORY_SLUG)) {
+        return "";
+    }
+
+    // TODO Remove
+    if (isItCategory($product, SPIRITS_CATEGORY_SLUG)) {
+        return "";
+    }
+
     $terms = get_the_terms( $product->get_id(), 'product_cat' );
     $term_ids = wp_list_pluck($terms,'term_id');
     $parents = array_filter(wp_list_pluck($terms,'parent'));
@@ -134,7 +144,7 @@ function getSubCategories(WC_Product $product): string
     }, $terms_not_parents);
 
     if (sizeof($terms_not_parents_names) > 0) {
-        return join(', ', $terms_not_parents_names);
+        return $terms_not_parents_names[array_key_first($terms_not_parents_names)];
     }
 
     return "";
@@ -168,8 +178,8 @@ function getShopFrontPageCategories()
     $keys = array_column($categories, 'slug');
 
     $frontPageCategories[] = $categories[array_search(COFFEE_CATEGORY_SLUG, $keys)];
-    $frontPageCategories[] = $categories[array_search(WINE_SPIRITS_CO_CATEGORY_SLUG, $keys)];
-    $frontPageCategories[] = $categories[array_search(DELI_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(WINE_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(SPIRITS_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(MACHINE_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(TICKET_CATEGORY_SLUG, $keys)];
 
