@@ -15,8 +15,8 @@
   .rehorik-add-to-cart-container {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2);}
   .rehorik-product-video:not(:empty) {margin: calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) 0;}
   .rehorik-product-information {margin: calc(var(--grid-gap) / 2) 0 0 0;}
-  .rehorik-product-description {padding: var(--grid-gap) calc(var(--grid-gap) / 2) var(--grid-gap) var(--grid-gap);}
-  .rehorik-product-attributes {padding: var(--grid-gap) var(--grid-gap) var(--grid-gap) calc(var(--grid-gap) / 2);}
+  .rehorik-product-description {padding: var(--grid-gap);}
+  .rehorik-product-attributes {padding: var(--grid-gap);}
   h1.product_title {margin: 0 0 var(--grid-gap) 0;}
 
   @media all and (max-width: $small-breakpoint) {

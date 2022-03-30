@@ -1,4 +1,4 @@
-button, a.button {
+button, a.button, button.button {
   border-radius: $border-radius !important;
   text-align: center;
   color: #fff;
@@ -10,8 +10,8 @@ button, a.button {
   text-decoration: none;
 
   &:hover {
-    color: $font-color-accent-dark;
-    background-color: $weinrot;
+    color: $beigegold !important;
+    background-color: $weinrot !important;
   }
 }
 
@@ -40,12 +40,12 @@ button, a.button {
     }
 
     a.button:hover {
-      color: $font-color-accent-dark !important;
+      background-color: $weinrot !important;
+      color: $beigegold !important;
     }
 
     @media all and (max-width: $small-breakpoint) {
       a.button {
-        color: #fff !important;
         float: none;
         display: block;
         text-align: center;

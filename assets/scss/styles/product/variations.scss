@@ -57,6 +57,7 @@ body.rehorik.woocommerce div.product.rehorik-product {
   form.cart table.variations li.variable-item {
     &:hover, &.selected {
       background-color: $product-default-color;
+      border: none;
     }
   }
 
