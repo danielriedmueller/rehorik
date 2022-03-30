@@ -144,7 +144,7 @@ function getSubCategories(WC_Product $product): string
     }, $terms_not_parents);
 
     if (sizeof($terms_not_parents_names) > 0) {
-        return join(', ', $terms_not_parents_names);
+        return $terms_not_parents_names[array_key_first($terms_not_parents_names)];
     }
 
     return "";
