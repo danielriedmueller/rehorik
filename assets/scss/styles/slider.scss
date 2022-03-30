@@ -100,11 +100,11 @@
 
     .button:nth-child(2) {
       background-color: $beigegold;
-      color: $weinrot;
+      color: #fff !important;
 
       &:hover {
         background-color: $weinrot;
-        color: $beigegold;
+        color: $beigegold !important;
       }
     }
 

@@ -28,12 +28,12 @@ get_template_part('templates/header/slider', null, ['items' => [
         ]
     ],
     [
-        'claim' => 'WIR KÖNNEN AUCH WEIN',
+        'claim' => 'WIR KÖNNEN AUCH ANDERS',
         'img'=> 'startseite-header-wein',
         'buttons' => [
-            get_term_link(get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'),
+            get_term_link(get_term_by('slug', WINE_CATEGORY_SLUG, 'product_cat'),
                 'product_cat') => 'Zur Weinauswahl',
-            get_term_link(get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'),
+            get_term_link(get_term_by('slug', SPIRITS_CATEGORY_SLUG, 'product_cat'),
                 'product_cat') => 'Und Spirituosen'
         ]
     ]
