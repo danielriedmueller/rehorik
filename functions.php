@@ -3,9 +3,10 @@ show_admin_bar(true);
 
 require_once('sig_functions.php');
 
+add_theme_support('woocommerce');
+
 define('ONE_CUP_OF_COFFEE_IN_GRAMS', 10);
 define('FREE_SHIPPING_AMOUNT', 49);
-define('MAX_COFFEE_STRENGTH_FLAVOUR_ATTRIBUTE', 6);
 define('MAX_DISPLAY_ORIGIN_COUNTRIES', 1);
 define('DELIVERY_CATEGORY_URL', 'produkt-kategorie/lieferservice');
 define('EVENT_TICKET_SHOULD_BE_PRINTED_SLUG', 'soll-das-ticket-ausgedruckt-werden');
@@ -29,6 +30,7 @@ define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
 define('DELI_CATEGORY_SLUG', 'delikatessen-onlineshop');
 define('GIFTS_CATEGORY_SLUG', 'geschenke');
 define('MACHINE_CATEGORY_SLUG', 'maschinen-equipment');
+define('BLACK_AND_WINE', 'blackwine');
 define('TICKET_CATEGORY_SLUG', 'veranstaltungen');
 define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
 define('VIRTUAL_EVENTS_CATEGORY_SLUG', 'virtuelle-events');
@@ -39,29 +41,6 @@ define('WINE_CATEGORY_SLUGS', [
     'champagner-und-sekt'
 ]);
 
-// Attributes
-define('STRENGTH_ATTRIBUTE_SLUG', 'pa_staerke');
-define('VARIETIES_ATTRIBUTE_SLUG', 'pa_sorte');
-define('GRAPE_VARIETY_ATTRIBUTE_SLUG', 'pa_rebsorte');
-define('AUSBAU_ATTRIBUTE_SLUG', 'pa_ausbau');
-define('HERSTELLUNG_ATTRIBUTE_SLUG', 'pa_herstellung');
-define('MILCHART_ATTRIBUTE_SLUG', 'pa_milchart');
-define('FETT_ATTRIBUTE_SLUG', 'pa_fett');
-define('FLAVOUR_ATTRIBUTE_SLUG', 'pa_aromen');
-define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'pa_aromenvielfalt');
-define('BEAN_COMPOSITION_ATTRIBUTE_SLUG', 'pa_bohnenkompositionen');
-define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_herkunft');
-define('REGION_ATTRIBUTE_SLUG', 'pa_region');
-define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
-define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
-
-define('ALCOHOL_ATTRIBUTE_SLUG', 'pa_alkoholgehalt');
-define('WEIGHT_ATTRIBUTE_SLUG', 'pa_gewicht');
-define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
-define('WINERY_ATTRIBUTE_SLUG', 'pa_weingut');
-define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
-define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
-
 // For Events which are only virtual online events
 define('ONLINE_META_KEY', 'Online');
 define('CANCELED_META_KEY', 'Abgesagt');
@@ -69,19 +48,6 @@ define('CANCELED_META_KEY', 'Abgesagt');
 // Payment methods
 define('PAYMENT_METHOD_CASH', 'cod');
 define('PAYMENT_METHOD_DIRECT_TRANSFER', 'bacs');
-
-// In $productAttributes array, slugs are prefixed by wordpress
-define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
-
-// All product attributes that appear in information tab on product detail page
-define('INFORMATION_TAB_ATTRIBUTES', [
-    ORIGIN_COUNTRY_ATTRIBUTE_SLUG,
-    VARIETIES_ATTRIBUTE_SLUG,
-    FLAVOUR_ATTRIBUTE_SLUG,
-    FETT_ATTRIBUTE_SLUG,
-]);
-
-add_theme_support('woocommerce');
 
 // Pages
 define('NEUE_ROESTEREI_PAGE_ID', 21830);
@@ -114,9 +80,9 @@ require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');
 require_once($baseDir . '/hooks/events.php');
 require_once($baseDir . '/hooks/woocommerce.php');
-require_once($baseDir . '/filter/product_tabs.php');
 require_once($baseDir . '/filter/shop.php');
 require_once($baseDir . '/filter/categories.php');
+require_once($baseDir . '/filter/product_view.php');
 require_once($baseDir . '/actions/divi.php');
 require_once($baseDir . '/actions/woocommerce.php');
 require_once($baseDir . '/actions/rehorik.php');
@@ -128,12 +94,12 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
     wp_enqueue_script('product-cat-video', $assetsDir . 'js/product_cat_video.js', false, 1, true);
+    wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
+    wp_enqueue_script('tiny-slider-js', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', null, 1, true);
+    wp_enqueue_script('slider-js', $assetsDir . 'js/tiny_slider.js', null, 1, true);
 
     if (is_front_page()) {
         wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', false, 1, true);
-        wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
-        wp_enqueue_script('tiny-slider-js', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', null, 1, true);
-        wp_enqueue_script('slider-js', $assetsDir . 'js/tiny_slider.js', null, 1, true);
     }
 });
 

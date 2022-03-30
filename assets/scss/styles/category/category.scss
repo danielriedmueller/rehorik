@@ -52,34 +52,3 @@
     }
   }
 }
-
-body.woocommerce .content-area {
-  .rehorik-product-additional-information-container {
-    background-color: $product-default-color;
-    border: none;
-  }
-
-  div.rehorik-product.product_cat-crema {
-    .rehorik-product-additional-information-container {
-      background-color: $product-crema-color;
-    }
-  }
-
-  div.rehorik-product.product_cat-espresso {
-    .rehorik-product-additional-information-container {
-      background-color: $product-espresso-color;
-    }
-  }
-
-  div.rehorik-product.product_cat-filterkaffee {
-    .rehorik-product-additional-information-container {
-      background-color: $product-filterkaffee-color;
-    }
-  }
-
-  div.rehorik-product.product_cat-espresso.product_cat-filterkaffee {
-    .rehorik-product-additional-information-container {
-      @include productLinearGradient($product-filterkaffee-color, $product-espresso-color);
-    }
-  }
-}

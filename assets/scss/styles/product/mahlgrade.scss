@@ -1,0 +1,39 @@
+body.rehorik.woocommerce div.product.rehorik-product form.cart {
+  table.variations ul[data-attribute_name="attribute_pa_mahlgrad"] {
+    li {
+      padding-left: $spacing-l;
+      background-size: $spacing-s;
+      background-repeat: no-repeat;
+      background-position: $spacing-xxs center;
+
+      &:hover, &.selected {
+        background-color: $weinrot;
+      }
+    }
+
+    $mahlgrade: [
+      'aeropress',
+      'chemex-klein',
+      'chemex-gross',
+      'coldbrew',
+      'filtermaschine',
+      'ganze-bohne',
+      'handfilter',
+      'herdkaennchen',
+      'ibric',
+      'karlsbader',
+      'siebtraeger',
+      'stempelkanne'
+    ];
+
+    @each $mahlgrad in $mahlgrade {
+      li[data-value='#{$mahlgrad}'] {
+        background-image: url("../img/mahlgrade/#{$mahlgrad}.svg");
+
+        &:hover, &.selected {
+          background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg");
+        }
+      }
+    }
+  }
+}

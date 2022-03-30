@@ -32,10 +32,10 @@ ul.rehorik-products.products {
       z-index: 100;
       top: $spacing;
       right: $spacing;
-      background: transparent url("../img/svg/icon-play.svg") no-repeat center center;
+      background: rgba(0, 0, 0, 0.3) url("../img/svg/icon-play.svg") no-repeat center center;
+      backdrop-filter: blur(3px);
       width: $spacing-xl;
       height: $spacing-xl;
-      border: 1px solid $beigegold;
       border-radius: $border-radius !important;
       padding: 0;
       background-size: $spacing-s;
@@ -54,17 +54,16 @@ ul.rehorik-products.products {
       color: $font-color-accent;
       width: 100%;
       padding: $spacing-s;
-      background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+      background: rgba(0, 0, 0, 0.3) none;
+      backdrop-filter: blur(3px);
       font-size: $font-size;
       font-weight: normal;
       text-align: center;
       text-transform: uppercase;
-      border-top: 1px solid $beigegold;
     }
 
     div.rehorik-category-description {
       flex-grow: 1;
-      border-top: 1px solid $beigegold;
       background-color: $weinrot;
       color: $product-alternative-body-text-color;
       padding: $spacing-xs;

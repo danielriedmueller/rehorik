@@ -1,41 +1,96 @@
-.woocommerce div.product form.cart {
-  margin: $spacing 0 $spacing-xs;
+@import "../mixins";
 
-  table.rehorik-variations.variations {
+body.rehorik.woocommerce div.product.rehorik-product {
+  form.cart {
     margin-bottom: 0;
 
-    tbody tr:last-child td {
-      padding-bottom: 0 !important;
+    table.variations {
+      margin-bottom: 0;
+
+      tbody tr:last-child td {
+        padding-bottom: 0 !important;
+      }
+
+      th {
+        line-height: $line-height-very-narrow;
+        padding: 0 0 $spacing-xxs 0 !important;
+      }
+
+      th, td {
+        display: block;
+      }
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: $spacing-xxs;
+        grid-column-gap: $spacing-xxs;
+        padding: 0 !important;
+
+        @media all and (max-width: $small-breakpoint) {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      li.variable-item {
+        border: 1px solid $beigegold;
+        border-radius: $border-radius;
+        list-style: none;
+        padding: $spacing-xxs;
+        cursor: pointer;
+
+        &:hover, &.selected {
+          color: #fff;
+        }
+
+        .variable-item-contents {
+          font-size: $font-size-small;
+        }
+      }
+
+      .reset_variations {
+        display: none !important;
+      }
     }
   }
 
-  div.rehorik-variations-after-container {
-    margin-bottom: $spacing;
-    margin-top: $spacing-xxxs;
+  form.cart table.variations li.variable-item {
+    &:hover, &.selected {
+      background-color: $product-default-color;
+    }
   }
 
-  div.quantity {
-    margin: 0 $spacing-s 0 0;
+  &.product_cat-crema {
+    form.cart table.variations li.variable-item {
+      &:hover, &.selected {
+        background-color: $product-crema-color;
+      }
+    }
   }
-}
 
-div.quantity {
-  width: auto;
-  overflow: hidden;
-  margin: 0 $spacing-s 0 0;
+  &.product_cat-filterkaffee {
+    form.cart table.variations li.variable-item {
+      &:hover, &.selected {
+        background-color: $product-filterkaffee-color;
+      }
+    }
+  }
 
-  input {
-    font-family: $font-family-body;
-    border-radius: $border-radius;
-    font-size: $font-size;
-    color: #fff;
-    border: none;
-    box-shadow: none;
-    background-color: $grau;
-    padding: $spacing-xxs 0 $spacing-xxs $spacing-xxs;
-    margin: 0;
-    line-height: 1.7;
-    width: 75px !important;
+
+  &.product_cat-espresso {
+    form.cart table.variations li.variable-item {
+      &:hover, &.selected {
+        background-color: $product-espresso-color;
+      }
+    }
+  }
+
+  &.product_cat-espresso.product_cat-filterkaffee {
+    form.cart table.variations li.variable-item {
+      &:hover, &.selected {
+        @include productLinearGradient($product-filterkaffee-color, $product-espresso-color);
+      }
+    }
   }
 }
 

@@ -1,21 +1,36 @@
 #orderbird-chooser {
   background-color: transparent;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 60px;
-  grid-template-areas:
-    "left right"
-    "footer footer";
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
 
+  .orderbird-location-names {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    h2 {
+      flex: 1 1 0;
+      background: rgba(0, 0, 0, 0.3) none;
+      backdrop-filter: blur(3px);
+      line-height: $line-height;
+      margin: $spacing-s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 25%;
+    }
+  }
+
   h2 {
-    grid-area: footer;
-    border-top: 1px solid $beigegold;
     color: $beigegold;
     width: 100%;
     padding: $spacing-s;
-    background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+    background: rgba(0, 0, 0, 0.3) none;
+    backdrop-filter: blur(3px);
     font-size: $spacing-s;
     font-weight: normal;
     text-align: center;
@@ -23,38 +38,36 @@
   }
 
   label {
-    //background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 50%;
+    height: 100%;
+    position: absolute;
 
-    h2 {
-      background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
-      border: 1px solid $beigegold;
-      width: 80%;
-      line-height: $line-height;
-    }
+    background-repeat: no-repeat;
+    background-size: cover;
 
     &:hover {
-      background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+      filter: sepia(100%);
+    }
 
-      h2 {
-        background: none;
+    &:nth-of-type(1) {
+      left: 0;
+      background-image: url("../img/standorte/190-small.png");
+
+      &:hover~div h2:nth-child(1) {
+        color: #fff;
       }
     }
 
-    &:first-of-type {
-      grid-area: left;
-      border-right: 1px solid $beigegold;
+    &:nth-of-type(2) {
+      right: 0;
+      border-left: 1px solid $beigegold;
+      background-image: url("../img/standorte/straubinger-small.png");
+
+      &:hover~div h2:nth-child(2) {
+        color: #fff;
+      }
     }
-
-    &:last-of-type {
-      grid-area: right;
-    }
-
-    background-size: cover;
-
 
     input {
       display: none;
@@ -77,27 +90,6 @@
     h2, label, &::before, &::after {
       display: none;
     }
-  }
-
-  &::before, &::after {
-    content: "";
-    display: block;
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  &::before {
-    left: 0;
-    background-image: url("../img/standorte/190-small.png");
-  }
-
-  &::after {
-    right: 0;
-    background-image: url("../img/standorte/straubinger-small.png");
   }
 
   iframe {

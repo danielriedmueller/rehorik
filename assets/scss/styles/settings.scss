@@ -4,7 +4,7 @@ $container-width: 80%;
 $weinrot: #5C0D2F;
 $hellbraun: #996B23;
 $dunkelbraun: #663700;
-$grau: #3c3c3b;
+$grau: #393536;
 $beigegold: #CEB67F;
 $tuerkis: #003c4a;
 $lila: #2d253c;
@@ -22,7 +22,7 @@ $product-default-header-text-color: #fff;
 $product-filterkaffee-color: $weinrot;
 $product-espresso-color: #393e1c;
 $product-crema-color: $tuerkis;
-$product-default-color: #393536;
+$product-default-color: $grau;
 $product-alternative-body-text-color: #fff;
 $product-alternative-header-text-color: $beigegold;
 $product-of-month-color: $beigegold;
@@ -36,9 +36,10 @@ $font-size-h1: 46px;
 $font-size-h2: 30px;
 
 $line-height-very-narrow: 17px;
-$line-height-narrow: 23px;
+$line-height-narrow: 22px;
 $line-height: 26px;
 $line-height-large: 34px;
+$line-height-very-large: 55px;
 
 $menu-height: 60px;
 $menu-icon-size: 16px;
@@ -62,7 +63,9 @@ $spacing-xxxs: 3px;
 
 $sidebar-width: 190px;
 
-$section-padding-top-bottom: $spacing-xxl;
+$product-view-grid-gap: $spacing-l;
+
+$section-padding-top-bottom: $spacing-xl;
 $section-padding-small: $spacing-l;
 
 $border-radius: 8px;
@@ -80,3 +83,4 @@ $footer-items-width: 202px;
 $hint-width: 275px;
 $hint-width-large: 575px;
 $hint-height: 45px;
+$timeline-height: 800px;

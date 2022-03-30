@@ -13,30 +13,22 @@
  * the readme will list any important changes.
  *
  * @see https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
+ * @package WooCommerce\Templates
  * @version 3.6.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
-if (!$product_attributes) {
+if ( ! $product_attributes ) {
 	return;
 }
-
-$baseDir = get_stylesheet_directory();
-require_once($baseDir . '/helper/product_attributes_helper.php');
-
-$attributes = extractOtherAttributes($product_attributes);
 ?>
-<div class="rehorik-product-attribute-container item-count-<?= sizeof($attributes) ?>">
-    <?php foreach ($attributes as $product_attribute_key => $product_attribute) : ?>
-        <div class="rehorik-product-attribute-item">
-            <div class="rehorik-product-attribute-label">
-                <?php echo wp_kses_post( $product_attribute['label'] ); ?>
-            </div>
-            <div class="rehorik-product-attribute-value">
-                <?php echo wp_kses_post( $product_attribute['value'] ); ?>
-            </div>
-        </div>
+<div class="rehorik-product-attributes"><table>
+    <?php foreach ( $product_attributes as $product_attribute_key => $product_attribute ) : ?>
+        <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--<?php echo esc_attr( $product_attribute_key ); ?>">
+            <th class="woocommerce-product-attributes-item__label"><?php echo wp_kses_post( $product_attribute['label'] ); ?></th>
+            <td class="woocommerce-product-attributes-item__value"><?php echo wp_kses_post( $product_attribute['value'] ); ?></td>
+        </tr>
     <?php endforeach; ?>
+</table>
 </div>

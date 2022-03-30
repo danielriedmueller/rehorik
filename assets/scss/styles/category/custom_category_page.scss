@@ -2,7 +2,7 @@
 .rehorik-custom-category-footer {
   color: #fff;
   font-size: $font-size-small;
-  line-height: 24px;
+  line-height: $line-height-narrow;
   text-align: justify;
 
   h4 {
@@ -63,7 +63,8 @@
   }
 
   .quality-text {
-    background: transparent url("../img/Schwarz_1px.png") repeat 0 0;
+    background: rgba(0, 0, 0, 0.3) none;
+    backdrop-filter: blur(3px);
     width: 100%;
     z-index: 9;
     padding: $spacing-l;

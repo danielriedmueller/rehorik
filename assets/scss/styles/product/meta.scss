@@ -1,15 +1,25 @@
 div.rehorik-product-meta.product_meta {
+  display: flex;
   border: none;
-  margin-top: $spacing-xxxs;
+  margin-top: $spacing-xxs;
   padding: 0;
-  line-height: $line-height-narrow;
+  line-height: $line-height-very-narrow !important;
+
+  > span, > div, >p {
+    &:not(:last-child) {
+      border-right: 1px solid $beigegold;
+      padding-right: $spacing-xxs;
+      margin-right: $spacing-xxs;
+    }
+  }
 
   span, p, div {
     margin: 0;
-    font-size: $font-size-small;
-  }
-
-  .wc-gzd-additional-info {
-    max-width: 240px;
+    padding: 0;
+    color: $font-color;
+    font-family: $font-family-body;
+    font-size: $font-size-very-small;
+    font-weight: normal;
+    line-height: $line-height-very-narrow !important;
   }
 }
