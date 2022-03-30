@@ -124,7 +124,13 @@ function getSubCategory(WC_Product $product): string
         return getCoffeeCategories($product);
     }
 
-    if (isItCategory($product, WINE_SPIRITS_CO_CATEGORY_SLUG)) {
+    // TODO Remove
+    if (isItCategory($product, WINE_CATEGORY_SLUG)) {
+        return "";
+    }
+
+    // TODO Remove
+    if (isItCategory($product, SPIRITS_CATEGORY_SLUG)) {
         return "";
     }
 
@@ -172,8 +178,8 @@ function getShopFrontPageCategories()
     $keys = array_column($categories, 'slug');
 
     $frontPageCategories[] = $categories[array_search(COFFEE_CATEGORY_SLUG, $keys)];
-    $frontPageCategories[] = $categories[array_search(WINE_SPIRITS_CO_CATEGORY_SLUG, $keys)];
-    $frontPageCategories[] = $categories[array_search(DELI_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(WINE_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(SPIRITS_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(MACHINE_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(TICKET_CATEGORY_SLUG, $keys)];
 
