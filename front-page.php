@@ -60,20 +60,6 @@ get_template_part('templates/header/slider', null, ['items' => [
         </div>
     </div>
 </div>
-<iframe src="https://snazzymaps.com/embed/383637" width="100%" height="600px" style="border:none;"></iframe>
-<ul>
-<?php
-// Retrieve the next 5 upcoming events
-$events = tribe_get_events( [
-    'posts_per_page' => 5,
-    'start_date'     => 'now',
-] );
-foreach ($events as $event) {
-    /** @var WP_Post $event */
-    echo sprintf('<li>%s - %s</li>', $event->post_title, $event->event_date);
-}
-?>
-</ul>
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
         <?php
