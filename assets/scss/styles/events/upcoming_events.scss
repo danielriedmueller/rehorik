@@ -1,0 +1,28 @@
+li.veranstaltungen {
+  div.rehorik-upcoming-events {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: $spacing-s;
+
+    table {
+      background: rgba(0, 0, 0, 0.3) none;
+      backdrop-filter: blur(3px);
+      td {
+        padding: $spacing-s;
+        line-height: $line-height;
+        color: #fff;
+        font-size: $font-size;
+        font-family: $font-family-headline;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &:hover {
+    img {
+      filter: sepia(100%);
+    }
+  }
+}

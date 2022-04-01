@@ -1,5 +1,6 @@
 <?php
 require_once('admin/add_cat_video_field.php');
+require_once('shop/frontpage_categories.php');
 
 /**
  * Adds page title to the top on woocommerce pages
