@@ -2,6 +2,13 @@
 get_header();
 get_template_part('templates/header/slider', null, ['items' => [
     [
+        'claim' => 'Ostern',
+        'img'=> 'header-ostern',
+        'buttons' => [
+            '/produkt-kategorie/onlineshop/ostern/' => 'Ostern'
+        ]
+    ],
+    [
         'claim' => 'EL RUBI - MEHR ALS EIN EDELSTEIN',
         'img'=> 'Produkt-Illustration-El-Rubi-header',
         'buttons' => [

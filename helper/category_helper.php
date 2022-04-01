@@ -177,6 +177,7 @@ function getShopFrontPageCategories()
 
     $keys = array_column($categories, 'slug');
 
+    $frontPageCategories[] = $categories[array_search(OSTERN_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(COFFEE_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(WINE_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(SPIRITS_CATEGORY_SLUG, $keys)];
