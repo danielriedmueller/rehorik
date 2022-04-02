@@ -1,0 +1,16 @@
+.rehorik-product-goes-with {
+  padding: $spacing-xs;
+  background-color: $beigegold;
+  border-radius: $border-radius;
+  color: #fff;
+  text-align: left;
+  text-transform: uppercase;
+  line-height: $line-height-narrow;
+  align-self: center;
+
+  h4 {
+    color: $font-color;
+    font-size: $font-size;
+    line-height: $line-height-narrow;
+  }
+}
