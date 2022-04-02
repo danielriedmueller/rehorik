@@ -2,6 +2,13 @@
 get_header();
 get_template_part('templates/header/slider', null, ['items' => [
     [
+        'claim' => 'Ostern',
+        'img'=> 'header-ostern',
+        'buttons' => [
+            '/produkt-kategorie/onlineshop/ostern/' => 'Ostern'
+        ]
+    ],
+    [
         'claim' => 'EL RUBI - MEHR ALS EIN EDELSTEIN',
         'img'=> 'Produkt-Illustration-El-Rubi-header',
         'buttons' => [
@@ -62,6 +69,9 @@ get_template_part('templates/header/slider', null, ['items' => [
 </div>
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
+        <li class="product-category product">
+            <?php get_template_part('templates/orderbird-chooser'); ?>
+        </li>
         <?php
             $product_categories = getShopFrontPageCategories();
             foreach ($product_categories as $category) {

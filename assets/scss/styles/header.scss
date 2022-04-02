@@ -75,12 +75,19 @@ header.rehorik-header {
       border-bottom-right-radius: $border-radius;
       border-bottom-left-radius: $border-radius;
       display: none;
-      grid-template-columns: 1fr 1fr;
-      grid-row-gap: $spacing-xxs;
+      grid-template-rows: 1fr 1fr;
+      grid-auto-flow: column;
+      //grid-row-gap: $spacing-xxs;
       grid-column-gap: $spacing-xxs;
 
       li.menu-item {
         text-transform: none;
+
+        border-right: 1px solid $weinrot;
+        &:last-child,
+        &:nth-last-of-type(-n+2):not(:nth-child(even)) {
+          border: none;
+        }
 
         &:hover {
           background-color: transparent;
@@ -164,10 +171,6 @@ header.rehorik-header {
         }
 
         li.menu-item-has-children {
-          > a {
-            margin-bottom: $spacing-s;
-          }
-
           &.et-show-dropdown, &:hover {
             height: auto;
             padding-top: $spacing-xs;
@@ -181,12 +184,22 @@ header.rehorik-header {
             > ul.sub-menu {
               background: transparent;
               display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: auto;
+              grid-auto-flow: row;
               position: relative;
+              grid-column-gap: $spacing-s;
               top: 0;
               left: 0;
 
               li {
                 padding: 0;
+
+                border: none;
+                &:nth-child(2n-1) {
+                  border-right: 1px solid $weinrot;
+                  padding-right: $spacing-s;
+                }
               }
             }
           }

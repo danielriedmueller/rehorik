@@ -1,0 +1,12 @@
+ul.ostern {
+  li.product.rehorik-product.product_cat-ostern {
+    height: 550px !important;
+
+    .rehorik-product-goes-with {
+      text-transform: uppercase;
+      padding: $spacing-s;
+      margin-bottom: $spacing-xs;
+      background: transparent url("../img/green-texture.png") repeat left top;
+    }
+  }
+}

@@ -124,16 +124,6 @@ function getSubCategories(WC_Product $product): string
         return getCoffeeCategories($product);
     }
 
-    // TODO Remove
-    if (isItCategory($product, WINE_CATEGORY_SLUG)) {
-        return "";
-    }
-
-    // TODO Remove
-    if (isItCategory($product, SPIRITS_CATEGORY_SLUG)) {
-        return "";
-    }
-
     $terms = get_the_terms( $product->get_id(), 'product_cat' );
     $term_ids = wp_list_pluck($terms,'term_id');
     $parents = array_filter(wp_list_pluck($terms,'parent'));
@@ -177,6 +167,7 @@ function getShopFrontPageCategories()
 
     $keys = array_column($categories, 'slug');
 
+    $frontPageCategories[] = $categories[array_search(OSTERN_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(COFFEE_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(WINE_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(SPIRITS_CATEGORY_SLUG, $keys)];

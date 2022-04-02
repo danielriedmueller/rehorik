@@ -84,3 +84,45 @@ function getStrengthFlavourHtml($level, $class) {
 
     return $result;
 }
+
+// TODO Remove
+function getOsternPasstZu($product) {
+    if ($product->get_id() === 18913) {
+        return "Brunch";
+    }
+
+    if ($product->get_id() === 18924) {
+        return "Fisch";
+    }
+
+    if ($product->get_id() === 18929) {
+        return "Lamm";
+    }
+
+    if ($product->get_id() === 18914) {
+        return "Grillen";
+    }
+
+    return "Frühstück";
+}
+
+// TODO Remove
+function getOsternOrder($product) {
+    if ($product->get_id() === 18913) {
+        return 4;
+    }
+
+    if ($product->get_id() === 18924) {
+        return 1;
+    }
+
+    if ($product->get_id() === 18929) {
+        return 2;
+    }
+
+    if ($product->get_id() === 18914) {
+        return 3;
+    }
+
+    return 0;
+}

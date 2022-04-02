@@ -1,54 +1,143 @@
 @import "../mixins";
 
-div.rehorik-product {
+body.rehorik.woocommerce #main-content div.rehorik-product {
+  $row-padding: $product-view-grid-gap / 2;
+
   .rehorik-product-information {
-    border-radius: $border-radius;
-    color: #fff;
-    display: flex;
-
-    > * {
-      flex: 0 0 50%;
-
-      &:first-child {
-        border-right: 1px solid $beigegold
-      }
-    }
-
-    @media all and (max-width: $small-breakpoint) {
-      flex-direction: column;
-
-      > *:first-child {
-        flex-shrink: 1;
-        border-right: none;
-        border-bottom: 1px solid $beigegold
-      }
-    }
-
     background-color: $product-default-color;
     border: none;
+    padding: $product-view-grid-gap;
+
+    border-radius: $border-radius;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "category ."
+    "description attributes"
+    "recommendation attributes"
+    "short-description attributes";
+
+    .rehorik-product-information-category {
+      margin: 0 $row-padding $row-padding 0;
+    }
+
+    .rehorik-product-description:not(:empty) {
+      margin: 0 $row-padding $row-padding 0;
+    }
+
+    .rehorik-recommendation:not(:empty) {
+      margin: 0 $row-padding $row-padding 0;
+    }
+
+    .rehorik-product-short-description:not(:empty) {
+      margin: 0 $row-padding 0 0;
+    }
+
+    .rehorik-product-attributes {
+      margin: 0 0 0 $row-padding;
+    }
+
+
+    @media all and (max-width: $medium-breakpoint) {
+      padding: $row-padding;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+      "category"
+      "attributes"
+      "description"
+      "recommendation"
+      "short-description";
+
+      .rehorik-product-information-category {
+        margin: 0 0 $row-padding 0;
+      }
+      .rehorik-product-attributes {
+        margin: 0 0 $row-padding 0;
+      }
+      .rehorik-product-description:not(:empty) {
+        margin: 0 0 $row-padding 0;
+      }
+      .rehorik-recommendation:not(:empty) {
+        margin: 0 0 $row-padding 0;
+      }
+      .rehorik-product-short-description:not(:empty) {
+        margin: 0 0 0 0;
+      }
+    }
 
     .rehorik-product-description {
+      grid-area: description;
+
       text-align: justify;
       font-size: $font-size-small;
-      line-height: $line-height-narrow;
+      line-height: $line-height;
     }
 
     .rehorik-product-information-category {
+      grid-area: category;
+
       color: $beigegold;
       font-size: $font-size-large;
       text-transform: uppercase;
       font-family: $font-family-headline;
-      border-bottom: 1px solid $beigegold;
-      padding-bottom: $spacing-xxs;
-      margin-bottom: $spacing-xxs;
       line-height: $line-height;
     }
 
-    .rehorik-preperation-recommendation:not(:empty) {
-      color: $beigegold;
-      border-bottom: 1px solid $beigegold;
-      padding-bottom: $spacing-xxs;
-      margin-bottom: $spacing-xxs;
+    .rehorik-product-attributes {
+      grid-area: attributes;
+
+      table {
+        width: 100%;
+
+        tr th {
+          padding: 0 $spacing 0 0;
+          color: $beigegold;
+        }
+
+        tr th, tr td {
+          line-height: $line-height;
+        }
+
+        tr {
+          &:not(:last-child) {
+            th, td {
+              padding-top: $row-padding / 2;
+              padding-bottom: $row-padding / 2;
+              border-bottom: 1px solid $beigegold;
+            }
+          }
+
+          &:first-child {
+            th, td {
+              padding-top: 0;
+              padding-bottom: $row-padding / 2;
+            }
+          }
+
+          &:last-child {
+            th, td {
+              padding-top: $row-padding / 2;
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .rehorik-product-short-description {
+      grid-area: short-description;
+
+      text-align: justify;
+      font-size: $font-size-small;
+      line-height: $line-height;
+    }
+
+    .rehorik-recommendation {
+      grid-area: recommendation;
+
+      text-align: justify;
+      font-size: $font-size-small;
       line-height: $line-height;
     }
   }
@@ -74,64 +163,6 @@ div.rehorik-product {
   &.product_cat-espresso.product_cat-filterkaffee {
     .rehorik-product-information {
       @include productLinearGradient($product-filterkaffee-color, $product-espresso-color);
-    }
-  }
-}
-
-// TODO remove or reuse
-div.rehorik-product-attribute-container {
-  display: grid;
-
-  &:not(.item-count-2):not(.item-count-1) {
-    grid-template-columns: 1fr 1fr 1fr;
-
-    @media all and (min-width: $small-breakpoint + 1) {
-      div.rehorik-product-attribute-item {
-        &:not(:nth-child(3n + 3)) {
-          border-right: 3px solid $beigegold;
-        }
-      }
-    }
-  }
-
-  &.item-count-2 {
-    grid-template-columns: 1fr 1fr;
-
-    @media all and (min-width: $small-breakpoint + 1) {
-      div.rehorik-product-attribute-item {
-        &:not(:nth-child(2)) {
-          border-right: 3px solid $beigegold;
-        }
-      }
-    }
-  }
-
-  &.item-count-1 {
-    grid-template-columns: 1fr;
-  }
-
-  div.rehorik-product-attribute-item {
-    display: inline-block;
-    padding: $spacing-s;
-    margin-bottom: $spacing;
-    text-align: center;
-
-    .rehorik-product-attribute-label {
-      font-family: $font-family-headline;
-    }
-
-    .rehorik-product-attribute-value p {
-      padding-bottom: 0;
-    }
-  }
-
-  @media all and (max-width: $small-breakpoint) {
-    grid-template-columns: 1fr 1fr !important;
-
-    div.rehorik-product-attribute-item {
-      &:not(:nth-child(2)) {
-        border-right: 3px solid $beigegold;
-      }
     }
   }
 }
