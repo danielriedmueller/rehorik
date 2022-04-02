@@ -103,7 +103,7 @@ function getOsternPasstZu($product) {
         return "Grillen";
     }
 
-    return "Früstück";
+    return "Frühstück";
 }
 
 // TODO Remove
