@@ -9,7 +9,7 @@ body.rehorik.woocommerce div.rehorik-product {
       padding: $spacing-xxs $spacing-s $spacing-xxs 37px !important;
       background: $beigegold url("../img/warenkorb-white.svg") no-repeat left 10px center;
       background-size: $spacing-s;
-      margin-top: $spacing;
+      margin-top: 0;
       border-radius: 0 $border-radius $border-radius 0 !important;
 
       &:hover {
@@ -20,7 +20,7 @@ body.rehorik.woocommerce div.rehorik-product {
     }
 
     div.quantity {
-      margin: $spacing 0 0 0 !important;
+      margin: 0 0 0 0 !important;
 
       input {
         border-top-right-radius: 0;

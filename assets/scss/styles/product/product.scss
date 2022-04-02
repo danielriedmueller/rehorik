@@ -4,44 +4,45 @@
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "gallery title-price"
+    "gallery goes-with"
     "gallery add-to-cart"
     "video ."
     "information information"
 ;
 
-  --grid-gap: #{$product-view-grid-gap};
-  .rehorik-product-view-gallery {margin: 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) 0;}
-  .rehorik-product-view-title-price {margin: 0 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2);}
-  .rehorik-add-to-cart-container {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2);}
-  .rehorik-product-video:not(:empty) {margin: calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) calc(var(--grid-gap) / 2) 0;}
-  .rehorik-product-information {margin: calc(var(--grid-gap) / 2) 0 0 0;}
-  .rehorik-product-description {padding: var(--grid-gap);}
-  .rehorik-product-attributes {padding: var(--grid-gap);}
-  h1.product_title {margin: 0 0 var(--grid-gap) 0;}
+  .rehorik-product-view-gallery {margin: 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2 0;}
+  .rehorik-product-view-title-price {margin: 0 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2;}
+  .rehorik-add-to-cart-container {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2;}
+  .rehorik-product-goes-with:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2;}
+  .rehorik-product-video:not(:empty) {margin: $product-view-grid-gap / 2 $product-view-grid-gap / 2 $product-view-grid-gap / 2 0;}
+  .rehorik-product-information {margin: $product-view-grid-gap / 2 0 0 0;}
+  h1.product_title {margin: 0 0 $product-view-grid-gap 0;}
 
   @media all and (max-width: $medium-breakpoint) {
     grid-template-columns: 1fr;
     grid-template-areas:
     "gallery"
     "title-price"
+    "goes-with"
     "add-to-cart"
     "video"
-    "preperation"
     "information"
   ;
 
-    .rehorik-product-view-gallery {margin: 0 0 calc(var(--grid-gap) / 2) 0;}
-    .rehorik-product-view-title-price {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
-    .rehorik-add-to-cart-container {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
-    .rehorik-preperation-recommendation:not(:empty) {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
-    .rehorik-product-video:not(:empty) {margin: calc(var(--grid-gap) / 2) 0 calc(var(--grid-gap) / 2) 0;}
-    .rehorik-product-information {margin: calc(var(--grid-gap) / 2) 0 0 0;}
-    .rehorik-product-description {padding: calc(var(--grid-gap) / 2);}
-    .rehorik-product-attributes {padding: calc(var(--grid-gap) / 2);}
+    .rehorik-product-view-gallery {margin: 0 0 $product-view-grid-gap / 2 0;}
+    .rehorik-product-view-title-price {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
+    .rehorik-add-to-cart-container {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
+    .rehorik-product-goes-with:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
+    .rehorik-product-video:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
+    .rehorik-product-information {margin: $product-view-grid-gap / 2 0 0 0;}
   }
 
   .rehorik-product-view-gallery {
     grid-area: gallery;
+  }
+
+  .rehorik-product-goes-with {
+    grid-area: goes-with;
   }
 
   .rehorik-product-view-title-price {
@@ -77,13 +78,5 @@
 
   .rehorik-product-video {
     grid-area: video;
-  }
-
-  .rehorik-preperation-recommendation {
-    grid-area: preperation;
-  }
-
-  .rehorik-product-category {
-    grid-area: category;
   }
 }

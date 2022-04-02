@@ -1,0 +1,22 @@
+// Overview
+.rehorik-products {
+  .rehorik-product-attributes table tr td:first-child {
+    font-size: $font-size-very-small;
+    line-height: $line-height-very-narrow;
+  }
+
+  .rehorik-product-attribute-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: $font-family-headline;
+  }
+
+  td.rehorik-product-attribute-label {
+    text-align: right;
+  }
+
+  .rehorik-tabs-panel hr {
+    border-width: 3px;
+  }
+}
+
