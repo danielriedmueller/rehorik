@@ -5,7 +5,7 @@ get_template_part('templates/header/slider', null, ['items' => [
         'claim' => 'DEIN PERFEKTES OSTERMENÜ!',
         'img'=> 'header-ostern',
         'buttons' => [
-            '/produkt-kategorie/onlineshop/ostern/' => 'ab 05.04. 10% Rabatt auf unser Ostermenü'
+            '/produkt-kategorie/onlineshop/ostern/' => 'bis 07.04. 10% Rabatt auf unser Ostermenü'
         ]
     ],
     [
