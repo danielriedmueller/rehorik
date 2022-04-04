@@ -63,7 +63,7 @@ function goes_with() {
     $text = $product->get_meta('reh_goes_with_recommendation');
     if (!empty($text)) {
         echo sprintf(
-            '<div class="rehorik-product-goes-with"><h4>Passt zu</h4>%s</div>',
+            '<div class="rehorik-product-goes-with">Passt zu %s</div>',
             $text
         );
     }
