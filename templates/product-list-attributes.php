@@ -27,17 +27,11 @@ if ($product->is_on_sale()) {
 
 $strength = $product->get_attribute(STRENGTH_ATTRIBUTE_SLUG);
 $flavoursvariety = $product->get_attribute(FLAVOUR_VARIETY_ATTRIBUTE_SLUG);
-
-$grapeVariety = $product->get_attribute(GRAPE_VARIETY_ATTRIBUTE_SLUG);
 $ausbau = $product->get_attribute(AUSBAU_ATTRIBUTE_SLUG);
 $giftContent = getAttributeArray($product, GIFT_CONTENT_ATTRIBUTE_SLUG);
 
 $attributes = [];
-$attributes[VARIETIES_ATTRIBUTE_SLUG] = sprintf(
-    '%s%s',
-    $product->get_attribute(VARIETIES_ATTRIBUTE_SLUG),
-    empty($grapeVariety) ? "" : ", " . $grapeVariety
-);
+$attributes[GRAPE_VARIETY_ATTRIBUTE_SLUG] = $product->get_attribute(GRAPE_VARIETY_ATTRIBUTE_SLUG);
 $attributes[FLAVOUR_ATTRIBUTE_SLUG] = $product->get_attribute(FLAVOUR_ATTRIBUTE_SLUG);
 $attributes[MANUFACTURER_ATTRIBUTE_SLUG] = $product->get_attribute(MANUFACTURER_ATTRIBUTE_SLUG);
 $attributes[MILCHART_ATTRIBUTE_SLUG] = $product->get_attribute(MILCHART_ATTRIBUTE_SLUG);

@@ -5,7 +5,7 @@ get_template_part('templates/header/slider', null, ['items' => [
         'claim' => 'DEIN PERFEKTES OSTERMENÜ!',
         'img'=> 'header-ostern',
         'buttons' => [
-            '/produkt-kategorie/onlineshop/ostern/' => 'bis zum 07.04. 10% Rabatt auf unser Ostermenü'
+            '/produkt-kategorie/onlineshop/ostern/' => 'ab 05.04. 10% Rabatt auf unser Ostermenü'
         ]
     ],
     [
@@ -69,9 +69,6 @@ get_template_part('templates/header/slider', null, ['items' => [
 </div>
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
-        <li class="product-category product">
-            <?php get_template_part('templates/orderbird-chooser'); ?>
-        </li>
         <?php
             $product_categories = getShopFrontPageCategories();
             foreach ($product_categories as $category) {
