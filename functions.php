@@ -36,7 +36,9 @@ define('VIRTUAL_EVENTS_CATEGORY_SLUG', 'virtuelle-events');
 define('WINE_CATEGORY_SLUGS', [
     'rotwein',
     'likoer',
-    'weisswein-rose',
+    'weisswein',
+    'rose',
+    'naturwein',
     'champagner-und-sekt'
 ]);
 
