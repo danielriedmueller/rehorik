@@ -87,11 +87,11 @@ function getStrengthFlavourHtml($level, $class) {
 
 // TODO Remove
 function getOsternPasstZu($product) {
-    if ($product->get_id() === 18913) {
+    if ($product->get_id() === 13156) {
         return "Brunch";
     }
 
-    if ($product->get_id() === 18924) {
+    if ($product->get_id() === 18908) {
         return "Fisch";
     }
 
@@ -99,7 +99,7 @@ function getOsternPasstZu($product) {
         return "Lamm";
     }
 
-    if ($product->get_id() === 18914) {
+    if ($product->get_id() === 13143) {
         return "Grillen";
     }
 
@@ -108,19 +108,19 @@ function getOsternPasstZu($product) {
 
 // TODO Remove
 function getOsternOrder($product) {
-    if ($product->get_id() === 18913) {
+    if ($product->get_id() === ) {
         return 4;
     }
 
-    if ($product->get_id() === 18924) {
+    if ($product->get_id() === 13156) {
         return 1;
     }
 
-    if ($product->get_id() === 18929) {
+    if ($product->get_id() === 13143) {
         return 2;
     }
 
-    if ($product->get_id() === 18914) {
+    if ($product->get_id() === 18908) {
         return 3;
     }
 
