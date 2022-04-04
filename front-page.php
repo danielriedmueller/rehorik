@@ -2,10 +2,10 @@
 get_header();
 get_template_part('templates/header/slider', null, ['items' => [
     [
-        'claim' => 'Ostern',
+        'claim' => 'DEIN PERFEKTES OSTERMENÜ!',
         'img'=> 'header-ostern',
         'buttons' => [
-            '/produkt-kategorie/onlineshop/ostern/' => 'Ostern'
+            '/produkt-kategorie/onlineshop/ostern/' => 'bis zum 07.04. 10% Rabatt auf unser Ostermenü'
         ]
     ],
     [

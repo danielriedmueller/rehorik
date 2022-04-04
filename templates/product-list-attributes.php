@@ -2,6 +2,28 @@
 global $product;
 
 $price = wc_price($product->get_price());
+if ($product->is_on_sale()) {
+    if ($product->is_type('variable')) {
+        $variations = $product->get_children();
+        $salePrices = [];
+        foreach ($variations as $value) {
+            $singleVariation = new WC_Product_Variation($value);
+            array_push($salePrices, $singleVariation->get_price());
+        }
+        sort($salePrices);
+        $salePrice = $salePrices[0];
+        if (!isset($salePrices[0])) {
+            $salePrice = $product->get_sale_price();
+        }
+    } else {
+        $salePrice = $product->get_sale_price();
+    }
+
+    $price = wc_format_sale_price(
+            wc_get_price_to_display($product, ['price' => $product->get_regular_price()]),
+            wc_get_price_to_display($product, ['price' => $salePrice]),
+    ) . $product->get_price_suffix();
+}
 
 $strength = $product->get_attribute(STRENGTH_ATTRIBUTE_SLUG);
 $flavoursvariety = $product->get_attribute(FLAVOUR_VARIETY_ATTRIBUTE_SLUG);

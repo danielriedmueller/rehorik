@@ -117,11 +117,11 @@ function getOsternOrder($product) {
     }
 
     if ($product->get_id() === 13143) {
-        return 2;
+        return 3;
     }
 
     if ($product->get_id() === 18908) {
-        return 3;
+        return 2;
     }
 
     return 0;
