@@ -95,7 +95,7 @@ function getOsternPasstZu($product) {
         return "Fisch";
     }
 
-    if ($product->get_id() === 18929) {
+    if ($product->get_id() === 18896) {
         return "Lamm";
     }
 
@@ -108,7 +108,7 @@ function getOsternPasstZu($product) {
 
 // TODO Remove
 function getOsternOrder($product) {
-    if ($product->get_id() === ) {
+    if ($product->get_id() === 18896) {
         return 4;
     }
 
