@@ -4,7 +4,6 @@
 <html <?php language_attributes(); ?>>
     <?php get_template_part('templates/head'); ?>
     <body <?php body_class('rehorik'); ?>>
-        <?php echo get_template_part('templates/social-media-icons'); ?>
         <div id="page-container">
             <?php get_template_part('templates/menu'); ?>
             <div id="et-main-area">
