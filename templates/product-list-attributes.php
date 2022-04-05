@@ -6,21 +6,29 @@ if ($product->is_on_sale()) {
     if ($product->is_type('variable')) {
         $variations = $product->get_children();
         $salePrices = [];
+        $regPrices = [];
         foreach ($variations as $value) {
             $singleVariation = new WC_Product_Variation($value);
             array_push($salePrices, $singleVariation->get_price());
+            array_push($regPrices, $singleVariation->get_regular_price());
         }
         sort($salePrices);
+        sort($regPrices);
         $salePrice = $salePrices[0];
+        $regPrice = $regPrices[0];
         if (!isset($salePrices[0])) {
             $salePrice = $product->get_sale_price();
         }
+        if (!isset($regPrices[0])) {
+            $regPrice = $product->get_regular_price();
+        }
     } else {
+        $regPrice = $product->get_regular_price();
         $salePrice = $product->get_sale_price();
     }
 
     $price = wc_format_sale_price(
-            wc_get_price_to_display($product, ['price' => $product->get_regular_price()]),
+            wc_get_price_to_display($product, ['price' => $regPrice]),
             wc_get_price_to_display($product, ['price' => $salePrice]),
     ) . $product->get_price_suffix();
 }
