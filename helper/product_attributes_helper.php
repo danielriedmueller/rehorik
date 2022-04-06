@@ -17,6 +17,7 @@ define('REGION_ATTRIBUTE_SLUG', 'pa_region');
 define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
 define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
 define('ALCOHOL_ATTRIBUTE_SLUG', 'pa_alkoholgehalt');
+define('VINTAGE_ATTRIBUTE_SLUG', 'pa_jahrgang');
 define('WEIGHT_SLUG', 'weight');
 define('WEIGHT_ATTRIBUTE_SLUG', 'pa_gewicht');
 define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
