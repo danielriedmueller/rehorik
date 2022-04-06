@@ -83,7 +83,7 @@
       font-family: $font-family-headline;
       background-color: $weinrot;
       color: $beigegold !important;
-      padding: $spacing;
+      padding: $spacing-xxs;
       min-width: 200px;
       text-align: center;
       display: inline-block;
@@ -140,7 +140,6 @@ ul#slider img {
 }
 
 #slider > .tns-item {
-  line-height: 0;
   vertical-align: middle;
   position: relative;
 

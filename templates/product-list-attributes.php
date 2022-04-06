@@ -2,20 +2,44 @@
 global $product;
 
 $price = wc_price($product->get_price());
+if ($product->is_on_sale()) {
+    if ($product->is_type('variable')) {
+        $variations = $product->get_children();
+        $salePrices = [];
+        $regPrices = [];
+        foreach ($variations as $value) {
+            $singleVariation = new WC_Product_Variation($value);
+            array_push($salePrices, $singleVariation->get_price());
+            array_push($regPrices, $singleVariation->get_regular_price());
+        }
+        sort($salePrices);
+        sort($regPrices);
+        $salePrice = $salePrices[0];
+        $regPrice = $regPrices[0];
+        if (!isset($salePrices[0])) {
+            $salePrice = $product->get_sale_price();
+        }
+        if (!isset($regPrices[0])) {
+            $regPrice = $product->get_regular_price();
+        }
+    } else {
+        $regPrice = $product->get_regular_price();
+        $salePrice = $product->get_sale_price();
+    }
+
+    $price = wc_format_sale_price(
+            wc_get_price_to_display($product, ['price' => $regPrice]),
+            wc_get_price_to_display($product, ['price' => $salePrice]),
+    ) . $product->get_price_suffix();
+}
 
 $strength = $product->get_attribute(STRENGTH_ATTRIBUTE_SLUG);
 $flavoursvariety = $product->get_attribute(FLAVOUR_VARIETY_ATTRIBUTE_SLUG);
-
-$grapeVariety = $product->get_attribute(GRAPE_VARIETY_ATTRIBUTE_SLUG);
 $ausbau = $product->get_attribute(AUSBAU_ATTRIBUTE_SLUG);
 $giftContent = getAttributeArray($product, GIFT_CONTENT_ATTRIBUTE_SLUG);
 
 $attributes = [];
-$attributes[VARIETIES_ATTRIBUTE_SLUG] = sprintf(
-    '%s%s',
-    $product->get_attribute(VARIETIES_ATTRIBUTE_SLUG),
-    empty($grapeVariety) ? "" : ", " . $grapeVariety
-);
+$attributes[GRAPE_VARIETY_ATTRIBUTE_SLUG] = $product->get_attribute(GRAPE_VARIETY_ATTRIBUTE_SLUG);
 $attributes[FLAVOUR_ATTRIBUTE_SLUG] = $product->get_attribute(FLAVOUR_ATTRIBUTE_SLUG);
 $attributes[MANUFACTURER_ATTRIBUTE_SLUG] = $product->get_attribute(MANUFACTURER_ATTRIBUTE_SLUG);
 $attributes[MILCHART_ATTRIBUTE_SLUG] = $product->get_attribute(MILCHART_ATTRIBUTE_SLUG);

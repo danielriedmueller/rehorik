@@ -124,17 +124,21 @@ function getSubCategories(WC_Product $product): string
         return getCoffeeCategories($product);
     }
 
+    $onlineshop_cat = get_term_by('slug', ONLINESHOP_CATEGORY_SLUG, 'product_cat');
     $terms = get_the_terms( $product->get_id(), 'product_cat' );
     $term_ids = wp_list_pluck($terms,'term_id');
     $parents = array_filter(wp_list_pluck($terms,'parent'));
     $term_ids_not_parents = array_diff($term_ids,  $parents);
     $terms_not_parents = array_intersect_key($terms,  $term_ids_not_parents);
+    $terms_not_onlineshop_cat_parent = array_filter($terms_not_parents, function (WP_Term $a) use ($onlineshop_cat) {
+        return $a->parent !== $onlineshop_cat->term_id;
+    });
     $terms_not_parents_names = array_map(function ($a) {
         return $a->name;
-    }, $terms_not_parents);
+    }, $terms_not_onlineshop_cat_parent);
 
     if (sizeof($terms_not_parents_names) > 0) {
-        return $terms_not_parents_names[array_key_first($terms_not_parents_names)];
+        return implode(", ", $terms_not_parents_names);
     }
 
     return "";

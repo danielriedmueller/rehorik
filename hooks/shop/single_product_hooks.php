@@ -50,11 +50,22 @@ function description() {
 
 function short_description() {
     global $post;
+    global $product;
 
-    echo sprintf(
-        '<div class="rehorik-product-short-description">%s</div>',
-        $post->post_excerpt
-    );
+    $weingut = $product->get_attribute('weingut');
+
+    if (!empty($weingut) && !empty($post->post_excerpt)) {
+        echo sprintf(
+            '<div class="rehorik-product-short-description"><h4>Weingut %s</h4>%s</div>',
+            $weingut,
+            $post->post_excerpt
+        );
+    } else {
+        echo sprintf(
+            '<div class="rehorik-product-short-description">%s</div>',
+            $post->post_excerpt
+        );
+    }
 }
 
 function goes_with() {

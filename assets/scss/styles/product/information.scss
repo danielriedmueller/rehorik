@@ -131,6 +131,12 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       text-align: justify;
       font-size: $font-size-small;
       line-height: $line-height;
+
+      h4 {
+        color: $beigegold;
+        font-size: $font-size;
+        text-transform: uppercase;
+      }
     }
 
     .rehorik-recommendation {
