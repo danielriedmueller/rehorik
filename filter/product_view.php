@@ -53,13 +53,22 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
         }
     }
 
+    if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX.REGION_ATTRIBUTE_SLUG])) {
+        if ($productAttributes[ATTRIBUTE_SLUG_PREFIX.REGION_ATTRIBUTE_SLUG]
+            && $productAttributes[ATTRIBUTE_SLUG_PREFIX.ORIGIN_COUNTRY_ATTRIBUTE_SLUG]) {
+            $productAttributes[ATTRIBUTE_SLUG_PREFIX.REGION_ATTRIBUTE_SLUG]['value'] =
+                trim(strip_tags($productAttributes[ATTRIBUTE_SLUG_PREFIX.ORIGIN_COUNTRY_ATTRIBUTE_SLUG]['value']))
+                . ", " . trim(strip_tags($productAttributes[ATTRIBUTE_SLUG_PREFIX.REGION_ATTRIBUTE_SLUG]['value']));
+            unset($productAttributes[ATTRIBUTE_SLUG_PREFIX.ORIGIN_COUNTRY_ATTRIBUTE_SLUG]);
+        }
+    }
+
     /**
      * Sort attributes
      *
      *  1. Jahrgang
      *  2. Rebsorte
      *  3. Weingut
-     *  4. Herkunft
      *  5. Region
      *  6. Geschmack (formerly known as Ausbau)
      *  7. Aromen
@@ -69,7 +78,6 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
         ATTRIBUTE_SLUG_PREFIX.VINTAGE_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.GRAPE_VARIETY_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.WINERY_ATTRIBUTE_SLUG,
-        ATTRIBUTE_SLUG_PREFIX.ORIGIN_COUNTRY_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.REGION_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.AUSBAU_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.FLAVOUR_ATTRIBUTE_SLUG,
