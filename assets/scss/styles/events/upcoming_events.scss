@@ -5,24 +5,24 @@ li.veranstaltungen {
     left: 0;
     z-index: 1;
     padding: $spacing-s;
+    width: 100%;
 
-    table {
-      background: rgba(0, 0, 0, 0.3) none;
-      backdrop-filter: blur(3px);
-      td {
-        padding: $spacing-s;
-        line-height: $line-height;
-        color: #fff;
-        font-size: $font-size;
+    > a {
+      display: block;
+      padding: $spacing-xxs;
+
+      &:hover > span {
+        text-decoration: underline;
+      }
+
+      > span {
+        line-height: $line-height-narrow;
+        color: $font-color-accent-dark;
+        font-size: $font-size-small;
         font-family: $font-family-headline;
         text-transform: uppercase;
+        display: flex;
       }
-    }
-  }
-
-  &:hover {
-    img {
-      filter: sepia(100%);
     }
   }
 }
