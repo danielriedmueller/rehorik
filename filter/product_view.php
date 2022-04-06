@@ -9,6 +9,9 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
         ATTRIBUTE_SLUG_PREFIX.PRODUCT_OF_MONTH_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.FILLING_QUANTITY_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.WEIGHT_ATTRIBUTE_SLUG,
+        ATTRIBUTE_SLUG_PREFIX.BIODYNAMIC_ATTRIBUTE_SLUG,
+        ATTRIBUTE_SLUG_PREFIX.VEGAN_ATTRIBUTE_SLUG,
+        ATTRIBUTE_SLUG_PREFIX.REGIONAL_ATTRIBUTE_SLUG,
         WEIGHT_SLUG
     ];
 
@@ -70,7 +73,8 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
         ATTRIBUTE_SLUG_PREFIX.REGION_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.AUSBAU_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.FLAVOUR_ATTRIBUTE_SLUG,
-        ATTRIBUTE_SLUG_PREFIX.ALCOHOL_ATTRIBUTE_SLUG
+        ATTRIBUTE_SLUG_PREFIX.ALCOHOL_ATTRIBUTE_SLUG,
+        WEIGHT_SLUG
     ];
     uksort($productAttributes, function ($a, $b) use ($sortedAttributes) {
         if (array_search($a, $sortedAttributes) > array_search($b, $sortedAttributes)) {
