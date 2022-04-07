@@ -1,22 +1,31 @@
 <?php
 
-function isProductOfTheMonth(WC_Product $product): bool
-{
-    $value = strtolower($product->get_attribute( PRODUCT_OF_MONTH_ATTRIBUTE_SLUG));
+function isProductOfTheMonth(WC_Product $product): bool {
+    $value = strtolower($product->get_attribute(PRODUCT_OF_MONTH_ATTRIBUTE_SLUG));
 
     return $value === "ja" ? true : false;
 }
 
-function hasBiosigil(WC_Product $product): bool
-{
+function hasSigil(WC_Product $product): bool {
+    return hasBiosigil($product) || hasVegansigil($product);
+}
+
+function hasBiosigil(WC_Product $product): bool {
     $value = generateBiosigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
 
     return !empty($value);
 }
 
-function isEventOnline($eventId): bool
-{
-    if (!function_exists('tribe_events_get_ticket_event')) return false;
+function hasVegansigil(WC_Product $product): bool {
+    $value = strtolower($product->get_attribute(VEGAN_ATTRIBUTE_SLUG));
+
+    return $value === "ja" ? true : false;
+}
+
+function isEventOnline($eventId): bool {
+    if (!function_exists('tribe_events_get_ticket_event')) {
+        return false;
+    }
 
     $categories = tribe_get_event_cat_slugs($eventId);
     if (in_array(VIRTUAL_EVENTS_CATEGORY_SLUG, $categories)) {
@@ -28,32 +37,32 @@ function isEventOnline($eventId): bool
     return !!$isOnline;
 }
 
-function getProductOfTheMonthClass(WC_Product $product): string
-{
+function getProductOfTheMonthClass(WC_Product $product): string {
     return isProductOfTheMonth($product) ? "product-of-month" : "";
 }
 
-function getIsEventOnlineClass(WC_Product $product): string
-{
+function getIsEventOnlineClass(WC_Product $product): string {
     $event = tribe_events_get_ticket_event($product->get_id());
 
-    if(!$event) {
+    if (!$event) {
         return "";
     }
 
     return isEventOnline($event->ID) ? "event-online" : "";
 }
 
-function getBiosigilClass(WC_Product $product): string
-{
-return hasBiosigil($product) ? "biosigil" : "";
+function getBiosigilClass(WC_Product $product): string {
+    return hasBiosigil($product) ? "biosigil" : "";
 }
 
-function getBiosigilControlcode(WC_Product $product): string
-{
-$value = generateBiosigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
+function getVegansigilClass(WC_Product $product): string {
+    return hasVegansigil($product) ? "vegansigil" : "";
+}
 
-return !empty($value) ? $value : "";
+function getBiosigilControlcode(WC_Product $product): string {
+    $value = generateBiosigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
+
+    return !empty($value) ? $value : "";
 }
 
 /**

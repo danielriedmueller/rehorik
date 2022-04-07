@@ -113,8 +113,8 @@ function product_video() {
 function sigils() {
     global $product;
 
-    if(hasBiosigil($product)) {
-        get_template_part('templates/bio-sigil', null, ['product' => $product]);
+    if(hasSigil($product)) {
+        get_template_part('templates/product/sigils', null, ['product' => $product]);
     }
 }
 
