@@ -61,10 +61,6 @@ $sigilWidth: $sigilHeight * 1.5;
   right: $spacing-s;
   width: $sigilWidth;
 
-  > div:first-child {
-    margin-bottom: $spacing-xs;
-  }
-
   > .biosigil {
     width: $sigilWidth;
     height: 33px;
@@ -75,6 +71,7 @@ $sigilWidth: $sigilHeight * 1.5;
     background: transparent url("../img/vegansiegel.svg") no-repeat left top;
     width: $sigilWidth;
     height: $sigilWidth;
+    margin-top: $spacing-xs;
   }
 }
 
