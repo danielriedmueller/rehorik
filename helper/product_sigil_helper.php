@@ -5,17 +5,21 @@ function isProductOfTheMonth(WC_Product $product): bool {
 }
 
 function hasSigil(WC_Product $product): bool {
-    return hasBiosigil($product) || hasVegansigil($product);
+    return hasBioSigil($product) || hasVeganSigil($product) || hasBiodynamicSigil($product);
 }
 
-function hasBiosigil(WC_Product $product): bool {
-    $value = generateBiosigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
+function hasBioSigil(WC_Product $product): bool {
+    $value = generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
 
     return !empty($value);
 }
 
-function hasVegansigil(WC_Product $product): bool {
+function hasVeganSigil(WC_Product $product): bool {
     return strtolower($product->get_attribute(VEGAN_ATTRIBUTE_SLUG)) === "ja";
+}
+
+function hasBiodynamicSigil(WC_Product $product): bool {
+    return strtolower($product->get_attribute(BIODYNAMIC_ATTRIBUTE_SLUG)) === "ja";
 }
 
 function isEventOnline($eventId): bool {
@@ -47,16 +51,20 @@ function getIsEventOnlineClass(WC_Product $product): string {
     return isEventOnline($event->ID) ? "event-online" : "";
 }
 
-function getBiosigilClass(WC_Product $product): string {
-    return hasBiosigil($product) ? "biosigil" : "";
+function getBioSigilClass(WC_Product $product): string {
+    return hasBioSigil($product) ? "biosigil" : "";
 }
 
-function getVegansigilClass(WC_Product $product): string {
-    return hasVegansigil($product) ? "vegansigil" : "";
+function getVeganSigilClass(WC_Product $product): string {
+    return hasVeganSigil($product) ? "vegansigil" : "";
 }
 
-function getBiosigilControlcode(WC_Product $product): string {
-    $value = generateBiosigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
+function getBiodynamicSigilClass(WC_Product $product): string {
+    return hasBiodynamicSigil($product) ? "biodynamicsigil" : "";
+}
+
+function getBioSigilControlcode(WC_Product $product): string {
+    $value = generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
 
     return !empty($value) ? $value : "";
 }
@@ -71,7 +79,7 @@ function getBiosigilControlcode(WC_Product $product): string {
  * @param string $defaultIsoPart
  * @return string
  */
-function generateBiosigilControlcode(
+function generateBioSigilControlcode(
     string $value,
     string $defaultIsoPart = "DE-ÖKO-"
 ): string {
@@ -80,7 +88,7 @@ function generateBiosigilControlcode(
         $value = $defaultIsoPart . $value;
     }
 
-    return validateBiosigilControlcode($value) ? strtoupper($value) : "";
+    return validateBioSigilControlcode($value) ? strtoupper($value) : "";
 }
 
 /**
@@ -89,7 +97,7 @@ function generateBiosigilControlcode(
  * @param string $value
  * @return bool
  */
-function validateBiosigilControlcode(string $value): bool {
+function validateBioSigilControlcode(string $value): bool {
     if (empty($value)) {
         return false;
     }

@@ -50,6 +50,12 @@ $sigilWidth: $sigilHeight * 1.5;
     width: $sigilHeight;
     height: $sigilHeight;
   }
+
+  > .biodynamicsigil {
+    background: transparent url("../img/biodynamischsiegel.svg") no-repeat left top;
+    height: $sigilHeight;
+    width: $sigilHeight;
+  }
 }
 
 // Category view
