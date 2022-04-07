@@ -1,9 +1,7 @@
 <?php
 
 function isProductOfTheMonth(WC_Product $product): bool {
-    $value = strtolower($product->get_attribute(PRODUCT_OF_MONTH_ATTRIBUTE_SLUG));
-
-    return $value === "ja" ? true : false;
+    return strtolower($product->get_attribute(PRODUCT_OF_MONTH_ATTRIBUTE_SLUG)) === "ja";
 }
 
 function hasSigil(WC_Product $product): bool {
@@ -17,9 +15,7 @@ function hasBiosigil(WC_Product $product): bool {
 }
 
 function hasVegansigil(WC_Product $product): bool {
-    $value = strtolower($product->get_attribute(VEGAN_ATTRIBUTE_SLUG));
-
-    return $value === "ja" ? true : false;
+    return strtolower($product->get_attribute(VEGAN_ATTRIBUTE_SLUG)) === "ja";
 }
 
 function isEventOnline($eventId): bool {

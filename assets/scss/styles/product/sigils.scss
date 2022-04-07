@@ -47,9 +47,8 @@ $sigilWidth: $sigilHeight * 1.5;
 
   > .vegansigil {
     background: transparent url("../img/vegansiegel.svg") no-repeat left top;
-    $bioSigilHeight: 0.81 * $sigilHeight;
-    $bioSigilWidth: $bioSigilHeight * 1.5;
-    flex: 0 0 $bioSigilWidth;
+    width: $sigilHeight;
+    height: $sigilHeight;
   }
 }
 
