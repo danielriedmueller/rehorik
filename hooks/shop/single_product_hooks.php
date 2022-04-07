@@ -54,7 +54,7 @@ function short_description() {
 
     $weingut = $product->get_attribute('weingut');
 
-    if (!empty($weingut) && !empty($post->post_excerpt)) {
+    if (!empty($weingut)) {
         echo sprintf(
             '<div class="rehorik-product-short-description"><h4>Weingut %s</h4>%s</div>',
             $weingut,
@@ -71,11 +71,13 @@ function short_description() {
 function goes_with() {
     global $product;
 
-    $text = $product->get_meta('reh_goes_with_recommendation');
-    if (!empty($text)) {
+    $goesWith = $product->get_attribute('passt-zu');
+
+    if (!empty($goesWith)) {
+        $goesWith = str_replace(', ', ' - ', $goesWith);
         echo sprintf(
-            '<div class="rehorik-product-goes-with">Passt zu %s</div>',
-            $text
+            '<div class="rehorik-product-goes-with"><div>Passt zu</div><div>%s</div></div>',
+            $goesWith
         );
     }
 }
@@ -111,8 +113,8 @@ function product_video() {
 function sigils() {
     global $product;
 
-    if(hasBiosigil($product)) {
-        get_template_part('templates/bio-sigil', null, ['product' => $product]);
+    if(hasSigil($product)) {
+        get_template_part('templates/product/sigils', null, ['product' => $product]);
     }
 }
 

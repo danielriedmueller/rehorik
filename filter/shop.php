@@ -65,7 +65,7 @@ add_filter('woocommerce_cart_shipping_method_full_label', function($label, $meth
         || $method->method_id === DELIVERY_SHIPPING_METHOD) {
         $label .= 'DI. und DO. ab 13 Uhr ';
     } else {
-        $label .= '2-3 Tage versandfertig';
+        $label .= 'Lieferzeit: 3 - 5 Werktage';
     }
 
     $label .= '</small>';

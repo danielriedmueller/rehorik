@@ -30,11 +30,14 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
     <?php wc_product_class([
         'rehorik-product',
         getProductOfTheMonthClass($product),
-        getBiosigilClass($product),
     ], $product); ?>
     style="order: <?= getOsternOrder($product) ?>"
 >
 	<?php
+    if (hasSigil($product)) {
+        get_template_part('templates/loop/sigils', null, ['product' => $product]);
+    }
+
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.
 	 *
