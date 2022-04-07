@@ -1,3 +1,4 @@
+<?php echo get_template_part('templates/social-media-icons'); ?>
 <?php get_template_part('templates/newsletter-sign-up'); ?>
 <?php get_template_part('templates/rehorik-locations'); ?>
 <footer>

@@ -184,7 +184,7 @@ get_template_part('templates/header/slider', null, [
                         <h3>2014</h3>
                         <section>
                             <ul>
-                                <li><span>Heiko gründet das Café 190° Am Brixener Hof</span></li>
+                                <li><span>Heiko gründet das Café 190° Am Brixener Hof 6</span></li>
                                 <li><img alt="Tradition" src="<?= get_stylesheet_directory_uri() . '/assets/img/tradition/tradition-bildmaterial-800x500px-2014.jpg' ?>"></li>
                             </ul>
                         </section>

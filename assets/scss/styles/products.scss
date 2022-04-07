@@ -17,7 +17,17 @@
       font-weight: bold;
       background-color: transparent;
       font-family: $font-family-headline;
-      margin-bottom: $spacing-xxs;
+      margin: $spacing-xxs 0;
+    }
+
+    .onsale {
+      background: transparent url("../img/green-texture.png") repeat left top !important;
+      border-radius: $border-radius !important;
+      text-transform: uppercase;
+      font-size: $font-size;
+      padding: $spacing-xxs $spacing-xs !important;
+      left: $spacing-xs !important;
+      top: $spacing-xs !important;
     }
 
     a {
@@ -27,7 +37,7 @@
         background-color: #fff;
 
         img {
-          margin: 0 auto $spacing-xxs auto !important;
+          margin: 0 auto !important;
           width: $product-category-width;
           height: auto;
           object-fit: cover;
