@@ -23,7 +23,8 @@ define('FREE_STANDARD_SHIPPING_METHOD', 'free_shipping');
 
 // Categories
 define('COFFEE_CATEGORY_SLUG', 'kaffee');
-define('WINE_SPIRITS_CO_CATEGORY_SLUG', 'wein-spirits-co');
+define('WINE_CATEGORY_SLUG', 'wein');
+define('SPIRITS_CATEGORY_SLUG', 'spirits');
 define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
 define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
 define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
@@ -31,13 +32,16 @@ define('DELI_CATEGORY_SLUG', 'delikatessen-onlineshop');
 define('GIFTS_CATEGORY_SLUG', 'geschenke');
 define('MACHINE_CATEGORY_SLUG', 'maschinen-equipment');
 define('BLACK_AND_WINE', 'blackwine');
+define('OSTERN_CATEGORY_SLUG', 'ostern');
 define('TICKET_CATEGORY_SLUG', 'veranstaltungen');
 define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
 define('VIRTUAL_EVENTS_CATEGORY_SLUG', 'virtuelle-events');
 define('WINE_CATEGORY_SLUGS', [
     'rotwein',
     'likoer',
-    'weisswein-rose',
+    'weisswein',
+    'rose',
+    'naturwein',
     'champagner-und-sekt'
 ]);
 

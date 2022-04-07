@@ -8,12 +8,9 @@
     <div class="golden-box">
         <div>
             Eigentlich ganz einfach: Ihr bekommt ein schwarzes Weinglas und eine Bewertungsskala. Dann verkostet Ihr
-            Weine, ohne zu wissen, um was es sich handelt. Wichtig dabei ist es nicht, die Rebsorte zu erkennen oder das
-            Anbaugebiet. Wichtig ist nur Euer Geschmack. Denn der Wein, der von Euch am besten bewertet wird, wird unser
+            Weine, ohne zu wissen, um was es sich handelt. Es ist dabei nicht wichtig, die Rebsorte zu erkennen oder das Anbaugebiet. Wichtig ist nur Euer Geschmack. Denn der Wein, der von Euch am besten bewertet wird, wird unser
             Wein des Monats.
-            Und für alle Teilnehmer gibt’s sogar noch eine Belohnung oben drauf: Packt einfach den Bewertungsbogen, den
-            ihr bekommen habt, ein und schaut bei einem unserer Standorte vorbei. Da bekommt Ihr dann 10% Rabatt auf
-            unseren Wein des Monats.
+            Kleiner Bonus obendrauf: Packt einfach den Bewertungsbogen ein und schaut bei einem unserer Standorte vorbei. Dort bekommt Ihr dann 10% Rabatt auf unseren Wein des Monats.
         </div>
     </div>
     <div class="flex-images mt">

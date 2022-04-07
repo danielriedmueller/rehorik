@@ -4,7 +4,7 @@ require_once($baseDir . '/helper/video_helper.php');
 
 /** @var WC_Product $product */
 $product = $args['product'];
-$video = validateVideo($product->get_meta('Video'));
+$video = validateVideo($product->get_meta('reh_prod_video'));
 
 ?>
 <div class="rehorik-product-video"><?php if(!empty($video)): ?>

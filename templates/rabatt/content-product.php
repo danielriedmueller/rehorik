@@ -26,13 +26,14 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php');
 ?>
-<li <?php wc_product_class([
-    'rehorik-product',
-    getProductOfTheMonthClass($product),
-    getIsEventOnlineClass($product)
-], $product); ?>>
+<li
+    <?php wc_product_class([
+        'rehorik-product',
+        getProductOfTheMonthClass($product),
+    ], $product); ?>
+    style="order: <?= getOsternOrder($product) ?>"
+>
 	<?php
-
     if (hasSigil($product)) {
         get_template_part('templates/loop/sigils', null, ['product' => $product]);
     }
@@ -51,6 +52,11 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 	 * @hooked woocommerce_template_loop_product_thumbnail - 10
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
+
+    echo sprintf(
+        '<div class="rehorik-product-goes-with">Passt zum %s</div>',
+        getOsternPasstZu($product)
+    );
 
     echo sprintf(
         '<div class="rehorik-product-origin-country">%s</div>',
@@ -85,6 +91,5 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
     } else {
         get_template_part('templates/product-list-attributes');
     }
-
 	?>
 </li>

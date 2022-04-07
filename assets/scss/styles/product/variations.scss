@@ -5,7 +5,7 @@ body.rehorik.woocommerce div.product.rehorik-product {
     margin-bottom: 0;
 
     table.variations {
-      margin-bottom: 0;
+      margin-bottom: $product-view-grid-gap;
 
       tbody tr:last-child td {
         padding-bottom: 0 !important;
@@ -56,6 +56,7 @@ body.rehorik.woocommerce div.product.rehorik-product {
 
   form.cart table.variations li.variable-item {
     &:hover, &.selected {
+      border: 1px solid $product-default-color;
       background-color: $product-default-color;
     }
   }
@@ -76,7 +77,6 @@ body.rehorik.woocommerce div.product.rehorik-product {
     }
   }
 
-
   &.product_cat-espresso {
     form.cart table.variations li.variable-item {
       &:hover, &.selected {
@@ -88,7 +88,7 @@ body.rehorik.woocommerce div.product.rehorik-product {
   &.product_cat-espresso.product_cat-filterkaffee {
     form.cart table.variations li.variable-item {
       &:hover, &.selected {
-        @include productLinearGradient($product-filterkaffee-color, $product-espresso-color);
+        background-color: $product-filterkaffee-color;
       }
     }
   }

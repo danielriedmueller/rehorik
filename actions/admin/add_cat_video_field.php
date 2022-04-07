@@ -86,6 +86,5 @@ function wh_taxonomy_edit_meta_field($term) {
 
 // Save extra taxonomy fields callback function.
 function wh_save_taxonomy_custom_meta($term_id) {
-    $reh_cat_video = filter_input(INPUT_POST, 'reh_cat_video');
-    update_term_meta($term_id, 'reh_cat_video', $reh_cat_video);
+    update_term_meta($term_id, 'reh_cat_video', filter_input(INPUT_POST, 'reh_cat_video'));
 }

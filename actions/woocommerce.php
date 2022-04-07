@@ -1,5 +1,9 @@
 <?php
 require_once('admin/add_cat_video_field.php');
+require_once('admin/add_product_preperation_recommendation_field.php');
+require_once('admin/add_product_video_field.php');
+require_once('shop/frontpage_categories.php');
+
 /**
  * Removes breadcrumb.
  */

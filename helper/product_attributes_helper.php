@@ -16,11 +16,16 @@ define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_herkunft');
 define('REGION_ATTRIBUTE_SLUG', 'pa_region');
 define('PRODUCT_OF_MONTH_ATTRIBUTE_SLUG', 'pa_product-of-month');
 define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
+define('BIODYNAMIC_ATTRIBUTE_SLUG', 'pa_biodynamisch');
+define('VEGAN_ATTRIBUTE_SLUG', 'pa_vegan');
+define('REGIONAL_ATTRIBUTE_SLUG', 'pa_regional');
 define('ALCOHOL_ATTRIBUTE_SLUG', 'pa_alkoholgehalt');
+define('VINTAGE_ATTRIBUTE_SLUG', 'pa_jahrgang');
 define('WEIGHT_SLUG', 'weight');
 define('WEIGHT_ATTRIBUTE_SLUG', 'pa_gewicht');
 define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
 define('WINERY_ATTRIBUTE_SLUG', 'pa_weingut');
+define('GOES_WITH_ATTRIBUTE_SLUG', 'pa_passt-zu');
 define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
 define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
 
@@ -83,4 +88,46 @@ function getStrengthFlavourHtml($level, $class) {
     $result .= '</div>';
 
     return $result;
+}
+
+// TODO Remove
+function getOsternPasstZu($product) {
+    if ($product->get_id() === 13156) {
+        return "Brunch";
+    }
+
+    if ($product->get_id() === 18908) {
+        return "Fisch";
+    }
+
+    if ($product->get_id() === 18896) {
+        return "Lamm";
+    }
+
+    if ($product->get_id() === 13143) {
+        return "Grillen";
+    }
+
+    return "Frühstück";
+}
+
+// TODO Remove
+function getOsternOrder($product) {
+    if ($product->get_id() === 18896) {
+        return 4;
+    }
+
+    if ($product->get_id() === 13156) {
+        return 1;
+    }
+
+    if ($product->get_id() === 13143) {
+        return 3;
+    }
+
+    if ($product->get_id() === 18908) {
+        return 2;
+    }
+
+    return 0;
 }

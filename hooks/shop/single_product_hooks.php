@@ -31,24 +31,71 @@ add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_add_
 add_action('rehorik_product_view_add_to_cart', 'cup_of_coffee', 1); // Cup of Coffee
 add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_meta', 1); // Meta
 
+add_action('rehorik_product_view', 'goes_with', 1); // Meta
+
 add_action('rehorik_product_information', 'description', 1); // Description
+add_action('rehorik_product_information', 'categories', 1); // Categories
 add_action('rehorik_product_information', 'single_product_attributes', 1); // Attributes
+add_action('rehorik_product_information', 'short_description', 1); // Short Description
+add_action('rehorik_product_information', 'preperation_recommendation', 1); // Preperation Recommendation
 
 function description() {
     global $product;
-    global $post;
 
-    $categories = getSubCategories($product);
-    if (!empty($categories)) {
+    echo sprintf(
+        '<div class="rehorik-product-description">%s</div>',
+        $product->get_description()
+    );
+}
+
+function short_description() {
+    global $post;
+    global $product;
+
+    $weingut = $product->get_attribute('weingut');
+
+    if (!empty($weingut)) {
         echo sprintf(
-            '<div class="rehorik-product-description"><div class="rehorik-product-information-category">%s</div><div class="rehorik-preperation-recommendation">%s</div>%s</div>',
-            $categories,
-            $post->post_excerpt,
-            $product->get_description()
+            '<div class="rehorik-product-short-description"><h4>Weingut %s</h4>%s</div>',
+            $weingut,
+            $post->post_excerpt
         );
     } else {
-        echo sprintf('<div class="rehorik-product-description">%s</div>', $product->get_description());
+        echo sprintf(
+            '<div class="rehorik-product-short-description">%s</div>',
+            $post->post_excerpt
+        );
     }
+}
+
+function goes_with() {
+    global $product;
+
+    $goesWith = $product->get_attribute('passt-zu');
+
+    if (!empty($goesWith)) {
+        $goesWith = str_replace(', ', ' - ', $goesWith);
+        echo sprintf(
+            '<div class="rehorik-product-goes-with"><div>Passt zu</div><div>%s</div></div>',
+            $goesWith
+        );
+    }
+}
+
+function preperation_recommendation() {
+    global $product;
+
+    echo sprintf(
+        '<div class="rehorik-recommendation">%s</div>',
+        $product->get_meta('reh_preperation_recommendation')
+    );
+}
+
+function categories() {
+    global $product;
+    $categories = getSubCategories($product);
+
+    echo sprintf('<div class="rehorik-product-information-category">%s</div>', $categories);
 }
 
 function single_product_attributes() {
@@ -66,8 +113,8 @@ function product_video() {
 function sigils() {
     global $product;
 
-    if(hasBiosigil($product)) {
-        get_template_part('templates/bio-sigil', null, ['product' => $product]);
+    if(hasSigil($product)) {
+        get_template_part('templates/product/sigils', null, ['product' => $product]);
     }
 }
 

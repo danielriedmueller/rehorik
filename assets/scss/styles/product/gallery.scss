@@ -4,11 +4,6 @@
 
   .flex-viewport {
     margin-bottom: $spacing-xs;
-    border-radius: $border-radius;
-
-    * {
-      border-radius: $border-radius;
-    }
   }
 
   ol.flex-control-nav.flex-control-thumbs {
@@ -18,5 +13,10 @@
     li {
       margin: 0 $spacing-xs 0 0 !important;
     }
+  }
+
+  .flex-viewport,
+  .woocommerce-product-gallery__image {
+    border-radius: $border-radius;
   }
 }

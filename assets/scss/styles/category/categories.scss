@@ -6,7 +6,7 @@ ul.rehorik-products.products {
     overflow: hidden;
     float: none;
 
-    a {
+    > a {
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -17,6 +17,7 @@ ul.rehorik-products.products {
       padding: 0;
       margin: 0;
       display: block;
+      height: 100%;
     }
 
     video {

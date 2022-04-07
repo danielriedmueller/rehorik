@@ -1,10 +1,13 @@
-<?php ?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<?php get_template_part('templates/head'); ?>
-<body <?php body_class('rehorik'); ?>>
-<?php get_template_part('templates/social-media-icons'); ?>
-<?php get_template_part('templates/header/slider', null, ['items' => [
+<?php
+get_header();
+get_template_part('templates/header/slider', null, ['items' => [
+    [
+        'claim' => 'DEIN PERFEKTES OSTERMENÜ!',
+        'img'=> 'header-ostern',
+        'buttons' => [
+            '/produkt-kategorie/onlineshop/ostern/' => 'bis 07.04. 10% Rabatt auf unser Ostermenü'
+        ]
+    ],
     [
         'claim' => 'EL RUBI - MEHR ALS EIN EDELSTEIN',
         'img'=> 'Produkt-Illustration-El-Rubi-header',
@@ -32,12 +35,12 @@
         ]
     ],
     [
-        'claim' => 'WIR KÖNNEN AUCH WEIN',
+        'claim' => 'WIR KÖNNEN AUCH ANDERS',
         'img'=> 'startseite-header-wein',
         'buttons' => [
-            get_term_link(get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'),
+            get_term_link(get_term_by('slug', WINE_CATEGORY_SLUG, 'product_cat'),
                 'product_cat') => 'Zur Weinauswahl',
-            get_term_link(get_term_by('slug', WINE_SPIRITS_CO_CATEGORY_SLUG, 'product_cat'),
+            get_term_link(get_term_by('slug', SPIRITS_CATEGORY_SLUG, 'product_cat'),
                 'product_cat') => 'Und Spirituosen'
         ]
     ]
@@ -66,9 +69,6 @@
 </div>
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
-        <li class="product-category product">
-            <?php get_template_part('templates/orderbird-chooser'); ?>
-        </li>
         <?php
             $product_categories = getShopFrontPageCategories();
             foreach ($product_categories as $category) {
@@ -83,5 +83,6 @@
     </ul>
 </div>
 <?php
+get_template_part('templates/best-selling-products');
 get_footer();
 ?>

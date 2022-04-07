@@ -124,17 +124,21 @@ function getSubCategories(WC_Product $product): string
         return getCoffeeCategories($product);
     }
 
+    $onlineshop_cat = get_term_by('slug', ONLINESHOP_CATEGORY_SLUG, 'product_cat');
     $terms = get_the_terms( $product->get_id(), 'product_cat' );
     $term_ids = wp_list_pluck($terms,'term_id');
     $parents = array_filter(wp_list_pluck($terms,'parent'));
     $term_ids_not_parents = array_diff($term_ids,  $parents);
     $terms_not_parents = array_intersect_key($terms,  $term_ids_not_parents);
+    $terms_not_onlineshop_cat_parent = array_filter($terms_not_parents, function (WP_Term $a) use ($onlineshop_cat) {
+        return $a->parent !== $onlineshop_cat->term_id;
+    });
     $terms_not_parents_names = array_map(function ($a) {
         return $a->name;
-    }, $terms_not_parents);
+    }, $terms_not_onlineshop_cat_parent);
 
     if (sizeof($terms_not_parents_names) > 0) {
-        return join(', ', $terms_not_parents_names);
+        return implode(", ", $terms_not_parents_names);
     }
 
     return "";
@@ -167,9 +171,10 @@ function getShopFrontPageCategories()
 
     $keys = array_column($categories, 'slug');
 
+    $frontPageCategories[] = $categories[array_search(OSTERN_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(COFFEE_CATEGORY_SLUG, $keys)];
-    $frontPageCategories[] = $categories[array_search(WINE_SPIRITS_CO_CATEGORY_SLUG, $keys)];
-    $frontPageCategories[] = $categories[array_search(DELI_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(WINE_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(SPIRITS_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(MACHINE_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(TICKET_CATEGORY_SLUG, $keys)];
 

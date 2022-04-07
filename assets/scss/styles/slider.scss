@@ -83,7 +83,7 @@
       font-family: $font-family-headline;
       background-color: $weinrot;
       color: $beigegold !important;
-      padding: $spacing;
+      padding: $spacing-xxs;
       min-width: 200px;
       text-align: center;
       display: inline-block;
@@ -100,11 +100,11 @@
 
     .button:nth-child(2) {
       background-color: $beigegold;
-      color: $weinrot;
+      color: #fff !important;
 
       &:hover {
         background-color: $weinrot;
-        color: $beigegold;
+        color: $beigegold !important;
       }
     }
 
@@ -140,7 +140,6 @@ ul#slider img {
 }
 
 #slider > .tns-item {
-  line-height: 0;
   vertical-align: middle;
   position: relative;
 
@@ -157,7 +156,7 @@ ul#slider img {
     height: 45px;
     background-size: 25px;
     position: absolute;
-    top: 380px;
+    top: 400px;
     cursor: pointer;
     padding: 0;
   }

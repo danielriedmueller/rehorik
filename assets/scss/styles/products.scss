@@ -1,11 +1,11 @@
 #page-container ul.products.rehorik-products {
   li.product.rehorik-product {
-    margin: 0;
     overflow: hidden;
     text-align: center;
-    width: $product-category-width;
+    width: $product-category-width !important;
     height: $product-height;
     border-radius: $border-radius;
+    margin: 0 !important;
 
     @media all and (max-width: $small-breakpoint) {
       padding-bottom: $spacing;
@@ -17,17 +17,31 @@
       font-weight: bold;
       background-color: transparent;
       font-family: $font-family-headline;
-      margin-bottom: $spacing-xxs;
+      margin: $spacing-xxs 0;
+    }
+
+    .onsale {
+      background: transparent url("../img/green-texture.png") repeat left top !important;
+      border-radius: $border-radius !important;
+      text-transform: uppercase;
+      font-size: $font-size;
+      padding: $spacing-xxs $spacing-xs !important;
+      left: $spacing-xs !important;
+      top: $spacing-xs !important;
     }
 
     a {
       font-weight: bold;
 
-      img {
-        margin: 0 auto $spacing-xxs auto;
-        width: $product-category-width;
-        height: auto;
-        object-fit: cover;
+      > span {
+        background-color: #fff;
+
+        img {
+          margin: 0 auto !important;
+          width: $product-category-width;
+          height: auto;
+          object-fit: cover;
+        }
       }
 
       h2 {
