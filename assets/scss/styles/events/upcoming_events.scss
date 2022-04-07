@@ -8,20 +8,37 @@ li.veranstaltungen {
     width: 100%;
 
     > a {
-      display: block;
       padding: $spacing-xxs;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden;
 
       &:hover > span {
         text-decoration: underline;
       }
 
-      > span {
+      &.tickets-not-available span {
+        opacity: 0.3;
+      }
+
+      span {
         line-height: $line-height-narrow;
         color: $font-color-accent-dark;
         font-size: $font-size-small;
         font-family: $font-family-headline;
         text-transform: uppercase;
-        display: flex;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:first-child {
+          margin-right: $spacing-xs;
+          flex-shrink: 0;
+        }
+
+        &:last-child {
+          flex-shrink: 1;
+        }
       }
     }
   }
