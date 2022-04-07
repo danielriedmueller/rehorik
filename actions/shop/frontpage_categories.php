@@ -8,7 +8,7 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
     }
 
     $events = tribe_get_events([
-        'posts_per_page' => 4,
+        'posts_per_page' => 6,
         'start_date'     => 'now',
     ]);
 
@@ -16,8 +16,24 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
     foreach ($events as $event) {
         /** @var WP_Post $event */
         $link = tribe_get_event_link($event->ID);
+        //$event->get( 'is_sale_past' );
+        $tickets = Tribe__Tickets__Tickets::get_all_event_tickets( $event->ID );
+
+        $ticketsAvailable = false;
+        foreach ($tickets as $ticket) {
+            /** @var  Tribe__Tickets__Ticket_Object $ticket */
+            $available = $ticket->available();
+            $dateInRange = $ticket->date_in_range('now');
+
+            if ($available && $dateInRange) {
+                $ticketsAvailable = true;
+                break;
+            }
+        }
+
         $html .= sprintf(
-            '<a href="%s"><span>%s</span><span>%s</span></a>',
+            '<a class="%s" href="%s"><span>%s</span><span>%s</span></a>',
+            $ticketsAvailable ? "" : "tickets-not-available",
             $link,
             date('d. M', strtotime($event->event_date)),
             $event->post_title
