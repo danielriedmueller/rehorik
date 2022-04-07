@@ -6,7 +6,6 @@
   color: #fff;
   line-height: $line-height-narrow;
   align-self: center;
-  border-radius: $border-radius;
   text-align: center;
   max-width: 265px;
 
@@ -18,4 +17,8 @@
   > div:last-child {
     font-weight: bold;
   }
+}
+
+.rehorik.single-product .rehorik-product-goes-with {
+  border-radius: $border-radius;
 }
