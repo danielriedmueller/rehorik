@@ -159,6 +159,10 @@ ul#slider img {
     top: 400px;
     cursor: pointer;
     padding: 0;
+
+    &:hover {
+      background-color: transparent !important;
+    }
   }
 
   $spaceToBorder: $spacing-s;
