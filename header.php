@@ -11,9 +11,6 @@
                     if (isProductCategory(MACHINE_CATEGORY_SLUG)) {
                         get_template_part('templates/machine-header');
                     }
-                    if (isProductCategory(OSTERN_CATEGORY_SLUG)) {
-                        get_template_part('templates/ostern-header');
-                    }
                     if (isProductCategory(TICKET_CATEGORY_SLUG)) {
                         $eventCat = getProductCategorySlug();
                         if (!empty($eventCat)) {
