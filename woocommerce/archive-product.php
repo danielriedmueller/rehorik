@@ -33,8 +33,6 @@ do_action( 'woocommerce_before_main_content' );
 // Show special text for machine category
 if (isProductCategory(MACHINE_CATEGORY_SLUG)) {
     get_template_part('templates/products/sell-machines-advisory');
-} elseif (isProductCategory(OSTERN_CATEGORY_SLUG)) {
-    get_template_part('templates/rabatt/ostern');
 } elseif (isProductCategory(BLACK_AND_WINE)) {
     get_template_part('templates/veranstaltungen/black-and-wine');
 } else {
