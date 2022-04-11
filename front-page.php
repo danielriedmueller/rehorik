@@ -76,6 +76,5 @@ get_template_part('templates/header/slider', null, ['items' => [
     </ul>
 </div>
 <?php
-get_template_part('templates/best-selling-products');
 get_footer();
 ?>

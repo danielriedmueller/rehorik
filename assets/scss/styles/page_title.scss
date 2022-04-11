@@ -28,10 +28,12 @@
 
     h1 {
       margin: 0 $spacing-xs;
+      color: #fff;
     }
   }
 
   @media all and (max-width: $small-breakpoint) {
+    padding: $section-padding-small 0;
     &:before, &:after {
       width: 60px;
     }

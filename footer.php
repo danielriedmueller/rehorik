@@ -1,4 +1,3 @@
-</div>
 <?php
     if (isProductCategory(TICKET_CATEGORY_SLUG)) {
     get_template_part('templates/veranstaltungen/veranstaltungen-footer');

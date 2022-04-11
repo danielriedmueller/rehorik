@@ -1,17 +1,18 @@
 #rehorik-social-media-icons-outer {
-  $height: 41px;
+  $element-height: 41px;
+  $height: $menu-height + $spacing-xl + $logo-size - $element-height;
   position: absolute;
   left: 0;
-  height: 100%;
-  top: 144px;
-  z-index: 1;
+  height: calc(100% - #{$height});
+  top: $height;
+  z-index: 9;
   width: 0;
   overflow: visible;
 
   > #rehorik-social-media-icons {
     position: sticky;
     left: 0;
-    top: $menu-height + $spacing-s;
+    top: $menu-height + $spacing-xl;
     width: 136px;
 
     transition: all 0.25s ease 0s;
@@ -64,14 +65,17 @@
 
 
   @media all and (max-width: $small-breakpoint) {
-    top: $spacing;
+    $height: $menu-height + $spacing;
+    height: calc(100% - #{$height});
+    top: $height;
 
     > #rehorik-social-media-icons {
+      top: $menu-height + $spacing;
       padding: 6px 10px 6px 11px;
       width: 115px;
 
       &.hidden {
-        top: -45px;
+        top: $menu-height - $element-height;
       }
 
       .fb, .yt, .instagram {
@@ -87,6 +91,8 @@
 
 #rehorik-logo ~ #rehorik-social-media-icons-outer {
   @media all and (max-width: $small-breakpoint) {
-    top: 115px + $spacing;
+    $height: $menu-height + $spacing + $spacing + $logo-size-small;
+    height: calc(100% - #{$height});
+    top: $height;
   }
 }

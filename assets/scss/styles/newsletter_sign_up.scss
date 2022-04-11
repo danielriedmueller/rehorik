@@ -1,6 +1,10 @@
 #newsletter-sign-up {
   background-color: $weinrot;
 
+  h1 {
+    color: #fff;
+  }
+
   .container {
     > div {
       display: flex;
@@ -12,9 +16,10 @@
       }
 
       .newsletter-sign-up-description {
+        text-align: justify;
+
         h4 {
           color: $font-color-accent;
-          line-height: $line-height-large;
         }
 
         p, a {
@@ -30,8 +35,9 @@
       }
 
       .newsletter-sign-up-form {
-        form#sib_signup_form_1 {
+        width: 100%;
 
+        form#sib_signup_form_1 {
           .sib_loader {
             display: none !important;
           }
@@ -57,6 +63,7 @@
 
           .sib-email-area {
             label {
+
               border: 2px solid $beigegold;
               border-radius: $border-radius;
               padding: 0;
@@ -66,7 +73,9 @@
               background-color: $beigegold;
 
               input {
+                font-family: $font-family-body;
                 font-size: $font-size;
+                line-height: $line-height;
                 padding: $spacing-xxs $spacing-xs;
                 border: 0;
               }

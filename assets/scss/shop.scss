@@ -102,7 +102,7 @@ html, body {
   -webkit-text-size-adjust: 100%;
   vertical-align: baseline;
   background: transparent;
-  line-height: 1.6em;
+  line-height: $line-height;
 }
 
 * {
@@ -111,6 +111,8 @@ html, body {
 
 h1, h2, h3, h4, h5, h6, strong, a {
   font-family: $font-family-headline;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -133,8 +135,22 @@ h2 {
   font-size: $font-size-h2;
 }
 
+h4 {
+  font-family: $font-family-headline;
+  font-size: $font-size-large;
+  line-height: $line-height-large;
+  font-weight: normal;
+  margin-bottom: $spacing-xxs;
+}
+
+a {
+  text-decoration: none;
+  color: $font-color-accent-dark;
+}
+
 p {
   padding-bottom: $spacing-xxs;
+  margin: 0;
 
   a {
     font-family: $font-family-body;
@@ -185,6 +201,11 @@ hr {
   }
   */
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -197,6 +218,7 @@ table {
 
 #page-container {
   padding-top: $menu-height;
+  position: relative;
 }
 
 .mt {

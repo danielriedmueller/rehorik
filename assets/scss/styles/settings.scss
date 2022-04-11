@@ -64,9 +64,6 @@ $spacing-xxxs: 3px;
 $product-view-grid-gap: $spacing-l;
 
 $section-padding-top-bottom: $spacing-xl;
-$sidebar-width: 190px;
-
-$section-padding-top-bottom: $spacing-xl;
 $section-padding-small: $spacing-l;
 
 $border-radius: 8px;
@@ -78,6 +75,7 @@ $logo-size-small: 80px;
 $cart-coupon-width: 300px;
 $cart-coupon-width-broad: 380px;
 
+$sidebar-width: 190px;
 $hugo-head-size: 90px;
 $sigil-size: 65px;
 $footer-items-width: 202px;
@@ -85,3 +83,11 @@ $hint-width: 275px;
 $hint-width-large: 575px;
 $hint-height: 45px;
 $timeline-height: 800px;
+
+:root {
+  --slider-height: 600px;
+
+  @media all and (max-width: $small-breakpoint) {
+    --slider-height: 485px;
+  }
+}

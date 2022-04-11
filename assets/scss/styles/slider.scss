@@ -1,16 +1,14 @@
 #slider {
   .slider-image {
     width: auto;
-    height: 600px;
+    height: var(--slider-height);
     background: transparent none no-repeat center center;
-
-    @media all and (max-width: $small-breakpoint) {
-      height: 485px;
-    }
+    object-fit: cover;
   }
 
   li .slider-image {
     background-image: var(--image-large);
+    background-size: cover;
 
     @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
       background-image: var(--image-medium);
@@ -34,6 +32,7 @@
 
     h1 {
       line-height: $line-height-very-large;
+      color: #fff;
     }
 
     @media all and (max-width: $small-breakpoint) {
@@ -134,29 +133,21 @@ ul#slider, ul#slider li, ul#slider li img {
   width: 100%;
 }
 
-ul#slider img {
-  height: 600px;
-  object-fit: cover;
-}
-
 #slider > .tns-item {
   vertical-align: middle;
   position: relative;
-
-  .slider-image {
-    background-size: cover;
-  }
 }
 
 #tns-controls-container {
   button {
     background: transparent url("../img/pfeil_weiss.svg") no-repeat 0 0;
     border: none;
-    width: 45px;
-    height: 45px;
-    background-size: 25px;
+    $size: 46px;
+    width: $size;
+    height: $size;
+    background-size: 26px;
     position: absolute;
-    top: 400px;
+    top: calc(var(--slider-height) / 2  + (#{$size} / 2));
     cursor: pointer;
     padding: 0;
 
