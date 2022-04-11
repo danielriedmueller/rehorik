@@ -5,7 +5,6 @@ header.rehorik-header {
   background-color: $weinrot;
   z-index: 10;
   padding: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,7 +170,7 @@ header.rehorik-header {
         }
 
         li.menu-item-has-children {
-          &.et-show-dropdown, &:hover {
+          &:hover {
             height: auto;
             padding-top: $spacing-xs;
             padding-bottom: $spacing-xs;

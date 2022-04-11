@@ -20,21 +20,4 @@
   &::before {
     content: none;
   }
-
-  &.flex {
-    display: flex;
-    flex-direction: row-reverse;
-
-    #primary {
-      max-width: 855px;
-    }
-
-    @media all and (max-width: $medium-breakpoint) {
-      flex-direction: column;
-    }
-
-    > *:only-child {
-      flex-basis: 100%;
-    }
-  }
 }

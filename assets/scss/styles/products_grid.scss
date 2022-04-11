@@ -5,6 +5,14 @@ ul.products.rehorik-products,
   justify-content: center;
   gap: $spacing-xxs;
 
+  li {
+    float: none;
+    margin: 0 !important;
+    border: none;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+
   &::before, &::after {
     content: none;
   }
@@ -50,14 +58,16 @@ div#rehorik-best-selling-products {
 
 /**
  * Shop page and Front page
- * Products loop
  */
-.shop.woocommerce #page-container ul.products.rehorik-products,
-.home #page-container ul.products.rehorik-products {
+.shop.woocommerce #page-container,
+.home #page-container {
+  /**
+   * Products loop
+   */
+  ul.products.rehorik-products {
     -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: 1fr;
-
 
     @media all and (max-width: 973px) {
       -ms-grid-columns: 1fr 1fr;
@@ -68,4 +78,5 @@ div#rehorik-best-selling-products {
       -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
     }
+  }
 }

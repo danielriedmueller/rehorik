@@ -2,6 +2,10 @@
   background: $grau none;
 
   .container {
+    h1 {
+      color: #fff;
+    }
+
     > div {
       display: grid;
       grid-template-columns: $footer-items-width $footer-items-width $footer-items-width $footer-items-width $footer-items-width;

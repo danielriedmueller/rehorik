@@ -5,6 +5,7 @@
 @import "styles/products_grid";
 @import "styles/header";
 @import "styles/footer";
+@import "styles/main";
 @import "styles/locations";
 @import "styles/cart/cart";
 @import "styles/cart/cart_totals";
@@ -169,12 +170,6 @@ hr {
 }
 
 .woocommerce-page {
-  #content-area {
-    @media all and (max-width: $small-breakpoint) {
-      margin-bottom: $spacing-xl;
-    }
-  }
-
   h1 {
     font-weight: bold;
     letter-spacing: 1px;
@@ -193,13 +188,6 @@ hr {
     }
   }
 }
-
-  /*
-  #content-area table td, #content-area table th {
-    padding: 0 $spacing-xs $spacing-s $spacing-xs;
-    vertical-align: top;
-  }
-  */
 
 ul {
   margin: 0;
