@@ -65,6 +65,8 @@ body.rehorik.woocommerce-cart {
     font-size: $font-size !important;
     padding: $spacing-xxs;
     height: 50px;
+    border: none;
+    font-family: $font-family-body;
 
     &:focus {
       color: #fff;

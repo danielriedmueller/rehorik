@@ -1,8 +1,6 @@
 <?php
 show_admin_bar(true);
 
-add_theme_support('woocommerce');
-
 define('ONE_CUP_OF_COFFEE_IN_GRAMS', 10);
 define('FREE_SHIPPING_AMOUNT', 49);
 define('MAX_DISPLAY_ORIGIN_COUNTRIES', 1);

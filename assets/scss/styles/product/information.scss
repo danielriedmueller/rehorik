@@ -38,7 +38,6 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       margin: 0 0 0 $row-padding;
     }
 
-
     @media all and (max-width: $medium-breakpoint) {
       padding: $row-padding;
       grid-template-columns: 1fr;
@@ -95,8 +94,26 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
           color: $beigegold;
         }
 
+        tr td p, tr th p {
+          padding: 0;
+          line-height: $line-height;
+        }
+
+        tr td p a {
+          color: #fff;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        tr th p a {
+          color: $beigegold;
+        }
+
         tr th, tr td {
           line-height: $line-height;
+          text-align: left;
         }
 
         tr {
