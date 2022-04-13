@@ -2,7 +2,12 @@
   color: $beigegold;
   position: absolute;
   left: 0;
-  bottom: -$spacing-l - $hint-height;
+
+  top: $slider-height + $spacing-s;
+  @media all and (max-width: $small-breakpoint) {
+    top: $slider-height-small + $spacing-s;
+  }
+
   font-weight: bold;
   z-index: 9;
 

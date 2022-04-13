@@ -1,11 +1,11 @@
 #slider {
   .slider-image {
     width: auto;
-    height: 600px;
+    height: $slider-height;
     background: transparent none no-repeat center center;
 
     @media all and (max-width: $small-breakpoint) {
-      height: 485px;
+      height: $slider-height-small;
     }
   }
 
