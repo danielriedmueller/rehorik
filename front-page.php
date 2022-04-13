@@ -40,28 +40,12 @@ get_template_part('templates/header/slider', null, ['items' => [
 ]]);
 ?>
 <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
-<div class="page-title-outer">
-    <div class='page-title'><h1>Shop</h1></div>
-    <div class="rehorik-hint">
-        <input type="checkbox">
-        <div>Aktuelle Informationen</div>
-        <div>
-            <div>
-                Endlich ist es soweit: die neuen Veranstaltungstermine sind online. Feiert, genießt & lernt mit uns.
-                <br>
-                Hier geht's zu den aktuellen <a href="/produkt-kategorie/veranstaltungen/">Events</a>.
-            </div>
-            <hr>
-            <div>
-                Aufgrund von Lieferproblemen beim Rohkaffe kommt es bei einigen Kaffeesorten zu einer
-                Versandverzögerung.
-                Wir bitten um Verständnis.
-            </div>
-        </div>
-    </div>
-</div>
+<?php get_template_part('templates/hint') ?>
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
+        <li class="product-category product">
+            <?php get_template_part('templates/orderbird-chooser'); ?>
+        </li>
         <?php
             $product_categories = getShopFrontPageCategories();
             foreach ($product_categories as $category) {

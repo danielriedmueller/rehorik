@@ -2,7 +2,7 @@
   color: $beigegold;
   position: absolute;
   left: 0;
-  bottom: -$spacing-xl - $hint-height;
+  top: calc(var(--slider-height) + 20) ;
   font-weight: bold;
   z-index: 8;
 
