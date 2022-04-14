@@ -121,6 +121,7 @@ h1 {
   font-weight: bold;
   letter-spacing: 2px;
   font-size: $font-size-h1;
+  line-height: $line-height-large;
   text-align: center;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -128,7 +129,6 @@ h1 {
   @media all and (max-width: $small-breakpoint) {
     font-size: $font-size-h2 !important;
     letter-spacing: 1px;
-    line-height: $line-height-large;
   }
 }
 

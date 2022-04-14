@@ -1,4 +1,4 @@
-button, a.button, button.button {
+button, a.button, button.button, .woocommerce-message a.button.wc-forward {
   border-radius: $border-radius !important;
   text-align: center;
   color: #fff;
@@ -28,28 +28,5 @@ button, a.button, button.button {
     background-color: $beigegold;
     text-align: center;
     width: $cart-coupon-width;
-  }
-}
-
-.woocommerce .woocommerce-notices-wrapper {
-  .woocommerce-error,
-  .woocommerce-info,
-  .woocommerce-message {
-    a.button {
-      color: #fff !important;
-    }
-
-    a.button:hover {
-      background-color: $weinrot !important;
-      color: $beigegold !important;
-    }
-
-    @media all and (max-width: $small-breakpoint) {
-      a.button {
-        float: none;
-        display: block;
-        text-align: center;
-      }
-    }
   }
 }

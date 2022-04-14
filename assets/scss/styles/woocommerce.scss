@@ -19,15 +19,18 @@
   .woocommerce-error,
   .woocommerce-info,
   .woocommerce-message {
-    background-color: #fff !important;
-    color: $font-color !important;
-    line-height: $line-height-large;
+    background-color: #fff;
+    color: $font-color;
+    padding: $spacing;
+    border: 1px solid $beigegold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 $spacing 0;
 
     a {
-      color: $font-color-accent !important;
+      color: $font-color-accent;
     }
-
-    border: 1px solid $beigegold !important;
   }
 }
 
