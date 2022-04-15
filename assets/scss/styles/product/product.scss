@@ -1,10 +1,11 @@
 .rehorik.single-product .rehorik-product.product.detail-view {
   margin-bottom: $product-view-grid-gap;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr max-content;
   grid-template-areas:
     "gallery title-price"
     "gallery goes-with"
+    "gallery add-to-cart-message"
     "gallery add-to-cart"
     "video add-to-cart"
     "information information"
@@ -14,6 +15,7 @@
   .rehorik-product-view-title-price {margin: 0 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2;}
   .rehorik-add-to-cart-container {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2;}
   .rehorik-product-goes-with:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2;}
+  .woocommerce-notices-wrapper:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2;}
   .rehorik-product-video:not(:empty) {margin: $product-view-grid-gap / 2 $product-view-grid-gap / 2 $product-view-grid-gap / 2 0;}
   .rehorik-product-information {margin: $product-view-grid-gap / 2 0 0 0;}
   h1.product_title {margin: 0 0 $product-view-grid-gap 0;}
@@ -24,6 +26,7 @@
     "gallery"
     "title-price"
     "goes-with"
+    "add-to-cart-message"
     "add-to-cart"
     "video"
     "information"
@@ -33,6 +36,7 @@
     .rehorik-product-view-title-price {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
     .rehorik-add-to-cart-container {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
     .rehorik-product-goes-with:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
+    .woocommerce-notices-wrapper:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
     .rehorik-product-video:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
     .rehorik-product-information {margin: $product-view-grid-gap / 2 0 0 0;}
   }
@@ -43,6 +47,10 @@
 
   .rehorik-product-goes-with {
     grid-area: goes-with;
+  }
+
+  .woocommerce-notices-wrapper {
+    grid-area: add-to-cart-message;
   }
 
   .rehorik-product-view-title-price {

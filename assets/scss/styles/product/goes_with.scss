@@ -1,16 +1,13 @@
 .rehorik-product-goes-with {
   text-transform: uppercase;
   padding: $spacing-xs;
-  margin-bottom: $spacing-xs;
   background: transparent url("../img/green-texture.png") repeat left top;
   color: #fff;
   line-height: $line-height-narrow;
   align-self: center;
   text-align: center;
-  max-width: 265px;
 
   > div:first-child {
-
     margin-bottom: $spacing-xxs;
   }
 

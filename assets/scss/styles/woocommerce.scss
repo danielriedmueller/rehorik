@@ -27,8 +27,14 @@
       color: $font-color-accent !important;
     }
 
-    border: 1px solid $beigegold !important;
+    border: 1px solid $beigegold;
+    border-radius: $border-radius;
   }
+}
+
+.rehorik-product.detail-view.product .woocommerce-message {
+  margin: 0;
+  padding: 0 !important;
 }
 
 .woocommerce-form__label {

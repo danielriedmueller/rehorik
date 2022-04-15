@@ -1,0 +1,68 @@
+body.rehorik.woocommerce div.rehorik-product {
+  div.woocommerce-notices-wrapper .rehorik-add-to-cart-message {
+    display: flex;
+
+    span:first-child {
+      padding: $spacing-xxs;
+      flex-basis: 66.66%;
+      line-height: $line-height;
+    }
+
+    span:last-child {
+      flex-basis: 33.33%;
+      background-image: url("../img/warenkorb-white.svg");
+      background-color: $beigegold;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: $spacing-s;
+      border-bottom-right-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+
+      &:hover {
+        background-color: $product-default-color;
+        background-image: url("../img/warenkorb-16px.svg");
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @media all and (max-width: $medium-breakpoint) {
+      span:first-child {
+        flex-basis: 50%;
+      }
+
+      span:last-child {
+        flex-basis: 50%;
+      }
+    }
+  }
+
+  &.product_cat-crema {
+    div.woocommerce-notices-wrapper .rehorik-add-to-cart-message span:last-child:hover {
+      background-color: $product-crema-color;
+    }
+  }
+
+  &.product_cat-filterkaffee {
+    div.woocommerce-notices-wrapper .rehorik-add-to-cart-message span:last-child:hover {
+      background-color: $product-filterkaffee-color;
+    }
+  }
+
+  &.product_cat-espresso {
+    div.woocommerce-notices-wrapper .rehorik-add-to-cart-message span:last-child:hover {
+      background-color: $product-espresso-color;
+    }
+  }
+
+  &.product_cat-espresso.product_cat-filterkaffee {
+    div.woocommerce-notices-wrapper .rehorik-add-to-cart-message span:last-child:hover {
+      background-color: $product-filterkaffee-color;
+    }
+  }
+}
+
