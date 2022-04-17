@@ -4,15 +4,12 @@ body.rehorik.woocommerce div.rehorik-product {
     display: flex;
     flex-direction: column;
 
-    form.cart {
-      display: grid;
-    }
-
     form:not(.variations_form).cart {
-      grid-template-columns: 1fr;
+      display: flex;
     }
 
     form.variations_form.cart {
+      display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas:
         "variations variations variations"
@@ -32,37 +29,38 @@ body.rehorik.woocommerce div.rehorik-product {
       margin-bottom: $product-view-grid-gap / 2;
     }
 
+    div.quantity {
+      margin: 0 0 0 0 !important;
+      float: none;
+
+      input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+
+    button[type="submit"].single_add_to_cart_button {
+      transition: none;
+      padding: $spacing-xxs $spacing-s $spacing-xxs 37px !important;
+      background: $beigegold url("../img/warenkorb-white.svg") no-repeat left 10px center;
+      background-size: $spacing-s;
+      margin-top: 0;
+      border-radius: 0 $border-radius $border-radius 0 !important;
+
+      &:hover {
+        color: $beigegold !important;
+        background: $weinrot url("../img/warenkorb-16px.svg") no-repeat left 10px center !important;
+        background-size: $spacing-s !important;
+      }
+    }
+
     div.single_variation_wrap {
       grid-area: add-to-cart-button;
 
       .woocommerce-variation-add-to-cart {
         display: flex;
         margin-top: $product-view-grid-gap / 2;
-
-        button[type="submit"].single_add_to_cart_button {
-          transition: none;
-          padding: $spacing-xxs $spacing-s $spacing-xxs 37px !important;
-          background: $beigegold url("../img/warenkorb-white.svg") no-repeat left 10px center;
-          background-size: $spacing-s;
-          margin-top: 0;
-          border-radius: 0 $border-radius $border-radius 0 !important;
-
-          &:hover {
-            color: $beigegold !important;
-            background: $weinrot url("../img/warenkorb-16px.svg") no-repeat left 10px center !important;
-            background-size: $spacing-s !important;
-          }
-        }
-
-        div.quantity {
-          margin: 0 0 0 0 !important;
-          float: none;
-
-          input {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-        }
       }
     }
   }
