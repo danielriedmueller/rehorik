@@ -1,5 +1,8 @@
 .rehorik-product-goes-with {
-  max-width: 263px;
+  @media all and (min-width: $small-breakpoint + 1) {
+    max-width: 263px;
+  }
+
   text-transform: uppercase;
   padding: $spacing-xs;
   background: transparent url("../img/green-texture.png") repeat left top;
