@@ -84,3 +84,17 @@ function s9_remove_post_custom_fields_metabox() {
     }
 }
 add_action( 'admin_menu' , 's9_remove_post_custom_fields_metabox' );
+
+/**
+ * Add to cart message
+ */
+add_filter( 'wc_add_to_cart_message_html', function( $message, $products ) {
+    $url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
+    $count = WC()->cart->get_cart_contents_count();
+    return sprintf(
+        '<div class="rehorik-add-to-cart-message"><span>Es %s <b>%s Artikel</b> in deinem Warenkorb</b></span><span><a href="%s"></a></span></div>',
+        $count === 1 ? 'ist' : 'sind',
+        $count,
+        esc_url($url)
+    );
+}, 10, 2);

@@ -81,8 +81,8 @@ header.rehorik-header {
 
       li.menu-item {
         text-transform: none;
+        border-right: 1px solid rgba(92, 13, 47, 0.5);
 
-        border-right: 1px solid $weinrot;
         &:last-child,
         &:nth-last-of-type(-n+2):not(:nth-child(even)) {
           border: none;
@@ -196,7 +196,7 @@ header.rehorik-header {
 
                 border: none;
                 &:nth-child(2n-1) {
-                  border-right: 1px solid $weinrot;
+                  border-right: 1px solid rgba(92, 13, 47, 0.5);
                   padding-right: $spacing-s;
                 }
               }

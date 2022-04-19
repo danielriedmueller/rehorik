@@ -55,6 +55,10 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
         <?php do_action('rehorik_product_view_add_to_cart'); ?>
     </div>
 
+    <div class="rehorik-sigils-bar">
+        <?php do_action('rehorik_product_view_sigils_bar'); ?>
+    </div>
+
     <div class="rehorik-product-information">
         <?php do_action('rehorik_product_information'); ?>
     </div>

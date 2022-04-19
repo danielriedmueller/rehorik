@@ -2,59 +2,55 @@ $sigilHeight: $sigil-size;
 $sigilWidth: $sigilHeight * 1.5;
 
 // Product page
-.rehorik.single-product .sigil-container {
+.rehorik.single-product .rehorik-sigils-bar {
   display: flex;
-  flex-direction: row;
-  margin: $spacing 0 0 0;
 
-  > div:not(:last-child) {
-    margin-right: $spacing-xs;
-  }
+  .sigil-container {
+    flex: 2;
+    display: grid;
 
-  > .biosigil {
-    display: flex;
-    align-items: flex-end;
-    font-family: "Myriad Pro Regular", serif;
-    line-height: 3px;
-    font-size: 12px;
-    background: transparent url("../img/biosiegel.svg") no-repeat left top;
-    $bioSigilHeight: 0.81 * $sigilHeight;
-    $bioSigilHeight: 0.81 * $sigilHeight;
-    $bioSigilWidth: $bioSigilHeight * 1.5;
+    grid-gap: $spacing-xs;
+    grid-template-columns: auto auto auto 1fr;
 
-    @media all and (min-width: $small-breakpoint + 1) {
-      flex: 0 0 $bioSigilWidth;
+    @media all and (max-width: $small-breakpoint) {
+      grid-template-columns: auto 1fr;
     }
 
-    width: $bioSigilWidth;
-    height: $sigilHeight;
-    background-size: $bioSigilWidth $bioSigilHeight;
-  }
-
-  > .biosigil-de {
-    $deBioSigilHeight: $sigilHeight;
-    $deBioSigilWidth: $deBioSigilHeight * 1.2;
-
-    @media all and (min-width: $small-breakpoint + 1) {
-      flex: 0 0 $deBioSigilWidth;
+    > .biosigil {
+      display: flex;
+      align-items: flex-end;
+      font-family: "Myriad Pro Regular", serif;
+      line-height: 3px;
+      font-size: 12px;
+      background: transparent url("../img/biosiegel.svg") no-repeat left top;
+      $bioSigilHeight: 0.81 * $sigilHeight;
+      $bioSigilHeight: 0.81 * $sigilHeight;
+      $bioSigilWidth: $bioSigilHeight * 1.5;
+      width: $bioSigilWidth;
+      height: $sigilHeight;
+      background-size: $bioSigilWidth $bioSigilHeight;
     }
 
-    width: $deBioSigilWidth;
-    height: $deBioSigilHeight;
-    background: transparent url("../img/biosiegel-de.svg") no-repeat center center;
-    background-size: $deBioSigilWidth + 11px $deBioSigilHeight + 11px;
-  }
+    > .biosigil-de {
+      $deBioSigilHeight: $sigilHeight;
+      $deBioSigilWidth: $deBioSigilHeight * 1.2;
+      width: $deBioSigilWidth;
+      height: $deBioSigilHeight;
+      background: transparent url("../img/biosiegel-de.svg") no-repeat center center;
+      background-size: $deBioSigilWidth + 11px $deBioSigilHeight + 11px;
+    }
 
-  > .vegansigil {
-    background: transparent url("../img/vegansiegel.svg") no-repeat left top;
-    width: $sigilHeight;
-    height: $sigilHeight;
-  }
+    > .vegansigil {
+      background: transparent url("../img/vegansiegel.svg") no-repeat left top;
+      width: $sigilHeight;
+      height: $sigilHeight;
+    }
 
-  > .biodynamicsigil {
-    background: transparent url("../img/biodynamischsiegel.svg") no-repeat left top;
-    height: $sigilHeight;
-    width: $sigilHeight;
+    > .biodynamicsigil {
+      background: transparent url("../img/biodynamischsiegel.svg") no-repeat left top;
+      height: $sigilHeight;
+      width: $sigilHeight;
+    }
   }
 }
 
