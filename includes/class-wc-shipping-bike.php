@@ -1,6 +1,5 @@
 <?php
 
-
 class WC_Shipping_Bike extends WC_Shipping_Method
 {
     /**
