@@ -17,6 +17,7 @@ body.rehorik.woocommerce div.rehorik-product {
       background-size: $spacing-s;
       border-bottom-right-radius: $border-radius;
       border-top-right-radius: $border-radius;
+      transform: translateX(2px);
 
       &:hover {
         background-color: $product-default-color;
