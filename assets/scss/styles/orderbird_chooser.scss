@@ -14,7 +14,7 @@
 
     h2 {
       flex: 1 1 0;
-      background: rgba(0, 0, 0, 0.3) none;
+      background: rgba(0, 0, 0, $opacity) none;
       backdrop-filter: blur(3px);
       line-height: $line-height;
       margin: $spacing-s;
@@ -29,12 +29,13 @@
     color: $beigegold;
     width: 100%;
     padding: $spacing-s;
-    background: rgba(0, 0, 0, 0.3) none;
+    background: rgba(0, 0, 0, $opacity) none;
     backdrop-filter: blur(3px);
     font-size: $spacing-s;
     font-weight: normal;
     text-align: center;
     text-transform: uppercase;
+    z-index: 1;
   }
 
   label {

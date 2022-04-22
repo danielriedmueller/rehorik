@@ -63,7 +63,7 @@
   }
 
   .quality-text {
-    background: rgba(0, 0, 0, 0.3) none;
+    background: rgba(0, 0, 0, $opacity) none;
     backdrop-filter: blur(3px);
     width: 100%;
     z-index: 9;
