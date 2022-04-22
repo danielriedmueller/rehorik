@@ -1,0 +1,35 @@
+.rehorik.woocommerce-checkout #payment {
+  background: transparent none;
+
+  ul.wc_payment_methods {
+    padding: 0;
+    border: none;
+
+    li.wc_payment_method {
+      margin-bottom: $spacing-xs;
+      line-height: $line-height;
+
+      label {
+        text-transform: uppercase;
+        font-size: $font-size;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        font-family: $font-family-body;
+        line-height: $line-height;
+        font-weight: normal;
+      }
+    }
+
+    .payment_box {
+      padding: $spacing-s;
+      margin: $spacing-s 0 0 0;
+      font-size: $font-size;
+      font-family: $font-family-body;
+      line-height: $line-height;
+      color: $font-color;
+    }
+  }
+}

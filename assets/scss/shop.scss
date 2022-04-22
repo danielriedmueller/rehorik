@@ -26,7 +26,9 @@
 @import "styles/product/hugo_head";
 @import "styles/product/coffee_strength_flavour";
 @import "styles/banner";
-@import "styles/checkout";
+@import "styles/checkout/checkout";
+@import "styles/checkout/payment";
+@import "styles/checkout/review_order";
 @import "styles/category/categories";
 @import "styles/product/sigils";
 @import "styles/product/information";
@@ -120,7 +122,6 @@ h1, h2, h3, h4, h5, h6, strong, a {
 
 h1 {
   text-transform: uppercase;
-  font-weight: bold;
   letter-spacing: 2px;
   font-size: $font-size-h1;
   line-height: $line-height-large;
@@ -134,8 +135,12 @@ h1 {
   }
 }
 
-h2 {
+h2, h3 {
   font-size: $font-size-h2;
+  line-height: $line-height-large;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: normal;
 }
 
 h4 {
@@ -171,26 +176,6 @@ hr {
   border-top: 1px solid $beigegold;
 }
 
-.woocommerce-page {
-  h1 {
-    font-weight: bold;
-    letter-spacing: 1px;
-    font-size: $font-size-h1;
-  }
-
-  a {
-    color: $font-color-accent-dark;
-  }
-
-  .woocommerce .woocommerce-error,
-  .woocommerce .woocommerce-info,
-  .woocommerce .woocommerce-message {
-    a {
-      color: $font-color-accent-dark;
-    }
-  }
-}
-
 ul {
   margin: 0;
   padding: 0;
@@ -213,8 +198,4 @@ table {
 
 .mt {
   margin-top: $spacing;
-}
-
-input {
-  font-family: $font-family-body;
 }
