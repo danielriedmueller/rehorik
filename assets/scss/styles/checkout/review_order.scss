@@ -50,6 +50,10 @@
       object-fit: contain;
       width: $product-thumbnail-width;
       max-width: $product-thumbnail-width;
+
+      @media all and (max-width: $small-breakpoint) {
+        display: none;
+      }
     }
   }
 
@@ -68,7 +72,7 @@
 
     .wc-gzd-cart-info.units-info {
       font-weight: normal;
-      padding-top: $spacing-s;
+      padding: $spacing-xs 0;
     }
 
     dl {
