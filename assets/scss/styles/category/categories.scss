@@ -31,7 +31,7 @@ ul.rehorik-products.products {
       z-index: 100;
       top: $spacing;
       right: $spacing;
-      background: rgba(0, 0, 0, 0.3) url("../img/svg/icon-play.svg") no-repeat center center;
+      background: rgba(0, 0, 0, $opacity) url("../img/svg/icon-play.svg") no-repeat center center;
       backdrop-filter: blur(3px);
       width: $spacing-xl;
       height: $spacing-xl;
@@ -53,7 +53,7 @@ ul.rehorik-products.products {
       color: $font-color-accent;
       width: 100%;
       padding: $spacing-s;
-      background: rgba(0, 0, 0, 0.3) none;
+      background: rgba(0, 0, 0, $opacity) none;
       backdrop-filter: blur(3px);
       font-size: $font-size;
       font-weight: normal;

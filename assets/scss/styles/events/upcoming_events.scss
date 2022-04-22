@@ -18,7 +18,7 @@ li.veranstaltungen {
       }
 
       &.tickets-not-available span {
-        opacity: 0.3;
+        opacity: $opacity;
       }
 
       span {
