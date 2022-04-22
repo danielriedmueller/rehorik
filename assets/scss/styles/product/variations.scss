@@ -5,8 +5,8 @@ body.rehorik.woocommerce div.product.rehorik-product {
     margin-bottom: 0;
 
     table.variations {
-      tbody tr:last-child td {
-        padding-bottom: 0 !important;
+      tbody tr:first-child ul {
+        margin-bottom: $product-view-grid-gap;
       }
 
       th {

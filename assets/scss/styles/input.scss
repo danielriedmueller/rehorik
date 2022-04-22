@@ -1,0 +1,19 @@
+input, select, textarea {
+  font-family: $font-family-body;
+  font-size: $font-size-small;
+  line-height: $line-height;
+  border-radius: 0;
+  border: 1px solid $beigegold;
+  padding: $spacing-xs;
+}
+
+.select2.select2-container {
+  .select2-selection__rendered, .select2-selection {
+    font-family: $font-family-body;
+    font-size: $font-size-small;
+    line-height: $line-height;
+    border-radius: 0;
+    border: 1px solid $beigegold;
+    padding: $spacing-xxs;
+  }
+}

@@ -37,7 +37,8 @@
     .product-thumbnail {
       width: $product-thumbnail-width + $spacing-l;
 
-      img{
+      img {
+        border-radius: $border-radius;
         object-fit: contain;
         width: $product-thumbnail-width;
         margin-right: 0;
@@ -97,5 +98,25 @@
 
   dl.variation dt {
     font-weight: normal;
+  }
+
+
+  .woocommerce-cart {
+    button.button[name="apply_coupon"][type="submit"] {
+      width: $cart-coupon-width;
+    }
+
+    button.button[name="apply_coupon"][type="submit"] {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .rehorik-cart-totals a.checkout-button.button {
+    width: 100%;
+  }
+
+  .rehorik-update-cart button.button[name="update_cart"][type="submit"] {
+    width: $cart-coupon-width;
   }
 }

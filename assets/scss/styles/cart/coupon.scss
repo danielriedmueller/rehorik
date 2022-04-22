@@ -35,15 +35,19 @@
         overflow: hidden;
 
         input.input-text {
-          height: $spacing-l;
+          height: 100%;
           background-color: transparent;
           border-radius: $border-radius;
           color: $font-color-accent;
-          padding: 0 0 5px 0;
           border: none;
           text-align: center;
           flex-grow: 1;
           font-size: $font-size;
+          padding: 11px 0 13px 0;
+
+          &:focus-visible {
+            outline: none;
+          }
         }
       }
 

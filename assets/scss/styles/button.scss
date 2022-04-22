@@ -1,32 +1,34 @@
-button, a.button, button.button, .woocommerce-message a.button.wc-forward {
-  border-radius: $border-radius !important;
-  text-align: center;
-  color: #fff;
-  border: none;
-  font-size: $font-size;
-  background-color: $beigegold;
-  padding: $spacing-s $spacing;
-  text-transform: uppercase;
-  text-decoration: none;
-
-  &:hover {
-    color: $beigegold !important;
-    background-color: $weinrot !important;
-  }
-}
-
-.cart .woocommerce {
-  button.button[name="apply_coupon"][type="submit"],
-  button.button[name="update_cart"][type="submit"],
-  a.checkout-button.button.alt.wc-forward {
-    padding: 1px $spacing !important;
-    font-weight: bold;
-    font-size: $font-size;
+.rehorik {
+  button,
+  a.button,
+  button.button,
+  .woocommerce-message a.button.wc-forward,
+  .woocommerce a.button,
+  .woocommerce button.button,
+  .woocommerce input.button {
+    font-family: $font-family-headline;
+    font-weight: normal;
+    border-radius: $border-radius;
+    text-align: center;
     color: #fff;
     border: none;
-    border-radius: $border-radius;
+    font-size: $font-size;
     background-color: $beigegold;
-    text-align: center;
+    padding: $spacing-xs $spacing;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: $beigegold;
+      background-color: $weinrot;
+    }
+  }
+
+  .woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit:disabled[disabled], .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button:disabled[disabled], .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled] {
+    padding: $spacing-xs $spacing;
+    color: #fff;
     width: $cart-coupon-width;
   }
 }
+

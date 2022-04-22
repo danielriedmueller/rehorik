@@ -1,3 +1,39 @@
+.rehorik.woocommerce-checkout {
+  p.form-row {
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: $font-size;
+    line-height: $line-height;
+    padding: $spacing-xs;
+    border: 1px solid $beigegold;
+    font-weight: normal;
+    font-family: $font-family-headline;
+    color: $weinrot;
+  }
+
+  button#place_order {
+    float: right;
+    background-color: $weinrot;
+    color: $beigegold;
+    padding: $spacing-s (($spacing * 2) + $spacing-xxs) $spacing-s $spacing;
+    background-image: url("../img/svg/strength_filled.svg");
+    background-size: 20px;
+    background-position: right $spacing center;
+    background-repeat: no-repeat;
+
+    &:hover {
+      background-color: $beigegold;
+      color: #fff;
+      background-image: url("../img/svg/strength_filled_white.svg");
+    }
+  }
+}
+
+/*
 .entry-content {
   .woocommerce {
     .checkout {
@@ -60,5 +96,4 @@
     }
   }
 }
-
-
+*/

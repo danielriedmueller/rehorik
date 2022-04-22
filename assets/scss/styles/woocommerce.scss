@@ -23,11 +23,12 @@
     color: $font-color;
     padding: $spacing;
     border: 1px solid $beigegold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 0 0 $spacing 0;
     border-radius: $border-radius;
+
+    &::before {
+      content: none;
+    }
 
     a {
       color: $font-color-accent-dark;

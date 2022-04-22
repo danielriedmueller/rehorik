@@ -10,6 +10,7 @@
 @import "styles/cart/cart";
 @import "styles/cart/cart_totals";
 @import "styles/cart/coupon";
+@import "styles/input";
 @import "styles/button";
 @import "styles/sidebar";
 @import "styles/rehorik_logo";
@@ -212,4 +213,8 @@ table {
 
 .mt {
   margin-top: $spacing;
+}
+
+input {
+  font-family: $font-family-body;
 }
