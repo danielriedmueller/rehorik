@@ -54,7 +54,7 @@
   }
 
   .slider-text {
-    background: rgba(0, 0, 0, 0.3) none;
+    background: rgba(0, 0, 0, $opacity) none;
     backdrop-filter: blur(3px);
     z-index: 9;
     padding: $spacing-s;
