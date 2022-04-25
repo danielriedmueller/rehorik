@@ -11,5 +11,5 @@
         <h2>Café 190°</h2>
         <h2>Rösterei & Kaffeehaus</h2>
     </div>
-    <h2>Reservieren</h2>
+    <h2><span>Reservieren</span></h2>
 </div>
