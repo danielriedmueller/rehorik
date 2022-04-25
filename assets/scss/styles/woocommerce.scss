@@ -15,6 +15,12 @@
   border: 0;
 }
 
+.rehorik .woocommerce form .woocommerce-form-row,
+.rehorik .woocommerce form .form-row,
+.rehorik .woocommerce form fieldset {
+  margin-bottom: $spacing-s;
+}
+
 .woocommerce {
   .woocommerce-error,
   .woocommerce-info,

@@ -3,14 +3,14 @@ input, select, textarea {
   font-size: $font-size-small;
   line-height: $line-height;
   border-radius: 0;
-  border: 1px solid $grau;
+  border: 1px solid rgba(57, 53, 54, 0.2);
   padding: $spacing-xs;
 }
 
 .select2.select2-container {
   line-height: $line-height;
   border-radius: 0;
-  border: 1px solid $grau;
+  border: 1px solid rgba(57, 53, 54, 0.2);
   padding: $spacing-xs;
 
   .select2-selection--single {
