@@ -1,0 +1,12 @@
+table#locations-table {
+  td {
+    padding: 0 $spacing-xs $spacing-xxs 0;
+  }
+
+  a.menu-icon {
+    background: transparent url("../img/speisekarte.png") no-repeat center center;
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+}
