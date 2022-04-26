@@ -1,23 +1,14 @@
 <?php
 get_header();
-get_template_part('templates/header/slider', null, [
-    'items' => [
-        [
-            'claim' => 'Vom Ursprung inspiriert',
-            'img' => 'header-tradition',
-            'buttons' => [
-                '/produkt/karlsbader-mischung' => 'Unsere Karslbader Mischung',
-            ],
-        ],
-        [
-            'claim' => 'Bis heute weitergelebt',
-            'img' => 'startseite-header-roesterei',
-            'buttons' => [
-                '/produkt/hochlandmischung' => 'Regensburger Mischung',
-            ],
-        ],
-    ],
-]);
+get_template_part('templates/header/slider', null, ['items' => [
+    [
+        'claim' => 'Überall unterwegs',
+        'img'=> 'header-standorte',
+        'buttons' => [
+            'mailto:<?= BARISTASTORE_EMAIL ?>?subject=Beratungstermin%20Maschinen%20und%20Equipment' => 'Alle Events in unseren Standorten'
+        ]
+    ]
+]]);
 ?>
     <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
     <div class="page-title-outer">
