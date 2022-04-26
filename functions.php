@@ -92,7 +92,7 @@ require_once($baseDir . '/actions/rehorik.php');
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
     wp_enqueue_style('divi', $assetsDir . 'css/overwritten-divi.css', false, 1.1, 'all');
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 2.01, 'all');
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 2.02, 'all');
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
     wp_enqueue_script('product-cat-video', $assetsDir . 'js/product_cat_video.js', false, 1, true);
