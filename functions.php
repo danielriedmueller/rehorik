@@ -76,6 +76,7 @@ $baseDir = get_stylesheet_directory();
 
 require_once($baseDir . '/includes/class-wc-shipping-bike.php');
 require_once($baseDir . '/includes/class-wc-shipping-free-shipping-bike.php');
+require_once($baseDir . '/includes/class-tribe-tickets-plus-woocommerce-main.php');
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');
@@ -91,7 +92,7 @@ require_once($baseDir . '/actions/rehorik.php');
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
     wp_enqueue_style('divi', $assetsDir . 'css/overwritten-divi.css', false, 1.1, 'all');
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.98, 'all');
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 2.02, 'all');
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
     wp_enqueue_script('social-media-icons-scroll', $assetsDir . 'js/social_media_icons_scroll.js', false, 1, true);
     wp_enqueue_script('product-cat-video', $assetsDir . 'js/product_cat_video.js', false, 1, true);

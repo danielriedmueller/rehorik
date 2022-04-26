@@ -7,6 +7,7 @@ remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_noti
 add_action('rehorik_product_view', 'product_video', 1); // Video
 
 add_action('rehorik_product_view_title_price', 'woocommerce_template_single_title', 1); // Title
+add_action('rehorik_product_view_title_price', 'quality_name', 1); // Title
 add_action('rehorik_product_view_title_price', 'woocommerce_template_single_price', 1); // Price
 
 add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
@@ -52,6 +53,19 @@ function short_description() {
         echo sprintf(
             '<div class="rehorik-product-short-description">%s</div>',
             $post->post_excerpt
+        );
+    }
+}
+
+function quality_name() {
+    global $product;
+
+    $qualityName = $product->get_attribute('qualitaetsbezeichnung');
+
+    if (!empty($qualityName)) {
+        echo sprintf(
+            '<div class="rehorik-product-quality-name">%s</div>',
+            $qualityName
         );
     }
 }
