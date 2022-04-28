@@ -18,7 +18,7 @@
 
   > div > div {
     width: 80%;
-    max-width: 1080px;
+    max-width: $max-width;
     margin: auto;
     display: flex;
 
@@ -74,7 +74,6 @@
   }
 
   img {
-    border-radius: $border-radius;
     order: 3;
 
     @media all and (max-width: $medium-breakpoint) {

@@ -8,7 +8,7 @@ get_template_part('templates/header/slider', null, [
             'buttons' => [
                 'mailto:<?= BARISTASTORE_EMAIL ?>?subject=Beratungstermin%20Maschinen%20und%20Equipment' => 'Alle Events in unseren Standorten',
             ],
-        ]
+        ],
     ],
 ]);
 ?>
@@ -18,54 +18,153 @@ get_template_part('templates/header/slider', null, [
     </div>
     <div class="rehorik-page-introduction-outer">
         <div class="container">
-            <div class="rehorik-page-introduction">
-                <table id="locations-table">
-                    <tbody>
-                    <tr>
-                        <td><a href="#kaffeehaus">Rösterei & Kaffeehaus</a></td>
-                        <td>0941 / 59 57 92 27</td>
-                        <td>So. - Mi. 09:00 - 18:00, Do. - Sa. 09:00-23:00</td>
-                        <td><a href="#">Speisekarte</a></td>
-                        <td>
-                            <a href="https://app.resmio.com/rehorik-rosterei-kaffehaus/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Reservieren</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="#cafe190">Café 190°</a></td>
-                        <td>0941 / 59 57 92 27</td>
-                        <td>So. - Mi. 09:00 - 18:00, Do. - Sa. 09:00-23:00</td>
-                        <td><a href="#">Speisekarte</a></td>
-                        <td>
-                            <a href="https://app.resmio.com/cafe-190-grad/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Reservieren</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="#kaffeeladen">Kaffeeladen</a></td>
-                        <td>0941 / 58 65 276</td>
-                        <td>So. - Mi. 09:00 - 18:00, Do. - Sa. 09:00-23:00</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#weinkeller">Weinkeller</a></td>
-                        <td>0941 / 58 65 276</td>
-                        <td>So. - Mi. 09:00 - 18:00, Do. - Sa. 09:00-23:00</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#deliladen">Deliladen</a></td>
-                        <td>0941 / 788 35 350</td>
-                        <td>So. - Mi. 09:00 - 18:00, Do. - Sa. 09:00-23:00</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#dez">DEZ</a></td>
-                        <td>0941 / 297 99 996</td>
-                        <td>So. - Mi. 09:00 - 18:00, Do. - Sa. 09:00-23:00</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#gesandtenstraße">Gesandtenstraße</a></td>
-                        <td>0941 / 59 99 848</td>
-                        <td>So. - Mi. 09:00 - 18:00, Do. - Sa. 09:00-23:00</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div class="rehorik-page-introduction locations">
+                <div class="table-outer">
+                    <table id="locations-table">
+                        <tbody>
+                        <tr>
+                            <td><a href="#kaffeehaus">Rösterei & Kaffeehaus</a></td>
+                            <td>0941 / 59 57 92 27</td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>MO. - FR.</td>
+                                        <td>07:30 - 18:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SA.</td>
+                                        <td>09:00 - 18:00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td><a target="_blank" href="#">Speisekarte</a></td>
+                            <td>
+                                <a target="_blank"
+                                   href="https://app.resmio.com/rehorik-rosterei-kaffehaus/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Reservieren</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#cafe190">Café 190°</a></td>
+                            <td>0941 / 59 57 92 27</td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>SO. - MI.</td>
+                                        <td>09:00 - 18:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DO. - SA.</td>
+                                        <td>09:00 - 23:00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td><a target="_blank" href="#">Speisekarte</a></td>
+                            <td>
+                                <a target="_blank"
+                                   href="https://app.resmio.com/cafe-190-grad/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Reservieren</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#kaffeeladen">Kaffeeladen</a></td>
+                            <td>0941 / 58 65 276</td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>MO. - FR.</td>
+                                        <td>09:30 - 18:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SA.</td>
+                                        <td>09:00 - 18:00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#weinkeller">Weinkeller</a></td>
+                            <td>0941 / 58 65 276</td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>MO. - FR.</td>
+                                        <td>09:30 - 18:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SA.</td>
+                                        <td>09:00 - 18:00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#deliladen">Deliladen</a></td>
+                            <td>0941 / 788 35 350</td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>MO. - MI.</td>
+                                        <td>09:30 - 13:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>14:00 - 18:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DO. - FR.</td>
+                                        <td>09:30 - 18:30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SA.</td>
+                                        <td>09:00 - 16:00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#dez">DEZ</a></td>
+                            <td>0941 / 297 99 996</td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>MO. - SA.</td>
+                                        <td>09:30 - 19:00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#gesandtenstraße">Gesandtenstraße</a></td>
+                            <td>0941 / 59 99 848</td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>MO - FR.</td>
+                                        <td>10:00 - 19:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SA.</td>
+                                        <td>10:00 - 18:00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -88,7 +187,8 @@ get_template_part('templates/header/slider', null, [
                         Feeling für den Kaffee haben – das ist Arbeit
                         mit allen Sinnen.</p>
                 </div>
-                <img alt="Stammhaus" class="stammhaus" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/stammhaus-1000x900px.jpg' ?>">
+                <img alt="Stammhaus" class="stammhaus"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/stammhaus-1000x900px.jpg' ?>">
             </div>
         </div>
         <div id="cafe190">
@@ -114,7 +214,8 @@ get_template_part('templates/header/slider', null, [
                     </table>
                     <div>Telefon 0941 / 59 57 92 27</div>
                 </div>
-                <img alt="Cafe 190" class="cafe190" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/190-1000x746px.jpg' ?>">
+                <img alt="Cafe 190" class="cafe190"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/190-1000x746px.jpg' ?>">
             </div>
         </div>
         <div id="kaffeeladen">
@@ -143,7 +244,8 @@ get_template_part('templates/header/slider', null, [
                     </table>
                     <div>Telefon 0941 / 58 65 276</div>
                 </div>
-                <img alt="Kaffeeladen" class="kaffeeladen" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/kaffeeladen-1000x642px.jpg' ?>">
+                <img alt="Kaffeeladen" class="kaffeeladen"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/kaffeeladen-1000x642px.jpg' ?>">
             </div>
         </div>
         <div id="weinkeller">
@@ -173,7 +275,8 @@ get_template_part('templates/header/slider', null, [
                     </table>
                     <div class="mb-s">Telefon 0941 / 58 65 276</div>
                 </div>
-                <img alt="Weinkeller" class="weinkeller" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/weinkeller-1000x642px.jpg' ?>">
+                <img alt="Weinkeller" class="weinkeller"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/weinkeller-1000x642px.jpg' ?>">
             </div>
         </div>
         <div id="deliladen">
@@ -190,12 +293,21 @@ get_template_part('templates/header/slider', null, [
                     <table class="mb-s">
                         <tbody>
                         <tr>
-                            <td>SO. - MI.</td>
-                            <td>09:00 - 18:00 Uhr</td>
+                            <td>MO. - MI.</td>
+                            <td>09:30 - 13:00 Uhr</td>
+                            <td>14:00 - 18:00 Uhr</td>
                         </tr>
                         <tr>
-                            <td>DO. - SA.</td>
-                            <td>09:00 - 23:00 Uhr</td>
+                            <td>DO. - FR.</td>
+                            <td>09:30 - 18:30 Uhr</td>
+                        </tr>
+                        <tr>
+                            <td>SA.</td>
+                            <td>09:00 - 16:00 Uhr</td>
+                        </tr>
+                        <tr>
+                            <td>SO.</td>
+                            <td>Geschlossen</td>
                         </tr>
                         </tbody>
                     </table>
@@ -203,14 +315,16 @@ get_template_part('templates/header/slider', null, [
                     <div>Am Brixener Hof 11 / 93047 Regensburg</div>
                     <div>Telefon 0941 / 59 57 92 27</div>
                 </div>
-                <img alt="Deliladen" class="deliladen" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/deli-1000x900px.jpg' ?>">
+                <img alt="Deliladen" class="deliladen"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/deli-1000x900px.jpg' ?>">
             </div>
         </div>
         <div id="dez">
             <div>
                 <div class="location-text">
                     <h4 class="mb-s">Rehorik im Dez</h4>
-                    <p class="mb-s">Unser Geschäft im Donau-Einkaufszentrum versorgt auch die Regensburger:innen im Nordosten der Stadt mit unseren Spezialitäten. Am
+                    <p class="mb-s">Unser Geschäft im Donau-Einkaufszentrum versorgt auch die Regensburger:innen im
+                        Nordosten der Stadt mit unseren Spezialitäten. Am
                         Ausschank kannst Du dir frisch gebrühten Kaffee und Espresso holen und natürlich unsere
                         Kaffeebohnen kaufen. Außerdem gibt‘s auch im
                         DEZ unsere Weine, Spirituosen und Feinkost.
@@ -233,16 +347,20 @@ get_template_part('templates/header/slider', null, [
                     <div>Weichser Weg 5 / 93059 Regensburg</div>
                     <div>Telefon 0941 / 297 99 996</div>
                 </div>
-                <img alt="DEZ" class="dez" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/dez-1000x766px.jpg' ?>">
+                <img alt="DEZ" class="dez"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/dez-1000x766px.jpg' ?>">
             </div>
         </div>
         <div id="gesandtenstraße">
             <div>
                 <div class="location-text">
                     <h4 class="mb-s">Rehorik in der Gesandtenstraße</h4>
-                    <p class="mb-s">In vino veritas - wer herausfinden will, ob das stimmt, besucht uns am besten in der Gesandtenstraße.
-                        Hier sind die Regale voll - von Weinen aus Europa und  Übersee bis zu Sekt und Spirituosen. Natürlich gibt es auch unseren Kaffee
-                    in gewohnter Qualität und Frische. Den Espresso des Monats kannst du Dir übrigens direkt zubereiten lassen.</p>
+                    <p class="mb-s">In vino veritas - wer herausfinden will, ob das stimmt, besucht uns am besten in der
+                        Gesandtenstraße.
+                        Hier sind die Regale voll - von Weinen aus Europa und Übersee bis zu Sekt und Spirituosen.
+                        Natürlich gibt es auch unseren Kaffee
+                        in gewohnter Qualität und Frische. Den Espresso des Monats kannst du Dir übrigens direkt
+                        zubereiten lassen.</p>
                     <div><b>ÖFFNUNGSZEITEN</b></div>
                     <table class="mb-s">
                         <tbody>
@@ -264,17 +382,20 @@ get_template_part('templates/header/slider', null, [
                     <div>Gesandtenstraße 16 / 93047 Regensburg</div>
                     <div>Telefon 0941 / 59 99 848</div>
                 </div>
-                <img alt="Gesandtenstraße" class="gesandtenstraße" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/gesandtenstrass-1000x809px.jpg' ?>">
+                <img alt="Gesandtenstraße" class="gesandtenstraße"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/gesandtenstrass-1000x809px.jpg' ?>">
             </div>
         </div>
         <div id="kaffeehaus">
             <div>
                 <div class="location-text">
                     <h4 class="mb-s">Rösterei & Kaffeehaus</h4>
-                    <p class="mb-s">Kaffee schlürfen, eine Bowl zu Mittag und dabei beim Rösten zuschauen? Das geht alles in
+                    <p class="mb-s">Kaffee schlürfen, eine Bowl zu Mittag und dabei beim Rösten zuschauen? Das geht
+                        alles in
                         unserer neuen Rösterei. Im Verkaufsbereich
                         findest Du ausgewählte Weine, Spirits und Delikatessen. Und falls Du auf der Suche nach der
-                        perfekten Espressomaschine oder dem richtigen Kaffeezubehör bist – einfach einen persönlichen Beratungstermin vereinbaren und vorbeikommen.</p>
+                        perfekten Espressomaschine oder dem richtigen Kaffeezubehör bist – einfach einen persönlichen
+                        Beratungstermin vereinbaren und vorbeikommen.</p>
                     <div><b>ÖFFNUNGSZEITEN</b></div>
                     <table class="mb-s">
                         <tbody>
@@ -296,7 +417,8 @@ get_template_part('templates/header/slider', null, [
                     <div>Straubinger Straße 62a / 93055 Regensburg</div>
                     <div>Telefon 0941 / 788 35 30</div>
                 </div>
-                <img alt="Kaffeehaus" class="kaffeehaus" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/straubinger-1000x766px.jpg' ?>">
+                <img alt="Kaffeehaus" class="kaffeehaus"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/straubinger-1000x766px.jpg' ?>">
             </div>
         </div>
     </div>

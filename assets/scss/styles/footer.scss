@@ -41,7 +41,7 @@ footer {
 
   background: transparent url("../img/footer/footer-web-1920px.png") no-repeat bottom right;
 
-  @media all and (max-width: 1080px) {
+  @media all and (max-width: $max-width) {
     background-image: url("../img/footer/footer-web-1080px.png");
   }
 
