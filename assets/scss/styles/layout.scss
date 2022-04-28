@@ -2,6 +2,10 @@
   margin-top: $spacing;
 }
 
+.mb-s {
+  margin-bottom: $spacing-s;
+}
+
 @media (min-width: $medium-breakpoint + 1) {
   .et_left_sidebar #left-area {
     float: right;
