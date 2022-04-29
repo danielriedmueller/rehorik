@@ -21,7 +21,7 @@
                     Wir kommen zu Euch, und zwar mit dem Fahrradkurier „Feine Fracht“ aus Regensburg. Im Gepäck haben wir, was auch immer Ihr Euch wünscht: Kaffee aus aller Welt, erstklassige Weine und Spirituosen, erlesene Käsesorten und Delikatessen.
                 </div>
                 <div>
-                    Bestellt einfach in unserem Onlineshop. Und wenn Ihr etwas Spezielles sucht oder eine Beratung braucht, dann ruft uns gerne an unter <a href="tel:0941/7883530">0941 / 788 35 30</a> oder schreibt uns eine E-Mail: <a href="mailto:<?= DELIVERY_ORDER_EMAIL ?>"><?= DELIVERY_ORDER_EMAIL ?></a>.
+                    Bestellt einfach in unserem Onlineshop. Und wenn Ihr etwas Spezielles sucht oder eine Beratung braucht, dann ruft uns gerne an unter <a href="tel:0941/7883530">0941 / 788 35 30</a> oder schreibt uns eine E-Mail: <a href="mailto:<?= CONTACT_MAIL ?>"><?= CONTACT_MAIL ?></a>.
                 </div>
             </div>
         </div>
