@@ -30,7 +30,6 @@ get_template_part('templates/rehorik-locations');
             <div>
                 <div>
                     <h2>Kontakt</h2>
-                    <p><a href="<?= get_page_link(KARRIERE_PAGE_ID) ?>">Karriere</a></p>
                     <p><a href="<?= get_page_link(KONTAKT_PAGE_ID) ?>">Kontaktformular</a></p>
                 </div>
             </div>

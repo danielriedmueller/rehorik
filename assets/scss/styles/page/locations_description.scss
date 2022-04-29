@@ -1,0 +1,149 @@
+#locations-description {
+  padding: $section-padding-top-bottom 0;
+  @media all and (max-width: $medium-breakpoint) {
+    padding: $section-padding-small 0;
+  }
+
+  * {
+    scroll-margin-top: 150px;
+  }
+
+  > div {
+    padding: $spacing 0;
+
+    &:first-child {
+      padding: 0 0 $spacing 0;
+    }
+
+    &:last-child {
+      padding: $spacing 0 0 0;
+    }
+  }
+
+  > div > div {
+    width: 80%;
+    max-width: $max-width;
+    margin: auto;
+    display: flex;
+
+    @media all and (max-width: $medium-breakpoint) {
+      flex-direction: column;
+    }
+  }
+
+  p, div {
+    line-height: $line-height-narrow !important;
+    text-align: justify;
+  }
+
+  h4, h5 {
+    color: $font-color;
+    font-size: $font-size-h2;
+    line-height: $line-height-large;
+    padding: 0;
+    font-weight: normal;
+    text-align: left;
+  }
+
+  h4 {
+    text-transform: uppercase;
+  }
+
+  h5 {
+    color: $beigegold;
+  }
+
+  #deliladen {
+    background-color: $beigegold;
+    padding: $spacing-xl 0;
+
+    h5 {
+      color: #fff;
+    }
+  }
+
+  #dez {
+    padding: $spacing-xl 0;
+  }
+
+
+  #weinkeller {
+    padding: $spacing 0 $spacing-xl 0;
+  }
+
+  #gesandtenstrasse {
+    background-color: $weinrot;
+    padding: $spacing-xl 0;
+
+    h4, h5, div, p {
+      color: #fff;
+    }
+  }
+
+  #kaffeehaus {
+    padding: $spacing-xl 0 0 0;
+  }
+
+  .location-text {
+    order: 2;
+
+    td {
+      padding-right: $spacing-s;
+    }
+  }
+
+  img {
+    order: 3;
+
+    @media all and (max-width: $medium-breakpoint) {
+      order: 1;
+      width: 100% !important;
+      margin: 0 0 $spacing 0 !important;
+    }
+
+    &.stammhaus {
+      width: 65%;
+      margin-left: $spacing;
+    }
+
+    &.cafe190 {
+      width: 50%;
+      order: 1;
+      margin-right: $spacing;
+    }
+
+    &.kaffeeladen {
+      width: 50%;
+      order: 1;
+      margin-right: $spacing;
+    }
+
+    &.weinkeller {
+      width: 50%;
+      order: 1;
+      margin-right: $spacing;
+    }
+
+    &.deliladen {
+      width: 65%;
+      margin-left: $spacing;
+    }
+
+    &.dez {
+      width: 65%;
+      margin-right: $spacing;
+      order: 1;
+    }
+
+    &.gesandtenstrasse {
+      width: 65%;
+      margin-left: $spacing;
+    }
+
+    &.kaffeehaus {
+      width: 65%;
+      margin-right: $spacing;
+      order: 1;
+    }
+  }
+}

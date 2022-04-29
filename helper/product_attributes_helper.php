@@ -26,6 +26,7 @@ define('WEIGHT_ATTRIBUTE_SLUG', 'pa_gewicht');
 define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
 define('WINERY_ATTRIBUTE_SLUG', 'pa_weingut');
 define('GOES_WITH_ATTRIBUTE_SLUG', 'pa_passt-zu');
+define('QUALITY_NAME_ATTRIBUTE_SLUG', 'pa_qualitaetsbezeichnung');
 define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
 define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
 

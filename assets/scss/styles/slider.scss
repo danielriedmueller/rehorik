@@ -1,4 +1,6 @@
 #slider {
+  position: relative;
+
   .slider-image {
     width: auto;
     height: var(--slider-height);
@@ -136,6 +138,10 @@ ul#slider, ul#slider li, ul#slider li img {
 #slider > .tns-item {
   vertical-align: middle;
   position: relative;
+}
+
+#slider .slider-image {
+  background-size: cover;
 }
 
 #tns-controls-container {

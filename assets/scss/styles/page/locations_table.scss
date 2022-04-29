@@ -1,0 +1,91 @@
+.rehorik-page-introduction.locations {
+  padding: 0;
+  background-size: 235px;
+  background-position: bottom right;
+
+  @media all and (max-width: $medium-breakpoint) {
+    background-image: none;
+  }
+}
+
+.table-outer {
+  overflow-x: auto;
+}
+
+table#locations-table {
+  width: 100%;
+  max-width: $max-width;
+
+  > tbody > tr > td {
+    font-size: $font-size;
+    line-height: $line-height-narrow;
+    color: #fff;
+
+    a {
+      color: $font-color-accent;
+      text-transform: uppercase;
+      font-family: $font-family-headline;
+
+      &:hover {
+        color: $font-color-accent-dark;
+      }
+    }
+
+    > table tr td:first-child {
+      padding: 0 $spacing 0 0;
+    }
+  }
+
+  > tbody {
+    $padding-side: $spacing-xs;
+    $padding-top-bottom: $spacing-xxs;
+
+    > tr > td {
+      padding: $padding-top-bottom $padding-side;
+      border: 1px solid $beigegold;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+
+      &:first-child {
+        min-width: 178px;
+        padding: $padding-top-bottom $padding-side $padding-top-bottom 0;
+      }
+
+      &:nth-child(2) {
+        min-width: 141px;
+      }
+
+      &:nth-child(3) {
+        min-width: 195px;
+      }
+
+      &:last-child {
+        padding: $padding-top-bottom 0 $padding-top-bottom $padding-side;
+      }
+    }
+
+    > tr:first-child > td {
+      padding: 0 $padding-side $padding-top-bottom $padding-side;
+
+      &:first-child {
+        padding: 0 $padding-side $padding-top-bottom 0;
+      }
+    }
+
+    > tr:last-child > td {
+      padding: $padding-top-bottom $padding-side 0 $padding-side;
+      border-bottom: none;
+
+      &:first-child {
+        padding: $padding-top-bottom $padding-side 0 0;
+      }
+    }
+
+    > tr:nth-child(2) {
+      td:nth-child(4), td:nth-child(5) {
+        border-bottom: none;
+      }
+    }
+  }
+}

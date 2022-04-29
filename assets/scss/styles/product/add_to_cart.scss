@@ -42,6 +42,7 @@ body.rehorik.woocommerce div.rehorik-product {
 
     button[type="submit"].single_add_to_cart_button {
       transition: none;
+      line-height: 0 !important;
       padding: $spacing-xxs $spacing-s $spacing-xxs 37px !important;
       background: $beigegold url("../img/warenkorb-white.svg") no-repeat left 10px center;
       background-size: $spacing-s;

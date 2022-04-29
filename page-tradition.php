@@ -21,7 +21,7 @@ get_template_part('templates/header/slider', null, [
 ?>
     <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
     <div class="page-title-outer">
-        <div class='page-title'><h1>Tradition</h1></div>
+        <div class='page-title'><h1><?=the_title()?></h1></div>
     </div>
     <div class="rehorik-page-introduction-outer">
         <div class="container">
