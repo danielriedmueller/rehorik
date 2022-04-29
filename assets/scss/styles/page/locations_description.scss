@@ -4,6 +4,10 @@
     padding: $section-padding-small 0;
   }
 
+  * {
+    scroll-margin-top: 150px;
+  }
+
   > div {
     padding: $spacing 0;
 
@@ -51,18 +55,33 @@
 
   #deliladen {
     background-color: $beigegold;
+    padding: $spacing-xl 0;
 
     h5 {
       color: #fff;
     }
   }
 
-  #gesandtenstraße {
+  #dez {
+    padding: $spacing-xl 0;
+  }
+
+
+  #weinkeller {
+    padding: $spacing 0 $spacing-xl 0;
+  }
+
+  #weingalerie {
     background-color: $weinrot;
+    padding: $spacing-xl 0;
 
     h4, h5, div, p {
       color: #fff;
     }
+  }
+
+  #kaffeehaus {
+    padding: $spacing-xl 0 0 0;
   }
 
   .location-text {
@@ -116,7 +135,7 @@
       order: 1;
     }
 
-    &.gesandtenstraße {
+    &.weingalerie {
       width: 65%;
       margin-left: $spacing;
     }

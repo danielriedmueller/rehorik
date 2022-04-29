@@ -51,9 +51,9 @@ define('PAYMENT_METHOD_CASH', 'cod');
 define('PAYMENT_METHOD_DIRECT_TRANSFER', 'bacs');
 
 // Pages
-define('NEUE_ROESTEREI_PAGE_ID', 21830);
+//define('STANDORTE_PAGE_ID', 26672);
+define('STANDORTE_PAGE_ID', 24067);
 define('ROESTEREI_PAGE_ID', 40);
-define('CAFE_190_PAGE_ID', 44);
 define('LOGIN_PAGE_ID', 667);
 define('KONTAKT_PAGE_ID', 121);
 define('KARRIERE_PAGE_ID', 119);
@@ -61,11 +61,6 @@ define('AGB_PAGE_ID', 13644);
 define('WIDERRUFSBELEHRUNG_PAGE_ID', 682);
 define('IMPRESSUM_PAGE_ID', 681);
 define('DATENSCHUTZ_PAGE_ID', 680);
-define('STAMMHAUS_PAGE_ID', 2);
-define('OPENING_HOURS_PAGE_ID', 11242);
-define('DEZ_PAGE_ID', 489);
-define('WEINGALERIE_PAGE_ID', 487);
-define('BARISTASTORE_PAGE_ID', 1535);
 
 define('PERMISSION_VIEW_VIEW_ATTENDEE_LIST', 'teilnehmerliste_bei_events_anschauen');
 

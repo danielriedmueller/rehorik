@@ -145,7 +145,7 @@ get_template_part('templates/header/slider', null, [
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="#gesandtenstraße">Gesandtenstraße</a></td>
+                            <td><a href="#weingalerie">Weingalerie</a></td>
                             <td>0941 / 59 99 848</td>
                             <td>
                                 <table>
@@ -169,7 +169,7 @@ get_template_part('templates/header/slider', null, [
         </div>
     </div>
     <div id="locations-description">
-        <div>
+        <div id="stammhaus">
             <div>
                 <div class="location-text">
                     <h4>Unser Stammhaus</h4>
@@ -180,7 +180,7 @@ get_template_part('templates/header/slider', null, [
                         Jahre alt.</p>
                     <div><b>ADRESSE</b></div>
                     <div class="mb-s">Am Brixener Hof 6 / 93047 Regensburg</div>
-                    <h5 class="mb-s">Kaffeerösterei</h5>
+                    <h5 class="mb-s" id="kaffeeroesterei">Kaffeerösterei</h5>
                     <p>Unser Kugelröster ist über 90 Jahre alt. Und
                         mittlerweile werden darin 50 verschiedene Kaffeesorten veredelt. Wer am Kugelröster steht,
                         muss die Bohnen verstehen und das richtige
@@ -351,10 +351,10 @@ get_template_part('templates/header/slider', null, [
                      src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/dez-1000x766px.jpg' ?>">
             </div>
         </div>
-        <div id="gesandtenstraße">
+        <div id="weingalerie">
             <div>
                 <div class="location-text">
-                    <h4 class="mb-s">Rehorik in der Gesandtenstraße</h4>
+                    <h4 class="mb-s">Rehorik Weingalerie in der Gesandtenstraße</h4>
                     <p class="mb-s">In vino veritas - wer herausfinden will, ob das stimmt, besucht uns am besten in der
                         Gesandtenstraße.
                         Hier sind die Regale voll - von Weinen aus Europa und Übersee bis zu Sekt und Spirituosen.
@@ -382,7 +382,7 @@ get_template_part('templates/header/slider', null, [
                     <div>Gesandtenstraße 16 / 93047 Regensburg</div>
                     <div>Telefon 0941 / 59 99 848</div>
                 </div>
-                <img alt="Gesandtenstraße" class="gesandtenstraße"
+                <img alt="Weingalerie" class="weingalerie"
                      src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/gesandtenstrass-1000x809px.jpg' ?>">
             </div>
         </div>
