@@ -35,7 +35,7 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
             '<a class="%s" href="%s"><span>%s</span><span>%s</span></a>',
             $ticketsAvailable ? "" : "tickets-not-available",
             $link,
-            date_i18n('d. F', strtotime($event->event_date)),
+            date_i18n('d. M', strtotime($event->event_date)),
             $event->post_title
         );
     }
