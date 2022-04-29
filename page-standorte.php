@@ -69,32 +69,18 @@ get_template_part('templates/header/slider', null, [
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="#kaffeeladen">Kaffeeladen</a></td>
+                            <td><a href="#kaffeeladen">Kaffeeladen & Weinkeller</a></td>
                             <td>0941 / 58 65 276</td>
                             <td>
                                 <table>
                                     <tbody>
                                     <tr>
-                                        <td>MO. - FR.</td>
+                                        <td>MO. - MI.</td>
                                         <td>09:30 - 18:00</td>
                                     </tr>
                                     <tr>
-                                        <td>SA.</td>
-                                        <td>09:00 - 18:00</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#weinkeller">Weinkeller</a></td>
-                            <td>0941 / 58 65 276</td>
-                            <td>
-                                <table>
-                                    <tbody>
-                                    <tr>
-                                        <td>MO. - FR.</td>
-                                        <td>09:30 - 18:00</td>
+                                        <td>DO. - FR.</td>
+                                        <td>09:30 - 18:30</td>
                                     </tr>
                                     <tr>
                                         <td>SA.</td>
@@ -106,7 +92,7 @@ get_template_part('templates/header/slider', null, [
                         </tr>
                         <tr>
                             <td><a href="#deliladen">Deliladen</a></td>
-                            <td>0941 / 788 35 350</td>
+                            <td>0941 / 788 353 50</td>
                             <td>
                                 <table>
                                     <tbody>
@@ -157,6 +143,20 @@ get_template_part('templates/header/slider', null, [
                                     <tr>
                                         <td>SA.</td>
                                         <td>10:00 - 18:00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Verwaltung</td>
+                            <td>0941 / 788 353 0</td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>MO - FR.</td>
+                                        <td>08:00 - 16:00</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -229,12 +229,16 @@ get_template_part('templates/header/slider', null, [
                     <table class="mb-s">
                         <tbody>
                         <tr>
-                            <td>MO. - FR.</td>
-                            <td>09:30 - 18:00 Uhr</td>
+                            <td>MO. - MI.</td>
+                            <td>09:30 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <td>DO. - FR.</td>
+                            <td>09:30 - 18:30</td>
                         </tr>
                         <tr>
                             <td>SA.</td>
-                            <td>09:00 - 18:00 Uhr</td>
+                            <td>09:00 - 18:00</td>
                         </tr>
                         <tr>
                             <td>SO.</td>
@@ -260,12 +264,16 @@ get_template_part('templates/header/slider', null, [
                     <table class="mb-s">
                         <tbody>
                         <tr>
-                            <td>MO. - FR.</td>
-                            <td>09:30 - 18:00 Uhr</td>
+                            <td>MO. - MI.</td>
+                            <td>09:30 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <td>DO. - FR.</td>
+                            <td>09:30 - 18:30</td>
                         </tr>
                         <tr>
                             <td>SA.</td>
-                            <td>09:00 - 18:00 Uhr</td>
+                            <td>09:00 - 18:00</td>
                         </tr>
                         <tr>
                             <td>SO.</td>
@@ -285,7 +293,7 @@ get_template_part('templates/header/slider', null, [
                     <h4>Unser Deliladen</h4>
                     <h5 class="mb-s">Käse & Feinkost</h5>
                     <p class="mb-s">Gegenüber vom Stammhaus am Brixener Hof ist
-                        unser Delikatessen-Laden. In der Frischetheke
+                        unser Delicatessen-Laden. In der Frischetheke
                         haben wir Platz für 130 verschiedene Sorten
                         Käse. Obendrauf gibt‘s hier Wurst, Öle, Gewürze,
                         Soßen und vieles mehr - alles, was das kulinarische Herz begehrt.</p>
@@ -313,7 +321,7 @@ get_template_part('templates/header/slider', null, [
                     </table>
                     <div><b>ADRESSE</b></div>
                     <div>Am Brixener Hof 11 / 93047 Regensburg</div>
-                    <div>Telefon 0941 / 59 57 92 27</div>
+                    <div>Telefon 0941 / 788 353 50</div>
                 </div>
                 <img alt="Deliladen" class="deliladen"
                      src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/deli-1000x900px.jpg' ?>">
