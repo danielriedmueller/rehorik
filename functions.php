@@ -51,8 +51,7 @@ define('PAYMENT_METHOD_CASH', 'cod');
 define('PAYMENT_METHOD_DIRECT_TRANSFER', 'bacs');
 
 // Pages
-//define('STANDORTE_PAGE_ID', 26672);
-define('STANDORTE_PAGE_ID', 24067);
+define('STANDORTE_PAGE_ID', 26672);
 define('ROESTEREI_PAGE_ID', 40);
 define('LOGIN_PAGE_ID', 667);
 define('KONTAKT_PAGE_ID', 121);
