@@ -44,7 +44,7 @@
 
 .rehorik-product.detail-view.product .woocommerce-message {
   margin: 0;
-  padding: 0 !important;
+  padding: 0;
 }
 
 .woocommerce-form__label {
@@ -73,12 +73,11 @@ body.rehorik.woocommerce-cart {
   .quantity input.qty,
   .quantity input.qty,
   #content .quantity input.qty,
-  #content .quantity input.qty,
-  table.cart td.actions .coupon .input-text {
+  #content .quantity input.qty {
     border-radius: $border-radius;
-    background-color: $grau !important;
-    color: #fff !important;
-    font-size: $font-size !important;
+    background-color: $grau;
+    color: #fff;
+    font-size: $font-size;
     padding: $spacing-xxs;
     height: 50px;
     border: none;

@@ -2,10 +2,10 @@
   li.product.rehorik-product {
     overflow: hidden;
     text-align: center;
-    width: $product-category-width !important;
+    width: $product-category-width;
     height: $product-height;
     border-radius: $border-radius;
-    margin: 0 !important;
+    margin: 0;
 
     @media all and (max-width: $small-breakpoint) {
       padding-bottom: $spacing;
@@ -33,15 +33,11 @@
     a {
       font-weight: bold;
 
-      > span {
-        background-color: #fff;
-
-        img {
-          margin: 0 auto !important;
-          width: $product-category-width;
-          height: auto;
-          object-fit: cover;
-        }
+      img {
+        margin: 0 auto !important;
+        width: $product-category-width;
+        height: auto;
+        object-fit: cover;
       }
 
       h2 {

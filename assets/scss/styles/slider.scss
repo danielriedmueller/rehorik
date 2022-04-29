@@ -83,7 +83,7 @@
       transition: none;
       font-family: $font-family-headline;
       background-color: $weinrot;
-      color: $beigegold !important;
+      color: $beigegold;
       padding: $spacing-xxs;
       min-width: 200px;
       text-align: center;
@@ -91,7 +91,7 @@
 
       &:hover {
         background-color: $beigegold;
-        color: #fff !important;
+        color: #fff;
       }
 
       &:first-child:last-child {
@@ -101,11 +101,11 @@
 
     .button:nth-child(2) {
       background-color: $beigegold;
-      color: #fff !important;
+      color: #fff;
 
       &:hover {
         background-color: $weinrot;
-        color: $beigegold !important;
+        color: $beigegold;
       }
     }
 
@@ -158,7 +158,7 @@ ul#slider, ul#slider li, ul#slider li img {
     padding: 0;
 
     &:hover {
-      background-color: transparent !important;
+      background-color: transparent;
     }
   }
 

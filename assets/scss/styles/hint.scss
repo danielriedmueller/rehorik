@@ -5,6 +5,7 @@
   top: calc(var(--slider-height) + #{$menu-height} + #{$spacing-l}) ;
   font-weight: bold;
   z-index: 8;
+  height: 0;
 
   input[type="checkbox"] {
     cursor: pointer;
@@ -68,9 +69,9 @@
 }
 
 .hint-margin-top {
-  margin-top: $hint-height + $spacing-xl !important;
+  margin-top: $hint-height + $spacing-xl;
 
   @media all and (max-width: $small-breakpoint) {
-    margin-top: $hint-height + $spacing-l !important;
+    margin-top: $hint-height + $spacing-l;
   }
 }

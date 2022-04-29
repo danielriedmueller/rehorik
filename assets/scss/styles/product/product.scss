@@ -65,13 +65,13 @@
     max-width: 400px;
 
     h1.product_title {
-      color: $font-color-accent !important;
+      color: $font-color-accent;
       text-align: left;
       text-transform: uppercase;
-      padding: 0 !important;
+      padding: 0;
 
       @media all and (max-width: $small-breakpoint) {
-        font-size: $font-size-h1 !important;
+        font-size: $font-size-h1;
         letter-spacing: 2px;
         line-height: $line-height-large;
       }
@@ -84,11 +84,11 @@
 
     p.price {
       color: $font-color;
-      font-size: $font-size-h2 !important;
+      font-size: $font-size-h2;
       margin-top: $product-view-grid-gap;
 
       > span {
-        font-size: $font-size-h2 !important;
+        font-size: $font-size-h2;
         font-weight: bold;
       }
     }

@@ -3,7 +3,7 @@ div.rehorik-product-meta.product_meta {
   border: none;
   margin-top: $spacing-xxs;
   padding: 0;
-  line-height: $line-height-very-narrow !important;
+  line-height: $line-height-very-narrow;
 
   > span, > div, >p {
     &:not(:last-child) {
@@ -20,6 +20,6 @@ div.rehorik-product-meta.product_meta {
     font-family: $font-family-body;
     font-size: $font-size-very-small;
     font-weight: normal;
-    line-height: $line-height-very-narrow !important;
+    line-height: $line-height-very-narrow;
   }
 }
