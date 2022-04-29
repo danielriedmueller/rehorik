@@ -145,7 +145,7 @@ get_template_part('templates/header/slider', null, [
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="#weingalerie">Weingalerie</a></td>
+                            <td><a href="#gesandtenstraße">Gesandtenstraße</a></td>
                             <td>0941 / 59 99 848</td>
                             <td>
                                 <table>
@@ -351,10 +351,10 @@ get_template_part('templates/header/slider', null, [
                      src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/dez-1000x766px.jpg' ?>">
             </div>
         </div>
-        <div id="weingalerie">
+        <div id="gesandtenstraße">
             <div>
                 <div class="location-text">
-                    <h4 class="mb-s">Rehorik Weingalerie in der Gesandtenstraße</h4>
+                    <h4 class="mb-s">Rehorik in der Gesandtenstraße</h4>
                     <p class="mb-s">In vino veritas - wer herausfinden will, ob das stimmt, besucht uns am besten in der
                         Gesandtenstraße.
                         Hier sind die Regale voll - von Weinen aus Europa und Übersee bis zu Sekt und Spirituosen.
@@ -382,7 +382,7 @@ get_template_part('templates/header/slider', null, [
                     <div>Gesandtenstraße 16 / 93047 Regensburg</div>
                     <div>Telefon 0941 / 59 99 848</div>
                 </div>
-                <img alt="Weingalerie" class="weingalerie"
+                <img alt="Gesandtenstraße" class="gesandtenstraße"
                      src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/gesandtenstrass-1000x809px.jpg' ?>">
             </div>
         </div>

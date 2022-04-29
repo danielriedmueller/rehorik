@@ -24,8 +24,8 @@
                 <p>93047 Regensburg</p>
             </div>
             <div>
-                <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#weingalerie"><img alt="Standort Weingalerie" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-gesandtenstr.png' ?>"></a>
-                <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#weingalerie"><h2>Weingalerie</h2></a>
+                <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#gesandtenstraße"><img alt="Standort Gesandtenstraße" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-gesandtenstr.png' ?>"></a>
+                <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#gesandtenstraße"><h2>Gesandtenstraße</h2></a>
                 <p>Westliche Altstadt</p>
                 <p>Gesandtenstraße 16</p>
                 <p>93047 Regensburg</p>
