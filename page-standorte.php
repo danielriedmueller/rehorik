@@ -6,7 +6,7 @@ get_template_part('templates/header/slider', null, [
             'claim' => 'Überall unterwegs',
             'img' => 'header-standorte',
             'buttons' => [
-                'mailto:<?= BARISTASTORE_EMAIL ?>?subject=Beratungstermin%20Maschinen%20und%20Equipment' => 'Alle Events in unseren Standorten',
+                get_term_link(get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat'), 'product_cat') => 'Alle Events in unseren Standorten',
             ],
         ],
     ],
@@ -24,7 +24,7 @@ get_template_part('templates/header/slider', null, [
                         <tbody>
                         <tr>
                             <td><a href="#kaffeehaus">Rösterei & Kaffeehaus</a></td>
-                            <td>0941 / 59 57 92 27</td>
+                            <td>0941 / 788 353 20</td>
                             <td>
                                 <table>
                                     <tbody>
@@ -39,7 +39,7 @@ get_template_part('templates/header/slider', null, [
                                     </tbody>
                                 </table>
                             </td>
-                            <td><a target="_blank" href="#">Speisekarte</a></td>
+                            <td><a target="_blank" href="/speisekarte/Speisekarte%20Neue%20R%C3%B6sterei%20Fr%C3%BChjahr22.pdf">Speisekarte</a></td>
                             <td>
                                 <a target="_blank"
                                    href="https://app.resmio.com/rehorik-rosterei-kaffehaus/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Reservieren</a>
@@ -62,7 +62,7 @@ get_template_part('templates/header/slider', null, [
                                     </tbody>
                                 </table>
                             </td>
-                            <td><a target="_blank" href="#">Speisekarte</a></td>
+                            <td><a target="_blank" href="/speisekarte/Speisekarte%20190%20Fr%C3%BChjahr22.pdf">Speisekarte</a></td>
                             <td>
                                 <a target="_blank"
                                    href="https://app.resmio.com/cafe-190-grad/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Reservieren</a>
@@ -415,7 +415,7 @@ get_template_part('templates/header/slider', null, [
                     </table>
                     <div><b>ADRESSE</b></div>
                     <div>Straubinger Straße 62a / 93055 Regensburg</div>
-                    <div>Telefon 0941 / 788 35 30</div>
+                    <div>Telefon 0941 / 788 353 20</div>
                 </div>
                 <img alt="Kaffeehaus" class="kaffeehaus"
                      src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/straubinger-1000x766px.jpg' ?>">
