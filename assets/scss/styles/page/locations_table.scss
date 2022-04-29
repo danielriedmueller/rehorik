@@ -21,14 +21,14 @@ table#locations-table {
     line-height: $line-height-narrow;
     color: #fff;
 
-    a {
+    &:first-child, a {
       color: $font-color-accent;
       text-transform: uppercase;
       font-family: $font-family-headline;
+    }
 
-      &:hover {
-        color: $font-color-accent-dark;
-      }
+    a:hover {
+      color: $font-color-accent-dark;
     }
 
     > table tr td:first-child {
