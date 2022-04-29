@@ -144,10 +144,10 @@ ul#slider img {
 #slider > .tns-item {
   vertical-align: middle;
   position: relative;
+}
 
-  .slider-image {
-    background-size: cover;
-  }
+#slider .slider-image {
+  background-size: cover;
 }
 
 #tns-controls-container {
