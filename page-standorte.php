@@ -69,29 +69,7 @@ get_template_part('templates/header/slider', null, [
                             </td>
                         </tr>
                         <tr>
-                            <td><a href="#kaffeeladen">Kaffeeladen</a></td>
-                            <td>0941 / 58 65 276</td>
-                            <td>
-                                <table>
-                                    <tbody>
-                                    <tr>
-                                        <td>MO. - MI.</td>
-                                        <td>09:30 - 18:00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>DO. - FR.</td>
-                                        <td>09:30 - 18:30</td>
-                                    </tr>
-                                    <tr>
-                                        <td>SA.</td>
-                                        <td>09:00 - 18:00</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#weinkeller">Weinkeller</a></td>
+                            <td><a href="#kaffeeladen">Kaffeeladen & Weinkeller</a></td>
                             <td>0941 / 58 65 276</td>
                             <td>
                                 <table>
