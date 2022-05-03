@@ -29,7 +29,7 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
         && !empty(generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG)))
     ) {
         $value = $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]["value"];
-        $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]["value"] = str_replace('"tag">', '"tag">BIO ', $value);
+        $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]["value"] = str_replace('<p>', '<p>BIO ', $value);
     }
 
     /**
