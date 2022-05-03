@@ -23,6 +23,17 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
     }
 
     /**
+     * If Bio, add "BIO" beforehand Sorte value
+     */
+    if ($productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]
+        && !empty(generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG)))
+    ) {
+        $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]["value"] = addBioBeforhandSorte(
+            $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]["value"]
+        );
+    }
+
+    /**
      * Add Fuellmenge if single product
      */
     if (!$product->is_type('variable')) {
@@ -46,7 +57,7 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
     }
 
     /**
-     * If Bohnenkomposition is present, it becomes the label for Sorte
+     * If Bohnenkomposition (Mischung) is present, it becomes the label for Sorte
      */
     if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX.BEAN_COMPOSITION_ATTRIBUTE_SLUG])) {
         if ($productAttributes[ATTRIBUTE_SLUG_PREFIX.BEAN_COMPOSITION_ATTRIBUTE_SLUG]
@@ -97,3 +108,10 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
 
     return $productAttributes;
 }, 10, 2);
+
+function addBioBeforhandSorte($value, $seperator = ", ") {
+    $values = array_map(function($value) {
+        return "BIO " . $value;
+    }, explode($seperator, strip_tags($value)));
+    return "<p>" . implode($seperator, $values) . "</p>";
+}
