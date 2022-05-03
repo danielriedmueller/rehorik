@@ -26,10 +26,9 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
      * If Bio, add "BIO" beforehand Sorte value
      */
     if ($productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]
-        && validateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG))
+        && !empty(generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG)))
     ) {
         $value = $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]["value"];
-        //$productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]["value"] = substr_replace($value, '"tag">BIO ', strpos($value, '"tag">'), 6);
         $productAttributes[ATTRIBUTE_SLUG_PREFIX.VARIETIES_ATTRIBUTE_SLUG]["value"] = str_replace('"tag">', '"tag">BIO ', $value);
     }
 
