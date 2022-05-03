@@ -103,6 +103,7 @@ function categories() {
 function single_product_attributes() {
     global $product;
 
+    // Manipulated by woocommerce_display_product_attributes filter
     wc_display_product_attributes($product);
 }
 
