@@ -67,24 +67,30 @@ body.rehorik.woocommerce div.rehorik-product {
 }
 
 .rehorik .product.woocommerce.add_to_cart_inline {
+  height: $spacing-l;
+
   a.button.add_to_cart_button,
-  a.button.product_type_simple,
-  a.added_to_cart.wc-forward {
+  a.button.product_type_simple {
     color: #fff;
-    padding-bottom: 0;
-    padding-left: 34px !important;
+    transition: none;
+    padding: 0 $spacing-xxs 0 34px !important;
     background: $beigegold url("../img/warenkorb-white.svg") no-repeat left $spacing-xxs center;
     background-size: $spacing-s;
     margin-top: 0;
     height: $spacing-l;
-    line-height: 15px !important;
+    line-height: $spacing-l !important;
     font-size: $font-size;
     text-transform: uppercase;
+    display: block;
 
     &:hover {
       color: $beigegold !important;
       background: $weinrot url("../img/warenkorb-16px.svg") no-repeat left $spacing-xxs center !important;
       background-size: $spacing-s !important;
+    }
+
+    &::after {
+      content: none;
     }
   }
 }
