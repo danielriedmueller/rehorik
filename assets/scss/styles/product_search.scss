@@ -44,9 +44,9 @@
       max-width: $spacing-xl;
 
       input {
-        height: 34px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        height: $spacing-l !important;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
       }
 
       & + .add_to_cart_inline a {
