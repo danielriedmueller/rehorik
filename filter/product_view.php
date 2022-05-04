@@ -112,6 +112,6 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
 function addBioBeforhandSorte($value, $seperator = ", ") {
     $values = array_map(function($value) {
         return "BIO " . $value;
-    }, explode($seperator, strip_tags($value)));
+    }, explode($seperator, strip_tags($value, "<a>")));
     return "<p>" . implode($seperator, $values) . "</p>";
 }
