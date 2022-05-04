@@ -17,5 +17,9 @@
     background-color: $tuerkis;
     border: 1px solid $lila;
     text-align: center;
+
+    &.rehorik-cart-info-number:empty {
+      display: none;
+    }
   }
 }
