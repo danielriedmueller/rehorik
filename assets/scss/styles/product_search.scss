@@ -4,14 +4,14 @@
 
     .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input, .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:hover, .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:focus {
       border: none;
-      color: $beigegold;
-      background-color: $grau;
+      color: $weinrot;
+      background-color: $beigegold;
       border-radius: $border-radius;
       text-transform: uppercase;
       font-size: $font-size-small;
 
       &::placeholder {
-        color: $beigegold;
+        color: $weinrot;
         font-style: normal;
         font-size: $font-size-small;
         font-family: $font-family-body;
@@ -20,7 +20,7 @@
     }
 
     .dgwt-wcas-no-submit.dgwt-wcas-search-wrapp .dgwt-wcas-ico-magnifier path, .dgwt-wcas-search-wrapp .dgwt-wcas-close path {
-      fill: $beigegold;
+      fill: $weinrot;
     }
   }
 
@@ -35,6 +35,23 @@
       strong {
         font-weight: normal;
         color: $font-color;
+      }
+    }
+  }
+
+  .dgwt-wcas-product-details {
+    div.quantity {
+      max-width: $spacing-xl;
+
+      input {
+        height: 34px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      & + .add_to_cart_inline a {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
       }
     }
   }
