@@ -1,9 +1,13 @@
-ul.products.rehorik-products,
+#page-container ul.products.rehorik-products,
 .search.shop.woocommerce #page-container ul.products.rehorik-products{
   display: -ms-grid;
   display: grid;
   justify-content: center;
   gap: $spacing-xxs;
+
+  li {
+    border-radius: $border-radius;
+  }
 
   &::before, &::after {
     content: none;

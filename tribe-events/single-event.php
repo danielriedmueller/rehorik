@@ -72,7 +72,7 @@ get_template_part('templates/tribe-events-attendee-list');
                 <p><b>E-MAIL:</b> <a href="mailto:events@rehorik.de">events@rehorik.de</a></p>
             </div>
             <div>
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/thumbnail_website-events-600px.jpg" alt="Rehorik Event Information Bild">
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/veranstaltungen/thumbnail_website-events-600px.jpg" alt="Rehorik Event Information Bild">
             </div>
         </div>
     </div>
