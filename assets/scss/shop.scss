@@ -70,6 +70,7 @@
 @import "styles/user/myaccount_navigation";
 @import "styles/page/locations_table";
 @import "styles/page/locations_description";
+@import "styles/page/page_neue_roesterei";
 
 @font-face {
   font-family: "DIN Offc W01 Cond";
@@ -130,7 +131,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: $font-size-h1;
-  line-height: $line-height-large;
+  line-height: $line-height-very-large;
   text-align: center;
   margin-bottom: 0;
   padding-bottom: 0;
