@@ -3,6 +3,8 @@
     border: none;
     position: relative;
     padding-right: 90px;
+    align-items: flex-start;
+    padding: 0;
 
     @media all and (max-width: $small-breakpoint) {
       display: block;
