@@ -1,8 +1,15 @@
 #sidebar.rehorik-sidebar {
   flex: 0 0 $sidebar-width;
-  background: #fff url("../img/strichl-muster.png") no-repeat left top;
+  background: #fff url("../img/strichl-muster.png") no-repeat left -80px;
   padding: 80px 0 0 0;
   color: $font-color-accent;
+
+  .button.woof_reset_search_form {
+    font-size: $font-size-small;
+    border-radius: 0;
+    padding: $spacing-xxxs $spacing-xxs;
+    font-family: $font-family-body;
+  }
 
   ul li, li {
     list-style: none;

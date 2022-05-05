@@ -45,13 +45,17 @@
         img {
           flex: 1 1 0;
           width: 0;
+
           &:not(:last-child) {
-            width: 100%;
             margin: 0 $spacing-xl 0 0;
 
             @media all and (max-width: $small-breakpoint) {
               margin: 0 0 $spacing-l 0;
             }
+          }
+
+          @media all and (max-width: $small-breakpoint) {
+            width: 100%;
           }
         }
       }
