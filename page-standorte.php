@@ -39,7 +39,7 @@ get_template_part('templates/header/slider', null, [
                                     </tbody>
                                 </table>
                             </td>
-                            <td><a target="_blank" href="/speisekarte/Speisekarte%20Neue%20R%C3%B6sterei%20Fr%C3%BChjahr22.pdf">Speisekarte</a></td>
+                            <td><a target="_blank" href="/speisekarte/SpeisekarteStraubinger.pdf">Speisekarte</a></td>
                             <td>
                                 <a target="_blank"
                                    href="https://app.resmio.com/rehorik-rosterei-kaffehaus/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Reservieren</a>
@@ -62,7 +62,7 @@ get_template_part('templates/header/slider', null, [
                                     </tbody>
                                 </table>
                             </td>
-                            <td><a target="_blank" href="/speisekarte/Speisekarte%20190%20Fr%C3%BChjahr22.pdf">Speisekarte</a></td>
+                            <td><a target="_blank" href="/speisekarte/Speisekarte190.pdf">Speisekarte</a></td>
                             <td>
                                 <a target="_blank"
                                    href="https://app.resmio.com/cafe-190-grad/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Reservieren</a>
