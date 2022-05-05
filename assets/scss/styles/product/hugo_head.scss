@@ -9,6 +9,6 @@
   flex: 1;
 
   @media all and (max-width: $small-breakpoint) {
-    margin-right: -35px;
+    margin-right: -$spacing;
   }
 }
