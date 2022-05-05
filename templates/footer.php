@@ -30,9 +30,10 @@ get_template_part('templates/rehorik-locations');
             <div>
                 <div>
                     <h2>Kontakt</h2>
-                    <p>Ihr habt noch Fragen? Einfach anrufen, persönlich vorbeikommen oder schreibt uns eine Mail.</p>
+                    <p>Ihr habt noch Fragen?</p>
+                    <p>Einfach anrufen, persönlich vorbeikommen oder schreibt uns eine Mail.</p>
+                    <p><a href="mailto:<?= CONTACT_MAIL ?>?subject=Kundenanfrage&body=Hallo%20Rehorik-Team,%0D%0A%0D%0A<hier%20steht%20die%20Nachricht>"><?= CONTACT_MAIL ?></a></p>
                     <p>0941 / 788 353 0</p>
-                    <p><a href="mailto:<?= IT_SUPPORT_EMAIL ?>"><?= IT_SUPPORT_EMAIL ?></a></p>
                 </div>
             </div>
             <div>
