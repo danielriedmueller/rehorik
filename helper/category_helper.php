@@ -205,7 +205,7 @@ function woocommerce_get_product_subcategories($parent_id = 0)
                 'woocommerce_product_subcategories_args',
                 array(
                     'parent' => $parent_id,
-                    'hide_empty' => 0,
+                    'hide_empty' => 1,
                     'hierarchical' => 1,
                     'taxonomy' => 'product_cat',
                     'pad_counts' => 1,
