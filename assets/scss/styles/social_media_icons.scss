@@ -1,5 +1,5 @@
+$element-height: 42px;
 #rehorik-social-media-icons-outer {
-  $element-height: 41px;
   $height: $menu-height + $section-padding-top-bottom;
   position: absolute;
   left: 0;
@@ -89,7 +89,6 @@
 }
 
 #rehorik-logo ~ #rehorik-social-media-icons-outer {
-  $element-height: 41px;
   $height: $menu-height + $section-padding-top-bottom + $logo-size - $element-height;
   height: calc(100% - #{$height});
   top: $height;
