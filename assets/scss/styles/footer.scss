@@ -34,17 +34,13 @@ footer {
     }
   }
 
-  background: transparent url("../img/footer/footer-web-1920px.png") no-repeat bottom right;
+  background: transparent url("../img/footer/footer-web-1920px.jpg") no-repeat bottom right;
 
   @media all and (max-width: $max-width) {
-    background-image: url("../img/footer/footer-web-1080px.png");
+    background-image: url("../img/footer/footer-web-1080px.jpg");
   }
 
   @media all and (max-width: $very-small-breakpoint) {
-    background-image: url("../img/footer/footer-mobil-375px.png");
-  }
-
-  @media all and (max-width: 320px) {
-    background-image: url("../img/footer/footer-mobil-320px.png");
+    background-image: url("../img/footer/footer-mobil-375px.jpg");
   }
 }
