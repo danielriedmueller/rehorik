@@ -1,6 +1,5 @@
 <?php
-$baseDir = get_stylesheet_directory();
-require_once($baseDir . '/helper/video_helper.php');
+require_once(get_stylesheet_directory() . '/helper/video_helper.php');
 
 /** @var WC_Product $product */
 $product = $args['product'];
