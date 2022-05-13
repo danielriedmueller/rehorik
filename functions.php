@@ -31,6 +31,11 @@ define('OSTERN_CATEGORY_SLUG', 'ostern');
 define('TICKET_CATEGORY_SLUG', 'veranstaltungen');
 define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
 define('VIRTUAL_EVENTS_CATEGORY_SLUG', 'virtuelle-events');
+define('VIRTUAL_EVENTS_CATEGORY_SLUGS', [
+    VIRTUAL_EVENTS_CATEGORY_SLUG,
+    'virtuelle-events-spirits',
+    'virtuelle-events-wein'
+]);
 define('WINE_CATEGORY_SLUGS', [
     'rotwein',
     'likoer',
