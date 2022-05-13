@@ -116,9 +116,7 @@ function product_video() {
 function sigils() {
     global $product;
 
-    if(hasSigil($product)) {
-        get_template_part('templates/product/sigils', null, ['product' => $product]);
-    }
+    get_template_part('templates/product/sigils', null, ['product' => $product]);
 }
 
 function hugo_head() {

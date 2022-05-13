@@ -10,7 +10,7 @@ $sigilWidth: $sigilHeight * 1.5;
     display: grid;
 
     grid-gap: $spacing-xs;
-    grid-template-columns: auto auto auto 1fr;
+    grid-template-columns: repeat(6, auto) 1fr;
 
     @media all and (max-width: $small-breakpoint) {
       grid-template-columns: auto 1fr;
@@ -22,7 +22,7 @@ $sigilWidth: $sigilHeight * 1.5;
       font-family: "Myriad Pro Regular", serif;
       line-height: 3px;
       font-size: 12px;
-      background: transparent url("../img/biosiegel.svg") no-repeat left top;
+      background: transparent url("../img/siegel/biosiegel.svg") no-repeat left top;
       $bioSigilHeight: 0.81 * $sigilHeight;
       $bioSigilHeight: 0.81 * $sigilHeight;
       $bioSigilWidth: $bioSigilHeight * 1.5;
@@ -36,83 +36,86 @@ $sigilWidth: $sigilHeight * 1.5;
       $deBioSigilWidth: $deBioSigilHeight * 1.2;
       width: $deBioSigilWidth;
       height: $deBioSigilHeight;
-      background: transparent url("../img/biosiegel-de.svg") no-repeat center center;
+      background: transparent url("../img/siegel/biosiegel-de.svg") no-repeat center center;
       background-size: $deBioSigilWidth + 11px $deBioSigilHeight + 11px;
     }
 
     > .vegansigil {
-      background: transparent url("../img/vegansiegel.svg") no-repeat left top;
-      width: $sigilHeight;
+      background: transparent url("../img/siegel/icon-vegan.svg") no-repeat left top;
       height: $sigilHeight;
+      width: $sigilHeight * 1.5;
     }
 
     > .biodynamicsigil {
-      background: transparent url("../img/biodynamischsiegel.svg") no-repeat left top;
+      background: transparent url("../img/siegel/icon-biodynamisch.svg") no-repeat left top;
       height: $sigilHeight;
-      width: $sigilHeight;
+      width: $sigilHeight * 1.5;
+    }
+
+    > .regionalsigil {
+      background: transparent url("../img/siegel/icon-regional.svg") no-repeat left top;
+      height: $sigilHeight;
+      width: $sigilHeight * 1.5;
+    }
+
+    > .product-of-month {
+      background: transparent url("../img/siegel/productofmonth.svg") no-repeat left top;
+      height: $sigilHeight;
+      width: $sigilHeight * 1.5;
+
+      &.wine-of-month {
+        background-image: url("../img/siegel/wineofmonth.svg");
+      }
     }
   }
 }
 
 // Category view
 .rehorik-products .sigil-container {
-  $sigilWidth: 50px;
+  $sigil-size: 35px;
   position: absolute;
-  top: 0;
-  right: $spacing-s;
-  width: $sigilWidth;
+  top: $spacing-xs;
+  left: 0;
+  width: $sigil-size * 1.5;
+
+  > * {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: $sigil-size * 1.5;
+    width: $sigil-size * 1.5;
+    height: $sigil-size;
+
+    &:not(:last-child) {
+      margin-bottom: $spacing-xs;
+    }
+  }
 
   > .biosigil {
-    width: $sigilWidth;
-    height: 33px;
-    background: transparent url("../img/biosiegel.svg") no-repeat center center;
+    background-image: url("../img/siegel/biosiegel.svg");
   }
 
   > .vegansigil {
-    background: transparent url("../img/vegansiegel.svg") no-repeat left top;
-    width: $sigilWidth;
-    height: $sigilWidth;
-    margin-top: $spacing-xs;
-  }
-}
-
-.rehorik-product.product-of-month {
-  > a > span.et_shop_image::after,
-  > div > div.images::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: $spacing-s;
-    width: 50px;
-    height: 33px;
-    background-position: center center;
-    background-color: transparent;
-    background-image: url("../img/productofmonth.svg");
+    background-image: url("../img/siegel/icon-vegan.svg");
   }
 
-  > div > div.images::after {
-    width: $sigilWidth;
-    height: $sigilHeight;
-    background-size: $sigilWidth $sigilHeight;
+  > .biodynamicsigil {
+    background-image: url("../img/siegel/icon-biodynamisch.svg");
   }
 
-  &.product_cat-wein,
-  &.product_cat-wein-spirits-co {
-    > a > span.et_shop_image::after,
-    > div > div.images::after {
-      background-image: url("../img/wineofmonth.svg");
+  > .regionalsigil {
+    background-image: url("../img/siegel/icon-regional.svg");
+  }
+
+  > .product-of-month {
+    background-image: url("../img/siegel/productofmonth.svg");
+
+    &.wine-of-month {
+      background-image: url("../img/siegel/wineofmonth.svg");
     }
   }
-}
 
-.event-online .et_shop_image::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: $spacing-s;
-  width: 50px;
-  height: 33px;
-  background: transparent url("../img/online.svg") no-repeat center center;
+  > .event-online {
+    background-image: url("../img/siegel/online.svg");
+  }
 }
