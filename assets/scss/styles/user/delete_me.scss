@@ -1,0 +1,13 @@
+.rehorik {
+  .delete-me {
+    margin-top: $spacing-l;
+    a {
+      color: $font-color;
+      font-size: $font-size-small;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
