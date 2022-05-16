@@ -1,10 +1,9 @@
 ul.rehorik-products.products {
+  list-style: none;
   li.product-category.product {
     position: relative;
     margin: 0;
-    height: 1000px;
     width: 100%;
-    overflow: hidden;
     float: none;
 
     > a {
