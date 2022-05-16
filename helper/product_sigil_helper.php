@@ -4,10 +4,6 @@ function isProductOfTheMonth(WC_Product $product): bool {
     return strtolower($product->get_attribute(PRODUCT_OF_MONTH_ATTRIBUTE_SLUG)) === "ja";
 }
 
-function hasSigil(WC_Product $product): bool {
-    return hasBioSigil($product) || hasVeganSigil($product) || hasBiodynamicSigil($product);
-}
-
 function hasBioSigil(WC_Product $product): bool {
     $value = generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
 
@@ -22,13 +18,17 @@ function hasBiodynamicSigil(WC_Product $product): bool {
     return strtolower($product->get_attribute(BIODYNAMIC_ATTRIBUTE_SLUG)) === "ja";
 }
 
+function hasRegionalSigil(WC_Product $product): bool {
+    return strtolower($product->get_attribute(REGIONAL_ATTRIBUTE_SLUG)) === "ja";
+}
+
 function isEventOnline($eventId): bool {
     if (!function_exists('tribe_events_get_ticket_event')) {
         return false;
     }
 
     $categories = tribe_get_event_cat_slugs($eventId);
-    if (in_array(VIRTUAL_EVENTS_CATEGORY_SLUG, $categories)) {
+    if (!empty(array_intersect(VIRTUAL_EVENTS_CATEGORY_SLUGS, $categories))) {
         return true;
     }
 
@@ -38,7 +38,15 @@ function isEventOnline($eventId): bool {
 }
 
 function getProductOfTheMonthClass(WC_Product $product): string {
-    return isProductOfTheMonth($product) ? "product-of-month" : "";
+    if (isProductOfTheMonth($product)) {
+        if (isItCategory($product, WINE_CATEGORY_SLUG)) {
+           return "product-of-month wine-of-month";
+        }
+
+        return "product-of-month";
+    }
+
+    return "";
 }
 
 function getIsEventOnlineClass(WC_Product $product): string {
@@ -61,6 +69,10 @@ function getVeganSigilClass(WC_Product $product): string {
 
 function getBiodynamicSigilClass(WC_Product $product): string {
     return hasBiodynamicSigil($product) ? "biodynamicsigil" : "";
+}
+
+function getRegionalSigilClass(WC_Product $product): string {
+    return hasRegionalSigil($product) ? "regionalsigil" : "";
 }
 
 function getBioSigilControlcode(WC_Product $product): string {

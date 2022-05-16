@@ -22,12 +22,18 @@
 
     .onsale {
       background: transparent url("../img/green-texture.png") repeat left top !important;
-      border-radius: $border-radius !important;
+      border-radius: $border-radius;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
       text-transform: uppercase;
       font-size: $font-size;
-      padding: $spacing-xxs $spacing-xs !important;
-      left: $spacing-xs !important;
-      top: $spacing-xs !important;
+      padding: $spacing-xs;
+      line-height: 0;
+      right: 0;
+      top: $spacing-xs;
+      margin: 0;
+      min-height: 0;
+      min-width: 0;
     }
 
     a {
