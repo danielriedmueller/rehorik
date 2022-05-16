@@ -3,7 +3,7 @@ get_header();
 get_template_part('templates/header/slider', null, ['items' => [
     [
         'claim' => 'Vatertag - nicht Katertag!',
-        'img'=> 'father2',
+        'img'=> 'fathers-day',
         'buttons' => [
             '/produkt-kategorie/onlineshop/spirits/brand/' => '15% Rabatt auf unsere guten Obstbrände'
         ]
