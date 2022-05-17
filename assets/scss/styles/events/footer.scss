@@ -2,9 +2,13 @@
   .rehorik-tribe-event-footer {
     border: none;
     position: relative;
-    padding-right: 90px;
     align-items: flex-start;
-    padding: 0;
+    padding: 0 90px 0 0;
+
+    .rehorik-hugo-head {
+      bottom: -17px;
+      right: 0;
+    }
 
     @media all and (max-width: $small-breakpoint) {
       display: block;
@@ -13,11 +17,12 @@
         text-align: left;
         margin: 0 0 $spacing-xxs 0;
       }
-    }
 
-    .rehorik-hugo-head {
-      bottom: -17px;
-      right: 0;
+
+      .rehorik-hugo-head {
+        margin: 0;
+        position: absolute;
+      }
     }
 
     .tribe-common-b2.tribe-tickets__tickets-footer-total,
@@ -39,8 +44,15 @@
     }
   }
 }
+
 .tribe-dialog__wrapper.tribe-modal__wrapper--ar {
   .rehorik-hugo-head {
     display: none;
+  }
+}
+
+.tribe-events-cal-links {
+  @media all and (max-width: $small-breakpoint) {
+    margin-top: $spacing;
   }
 }

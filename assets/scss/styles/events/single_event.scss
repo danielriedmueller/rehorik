@@ -9,7 +9,7 @@
     .rehorik-tribe-events-single-event-content {
       @media all and (min-width: $small-breakpoint + 1) {
         display: grid;
-        grid-template-columns: 3fr 5fr;
+        grid-template-columns: 2fr 3fr;
         column-gap: $spacing-xl;
         row-gap: $spacing;
       }
@@ -27,19 +27,18 @@
 
     .rehorik-tribe-events-single-description {
       text-align: justify;
+      line-height: $line-height;
     }
 
     .rehorik-tribe-events-single-hint {
       margin-top: $spacing;
-      background-color: $beigegold;
-      padding: $spacing-s;
+      background-color: transparent;
+      padding: $spacing-xs;
       font-size: $font-size-small;
-    }
-
-    @media all and (min-width: $small-breakpoint + 1) {
-      .tribe-events-event-image, .tribe-events-event-image img {
-        width: 600px;
-      }
+      color: $font-color;
+      border: 1px solid $grau;
+      max-width: 269px;
+      line-height: $line-height-narrow;
     }
 
     .tribe-events-event-image img {

@@ -1,24 +1,20 @@
-#slider {
+#slider, #single-header {
   position: relative;
+}
 
-  .slider-image {
-    width: auto;
-    height: var(--slider-height);
-    background: transparent none no-repeat center center;
-    object-fit: cover;
+.slider-image {
+  width: auto;
+  height: var(--slider-height);
+  background: transparent var(--image-large) no-repeat center center;
+  object-fit: cover;
+  background-size: cover;
+
+  @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+    background-image: var(--image-medium);
   }
 
-  li .slider-image {
-    background-image: var(--image-large);
-    background-size: cover;
-
-    @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
-      background-image: var(--image-medium);
-    }
-
-    @media all and (max-width: $small-breakpoint) {
-      background-image: var(--image-small);
-    }
+  @media all and (max-width: $small-breakpoint) {
+    background-image: var(--image-small);
   }
 }
 
@@ -30,7 +26,7 @@
   right: 130px;
 
   .slider-title {
-    margin-bottom: $spacing;
+    margin-bottom: $spacing-s;
 
     h1 {
       line-height: $line-height-very-large;

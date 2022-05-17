@@ -19,7 +19,7 @@ $price = wc_price($product->get_price());
 ?>
 <div class="rehorik-product-attributes">
     <div class='rehorik-product-min-price'><?= ($product->is_type('variable') ? "ab " : "") . $price . " *" ?></div>
-    <table class="mt">
+    <table>
         <tbody>
             <tr class="seperator">
                 <td colspan="2"><hr /></td>
