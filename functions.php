@@ -117,9 +117,4 @@ if (function_exists('register_sidebar')) {
         'before_title' => '<h3>',
         'after_title' => '</h3>',
     ]);
-
-    register_sidebar([
-        'id' => 'productfilter',
-        'name' => 'Produktfilter'
-    ]);
 }

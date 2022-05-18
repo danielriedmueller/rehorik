@@ -1,0 +1,56 @@
+.rehorik .wpfMainWrapper {
+  .wpfFilterWrapper[data-get-attribute="wpf_filter_staerke"] {
+    .wpfFilterContent {
+      li {
+        $width: 15px;
+        $height: 23px;
+
+        display: inline-block;
+
+        .wpfDisplay {
+          display: none;
+        }
+
+        height: $height;
+        width: $width !important;
+        background-repeat: no-repeat;
+
+        .wpfCheckbox label::before {
+          border: none !important;
+          height: $height !important;
+          width: $width !important;
+        }
+
+        @for $i from 1 through 6 {
+          $bgSize: $width - (6 - ($i - 1));
+
+          &[data-term-slug="#{$i}"] .wpfCheckbox label::before {
+            background-image: url("../img/svg/strength.svg") !important;
+            background-size: $bgSize;
+            background-position: left bottom;
+          }
+
+          &[data-term-slug="#{$i}"] .wpfCheckbox input:checked + label::before {
+            background-image: url("../img/svg/strength_filled.svg") !important;
+            background-size: $bgSize;
+            background-position: left bottom;
+          }
+
+          .rehorik-coffee-flavour-#{$i} {
+            background-image: url("../img/svg/flavour.svg");
+            background-size: $bgSize;
+            width: $bgSize;
+            background-position: left top;
+          }
+
+          .rehorik-coffee-flavour-#{$i}-filled {
+            background-image: url("../img/svg/flavour_filled.svg");
+            background-size: $bgSize;
+            width: $bgSize;
+            background-position: left top;
+          }
+        }
+      }
+    }
+  }
+}
