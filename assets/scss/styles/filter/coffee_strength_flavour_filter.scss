@@ -2,8 +2,8 @@
   .wpfFilterWrapper[data-get-attribute="wpf_filter_staerke"] {
     .wpfFilterContent {
       li {
-        $width: 15px;
-        $height: 23px;
+        $width: 30px;
+        $height: $width * 1.5;
 
         display: inline-block;
 
@@ -19,20 +19,26 @@
           border: none !important;
           height: $height !important;
           width: $width !important;
+          background-repeat: no-repeat;
+        }
+
+        .wpfCheckbox input {
+          height: $height !important;
+          width: $width !important;
         }
 
         @for $i from 1 through 6 {
           $bgSize: $width - (6 - ($i - 1));
 
           &[data-term-slug="#{$i}"] .wpfCheckbox label::before {
-            background-image: url("../img/svg/strength.svg") !important;
-            background-size: $bgSize;
+            background: transparent url("../img/svg/strength.svg") no-repeat center center !important;
+            background-size: $bgSize !important;
             background-position: left bottom;
           }
 
           &[data-term-slug="#{$i}"] .wpfCheckbox input:checked + label::before {
-            background-image: url("../img/svg/strength_filled.svg") !important;
-            background-size: $bgSize;
+            background: transparent url("../img/svg/strength_filled.svg") no-repeat center center !important;
+            background-size: $bgSize !important;
             background-position: left bottom;
           }
 
