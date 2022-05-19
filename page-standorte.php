@@ -6,7 +6,8 @@ get_template_part('templates/header/slider', null, [
             'claim' => 'Überall unterwegs',
             'img' => 'header-standorte',
             'buttons' => [
-                get_term_link(get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat'), 'product_cat') => 'Alle Events in unseren Standorten',
+                get_term_link(get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat'),
+                    'product_cat') => 'Alle Events in unseren Standorten',
             ],
         ],
     ],
@@ -187,8 +188,9 @@ get_template_part('templates/header/slider', null, [
                         Feeling für den Kaffee haben – das ist Arbeit
                         mit allen Sinnen.</p>
                 </div>
-                <img alt="Stammhaus" class="stammhaus"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/stammhaus-1000x900px.jpg' ?>">
+                <div class="location-img">
+                    <img alt="Stammhaus" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/stammhaus-1000x900px.jpg' ?>">
+                </div>
             </div>
         </div>
         <div id="cafe190">
@@ -214,8 +216,9 @@ get_template_part('templates/header/slider', null, [
                     </table>
                     <div>Telefon 0941 / 59 57 92 27</div>
                 </div>
-                <img alt="Cafe 190" class="cafe190"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/190-1000x746px.jpg' ?>">
+                <div class="location-img">
+                    <img alt="Cafe 190" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/190-1000x746px.jpg' ?>">
+                </div>
             </div>
         </div>
         <div id="kaffeeladen">
@@ -248,8 +251,9 @@ get_template_part('templates/header/slider', null, [
                     </table>
                     <div>Telefon 0941 / 58 65 276</div>
                 </div>
-                <img alt="Kaffeeladen" class="kaffeeladen"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/kaffeeladen-1000x642px.jpg' ?>">
+                <div class="location-img">
+                    <img alt="Kaffeeladen" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/kaffeeladen-1000x642px.jpg' ?>">
+                </div>
             </div>
         </div>
         <div id="weinkeller">
@@ -283,8 +287,9 @@ get_template_part('templates/header/slider', null, [
                     </table>
                     <div class="mb-s">Telefon 0941 / 58 65 276</div>
                 </div>
-                <img alt="Weinkeller" class="weinkeller"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/weinkeller-1000x642px.jpg' ?>">
+                <div class="location-img">
+                    <img alt="Weinkeller" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/weinkeller-1000x642px.jpg' ?>">
+                </div>
             </div>
         </div>
         <div id="deliladen">
@@ -323,8 +328,9 @@ get_template_part('templates/header/slider', null, [
                     <div>Am Brixener Hof 11 / 93047 Regensburg</div>
                     <div>Telefon 0941 / 788 353 50</div>
                 </div>
-                <img alt="Deliladen" class="deliladen"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/deli-1000x900px.jpg' ?>">
+                <div class="location-img">
+                    <img alt="Deliladen" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/deli-1000x900px.jpg' ?>">
+                </div>
             </div>
         </div>
         <div id="dez">
@@ -355,8 +361,9 @@ get_template_part('templates/header/slider', null, [
                     <div>Weichser Weg 5 / 93059 Regensburg</div>
                     <div>Telefon 0941 / 297 99 996</div>
                 </div>
-                <img alt="DEZ" class="dez"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/dez-1000x766px.jpg' ?>">
+                <div class="location-img">
+                    <img alt="DEZ" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/dez-1000x766px.jpg' ?>">
+                </div>
             </div>
         </div>
         <div id="gesandtenstrasse">
@@ -390,8 +397,9 @@ get_template_part('templates/header/slider', null, [
                     <div>Gesandtenstraße 16 / 93047 Regensburg</div>
                     <div>Telefon 0941 / 59 99 848</div>
                 </div>
-                <img alt="Gesandtenstraße" class="gesandtenstrasse"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/gesandtenstrass-1000x809px.jpg' ?>">
+                <div class="location-img">
+                    <img alt="Gesandtenstraße" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/gesandtenstrass-1000x809px.jpg' ?>">
+                </div>
             </div>
         </div>
         <div id="kaffeehaus">
@@ -425,8 +433,9 @@ get_template_part('templates/header/slider', null, [
                     <div>Straubinger Straße 62a / 93055 Regensburg</div>
                     <div>Telefon 0941 / 788 353 20</div>
                 </div>
-                <img alt="Kaffeehaus" class="kaffeehaus"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/straubinger-1000x766px.jpg' ?>">
+                <div class="location-img">
+                    <img alt="Kaffeehaus" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/straubinger-1000x766px.jpg' ?>">
+                </div>
             </div>
         </div>
     </div>
