@@ -19,5 +19,9 @@
     ul.products.rehorik-products {
       grid-template-columns: repeat(auto-fill, $product-category-width-large);
     }
+
+    #rehorik-best-selling-products     ul.products.rehorik-products {
+      grid-template-columns: repeat(auto-fill, $product-category-width);
+    }
   }
 }

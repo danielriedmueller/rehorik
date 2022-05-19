@@ -1,61 +1,73 @@
 .rehorik .wpfMainWrapper {
-  .wpfFilterWrapper[data-get-attribute="wpf_filter_staerke"] {
-    .wpfFilterContent {
-      li {
-        $width: 30px;
-        $height: $width * 1.5;
+  $width: 30px;
+  $height: $width * 1.5;
 
-        display: inline-block;
+  .wpfFilterWrapper[data-get-attribute="wpf_filter_staerke"],
+  .wpfFilterWrapper[data-get-attribute="wpf_filter_aromenvielfalt"] {
+    .wpfFilterContent li {
+      display: inline-block;
 
-        .wpfDisplay {
-          display: none;
-        }
+      &:not(:last-child) {
+        margin-right: $spacing-xxs;
+      }
 
+      .wpfDisplay {
+        display: none;
+      }
+
+      height: $height;
+      width: $width;
+      background-repeat: no-repeat;
+
+      .wpfCheckbox label {
+        border: none;
         height: $height;
-        width: $width !important;
+        width: $width;
         background-repeat: no-repeat;
+      }
 
-        .wpfCheckbox label::before {
-          border: none !important;
-          height: $height !important;
-          width: $width !important;
-          background-repeat: no-repeat;
-        }
+      .wpfCheckbox input {
+        height: $height;
+        width: $width;
+        position: absolute;
+        opacity: 0;
+        margin: 0;
+      }
+    }
+  }
 
-        .wpfCheckbox input {
-          height: $height !important;
-          width: $width !important;
-        }
+  @for $i from 1 through 6 {
+    $bgSize: ($width - 18) + ($i * 3);
 
-        @for $i from 1 through 6 {
-          $bgSize: $width - (6 - ($i - 1));
+    .wpfFilterWrapper[data-get-attribute="wpf_filter_aromenvielfalt"] .wpfFilterContent li {
+      &[data-term-slug="#{$i}"] .wpfCheckbox label {
+        background: transparent url("../img/svg/flavour.svg") no-repeat center center;
+        background-size: $bgSize;
+        width: $bgSize;
+        background-position: left bottom;
+      }
 
-          &[data-term-slug="#{$i}"] .wpfCheckbox label::before {
-            background: transparent url("../img/svg/strength.svg") no-repeat center center !important;
-            background-size: $bgSize !important;
-            background-position: left bottom;
-          }
+      &[data-term-slug="#{$i}"] .wpfCheckbox input:checked + label {
+        background: transparent url("../img/svg/flavour_filled.svg") no-repeat center center;
+        background-size: $bgSize;
+        width: $bgSize;
+        background-position: left bottom;
+      }
+    }
 
-          &[data-term-slug="#{$i}"] .wpfCheckbox input:checked + label::before {
-            background: transparent url("../img/svg/strength_filled.svg") no-repeat center center !important;
-            background-size: $bgSize !important;
-            background-position: left bottom;
-          }
+    .wpfFilterWrapper[data-get-attribute="wpf_filter_staerke"] .wpfFilterContent li {
+      &[data-term-slug="#{$i}"] .wpfCheckbox label {
+        background: transparent url("../img/svg/strength.svg") no-repeat center center;
+        background-size: $bgSize;
+        width: $bgSize;
+        background-position: left bottom;
+      }
 
-          .rehorik-coffee-flavour-#{$i} {
-            background-image: url("../img/svg/flavour.svg");
-            background-size: $bgSize;
-            width: $bgSize;
-            background-position: left top;
-          }
-
-          .rehorik-coffee-flavour-#{$i}-filled {
-            background-image: url("../img/svg/flavour_filled.svg");
-            background-size: $bgSize;
-            width: $bgSize;
-            background-position: left top;
-          }
-        }
+      &[data-term-slug="#{$i}"] .wpfCheckbox input:checked + label {
+        background: transparent url("../img/svg/strength_filled.svg") no-repeat center center;
+        background-size: $bgSize;
+        width: $bgSize;
+        background-position: left bottom;
       }
     }
   }
