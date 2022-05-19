@@ -44,6 +44,11 @@ define('WINE_CATEGORY_SLUGS', [
     'naturwein',
     'champagner-und-sekt'
 ]);
+define('HIDE_CATEGORIES', [
+    'delikatessen-onlineshop',
+    'geschenke-gutscheine',
+    'kaese-wurst'
+]);
 
 // For Events which are only virtual online events
 define('ONLINE_META_KEY', 'Online');
