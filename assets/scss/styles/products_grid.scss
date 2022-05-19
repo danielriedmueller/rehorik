@@ -13,6 +13,21 @@
     }
 
     grid-template-columns: repeat(auto-fill, $product-category-width);
+
+    &:empty {
+      grid-template-columns: 1fr;
+
+      &::before {
+        content: "Es wurden keine Produkte gefunden, die deiner Auswahl entsprechen.";
+        display: block;
+        background-color: #fff;
+        color: $font-color;
+        padding: $spacing;
+        border: 1px solid $beigegold;
+        margin: 0 0 $spacing 0;
+        border-radius: $border-radius;
+      }
+    }
   }
 
   &.home {

@@ -2,10 +2,14 @@
   $width: 30px;
   $height: $width * 1.5;
 
+  .wpfFilterWrapper {
+    margin: 0;
+  }
+
   .wpfFilterWrapper[data-get-attribute="wpf_filter_staerke"],
   .wpfFilterWrapper[data-get-attribute="wpf_filter_aromenvielfalt"] {
     .wpfFilterContent li {
-      display: inline-block;
+      display: inline-block !important;
 
       &:not(:last-child) {
         margin-right: $spacing-xxs;

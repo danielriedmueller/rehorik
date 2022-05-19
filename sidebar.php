@@ -4,14 +4,13 @@
 ?>
 
 <div id="sidebar" class="rehorik-sidebar">
-    <?php
-        the_widget('WC_Widget_Product_Categories', [
+    <?php the_widget('WC_Widget_Product_Categories', [
             'show_children_only' => true,
             'count' => true,
             'hide_empty' => false,
             'hierarchical' => true,
             'max_depth' => 3,
-        ]);
-        echo do_shortcode('[wpf-filters id=2]')
-    ?>
+    ]); ?>
+    <h3 class="filter-title">Filter</h3>
+    <?= do_shortcode('[wpf-filters id=1]') ?>
 </div>
