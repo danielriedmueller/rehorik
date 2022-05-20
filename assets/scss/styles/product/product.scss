@@ -1,7 +1,7 @@
 .rehorik.single-product .rehorik-product.product.detail-view {
   margin-bottom: $product-view-grid-gap;
   display: grid;
-  grid-template-columns: 1fr max-content;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "gallery title-price"
     "gallery goes-with"
