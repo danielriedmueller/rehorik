@@ -13,6 +13,6 @@
     ]); ?>
     <?php if (wc_get_loop_prop( 'total' ) > 0): ?>
         <h3 class="filter-title">Filter</h3>
-        <?= do_shortcode('[wpf-filters id=1]') ?>
+        <?= do_shortcode('[wpf-filters id=2]') ?>
     <?php endif; ?>
 </div>
