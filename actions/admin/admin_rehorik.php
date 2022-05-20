@@ -29,6 +29,18 @@ add_action( 'wp_ajax_create_sigil_attributes', function() {
 
         foreach ($products as $product) {
             /** @var WC_Product_Simple $product */
+            if (!empty($product->get_attribute('biodynamisch'))) {
+                $updateAttribute('biodynamisch', $product);
+            }
+
+            if (!empty($product->get_attribute('biosiegel'))) {
+                $updateAttribute('biosiegel', $product);
+            }
+
+            if (!empty($product->get_attribute('product-of-month'))) {
+                $updateAttribute('produkt-des-monats', $product);
+            }
+
             if (!empty($product->get_attribute('regional'))) {
                 $updateAttribute('regional', $product);
             }
