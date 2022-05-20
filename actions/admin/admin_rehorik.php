@@ -1,7 +1,6 @@
 <?php
 // Add admin page
 add_action( 'admin_menu', function() {
-    /*
     add_menu_page('Rehorik', 'Rehorik', 'administrator', 'rehorik-admin', function() {
         ?>
             <div>
@@ -10,7 +9,6 @@ add_action( 'admin_menu', function() {
             </div>
         <?php
     }, null, 3);
-    */
 });
 
 add_action( 'wp_ajax_create_sigil_attributes', function() {
@@ -31,24 +29,8 @@ add_action( 'wp_ajax_create_sigil_attributes', function() {
 
         foreach ($products as $product) {
             /** @var WC_Product_Simple $product */
-            if (!empty($product->get_attribute('biodynamisch'))) {
-                $updateAttribute('biodynamisch', $product);
-            }
-
-            if (!empty($product->get_attribute('biosiegel'))) {
-                $updateAttribute('biosiegel', $product);
-            }
-
-            if (!empty($product->get_attribute('product-of-month'))) {
-                $updateAttribute('produkt-des-monats', $product);
-            }
-
             if (!empty($product->get_attribute('regional'))) {
                 $updateAttribute('regional', $product);
-            }
-
-            if (!empty($product->get_attribute('vegan'))) {
-                $updateAttribute('vegan', $product);
             }
         }
 
