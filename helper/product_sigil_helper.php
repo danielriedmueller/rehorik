@@ -1,25 +1,25 @@
 <?php
 
 function isProductOfTheMonth(WC_Product $product): bool {
-    return strtolower($product->get_attribute(PRODUCT_OF_MONTH_ATTRIBUTE_SLUG)) === "ja";
+    return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Produkt des Monats');
 }
 
 function hasBioSigil(WC_Product $product): bool {
     $value = generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
 
-    return !empty($value);
+    return !empty($value) && str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Biosiegel');
 }
 
 function hasVeganSigil(WC_Product $product): bool {
-    return strtolower($product->get_attribute(VEGAN_ATTRIBUTE_SLUG)) === "ja";
+    return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Vegan');
 }
 
 function hasBiodynamicSigil(WC_Product $product): bool {
-    return strtolower($product->get_attribute(BIODYNAMIC_ATTRIBUTE_SLUG)) === "ja";
+    return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Biodynamisch');
 }
 
 function hasRegionalSigil(WC_Product $product): bool {
-    return strtolower($product->get_attribute(REGIONAL_ATTRIBUTE_SLUG)) === "ja";
+    return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Regional');
 }
 
 function isEventOnline($eventId): bool {

@@ -1,7 +1,7 @@
 <?php
 // Add admin page
 add_action( 'admin_menu', function() {
-    add_menu_page('Rehorik', 'Rehorik', 'manage_options', 'rehorik-admin', function() {
+    add_menu_page('Rehorik', 'Rehorik', 'administrator', 'rehorik-admin', function() {
         ?>
             <div>
                 <div id="status">OK</div>
@@ -13,14 +13,13 @@ add_action( 'admin_menu', function() {
 
 add_action( 'wp_ajax_create_sigil_attributes', function() {
     try {
-        $guetesiegel = 'pa_guetesiegel';
         $products = wc_get_products(array( 'status' => 'publish', 'limit' => -1 ));
 
-        $updateAttribute = function($attribute, $product) use ($guetesiegel) {
-            wp_set_object_terms($product->get_id(), $attribute, $guetesiegel, true);
+        $updateAttribute = function($attribute, $product) {
+            wp_set_object_terms($product->get_id(), $attribute, GUETESIEGEL_ATTRIBUTE_SLUG, true);
             $product_attributes = get_post_meta( $product->get_id() ,'_product_attributes', true);
-            $product_attributes[$guetesiegel] = [
-                'name' => $guetesiegel,
+            $product_attributes[GUETESIEGEL_ATTRIBUTE_SLUG] = [
+                'name' => GUETESIEGEL_ATTRIBUTE_SLUG,
                 'value' => $attribute,
                 'is_visible' => '1',
                 'is_taxonomy' => '1'
