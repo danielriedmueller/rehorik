@@ -4,8 +4,6 @@ add_action( 'admin_menu', function() {
     add_menu_page('Rehorik', 'Rehorik', 'administrator', 'rehorik-admin', function() {
         ?>
             <div>
-                <div id="status">OK</div>
-                <button id="create-sigil-attributes-button">Produkte: Attribute: Gütesiegel erstellen</button>
             </div>
         <?php
     }, null, 3);
