@@ -1,6 +1,7 @@
 <?php
 // Add admin page
 add_action( 'admin_menu', function() {
+    /*
     add_menu_page('Rehorik', 'Rehorik', 'administrator', 'rehorik-admin', function() {
         ?>
             <div>
@@ -9,6 +10,7 @@ add_action( 'admin_menu', function() {
             </div>
         <?php
     }, null, 3);
+    */
 });
 
 add_action( 'wp_ajax_create_sigil_attributes', function() {
