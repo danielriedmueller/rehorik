@@ -9,7 +9,16 @@ add_action( 'admin_menu', function() {
     }, null, 3);
 });
 
-add_action( 'wp_ajax_create_sigil_attributes', function() {
+
+add_action( 'admin_enqueue_scripts', function($hook) {
+    if ($hook == 'toplevel_page_rehorik-admin') {
+        $assetsDir = get_stylesheet_directory_uri() . '/assets/';
+        // wp_enqueue_script('rehorik-admin', $assetsDir . 'js/admin.js', array('jquery'), 1, false);
+    }
+});
+
+/*
+add_action('wp_ajax_create_sigil_attributes', function() {
     try {
         $guetesiegel = 'pa_guetesiegel';
         $products = wc_get_products(array( 'status' => 'publish', 'limit' => -1 ));
@@ -27,8 +36,6 @@ add_action( 'wp_ajax_create_sigil_attributes', function() {
         };
 
         foreach ($products as $product) {
-            /** @var WC_Product_Simple $product */
-
             if (!empty($product->get_attribute('biodynamisch'))) {
                 $updateAttribute('biodynamisch', $product);
             }
@@ -50,10 +57,4 @@ add_action( 'wp_ajax_create_sigil_attributes', function() {
         echo "error: " . $exception->getMessage();
     }
 });
-
-add_action( 'admin_enqueue_scripts', function($hook) {
-    if ($hook == 'toplevel_page_rehorik-admin') {
-        $assetsDir = get_stylesheet_directory_uri() . '/assets/';
-        wp_enqueue_script('rehorik-admin', $assetsDir . 'js/admin.js', array('jquery'), 1, false);
-    }
-});
+*/
