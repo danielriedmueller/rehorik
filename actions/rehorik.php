@@ -1,5 +1,5 @@
 <?php
-require_once('admin/admin_rehorik.php');
+require_once('admin/rehorik/admin_rehorik.php');
 
 /**
  * Renders free shipping amount hint.

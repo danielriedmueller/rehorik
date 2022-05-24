@@ -1,4 +1,6 @@
 <?php
+require_once('delete_past_events.php');
+
 // Add admin page
 add_action('admin_menu', function () {
     add_menu_page('Rehorik', 'Rehorik', 'administrator', 'rehorik-admin', function () {
@@ -7,6 +9,7 @@ add_action('admin_menu', function () {
             <div id="status">OK</div>
             <!-- <button id="update-coffee-price-button">Update Coffee Price</button> -->
             <button id="update-sku-button">Update SKUs</button>
+            <button id="delete-events-button">Delete Events</button>
         </div>
         <?php
     }, null, 3);
