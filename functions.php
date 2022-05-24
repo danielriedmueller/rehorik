@@ -31,6 +31,11 @@ define('OSTERN_CATEGORY_SLUG', 'ostern');
 define('TICKET_CATEGORY_SLUG', 'veranstaltungen');
 define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
 define('VIRTUAL_EVENTS_CATEGORY_SLUG', 'virtuelle-events');
+define('VIRTUAL_EVENTS_CATEGORY_SLUGS', [
+    VIRTUAL_EVENTS_CATEGORY_SLUG,
+    'virtuelle-events-spirits',
+    'virtuelle-events-wein'
+]);
 define('WINE_CATEGORY_SLUGS', [
     'rotwein',
     'likoer',
@@ -38,6 +43,11 @@ define('WINE_CATEGORY_SLUGS', [
     'rose',
     'naturwein',
     'champagner-und-sekt'
+]);
+define('HIDE_CATEGORIES', [
+    'delikatessen-onlineshop',
+    'geschenke-gutscheine',
+    'kaese-wurst'
 ]);
 
 // For Events which are only virtual online events
@@ -76,7 +86,6 @@ require_once($baseDir . '/filter/shop.php');
 require_once($baseDir . '/filter/categories.php');
 require_once($baseDir . '/filter/product_view.php');
 require_once($baseDir . '/filter/sitemap.php');
-require_once($baseDir . '/actions/divi.php');
 require_once($baseDir . '/actions/woocommerce.php');
 require_once($baseDir . '/actions/rehorik.php');
 
@@ -183,10 +192,5 @@ if (function_exists('register_sidebar')) {
         'after_widget' => '</div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>',
-    ]);
-
-    register_sidebar([
-        'id' => 'productfilter',
-        'name' => 'Produktfilter'
     ]);
 }

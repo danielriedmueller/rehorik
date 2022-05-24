@@ -9,7 +9,7 @@
     padding: $section-padding-small $section-padding-small;
   }
 
-  > h1 {
+  > h1, > h2 {
     margin-bottom: $section-padding-top-bottom;
 
     @media all and (max-width: $small-breakpoint) {

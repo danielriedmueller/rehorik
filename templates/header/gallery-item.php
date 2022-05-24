@@ -5,7 +5,7 @@
         <?php if (isset($args['text'])): ?>
             <div class="auto-width slider-text"><div><?= $args['text'] ?></div></div>
         <?php endif; ?>
-        <div class="slider-title"><h1><?= $args['claim'] ?></h1></div>
+        <div class="slider-title"><h2><?= $args['claim'] ?></h2></div>
         <div class="auto-width button-container">
             <div>
                 <?php foreach ($args['buttons'] as $link => $text): ?>

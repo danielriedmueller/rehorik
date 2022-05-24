@@ -53,6 +53,30 @@
     color: $beigegold;
   }
 
+  .location-text {
+    order: 2;
+
+    td {
+      padding-right: $spacing-s;
+    }
+  }
+
+  @media all and (max-width: $medium-breakpoint) {
+    .location-text,
+    .location-img {
+      width: 100% !important;
+    }
+  }
+
+  .location-img {
+    order: 3;
+
+    @media all and (max-width: $medium-breakpoint) {
+      order: 1;
+      margin: 0 0 $spacing 0 !important;
+    }
+  }
+
   #deliladen {
     background-color: $beigegold;
     padding: $spacing-xl 0;
@@ -69,7 +93,6 @@
   #dez {
     padding: $spacing-xl 0;
   }
-
 
   #weinkeller {
     padding: $spacing 0 $spacing-xl 0;
@@ -88,66 +111,38 @@
     padding: $spacing-xl 0 0 0;
   }
 
-  .location-text {
-    order: 2;
+  #stammhaus, #deliladen, #gesandtenstrasse {
+    .location-text {
+      width: 35%;
+    }
 
-    td {
-      padding-right: $spacing-s;
+    .location-img {
+      width: 65%;
+      margin-left: $spacing;
     }
   }
 
-  img {
-    order: 3;
-
-    @media all and (max-width: $medium-breakpoint) {
-      order: 1;
-      width: 100% !important;
-      margin: 0 0 $spacing 0 !important;
+  #cafe190, #kaffeeladen, #weinkeller {
+    .location-text {
+      width: 50%;
     }
 
-    &.stammhaus {
-      width: 65%;
-      margin-left: $spacing;
-    }
-
-    &.cafe190 {
+    .location-img {
       width: 50%;
       order: 1;
       margin-right: $spacing;
     }
+  }
 
-    &.kaffeeladen {
-      width: 50%;
+  #dez, #kaffeehaus {
+    .location-text {
+      width: 35%;
+    }
+
+    .location-img {
+      width: 65%;
       order: 1;
       margin-right: $spacing;
-    }
-
-    &.weinkeller {
-      width: 50%;
-      order: 1;
-      margin-right: $spacing;
-    }
-
-    &.deliladen {
-      width: 65%;
-      margin-left: $spacing;
-    }
-
-    &.dez {
-      width: 65%;
-      margin-right: $spacing;
-      order: 1;
-    }
-
-    &.gesandtenstrasse {
-      width: 65%;
-      margin-left: $spacing;
-    }
-
-    &.kaffeehaus {
-      width: 65%;
-      margin-right: $spacing;
-      order: 1;
     }
   }
 }

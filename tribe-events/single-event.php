@@ -45,19 +45,19 @@ get_template_part('templates/tribe-events-attendee-list');
             <div>
                 <!-- Event content -->
                 <?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
+                <?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
                 <div class="rehorik-tribe-events-single-description">
                     <?php the_content(); ?>
                 </div>
-                <div class="rehorik-tribe-events-single-hint">Bitte beachtet, dass die Anmeldung verbindlich ist und <b>nicht verschoben, storniert oder umgetauscht</b> werden kann!</div>
             </div>
             <div>
-                <?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
                 <!-- .tribe-events-single-event-description -->
                 <?php tribe_get_template_part( 'modules/meta' ); ?>
                 <?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
                 <!-- Calendar links -->
                 <?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
                 <?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
+                <div class="rehorik-tribe-events-single-hint">Bitte beachtet, dass die Anmeldung verbindlich ist und <b>nicht verschoben, storniert oder umgetauscht</b> werden kann!</div>
             </div>
 		</div> <!-- #post-x -->
 		<?php if ( get_post_type() == Tribe__Events__Main::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template() ?>

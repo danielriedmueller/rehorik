@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 466px;
   width: 100%;
 
   .orderbird-location-names {
@@ -17,11 +18,12 @@
       background: rgba(0, 0, 0, $opacity) none;
       backdrop-filter: blur(3px);
       line-height: $line-height;
-      margin: $spacing-s;
+      padding: $spacing-xxs;
+      margin: $spacing-xxs;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 25%;
+      height: 80px;
     }
   }
 
@@ -96,8 +98,8 @@
   }
 
   iframe {
-    height: 100%;
-    width: 100%;
+    height: 100% !important;
+    width: 100% !important;
 
     .widget-header {
       display: none;

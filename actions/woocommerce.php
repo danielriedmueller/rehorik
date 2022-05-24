@@ -86,3 +86,26 @@ add_action('event_tickets_after_save_ticket', function ($event_id, $ticket, $raw
         $product->save();
     }
 }, 10, 4);
+
+// Add delete account feature
+add_action( 'woocommerce_after_edit_account_form', function() {
+    echo sprintf('<div class="delete-me">%s</div>', do_shortcode( '[plugin_delete_me /]' ));
+}, 10, 0 );
+
+/**
+ * Hide specific categories
+ */
+add_filter( 'get_terms', function ( $terms, $taxonomies, $args ) {
+    $new_terms 	= array();
+
+    // if a product category and on the shop page
+    if ( in_array( 'product_cat', $taxonomies ) && !is_admin()) {
+        foreach ( $terms as $key => $term ) {
+            if (!in_array( $term->slug, HIDE_CATEGORIES ) ) {
+                $new_terms[] = $term;
+            }
+        }
+        $terms = $new_terms;
+    }
+    return $terms;
+}, 10, 3 );

@@ -3,6 +3,7 @@
 
   > div:first-child {
     order: 1;
+    flex-grow: 1;
   }
 
   #sidebar {

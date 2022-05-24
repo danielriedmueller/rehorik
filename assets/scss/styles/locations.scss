@@ -2,7 +2,7 @@
   background: $grau none;
 
   .container {
-    h1 {
+    h2 {
       color: #fff;
     }
 
@@ -23,7 +23,7 @@
           display: block;
         }
 
-        h2 {
+        h3 {
           margin: $spacing 0;
           padding: 0;
           line-height: $line-height;
@@ -48,7 +48,7 @@
     }
 
     @media all and (max-width: $medium-breakpoint) {
-      h1 {
+      h2 {
         > span {
           display: none;
         }
@@ -61,7 +61,7 @@
     }
 
     @media all and (max-width: $small-breakpoint) {
-      h1 {
+      h2 {
         > span {
           display: none;
         }

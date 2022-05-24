@@ -1,0 +1,81 @@
+.rehorik {
+  .rehorik-order-overview.woocommerce-order-overview {
+    li {
+      margin-bottom: $spacing-xs;
+    }
+
+    margin-bottom: $spacing-l - $spacing-xs;
+  }
+
+  h2.woocommerce-column__title, h2.wc-bacs-bank-details-heading {
+    margin: $spacing-xs 0;
+    font-size: $font-size-h2;
+  }
+
+  .woocommerce-bacs-bank-details {
+    h3 {
+      margin: 0;
+      font-size: $font-size;
+    }
+
+    .order_details {
+      margin-bottom: $spacing-l;
+    }
+  }
+
+  .woocommerce-order-details {
+    margin-top: $spacing-xl;
+
+    .woocommerce-order-details__title {
+      display: none;
+    }
+
+    table.woocommerce-table--order-details.shop_table.order_details {
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      margin: 0 0 $spacing 0;
+      background-color: transparent;
+      width: 100%;
+
+      thead {
+        th, td {
+          padding: 0 0 $spacing-s 0;
+          text-align: left;
+        }
+      }
+
+      tbody {
+        th, td {
+          padding: $spacing-s 0;
+          text-align: left;
+          border-top: 1px solid $beigegold;
+        }
+      }
+
+      tfoot {
+        th, td {
+          border-top: none;
+          border-bottom: 1px solid $beigegold;
+          text-align: left;
+          padding: $spacing-s 0;
+        }
+      }
+
+      tr {
+        th:last-child, td:last-child {
+          text-align: right;
+        }
+      }
+
+      tbody tr:last-child td {
+        border-bottom: 1px solid $beigegold;
+      }
+
+      p.wc-gzd-cart-info.units-info, strong.product-quantity {
+        display: inline-block;
+        font-weight: normal;
+      }
+    }
+  }
+}

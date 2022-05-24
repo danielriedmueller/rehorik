@@ -71,6 +71,10 @@
 @import "styles/page/locations_table";
 @import "styles/page/locations_description";
 @import "styles/page/page_neue_roesterei";
+@import "styles/user/delete_me";
+@import "styles/checkout/order_overview";
+@import "styles/filter/coffee_strength_flavour_filter";
+@import "styles/filter/filter";
 
 @font-face {
   font-family: "DIN Offc W01 Cond";
@@ -115,6 +119,8 @@ html, body {
   vertical-align: baseline;
   background: transparent;
   line-height: $line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -127,9 +133,10 @@ h1, h2, h3, h4, h5, h6, strong, a {
   padding: 0;
 }
 
-h1 {
+h1, h2 {
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  font-weight: normal;
   font-size: $font-size-h1;
   line-height: $line-height-very-large;
   text-align: center;
@@ -138,11 +145,10 @@ h1 {
 
   @media all and (max-width: $small-breakpoint) {
     font-size: $font-size-h2;
-    letter-spacing: 1px;
   }
 }
 
-h2, h3 {
+h3 {
   font-size: $font-size-h2;
   line-height: $line-height-large;
   text-transform: uppercase;
