@@ -6,7 +6,7 @@ add_action('admin_menu', function () {
         <div>
             <div id="status">OK</div>
             <!-- <button id="update-coffee-price-button">Update Coffee Price</button> -->
-            <!-- <button id="update-sku-button">Update SKUs</button> -->
+            <button id="update-sku-button">Update SKUs</button>
         </div>
         <?php
     }, null, 3);
@@ -129,31 +129,49 @@ add_action('wp_ajax_update_sku', function () {
         $products = wc_get_products(['status' => 'publish', 'limit' => -1, 'category' => ['wein', 'spirits']]);
 
         foreach ($products as $product) {
+            $found = null;
+
+            if ($product->is_type('variable')) {
+                echo 'is variable: ' . '<a href="' . $product->get_permalink() . '">' . $product->get_title() . '</a></br>';
+                continue;
+            }
+
             /** @var WC_Product_Simple $product */
             $sku = $product->get_sku();
             if (!empty($sku) && strlen($sku) < 5 && strlen($sku) > 2) {
-                $found = null;
                 $stringLength = strlen($sku);
                 $title = $product->get_title();
 
                 foreach ($skus as $newSku) {
                     if ($sku === substr($newSku, -$stringLength)) {
                         if ($found) {
-                            echo 'already found: ' . $found . ', ' . $product->get_title() . '<br>';
+                            echo 'already found: ' . $found . ', ' . '<a href="' . $product->get_permalink() . '">' . $product->get_title() . '</a>' . '<br>';
                         }
                         $found = $newSku;
                     }
                 }
 
                 if (!$found) {
-                    throw new Exception('not found: ' . $sku . ', ' . $product->get_title());
+                    throw new Exception('not found: ' . $sku . ', ' . '<a href="' . $product->get_permalink() . '">' . $product->get_title() . '</a>');
                 }
-
-                echo $found . ', ' . $product->get_title() . '<br>';
             }
 
-            $product->set_sku($found);
-            $product->save();
+            if ($found) {
+                echo 'new sku ' . $found . ': <a href="' . $product->get_permalink() . '">' . $product->get_title() . '</a> ' . $product->get_sku() . '</br>';
+
+                if (!wc_product_has_unique_sku($product->get_id(), $found)) {
+                    $product_id_found = wc_get_product_id_by_sku($found);
+                    $product_found = wc_get_product($product_id_found);
+                    throw new Exception(
+                        'not unique: ' . $found . ', '
+                        . ' <a href="' . $product->get_permalink() . '">' . $product->get_title() . '</a>'
+                        . ' <a href="' . $product_found->get_permalink() . '">' . $product_found->get_title() . '</a>'
+                    );
+                } else {
+                    $product->set_sku($found);
+                    $product->save();
+                }
+            }
         }
 
         echo "OK";
@@ -168,7 +186,7 @@ add_action('wp_ajax_update_coffee_price', function () {
         '190°' => [8.25, 16.00, 32.00],
         'Kenya Gourmet' => [8.25, 16.00, 32.00],
         'Arabica Due' => [6.75, 13.00, 26.00],
-        'Bergsport ' => [7.75, 15.00, 30.00],
+        'Bergsport' => [7.75, 15.00, 30.00],
         'Amazonas' => [7.25, 14.00, 28.00],
         'Spätlese' => [6.75, 13.00, 26.00],
         'Café Felix' => [6.50, 12.50, 25.00],
@@ -179,19 +197,19 @@ add_action('wp_ajax_update_coffee_price', function () {
         'Primo' => [6.25, 12.00, 24.00],
         'Diavolo' => [6.75, 13.00, 26.00],
         'Espresso Entkoffeiniert' => [6.75, 13.00, 26.00],
-        'Mokka ' => [7.25, 14.00, 28.00],
+        'Mokka' => [7.25, 14.00, 28.00],
         'Gakundu' => [8.25, 16.00, 32.00],
         'La Passeio' => [7.00, 13.50, 27.00],
-        'Spätlese ' => [6.75, 13.00, 26.00],
+        'Filterkaffee Spätlese' => [6.75, 13.00, 26.00],
         'Horizontes' => [6.75, 13.00, 26.00],
         'La Cascada' => [6.75, 13.00, 26.00],
-        'La Victoria ' => [6.75, 13.00, 26.00],
-        'Amazonas ' => [7.25, 14.00, 28.00],
+        'Filterkaffee La Victoria' => [6.75, 13.00, 26.00],
+        'Filterkaffee Amazonas' => [7.25, 14.00, 28.00],
         'Sumatra' => [7.25, 14.00, 28.00],
         'Monsooned Malabar' => [6.75, 13.00, 26.00],
-        'Karlsbader Mischung ' => [7.00, 13.50, 27.00],
+        'Karlsbader Mischung' => [7.00, 13.50, 27.00],
         'Festmischung' => [6.25, 12.00, 24.00],
-        'Regensburger Mischung ' => [6.75, 13.00, 26.00],
+        'Regensburger Mischung' => [6.75, 13.00, 26.00],
         'Premium Blend' => [7.00, 13.50, 27.00],
         'Spezial Mischung' => [5.75, 11.00, 22.00],
         'Malega' => [6.75, 13.00, 26.00],
@@ -221,7 +239,7 @@ add_action('wp_ajax_update_coffee_price', function () {
                 throw new Exception('no product found');
             }
 
-            if ($foundProduct->is_type( 'variable' ) ) {
+            if ($foundProduct->is_type('variable')) {
                 foreach ($foundProduct->get_children() as $childId) {
                     $child = wc_get_product($childId);
 
@@ -235,18 +253,22 @@ add_action('wp_ajax_update_coffee_price', function () {
 
                     if ($unit === '0.25') {
                         $gzd_product->get_wc_product()->set_regular_price($newPrice[0]);
+                        $gzd_product->set_unit_price_regular($newPrice[2] + 1);
+                        $gzd_product->set_unit_price($newPrice[2] + 1);
                     }
 
                     if ($unit === '0.5') {
                         $gzd_product->get_wc_product()->set_regular_price($newPrice[1]);
+                        $gzd_product->set_unit_price_regular($newPrice[2]);
+                        $gzd_product->set_unit_price($newPrice[2]);
+
                     }
 
                     if ($unit === '1') {
                         $gzd_product->get_wc_product()->set_regular_price($newPrice[2]);
+                        $gzd_product->set_unit_price_regular($newPrice[2]);
+                        $gzd_product->set_unit_price($newPrice[2]);
                     }
-
-                    $gzd_product->set_unit_price_regular($newPrice[2]);
-                    $gzd_product->set_unit_price($newPrice[2]);
 
                     $gzd_product->get_wc_product()->save();
                     $gzd_product->save();
