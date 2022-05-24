@@ -28,7 +28,7 @@
   .slider-title {
     margin-bottom: $spacing-s;
 
-    h1 {
+    h2 {
       line-height: $line-height-very-large;
       color: #fff;
     }
@@ -36,7 +36,7 @@
     @media all and (max-width: $small-breakpoint) {
       margin-bottom: $spacing-s;
 
-      h1 {
+      h2 {
         line-height: $line-height-large
       }
     }

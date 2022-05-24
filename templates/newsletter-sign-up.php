@@ -1,7 +1,7 @@
 <?php ?>
 <div id="newsletter-sign-up">
     <div class="container">
-        <h1>Newsletter</h1>
+        <h2>Newsletter</h2>
         <div>
             <div class="newsletter-sign-up-description">
                 <h4>Lust auf mehr Kaffee, Wein, Spirits und Feinkost?</h4>

@@ -53,7 +53,7 @@ get_template_part('templates/header/slider', null, [
         </div>
         <div>
             <div class="container">
-                <h1>RÖSTEREI & KAFFEEHAUS</h1>
+                <h2>RÖSTEREI & KAFFEEHAUS</h2>
                 <div>
                     <div>
                         <p class="mb-s">

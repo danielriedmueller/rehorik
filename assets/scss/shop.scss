@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6, strong, a {
   padding: 0;
 }
 
-h1 {
+h1, h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: normal;
@@ -148,7 +148,7 @@ h1 {
   }
 }
 
-h2, h3 {
+h3 {
   font-size: $font-size-h2;
   line-height: $line-height-large;
   text-transform: uppercase;

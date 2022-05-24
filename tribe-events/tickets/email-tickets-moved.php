@@ -30,7 +30,7 @@ wc_get_template('emails/email-header.php', ['email_heading' => "Deine Karten"]);
  */
 do_action('tribe_tickets_moved_tickets_email_top', $ticket_type_id);
 ?>
-    <h1><?php esc_html_e('Important changes to your tickets', 'event-tickets'); ?></h1>
+    <h2><?php esc_html_e('Important changes to your tickets', 'event-tickets'); ?></h2>
     <p>
         <?php
         $message = _n(
