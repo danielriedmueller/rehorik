@@ -1,5 +1,8 @@
 .rehorik .wpfMainWrapper {
+  background: transparent url("../img/strichl-muster-60px.png") no-repeat left top;
   margin-bottom: $spacing-s;
+  padding-top: $spacing-xl;
+  color: $grau;
 
   .wpfFilterWrapper {
     padding: 0;
@@ -7,6 +10,21 @@
 
   .wpfTitleToggle {
     padding-top: 5px;
+  }
+
+  .wpfFilterTitle {
+    text-transform: uppercase;
+    font-size: $font-size;
+    margin: $spacing-xs 0 0 0;
+  }
+
+  .wpfFilterVerScroll {
+    margin: $spacing-xs 0 0 0;
+  }
+
+  .wpfCount {
+    font-size: $font-size-very-small;
+    color: $tuerkis;
   }
 }
 

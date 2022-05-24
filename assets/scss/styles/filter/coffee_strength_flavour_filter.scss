@@ -44,17 +44,21 @@
     $bgSize: ($width - 18) + ($i * 3);
 
     .wpfFilterWrapper[data-get-attribute="wpf_filter_aromenvielfalt"] .wpfFilterContent li {
+      &:not(:last-child) {
+        margin-right: $spacing-xxxs;
+      }
+
       &[data-term-slug="#{$i}"] .wpfCheckbox label {
         background: transparent url("../img/svg/flavour.svg") no-repeat center center;
-        background-size: $bgSize;
-        width: $bgSize;
+        background-size: $bgSize + 5;
+        width: $bgSize + 5;
         background-position: left bottom;
       }
 
       &[data-term-slug="#{$i}"] .wpfCheckbox input:checked + label {
         background: transparent url("../img/svg/flavour_filled.svg") no-repeat center center;
-        background-size: $bgSize;
-        width: $bgSize;
+        background-size: $bgSize + 5;
+        width: $bgSize + 5;
         background-position: left bottom;
       }
     }
