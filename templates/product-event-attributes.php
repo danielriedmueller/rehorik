@@ -7,12 +7,15 @@ if (!$event) {
 }
 
 $location = tribe_get_venue($event->ID);
-$startDate = tribe_get_start_date($event->ID, false, 'd.m.Y');
-$endDate = tribe_get_start_date($event->ID, false, 'd.m.Y');
-$startTime = tribe_get_start_time($event->ID);
-$endTime = tribe_get_end_time($event->ID);
 
-$date = $startDate === $endDate ? $startDate : sprintf('%s - %s', $startDate, $endDate);
+$startDate = $product->get_meta(TICKET_EVENT_DATE_START_META);
+$endDate = $product->get_meta(TICKET_EVENT_DATE_END_META);
+$startTime = $product->get_meta(TICKET_EVENT_TIME_START_META);
+$endTime = $product->get_meta(TICKET_EVENT_TIME_END_META);
+
+$date = $startDate === $endDate
+    ? date('d.m.Y', strtotime($startDate))
+    : sprintf('%s - %s', date('d.m.Y', strtotime($startDate)), date('d.m.Y', strtotime($endDate)));
 $time = sprintf('%s - %s', $startTime, $endTime);
 
 $price = wc_price($product->get_price());

@@ -69,6 +69,12 @@ define('DATENSCHUTZ_PAGE_ID', 680);
 
 define('PERMISSION_VIEW_VIEW_ATTENDEE_LIST', 'teilnehmerliste_bei_events_anschauen');
 
+define('TICKET_EVENT_DATE_START_META', '_event_date_start');
+define('TICKET_EVENT_DATE_END_META', '_event_date_end');
+define('TICKET_EVENT_TIME_START_META', '_event_time_start');
+define('TICKET_EVENT_TIME_END_META', '_event_time_end');
+
+
 $priority = 1000;
 
 // In case of an child them use get stylesheet directory
@@ -80,7 +86,6 @@ require_once($baseDir . '/includes/class-tribe-tickets-plus-woocommerce-main.php
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');
-require_once($baseDir . '/hooks/events.php');
 require_once($baseDir . '/hooks/woocommerce.php');
 require_once($baseDir . '/filter/shop.php');
 require_once($baseDir . '/filter/categories.php');
@@ -88,6 +93,7 @@ require_once($baseDir . '/filter/product_view.php');
 require_once($baseDir . '/filter/sitemap.php');
 require_once($baseDir . '/actions/woocommerce.php');
 require_once($baseDir . '/actions/rehorik.php');
+require_once($baseDir . '/actions/events.php');
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';

@@ -58,35 +58,6 @@ add_action('woocommerce_thankyou', function ($order_id) {
     }
 }, 10, 1);
 
-/**
- * Add ticket category to created ticket products
- * and set product_type to simple instead of virtual
- */
-add_action('event_tickets_after_save_ticket', function ($event_id, $ticket, $raw_data, $classname) {
-    if (!empty($ticket) && isset($ticket->ID)) {
-        $eventCatId = get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat' )->term_id;
-        $categoryIds = array_unique(array_filter(array_map(function ($a) {
-            $productCat = get_term_by('slug', $a->slug, 'product_cat');
-            if ($productCat) {
-                return $productCat->term_id;
-            }
-
-            return null;
-        }, get_the_terms($event_id, 'tribe_events_cat'))));
-
-        $product = wc_get_product($ticket->ID);
-
-        $thumbnailId = get_post_thumbnail_id($event_id);
-        if ($thumbnailId) {
-            set_post_thumbnail($ticket->ID, $thumbnailId);
-        }
-
-        $product->set_category_ids(array_merge([$eventCatId], $categoryIds));
-        $product->set_catalog_visibility('visible');
-        $product->save();
-    }
-}, 10, 4);
-
 // Add delete account feature
 add_action( 'woocommerce_after_edit_account_form', function() {
     echo sprintf('<div class="delete-me">%s</div>', do_shortcode( '[plugin_delete_me /]' ));

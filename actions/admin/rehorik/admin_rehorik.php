@@ -7,9 +7,10 @@ add_action('admin_menu', function () {
         ?>
         <div>
             <div id="status">OK</div>
-            <!-- <button id="update-coffee-price-button">Update Coffee Price</button> -->
-            <button id="update-sku-button">Update SKUs</button>
-            <button id="delete-events-button">Delete Events</button>
+            <button disabled class="rehorik-admin-action-button" data-action="update_coffee_price">Update Coffee Price</button>
+            <button class="rehorik-admin-action-button" data-action="update_sku">Update SKUs</button>
+            <button class="rehorik-admin-action-button" data-action="delete_events">Delete Events</button>
+            <button class="rehorik-admin-action-button" data-action="update_tickets_date">Update All Tickets</button>
         </div>
         <?php
     }, null, 3);
