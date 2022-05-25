@@ -16,7 +16,6 @@ require_once(get_stylesheet_directory() . '/helper/page_helper.php');
         <meta name="apple-mobile-web-app-title" content="Rehorik">
         <meta name="description" content="Kaffee aus eigener Traditions-Rösterei seit vier Generationen vom Hause Rehorik. Wir führen auch exquisiten Käse, sowie eine hervorragend sortierte Wein- und Spirituosenauswahl." />
         <meta name='robots' content='index, follow, archive' />
-        <link rel="canonical" href="https://www.rehorik.de/" />
         <meta property="og:locale" content="de_DE" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Kaffee, Wein &amp; Feinkost aus Regensburg - Rehorik" />
