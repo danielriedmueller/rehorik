@@ -1,4 +1,30 @@
 <?php
+add_action('wp_ajax_hide_past_event_tickets', function () {
+    try {
+        $updateStock = function($product) {
+            /** @var WC_Product $product */
+            $product->set_stock_quantity(0);
+            $product->set_stock_status('outofstock');
+            $product->save();
+        };
+
+        foreach (wc_get_products([
+            'category' => [TICKET_CATEGORY_SLUG],
+            'limit' => -1,
+        ]) as $product) {
+            $event = tribe_events_get_ticket_event($product->get_id());
+            if (!$event) {
+                echo sprintf('no event: %s <br>', $product->get_title());
+                $updateStock($product);
+            } else if (tribe_is_past_event($event)) {
+                echo sprintf('past event: %s <br>', $product->get_title());
+                $updateStock($product);
+            }
+        }
+    } catch (Exception $exception) {
+        echo "error: " . $exception->getMessage();
+    }
+});
 
 add_action('wp_ajax_update_tickets_date', function () {
     try {
@@ -24,40 +50,6 @@ add_action('wp_ajax_update_tickets_date', function () {
                 $product->get_meta(TICKET_EVENT_DATE_END_META),
                 $product->get_meta(TICKET_EVENT_TIME_END_META),
             );
-        }
-    } catch (Exception $exception) {
-        echo "error: " . $exception->getMessage();
-    }
-
-});
-
-add_action('wp_ajax_delete_past_events', function () {
-    try {
-        /*
-        foreach (wc_get_products([
-            'category' => [TICKET_CATEGORY_SLUG]
-        ]) as $product) {
-            // @var WC_Product $product
-            $event = tribe_events_get_ticket_event($product->get_id());
-            if($event) {
-                if (tribe_is_past_event($event)) {
-                    $product->set_catalog_visibility('hidden');
-                    $product->save();
-                }
-            }
-        }
-        */
-
-        foreach (wc_get_products([
-            'category' => [TICKET_CATEGORY_SLUG],
-            'limit' => -1,
-        ]) as $product) {
-            /** @var WC_Product $product */
-            $event = tribe_events_get_ticket_event($product->get_id());
-            if (!$event) {
-                echo $product->get_title() . '<br>';
-                wh_deleteProduct($product->get_id());
-            }
         }
     } catch (Exception $exception) {
         echo "error: " . $exception->getMessage();
