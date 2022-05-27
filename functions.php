@@ -60,7 +60,6 @@ define('PAYMENT_METHOD_DIRECT_TRANSFER', 'bacs');
 
 // Pages
 define('STANDORTE_PAGE_ID', 26672);
-define('ROESTEREI_PAGE_ID', 40);
 define('LOGIN_PAGE_ID', 667);
 define('AGB_PAGE_ID', 13644);
 define('WIDERRUFSBELEHRUNG_PAGE_ID', 682);

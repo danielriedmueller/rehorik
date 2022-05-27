@@ -2,10 +2,11 @@
 get_header();
 get_template_part('templates/header/slider', null, ['items' => [
     [
-        'claim' => 'Vatertag - nicht Katertag!',
-        'img'=> 'fathers-day',
+        'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
+        'img'=> 'startseite-header-roesterei',
         'buttons' => [
-            '/produkt-kategorie/onlineshop/spirits/brand/' => '15% Rabatt auf unsere guten Obstbrände'
+            '/tradition' => 'Tradition',
+            '/standorte' => 'Standorte'
         ]
     ],
     [
@@ -20,18 +21,7 @@ get_template_part('templates/header/slider', null, ['items' => [
         'img'=> 'startseite-header-kaffee',
         'buttons' => [
             get_term_link(get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'),
-                'product_cat') => 'Zum Kaffee',
-            get_page_link(ROESTEREI_PAGE_ID) => 'Unser Kugelröster'
-        ]
-    ],
-    [
-        'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
-        'img'=> 'startseite-header-roesterei',
-        'buttons' => [
-            get_term_link(get_term_by('slug', COFFEE_FILTERKAFFEE_CATEGORY_SLUG, 'product_cat'),
-                'product_cat') => 'Hier gibts Filterkaffee',
-            get_term_link(get_term_by('slug', COFFEE_ESPRESSO_CATEGORY_SLUG, 'product_cat'),
-                'product_cat') => 'Und hier Espresso'
+                'product_cat') => 'Zum Kaffee'
         ]
     ],
     [
