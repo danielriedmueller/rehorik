@@ -2,7 +2,7 @@
 show_admin_bar(true);
 
 define('ONE_CUP_OF_COFFEE_IN_GRAMS', 10);
-define('FREE_SHIPPING_AMOUNT', 49);
+define('FREE_SHIPPING_AMOUNT', 69);
 define('MAX_DISPLAY_ORIGIN_COUNTRIES', 1);
 define('DELIVERY_CATEGORY_URL', 'produkt-kategorie/lieferservice');
 define('EVENT_TICKET_SHOULD_BE_PRINTED_SLUG', 'soll-das-ticket-ausgedruckt-werden');
