@@ -1,18 +1,4 @@
 <?php
-
-function getCategoryTreeDepth($termId, $taxonomy = "product_cat"): int
-{
-    echo $termId;
-    $seperator = ";";
-    $parentsList = get_term_parents_list($termId, $taxonomy, [
-        'format' => 'slug',
-        'separator' => $seperator,
-        'link' => false
-    ]);
-
-    return sizeof(explode($seperator, $parentsList)) - 1;
-}
-
 /**
  * Checks if category page belongs to category
  *
