@@ -16,7 +16,6 @@ add_action('admin_menu', function () {
     }, null, 3);
 });
 
-
 add_action('admin_enqueue_scripts', function ($hook) {
     if ($hook == 'toplevel_page_rehorik-admin') {
         $assetsDir = get_stylesheet_directory_uri() . '/assets/';
