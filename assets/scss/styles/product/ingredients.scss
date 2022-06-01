@@ -4,6 +4,10 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
   $row-padding: $product-view-grid-gap / 2;
 
   .rehorik-product-ingredients {
+    &:empty {
+      display: none;
+    }
+
     background-color: $product-default-color;
     border: none;
     padding: $product-view-grid-gap;
@@ -12,5 +16,19 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
     color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    color: $beigegold;
+    margin: 0 0 $row-padding 0;
+  }
+
+  .rehorik-ingredient-list {
+    margin: 0 0 0 $row-padding;
+  }
+
+  .rehorik-nutrition-table {
+    margin: 0 $row-padding 0 0;
   }
 }

@@ -21,7 +21,7 @@
   .rehorik-product-video:not(:empty) {margin: $product-view-grid-gap / 2 $product-view-grid-gap / 2 $product-view-grid-gap / 2 0;}
   .rehorik-sigils-bar {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
   .rehorik-product-information {margin: $product-view-grid-gap / 2 0 0 0;}
-  .rehorik-product-ingredients {margin: $product-view-grid-gap / 2 0 0 0;}
+  .rehorik-product-ingredients:not(:empty) {margin: $product-view-grid-gap / 2 0 0 0;}
 
   @media all and (max-width: $medium-breakpoint) {
     grid-template-columns: 1fr;
@@ -45,7 +45,7 @@
     .rehorik-product-video:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
     .rehorik-sigils-bar {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
     .rehorik-product-information {margin: $product-view-grid-gap / 2 0 0 0;}
-    .rehorik-product-ingredients {margin: $product-view-grid-gap / 2 0 0 0;}
+    .rehorik-product-ingredients:not(:empty) {margin: $product-view-grid-gap / 2 0 0 0;}
   }
 
   .rehorik-product-view-gallery {

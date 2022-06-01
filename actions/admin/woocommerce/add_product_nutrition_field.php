@@ -108,7 +108,6 @@ function define_nutrition_data_fields()
                 '100 g' => '100 g',
                 '100 ml' => '100 ml',
             ],
-            'unit' => 'g',
             'callback' => 'select',
             'parent_only' => true,
         ],

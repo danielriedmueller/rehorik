@@ -90,19 +90,20 @@ function goes_with() {
 function ingredient_list() {
     global $product;
 
-    echo sprintf(
-        '<div class="rehorik-ingredient-list">%s</div>',
-        $product->get_meta('reh_ingredient_list')
-    );
+    $ingredients = $product->get_meta('reh_ingredient_list');
+
+    if (!empty($ingredients)) {
+        echo sprintf(
+            '<div class="rehorik-ingredient-list"><h4>Zutatenliste / Allergene</h4><div>%s</div></div>',
+            $ingredients
+        );
+    }
 }
 
 function nutrition_table() {
     global $product;
 
-    echo sprintf(
-        '<div class="rehorik-nutrition-table">%s</div>',
-        $product->get_meta('reh_preperation_recommendation')
-    );
+    get_template_part('templates/product-nutrition-table', null, ['product' => $product]);
 }
 
 function preperation_recommendation() {
