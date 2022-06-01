@@ -1,0 +1,28 @@
+#woocommerce-product-data ul.wc-tabs li.reh_nutrition_options a:before {
+    font-family: Dashicons;
+    content: "\f511";
+}
+
+#woocommerce-product-data ul.wc-tabs li.reh_preperation_recommendation_options a:before {
+    font-family: Dashicons;
+    content: "\f187";
+}
+
+#woocommerce-product-data ul.wc-tabs li.reh_product_video_options a:before {
+    font-family: Dashicons;
+    content: "\f126";
+}
+
+#woocommerce-product-data fieldset {
+    margin: 8px;
+    padding: 8px;
+    border: 1px solid grey;
+}
+
+#woocommerce-product-data fieldset legend {
+    float: none;
+    width: auto;
+    margin: 0;
+    padding: 8px;
+}
+

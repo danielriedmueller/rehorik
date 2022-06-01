@@ -1,0 +1,16 @@
+@import "../mixins";
+
+body.rehorik.woocommerce #main-content div.rehorik-product {
+  $row-padding: $product-view-grid-gap / 2;
+
+  .rehorik-product-ingredients {
+    background-color: $product-default-color;
+    border: none;
+    padding: $product-view-grid-gap;
+
+    border-radius: $border-radius;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

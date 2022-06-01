@@ -62,6 +62,10 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
     <div class="rehorik-product-information">
         <?php do_action('rehorik_product_information'); ?>
     </div>
+
+    <div class="rehorik-product-ingredients">
+        <?php do_action('rehorik_product_ingredients'); ?>
+    </div>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
