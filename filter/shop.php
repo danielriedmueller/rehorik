@@ -45,27 +45,6 @@ function disallow_direct_transfer_payment_for_virtual_products($available_gatewa
 }
 add_filter( 'woocommerce_available_payment_gateways', 'disallow_direct_transfer_payment_for_virtual_products');
 
-add_filter('woocommerce_package_rates', function($rates) {
-
-    // HERE set the "minimum order amount" for free shipping
-    $limit = FREE_SHIPPING_AMOUNT;
-
-    $free_total = 0;
-
-    // Get the cart content total excluding virtual products
-    foreach( WC()->cart->get_cart() as $cart_item )
-        if( ! $cart_item['data']->is_virtual( ) )
-            $free_total += $cart_item['line_total'];
-
-    // Disabling free shipping method based on specific cart content total
-    if( $free_total < $limit )
-        foreach ( $rates as $rate_key => $rate )
-            if( 'free_shipping' == $rate->method_id )
-                unset( $rates[ $rate_key ] );
-
-    return $rates;
-}, 10, 1);
-
 /**
  * Add bike delivery shipping method
  */
