@@ -13,9 +13,7 @@ function getAmountTillFreeShipping(): float
     foreach ($cart->get_cart() as $product) {
         /** @var WC_Product_Variation $variation */
         $variation = $product['data'];
-        if (!$variation->is_virtual()) {
-            $totalPrice += ($variation->get_price('edit') * $product['quantity']);
-        }
+        $totalPrice += ($variation->get_price('edit') * $product['quantity']);
     }
 
     return getFreeShippingAmount() - $totalPrice;

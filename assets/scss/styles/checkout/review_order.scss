@@ -8,14 +8,14 @@
 
   thead {
     th, td {
-      padding: 0 0 $spacing-s 0;
+      padding: 0 0 $spacing-xs 0;
       text-align: left;
     }
   }
 
   tbody {
     th, td {
-      padding: $spacing-s 0;
+      padding: $spacing-xs 0;
       text-align: left;
       border-top: 1px solid $beigegold;
     }
@@ -26,7 +26,7 @@
       border-top: none;
       border-bottom: 1px solid $beigegold;
       text-align: left;
-      padding: $spacing-s 0;
+      padding: $spacing-xs 0;
     }
   }
 
@@ -58,11 +58,10 @@
   }
 
   .wc-gzd-product-name-right {
-    color: $beigegold;
+    color: $font-color;
     font-weight: bold;
 
     .product-quantity {
-      color: $font-color;
       font-weight: normal;
     }
 
@@ -72,7 +71,7 @@
 
     .wc-gzd-cart-info.units-info {
       font-weight: normal;
-      padding: $spacing-xs 0;
+      padding: $spacing-xxs 0;
     }
 
     dl {

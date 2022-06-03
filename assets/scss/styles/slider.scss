@@ -29,7 +29,10 @@
     margin-bottom: $spacing-s;
 
     h2 {
-      line-height: $line-height-very-large;
+      font-size: 52px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      line-height: 60px;
       color: #fff;
     }
 
@@ -37,6 +40,7 @@
       margin-bottom: $spacing-s;
 
       h2 {
+        font-size: $font-size-large;
         line-height: $line-height-large
       }
     }

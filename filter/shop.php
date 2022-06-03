@@ -70,7 +70,7 @@ add_filter('woocommerce_cart_shipping_method_full_label', function($label, $meth
 
     $label .= '</small>';
     return $label;
-}, 10, 2 );
+}, 10, 2);
 
 /**
  * Remove Ancient Custom Fields metabox from post editor

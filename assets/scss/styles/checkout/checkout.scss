@@ -1,7 +1,85 @@
-.rehorik.woocommerce-checkout {
+.rehorik.woocommerce-checkout form.woocommerce-checkout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "notice notice"
+    "details review"
+;
+
+  @media all and (max-width: $small-breakpoint) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "notice"
+    "details"
+    "review"
+  ;
+  }
+
+  #customer_details {
+    grid-area: details;
+
+    @media all and (min-width: $small-breakpoint + 1) {
+      padding-right: $spacing-xl;
+    }
+
+    > div {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  #order_review {
+    grid-area: review;
+
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 60%;
+
+    .wc-gzd-checkbox-placeholder.wc-gzd-checkbox-placeholder-legal {
+      order: 1;
+    }
+
+    .wc-gzd-order-submit {
+      order: 3;
+    }
+  }
+
+  .woocommerce-NoticeGroup {
+    grid-area: notice;
+  }
+
+  .wc-gzd-checkbox-placeholder-legal {
+    margin-bottom: $spacing-xs;
+
+    p.form-row {
+      margin: 0 0 $spacing-xxs 0;
+      padding: 0 !important;
+
+      .input-checkbox {
+        margin: 8px $spacing-xxs 0 0;
+      }
+
+      label {
+        line-height: $line-height;
+        display: flex !important;
+        margin-bottom: $spacing-xs;
+      }
+
+      &.legal {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   p.form-row {
-    margin: 0 0 $spacing-s 0;
-    padding: 0;
+    margin: 0 0 $spacing-xxs 0;
+    padding: 0 !important;
+
+    label {
+      line-height: $line-height-large;
+    }
 
     &.legal {
       margin-bottom: 0;
@@ -13,7 +91,7 @@
   }
 
   h3 {
-    margin: $spacing-l 0 $spacing-s 0;
+    margin: $spacing-s 0 $spacing-s 0;
   }
 
   button#place_order {
