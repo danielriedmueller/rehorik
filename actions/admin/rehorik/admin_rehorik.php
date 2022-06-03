@@ -11,17 +11,23 @@ add_action('admin_menu', function () {
             <button disabled class="rehorik-admin-action-button" data-action="update_sku">Update SKUs</button>
             <button class="rehorik-admin-action-button" data-action="hide_past_event_tickets">Hide Past Event Tickets</button>
             <button disabled class="rehorik-admin-action-button" data-action="update_tickets_date">Update All Tickets</button>
+            <button class="rehorik-admin-action-button" data-action="create_order">Create Order</button>
         </div>
         <?php
     }, null, 3);
 });
-
 
 add_action('admin_enqueue_scripts', function ($hook) {
     if ($hook == 'toplevel_page_rehorik-admin') {
         $assetsDir = get_stylesheet_directory_uri() . '/assets/';
         wp_enqueue_script('rehorik-admin', $assetsDir . 'js/admin.js', ['jquery'], 1, false);
     }
+});
+
+add_action('wp_ajax_create_order', function () {
+    $lastOrder = wc_get_customer_last_order(1226);
+    $duplicateOrder = new WC_Admin_Duplicate_Order();
+    $duplicateOrder->duplicateOrder($lastOrder);
 });
 
 add_action('wp_ajax_update_sku', function () {
