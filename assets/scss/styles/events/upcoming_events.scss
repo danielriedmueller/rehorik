@@ -1,8 +1,4 @@
 li.veranstaltungen {
-  a img {
-    opacity: 0.4;
-  }
-
   div.rehorik-upcoming-events {
     position: absolute;
     top: 0;
@@ -10,10 +6,12 @@ li.veranstaltungen {
     z-index: 1;
     padding: $spacing-s;
     width: 100%;
+    height: 406px;
+    backdrop-filter: blur(3px);
 
     > a {
       padding: $spacing-xxs;
-      display: flex;
+      display: block;
       flex-wrap: nowrap;
       overflow: hidden;
 
@@ -26,9 +24,10 @@ li.veranstaltungen {
       }
 
       span {
+        text-shadow: 1px 1px $grau;
         line-height: $line-height-narrow;
-        color: $font-color-accent-dark;
-        font-size: $font-size-small;
+        color: $font-color-accent;
+        font-size: $font-size;
         font-family: $font-family-headline;
         text-transform: uppercase;
         white-space: nowrap;
