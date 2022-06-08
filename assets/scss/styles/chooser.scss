@@ -9,21 +9,23 @@
   .cat-names {
     flex-grow: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     pointer-events: none;
+    margin-bottom: $spacing-s;
 
     h2 {
       flex: 1 1 0;
-      background: rgba(0, 0, 0, $opacity) none;
-      backdrop-filter: blur(3px);
-      line-height: $line-height;
-      padding: $spacing-xxs;
-      margin: $spacing-xxs;
+      background: transparent;
+      backdrop-filter: blur(5px);
+      line-height: $line-height-narrow;
+      padding: 0 $spacing-xxs;
+      margin: 0 $spacing-l;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 80px;
+      height: auto;
+      text-shadow: 2px 2px $grau;
     }
   }
 
