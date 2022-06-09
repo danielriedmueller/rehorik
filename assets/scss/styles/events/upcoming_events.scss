@@ -10,8 +10,8 @@ li.veranstaltungen {
     backdrop-filter: blur(3px);
 
     > a {
-      padding: $spacing-xxs;
-      display: block;
+      padding: 0 $spacing-xxs $spacing-xxs $spacing-xxs;
+      display: flex;
       flex-wrap: nowrap;
       overflow: hidden;
 
@@ -19,20 +19,16 @@ li.veranstaltungen {
         text-decoration: underline;
       }
 
-      &.tickets-not-available span {
-        opacity: $opacity;
-      }
-
       span {
-        text-shadow: 1px 1px $grau;
+        text-shadow: $text-shadow;
         line-height: $line-height-narrow;
         color: $font-color-accent;
-        font-size: $font-size;
+        font-size: $font-size-small;
         font-family: $font-family-headline;
-        text-transform: uppercase;
+        font-weight: normal;
+        letter-spacing: 1px;
         white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        padding: 0 2px;
 
         &:first-child {
           margin-right: $spacing-xs;
@@ -41,7 +37,15 @@ li.veranstaltungen {
 
         &:last-child {
           flex-shrink: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          min-width: 0;
         }
+      }
+
+      &.tickets-not-available span {
+        opacity: $opacity;
+        text-shadow: none;
       }
     }
   }
