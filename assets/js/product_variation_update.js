@@ -16,7 +16,7 @@
         priceArr = $priceEl.text().match(/[+-]?([0-9]*[,])?[0-9]+/g);
         adjustedPriceArr = priceArr.map(function(x) {
             var res = x.replace(',', '.') / divider;
-            return round(res, 2).toFixed(1).toString().replace('.', ',') + ' €';
+            return round(res, 2).toFixed(2).toString().replace('.', ',') + ' €';
         });
         adjustedPriceString = adjustedPriceArr.join(' - ');
         $cupOfCoffeEl.html(adjustedPriceString)
