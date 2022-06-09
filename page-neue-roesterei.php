@@ -32,7 +32,7 @@ get_template_part('templates/header/slider', null, [
                             <tbody>
                             <tr>
                                 <td>MO. - FR.</td>
-                                <td>07:30 - 18:00 Uhr</td>
+                                <td>08:00 - 18:00 Uhr</td>
                             </tr>
                             <tr>
                                 <td>SA.</td>

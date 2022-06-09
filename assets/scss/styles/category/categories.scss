@@ -51,6 +51,7 @@ ul.rehorik-products.products {
     }
 
     h2.woocommerce-loop-category__title {
+      z-index: 10;
       $titleHeight: 60px;
       height: $titleHeight;
       margin: -$titleHeight 0 0 0;
