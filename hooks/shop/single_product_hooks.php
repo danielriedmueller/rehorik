@@ -13,8 +13,11 @@ add_action('rehorik_product_view_title_price', 'woocommerce_template_single_pric
 add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
 
 add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_add_to_cart', 1); // Variations / Add to cart
-add_action('rehorik_product_view_add_to_cart', 'cup_of_coffee', 1); // Cup of Coffee
-add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_meta', 1); // Meta
+
+add_action('woocommerce_before_add_to_cart_button', 'coffee_subscription', 1); // Coffee Subscription
+
+add_action('woocommerce_after_add_to_cart_button', 'cup_of_coffee', 1); // Cup of Coffee
+add_action('woocommerce_after_add_to_cart_button', 'woocommerce_template_single_meta', 1); // Meta
 
 add_action('rehorik_product_view', 'goes_with', 1); // Meta
 add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
@@ -70,6 +73,14 @@ function quality_name() {
             '<div class="rehorik-product-quality-name">%s</div>',
             $qualityName
         );
+    }
+}
+
+function coffee_subscription() {
+    global $product;
+
+    if (YITH_WC_Subscription()->is_subscription($product->get_id())) {
+        get_template_part('templates/subscription/subscription-attributes', null, ['product' => $product]);
     }
 }
 

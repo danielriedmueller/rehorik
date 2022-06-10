@@ -73,6 +73,8 @@ define('TICKET_EVENT_DATE_END_META', '_event_date_end');
 define('TICKET_EVENT_TIME_START_META', '_event_time_start');
 define('TICKET_EVENT_TIME_END_META', '_event_time_end');
 
+const SUBSCRIPTION_COFFEE_MAHLGRAD = 'reh_subscription_mahlgrad';
+
 $priority = 1000;
 
 // In case of an child them use get stylesheet directory

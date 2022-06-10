@@ -42,9 +42,6 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
     ?>
 >
     <?php do_action('rehorik_product_view'); ?>
-    <?php if(YITH_WC_Subscription()->is_subscription($product->get_id())) : ?>
-        SUBSCRIBE
-    <?php endif; ?>
     <div class="rehorik-product-view-title-price"><?php do_action('rehorik_product_view_title_price'); ?></div>
     <div class="rehorik-product-view-gallery"><?php do_action('rehorik_product_view_gallery'); ?></div>
     <div class="rehorik-add-to-cart-container"><?php do_action('rehorik_product_view_add_to_cart'); ?></div>

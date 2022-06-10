@@ -4,8 +4,45 @@ body.rehorik.woocommerce div.rehorik-product {
     display: flex;
     flex-direction: column;
 
-    form:not(.variations_form).cart {
-      display: flex;
+    div.single_variation_wrap {
+      grid-area: add-to-cart-button;
+
+      .woocommerce-variation-add-to-cart {
+        margin-top: $product-view-grid-gap / 2;
+      }
+    }
+
+    form:not(.variations_form).cart,
+    div.single_variation_wrap .woocommerce-variation-add-to-cart {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "subscription subscription"
+        "quantity submit"
+        "cup-of-coffee cup-of-coffee"
+        "meta meta"
+    ;
+
+      .rehorik-product-coffee-subscription {
+        grid-area: subscription;
+        margin: $product-view-grid-gap 0;
+      }
+
+      .quantity {
+        grid-area: quantity;
+      }
+
+      button[type='submit'] {
+        grid-area: submit;
+      }
+
+      .rehorik-cup-of-coffee-price-outer {
+        grid-area: cup-of-coffee;
+      }
+
+      .rehorik-product-meta {
+        grid-area: meta;
+      }
     }
 
     form.variations_form.cart {
@@ -52,15 +89,6 @@ body.rehorik.woocommerce div.rehorik-product {
         color: $beigegold;
         background: $weinrot url("../img/warenkorb-16px.svg") no-repeat left 10px center;
         background-size: $spacing-s !important;
-      }
-    }
-
-    div.single_variation_wrap {
-      grid-area: add-to-cart-button;
-
-      .woocommerce-variation-add-to-cart {
-        display: flex;
-        margin-top: $product-view-grid-gap / 2;
       }
     }
   }
