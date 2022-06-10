@@ -1,4 +1,8 @@
 li.veranstaltungen {
+  > a img {
+    opacity: $opacity;
+  }
+
   div.rehorik-upcoming-events {
     position: absolute;
     top: 0;
@@ -20,9 +24,8 @@ li.veranstaltungen {
       }
 
       span {
-        text-shadow: $text-shadow;
         line-height: $line-height-narrow;
-        color: $font-color-accent;
+        color: $font-color-accent-dark;
         font-size: $font-size-small;
         font-family: $font-family-headline;
         font-weight: normal;
@@ -44,6 +47,7 @@ li.veranstaltungen {
       }
 
       &.tickets-not-available span {
+        color: $font-color-accent;
         opacity: $opacity;
         text-shadow: none;
       }
