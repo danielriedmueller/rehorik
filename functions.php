@@ -1,5 +1,5 @@
 <?php
-show_admin_bar(false);
+show_admin_bar(true);
 
 define('ONE_CUP_OF_COFFEE_IN_GRAMS', 10);
 define('FREE_SHIPPING_AMOUNT', 69);
