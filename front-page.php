@@ -2,6 +2,14 @@
 get_header();
 get_template_part('templates/header/slider', null, ['items' => [
     [
+        'claim' => 'Sommerfest & Sommerweinprobe',
+        'img'=> 'weinfest',
+        'text' => 'Keine Lust mehr auf anonyme Flaschen im Weinregal? Dann kommt zu unserem Sommerfest & lernt die Winzer:innen Eurer Lieblingsweine kennen. Wann? 25.6 / 14 - 22 Uhr. Wo? Am Brixener Hof 6.',
+        'buttons' => [
+            '/produkt-kategorie/veranstaltungen/wein-events/weinprobe/' => 'Sommerweinprobe 23. - 24.6.',
+        ]
+    ],
+    [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
         'img'=> 'startseite-header-roesterei',
         'buttons' => [
@@ -10,28 +18,11 @@ get_template_part('templates/header/slider', null, ['items' => [
         ]
     ],
     [
-        'claim' => 'EL RUBI - MEHR ALS EIN EDELSTEIN',
-        'img'=> 'Produkt-Illustration-El-Rubi-header',
-        'buttons' => [
-            '/produkt/el-rubi' => 'Out now: Limited Edition Nr. 4 '
-        ]
-    ],
-    [
         'claim' => 'Kaffeerösterei seit 1928',
         'img'=> 'startseite-header-kaffee',
         'buttons' => [
             get_term_link(get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'),
                 'product_cat') => 'Zum Kaffee'
-        ]
-    ],
-    [
-        'claim' => 'WIR KÖNNEN AUCH ANDERS',
-        'img'=> 'startseite-header-wein',
-        'buttons' => [
-            get_term_link(get_term_by('slug', WINE_CATEGORY_SLUG, 'product_cat'),
-                'product_cat') => 'Zur Weinauswahl',
-            get_term_link(get_term_by('slug', SPIRITS_CATEGORY_SLUG, 'product_cat'),
-                'product_cat') => 'Und Spirituosen'
         ]
     ]
 ]]);
