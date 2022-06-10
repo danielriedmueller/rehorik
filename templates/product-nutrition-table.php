@@ -13,7 +13,10 @@ foreach (define_nutrition_data_fields() as $id => $field) {
     }
 }
 ?>
-<?php if (!empty($fields)) : ?>
+<?php
+    // Value for Bezugsmenge ist always set; dont show if its  the only value.
+    if (sizeof($fields) > 1):
+?>
 <div class="rehorik-nutrition-table">
     <h4>Nährwerte</h4>
     <table>
