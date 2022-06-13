@@ -1,7 +1,7 @@
 body.rehorik.woocommerce div.product.rehorik-product form.cart {
-  table.variations ul[data-attribute_name="attribute_pa_mahlgrad"] {
-    li {
-      padding-left: $spacing-l;
+  ul[data-attribute_name="attribute_pa_mahlgrad"] {
+    .variable-item {
+      padding-left: $spacing-l !important;
       background-size: $spacing-s;
       background-repeat: no-repeat;
       background-position: $spacing-xxs center;
@@ -9,6 +9,13 @@ body.rehorik.woocommerce div.product.rehorik-product form.cart {
       &:hover, &.selected {
         background-color: $weinrot;
       }
+    }
+
+    // For Subscription
+    input[name='reh_subscription_mahlgrad']:checked + .variable-item,
+    input[name='reh_subscription_mahlgrad']:hover + .variable-item {
+      background-color: $weinrot;
+      color: #fff;
     }
 
     $mahlgrade: [
@@ -27,12 +34,18 @@ body.rehorik.woocommerce div.product.rehorik-product form.cart {
     ];
 
     @each $mahlgrad in $mahlgrade {
-      li[data-value='#{$mahlgrad}'] {
+      .variable-item[data-value='#{$mahlgrad}'] {
         background-image: url("../img/mahlgrade/#{$mahlgrad}.svg");
 
         &:hover, &.selected {
           background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg");
         }
+      }
+
+      // For Subscription
+      input[name='reh_subscription_mahlgrad']:checked + .variable-item[data-value='#{$mahlgrad}'],
+      input[name='reh_subscription_mahlgrad']:hover + .variable-item[data-value='#{$mahlgrad}'] {
+        background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg");
       }
     }
   }

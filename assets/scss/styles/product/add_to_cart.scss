@@ -15,7 +15,7 @@ body.rehorik.woocommerce div.rehorik-product {
     form:not(.variations_form).cart,
     div.single_variation_wrap .woocommerce-variation-add-to-cart {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: min-content 1fr;
       grid-template-areas:
         "subscription subscription"
         "quantity submit"

@@ -4,6 +4,23 @@ body.rehorik.woocommerce div.product.rehorik-product {
   form.cart {
     margin-bottom: 0;
 
+    .variable-item {
+      border: 1px solid $beigegold;
+      border-radius: $border-radius;
+      list-style: none;
+      padding: $spacing-xxs;
+      cursor: pointer;
+      line-height: $line-height;
+
+      &:hover, &.selected {
+        color: #fff;
+      }
+
+      .variable-item-contents {
+        font-size: $font-size-small;
+      }
+    }
+
     table.variations {
       tbody tr:first-child ul {
         margin-bottom: $product-view-grid-gap;
@@ -28,23 +45,6 @@ body.rehorik.woocommerce div.product.rehorik-product {
 
         @media all and (max-width: $small-breakpoint) {
           grid-template-columns: 1fr 1fr;
-        }
-      }
-
-      li.variable-item {
-        border: 1px solid $beigegold;
-        border-radius: $border-radius;
-        list-style: none;
-        padding: $spacing-xxs;
-        cursor: pointer;
-        line-height: $line-height;
-
-        &:hover, &.selected {
-          color: #fff;
-        }
-
-        .variable-item-contents {
-          font-size: $font-size-small;
         }
       }
 

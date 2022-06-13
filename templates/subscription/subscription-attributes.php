@@ -1,19 +1,25 @@
 <?php
 global $product;
-$mahlgrade = explode(',', $product->get_attribute('pa_mahlgrad'));
+$mahlgrade = getAttributeArray($product, MAHLGRAD_ATTRIBUTE_SLUG);
 ?>
 <div class="rehorik-product-coffee-subscription">
     <p>Ein Kaffee pro Monat, ein Jahr lang!</p>
     <p>Abrechnung monatlich</p>
     <p>250g</p>
-    <label>
-        Wähle den Mahlgrad
-        <select name="<?= SUBSCRIPTION_COFFEE_MAHLGRAD ?>">
-            <?php
-            foreach ($mahlgrade as $key => $mahlgrad) {
-                echo sprintf('<option value="%s">%s</option>', $mahlgrad, $mahlgrad);
-            }
-            ?>
-        </select>
-    </label>
+    <div class="mahlgrad-radiougroup-label">Mahlgrad</div>
+    <ul class="mahlgrad-radiogroup" data-attribute_name="<?= ATTRIBUTE_SLUG_PREFIX.MAHLGRAD_ATTRIBUTE_SLUG?>" >
+        <?php
+        foreach ($mahlgrade as $slug => $name) {
+            echo sprintf(
+                '<li><input type="radio" name="%s" value="%s" id="%s" /><div class="variable-item" data-value="%s"><label for="%s">%s</label></div></li>',
+                SUBSCRIPTION_COFFEE_MAHLGRAD,
+                $slug,
+                $slug,
+                $slug,
+                $slug,
+                $name
+            );
+        }
+        ?>
+    </ul>
 </div>

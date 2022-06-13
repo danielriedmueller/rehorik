@@ -26,12 +26,13 @@ define('GOES_WITH_ATTRIBUTE_SLUG', 'pa_passt-zu');
 define('QUALITY_NAME_ATTRIBUTE_SLUG', 'pa_qualitaetsbezeichnung');
 define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
 define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
+define('MAHLGRAD_ATTRIBUTE_SLUG', 'pa_mahlgrad');
 
 // In $productAttributes array, slugs are prefixed by wordpress
 define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
 
-function getOriginCountry(WC_Product $product): string
-{
+function getOriginCountry(WC_Product $product)
+: string {
     $category = getSubCategories($product);
     $region = $product->get_attribute(REGION_ATTRIBUTE_SLUG);
 
@@ -42,7 +43,7 @@ function getOriginCountry(WC_Product $product): string
         $country = implode(", ", $attributeArr);
     }
 
-    return implode (" - ", array_filter([$category, $country, $region], function ($a) {
+    return implode(" - ", array_filter([$category, $country, $region], function ($a) {
         return !!$a;
     }));
 }
@@ -50,28 +51,37 @@ function getOriginCountry(WC_Product $product): string
 /**
  * Returns a single product attribute as array.
  */
-function getAttributeArray(WC_Product $product, string $attribute): array
-{
+function getAttributeArray(WC_Product $product, string $attribute)
+: array {
     $attributes = $product->get_attributes();
-    $attribute  = sanitize_title( $attribute );
+    $attribute = sanitize_title($attribute);
 
-    if ( isset( $attributes[$attribute] ) ) {
+    if (isset($attributes[$attribute])) {
         $attribute_object = $attributes[$attribute];
-    } elseif ( isset( $attributes['pa_' . $attribute] ) ) {
+    } elseif (isset($attributes['pa_' . $attribute])) {
         $attribute_object = $attributes['pa_' . $attribute];
     } else {
         return [];
     }
 
-    return $attribute_object->is_taxonomy()
-        ? wc_get_product_terms( $product->get_id(), $attribute_object->get_name(), array( 'fields' => 'names' ) )
-        : $attribute_object->get_options();
+    if ($attribute_object->is_taxonomy()) {
+        $attributes = [];
+        foreach (wc_get_product_terms($product->get_id(), $attribute_object->get_name(), ['fields' => 'all']) as $term) {
+            /** @var WP_Term $term */
+            $attributes[$term->slug] = $term->name;
+        }
+
+        return $attributes;
+    } else {
+        return $attribute_object->get_options();
+    }
 }
 
 /**
  * Creates coffee beans and flowers on coffee detail page.
  */
-function getStrengthFlavourHtml($level, $class) {
+function getStrengthFlavourHtml($level, $class)
+{
     $level = strip_tags($level);
     $maxStrengthValue = 6;
 
