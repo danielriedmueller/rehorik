@@ -19,7 +19,7 @@ add_filter('woocommerce_get_item_data', function ($item_data, $cart_item) {
         $custom_details = $cart_item[SUBSCRIPTION_COFFEE_MAHLGRAD];
 
         $item_data[] = [
-            'key' => 'Name',
+            'key' => 'Mahlgrad',
             'value' => $custom_details,
         ];
     }
