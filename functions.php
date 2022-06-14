@@ -1,78 +1,69 @@
 <?php
 show_admin_bar(true);
 
-define('ONE_CUP_OF_COFFEE_IN_GRAMS', 10);
-define('FREE_SHIPPING_AMOUNT', 69);
-define('MAX_DISPLAY_ORIGIN_COUNTRIES', 1);
-define('DELIVERY_CATEGORY_URL', 'produkt-kategorie/lieferservice');
-define('EVENT_TICKET_SHOULD_BE_PRINTED_SLUG', 'soll-das-ticket-ausgedruckt-werden');
-define('EVENT_TICKET_TELEPHONE_SLUG', 'telefon');
-define('CONTACT_MAIL', 'kaffee@rehorik.de');
-define('IT_SUPPORT_EMAIL', 'it@rehorik.de');
-define('BARISTASTORE_EMAIL', 'baristastore@rehorik.de');
-define('EVENT_EMAIL', 'events@rehorik.de');
-define('DELIVERY_SHIPPING_METHOD', 'bike');
-define('STANDARD_SHIPPING_METHOD', 'flat_rate');
-define('FREE_DELIVERY_SHIPPING_METHOD', 'free_shipping_bike');
-define('FREE_STANDARD_SHIPPING_METHOD', 'free_shipping');
+const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
+const FREE_SHIPPING_AMOUNT = 69;
+const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
+const CONTACT_MAIL = 'kaffee@rehorik.de';
+const IT_SUPPORT_EMAIL = 'it@rehorik.de';
+const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
+const EVENT_EMAIL = 'events@rehorik.de';
+const DELIVERY_SHIPPING_METHOD = 'bike';
+const FREE_DELIVERY_SHIPPING_METHOD = 'free_shipping_bike';
 
 // Categories
-define('COFFEE_CATEGORY_SLUG', 'kaffee');
-define('WINE_CATEGORY_SLUG', 'wein');
-define('SPIRITS_CATEGORY_SLUG', 'spirits');
-define('COFFEE_CREMA_CATEGORY_SLUG', 'crema');
-define('COFFEE_ESPRESSO_CATEGORY_SLUG', 'espresso');
-define('COFFEE_FILTERKAFFEE_CATEGORY_SLUG', 'filterkaffee');
-define('DELI_CATEGORY_SLUG', 'delikatessen-onlineshop');
-define('GIFTS_CATEGORY_SLUG', 'geschenke');
-define('MACHINE_CATEGORY_SLUG', 'maschinen-equipment');
-define('BLACK_AND_WINE', 'blackwine');
-define('OSTERN_CATEGORY_SLUG', 'ostern');
-define('TICKET_CATEGORY_SLUG', 'veranstaltungen');
-define('ONLINESHOP_CATEGORY_SLUG', 'onlineshop');
-define('VIRTUAL_EVENTS_CATEGORY_SLUG', 'virtuelle-events');
-define('VIRTUAL_EVENTS_CATEGORY_SLUGS', [
+const COFFEE_CATEGORY_SLUG = 'kaffee';
+const WINE_CATEGORY_SLUG = 'wein';
+const SPIRITS_CATEGORY_SLUG = 'spirits';
+const COFFEE_CREMA_CATEGORY_SLUG = 'crema';
+const COFFEE_ESPRESSO_CATEGORY_SLUG = 'espresso';
+const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
+const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
+const BLACK_AND_WINE = 'blackwine';
+const TICKET_CATEGORY_SLUG = 'veranstaltungen';
+const ONLINESHOP_CATEGORY_SLUG = 'onlineshop';
+const VIRTUAL_EVENTS_CATEGORY_SLUG = 'virtuelle-events';
+const VIRTUAL_EVENTS_CATEGORY_SLUGS = [
     VIRTUAL_EVENTS_CATEGORY_SLUG,
     'virtuelle-events-spirits',
     'virtuelle-events-wein'
-]);
-define('WINE_CATEGORY_SLUGS', [
+];
+const WINE_CATEGORY_SLUGS = [
     'rotwein',
     'likoer',
     'weisswein',
     'rose',
     'naturwein',
     'champagner-und-sekt'
-]);
-define('HIDE_CATEGORIES', [
+];
+const HIDE_CATEGORIES = [
     'delikatessen-onlineshop',
     'geschenke-gutscheine',
     'kaese-wurst'
-]);
+];
 
 // For Events which are only virtual online events
-define('ONLINE_META_KEY', 'Online');
-define('CANCELED_META_KEY', 'Abgesagt');
+const ONLINE_META_KEY = 'Online';
+const CANCELED_META_KEY = 'Abgesagt';
 
 // Payment methods
-define('PAYMENT_METHOD_CASH', 'cod');
-define('PAYMENT_METHOD_DIRECT_TRANSFER', 'bacs');
+const PAYMENT_METHOD_CASH = 'cod';
+const PAYMENT_METHOD_DIRECT_TRANSFER = 'bacs';
 
 // Pages
-define('STANDORTE_PAGE_ID', 26672);
-define('LOGIN_PAGE_ID', 667);
-define('AGB_PAGE_ID', 13644);
-define('WIDERRUFSBELEHRUNG_PAGE_ID', 682);
-define('IMPRESSUM_PAGE_ID', 681);
-define('DATENSCHUTZ_PAGE_ID', 680);
+const STANDORTE_PAGE_ID = 26672;
+const LOGIN_PAGE_ID = 667;
+const AGB_PAGE_ID = 13644;
+const WIDERRUFSBELEHRUNG_PAGE_ID = 682;
+const IMPRESSUM_PAGE_ID = 681;
+const DATENSCHUTZ_PAGE_ID = 680;
 
-define('PERMISSION_VIEW_VIEW_ATTENDEE_LIST', 'teilnehmerliste_bei_events_anschauen');
+const PERMISSION_VIEW_VIEW_ATTENDEE_LIST = 'teilnehmerliste_bei_events_anschauen';
 
-define('TICKET_EVENT_DATE_START_META', '_event_date_start');
-define('TICKET_EVENT_DATE_END_META', '_event_date_end');
-define('TICKET_EVENT_TIME_START_META', '_event_time_start');
-define('TICKET_EVENT_TIME_END_META', '_event_time_end');
-
+const TICKET_EVENT_DATE_START_META = '_event_date_start';
+const TICKET_EVENT_DATE_END_META = '_event_date_end';
+const TICKET_EVENT_TIME_START_META = '_event_time_start';
+const TICKET_EVENT_TIME_END_META = '_event_time_end';
 
 $priority = 1000;
 

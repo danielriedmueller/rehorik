@@ -2,33 +2,32 @@
 require_once('product_sigil_helper.php');
 
 // Attributes
-define('STRENGTH_ATTRIBUTE_SLUG', 'pa_staerke');
-define('VARIETIES_ATTRIBUTE_SLUG', 'pa_sorte');
-define('GRAPE_VARIETY_ATTRIBUTE_SLUG', 'pa_rebsorte');
-define('AUSBAU_ATTRIBUTE_SLUG', 'pa_ausbau');
-define('HERSTELLUNG_ATTRIBUTE_SLUG', 'pa_herstellung');
-define('MILCHART_ATTRIBUTE_SLUG', 'pa_milchart');
-define('FETT_ATTRIBUTE_SLUG', 'pa_fett');
-define('FLAVOUR_ATTRIBUTE_SLUG', 'pa_aromen');
-define('FLAVOUR_VARIETY_ATTRIBUTE_SLUG', 'pa_aromenvielfalt');
-define('BEAN_COMPOSITION_ATTRIBUTE_SLUG', 'pa_bohnenkompositionen');
-define('ORIGIN_COUNTRY_ATTRIBUTE_SLUG', 'pa_herkunft');
-define('REGION_ATTRIBUTE_SLUG', 'pa_region');
-define('GUETESIEGEL_ATTRIBUTE_SLUG', 'pa_guetesiegel');
-define('BIOSIGIL_ATTRIBUTE_SLUG', 'pa_biosiegel');
-define('ALCOHOL_ATTRIBUTE_SLUG', 'pa_alkoholgehalt');
-define('VINTAGE_ATTRIBUTE_SLUG', 'pa_jahrgang');
-define('WEIGHT_SLUG', 'weight');
-define('WEIGHT_ATTRIBUTE_SLUG', 'pa_gewicht');
-define('FILLING_QUANTITY_ATTRIBUTE_SLUG', 'pa_fuellmenge');
-define('WINERY_ATTRIBUTE_SLUG', 'pa_weingut');
-define('GOES_WITH_ATTRIBUTE_SLUG', 'pa_passt-zu');
-define('QUALITY_NAME_ATTRIBUTE_SLUG', 'pa_qualitaetsbezeichnung');
-define('MANUFACTURER_ATTRIBUTE_SLUG', 'pa_hersteller');
-define('GIFT_CONTENT_ATTRIBUTE_SLUG', 'pa_inhalt-praesentkarton');
+const STRENGTH_ATTRIBUTE_SLUG = 'pa_staerke';
+const VARIETIES_ATTRIBUTE_SLUG = 'pa_sorte';
+const GRAPE_VARIETY_ATTRIBUTE_SLUG = 'pa_rebsorte';
+const AUSBAU_ATTRIBUTE_SLUG = 'pa_ausbau';
+const HERSTELLUNG_ATTRIBUTE_SLUG = 'pa_herstellung';
+const MILCHART_ATTRIBUTE_SLUG = 'pa_milchart';
+const FLAVOUR_ATTRIBUTE_SLUG = 'pa_aromen';
+const FLAVOUR_VARIETY_ATTRIBUTE_SLUG = 'pa_aromenvielfalt';
+const BEAN_COMPOSITION_ATTRIBUTE_SLUG = 'pa_bohnenkompositionen';
+const ORIGIN_COUNTRY_ATTRIBUTE_SLUG = 'pa_herkunft';
+const REGION_ATTRIBUTE_SLUG = 'pa_region';
+const GUETESIEGEL_ATTRIBUTE_SLUG = 'pa_guetesiegel';
+const BIOSIGIL_ATTRIBUTE_SLUG = 'pa_biosiegel';
+const ALCOHOL_ATTRIBUTE_SLUG = 'pa_alkoholgehalt';
+const VINTAGE_ATTRIBUTE_SLUG = 'pa_jahrgang';
+const WEIGHT_SLUG = 'weight';
+const WEIGHT_ATTRIBUTE_SLUG = 'pa_gewicht';
+const FILLING_QUANTITY_ATTRIBUTE_SLUG = 'pa_fuellmenge';
+const WINERY_ATTRIBUTE_SLUG = 'pa_weingut';
+const GOES_WITH_ATTRIBUTE_SLUG = 'pa_passt-zu';
+const QUALITY_NAME_ATTRIBUTE_SLUG = 'pa_qualitaetsbezeichnung';
+const MANUFACTURER_ATTRIBUTE_SLUG = 'pa_hersteller';
+const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-praesentkarton';
 
 // In $productAttributes array, slugs are prefixed by wordpress
-define('ATTRIBUTE_SLUG_PREFIX', 'attribute_');
+const ATTRIBUTE_SLUG_PREFIX = 'attribute_';
 
 function getOriginCountry(WC_Product $product): string
 {
