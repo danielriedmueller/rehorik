@@ -7,7 +7,7 @@ get_template_part('templates/header/slider', null, ['items' => [
         'claim' => 'Feine Weine seit 1928',
         'img'=> 'startseite-header-wein',
         'buttons' => [
-            '/produkt/la-goutte-rose/' => 'Schon probiert? Fruchtiger Rosé aus Südfrankreich'
+            '/produkt/la-goutte-rose/' => 'Schon probiert?<br>Fruchtiger Rosé aus Südfrankreich'
         ]
     ]
 ]]);
