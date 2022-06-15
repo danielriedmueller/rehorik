@@ -33,10 +33,11 @@ body.rehorik.woocommerce div.product.rehorik-product {
 
       li.variable-item {
         text-align: center;
+        box-shadow: none;
         border: 1px solid $beigegold;
         border-radius: $border-radius;
         list-style: none;
-        padding: $spacing-xs $spacing-xxs;
+        padding: $spacing-s $spacing-xxs;
         cursor: pointer;
         line-height: $line-height;
 
