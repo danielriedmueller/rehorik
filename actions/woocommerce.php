@@ -5,11 +5,11 @@ require_once('admin/woocommerce/add_product_video_field.php');
 require_once('shop/frontpage_categories.php');
 require_once('admin/woocommerce/add_product_nutrition_field.php');
 
-add_action( 'after_setup_theme', function() {
-    add_theme_support( 'woocommerce' );
-    add_theme_support( 'wc-product-gallery-zoom' );
-    add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-slider' );
+add_action('after_setup_theme', function () {
+    add_theme_support('woocommerce');
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
 });
 
 /**
@@ -47,7 +47,7 @@ add_action('woocommerce_thankyou', function ($order_id) {
             /**
              * @var WC_Product $product
              */
-            $eventCatId = get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat' )->term_id;
+            $eventCatId = get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat')->term_id;
             if ($product->is_virtual() && in_array($eventCatId, $product->get_category_ids())) {
                 $updateOrderStatus = true;
             }
@@ -55,29 +55,31 @@ add_action('woocommerce_thankyou', function ($order_id) {
     }
 
     if ($updateOrderStatus) {
-        $order->update_status( 'completed' );
+        $order->update_status('completed');
     }
 }, 10, 1);
 
 // Add delete account feature
-add_action( 'woocommerce_after_edit_account_form', function() {
-    echo sprintf('<div class="delete-me">%s</div>', do_shortcode( '[plugin_delete_me /]' ));
-}, 10, 0 );
+add_action('woocommerce_after_edit_account_form', function () {
+    echo sprintf('<div class="delete-me">%s</div>', do_shortcode('[plugin_delete_me /]'));
+}, 10, 0);
 
 /**
  * Hide specific categories
+ *
+ * TODO: Remove when Delikatessen and Geschenkkörbe are being sold again
  */
-add_filter( 'get_terms', function ( $terms, $taxonomies, $args ) {
-    $new_terms 	= array();
+add_filter('get_terms', function ($terms, $taxonomies, $args) {
+    $new_terms = [];
 
     // if a product category and on the shop page
-    if ( in_array( 'product_cat', $taxonomies ) && !is_admin()) {
-        foreach ( $terms as $key => $term ) {
-            if (!in_array( $term->slug, HIDE_CATEGORIES ) ) {
+    if (in_array('product_cat', $taxonomies) && !is_admin()) {
+        foreach ($terms as $key => $term) {
+            if (!in_array($term->slug, HIDE_CATEGORIES)) {
                 $new_terms[] = $term;
             }
         }
         $terms = $new_terms;
     }
     return $terms;
-}, 10, 3 );
+}, 10, 3);

@@ -176,10 +176,6 @@ function woocommerce_get_product_subcategories($parent_id = 0)
 {
     $parent_id = absint($parent_id);
 
-    if ($parent_id === 0) {
-        return getShopFrontPageCategories();
-    }
-
     $cache_key = apply_filters('woocommerce_get_product_subcategories_cache_key', 'product-category-hierarchy-' . $parent_id, $parent_id);
     $product_categories = $cache_key ? wp_cache_get($cache_key, 'product_cat') : false;
 
@@ -276,37 +272,5 @@ function woocommerce_subcategory_thumbnail( $category ) {
                 '<video muted loop playsinline preload="none"><source src="%s"/></video>',
             wp_get_attachment_url($video)
         ));
-    }
-}
-
-function syncEventCategoriesToProductCategories() {
-    //Map event catgegories with woocommerce categories
-    $eventCats = get_terms(TribeEvents::TAXONOMY, array('hide_empty' => 0));
-    $eventParentProductCat = get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat');
-
-    foreach ($eventCats as $eventCat) {
-        $existingCat = get_term_by('slug', $eventCat->slug, 'product_cat');
-
-        if ($eventCat->parent === 0) {
-            $productParentCat = $eventParentProductCat;
-        } else {
-            $eventParentCat = get_term($eventCat->parent, TribeEvents::TAXONOMY);
-            $productParentCat = get_term_by('slug', $eventParentCat->slug, 'product_cat');
-        }
-
-        if ($productParentCat) {
-            if (!$existingCat) {
-                wp_insert_term( $eventCat->name, 'product_cat', array(
-                    'parent' => $productParentCat->term_id, // optional
-                    'slug' => $eventCat->slug // optional
-                ));
-            } else {
-                wp_update_term($existingCat->term_id, 'product_cat', array(
-                    'name' => $eventCat->name,
-                    'parent' => $productParentCat->term_id, // optional
-                    'slug' => $eventCat->slug // optional
-                ));
-            }
-        }
     }
 }
