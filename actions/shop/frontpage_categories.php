@@ -3,6 +3,10 @@
  * Add coming next events to frontpage category pane
  */
 add_action('woocommerce_after_subcategory', function(WP_Term $category) {
+    if (!is_front_page()) {
+        return;
+    }
+
     if ($category->slug !== TICKET_CATEGORY_SLUG){
         return;
     }

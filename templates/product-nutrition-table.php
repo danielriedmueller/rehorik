@@ -7,7 +7,7 @@ foreach (define_nutrition_data_fields() as $id => $field) {
     if ($value) {
         $fields[] = [
             'label' => $field['label'],
-            'unit' => $field['unit'],
+            'unit' => $field['unit'] ?? '',
             'value' => $value
         ];
     }
