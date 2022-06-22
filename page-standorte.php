@@ -73,11 +73,11 @@ get_template_part('templates/header/slider', null, [
                                     <tbody>
                                     <tr>
                                         <td>MO. - MI.</td>
-                                        <td>09:30 - 18:00</td>
+                                        <td>10:00 - 18:00</td>
                                     </tr>
                                     <tr>
                                         <td>DO. - FR.</td>
-                                        <td>09:30 - 18:30</td>
+                                        <td>10:00 - 18:30</td>
                                     </tr>
                                     <tr>
                                         <td>SA.</td>
@@ -225,11 +225,11 @@ get_template_part('templates/header/slider', null, [
                         <tbody>
                         <tr>
                             <td>MO. - MI.</td>
-                            <td>09:30 - 18:00</td>
+                            <td>10:00 - 18:00</td>
                         </tr>
                         <tr>
                             <td>DO. - FR.</td>
-                            <td>09:30 - 18:30</td>
+                            <td>10:00 - 18:30</td>
                         </tr>
                         <tr>
                             <td>SA.</td>
@@ -261,11 +261,11 @@ get_template_part('templates/header/slider', null, [
                         <tbody>
                         <tr>
                             <td>MO. - MI.</td>
-                            <td>09:30 - 18:00</td>
+                            <td>10:00 - 18:00</td>
                         </tr>
                         <tr>
                             <td>DO. - FR.</td>
-                            <td>09:30 - 18:30</td>
+                            <td>10:00 - 18:30</td>
                         </tr>
                         <tr>
                             <td>SA.</td>
