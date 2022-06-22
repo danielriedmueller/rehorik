@@ -88,10 +88,14 @@ function setCategories($product, $eventId): void {
  * @return void
  */
 function setEventDate($product, $eventId): void {
-    $startDatetime = explode(" ", tribe_get_start_date($eventId, true, 'd.m.Y H:i'));
-    $endDatetime = explode(" ", tribe_get_end_date($eventId, true, 'd.m.Y H:i'));
-    update_post_meta($product->get_id(), TICKET_EVENT_DATE_START_META, $startDatetime[0] ?? "");
-    update_post_meta($product->get_id(), TICKET_EVENT_DATE_END_META, $endDatetime[0] ?? "");
-    update_post_meta($product->get_id(), TICKET_EVENT_TIME_START_META, $startDatetime[1] ?? "");
-    update_post_meta($product->get_id(), TICKET_EVENT_TIME_END_META, $endDatetime[1] ?? "");
+    $startDatetime = strtotime(tribe_get_start_date($eventId, true, 'd.m.Y H:i'));
+    $endDatetime = strtotime(tribe_get_end_date($eventId, true, 'd.m.Y H:i'));
+
+    if ($startDatetime) {
+        update_post_meta($product->get_id(), TICKET_EVENT_DATE_START_META, $startDatetime);
+    }
+
+    if ($endDatetime) {
+        update_post_meta($product->get_id(), TICKET_EVENT_DATE_END_META, $endDatetime);
+    }
 }

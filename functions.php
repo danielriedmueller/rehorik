@@ -60,10 +60,10 @@ const DATENSCHUTZ_PAGE_ID = 680;
 
 const PERMISSION_VIEW_VIEW_ATTENDEE_LIST = 'teilnehmerliste_bei_events_anschauen';
 
-const TICKET_EVENT_DATE_START_META = '_event_date_start';
-const TICKET_EVENT_DATE_END_META = '_event_date_end';
-const TICKET_EVENT_TIME_START_META = '_event_time_start';
-const TICKET_EVENT_TIME_END_META = '_event_time_end';
+const DATE_FORMAT = 'd.m.Y H:i';
+
+const TICKET_EVENT_DATE_START_META = '_event_timestamp_start';
+const TICKET_EVENT_DATE_END_META = '_event_timestamp_end';
 
 $priority = 1000;
 
