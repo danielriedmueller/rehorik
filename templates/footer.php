@@ -62,5 +62,6 @@ get_template_part('templates/rehorik-locations');
     </div>
 </footer>
 <?php wp_footer(); ?>
+</div>
 </body>
 </html>
