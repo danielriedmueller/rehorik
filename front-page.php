@@ -2,14 +2,6 @@
 get_header();
 get_template_part('templates/header/slider', null, ['items' => [
     [
-        'claim' => 'Sommerfest & Sommerweinprobe',
-        'img'=> 'weinfest',
-        'text' => 'Keine Lust mehr auf anonyme Flaschen im Weinregal? Dann kommt zu unserem Sommerfest & lernt die Winzer:innen Eurer Lieblingsweine kennen. Wann? 25.6 / 14 - 22 Uhr. Wo? Am Brixener Hof 6.',
-        'buttons' => [
-            '/produkt-kategorie/veranstaltungen/wein-events/weinprobe/' => 'Sommerweinprobe 23. - 24.6.',
-        ]
-    ],
-    [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
         'img'=> 'startseite-header-roesterei',
         'buttons' => [
