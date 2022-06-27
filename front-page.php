@@ -24,19 +24,19 @@ get_template_part('templates/header/slider', null, ['items' => [
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
         <li class="product-category product">
-            <?php get_template_part('templates/coffee-chooser'); ?>
+            <?php get_template_part('templates/orderbird-chooser'); ?>
         </li>
         <?php
-            $product_categories = getShopFrontPageCategories();
-            wc_get_template(
-                'content-product_cat.php',
-                [
-                    'category' => array_pop($product_categories),
-                ]
-            );
+        $product_categories = getShopFrontPageCategories();
+        wc_get_template(
+            'content-product_cat.php',
+            [
+                'category' => array_pop($product_categories),
+            ]
+        );
         ?>
         <li class="product-category product">
-            <?php get_template_part('templates/orderbird-chooser'); ?>
+            <?php get_template_part('templates/coffee-chooser'); ?>
         </li>
         <?php
             foreach ($product_categories as $category) {
