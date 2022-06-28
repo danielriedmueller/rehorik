@@ -83,7 +83,9 @@
   url(../fonts/cond.ttf),
   url(../fonts/cond.woff),
   url(../fonts/cond.woff2);
-  font-display: swap
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
 }
 
 @font-face {
@@ -92,13 +94,16 @@
   url(../fonts/cond-medium.ttf),
   url(../fonts/cond-medium.woff),
   url(../fonts/cond-medium.woff2);
-  font-display: swap
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
 }
 
 @font-face {
   font-family: "Myriad Pro Regular";
   src: url(../fonts/myriad-pro-regular.ttf);
-  font-display: swap
+  font-display: swap;
+  font-weight: 400;
 }
 
 pre {
