@@ -111,7 +111,7 @@ html, body {
   font-weight: normal;
   font-family: $font-family-body;
   font-size: $font-size;
-  line-height: 1.4em;
+  line-height: $line-height;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -132,9 +132,8 @@ h1, h2, h3, h4, h5, h6, strong, a {
   font-family: $font-family-headline;
   margin: 0;
   padding: 0;
-  line-height: 1.4em;
+  line-height: $line-height;
 }
-
 
 h1 {
   font-size: $font-size-very-very-large;
@@ -160,7 +159,6 @@ h2 {
 
 h3, h4 {
   font-size: $font-size-large;
-  line-height: $line-height-large;
   text-transform: uppercase;
   letter-spacing: 0;
   font-weight: normal;
@@ -217,4 +215,8 @@ table {
 
 .mb-s {
   margin-bottom: $spacing-s;
+}
+
+hr {
+  margin: $spacing-xxxs 0;
 }

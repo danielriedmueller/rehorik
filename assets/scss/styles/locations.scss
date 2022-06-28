@@ -26,13 +26,11 @@
         h3 {
           margin: $spacing 0;
           padding: 0;
-          line-height: $line-height;
           letter-spacing: 0;
           color: #fff;
           text-transform: uppercase;
 
           &.title-row-span {
-            line-height: $line-height-large;
             margin-top: 21px;
             margin-bottom: 18px;
           }
@@ -42,7 +40,6 @@
           font-size: $font-size-small;
           padding: 0;
           color: #fff;
-          line-height: $line-height-narrow;
         }
       }
     }

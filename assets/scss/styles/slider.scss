@@ -53,11 +53,9 @@
     border-radius: $border-radius-large;
     color: #fff;
     font-size: $font-size;
-    line-height: $line-height;
 
     @media all and (max-width: $small-breakpoint) {
       font-size: $font-size-small;
-      line-height: $line-height-narrow;
       padding: $spacing-xs;
     }
 
@@ -78,7 +76,6 @@
       min-width: 200px;
       text-align: center;
       display: inline-block;
-      line-height: $line-height;
 
       &:hover {
         background-color: $beigegold;

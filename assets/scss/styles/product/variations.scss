@@ -10,7 +10,6 @@ body.rehorik.woocommerce div.product.rehorik-product {
       }
 
       th {
-        line-height: $line-height-very-narrow;
         padding: 0 0 $spacing-xxs 0;
         text-align: left;
       }
@@ -38,9 +37,7 @@ body.rehorik.woocommerce div.product.rehorik-product {
         border: 1px solid $beigegold;
         border-radius: $border-radius;
         list-style: none;
-        padding: $spacing-s $spacing-xxs;
         cursor: pointer;
-        line-height: $line-height;
 
         &:hover, &.selected {
           color: #fff;

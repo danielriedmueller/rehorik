@@ -1,7 +1,7 @@
 .woocommerce a.remove {
-      @media all and (max-width: $small-breakpoint) {
-        background-position: left top;
-      }
+  @media all and (max-width: $small-breakpoint) {
+    background-position: left top;
+  }
   display: block;
   font-size: 19px;
   height: auto;
@@ -19,6 +19,10 @@
 .rehorik .woocommerce form .form-row,
 .rehorik .woocommerce form fieldset {
   margin-bottom: $spacing-s;
+}
+
+.woocommerce form .form-row label {
+  line-height: $line-height;
 }
 
 .woocommerce {

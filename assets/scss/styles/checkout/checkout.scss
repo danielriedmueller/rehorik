@@ -62,7 +62,6 @@
       }
 
       label {
-        line-height: $line-height;
         display: flex !important;
         margin-bottom: $spacing-xs;
       }
@@ -76,10 +75,6 @@
   p.form-row {
     margin: 0 0 $spacing-xxs 0;
     padding: 0 !important;
-
-    label {
-      line-height: $line-height-large;
-    }
 
     &.legal {
       margin-bottom: 0;

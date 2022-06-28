@@ -45,7 +45,6 @@
         padding-bottom: $spacing-s;
         display: block;
         width: 100%;
-        line-height: $line-height;
       }
 
       > span.count {
@@ -68,7 +67,7 @@
 
         > li {
           span.count {
-            font-size: $font-size-very-small;
+            font-size: $font-size-small;
             color: $tuerkis;
           }
 

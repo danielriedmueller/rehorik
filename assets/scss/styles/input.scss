@@ -1,7 +1,6 @@
 input:not([type="checkbox"]):not([type="radio"]), select, textarea {
   font-family: $font-family-body;
   font-size: $font-size-small;
-  line-height: $line-height;
   border-radius: 0;
   border: 1px solid rgba(57, 53, 54, 0.2);
   padding: $spacing-xs;
@@ -12,7 +11,6 @@ input[type="submit"] {
 }
 
 .select2.select2-container {
-  line-height: $line-height;
   border-radius: 0;
   border: 1px solid rgba(57, 53, 54, 0.2);
   padding: $spacing-xs;
@@ -27,7 +25,6 @@ input[type="submit"] {
   .select2-selection__rendered {
     font-family: $font-family-body;
     font-size: $font-size-small;
-    line-height: $line-height;
     border-radius: 0;
     border: none;
     padding: 0;

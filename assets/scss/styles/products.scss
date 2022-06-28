@@ -13,11 +13,10 @@
 
     div.rehorik-product-origin-country {
       text-transform: uppercase;
-      font-size: $font-size-very-small;
+      font-size: $font-size-small;
       font-weight: bold;
       background-color: transparent;
       font-family: $font-family-headline;
-      margin: $spacing-xxs 0;
     }
 
     .onsale {
@@ -47,12 +46,10 @@
       }
 
       h2 {
-        text-transform: uppercase;
         font-size: $font-size-large;
         padding: 0 $spacing-xs;
         margin: 0;
         word-break: break-word;
-        line-height: $line-height;
       }
     }
 
@@ -60,8 +57,7 @@
       padding: 0 $spacing-s;
 
       .rehorik-product-min-price {
-        font-size: $font-size-very-small;
-        margin-top: $spacing-xxxs;
+        font-size: $font-size-small;
         font-family: $font-family-headline;
 
         > span {
@@ -80,7 +76,7 @@
           text-align: left;
           padding: 0;
           text-transform: uppercase;
-          font-size: $font-size-very-small;
+          font-size: $font-size-small;
           font-weight: bold;
           vertical-align: top;
           font-family: $font-family-headline;
@@ -88,24 +84,23 @@
 
         tr td:first-child:not([colspan="2"]) {
           text-align: right;
-          padding: 0 $spacing-xxxs $spacing-xxs;
         }
 
         td.rehorik-product-attribute-list, td.rehorik-product-gift-content-list {
-          font-size: $font-size-very-small;
+          font-size: $font-size-small;
           font-weight: normal;
           text-transform: none;
-          line-height: $font-size-very-small;
           width: 118px;
           font-family: $font-family-body;
-          padding: 0 0 $spacing-xxs $spacing-xxxs;
+          padding: 0 0 0 $spacing-xxs;
+          line-height: 1.1em;
+          padding-top: 4px;
         }
 
         td.rehorik-product-attribute-list ul {
           text-align: left;
           padding: 0;
-          font-size: $font-size-very-small;
-          line-height: $font-size-small;
+          font-size: $font-size-small;
         }
       }
 
@@ -115,7 +110,7 @@
         left: 0;
         right: 0;
         text-transform: uppercase;
-        font-size: $font-size-very-small;
+        font-size: $font-size-small;
         font-family: $font-family-body;
 
         @media all and (max-width: $small-breakpoint) {

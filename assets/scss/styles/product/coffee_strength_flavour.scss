@@ -1,9 +1,5 @@
 .rehorik-product-attributes table tr {
-  td.rehorik-product-strength-flavour-label-first,
-  td.rehorik-product-strength-flavour-label-first ~ td {
-    padding-bottom: $spacing-xxs !important;
-  }
-  td.rehorik-product-strength-flavour-label-first {
+  td.rehorik-product-strength-flavour-label-second + td {
     vertical-align: bottom !important;
   }
 }
@@ -12,11 +8,12 @@
 .rehorik-product-strength-flavour-container {
   $width: 15px;
   $height: 23px;
-  padding-left: $spacing-xxxs;
+  padding-left: $spacing-xxs;
   height: $height;
 
   > span {
-    margin-right: 4px;
+    margin-right: $spacing-xxxs;
+
     &:last-child {
       margin-right: 0;
     }

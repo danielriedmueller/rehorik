@@ -23,12 +23,9 @@
   font-weight: bold;
   font-size: $font-size;
   color: $font-color;
-  line-height: $line-height-narrow;
 }
 
 #tribe-events-pg-template.rehorik-tribe-events-main {
-  line-height: $line-height-narrow;
-
   #tribe-events {
     padding: 0;
 
@@ -71,7 +68,6 @@
       font-size: $font-size;
       color: $font-color;
       font-weight: normal;
-      line-height: $line-height-narrow;
     }
 
     .tribe-events-cost {
