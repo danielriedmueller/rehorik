@@ -22,7 +22,11 @@ $imgPathSuffix = ')';
                         <div class="auto-width slider-text"><div><?= $item['text'] ?></div></div>
                     <?php endif; ?>
                     <?php if (isset($item['claim'])): ?>
-                        <div class="slider-title"><h2><?= $item['claim'] ?></h2></div>
+                        <?php if (isset($item['primary']) && $item['primary']): ?>
+                            <div class="slider-title"><h1><?= $item['claim'] ?></h1></div>
+                        <?php else: ?>
+                            <div class="slider-title"><h2><?= $item['claim'] ?></h2></div>
+                        <?php endif; ?>
                     <?php endif; ?>
                     <?php if (isset($item['buttons'])): ?>
                         <div class="auto-width button-container">

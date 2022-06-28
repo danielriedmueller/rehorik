@@ -2,15 +2,15 @@
 get_header();
 get_template_part('templates/header/slider', null, ['items' => [
     [
-        'claim' => 'Sommerfest & Sommerweinprobe',
-        'img'=> 'weinfest',
-        'text' => 'Keine Lust mehr auf anonyme Flaschen im Weinregal? Dann kommt zu unserem Sommerfest & lernt die Winzer:innen Eurer Lieblingsweine kennen. Wann? 25.6 / 14 - 22 Uhr. Wo? Am Brixener Hof 6.',
+        'claim' => 'Packt Eure Maschine ein!',
+        'img'=> 'header-byo',
         'buttons' => [
-            '/produkt-kategorie/veranstaltungen/wein-events/weinprobe/' => 'Sommerweinprobe 23. - 24.6.',
+            '/seminar/bring-your-own/' => 'BRING YOUR OWN'
         ]
     ],
     [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
+        'primary' => true,
         'img'=> 'startseite-header-roesterei',
         'buttons' => [
             '/tradition' => 'Tradition',
@@ -32,19 +32,19 @@ get_template_part('templates/header/slider', null, ['items' => [
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">
         <li class="product-category product">
-            <?php get_template_part('templates/coffee-chooser'); ?>
+            <?php get_template_part('templates/orderbird-chooser'); ?>
         </li>
         <?php
-            $product_categories = getShopFrontPageCategories();
-            wc_get_template(
-                'content-product_cat.php',
-                [
-                    'category' => array_pop($product_categories),
-                ]
-            );
+        $product_categories = getShopFrontPageCategories();
+        wc_get_template(
+            'content-product_cat.php',
+            [
+                'category' => array_pop($product_categories),
+            ]
+        );
         ?>
         <li class="product-category product">
-            <?php get_template_part('templates/orderbird-chooser'); ?>
+            <?php get_template_part('templates/coffee-chooser'); ?>
         </li>
         <?php
             foreach ($product_categories as $category) {

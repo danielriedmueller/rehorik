@@ -71,14 +71,6 @@
     h1.product_title {
       color: $font-color-accent;
       text-align: left;
-      text-transform: uppercase;
-      padding: 0;
-      letter-spacing: 1px;
-      font-weight: bold;
-
-      @media all and (max-width: $small-breakpoint) {
-        font-size: $font-size-h1;
-      }
     }
 
     div.rehorik-product-quality-name {
@@ -88,11 +80,11 @@
 
     p.price {
       color: $font-color;
-      font-size: $font-size-h2;
+      font-size: $font-size-large;
       margin-top: $product-view-grid-gap;
 
       > span {
-        font-size: $font-size-h2;
+        font-size: $font-size-large;
         font-weight: bold;
       }
     }

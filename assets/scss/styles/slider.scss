@@ -27,22 +27,12 @@
 
   .slider-title {
     margin-bottom: $spacing-s;
-
-    h2 {
-      font-size: 52px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      line-height: 60px;
-      color: #fff;
-    }
-
     @media all and (max-width: $small-breakpoint) {
       margin-bottom: $spacing-s;
+    }
 
-      h2 {
-        font-size: $font-size-large;
-        line-height: $line-height-large
-      }
+    h2 {
+      font-size: $font-size-very-very-large;
     }
   }
 
