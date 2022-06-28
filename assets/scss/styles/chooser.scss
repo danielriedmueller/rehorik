@@ -19,7 +19,6 @@
       background: transparent;
       backdrop-filter: none;
       padding: 0 $spacing-xxs;
-      margin: 0 $spacing-l;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -32,7 +31,7 @@
     height: 60px;
     color: $beigegold;
     width: 100%;
-    padding: $spacing-s;
+    padding: $spacing-xs;
     background: rgba(0, 0, 0, $opacity) none;
     backdrop-filter: blur(3px);
     font-size: $font-size;
