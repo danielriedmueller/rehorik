@@ -135,6 +135,7 @@ html, body {
 
 h1, h2, h3, h4, h5, h6, strong, a {
   font-family: $font-family-headline;
+  font-weight: normal;
   margin: 0;
   padding: 0;
   line-height: $line-height;
@@ -142,7 +143,7 @@ h1, h2, h3, h4, h5, h6, strong, a {
 
 h1 {
   font-size: $font-size-very-very-large;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 1px;
   color: #fff;
   text-transform: uppercase;
@@ -153,7 +154,7 @@ h1 {
 
 h2 {
   font-size: $font-size-very-large;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
