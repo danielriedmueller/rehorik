@@ -25,6 +25,13 @@
   line-height: $line-height;
 }
 
+.woocommerce form.checkout_coupon,
+.woocommerce form.login,
+.woocommerce form.register {
+  margin: $spacing 0 0 0;
+  border-radius: $border-radius;
+}
+
 .woocommerce {
   .woocommerce-error,
   .woocommerce-info,
