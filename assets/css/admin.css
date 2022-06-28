@@ -13,6 +13,11 @@
     content: "\f126";
 }
 
+#woocommerce-product-data ul.wc-tabs li.reh_product_title_claim_options a:before {
+    font-family: Dashicons;
+    content: "\f122";
+}
+
 #woocommerce-product-data fieldset {
     margin: 8px;
     padding: 8px;

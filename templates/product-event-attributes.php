@@ -8,15 +8,20 @@ if (!$event) {
 
 $location = tribe_get_venue($event->ID);
 
-$startDate = $product->get_meta(TICKET_EVENT_DATE_START_META);
-$endDate = $product->get_meta(TICKET_EVENT_DATE_END_META);
-$startTime = $product->get_meta(TICKET_EVENT_TIME_START_META);
-$endTime = $product->get_meta(TICKET_EVENT_TIME_END_META);
+$startDatetime = $product->get_meta(TICKET_EVENT_DATE_START_META);
+$endDatetime = $product->get_meta(TICKET_EVENT_DATE_END_META);
 
-$date = $startDate === $endDate
-    ? date('d.m.Y', strtotime($startDate))
-    : sprintf('%s - %s', date('d.m.Y', strtotime($startDate)), date('d.m.Y', strtotime($endDate)));
-$time = sprintf('%s - %s', $startTime, $endTime);
+if ($startDatetime && $endDatetime) {
+    $startDate = date('d.m.Y', $startDatetime);
+    $endDate = date('d.m.Y', $endDatetime);
+
+    if ($startDate === $endDate) {
+        $date = $startDate;
+        $time = sprintf('%s - %s', date('H:i', $startDatetime), date('H:i', $endDatetime));
+    } else {
+        $date = sprintf('%s - %s', date(DATE_FORMAT, $startDatetime), date(DATE_FORMAT, $endDatetime));
+    }
+}
 
 $price = wc_price($product->get_price());
 ?>
@@ -27,14 +32,18 @@ $price = wc_price($product->get_price());
             <tr class="seperator">
                 <td colspan="2"><hr /></td>
             </tr>
-            <tr>
-                <td>DATUM</td>
-                <td class="rehorik-product-attribute-list"><?= $date ?></td>
-            </tr>
+            <?php if($date) : ?>
+                <tr>
+                    <td>DATUM</td>
+                    <td class="rehorik-product-attribute-list"><?= $date ?></td>
+                </tr>
+            <?php endif; ?>
+            <?php if($time) : ?>
             <tr>
                 <td>UHRZEIT</td>
                 <td class="rehorik-product-attribute-list"><?= $time ?></td>
             </tr>
+            <?php endif; ?>
             <tr>
                 <td>ORT</td>
                 <td class="rehorik-product-attribute-list"><?= $location ?></td>

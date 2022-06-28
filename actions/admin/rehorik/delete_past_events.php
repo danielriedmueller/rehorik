@@ -39,21 +39,13 @@ add_action('wp_ajax_update_tickets_date', function () {
         ]) as $product) {
             /** @var WC_Product $product */
             $event = tribe_events_get_ticket_event($product->get_id());
-
-            $startDatetime = explode(" ", tribe_get_start_date($event->ID, true, 'Y-m-d H:i'));
-            $endDatetime = explode(" ", tribe_get_end_date($event->ID, true, 'Y-m-d H:i'));
-            update_post_meta($product->get_id(), TICKET_EVENT_DATE_START_META, $startDatetime[0] ?? "");
-            update_post_meta($product->get_id(), TICKET_EVENT_DATE_END_META, $endDatetime[0] ?? "");
-            update_post_meta($product->get_id(), TICKET_EVENT_TIME_START_META, $startDatetime[1] ?? "");
-            update_post_meta($product->get_id(), TICKET_EVENT_TIME_END_META, $endDatetime[1] ?? "");
+            setEventDate($product, $event->ID);
 
             echo sprintf(
-                '%s: %s %s - %s %s <br>',
+                '%s: %s - %s <br>',
                 $product->get_title(),
-                $product->get_meta(TICKET_EVENT_DATE_START_META),
-                $product->get_meta(TICKET_EVENT_TIME_START_META),
-                $product->get_meta(TICKET_EVENT_DATE_END_META),
-                $product->get_meta(TICKET_EVENT_TIME_END_META),
+                date(DATE_FORMAT, $product->get_meta(TICKET_EVENT_DATE_START_META)),
+                date(DATE_FORMAT, $product->get_meta(TICKET_EVENT_DATE_END_META)),
             );
         }
     } catch (Exception $exception) {
