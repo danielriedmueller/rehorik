@@ -3,7 +3,6 @@
   position: absolute;
   left: 0;
   top: calc(var(--slider-height) + #{$menu-height} + #{$spacing-l}) ;
-  font-weight: bold;
   z-index: 8;
   height: 0;
 
@@ -37,7 +36,7 @@
     }
   }
 
-  > div:first-of-type {
+  > h5 {
     width: $hint-width;
     background-color: $weinrot;
     background: $weinrot url("../img/pfeil-gold-unten.svg") no-repeat right 42px center;

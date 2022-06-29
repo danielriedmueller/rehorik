@@ -36,8 +36,6 @@
     }
 
     a {
-      font-weight: bold;
-
       img {
         margin: 0 0 $spacing-xxs 0;
         width: $product-category-width;
@@ -60,10 +58,6 @@
         font-size: $font-size-small;
         font-family: $font-family-headline;
         margin-bottom: $spacing-s;
-
-        > span {
-          font-weight: bold;
-        }
       }
 
       table {
@@ -78,7 +72,6 @@
           padding: 0;
           text-transform: uppercase;
           font-size: $font-size-small;
-          font-weight: bold;
           vertical-align: top;
           font-family: $font-family-headline;
         }
@@ -89,7 +82,6 @@
 
         td.rehorik-product-attribute-list, td.rehorik-product-gift-content-list {
           font-size: $font-size-small;
-          font-weight: normal;
           text-transform: none;
           width: 118px;
           font-family: $font-family-body;

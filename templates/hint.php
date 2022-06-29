@@ -2,7 +2,7 @@
 
 <div class="rehorik-hint">
     <input type="checkbox">
-    <div>Aktuelle Informationen</div>
+    <h5>Aktuelle Informationen</h5>
     <div>
         <div>
             Endlich ist es soweit: die neuen Veranstaltungstermine sind online. Feiert, genießt & lernt mit uns.

@@ -98,12 +98,11 @@
   font-weight: bold;
 }
 
-
 @font-face {
   font-family: "Myriad Pro Regular";
   src: url(../fonts/myriad-pro-regular.ttf);
   font-display: swap;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 pre {
@@ -113,7 +112,6 @@ pre {
 
 html, body {
   color: $font-color;
-  font-weight: normal;
   font-family: $font-family-body;
   font-size: $font-size;
   line-height: $line-height;
@@ -135,7 +133,6 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-headline;
-  font-weight: normal;
   margin: 0;
   padding: 0;
   line-height: $line-height;
@@ -143,7 +140,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: $font-size-very-very-large;
-  font-weight: 700;
   color: #fff;
   text-transform: uppercase;
   text-align: center;
@@ -153,7 +149,6 @@ h1 {
 
 h2 {
   font-size: $font-size-very-large;
-  font-weight: 700;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 0;
@@ -163,7 +158,11 @@ h2 {
 h3, h4 {
   font-size: $font-size-large;
   text-transform: uppercase;
-  font-weight: normal;
+}
+
+h5, h6 {
+  font-size: $font-size;
+  text-transform: uppercase;
 }
 
 a {

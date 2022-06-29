@@ -10,8 +10,12 @@ body.rehorik.woocommerce div.product.rehorik-product {
       }
 
       th {
-        padding: 0 0 $spacing-xxs 0;
         text-align: left;
+      }
+
+      th label {
+        font-weight: normal;
+        font-family: $font-family-headline;
       }
 
       th, td {

@@ -13,14 +13,14 @@
 .tribe-common .tribe-common-h5,
 .tribe-common .tribe-common-h6 {
   font-size: $font-size-large !important;
-  font-weight: bold;
+  font-family: $font-family-headline;
   color: $font-color-accent;
   padding: 0;
 }
 
 .tribe-common-h7 {
   text-transform: uppercase;
-  font-weight: bold;
+  font-family: $font-family-headline;
   font-size: $font-size;
   color: $font-color;
 }
@@ -46,7 +46,6 @@
     h2, .tribe-events-cost {
       font-family: $font-family-body;
       font-size: $font-size-large;
-      font-weight: bold;
       color: $font-color;
       padding: 0;
     }
@@ -92,8 +91,7 @@
         width: $width;
 
         input.rehorik-tribe-events-number-input {
-          font-weight: 500 !important;
-          font-size: 20px !important;
+          font-size: $spacing-s !important;
           color: #fff !important;
           border-radius: 3px;
           -webkit-box-shadow: none !important;
