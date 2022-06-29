@@ -19,7 +19,7 @@
 }
 
 .slider-claim {
-  max-width: 500px;
+  max-width: 550px;
   display: inline-block;
   position: absolute;
   bottom: $spacing-xl;
@@ -29,6 +29,10 @@
     margin-bottom: $spacing-s;
     @media all and (max-width: $small-breakpoint) {
       margin-bottom: $spacing-s;
+    }
+    
+    h1, h2 {
+      font-family: "Cond Black", serif;
     }
 
     h2 {
@@ -66,7 +70,7 @@
 
   .button-container div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     .button {
       transition: none;

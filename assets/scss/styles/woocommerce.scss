@@ -15,6 +15,12 @@
   border: 0;
 }
 
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  line-height: $line-height;
+}
+
 .rehorik .woocommerce form .woocommerce-form-row,
 .rehorik .woocommerce form .form-row,
 .rehorik .woocommerce form fieldset {

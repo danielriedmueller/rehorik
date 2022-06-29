@@ -31,7 +31,6 @@ const ATTRIBUTE_SLUG_PREFIX = 'attribute_';
 
 function getOriginCountry(WC_Product $product): string
 {
-    $category = getSubCategories($product);
     $region = $product->get_attribute(REGION_ATTRIBUTE_SLUG);
 
     $attributeArr = getAttributeArray($product, ORIGIN_COUNTRY_ATTRIBUTE_SLUG);
@@ -41,7 +40,7 @@ function getOriginCountry(WC_Product $product): string
         $country = implode(", ", $attributeArr);
     }
 
-    return implode (" - ", array_filter([$category, $country, $region], function ($a) {
+    return implode (" - ", array_filter([$country, $region], function ($a) {
         return !!$a;
     }));
 }

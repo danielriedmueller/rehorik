@@ -25,15 +25,14 @@
     display: block;
   }
 
-  h4, li, a {
+  li, a {
     font-size: $font-size;
     color: $font-color-accent;
-    font-family: $font-family-headline;
   }
 
-  h1, h2, h3, h4 {
-    font-weight: bold;
-    text-transform: uppercase;
+  h4 {
+    font-size: $font-size;
+    color: $font-color-accent;
   }
 
   ul.product-categories {

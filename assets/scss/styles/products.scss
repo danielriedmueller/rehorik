@@ -14,9 +14,9 @@
     div.rehorik-product-origin-country {
       text-transform: uppercase;
       font-size: $font-size-small;
-      font-weight: bold;
       background-color: transparent;
-      font-family: $font-family-headline;
+      font-family: $font-family-body;
+      padding: 0 $spacing-xs;
     }
 
     .onsale {
@@ -39,7 +39,7 @@
       font-weight: bold;
 
       img {
-        margin: 0 auto !important;
+        margin: 0 0 $spacing-xxs 0;
         width: $product-category-width;
         height: auto;
         object-fit: cover;
@@ -54,7 +54,7 @@
     }
 
     .rehorik-product-attributes {
-      padding: 0 $spacing-s;
+      padding: 0 $spacing-xs;
 
       .rehorik-product-min-price {
         font-size: $font-size-small;

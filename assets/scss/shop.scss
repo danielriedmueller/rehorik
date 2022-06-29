@@ -78,24 +78,26 @@
 @import "styles/filter/filter";
 
 @font-face {
-  font-family: "DIN Offc W01 Cond";
-  src: url(../fonts/cond.eot),
-  url(../fonts/cond.ttf),
-  url(../fonts/cond.woff),
-  url(../fonts/cond.woff2);
+  font-family: "Cond";
+  src: url(../fonts/cond.otf);
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
-  font-family: "DIN W01 Cond Medium";
-  src: url(../fonts/cond-medium.eot),
-  url(../fonts/cond-medium.ttf),
-  url(../fonts/cond-medium.woff),
-  url(../fonts/cond-medium.woff2);
+  font-family: "Cond Bold";
+  src: url(../fonts/cond-bold.otf);
   font-style: normal;
   font-weight: bold;
 }
+
+@font-face {
+  font-family: "Cond Black";
+  src: url(../fonts/cond-black.otf);
+  font-style: normal;
+  font-weight: bold;
+}
+
 
 @font-face {
   font-family: "Myriad Pro Regular";
@@ -131,7 +133,7 @@ html, body {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, strong, a {
+h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-headline;
   font-weight: normal;
   margin: 0;
@@ -142,7 +144,6 @@ h1, h2, h3, h4, h5, h6, strong, a {
 h1 {
   font-size: $font-size-very-very-large;
   font-weight: 700;
-  letter-spacing: 0;
   color: #fff;
   text-transform: uppercase;
   text-align: center;
@@ -153,7 +154,6 @@ h1 {
 h2 {
   font-size: $font-size-very-large;
   font-weight: 700;
-  letter-spacing: 0;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 0;
@@ -163,7 +163,6 @@ h2 {
 h3, h4 {
   font-size: $font-size-large;
   text-transform: uppercase;
-  letter-spacing: 0;
   font-weight: normal;
 }
 
