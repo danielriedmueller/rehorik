@@ -1,26 +1,45 @@
+.rehorik-header-outer {
+  $height: $menu-height + $section-padding-top-bottom;
+  position: absolute;
+  height: calc(100% - #{$height});
+  top: $spacing-s;
+  z-index: 100;
+  width: 0;
+}
+
 header.rehorik-header {
-  position: fixed;
-  width: 100%;
+  position: sticky;
+  width: fit-content;
+  width: -moz-fit-content;
   top: 0;
-  background-color: $weinrot;
-  z-index: 12;
-  padding: 0;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
 
-  .menu ul,
+  background-color: transparent;
+  padding: 0;
+
+  @for $i from 1 through 218 {
+    &[data-ypos="#{$i}"] {
+      background-color: rgba(92, 13, 47, $i / 100);
+    }
+  }
+
+  ul.menu > li.menu-item {
+    letter-spacing: 2px;
+  }
+
   ul.menu {
     display: flex;
 
-    li {
-      height: $menu-height;
+    > li {
       display: flex;
       justify-content: center;
       align-content: center;
       flex-direction: column;
-      padding-left: $spacing;
-      padding-right: $spacing;
+      padding: $spacing-s $spacing;
       position: relative;
     }
 
@@ -40,15 +59,15 @@ header.rehorik-header {
       padding-right: $spacing + 10px;
 
       &:hover {
-        background-color: $beigegold;
-        background-image: url("../img/pfeil-rot-unten.svg");
+        background-color: $weinrot;
+        border-radius: $border-radius;
 
         a {
-          color: $weinrot;
+          color: $beigegold;
         }
 
         > ul.sub-menu {
-          display: grid;
+          display: flex;
         }
       }
     }
@@ -68,36 +87,19 @@ header.rehorik-header {
       width: max-content;
       min-width: 200px;
       position: absolute;
-      top: $menu-height;
+      padding: 0 $spacing-s $spacing-s $spacing-s;
+      text-align: left;
+      top: 50px;
       left: 0;
-      background: rgba(206, 182, 127, 0.9) none;
-      border-bottom-right-radius: $border-radius;
-      border-bottom-left-radius: $border-radius;
       display: none;
-      grid-template-rows: 1fr 1fr;
-      grid-auto-flow: column;
-      grid-column-gap: $spacing-xxs;
+      flex-direction: column;
+      list-style: none;
+      border-radius: $border-radius;
+      background-color: $weinrot;
 
       li.menu-item {
         text-transform: none;
-        border-right: 1px solid rgba(92, 13, 47, 0.5);
-
-        &:last-child,
-        &:nth-last-of-type(-n+2):not(:nth-child(even)) {
-          border: none;
-        }
-
-        a {
-          font-family: $font-family-body;
-        }
-
-        &:hover {
-          background-color: transparent;
-
-          a {
-            border-bottom: 1px solid $weinrot;
-          }
-        }
+        margin-top: $spacing;
       }
     }
   }
@@ -223,5 +225,5 @@ header.rehorik-header {
 }
 
 body.admin-bar header.rehorik-header {
-  top: 32px;
+  top: $spacing-xl;
 }
