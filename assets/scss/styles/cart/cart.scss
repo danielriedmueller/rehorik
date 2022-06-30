@@ -113,6 +113,19 @@
 
   .rehorik-cart-totals a.checkout-button.button {
     width: 100%;
+    background-color: $grau;
+    color: $beigegold !important;
+    padding: $spacing-xs (($spacing * 2) + $spacing-xxs) $spacing-xs $spacing;
+    background-image: url("../img/svg/strength_filled.svg");
+    background-size: 20px;
+    background-position: right $spacing center;
+    background-repeat: no-repeat;
+
+    &:hover {
+      background-color: $beigegold;
+      color: #fff !important;
+      background-image: url("../img/svg/strength_filled_white.svg");
+    }
   }
 
   .rehorik-update-cart button.button[name="update_cart"][type="submit"] {
