@@ -7,7 +7,6 @@ if (!is_shop() && !is_product_category()) {
     get_template_part('templates/best-selling-products');
 }
 
-get_template_part('templates/social-media-icons');
 get_template_part('templates/newsletter-sign-up');
 get_template_part('templates/rehorik-locations');
 ?>

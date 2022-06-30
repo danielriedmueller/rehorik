@@ -1,6 +1,5 @@
 (function () {
     var elements = document.querySelectorAll('[data-scrollpos]');
-    var prevScrollpos = window.pageYOffset;
     var scrollPosThreshold = 218;
 
     window.onscroll = function() {
