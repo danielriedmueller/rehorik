@@ -5,13 +5,13 @@ $element-height: 42px;
   left: 0;
   height: calc(100% - #{$height});
   top: $height;
-  z-index: 9;
+  z-index: 100;
   width: 0;
 
   > #rehorik-social-media-icons {
     position: sticky;
     left: 0;
-    top: $menu-height + $section-padding-top-bottom;
+    top: $spacing-xs;
     width: 136px;
 
     transition: all 0.25s ease 0s;
@@ -73,7 +73,7 @@ $element-height: 42px;
       padding: 6px 10px 6px 11px;
       width: 115px;
 
-      &.hidden {
+      &.scrolled {
         top: $menu-height - $element-height;
       }
 

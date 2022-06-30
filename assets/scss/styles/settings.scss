@@ -1,10 +1,13 @@
 $max-width: 1080px;
 $container-width: 80%;
 
+$opacity: 0.65;
+
 $weinrot: #5C0D2F;
 $hellbraun: #996B23;
 $dunkelbraun: #663700;
 $grau: #393536;
+$grau-opacity: rgba(57, 53, 54, $opacity);
 $beigegold: #CEB67F;
 $tuerkis: #003c4a;
 $lila: #2d253c;
@@ -35,7 +38,7 @@ $font-size-small: 17px;
 
 $line-height: 1.4em;
 
-$menu-height: 60px;
+$menu-height: 90px;
 $menu-icon-size: 16px;
 
 $text-shadow: -1px -1px 0 $grau, 1px -1px 0 $grau, -1px 1px 0 $grau, 1px 1px 0 $grau;
@@ -58,8 +61,6 @@ $spacing-s: 20px;
 $spacing-xs: 15px;
 $spacing-xxs: 8px;
 $spacing-xxxs: 3px;
-
-$opacity: 0.5;
 
 $product-view-grid-gap: $spacing-l;
 

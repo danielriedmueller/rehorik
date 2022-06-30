@@ -1,7 +1,7 @@
 <?php ?>
 <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
 <div class="rehorik-custom-category-header">
-    <ul id="slider">
+    <ul class="slider">
         <li>
             <div class="slider-image-1 lieferservice-slider-image-1"></div>
         </li>
@@ -9,7 +9,7 @@
             <div class="slider-image-2 lieferservice-slider-image-2"></div>
         </li>
     </ul>
-    <div id="tns-controls-container">
+    <div id="slider-header-controls" class="slider-controls">
         <button></button>
         <button></button>
     </div>

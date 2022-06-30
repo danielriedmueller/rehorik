@@ -1,11 +1,21 @@
-#slider, #single-header {
+.slider, #single-header {
   position: relative;
+}
+
+.slider {
+  opacity: 0;
+
+  &.tns-slider {
+    opacity: 1;
+  }
 }
 
 .slider-image {
   width: auto;
   height: var(--slider-height);
-  background: transparent var(--image-large) no-repeat center center;
+  background-repeat: no-repeat;
+  $opacity: 0.7;
+  background-image: linear-gradient(180deg, rgba(0,0,0,$opacity) 0%, rgba(0,0,0,0) 40%), var(--image-large);
   object-fit: cover;
   background-size: cover;
 
@@ -22,7 +32,7 @@
   max-width: 550px;
   display: inline-block;
   position: absolute;
-  bottom: $spacing-xl;
+  bottom: $spacing-l;
   right: 130px;
 
   .slider-title {
@@ -30,7 +40,7 @@
     @media all and (max-width: $small-breakpoint) {
       margin-bottom: $spacing-s;
     }
-    
+
     h1, h2 {
       font-family: "Cond Black", serif;
     }
@@ -48,24 +58,6 @@
   .auto-width div {
     flex-grow: 1;
     width: 0;
-  }
-
-  .slider-text {
-    background: rgba(0, 0, 0, $opacity) none;
-    backdrop-filter: blur(3px);
-    z-index: 9;
-    padding: $spacing-s;
-    border-radius: $border-radius-large;
-    color: #fff;
-    font-size: $font-size;
-
-    @media all and (max-width: $small-breakpoint) {
-      font-size: $font-size-small;
-      padding: $spacing-xs;
-    }
-
-    text-align: justify;
-    margin-bottom: $spacing-s;
   }
 
   .button-container div {
@@ -124,29 +116,44 @@
   }
 }
 
-ul#slider, ul#slider li, ul#slider li img {
+ul.slider, ul.slider li, ul.slider li img {
   width: 100%;
 }
 
-#slider > .tns-item {
-  vertical-align: middle;
-  position: relative;
+.slider-outer {
+  .slider > .tns-item {
+    vertical-align: middle !important;
+    position: relative;
+  }
 }
 
-#slider .slider-image {
+.slider .slider-image {
   background-size: cover;
 }
 
-#tns-controls-container {
+#slider-best-selling-controls.slider-controls button {
+  background-image: url("../img/pfeil_gold.svg");
+}
+
+#slider-header-controls.slider-controls button {
+  background-image: url("../img/pfeil_weiss.svg");
+}
+
+.slider-outer {
+  position: relative;
+}
+
+.slider-controls {
   button {
-    background: transparent url("../img/pfeil_weiss.svg") no-repeat 0 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
     border: none;
     $size: 46px;
     width: $size;
     height: $size;
     background-size: 26px;
     position: absolute;
-    top: calc(var(--slider-height) / 2  + (#{$size} / 2));
+    top: 50%;
     cursor: pointer;
     padding: 0;
 

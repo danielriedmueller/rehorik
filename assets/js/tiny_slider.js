@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    const slider = document.getElementById('slider');
-    if (slider && slider.childElementCount > 1) {
+    const sliderHeader = document.getElementById('slider-header');
+    if (sliderHeader && sliderHeader.childElementCount > 1) {
         tns({
-            container: '#slider',
+            container: '#slider-header',
             slideBy: 'page',
             autoplay: false,
             controlsPosition: 'bottom',
             lazyLoad: true,
             nav: false,
             autoWidth: true,
-            controlsContainer: "#tns-controls-container"
+            controlsContainer: "#slider-header-controls"
         });
     }
 });

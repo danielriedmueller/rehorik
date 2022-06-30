@@ -7,7 +7,8 @@ $imgPathSuffix = ')';
 ?>
 
 <?php if (sizeof($args['items']) > 1) : ?>
-    <ul id="slider">
+<div class="slider-outer">
+    <ul id="slider-header" class="slider">
         <?php foreach($args['items'] as $item): ?>
             <li>
                 <div class="slider-image"
@@ -18,9 +19,6 @@ $imgPathSuffix = ')';
                              '
                 ></div>
                 <div class="slider-claim">
-                    <?php if (isset($item['text'])): ?>
-                        <div class="auto-width slider-text"><div><?= $item['text'] ?></div></div>
-                    <?php endif; ?>
                     <?php if (isset($item['claim'])): ?>
                         <?php if (isset($item['primary']) && $item['primary']): ?>
                             <div class="slider-title"><h1><?= $item['claim'] ?></h1></div>
@@ -41,10 +39,11 @@ $imgPathSuffix = ')';
             </li>
         <?php endforeach; ?>
     </ul>
-    <div id="tns-controls-container">
+    <div id="slider-header-controls" class="slider-controls">
         <button></button>
         <button></button>
     </div>
+</div>
 <?php endif; ?>
 
 <?php if (sizeof($args['items']) === 1) : ?>
@@ -58,9 +57,6 @@ $imgPathSuffix = ')';
                      '
         ></div>
         <div class="slider-claim">
-            <?php if (isset($item['text'])): ?>
-                <div class="auto-width slider-text"><div><?= $item['text'] ?></div></div>
-            <?php endif; ?>
             <?php if (isset($item['claim'])): ?>
                 <div class="slider-title"><h2><?= $item['claim'] ?></h2></div>
             <?php endif; ?>

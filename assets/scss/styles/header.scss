@@ -12,7 +12,7 @@ header.rehorik-header {
   width: fit-content;
   width: -moz-fit-content;
   top: 0;
-  z-index: 10;
+  z-index: 12;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -225,5 +225,5 @@ header.rehorik-header {
 }
 
 body.admin-bar header.rehorik-header {
-  top: $spacing-xl;
+  top: 32px;
 }
