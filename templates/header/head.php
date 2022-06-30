@@ -26,4 +26,4 @@ require_once(get_stylesheet_directory() . '/helper/page_helper.php');
     </head>
 <body <?php body_class('rehorik'); ?>>
 <div id="page-container">
-    <?php get_template_part('templates/menu'); ?>
+    <?php get_template_part('templates/header/menu'); ?>

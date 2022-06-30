@@ -1,5 +1,4 @@
 <?php ?>
-
 <div class="rehorik-hint">
     <input type="checkbox">
     <h5>Aktuelle Informationen</h5>
