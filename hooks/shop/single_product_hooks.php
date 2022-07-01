@@ -122,10 +122,7 @@ function nutrition_table() {
 function preperation_recommendation() {
     global $product;
 
-    echo sprintf(
-        '<div class="rehorik-recommendation">%s</div>',
-        $product->get_meta('reh_preperation_recommendation')
-    );
+    get_template_part('templates/product-preperation-recommendation', null, ['product' => $product]);
 }
 
 function categories() {
