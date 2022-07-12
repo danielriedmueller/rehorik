@@ -15,18 +15,28 @@ $element-height: 42px;
 #rehorik-social-media-icons {
   position: absolute;
   z-index: 13;
-  left: 0;
   top: $menu-height + $menu-gap-to-top + $logo-size - $element-height;
 
-  &.scrolled {
-    position: sticky;
-    top: 10px;
-    width: 145px;
+  @media all and (min-width: $small-breakpoint + 1) {
+    left: 0;
+    border-bottom-right-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+
+    &.scrolled {
+      position: sticky;
+      top: 10px;
+      width: 145px;
+    }
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    right: 0;
+    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: $border-radius;
   }
 
   background-color: rgba(255, 255, 255, $opacity);
-  border-bottom-right-radius: $border-radius;
-  border-top-right-radius: $border-radius;
+
   padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
 
   display: flex;
@@ -76,10 +86,7 @@ $element-height: 42px;
     top: $menu-height + $spacing;
     padding: 6px 10px 6px 11px;
     width: 115px;
-
-    &.scrolled {
-      top: $menu-height - $element-height;
-    }
+    z-index: 11;
 
     .fb, .yt, .instagram {
       $size-small: 20px;

@@ -64,7 +64,7 @@
   }
 
   @media all and (max-width: $small-breakpoint) {
-    bottom: -$spacing-l - $hint-height;
+    display: none;
   }
 }
 

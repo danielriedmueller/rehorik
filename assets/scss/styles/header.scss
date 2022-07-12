@@ -87,13 +87,15 @@
         padding-right: $spacing + 10px;
 
         &:hover {
-          background-color: $weinrot;
           @media all and (min-width: $medium-breakpoint + 1) {
             border-radius: $border-radius;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
           }
 
+          background-color: $menu-hover-color;
           a {
-            color: $beigegold;
+            color: #fff;
           }
 
           > ul.sub-menu {
@@ -123,10 +125,23 @@
         flex-direction: column;
         list-style: none;
         border-radius: $border-radius;
-        background-color: $weinrot;
+        background-color: $menu-hover-color;
+        color: #fff;
 
         li.menu-item {
           text-transform: none;
+
+          &:hover {
+            background-color: $menu-sub-item-hover-color;
+            a {
+              color: $beigegold;
+            }
+
+            &:last-child {
+              border-bottom-left-radius: $border-radius;
+              border-bottom-right-radius: $border-radius;
+            }
+          }
         }
       }
     }
