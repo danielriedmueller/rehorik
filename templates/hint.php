@@ -10,7 +10,7 @@
         </div>
         <hr>
         <div>
-            Aufgrund von Lieferproblemen beim Rohkaffe kommt es bei einigen Kaffeesorten zu einer
+            Aufgrund von Lieferproblemen beim Rohkaffee kommt es bei einigen Kaffeesorten zu einer
             Versandverzögerung.
             Wir bitten um Verständnis.
         </div>
