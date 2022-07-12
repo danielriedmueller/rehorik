@@ -16,11 +16,11 @@ $element-height: 42px;
   position: absolute;
   z-index: 13;
   left: 0;
-  top: 198px;
+  top: $menu-height + $menu-gap-to-top + $logo-size - $element-height;
 
   &.scrolled {
     position: sticky;
-    top: 44px;
+    top: 10px;
     width: 145px;
   }
 

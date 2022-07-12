@@ -8,10 +8,10 @@
 
 .rehorik-header-outer {
   @media all and (min-width: $medium-breakpoint + 1) {
-    $height: $menu-height-desktop + $section-padding-top-bottom;
+    $height: $menu-height + $section-padding-top-bottom;
     position: absolute;
     height: calc(100% - #{$height});
-    top: $spacing-s;
+    top: $menu-gap-to-top;
     z-index: 100;
     width: 0;
   }
@@ -38,7 +38,7 @@
       background-color: transparent;
       justify-content: center;
       padding: 0;
-      height: $menu-height-desktop;
+      height: $menu-height;
       flex-direction: row;
 
       @for $i from 1 through 218 {
@@ -127,7 +127,6 @@
 
         li.menu-item {
           text-transform: none;
-          margin-top: $spacing;
         }
       }
     }

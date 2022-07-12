@@ -20,7 +20,7 @@
       display: block;
     }
 
-    &:checked + div {
+    &:checked + h5 {
       background-image: url("../img/pfeil-gold-oben.svg");
       border-bottom-right-radius: 0;
     }
@@ -54,8 +54,9 @@
     width: $hint-width;
     display: none;
     padding: $spacing-xs $spacing-l;
-    background-color: rgba(92, 13, 47, 0.85);
+    background-color: $weinrot;
     border-bottom-right-radius: $border-radius;
+    border-top-right-radius: $border-radius;
     position: absolute;
     top: $hint-height;
     left: 0;

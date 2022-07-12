@@ -38,10 +38,6 @@ $font-size-small: 17px;
 
 $line-height: 1.4em;
 
-$menu-height: 60px;
-$menu-height-desktop: 90px;
-$menu-icon-size: 16px;
-
 $text-shadow: -1px -1px 0 $grau, 1px -1px 0 $grau, -1px 1px 0 $grau, 1px 1px 0 $grau;
 
 $very-small-breakpoint: 375px;
@@ -62,6 +58,10 @@ $spacing-s: 20px;
 $spacing-xs: 15px;
 $spacing-xxs: 8px;
 $spacing-xxxs: 3px;
+
+$menu-height: 60px;
+$menu-gap-to-top: $spacing-s;
+$menu-icon-size: 16px;
 
 $product-view-grid-gap: $spacing-l;
 
