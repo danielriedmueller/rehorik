@@ -1,12 +1,13 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-get_template_part('templates/header/head');
-if (isProductCategory(TICKET_CATEGORY_SLUG)) {
-    $eventCat = getProductCategorySlug();
-    if (!empty($eventCat)) {
-        get_template_part("templates/veranstaltungen/header-${eventCat}");
-    }
+$eventCat = getProductCategorySlug();
+if (isProductCategory(TICKET_CATEGORY_SLUG) && !empty($eventCat)) {
+    get_template_part('templates/header/head', null, ['slider' => [[
+        'img'=> "header-${eventCat}"
+    ]]]);
+} else {
+    get_template_part('templates/header/head');
 }
 get_template_part('templates/page-title');
 ?>

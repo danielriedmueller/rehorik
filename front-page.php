@@ -27,7 +27,6 @@ get_template_part('templates/header/slider', null, ['items' => [
     ]
 ]]);
 ?>
-<a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
 <?php get_template_part('templates/hint') ?>
 <div class="container hint-margin-top">
     <ul class="rehorik-products products">

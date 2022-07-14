@@ -76,3 +76,5 @@ $imgPathSuffix = ')';
         </div>
     </div>
 <?php endif; ?>
+<a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
+
