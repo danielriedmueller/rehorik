@@ -2,13 +2,6 @@
 get_header();
 get_template_part('templates/header/slider', null, ['items' => [
     [
-        'claim' => 'Packt Eure Maschine ein!',
-        'img'=> 'header-byo',
-        'buttons' => [
-            '/seminar/bring-your-own/' => 'BRING YOUR OWN'
-        ]
-    ],
-    [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
         'primary' => true,
         'img'=> 'startseite-header-roesterei',
