@@ -5,7 +5,6 @@ $imgMediumPathSuffix = '-1080x600px.jpg';
 $imgSmallPathSuffix = '-375x485px.jpg';
 $imgPathSuffix = ')';
 ?>
-
 <?php if (sizeof($args['items']) > 1) : ?>
     <ul id="slider">
         <?php foreach($args['items'] as $item): ?>
@@ -46,9 +45,8 @@ $imgPathSuffix = ')';
         <button></button>
     </div>
 <?php endif; ?>
-
 <?php if (sizeof($args['items']) === 1) : ?>
-    <?php $item = $args['items'][0] ?>
+    <?php $item = $args['items'][0]; ?>
     <div id="single-header">
         <div class="slider-image"
              style='
