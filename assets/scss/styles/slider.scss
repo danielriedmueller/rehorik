@@ -1,4 +1,4 @@
-#slider, #single-header {
+#slider {
   position: relative;
 }
 
@@ -124,16 +124,16 @@
   }
 }
 
-ul#slider, ul#slider li, ul#slider li img {
+ul#slider-content, ul#slider-content li, ul#slider-content li img {
   width: 100%;
 }
 
-#slider > .tns-item {
+#slider-content > .tns-item {
   vertical-align: middle;
   position: relative;
 }
 
-#slider .slider-image {
+#slider-content .slider-image {
   background-size: cover;
 }
 
