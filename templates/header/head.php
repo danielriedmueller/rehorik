@@ -27,7 +27,7 @@
 </head>
 <body <?php body_class('rehorik'); ?>>
 <div id="page-container">
-    <?php get_template_part('templates/menu'); ?>
     <?php if (!empty($args['slider'])) {
         get_template_part('templates/header/slider', null, ['items' => $args['slider']]);
     } ?>
+    <?php get_template_part('templates/menu'); ?>
