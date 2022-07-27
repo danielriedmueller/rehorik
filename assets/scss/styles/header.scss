@@ -202,6 +202,12 @@ header.rehorik-header {
         }
 
         li.menu-item-has-children {
+
+          > a {
+            width: -moz-fit-content;
+            width: fit-content;
+          }
+
           &:hover {
             height: auto;
             padding-top: $spacing-xs;
