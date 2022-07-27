@@ -12,6 +12,7 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
         ATTRIBUTE_SLUG_PREFIX.WINERY_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.GOES_WITH_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.QUALITY_NAME_ATTRIBUTE_SLUG,
+        ATTRIBUTE_SLUG_PREFIX.SIZE_ATTRIBUTE_SLUG,
         WEIGHT_SLUG
     ];
 
@@ -34,10 +35,13 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
      * Add Fuellmenge if single product
      */
     if (!$product->is_type('variable')) {
-        $productAttributes[WEIGHT_SLUG] = array(
-            'label' => wc_gzd_get_product( $product )->get_unit() === "l" ? "Füllmenge" : "Gewicht",
-            'value' => wc_gzd_get_product( $product )->get_unit_product_html()
-        );
+        $value = wc_gzd_get_product( $product )->get_unit_product_html();
+        if (!empty($value)) {
+            $productAttributes[WEIGHT_SLUG] = array(
+                'label' => wc_gzd_get_product( $product )->get_unit() === "l" ? "Füllmenge" : "Gewicht",
+                'value' => wc_gzd_get_product( $product )->get_unit_product_html()
+            );
+        }
     }
 
     if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX.STRENGTH_ATTRIBUTE_SLUG])) {

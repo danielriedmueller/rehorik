@@ -25,6 +25,7 @@ const GOES_WITH_ATTRIBUTE_SLUG = 'pa_passt-zu';
 const QUALITY_NAME_ATTRIBUTE_SLUG = 'pa_qualitaetsbezeichnung';
 const MANUFACTURER_ATTRIBUTE_SLUG = 'pa_hersteller';
 const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-praesentkarton';
+const SIZE_ATTRIBUTE_SLUG = 'pa_groesse';
 
 // In $productAttributes array, slugs are prefixed by wordpress
 const ATTRIBUTE_SLUG_PREFIX = 'attribute_';
