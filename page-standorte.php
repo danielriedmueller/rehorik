@@ -1,7 +1,6 @@
 <?php
-get_header();
-get_template_part('templates/header/slider', null, [
-    'items' => [
+get_template_part('templates/header/head', null, [
+    'slider' => [
         [
             'claim' => 'Überall unterwegs',
             'img' => 'header-standorte',

@@ -1,8 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-get_template_part('templates/header/head');
-get_template_part('templates/header/slider', null, ['items' => [
+get_template_part('templates/header/head', null, ['slider' => [
     [
         'claim' => 'Feine Weine seit 1928',
         'img'=> 'startseite-header-wein',
