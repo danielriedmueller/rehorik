@@ -1,6 +1,6 @@
 // transparent header
 @media all and (min-width: $medium-breakpoint + 1) {
-  body:not(.single-product) {
+  body.rehorik.has-slider {
     #page-container {
       padding-top: 0;
 

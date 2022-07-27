@@ -1,4 +1,8 @@
-<?php require_once(get_stylesheet_directory() . '/helper/page_helper.php'); ?>
+<?php
+require_once(get_stylesheet_directory() . '/helper/page_helper.php');
+
+$hasSlider = !empty($args['slider']);
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -25,9 +29,9 @@
     <meta property="og:site_name" content="Rehorik"/>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class('rehorik'); ?>>
+<body <?php body_class('rehorik' . ($hasSlider ? ' has-slider' : '')); ?>>
 <div id="page-container">
-    <?php if (!empty($args['slider'])) {
+    <?php if ($hasSlider) {
         get_template_part('templates/header/slider', null, ['items' => $args['slider']]);
     } ?>
     <?php get_template_part('templates/header/menu'); ?>
