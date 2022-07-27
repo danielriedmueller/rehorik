@@ -13,7 +13,6 @@ get_template_part('templates/header/slider', null, ['items' => [
 ]]);
 get_template_part('templates/page-title');
 ?>
-    <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
     <div class="rehorik-page-introduction-outer">
         <div class="container">
             <div class="rehorik-page-introduction">

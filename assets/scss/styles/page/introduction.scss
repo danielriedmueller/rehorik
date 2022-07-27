@@ -4,6 +4,9 @@
     text-align: justify;
     color: $beigegold;
     $hugo-head-size: 100px;
+    min-height: $hugo-head-size;
+    display: flex;
+    align-items: center;
     background: transparent url("../img/svg/hugo_head_gold.svg") no-repeat center right;
     background-size: $hugo-head-size;
     padding-right: $hugo-head-size + $section-padding-top-bottom;

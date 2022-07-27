@@ -5,7 +5,6 @@ $imgMediumPathSuffix = '-1080x600px.jpg';
 $imgSmallPathSuffix = '-375x485px.jpg';
 $imgPathSuffix = ')';
 ?>
-
 <?php if (sizeof($args['items']) > 1) : ?>
 <div class="slider-outer">
     <ul id="slider-header" class="slider">
@@ -45,9 +44,8 @@ $imgPathSuffix = ')';
     </div>
 </div>
 <?php endif; ?>
-
 <?php if (sizeof($args['items']) === 1) : ?>
-    <?php $item = $args['items'][0] ?>
+    <?php $item = $args['items'][0]; ?>
     <div id="single-header">
         <div class="slider-image"
              style='
@@ -72,3 +70,5 @@ $imgPathSuffix = ')';
         </div>
     </div>
 <?php endif; ?>
+<a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
+

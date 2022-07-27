@@ -1,4 +1,4 @@
-<?php ?>
+<?php // TODO: remove or move to category-veranstaltungen.php ?>
 <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
 <div class="rehorik-custom-category-header">
     <div class="header-image events"></div>

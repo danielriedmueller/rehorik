@@ -1,8 +1,14 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-get_template_part('templates/header/head');
-get_template_part('templates/machine-header');
+$slider = [
+    'claim' => 'Werdet zum Home Barista und holt Euch Eure Lieblingsmaschine!',
+    'img' => 'header-maschinen',
+    'buttons' => [
+        'mailto:<?= BARISTASTORE_EMAIL ?>?subject=Beratungstermin%20Maschinen%20und%20Equipment' => 'Beratungstermin vereinbaren'
+    ]
+];
+get_template_part('templates/header/head', null, ['slider' => [$slider]]);
 get_template_part('templates/page-title');
 
 ?>
