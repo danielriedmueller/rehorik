@@ -13,7 +13,9 @@
     width: $logo-size-small;
     height: $logo-size-small;
     background-size: $logo-size-small;
-    left: $spacing;
     top: $menu-height + $spacing;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
   }
 }
