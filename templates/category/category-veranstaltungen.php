@@ -107,6 +107,15 @@ $eventInfos = [
         'claim' => 'UNSERE VIRTUELLEN WEIN EVENTS',
         'intro' => 'Auch ohne Lockdown absolute Pflichttermine! Stellt die Weine kalt, lasst die Jogginghose an und setzt Euch zusammen mit Euren Freunden daheim auf die Terrasse oder aufs Sofa. Wir liefern ausgewählte Highlights aus der internationalen Weinwelt und feine Schmankerl aus unserem Käseladen direkt zu Euch nach Hause. Unsere Weinexpert:innen schalten sich per Zoom oder Teams zu und entführen Euch in ferne Weinwelten.',
     ],
+    'events' => [
+        'img' => 'veranstaltungen-rehorikevents',
+        'intro' => 'Locker, lässig und leger geht es bei unseren Rehorik Events zu. Genuss und Spaß stehen an erster Stelle!',
+    ],
+    'unsere-feste' => [
+        'img' => 'veranstaltungen-rehorikevents',
+        'claim' => 'WIR WOLLEN MIT EUCH FEIERN',
+        'intro' => 'Die Freude am Genuss vermitteln wir bei unseren Rehorik Events. Läutet den Feierabend zusammen mit Euren Freunden und Bekannten bei einem Gläschen Wein ein oder feiert bei unserem großen Sommerfest gemeinsam mit uns und unseren Winzer:innen bis tief in die Nacht. Wir freuen uns auf Euch!',
+    ],
     'blackwine' => [
         'img' => 'blackwine'
     ]
