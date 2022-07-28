@@ -5,7 +5,7 @@ $element-height: 42px;
   height: calc(100% - #{$height});
   top: $height;
 
-  @media all and (max-width: $small-breakpoint) {
+  @media all and (max-width: $medium-breakpoint) {
     $height: $menu-height + $spacing + $spacing + $logo-size-small;
     height: calc(100% - #{$height});
     top: $height;
@@ -17,7 +17,7 @@ $element-height: 42px;
   z-index: 13;
   top: $menu-height + $menu-gap-to-top + $logo-size - $element-height;
 
-  @media all and (min-width: $small-breakpoint + 1) {
+  @media all and (min-width: $medium-breakpoint + 1) {
     left: 0;
     border-bottom-right-radius: $border-radius;
     border-top-right-radius: $border-radius;
@@ -29,16 +29,13 @@ $element-height: 42px;
     }
   }
 
-  @media all and (max-width: $small-breakpoint) {
+  @media all and (max-width: $medium-breakpoint) {
     right: 0;
     border-bottom-left-radius: $border-radius;
     border-top-left-radius: $border-radius;
   }
-
   background-color: rgba(255, 255, 255, $opacity);
-
   padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
-
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -81,7 +78,7 @@ $element-height: 42px;
   }
 }
 
-@media all and (max-width: $small-breakpoint) {
+@media all and (max-width: $medium-breakpoint) {
   header.rehorik-header .menu-hauptmenue-container {
     padding-top: $menu-height;
     background-color: $weinrot;
@@ -92,7 +89,7 @@ $element-height: 42px;
     background: none;
     top: $menu-height + $spacing-s;
     padding: 0;
-    right: $spacing-xs;
+    right: $spacing;
 
     .fb, .yt, .instagram {
       $size-small: 20px;

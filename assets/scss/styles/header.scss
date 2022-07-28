@@ -78,9 +78,9 @@ header.rehorik-header {
     }
 
     li.menu-item-has-children {
-      background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right 20px;
+      background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right $spacing-s;
       background-size: 10px;
-      padding-right: $spacing + 10px;
+      padding-right: $spacing-l;
 
       &:hover {
         @media all and (min-width: $medium-breakpoint + 1) {
@@ -136,8 +136,10 @@ header.rehorik-header {
           }
 
           &:last-child {
-            border-bottom-left-radius: $border-radius;
-            border-bottom-right-radius: $border-radius;
+            @media all and (min-width: $medium-breakpoint + 1) {
+              border-bottom-left-radius: $border-radius;
+              border-bottom-right-radius: $border-radius;
+            }
           }
         }
       }
@@ -152,8 +154,22 @@ header.rehorik-header {
     padding-left: $spacing;
     padding-right: $spacing;
   }
+}
 
-  @media all and (max-width: $medium-breakpoint) {
+.rehorik-header-outer {
+  @media all and (min-width: $medium-breakpoint + 1) {
+    $height: $menu-height + $section-padding-top-bottom;
+    position: absolute;
+    height: calc(100% - #{$height});
+    top: 0;
+    z-index: 100;
+    width: 0;
+  }
+}
+
+// Hamburger view
+@media all and (max-width: $medium-breakpoint) {
+  header.rehorik-header {
     input[type="checkbox"] {
       margin-left: -33px;
       opacity: 0;
@@ -201,6 +217,8 @@ header.rehorik-header {
         }
 
         li.menu-item-has-children {
+          background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right $spacing;
+          background-size: 10px;
 
           > a {
             width: -moz-fit-content;
@@ -218,6 +236,7 @@ header.rehorik-header {
             }
 
             > ul.sub-menu {
+              padding-top: $spacing-s;
               background: transparent;
               display: grid;
               grid-template-columns: 1fr 1fr;
@@ -229,8 +248,8 @@ header.rehorik-header {
               left: 0;
 
               li {
+                margin-bottom: $spacing-xs;
                 padding: 0;
-
                 border: none;
 
                 &:nth-child(2n-1) {
@@ -254,17 +273,6 @@ header.rehorik-header {
         }
       }
     }
-  }
-}
-
-.rehorik-header-outer {
-  @media all and (min-width: $medium-breakpoint + 1) {
-    $height: $menu-height + $section-padding-top-bottom;
-    position: absolute;
-    height: calc(100% - #{$height});
-    top: 0;
-    z-index: 100;
-    width: 0;
   }
 }
 
