@@ -4,11 +4,11 @@
         <?php
         get_template_part('templates/header/hamburger');
         wp_nav_menu(['theme_location' => 'main']);
+        get_template_part('templates/social-media-icons');
         get_template_part('templates/header/cart-total');
         if (is_active_sidebar('productsearch')) {
             dynamic_sidebar('productsearch');
         }
         ?>
     </header>
-    <?php get_template_part('templates/social-media-icons'); ?>
 </div>

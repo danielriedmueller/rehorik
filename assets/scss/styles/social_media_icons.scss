@@ -81,19 +81,61 @@ $element-height: 42px;
   }
 }
 
-@media all and (max-width: $small-breakpoint) {
-  #rehorik-social-media-icons {
-    top: $menu-height + $spacing;
-    padding: 6px 10px 6px 11px;
-    width: 115px;
-    z-index: 11;
+body.has-slider {
+  @media all and (max-width: $small-breakpoint) {
+    #rehorik-social-media-icons {
+      top: $menu-height + $spacing;
+      padding: 6px 10px 6px 11px;
+      width: 115px;
+      z-index: -1;
 
-    .fb, .yt, .instagram {
-      $size-small: 20px;
-      flex: 0 0 $size-small;
-      width: $size-small;
-      height: $size-small;
-      background-size: $size-small;
+      .fb, .yt, .instagram {
+        $size-small: 20px;
+        flex: 0 0 $size-small;
+        width: $size-small;
+        height: $size-small;
+        background-size: $size-small;
+      }
+    }
+  }
+}
+
+body:not(.has-slider) {
+  @media all and (max-width: $small-breakpoint) {
+    #rehorik-social-media-icons {
+      display: none;
+      background: none;
+      top: 488px;
+      padding: 0;
+      right: unset;
+
+      .fb, .yt, .instagram {
+        $size-small: 20px;
+        flex: 0 0 $size-small;
+        width: $size-small;
+        height: $size-small;
+        background-size: $size-small;
+
+        &:not(:last-child) {
+          margin: 0 $spacing-s 0 0;
+        }
+      }
+
+      .fb {
+        background-image: url("../img/svg/facebook_gold.svg");
+      }
+
+      .yt {
+        background-image: url("../img/svg/youtube_gold.svg");
+      }
+
+      .instagram {
+        background-image: url("../img/svg/instagram_gold.svg");
+      }
+    }
+
+    .rehorik-header input[type="checkbox"]:checked ~ #rehorik-social-media-icons {
+      display: flex;
     }
   }
 }
