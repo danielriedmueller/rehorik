@@ -10,14 +10,13 @@
       right: 0;
     }
 
-    @media all and (max-width: $small-breakpoint) {
+    @media all and (max-width: $medium-breakpoint) {
       display: block;
 
       .tribe-common-b2 {
         text-align: left;
         margin: 0 0 $spacing-xxs 0;
       }
-
 
       .rehorik-hugo-head {
         margin: 0;
