@@ -92,7 +92,7 @@ header.rehorik-header {
         background-color: $menu-hover-color;
 
         a {
-          color: #fff;
+          color: $weinrot;
         }
 
         > ul.sub-menu {
@@ -127,6 +127,10 @@ header.rehorik-header {
 
       li.menu-item {
         text-transform: none;
+
+        a {
+          font-family: $font-family-body;
+        }
 
         &:hover {
           background-color: $menu-sub-item-hover-color;
@@ -236,7 +240,8 @@ header.rehorik-header {
             }
 
             > ul.sub-menu {
-              padding-top: $spacing-s;
+              padding-top: $spacing-xs;
+              padding-bottom: 0;
               background: transparent;
               display: grid;
               grid-template-columns: 1fr 1fr;
@@ -252,7 +257,7 @@ header.rehorik-header {
                 padding: 0;
                 border: none;
 
-                &:nth-child(2n-1) {
+                &:nth-child(2n-1):not(:only-child) {
                   border-right: 1px solid rgba(92, 13, 47, 0.5);
                   padding-right: $spacing-s;
                 }
