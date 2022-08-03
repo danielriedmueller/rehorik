@@ -63,15 +63,7 @@
     font-size: $font-size-small;
   }
 
-  @media all and (max-width: $small-breakpoint) {
+  @media all and (max-width: $medium-breakpoint) {
     display: none;
-  }
-}
-
-.hint-margin-top {
-  margin-top: $hint-height + $spacing-xl;
-
-  @media all and (max-width: $small-breakpoint) {
-    margin-top: $hint-height + $spacing-l;
   }
 }

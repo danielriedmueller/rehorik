@@ -1,4 +1,3 @@
-<?php ?>
 <div class="rehorik-header-outer">
     <header class="rehorik-header" data-scrollpos>
         <?php

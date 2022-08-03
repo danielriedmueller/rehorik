@@ -20,7 +20,7 @@ get_template_part('templates/header/head', null, ['slider' => [
 ]]);
 ?>
 <?php get_template_part('templates/hint') ?>
-<div class="container hint-margin-top">
+<div class="container">
     <ul class="rehorik-products products">
         <li class="product-category product">
             <?php get_template_part('templates/orderbird-chooser'); ?>

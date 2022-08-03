@@ -38,6 +38,7 @@
 
   .slider-title {
     margin-bottom: $spacing-s;
+
     @media all and (max-width: $small-breakpoint) {
       margin-bottom: $spacing-s;
     }
@@ -109,11 +110,10 @@
     }
   }
 
-  @media all and (max-width: $small-breakpoint) {
+  @media all and (max-width: $medium-breakpoint) {
     left: 0;
     right: 0;
-    padding: 0 $spacing-xl;
-    bottom: $spacing;
+    margin: 0 auto;
   }
 }
 
