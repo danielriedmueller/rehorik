@@ -9,16 +9,11 @@
   bottom: 0;
   z-index: 9;
 
-  @media all and (max-width: $small-breakpoint) {
+  @media all and (max-width: $medium-breakpoint) {
     width: $logo-size-small;
     height: $logo-size-small;
     background-size: $logo-size-small;
     top: $menu-height + $spacing;
-  }
-
-  @media all and (max-width: $medium-breakpoint) {
-    margin: 0 auto;
-    left: 0;
-    right: 0;
+    left: $spacing;
   }
 }

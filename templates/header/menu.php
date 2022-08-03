@@ -11,4 +11,5 @@
         }
         ?>
     </header>
+    <?php get_template_part('templates/social-media-icons'); ?>
 </div>
