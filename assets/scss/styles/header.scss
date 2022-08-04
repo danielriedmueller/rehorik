@@ -37,7 +37,6 @@ header.rehorik-header {
 
   @media all and (min-width: $medium-breakpoint + 1) {
     position: sticky;
-    width: 100vw;
     justify-content: center;
     padding: 0;
     height: $menu-height;
@@ -167,7 +166,12 @@ header.rehorik-header {
     height: calc(100% - #{$height});
     top: 0;
     z-index: 100;
-    width: 0;
+    width: 100%;
+    pointer-events: none;
+
+    > * {
+      pointer-events: auto;
+    }
   }
 }
 
