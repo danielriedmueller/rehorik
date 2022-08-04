@@ -71,10 +71,12 @@
     h1.product_title {
       color: $font-color-accent;
       text-align: left;
+      margin-top: -15px;
     }
 
     div.rehorik-product-quality-name {
-      font-size: $font-size;
+      font-size: $font-size-large;
+      line-height: $line-height;
     }
 
     p.price {
