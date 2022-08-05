@@ -6,7 +6,10 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .re
   grid-area: goes-with;
   background-color: transparent;
   padding: 0;
-  margin: 0 0 0 $product-view-grid-gap / 2;
+  @media all and (min-width: $medium-breakpoint + 1) {
+    margin: 0 0 0 $product-view-grid-gap / 2;
+  }
+
   display: flex;
   flex-direction: column;
 
