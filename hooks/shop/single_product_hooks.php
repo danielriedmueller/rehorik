@@ -10,7 +10,6 @@ add_action('rehorik_product_view_title_price', 'woocommerce_template_single_titl
 add_action('rehorik_product_view_title_price', 'title_claim', 1); // Title
 add_action('rehorik_product_view_title_price', 'quality_name', 1); // Title
 add_action('rehorik_product_view_title_price', 'woocommerce_template_single_price', 1); // Price
-add_action('rehorik_product_view_title_price', 'short_description', 1); // Short Description
 
 add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
 
@@ -27,6 +26,7 @@ add_action('rehorik_product_view_sigils_bar', 'sigils', 1); // Sigils
 add_action('rehorik_product_information', 'description', 1); // Description
 add_action('rehorik_product_information', 'categories', 1); // Categories
 add_action('rehorik_product_information', 'single_product_attributes', 1); // Attributes
+add_action('rehorik_product_information', 'short_description', 1); // Short Description
 add_action('rehorik_product_information', 'preperation_recommendation', 1); // Preperation Recommendation
 
 add_action('rehorik_product_ingredients', 'nutrition_table', 1); // Nutrition Table

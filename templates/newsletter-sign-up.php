@@ -4,7 +4,7 @@
         <h2>Newsletter</h2>
         <div>
             <div class="newsletter-sign-up-description">
-                <h4>Lust auf mehr Kaffee, Wein, Spirits und Feinkost?</h4>
+                <h4>Lust auf mehr Kaffee, Wein, Spirits & Feinkost?</h4>
                 <p>
                     Dann meldet Euch einfach für den Rehorik Newsletter an und
                     wir halten Euch auf dem Laufenden - Erfahre immer als Erstes,

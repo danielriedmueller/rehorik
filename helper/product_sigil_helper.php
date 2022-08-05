@@ -22,6 +22,10 @@ function hasRegionalSigil(WC_Product $product): bool {
     return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Regional');
 }
 
+function hasCottonSigil(WC_Product $product): bool {
+    return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), '100% Baumwolle');
+}
+
 function isEventOnline($eventId): bool {
     if (!function_exists('tribe_events_get_ticket_event')) {
         return false;
@@ -73,6 +77,10 @@ function getBiodynamicSigilClass(WC_Product $product): string {
 
 function getRegionalSigilClass(WC_Product $product): string {
     return hasRegionalSigil($product) ? "regionalsigil" : "";
+}
+
+function getCottonSigilClass(WC_Product $product): string {
+    return hasCottonSigil($product) ? "cottonsigil" : "";
 }
 
 function getBioSigilControlcode(WC_Product $product): string {

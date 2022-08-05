@@ -67,6 +67,13 @@ $sigilWidth: $sigilHeight * 1.5;
         background-image: url("../img/siegel/wineofmonth.svg");
       }
     }
+
+    > .cottonsigil {
+      background: transparent url("../img/siegel/icon-cotton.svg") no-repeat left top;
+      height: $sigilHeight;
+      width: $sigilHeight * 1.5;
+      background-size: $sigilHeight * 1.5 $sigilHeight;
+    }
   }
 }
 

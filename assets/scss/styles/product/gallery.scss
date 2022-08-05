@@ -1,9 +1,13 @@
-.rehorik.single-product .rehorik-product.product.detail-view .woocommerce-product-gallery {
+.rehorik.single-product .rehorik-product.product.detail-view .rehorik-product-view-gallery .woocommerce-product-gallery {
   float: none;
-  width: unset;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .flex-viewport {
-    margin-bottom: $spacing-xs;
+    margin-bottom: $product-view-grid-gap;
   }
 
   ol.flex-control-nav.flex-control-thumbs {
@@ -16,6 +20,7 @@
   }
 
   .flex-viewport,
+  .flex-control-thumbs li img,
   .woocommerce-product-gallery__image {
     border-radius: $border-radius;
   }

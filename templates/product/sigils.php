@@ -16,4 +16,7 @@
         <div title="Bio" class="<?=getBioSigilClass($product)?>"><?=getBioSigilControlcode($product)?></div>
         <div title="Bio" class="<?=getBioSigilClass($product)?>-de"></div>
     <?php endif; ?>
+    <?php if (hasCottonSigil($product)): ?>
+        <div title="Baumwolle" class="<?= getCottonSigilClass($product) ?>"></div>
+    <?php endif; ?>
 </div>
