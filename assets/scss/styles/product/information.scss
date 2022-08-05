@@ -1,5 +1,16 @@
 @import "../mixins";
 
+
+// Exception for merch. Move position of description to the top
+body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .rehorik-product-information {
+  grid-area: goes-with;
+  background-color: transparent;
+  padding: 0;
+  color: $font-color;
+  font-size: $font-size;
+  margin-left: $product-view-grid-gap / 2;
+}
+
 body.rehorik.woocommerce #main-content div.rehorik-product {
   $row-padding: $product-view-grid-gap / 2;
 
@@ -18,7 +29,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
     "recommendation attributes"
     "short-description attributes";
 
-    .rehorik-product-information-category {
+    .rehorik-product-information-category:not(:empty) {
       margin: 0 $row-padding $row-padding 0;
     }
 
@@ -34,7 +45,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       margin: 0 $row-padding 0 0;
     }
 
-    .rehorik-product-attributes {
+    .rehorik-product-attributes:not(:empty) {
       margin: 0 0 0 $row-padding;
     }
 
@@ -48,10 +59,10 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       "recommendation"
       "short-description";
 
-      .rehorik-product-information-category {
+      .rehorik-product-information-category:not(:empty) {
         margin: 0 0 $row-padding 0;
       }
-      .rehorik-product-attributes {
+      .rehorik-product-attributes:not(:empty) {
         margin: 0 0 $row-padding 0;
       }
       .rehorik-product-description:not(:empty) {
