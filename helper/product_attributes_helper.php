@@ -86,3 +86,14 @@ function getStrengthFlavourHtml($level, $class) {
 
     return $result;
 }
+
+/**
+ * If product is not selling, remove add to cart button and show message.
+ */
+function isProductSelling(WC_Product $product) {
+    if (isItCategory($product, MACHINE_CATEGORY_SLUG)) {
+        return false;
+    }
+
+    return true;
+}
