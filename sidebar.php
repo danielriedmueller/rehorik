@@ -10,6 +10,7 @@
             'hide_empty' => false,
             'hierarchical' => true,
             'max_depth' => 3,
+            'orderby' => 'order',
     ]); ?>
     <?php if (wc_get_loop_prop( 'total' ) > 0): ?>
         <?= do_shortcode('[wpf-filters id=1]') ?>
