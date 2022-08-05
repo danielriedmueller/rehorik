@@ -7,7 +7,7 @@
   justify-content: space-between;
 
   .flex-viewport {
-    margin-bottom: $product-view-grid-gap;
+    margin-bottom: $product-view-grid-gap / 2;
   }
 
   ol.flex-control-nav.flex-control-thumbs {
