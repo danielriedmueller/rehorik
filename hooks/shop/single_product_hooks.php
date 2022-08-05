@@ -17,6 +17,8 @@ add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_add_
 add_action('rehorik_product_view_add_to_cart', 'cup_of_coffee', 1); // Cup of Coffee
 add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_meta', 1); // Meta
 
+add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice', 1); // Text if product can not be bought online
+
 add_action('rehorik_product_view', 'goes_with', 1); // Meta
 add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
 
@@ -159,6 +161,10 @@ function cup_of_coffee() {
     global $product;
 
     get_template_part('templates/cup-of-coffee', null, ['product' => $product]);
+}
+
+function not_selling_notice() {
+    get_template_part('templates/not-selling-notice');
 }
 
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);

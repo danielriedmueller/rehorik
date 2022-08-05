@@ -93,10 +93,8 @@
 
 /*
  * Remove product count
- *  - Maschinen und Equipment
  *  - Black & Wine
  */
-ul.children > li.cat-item-231 > span.count,
 ul.children > li.cat-item-895 > span.count {
   display: none;
 }
