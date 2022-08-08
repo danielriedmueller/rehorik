@@ -14,7 +14,6 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .re
   .rehorik-product-short-description {
     margin-right: 0 !important;
     color: $font-color;
-    font-size: $font-size;
     text-align: justify;
   }
 }
@@ -97,7 +96,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       grid-area: description;
 
       text-align: justify;
-      font-size: $font-size-small;
+      font-size: $font-size;
     }
 
     .rehorik-product-information-category {
@@ -163,6 +162,10 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
             }
           }
         }
+
+        td.woocommerce-product-attributes-item__value span{
+          display: block;
+        }
       }
     }
 
@@ -170,7 +173,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       grid-area: short-description;
 
       text-align: justify;
-      font-size: $font-size-small;
+      font-size: $font-size;
 
       h4 {
         color: $beigegold;
