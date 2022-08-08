@@ -4,6 +4,11 @@
   }
 }
 
+// Product view
+td.woocommerce-product-attributes-item__value .rehorik-product-strength-flavour-container span {
+  display: inline-block !important;
+}
+
 // Category view
 .rehorik-product-strength-flavour-container {
   $width: 15px;

@@ -1,5 +1,18 @@
 <?php
 /**
+ * Prevent comma seperated implode of values
+ */
+add_filter( 'woocommerce_attribute', function( $formatted_values, $attribute, $values ) {
+    if (sizeof($values) > 1) {
+        $formatted_values = implode("</li><li>", $values);
+
+        return '<ul><li>' . $formatted_values . '</li></ul>';
+    }
+
+    return "<span>" . $values[0] . "</span>";
+}, 10, 3 );
+
+/**
  * Add categories to attributes
  * Remove weight and others
  */
@@ -88,6 +101,10 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
      *  6. Geschmack (formerly known as Ausbau)
      *  7. Aromen
      *  8. Alkohol
+     *
+     * Maschinen
+     *  1. Hersteller
+     *  2. Technische Daten
      */
     $sortedAttributes = [
         ATTRIBUTE_SLUG_PREFIX.VINTAGE_ATTRIBUTE_SLUG,
@@ -99,7 +116,9 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
         ATTRIBUTE_SLUG_PREFIX.AUSBAU_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.FLAVOUR_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX.ALCOHOL_ATTRIBUTE_SLUG,
-        WEIGHT_SLUG
+        WEIGHT_SLUG,
+        ATTRIBUTE_SLUG_PREFIX.MANUFACTURER_ATTRIBUTE_SLUG,
+        ATTRIBUTE_SLUG_PREFIX.TECHNICAL_DETAILS_ATTRIBUTE_SLUG,
     ];
     uksort($productAttributes, function ($a, $b) use ($sortedAttributes) {
         if (array_search($a, $sortedAttributes) > array_search($b, $sortedAttributes)) {

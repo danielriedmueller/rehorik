@@ -99,7 +99,8 @@ function getCoffeeCategories(WC_Product $product): string
 }
 
 /**
- * Returns Subcategories of Product
+ * Returns Subcategories of Product.
+ * If no subcategories, returns category.
  *
  * @param WC_Product $product
  * @return string
@@ -127,7 +128,11 @@ function getSubCategories(WC_Product $product): string
         return implode(", ", $terms_not_parents_names);
     }
 
-    return "";
+    $terms_names = array_map(function ($a) {
+        return $a->name;
+    } , $terms);
+
+    return implode(", ", $terms_names);
 }
 
 /**

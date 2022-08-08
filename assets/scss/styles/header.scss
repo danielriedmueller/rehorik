@@ -67,6 +67,14 @@ header.rehorik-header {
     li.menu-item {
       text-transform: uppercase;
 
+      @media all and (min-width: $medium-breakpoint + 1) {
+        padding: 0;
+
+        a {
+          padding: $spacing-s $spacing;
+        }
+      }
+
       a {
         width: fit-content;
         width: -moz-fit-content;
@@ -89,6 +97,7 @@ header.rehorik-header {
         }
 
         background-color: $menu-hover-color;
+        background-image: url("../img/pfeil-rot-oben.svg");
 
         a {
           color: $weinrot;
@@ -215,6 +224,7 @@ header.rehorik-header {
       left: 0;
       background-color: transparent;
       width: 100%;
+      border-bottom: 1px solid $beigegold;
 
       ul.menu {
         flex-direction: column;
@@ -227,6 +237,9 @@ header.rehorik-header {
         li.menu-item-has-children {
           background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right $spacing;
           background-size: 10px;
+          $item-spacing: $spacing-xs;
+          padding-top: $item-spacing;
+          padding-bottom: $item-spacing;
 
           > a {
             width: -moz-fit-content;
@@ -235,16 +248,15 @@ header.rehorik-header {
 
           &:hover {
             height: auto;
-            padding-top: $spacing-xs;
-            padding-bottom: $spacing-xs;
-            background: rgba(206, 182, 127, 0.9) none;
+            background: rgba(206, 182, 127, 0.9) url("../img/pfeil-rot-oben.svg") no-repeat top 30px right $spacing;
+            background-size: 10px;
 
             a {
               color: $weinrot;
             }
 
             > ul.sub-menu {
-              padding-top: $spacing-xs;
+              padding-top: 0;
               padding-bottom: 0;
               background: transparent;
               display: grid;
@@ -252,18 +264,21 @@ header.rehorik-header {
               grid-template-rows: auto;
               grid-auto-flow: row;
               position: relative;
-              grid-column-gap: $spacing-s;
+              grid-column-gap: 0;
               top: 0;
               left: 0;
+              margin-left: -$item-spacing;
 
               li {
-                margin-bottom: $spacing-xs;
                 padding: 0;
                 border: none;
 
+                a {
+                  padding: $item-spacing;
+                }
+
                 &:nth-child(2n-1):not(:only-child) {
                   border-right: 1px solid rgba(92, 13, 47, 0.5);
-                  padding-right: $spacing-s;
                 }
               }
             }

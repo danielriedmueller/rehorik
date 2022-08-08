@@ -17,7 +17,6 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .re
   .rehorik-product-short-description {
     margin-right: 0 !important;
     color: $font-color;
-    font-size: $font-size;
     text-align: justify;
   }
 }
@@ -29,6 +28,17 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
     background-color: $product-default-color;
     border: none;
     padding: $product-view-grid-gap;
+
+
+    ul {
+      font-size: $font-size;
+      list-style-type: circle;
+      margin: 0;
+      padding: 0 0 0 $spacing-s;
+
+      li {
+      }
+    }
 
     border-radius: $border-radius;
     color: #fff;
@@ -100,7 +110,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       grid-area: description;
 
       text-align: justify;
-      font-size: $font-size-small;
+      font-size: $font-size;
     }
 
     .rehorik-product-information-category {
@@ -121,13 +131,14 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
         tr th {
           padding: 0 $spacing 0 0;
           color: $beigegold;
+          vertical-align: top;
         }
 
         tr td p, tr th p {
           padding: 0;
         }
 
-        tr td p a {
+        tr td a {
           color: #fff;
 
           &:hover {
@@ -135,8 +146,12 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
           }
         }
 
-        tr th p a {
+        tr th a {
           color: $beigegold;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
 
         tr th, tr td {
@@ -166,6 +181,10 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
             }
           }
         }
+
+        td.woocommerce-product-attributes-item__value span{
+          display: block;
+        }
       }
     }
 
@@ -173,7 +192,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       grid-area: short-description;
 
       text-align: justify;
-      font-size: $font-size-small;
+      font-size: $font-size;
 
       h4 {
         color: $beigegold;
