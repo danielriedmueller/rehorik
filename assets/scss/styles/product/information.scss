@@ -26,6 +26,17 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
     border: none;
     padding: $product-view-grid-gap;
 
+
+    ul {
+      font-size: $font-size;
+      list-style-type: circle;
+      margin: 0;
+      padding: 0 0 0 $spacing-s;
+
+      li {
+      }
+    }
+
     border-radius: $border-radius;
     color: #fff;
     display: grid;
@@ -117,13 +128,14 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
         tr th {
           padding: 0 $spacing 0 0;
           color: $beigegold;
+          vertical-align: top;
         }
 
         tr td p, tr th p {
           padding: 0;
         }
 
-        tr td p a {
+        tr td a {
           color: #fff;
 
           &:hover {
@@ -131,8 +143,12 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
           }
         }
 
-        tr th p a {
+        tr th a {
           color: $beigegold;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
 
         tr th, tr td {

@@ -4,12 +4,12 @@
  */
 add_filter( 'woocommerce_attribute', function( $formatted_values, $attribute, $values ) {
     if (sizeof($values) > 1) {
-        $formatted_values = implode("</span><span>", $values);
-    } else {
-        $formatted_values = $values[0];
+        $formatted_values = implode("</li><li>", $values);
+
+        return '<ul><li>' . $formatted_values . '</li></ul>';
     }
 
-    return "<span>" . $formatted_values . "</span>";
+    return "<span>" . $values[0] . "</span>";
 }, 10, 3 );
 
 /**
