@@ -85,9 +85,12 @@ header.rehorik-header {
     }
 
     li.menu-item-has-children {
-      background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right $spacing-s;
+      background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right $spacing-xs;
       background-size: 10px;
-      padding-right: $spacing-l;
+
+      > a {
+        padding-right: $spacing-l;
+      }
 
       &:hover {
         @media all and (min-width: $medium-breakpoint + 1) {
