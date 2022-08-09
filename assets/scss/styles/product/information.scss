@@ -19,6 +19,10 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .re
     color: $font-color;
     text-align: justify;
   }
+
+  .rehorik-product-information-category {
+    display: none;
+  }
 }
 
 body.rehorik.woocommerce #main-content div.rehorik-product {
