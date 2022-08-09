@@ -18,6 +18,11 @@ get_template_part('templates/header/head', null, ['slider' => [
         ]
     ]
 ]]);
+get_template_part('templates/introduction', null, [
+    'text' => 'Wir sind bunt, vielfältig und kreativ - voller Mut und Energie, etwas Besonderes zu erschaffen. Einen Raum der Inspiration und Lebensfreude. 
+Wir verbinden Menschen durch Genuss, 
+wir leben Leidenschaft für hochwertige Produkte. Und das seit Generationen.',
+]);
 ?>
 <?php get_template_part('templates/hint') ?>
 <div class="container">
