@@ -4,11 +4,7 @@ defined('ABSPATH') || exit;
 get_template_part('templates/header/head', null, [
     'slider' => [
         [
-            'claim' => 'TODO',
-            'img' => 'startseite-header-spirits',
-            'buttons' => [
-                '#' => 'TODO',
-            ],
+            'img' => 'startseite-header-spirits'
         ],
     ],
 ]);
