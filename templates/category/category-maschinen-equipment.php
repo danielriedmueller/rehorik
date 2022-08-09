@@ -10,7 +10,6 @@ $slider = [
 ];
 get_template_part('templates/header/head', null, ['slider' => [$slider]]);
 get_template_part('templates/page-title');
-
 ?>
     <div class="container">
         <div id="main-content">

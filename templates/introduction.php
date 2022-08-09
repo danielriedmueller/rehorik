@@ -1,8 +1,8 @@
-<?php if (!empty($args)): ?>
+<?php if (!empty($args['text'])): ?>
 <div class="rehorik-page-introduction-outer">
     <div class="container">
         <div class="rehorik-page-introduction">
-            <?= $args ?>
+            <?= $args['text'] ?>
         </div>
     </div>
 </div>

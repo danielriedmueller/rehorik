@@ -1,25 +1,21 @@
-<div class="page-title-outer">
-    <div class='page-title'>
-        <?php
-            if (is_woocommerce()) {
-                $pageTitle = woocommerce_page_title(false);
-                ?><h1><?= $pageTitle ?></h1><?php
-            }
+<?php
+$title = get_the_title();
 
-        if (is_cart() || is_checkout()) {
-            $pageTitle = get_the_title();
-            echo "<h1>${pageTitle}</h1>";
-        }
+if (is_woocommerce()) {
+    $title = woocommerce_page_title(false);
+}
 
-        if (tribe_is_event()
-            || tribe_is_event_category()
-            || tribe_is_in_main_loop()
-            || tribe_is_view()
-            || 'tribe_events' == get_post_type()
-            || is_singular('tribe_events')) {
-            $pageTitle = "events";
-            echo "<h1>${pageTitle}</h1>";
-        }
-        ?>
-    </div>
-</div>
+if (is_cart() || is_checkout()) {
+    $title = get_the_title();
+}
+
+if (tribe_is_event()
+    || tribe_is_event_category()
+    || tribe_is_in_main_loop()
+    || tribe_is_view()
+    || 'tribe_events' == get_post_type()
+    || is_singular('tribe_events')) {
+    $title = "events";
+}
+?>
+<div class="page-title-outer"><div class="page-title"><h1><?= $title ?></h1></div></div>
