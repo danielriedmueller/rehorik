@@ -15,6 +15,10 @@
     margin: 0;
     display: grid;
     grid-template-columns: $product-thumbnail-size $product-thumbnail-size $product-thumbnail-size $product-thumbnail-size;
+    @media all and (max-width: $medium-breakpoint) {
+      grid-template-columns: $product-thumbnail-size $product-thumbnail-size $product-thumbnail-size;
+    }
+
     grid-auto-rows: $product-thumbnail-size;
     gap: $spacing-xxs;
     justify-content: space-between;
