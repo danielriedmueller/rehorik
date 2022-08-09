@@ -128,7 +128,7 @@ if (isProductCategory(TICKET_CATEGORY_SLUG) && !empty($eventCat) && isset($event
         'claim' => $eventInfos[$eventCat]['claim'],
         'img' => "header-" . $eventInfos[$eventCat]['img']
     ]]]);
-    get_template_part('templates/introduction', null, $eventInfos[$eventCat]['intro']);
+    get_template_part('templates/introduction', null, ['text' => $eventInfos[$eventCat]['intro']]);
 } else {
     get_template_part('templates/header/head');
 }
