@@ -22,6 +22,7 @@ table#locations-table {
     color: #fff;
 
     &:first-child, a {
+      text-align: left;
       color: $font-color-accent;
       text-transform: uppercase;
       font-family: $font-family-headline;
