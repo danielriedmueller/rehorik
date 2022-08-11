@@ -5,8 +5,6 @@ if (!isset($args['product'])) {
 
 $product = $args['product'];
 
-
-
 $mergeDescriptions = function ($description, $shortDescription) {
     $cleanUpText = function($text) {
         $text = str_replace( '</li>', ', ', $text);
@@ -25,7 +23,7 @@ $mergeDescriptions = function ($description, $shortDescription) {
     return mb_strimwidth($result, 0, 350, "...");
 };
 ?>
-<div>
+<div class="featured-product">
     <div class="image">
         <a href="<?= $product->get_permalink() ?>">
             <?php get_template_part('templates/loop/sigils', null, ['product' => $product]) ?>

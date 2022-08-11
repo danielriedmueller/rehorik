@@ -1,16 +1,19 @@
-#page-container #rehorik-best-selling-products {
+#page-container #rehorik-featured-products {
   padding: $spacing-xxl;
-
-  ul {
     $imgSize: $product-category-width-large;
     //$textSize: $imgSize / 1.618;
     $textSize: $imgSize;
 
     li {
       overflow: hidden;
+
+      > .featured-product {
+        margin: 0;
+      }
     }
 
-    li > div {
+    .featured-product {
+      margin: 0 auto;
       width: 100%;
       display: flex;
       justify-content: center;
@@ -66,5 +69,5 @@
         text-align: right;
       }
     }
-  }
+
 }
