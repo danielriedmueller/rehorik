@@ -21,14 +21,8 @@ if (empty($productList)) {
     </div>
 <?php endif; ?>
 <?php if (sizeof($productList) === 1) : ?>
-
-        <?php foreach ($productList as $productId): ?>
-            <?php if ($product = wc_get_product($productId)): ?>
-                <?php get_template_part('templates/featured/item', null, ['product' => $product]) ?>
-            <?php endif;?>
-        <?php endforeach; ?>
-
+    <?php if ($product = wc_get_product($productList[0])): ?>
+        <?php get_template_part('templates/featured/item', null, ['product' => $product]) ?>
+    <?php endif;?>
 <?php endif; ?>
 </div>
-
-

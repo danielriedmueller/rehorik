@@ -1,5 +1,8 @@
 #page-container #rehorik-featured-products {
   padding: $spacing-xxl;
+  @media all and (max-width: $medium-breakpoint) {
+    padding: $spacing-l 0;
+  }
     $imgSize: $product-category-width-large;
     //$textSize: $imgSize / 1.618;
     $textSize: $imgSize;
@@ -17,6 +20,14 @@
       width: 100%;
       display: flex;
       justify-content: center;
+
+      @media all and (max-width: $medium-breakpoint) {
+        flex-direction: column;
+
+        .image {
+          margin: 0 auto $spacing auto;
+        }
+      }
 
       .image {
         width: $imgSize;
@@ -46,11 +57,16 @@
           margin: 0 0 $spacing-xs 0;
           text-transform: uppercase;
           color: $font-color-accent-dark;
-          font-size: $font-size-large;
+          font-size: $font-size;
         }
 
         h3 {
           line-height: $font-size-large;
+        }
+
+        .claim {
+          margin: $spacing-xxxs 0 0 0;
+          font-size: $font-size;
         }
 
         .description {

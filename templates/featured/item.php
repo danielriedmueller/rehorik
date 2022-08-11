@@ -20,7 +20,7 @@ $mergeDescriptions = function ($description, $shortDescription) {
 
     $result = $shortDescription ? $cleanUpText($description) . ' ' . $cleanUpText($shortDescription) : $cleanUpText($description);
 
-    return mb_strimwidth($result, 0, 350, "...");
+    return mb_strimwidth($result, 0, 330, "...");
 };
 ?>
 <div class="featured-product">
@@ -33,6 +33,9 @@ $mergeDescriptions = function ($description, $shortDescription) {
     <div class="text">
         <span class="category"><?= getSubCategories($product, true) ?></span>
         <h3><?= $product->get_title() ?></h3>
+        <?php if($claim = $product->get_meta('reh_product_title_claim')) {
+            echo "<span class='claim'>${claim}</span>";
+        } ?>
         <span class="description"><?= $mergeDescriptions($product->get_description(), $product->get_short_description()) ?></span>
         <span class="learn-more"><a href="<?= $product->get_permalink() ?>">erfahre mehr</a></span>
     </div>
