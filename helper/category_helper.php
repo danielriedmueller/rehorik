@@ -105,8 +105,12 @@ function getCoffeeCategories(WC_Product $product): string
  * @param WC_Product $product
  * @return string
  */
-function getSubCategories(WC_Product $product): string
+function getSubCategories(WC_Product $product, $linked = false): string
 {
+    $nameMapFn = function ($a) use ($linked) {
+        return $linked ? '<a href="' . get_term_link($a) . '">' . $a->name . '</a>' : $a->name;
+    };
+
     if (isItCategory($product, COFFEE_CATEGORY_SLUG)) {
         return getCoffeeCategories($product);
     }
@@ -120,17 +124,14 @@ function getSubCategories(WC_Product $product): string
     $terms_not_onlineshop_cat_parent = array_filter($terms_not_parents, function (WP_Term $a) use ($onlineshop_cat) {
         return $a->parent !== $onlineshop_cat->term_id;
     });
-    $terms_not_parents_names = array_map(function ($a) {
-        return $a->name;
-    }, $terms_not_onlineshop_cat_parent);
+
+    $terms_not_parents_names = array_map($nameMapFn, $terms_not_onlineshop_cat_parent);
 
     if (sizeof($terms_not_parents_names) > 0) {
         return implode(", ", $terms_not_parents_names);
     }
 
-    $terms_names = array_map(function ($a) {
-        return $a->name;
-    } , $terms);
+    $terms_names = array_map($nameMapFn , $terms);
 
     return implode(", ", $terms_names);
 }
