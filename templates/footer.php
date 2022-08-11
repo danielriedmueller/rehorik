@@ -4,7 +4,7 @@ if (isProductCategory(TICKET_CATEGORY_SLUG)) {
 }
 
 if (!is_shop() && !is_product_category()) {
-    get_template_part('templates/best-selling-products');
+    get_template_part('templates/bestselling/slider');
 }
 
 get_template_part('templates/newsletter-sign-up');

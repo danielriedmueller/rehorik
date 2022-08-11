@@ -1,4 +1,8 @@
-<?php $product = $args['product']; ?>
+<?php
+require_once(get_stylesheet_directory() . '/helper/product_sigil_helper.php');
+
+$product = $args['product'];
+?>
 <div class="sigil-container">
     <?php if (!empty($class = getIsEventOnlineClass($product))): ?>
         <div class="<?= $class ?>"></div>

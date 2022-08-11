@@ -1,8 +1,65 @@
-$sigilHeight: $sigil-size;
-$sigilWidth: $sigilHeight * 1.5;
+// Best sellling view
+#rehorik-best-selling-products {
+  --sigil-size: 50px;
+}
+
+// Category view
+.rehorik-products.products {
+  --sigil-size: 35px;
+}
+
+// Category view
+body:not(.rehorik.single-product) .sigil-container {
+  position: absolute;
+  top: $spacing-xs;
+  left: 0;
+  width: calc(var(--sigil-size) * 1.5);
+
+  > * {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: calc(var(--sigil-size) * 1.5);
+    width: calc(var(--sigil-size) * 1.5);
+    height: var(--sigil-size);
+
+    &:not(:last-child) {
+      margin-bottom: $spacing-xs;
+    }
+  }
+
+  > .biosigil {
+    background-image: url("../img/siegel/biosiegel.svg");
+  }
+
+  > .vegansigil {
+    background-image: url("../img/siegel/icon-vegan.svg");
+  }
+
+  > .biodynamicsigil {
+    background-image: url("../img/siegel/icon-biodynamisch.svg");
+  }
+
+  > .regionalsigil {
+    background-image: url("../img/siegel/icon-regional.svg");
+  }
+
+  > .product-of-month {
+    background-image: url("../img/siegel/productofmonth.svg");
+
+    &.wine-of-month {
+      background-image: url("../img/siegel/wineofmonth.svg");
+    }
+  }
+
+  > .event-online {
+    background-image: url("../img/siegel/online.svg");
+  }
+}
 
 // Product page
 .rehorik.single-product .rehorik-sigils-bar {
+  $sigilHeight: $hugo-head-size;
   display: flex;
 
   .sigil-container {
@@ -74,55 +131,5 @@ $sigilWidth: $sigilHeight * 1.5;
       width: $sigilHeight * 1.5;
       background-size: $sigilHeight * 1.5 $sigilHeight;
     }
-  }
-}
-
-// Category view
-.rehorik-products .sigil-container {
-  $sigil-size: 35px;
-  position: absolute;
-  top: $spacing-xs;
-  left: 0;
-  width: $sigil-size * 1.5;
-
-  > * {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    background-size: $sigil-size * 1.5;
-    width: $sigil-size * 1.5;
-    height: $sigil-size;
-
-    &:not(:last-child) {
-      margin-bottom: $spacing-xs;
-    }
-  }
-
-  > .biosigil {
-    background-image: url("../img/siegel/biosiegel.svg");
-  }
-
-  > .vegansigil {
-    background-image: url("../img/siegel/icon-vegan.svg");
-  }
-
-  > .biodynamicsigil {
-    background-image: url("../img/siegel/icon-biodynamisch.svg");
-  }
-
-  > .regionalsigil {
-    background-image: url("../img/siegel/icon-regional.svg");
-  }
-
-  > .product-of-month {
-    background-image: url("../img/siegel/productofmonth.svg");
-
-    &.wine-of-month {
-      background-image: url("../img/siegel/wineofmonth.svg");
-    }
-  }
-
-  > .event-online {
-    background-image: url("../img/siegel/online.svg");
   }
 }

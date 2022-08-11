@@ -17,7 +17,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (sliderBody && sliderBody.childElementCount > 1) {
         tns({
             container: '#slider-body',
-            items: 2,
+            items: 1,
+            gutter: 50,
+            responsive: {
+                1300: {
+                    items: 2
+                }
+            },
             nav: false,
             controlsPosition: 'bottom',
             controlsContainer: "#slider-body-controls"

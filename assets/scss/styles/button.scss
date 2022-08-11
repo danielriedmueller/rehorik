@@ -21,6 +21,16 @@
       color: $beigegold;
       background-color: $weinrot;
     }
+
+    &.invers {
+      color: $beigegold;
+      background-color: $weinrot;
+
+      &:hover {
+        color: #fff;
+        background-color: $beigegold;
+      }
+    }
   }
 
   .woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit:disabled[disabled], .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button:disabled[disabled], .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled] {

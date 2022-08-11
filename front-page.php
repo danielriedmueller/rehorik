@@ -20,7 +20,7 @@ get_template_part('templates/header/head', null, ['slider' => [
 ]]);
 ?>
 <?php get_template_part('templates/hint') ?>
-<?php get_template_part('templates/best-selling-products'); ?>
+<?php get_template_part('templates/bestselling/slider'); ?>
 <div class="container">
     <ul class="rehorik-products products">
         <li class="product-category product">
