@@ -6,6 +6,10 @@
     //$textSize: $imgSize / 1.618;
     $textSize: $imgSize;
 
+    li {
+      overflow: hidden;
+    }
+
     li > div {
       width: 100%;
       display: flex;
@@ -14,11 +18,12 @@
       .image {
         width: $imgSize;
         height: $imgSize;
+        overflow: hidden;
         flex: 0 0 $imgSize;
         position: relative;
+        border-radius: $border-radius;
 
         img {
-          border-radius: $border-radius;
           padding: 0;
           width: $imgSize;
         }
@@ -47,7 +52,7 @@
 
         .description {
           flex-grow: 1;
-          margin: $spacing 0;
+          margin: $spacing 0 0 0;
           display: block;
           text-align: justify;
           overflow: hidden;

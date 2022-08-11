@@ -84,20 +84,19 @@ function getSubCategories(WC_Product $product, $linked = false): string
     $term_ids_not_parents = array_diff($term_ids,  $parents);
     $terms_not_parents = array_intersect_key($terms,  $term_ids_not_parents);
 
-    $onlineshop_cat = get_term_by('slug', ONLINESHOP_CATEGORY_SLUG, 'product_cat');
-    $terms_not_onlineshop_cat_parent = array_filter($terms_not_parents, function (WP_Term $a) use ($onlineshop_cat) {
-        return $a->parent !== $onlineshop_cat->term_id;
-    });
-
-    $terms_not_parents_names = array_map($nameMapFn, $terms_not_onlineshop_cat_parent);
-
-    if (sizeof($terms_not_parents_names) > 0) {
-        return implode(", ", $terms_not_parents_names);
+    if (sizeof($terms_not_parents) > 0) {
+        $result_terms = $terms_not_parents;
+    } else {
+        $result_terms = $terms;
     }
 
-    $terms_names = array_map($nameMapFn , $terms);
+    // Filter "Produkte" category
+    $onlineshop_cat = get_term_by('slug', ONLINESHOP_CATEGORY_SLUG, 'product_cat');
+    $result_terms = array_filter($result_terms, function (WP_Term $a) use ($onlineshop_cat) {
+        return $a->term_id !== $onlineshop_cat->term_id;
+    });
 
-    return implode(", ", $terms_names);
+    return implode(", ", array_map($nameMapFn, $result_terms));
 }
 
 /**

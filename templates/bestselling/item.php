@@ -5,18 +5,24 @@ if (!isset($args['product'])) {
 
 $product = $args['product'];
 
+
+
 $mergeDescriptions = function ($description, $shortDescription) {
-    $description = ucfirst(trim($description));
+    $cleanUpText = function($text) {
+        $text = str_replace( '</li>', ', ', $text);
 
-    if (empty($shortDescription)) {
-        return $description;
-    }
+        $text = ucfirst(trim(strip_tags($text)));
 
-    if (!str_ends_with($description, '.') && !str_ends_with($description, '?') && !str_ends_with($description, '!')) {
-        $description .= '.';
-    }
+        if (!str_ends_with($text, '.') && !str_ends_with($text, '?') && !str_ends_with($text, '!')) {
+            $text .= '.';
+        }
 
-    return $description . '<br>' . $shortDescription;
+        return $text;
+    };
+
+    $result = $shortDescription ? $cleanUpText($description) . ' ' . $cleanUpText($shortDescription) : $cleanUpText($description);
+
+    return mb_strimwidth($result, 0, 350, "...");
 };
 ?>
 <div>
