@@ -139,7 +139,8 @@ ul.slider, ul.slider li, ul.slider li img {
   background-image: url("../img/pfeil_gold.svg");
 }
 
-#slider-header-controls.slider-controls button {
+#slider-header-controls.slider-controls button,
+#slider-body-controls.slider-controls button {
   background-image: url("../img/pfeil_weiss.svg");
 }
 

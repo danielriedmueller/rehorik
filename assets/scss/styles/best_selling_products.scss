@@ -1,7 +1,38 @@
-#rehorik-best-selling-products {
-  background: transparent url("../img/Textur-Gold.jpg") repeat 0 0;
+#page-container #rehorik-best-selling-products {
+  padding: $spacing-xxl;
 
-  h2 {
-    color: #fff;
+  ul {
+    $imgSize: $product-category-width-large;
+
+    li > div {
+      display: flex;
+      justify-content: center;
+
+      &:not(:last-child) {
+        margin-right: $spacing-xxl;
+      }
+
+      > div {
+        width: $imgSize;
+        height: $imgSize;
+        flex: 0 0 $imgSize;
+        text-align: justify;
+      }
+
+      > div:first-child {
+        img {
+          border-radius: $border-radius;
+          padding: 0;
+          width: $imgSize;
+        }
+      }
+
+      > div:last-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: $spacing-s;
+      }
+    }
   }
 }

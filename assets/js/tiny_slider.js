@@ -12,4 +12,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
             controlsContainer: "#slider-header-controls"
         });
     }
+
+    const sliderBody = document.getElementById('slider-body');
+    if (sliderBody && sliderBody.childElementCount > 1) {
+        tns({
+            container: '#slider-body',
+            items: 2,
+            nav: false,
+            controlsPosition: 'bottom',
+            controlsContainer: "#slider-body-controls"
+        });
+    }
 });
