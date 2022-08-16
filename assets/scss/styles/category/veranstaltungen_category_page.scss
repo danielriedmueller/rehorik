@@ -5,14 +5,6 @@
     color: $font-color;
   }
 
-  .order-instructions {
-    padding: $spacing-l $spacing;
-    
-    @media all and (min-width: $small-breakpoint + 1) {
-      padding: $spacing-l $spacing-l $spacing-l 190px;
-    }
-  }
-
   .order-instructions:before {
     background-image: url("../img/veranstaltungen/rehorik-veranstaltungen-freistellerheiko-300px.png");
     height: 300px;

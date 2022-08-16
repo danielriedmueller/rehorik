@@ -2,6 +2,9 @@
   ul.products.rehorik-products {
     display: grid;
     justify-content: flex-start;
+    @media all and (max-width: $medium-breakpoint) {
+      justify-content: center;
+    }
     gap: $spacing;
 
     li {
