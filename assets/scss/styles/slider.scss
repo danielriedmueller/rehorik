@@ -135,12 +135,16 @@ ul.slider, ul.slider li, ul.slider li img {
   background-size: cover;
 }
 
-#slider-best-selling-controls.slider-controls button {
+#slider-featured-controls.slider-controls button {
   background-image: url("../img/pfeil_gold.svg");
 }
 
 #slider-header-controls.slider-controls button {
   background-image: url("../img/pfeil_weiss.svg");
+}
+
+#slider-body-controls.slider-controls button {
+  background-image: url("../img/pfeil_rot.svg");
 }
 
 .slider-outer {

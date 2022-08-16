@@ -3,8 +3,8 @@ if (isProductCategory(TICKET_CATEGORY_SLUG)) {
     get_template_part('templates/veranstaltungen/veranstaltungen-footer');
 }
 
-if (!is_shop() && !is_product_category()) {
-    get_template_part('templates/best-selling-products');
+if (!is_shop() && !is_product_category() && !is_front_page()) {
+    get_template_part('templates/featured/slider');
 }
 
 get_template_part('templates/newsletter-sign-up');

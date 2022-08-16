@@ -42,6 +42,37 @@ const HIDE_CATEGORIES = [
     'kaese-wurst'
 ];
 
+
+// Attributes
+const STRENGTH_ATTRIBUTE_SLUG = 'pa_staerke';
+const VARIETIES_ATTRIBUTE_SLUG = 'pa_sorte';
+const GRAPE_VARIETY_ATTRIBUTE_SLUG = 'pa_rebsorte';
+const AUSBAU_ATTRIBUTE_SLUG = 'pa_ausbau';
+const HERSTELLUNG_ATTRIBUTE_SLUG = 'pa_herstellung';
+const MILCHART_ATTRIBUTE_SLUG = 'pa_milchart';
+const FLAVOUR_ATTRIBUTE_SLUG = 'pa_aromen';
+const FLAVOUR_VARIETY_ATTRIBUTE_SLUG = 'pa_aromenvielfalt';
+const BEAN_COMPOSITION_ATTRIBUTE_SLUG = 'pa_bohnenkompositionen';
+const ORIGIN_COUNTRY_ATTRIBUTE_SLUG = 'pa_herkunft';
+const REGION_ATTRIBUTE_SLUG = 'pa_region';
+const GUETESIEGEL_ATTRIBUTE_SLUG = 'pa_guetesiegel';
+const BIOSIGIL_ATTRIBUTE_SLUG = 'pa_biosiegel';
+const ALCOHOL_ATTRIBUTE_SLUG = 'pa_alkoholgehalt';
+const VINTAGE_ATTRIBUTE_SLUG = 'pa_jahrgang';
+const WEIGHT_SLUG = 'weight';
+const WEIGHT_ATTRIBUTE_SLUG = 'pa_gewicht';
+const FILLING_QUANTITY_ATTRIBUTE_SLUG = 'pa_fuellmenge';
+const WINERY_ATTRIBUTE_SLUG = 'pa_weingut';
+const GOES_WITH_ATTRIBUTE_SLUG = 'pa_passt-zu';
+const QUALITY_NAME_ATTRIBUTE_SLUG = 'pa_qualitaetsbezeichnung';
+const MANUFACTURER_ATTRIBUTE_SLUG = 'pa_hersteller';
+const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-praesentkarton';
+const SIZE_ATTRIBUTE_SLUG = 'pa_groesse';
+const TECHNICAL_DETAILS_ATTRIBUTE_SLUG = 'pa_technische-daten';
+
+// In $productAttributes array, slugs are prefixed by wordpress
+const ATTRIBUTE_SLUG_PREFIX = 'attribute_';
+
 // For Events which are only virtual online events
 const ONLINE_META_KEY = 'Online';
 const CANCELED_META_KEY = 'Abgesagt';
@@ -92,8 +123,8 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('scroll', $assetsDir . 'js/scroll.js', false, 1, true);
     wp_enqueue_script('product-cat-video', $assetsDir . 'js/product_cat_video.js', false, 1, true);
     wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
-    wp_enqueue_script('tiny-slider-js', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js', null, 1, true);
-    wp_enqueue_script('slider-js', $assetsDir . 'js/tiny_slider.js', null, 1, true);
+    wp_enqueue_script('tiny-slider-js', $assetsDir . 'js/res/tiny-slider-min-2.9.4.js', null, 1, true);
+    wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
 
     if (is_front_page()) {
         wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', false, 1, true);
