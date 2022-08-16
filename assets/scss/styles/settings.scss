@@ -107,3 +107,9 @@ $max-width: 1080px;
     --section-spacing-left-right: #{$spacing-s};
   }
 }
+
+.rehorik.single-product {
+  @media all and (min-width: $medium-breakpoint + 1) {
+    --section-spacing-left-right: 20vw;
+  }
+}
