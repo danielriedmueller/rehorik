@@ -168,7 +168,7 @@ get_template_part('templates/header/head', null, [
     </div>
 </div>
 <div id="locations-description">
-    <div id="stammhaus" class="centered">
+    <div id="stammhaus">
         <div>
             <div class="location-text">
                 <h4>Unser Stammhaus</h4>
@@ -192,7 +192,7 @@ get_template_part('templates/header/head', null, [
             </div>
         </div>
     </div>
-    <div id="cafe190" class="centered">
+    <div id="cafe190">
         <div>
             <div class="location-text">
                 <h5 class="mb-s">Café 190°</h5>

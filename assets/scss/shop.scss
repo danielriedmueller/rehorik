@@ -201,7 +201,7 @@ ul {
 }
 
 img {
-  max-width: $img-size-big !important;
+  max-width: 100%;
   height: auto;
   border-radius: $border-radius;
 }
@@ -217,6 +217,7 @@ table {
 }
 
 .centered {
+  width: 80%;
   max-width: $max-width;
   margin: 0 auto;
   box-sizing: content-box;

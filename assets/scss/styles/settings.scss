@@ -104,6 +104,6 @@ $max-width: 1080px;
 
   @media all and (max-width: $medium-breakpoint) {
     --section-spacing-top-bottom: #{$section-spacing-small};
-    --section-spacing-left-right: #{$section-spacing-small};
+    --section-spacing-left-right: #{$spacing};
   }
 }

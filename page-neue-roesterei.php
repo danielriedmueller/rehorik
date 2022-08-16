@@ -50,7 +50,7 @@ get_template_part('templates/header/head', null, [
         </div>
     </div>
     <div>
-        <div class="container">
+        <div class="container centered">
             <h2>RÖSTEREI & KAFFEEHAUS</h2>
             <div>
                 <div>
@@ -102,7 +102,7 @@ get_template_part('templates/header/head', null, [
         </div>
     </div>
     <div>
-        <div class="container">
+        <div class="container centered">
             <div>
                 <img alt="Rehorik Neue Roesterei"
                      src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/speisekarte-neue-roesterei-deckblatt.jpg' ?>">
