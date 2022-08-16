@@ -5,6 +5,10 @@
     color: $font-color;
   }
 
+  @media all and (min-width: $medium-breakpoint) {
+    padding-left: 175px;
+  }
+
   .order-instructions:before {
     background-image: url("../img/veranstaltungen/rehorik-veranstaltungen-freistellerheiko-300px.png");
     height: 300px;
