@@ -16,7 +16,7 @@ get_template_part('templates/header/head', null, [
     <div class='page-title'><h1><?= the_title() ?></h1></div>
 </div>
 <div class="rehorik-page-introduction-outer">
-    <div class="container">
+    <div class="container centered">
         <div class="rehorik-page-introduction locations">
             <div class="table-outer">
                 <table id="locations-table">
@@ -168,7 +168,7 @@ get_template_part('templates/header/head', null, [
     </div>
 </div>
 <div id="locations-description">
-    <div id="stammhaus">
+    <div id="stammhaus" class="centered">
         <div>
             <div class="location-text">
                 <h4>Unser Stammhaus</h4>
@@ -192,7 +192,7 @@ get_template_part('templates/header/head', null, [
             </div>
         </div>
     </div>
-    <div id="cafe190">
+    <div id="cafe190" class="centered">
         <div>
             <div class="location-text">
                 <h5 class="mb-s">Café 190°</h5>

@@ -34,7 +34,7 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 ?>
 <div id="product-<?php the_ID(); ?>"
     <?php
-        $class = 'rehorik-product detail-view';
+        $class = 'rehorik-product detail-view centered';
         if (isProductOfTheMonth($product)) {
            $class .= " " . getProductOfTheMonthClass($product);
         }

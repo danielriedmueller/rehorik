@@ -18,7 +18,8 @@
   }
 
   > div > div {
-    padding: 0 var(--section-spacing-left-right);
+    width: 80%;
+    max-width: $max-width;
     margin: auto;
     display: flex;
 

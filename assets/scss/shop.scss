@@ -201,8 +201,9 @@ ul {
 }
 
 img {
-  max-width: 100%;
+  max-width: $img-size-big !important;
   height: auto;
+  border-radius: $border-radius;
 }
 
 table {
@@ -213,6 +214,12 @@ table {
 #page-container {
   padding-top: $menu-height;
   position: relative;
+}
+
+.centered {
+  max-width: $max-width;
+  margin: 0 auto;
+  box-sizing: content-box;
 }
 
 .mt {

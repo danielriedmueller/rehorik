@@ -1,7 +1,7 @@
 .rehorik {
   ul.products.rehorik-products {
     display: grid;
-    justify-content: center;
+    justify-content: flex-start;
     gap: $spacing;
 
     li {
