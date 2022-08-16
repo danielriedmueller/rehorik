@@ -46,17 +46,11 @@
   }
 
   .quality-text-outer {
-    max-width: $max-width;
-    width: 80%;
     position: absolute;
     margin: auto;
     bottom: 0;
     left: 0;
     right: 0;
-
-    @media all and (max-width: $small-breakpoint) {
-      width: 100%;
-    }
   }
 
   .quality-text {
@@ -113,13 +107,6 @@
     position: relative;
     padding: $spacing-l $spacing;
     font-size: $font-size;
-
-    @media all and (min-width: $small-breakpoint + 1) {
-      max-width: $max-width;
-      width: 80%;
-      margin: auto;
-      padding: $spacing-l $spacing-l $spacing-l 360px;
-    }
 
     &:before {
       content: "";

@@ -1,6 +1,6 @@
 <?php ?>
 <div class="rehorik-custom-category-footer veranstaltungen">
-    <div class="order-instructions">
+    <div class="order-instructions container">
         <h4>PRIVATE VERANSTALTUNGEN</h4>
         <div>Auf der Suche nach einem Event mit Freunden? Eure Firma möchte eine besondere Weihnachtsfeier?
             Der nächste Junggesell:innenabschied soll ein richtiges Highlight werden?

@@ -37,11 +37,8 @@
   display: inline-block;
   position: absolute;
 
-  bottom: $section-padding;
-  @media all and (max-width: $medium-breakpoint) {
-    bottom: $section-padding-small;
-  }
-  right: 130px;
+  bottom: var(--section-spacing-top-bottom);
+  right: var(--section-spacing-left-right);
 
   .slider-title {
     margin-bottom: $spacing-s;

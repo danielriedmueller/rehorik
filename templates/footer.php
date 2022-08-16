@@ -19,6 +19,8 @@ get_template_part('templates/rehorik-locations');
                     <p>Vorkasse, Paypal</p>
                     <p>Lastschrift, Kreditkarte</p>
                 </div>
+            </div>
+            <div>
                 <div>
                     <h3>Versand</h3>
                     <p>Wir versenden mit DHL</p>

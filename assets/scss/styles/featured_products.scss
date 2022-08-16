@@ -1,88 +1,85 @@
 #page-container #rehorik-featured-products {
-  padding: $section-padding;
-  @media all and (max-width: $medium-breakpoint) {
-    padding: $section-padding-small 0;
+  padding: var(--section-spacing-top-bottom) var(--section-spacing-left-right);
+  $imgSize: $product-category-width-large;
+  //$textSize: $imgSize / 1.618;
+  $textSize: $imgSize;
+
+  li {
+    overflow: hidden;
+
+    > .featured-product {
+      margin: 0;
+    }
   }
-    $imgSize: $product-category-width-large;
-    //$textSize: $imgSize / 1.618;
-    $textSize: $imgSize;
 
-    li {
-      overflow: hidden;
+  .featured-product {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 
-      > .featured-product {
-        margin: 0;
+    @media all and (max-width: $medium-breakpoint) {
+      flex-direction: column;
+
+      .image {
+        margin: 0 auto $spacing auto;
       }
     }
 
-    .featured-product {
-      margin: 0 auto;
-      width: 100%;
-      display: flex;
-      justify-content: center;
+    .image {
+      width: $imgSize;
+      height: $imgSize;
+      overflow: hidden;
+      flex: 0 0 $imgSize;
+      position: relative;
+      border-radius: $border-radius;
 
-      @media all and (max-width: $medium-breakpoint) {
-        flex-direction: column;
-
-        .image {
-          margin: 0 auto $spacing auto;
-        }
-      }
-
-      .image {
+      img {
+        padding: 0;
         width: $imgSize;
-        height: $imgSize;
-        overflow: hidden;
-        flex: 0 0 $imgSize;
-        position: relative;
-        border-radius: $border-radius;
-
-        img {
-          padding: 0;
-          width: $imgSize;
-        }
       }
+    }
 
-      .text {
-        width: $textSize;
-        height: $imgSize;
-        flex: 0 0 $textSize;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-left: $spacing-s;
-        box-sizing: border-box;
+    .text {
+      width: $textSize;
+      height: $imgSize;
+      flex: 0 0 $textSize;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: $spacing-s;
+      box-sizing: border-box;
 
-        .category {
-          margin: 0 0 $spacing-xs 0;
-          text-transform: uppercase;
-          color: $font-color-accent-dark;
-          font-size: $font-size;
-        }
-
-        h3 {
-          line-height: $font-size-large;
-        }
-
-        .claim {
-          margin: $spacing-xxxs 0 0 0;
-          font-size: $font-size;
-        }
-
-        .description {
-          flex-grow: 1;
-          margin: $spacing 0 0 0;
-          display: block;
-          text-align: justify;
-          overflow: hidden;
-        }
-      }
-
-      .learn-more {
+      .category {
+        margin: 0 0 $spacing-xs 0;
         text-transform: uppercase;
         color: $font-color-accent-dark;
         font-size: $font-size;
-        text-align: right;
+      }
+
+      h3 {
+        line-height: $font-size-large;
+      }
+
+      .claim {
+        margin: $spacing-xxxs 0 0 0;
+        font-size: $font-size;
+      }
+
+      .description {
+        flex-grow: 1;
+        margin: $spacing 0 0 0;
+        display: block;
+        text-align: justify;
+        overflow: hidden;
       }
     }
+
+    .learn-more {
+      text-transform: uppercase;
+      color: $font-color-accent-dark;
+      font-size: $font-size;
+      text-align: right;
+    }
+  }
 }

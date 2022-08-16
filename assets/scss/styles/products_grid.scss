@@ -2,7 +2,7 @@
   ul.products.rehorik-products {
     display: grid;
     justify-content: center;
-    gap: $spacing-xs;
+    gap: $spacing;
 
     li {
       border-radius: $border-radius;
@@ -33,6 +33,7 @@
   &.home {
     ul.products.rehorik-products {
       grid-template-columns: repeat(auto-fill, $product-category-width-large);
+      justify-content: space-between;
     }
 
     #rehorik-featured-products ul.products.rehorik-products {

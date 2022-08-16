@@ -1,6 +1,6 @@
 .rehorik-page-introduction.locations {
   padding: 0;
-  background-size: 235px;
+  background-size: 150px;
   background-position: bottom right;
 
   @media all and (max-width: $medium-breakpoint) {
@@ -15,7 +15,6 @@
 
 table#locations-table {
   width: 100%;
-  max-width: $max-width;
 
   > tbody > tr > td {
     font-size: $font-size;
@@ -38,7 +37,7 @@ table#locations-table {
   }
 
   > tbody {
-    $padding-side: $spacing-xs;
+    $padding-side: $spacing;
     $padding-top-bottom: $spacing-xxs;
 
     > tr > td {
