@@ -169,6 +169,10 @@ h5, h6 {
 a {
   text-decoration: none;
   color: $font-color-accent-dark;
+
+  &:hover {
+    color: $font-color-accent;
+  }
 }
 
 p {
