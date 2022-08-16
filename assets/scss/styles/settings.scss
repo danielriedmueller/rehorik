@@ -96,7 +96,7 @@ $max-width: 1080px;
 :root {
   --slider-height: 600px;
   --section-spacing-top-bottom: #{$section-spacing};
-  --section-spacing-left-right: 190px;
+  --section-spacing-left-right: 200px;
 
   @media all and (max-width: $small-breakpoint) {
     --slider-height: 485px;
@@ -104,6 +104,6 @@ $max-width: 1080px;
 
   @media all and (max-width: $medium-breakpoint) {
     --section-spacing-top-bottom: #{$section-spacing-small};
-    --section-spacing-left-right: #{$spacing};
+    --section-spacing-left-right: #{$spacing-s};
   }
 }
