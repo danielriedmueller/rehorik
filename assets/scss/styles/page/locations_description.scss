@@ -1,8 +1,5 @@
 #locations-description {
-  padding: $section-padding 0;
-  @media all and (max-width: $medium-breakpoint) {
-    padding: $section-padding-small 0;
-  }
+  padding: var(--section-spacing-top-bottom) 0;
 
   * {
     scroll-margin-top: 150px;
@@ -21,8 +18,7 @@
   }
 
   > div > div {
-    width: 80%;
-    max-width: $max-width;
+    max-width: $max-width-small;
     margin: auto;
     display: flex;
 

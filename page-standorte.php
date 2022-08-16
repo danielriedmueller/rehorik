@@ -16,7 +16,7 @@ get_template_part('templates/header/head', null, [
     <div class='page-title'><h1><?= the_title() ?></h1></div>
 </div>
 <div class="rehorik-page-introduction-outer">
-    <div class="container">
+    <div class="container max-width-small">
         <div class="rehorik-page-introduction locations">
             <div class="table-outer">
                 <table id="locations-table">

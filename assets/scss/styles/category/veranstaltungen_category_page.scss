@@ -5,12 +5,8 @@
     color: $font-color;
   }
 
-  .order-instructions {
-    padding: $spacing-l $spacing;
-    
-    @media all and (min-width: $small-breakpoint + 1) {
-      padding: $spacing-l $spacing-l $spacing-l 190px;
-    }
+  @media all and (min-width: $medium-breakpoint) {
+    padding-left: 175px;
   }
 
   .order-instructions:before {

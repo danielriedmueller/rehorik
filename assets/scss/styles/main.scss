@@ -7,7 +7,7 @@
   }
 
   #sidebar {
-    margin: 0 $section-padding 0 0;
+    margin: 0 var(--section-spacing-top-bottom) 0 0;
   }
 
   @media all and (max-width: $small-breakpoint) {
@@ -19,7 +19,7 @@
     }
 
     #sidebar {
-      margin: $section-padding-small 0 0 0;
+      margin: var(--section-spacing-top-bottom) 0 0 0;
     }
   }
 }

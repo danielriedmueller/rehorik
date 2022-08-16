@@ -8,7 +8,7 @@
   background-position: right;
   flex: 1;
 
-  @media all and (max-width: $small-breakpoint) {
-    margin-right: -$spacing;
+  @media all and (max-width: $medium-breakpoint) {
+    margin-right: calc(var(--section-spacing-left-right) * -1);
   }
 }

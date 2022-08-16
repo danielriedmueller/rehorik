@@ -1,7 +1,7 @@
 .page-title-outer {
   background-color: $beigegold;
   position: relative;
-  padding: $section-padding 0;
+  padding: $section-spacing-small 0;
   display: flex;
 
   &:before, &:after {
@@ -23,7 +23,6 @@
     position: relative;
     text-align: center;
     background-color: $beigegold;
-    max-width: $max-width;
     margin: auto;
 
     h1 {
@@ -33,7 +32,7 @@
   }
 
   @media all and (max-width: $small-breakpoint) {
-    padding: $section-padding-small 0;
+    padding: var(--section-spacing-top-bottom) 0;
     &:before, &:after {
       width: 60px;
     }

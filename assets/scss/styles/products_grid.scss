@@ -1,8 +1,11 @@
 .rehorik {
   ul.products.rehorik-products {
     display: grid;
-    justify-content: center;
-    gap: $spacing-xs;
+    justify-content: flex-start;
+    @media all and (max-width: $medium-breakpoint) {
+      justify-content: center;
+    }
+    gap: $spacing;
 
     li {
       border-radius: $border-radius;
@@ -33,6 +36,8 @@
   &.home {
     ul.products.rehorik-products {
       grid-template-columns: repeat(auto-fill, $product-category-width-large);
+      justify-content: space-between;
+      gap: $spacing-l;
     }
 
     #rehorik-featured-products ul.products.rehorik-products {

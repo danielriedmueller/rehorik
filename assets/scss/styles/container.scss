@@ -1,13 +1,8 @@
 .container {
-  width: $container-width;
-  max-width: $max-width;
+  width: 100%;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: $section-padding 0;
-
-  @media all and (max-width: $small-breakpoint) {
-    width: 100%;
-    padding: $section-padding-small $section-padding-small;
-  }
+  padding: var(--section-spacing-top-bottom) var(--section-spacing-left-right);
 
   > h1, > h2 {
     margin-bottom: $spacing;

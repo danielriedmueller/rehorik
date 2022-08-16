@@ -10,13 +10,23 @@
       display: flex;
       justify-content: space-around;
 
+      > div {
+        flex-basis: 50%;
+      }
+
       @media all and (max-width: $small-breakpoint) {
         flex-direction: column;
         align-items: center;
+
+        > div {
+          flex-basis: 100%;
+        }
       }
 
+
+
       .newsletter-sign-up-description {
-        text-align: right;
+        text-align: justify;
 
         h4 {
           color: $font-color-accent;

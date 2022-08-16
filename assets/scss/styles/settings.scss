@@ -1,8 +1,4 @@
-$max-width: 1080px;
-$container-width: 80%;
-
 $opacity: 0.65;
-
 $weinrot: #5C0D2F;
 $hellbraun: #996B23;
 $dunkelbraun: #663700;
@@ -66,10 +62,9 @@ $menu-icon-size: 16px;
 $menu-hover-color: $beigegold;
 $menu-sub-item-hover-color: $weinrot;
 
-$product-view-grid-gap: $spacing-l;
+$img-size-big: 690px;
 
-$section-padding: $spacing-xxl;
-$section-padding-small: $spacing-l;
+$product-view-grid-gap: $spacing-l;
 
 $border-radius: 8px;
 $border-radius-large: 17px;
@@ -93,10 +88,29 @@ $hint-width-large: 575px;
 $hint-height: 45px;
 $timeline-height: 800px;
 
+$section-spacing: $spacing-xxl;
+$section-spacing-small: $spacing-l;
+
+$max-width: 1505px;
+$max-width-small: 1080px;
+
 :root {
   --slider-height: 600px;
+  --section-spacing-top-bottom: #{$section-spacing};
+  --section-spacing-left-right: 0;
+  --max-width: #{$max-width};
 
   @media all and (max-width: $small-breakpoint) {
     --slider-height: 485px;
   }
+
+  @media all and (max-width: $medium-breakpoint) {
+    --section-spacing-top-bottom: #{$section-spacing-small};
+    --section-spacing-left-right: #{$spacing-s};
+  }
+}
+
+.max-width-small,
+.rehorik.single-product {
+  --max-width: #{$max-width-small};
 }
