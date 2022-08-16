@@ -47,7 +47,9 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding-left: $spacing-s;
+      @media all and (min-width: $medium-breakpoint + 1) {
+        padding-left: $spacing-s;
+      }
       box-sizing: border-box;
 
       .category {
