@@ -91,12 +91,14 @@ $timeline-height: 800px;
 $section-spacing: $spacing-xxl;
 $section-spacing-small: $spacing-l;
 
-$max-width: 1080px;
+$max-width: 1505px;
+$max-width-small: 1080px;
 
 :root {
   --slider-height: 600px;
   --section-spacing-top-bottom: #{$section-spacing};
-  --section-spacing-left-right: 200px;
+  --section-spacing-left-right: 0;
+  --max-width: #{$max-width};
 
   @media all and (max-width: $small-breakpoint) {
     --slider-height: 485px;
@@ -108,8 +110,7 @@ $max-width: 1080px;
   }
 }
 
+.max-width-small,
 .rehorik.single-product {
-  @media all and (min-width: $medium-breakpoint + 1) {
-    --section-spacing-left-right: 20vw;
-  }
+  --max-width: #{$max-width-small};
 }

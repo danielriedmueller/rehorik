@@ -30,7 +30,7 @@ get_template_part('templates/introduction', null, [
 ]);
 get_template_part('templates/page-title');
 ?>
-<div class="container centered">
+<div class="container max-width-small">
     <div id="timeline-outer">
         <div id="timeline">
             <div>

@@ -6,7 +6,7 @@ if (empty($productList)) {
     return;
 }
 ?>
-<div class="slider-outer" id="rehorik-featured-products">
+<div class="slider-outer container" id="rehorik-featured-products">
 <?php if (sizeof($productList) > 1) : ?>
     <ul id="slider-body" class="slider">
         <?php foreach ($productList as $productId): ?>

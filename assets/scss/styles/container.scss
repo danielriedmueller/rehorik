@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--section-spacing-top-bottom) var(--section-spacing-left-right);
 

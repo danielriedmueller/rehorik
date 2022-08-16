@@ -1,5 +1,4 @@
 #page-container #rehorik-featured-products {
-  padding: var(--section-spacing-top-bottom) var(--section-spacing-left-right);
   $imgSize: $product-category-width-large;
   //$textSize: $imgSize / 1.618;
   $textSize: $imgSize;
@@ -82,6 +81,15 @@
       color: $font-color-accent-dark;
       font-size: $font-size;
       text-align: right;
+    }
+  }
+
+  .slider-controls {
+    button:first-child {
+      left: -$spacing-xxl;
+    }
+    button:last-child {
+      right: -$spacing-xxl;
     }
   }
 }

@@ -13,7 +13,7 @@ get_template_part('templates/header/head', null, [
 </div>
 <div id="page-neue-roesterei">
     <div>
-        <div class="container centered">
+        <div class="container max-width-small">
             <div>
                 <div><img alt="Rehorik Neue Roesterei"
                           src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_Baustelle_11.jpg' ?>">
@@ -50,7 +50,7 @@ get_template_part('templates/header/head', null, [
         </div>
     </div>
     <div>
-        <div class="container centered">
+        <div class="container max-width-small">
             <h2>RÖSTEREI & KAFFEEHAUS</h2>
             <div>
                 <div>
@@ -102,7 +102,7 @@ get_template_part('templates/header/head', null, [
         </div>
     </div>
     <div>
-        <div class="container centered">
+        <div class="container max-width-small">
             <div>
                 <img alt="Rehorik Neue Roesterei"
                      src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/speisekarte-neue-roesterei-deckblatt.jpg' ?>">
