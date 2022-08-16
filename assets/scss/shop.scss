@@ -14,7 +14,7 @@
 @import "styles/button";
 @import "styles/sidebar";
 @import "styles/rehorik_logo";
-@import "styles/best_selling_products";
+@import "styles/featured_products";
 @import "styles/product/product";
 @import "styles/product/gallery";
 @import "styles/product/video";
@@ -76,6 +76,7 @@
 @import "styles/checkout/order_overview";
 @import "styles/filter/coffee_strength_flavour_filter";
 @import "styles/filter/filter";
+@import "styles/product/not_selling_notice";
 
 @font-face {
   font-family: "Cond";
@@ -168,6 +169,10 @@ h5, h6 {
 a {
   text-decoration: none;
   color: $font-color-accent-dark;
+
+  &:hover {
+    color: $font-color-accent;
+  }
 }
 
 p {

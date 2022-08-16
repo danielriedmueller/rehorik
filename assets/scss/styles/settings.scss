@@ -45,7 +45,8 @@ $small-breakpoint: 767px;
 $medium-breakpoint: 1024px;
 $big-breakpoint: 1365px;
 
-$product-thumbnail-width: 175px;
+$product-thumbnail-size: 100px;
+$cart-thumbnail-size: 175px;
 $product-category-width: 235px;
 $product-category-width-large: 350px;
 $product-height: 515px;
@@ -81,7 +82,11 @@ $cart-coupon-width-broad: 380px;
 
 $sidebar-width: 250px;
 $hugo-head-size: 70px;
-$sigil-size: $hugo-head-size;
+
+$sigil-size-small: 35px;
+$sigil-size-medium: 50px;
+$sigil-size-big: $hugo-head-size;
+
 $footer-items-width: 202px;
 $hint-width: 275px;
 $hint-width-large: 575px;

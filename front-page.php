@@ -25,6 +25,7 @@ wir leben Leidenschaft für hochwertige Produkte. Und das seit Generationen.',
 ]);
 ?>
 <?php get_template_part('templates/hint') ?>
+<?php get_template_part('templates/featured/slider'); ?>
 <div class="container">
     <ul class="rehorik-products products">
         <li class="product-category product">

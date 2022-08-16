@@ -35,12 +35,12 @@
     }
 
     .product-thumbnail {
-      width: $product-thumbnail-width + $spacing-l;
+      width: $cart-thumbnail-size + $spacing-l;
 
       img {
         border-radius: $border-radius;
         object-fit: contain;
-        width: $product-thumbnail-width;
+        width: $cart-thumbnail-size;
         margin-right: 0;
       }
     }

@@ -41,15 +41,15 @@
   }
 
   .wc-gzd-product-name-left {
-    width: $product-thumbnail-width + $spacing-l;
-    max-width: $product-thumbnail-width + $spacing-l;
+    width: $cart-thumbnail-size + $spacing-l;
+    max-width: $cart-thumbnail-size + $spacing-l;
     margin: 0;
 
     img {
       border-radius: $border-radius;
       object-fit: contain;
-      width: $product-thumbnail-width;
-      max-width: $product-thumbnail-width;
+      width: $cart-thumbnail-size;
+      max-width: $cart-thumbnail-size;
 
       @media all and (max-width: $small-breakpoint) {
         display: none;

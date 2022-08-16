@@ -58,81 +58,45 @@ function isItCategory($product, $categorySlug): bool
 }
 
 /**
- * Vollautomat, Espresso, Filterkaffee,
- * return the first two of them.
- *
- * Hierarchy
- *  - 1. Filterkaffee
- *  - 2. Espresso
- *  - 3. Vollautomat (crema)
- *
- * @param WC_Product $product
- * @return string
- */
-function getCoffeeCategories(WC_Product $product): string
-{
-    $terms = get_the_terms( $product->get_id(), 'product_cat' );
-    $term_ids = wp_list_pluck($terms,'term_id');
-    $parents = array_filter(wp_list_pluck($terms,'parent'));
-    $term_ids_not_parents = array_diff($term_ids,  $parents);
-    $terms_not_parents = array_intersect_key($terms,  $term_ids_not_parents);
-    $filtered_terms = array_filter($terms_not_parents, function($a) {
-        return in_array($a->slug, [
-                COFFEE_FILTERKAFFEE_CATEGORY_SLUG, COFFEE_ESPRESSO_CATEGORY_SLUG, COFFEE_CREMA_CATEGORY_SLUG
-        ]);
-    });
-
-    //Filter crema category if multiple categories
-    if (sizeof($filtered_terms) > 1) {
-        $filtered_terms = array_filter($filtered_terms, function($a) {
-            return in_array($a->slug, [
-                COFFEE_FILTERKAFFEE_CATEGORY_SLUG, COFFEE_ESPRESSO_CATEGORY_SLUG
-            ]);
-        });
-    }
-
-    $filtered_terms_names = array_unique(array_map(function ($a) {
-        return $a->name;
-    }, $filtered_terms));
-
-    return sizeof($filtered_terms_names) > 0 ? implode(" & ", $filtered_terms_names) : "";
-}
-
-/**
  * Returns Subcategories of Product.
  * If no subcategories, returns category.
  *
  * @param WC_Product $product
  * @return string
  */
-function getSubCategories(WC_Product $product): string
+function getSubCategories(WC_Product $product, $linked = false): string
 {
-    if (isItCategory($product, COFFEE_CATEGORY_SLUG)) {
-        return getCoffeeCategories($product);
+    $nameMapFn = function ($a) use ($linked) {
+        return $linked ? '<a href="' . get_term_link($a) . '">' . $a->name . '</a>' : $a->name;
+    };
+
+    $terms = get_the_terms( $product->get_id(), 'product_cat' );
+
+    // Dont show "Vollautomat", if coffee is also "Espresso" or "Filterkaffee"
+    if (isItCategory($product, COFFEE_CATEGORY_SLUG) && sizeof($terms) > 1) {
+        $terms = array_filter($terms, function($a) {
+            return $a->slug !== COFFEE_CREMA_CATEGORY_SLUG;
+        });
     }
 
-    $onlineshop_cat = get_term_by('slug', ONLINESHOP_CATEGORY_SLUG, 'product_cat');
-    $terms = get_the_terms( $product->get_id(), 'product_cat' );
     $term_ids = wp_list_pluck($terms,'term_id');
     $parents = array_filter(wp_list_pluck($terms,'parent'));
     $term_ids_not_parents = array_diff($term_ids,  $parents);
     $terms_not_parents = array_intersect_key($terms,  $term_ids_not_parents);
-    $terms_not_onlineshop_cat_parent = array_filter($terms_not_parents, function (WP_Term $a) use ($onlineshop_cat) {
-        return $a->parent !== $onlineshop_cat->term_id;
-    });
-    $terms_not_parents_names = array_map(function ($a) {
-        return $a->name;
-    }, $terms_not_onlineshop_cat_parent);
 
-    if (sizeof($terms_not_parents_names) > 0) {
-        return implode(", ", $terms_not_parents_names);
+    if (sizeof($terms_not_parents) > 0) {
+        $result_terms = $terms_not_parents;
+    } else {
+        $result_terms = $terms;
     }
 
-    $terms_names = array_map(function ($a) {
-        return $a->name;
-    } , $terms);
+    // Filter "Produkte" category
+    $onlineshop_cat = get_term_by('slug', ONLINESHOP_CATEGORY_SLUG, 'product_cat');
+    $result_terms = array_filter($result_terms, function (WP_Term $a) use ($onlineshop_cat) {
+        return $a->term_id !== $onlineshop_cat->term_id;
+    });
 
-    return implode(", ", $terms_names);
+    return implode(", ", array_map($nameMapFn, $result_terms));
 }
 
 /**

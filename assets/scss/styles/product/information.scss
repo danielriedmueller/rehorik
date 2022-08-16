@@ -19,6 +19,10 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .re
     color: $font-color;
     text-align: justify;
   }
+
+  .rehorik-product-information-category {
+    display: none;
+  }
 }
 
 body.rehorik.woocommerce #main-content div.rehorik-product {
@@ -32,7 +36,8 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
 
     ul {
       font-size: $font-size;
-      list-style-type:none;      margin: 0;
+      list-style-type:none;
+      margin: 0;
       padding: 0;
 
       li {
