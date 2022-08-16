@@ -36,9 +36,10 @@
   }
   display: inline-block;
   position: absolute;
-  bottom: $spacing-xxl;
+
+  bottom: $section-padding;
   @media all and (max-width: $medium-breakpoint) {
-    bottom: $spacing-l;
+    bottom: $section-padding-small;
   }
   right: 130px;
 

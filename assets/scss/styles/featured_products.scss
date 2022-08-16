@@ -1,7 +1,7 @@
 #page-container #rehorik-featured-products {
-  padding: $spacing-xxl;
+  padding: $section-padding;
   @media all and (max-width: $medium-breakpoint) {
-    padding: $spacing-l 0;
+    padding: $section-padding-small 0;
   }
     $imgSize: $product-category-width-large;
     //$textSize: $imgSize / 1.618;

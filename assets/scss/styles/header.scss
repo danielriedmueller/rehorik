@@ -173,7 +173,7 @@ header.rehorik-header {
 
 .rehorik-header-outer {
   @media all and (min-width: $medium-breakpoint + 1) {
-    $height: $menu-height + $section-padding-top-bottom;
+    $height: $menu-height + $section-padding;
     position: absolute;
     height: calc(100% - #{$height});
     top: 0;

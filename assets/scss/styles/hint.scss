@@ -2,7 +2,7 @@
   color: $beigegold;
   position: absolute;
   left: 0;
-  top: calc(var(--slider-height) - #{$spacing-xxl} - #{$hint-height}) ;
+  top: calc(var(--slider-height) - #{$section-padding} - #{$hint-height}) ;
   z-index: 8;
   height: 0;
 
