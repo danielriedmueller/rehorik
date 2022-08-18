@@ -85,11 +85,12 @@
   }
 
   .slider-controls {
-    button:first-child {
-      left: -$spacing-xxl;
-    }
-    button:last-child {
-      right: -$spacing-xxl;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+
+    @media all and (max-width: $medium-breakpoint) {
+      top: 0;
     }
   }
 }
