@@ -1,5 +1,13 @@
 .marketing-banner {
-  background: transparent url("../img/lieferservice/lieferservice-header-600px-v1.jpg") no-repeat center center;
+  background: transparent url("../img/simongehr_twl_outdoor-49.jpg") no-repeat top -612px center;
+  background-size: 1920px;
+  position: relative;
+
+  .learn-more {
+    position: absolute;
+    margin: 0;
+    bottom: var(--section-spacing-top-bottom);
+  }
 
   *, .learn-more {
     color: #fff;
@@ -14,11 +22,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-right: 0;
-    padding-top: $spacing-l;
+    padding: var(--section-spacing-top-bottom) 0;
 
     h2 {
-      margin-bottom: $spacing;
       font-size: $font-size-large;
       text-align: justify;
       color: #fff;
