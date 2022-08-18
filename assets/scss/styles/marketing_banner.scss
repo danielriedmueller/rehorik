@@ -1,0 +1,82 @@
+.rehorik-page-introduction-outer.marketing-banner {
+  background: $grau none;
+
+
+  .container {
+    padding: $spacing-xxl 0;
+  }
+
+  .rehorik-page-introduction {
+    background: transparent none;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 0;
+    padding-top: $spacing-l;
+
+    h3 {
+      margin-bottom: $spacing;
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      line-height: 60px;
+    }
+
+    span {
+      text-align: justify;
+    }
+
+    a {
+      margin-top: $spacing;
+      width: fit-content;
+    }
+  }
+
+  &.weinrot {
+    background-color: $weinrot;
+  }
+
+  &.weiss {
+    background-color: #fff;
+  }
+
+  &.left {
+    .rehorik-page-introduction {
+      align-items: flex-start;
+    }
+  }
+
+  &.pflanze {
+    background-repeat: no-repeat;
+    background-position: left $spacing bottom;
+
+    &.left {
+      background-position: right $spacing bottom;
+    }
+
+    background-image: url("../img/freisteller/freistellerkaffeepflanze.png");
+  }
+
+  &.heiko {
+    background-repeat: no-repeat;
+    background-position: left $spacing bottom;
+
+    &.left {
+      background-position: right $spacing bottom;
+    }
+
+    background-image: url("../img/freisteller/freistellerheiko.png");
+  }
+
+  &.tasse {
+    background-repeat: no-repeat;
+    background-position: left $spacing bottom;
+
+    &.left {
+      background-position: right $spacing bottom;
+    }
+
+    background-image: url("../img/freisteller/freistellertasse.png");
+  }
+}

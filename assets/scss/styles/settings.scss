@@ -99,6 +99,7 @@ $max-width-small: 1080px;
   --section-spacing-top-bottom: #{$section-spacing};
   --section-spacing-left-right: 0;
   --max-width: #{$max-width};
+  --container-headline-spacing-bottom: #{$spacing-xl};
 
   @media all and (max-width: $small-breakpoint) {
     --slider-height: 485px;
@@ -107,6 +108,7 @@ $max-width-small: 1080px;
   @media all and (max-width: $medium-breakpoint) {
     --section-spacing-top-bottom: #{$section-spacing-small};
     --section-spacing-left-right: #{$spacing-s};
+    --container-headline-spacing-bottom: #{$spacing};
   }
 }
 
