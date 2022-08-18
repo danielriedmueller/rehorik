@@ -186,10 +186,10 @@ ul.slider, ul.slider li, ul.slider li img {
       width: 30px;
       height: 30px;
       background-size: 17px;
-      top: 270px;
+      top: 262px;
     }
 
-    $spaceToBorderSmall: $spacing-xs;
+    $spaceToBorderSmall: $spacing-xxxs;
     button[data-controls="prev"] {
       left: $spaceToBorderSmall;
     }
