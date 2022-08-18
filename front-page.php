@@ -23,7 +23,7 @@ get_template_part('templates/featured/slider');
 ?>
 <div class="marketing-banner max-width-small">
     <div class="container">
-        <div class="rehorik-page-introduction">
+        <div class="marketing-banner-text">
             <h2>"Wir sind bunt, vielfältig und kreativ - voller Mut und Energie, etwas Besonderes zu erschaffen. Einen Raum der Inspiration und Lebensfreude.
 Wir verbinden Menschen durch Genuss,
 wir leben Leidenschaft für hochwertige Produkte. Und das seit Generationen." - Heiko Rehorik</h2>
