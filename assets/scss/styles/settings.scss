@@ -36,10 +36,9 @@ $line-height: 1.4em;
 
 $text-shadow: -1px -1px 0 $grau, 1px -1px 0 $grau, -1px 1px 0 $grau, 1px 1px 0 $grau;
 
-$very-small-breakpoint: 375px;
+$very-small-breakpoint: 442px;
 $small-breakpoint: 767px;
-$medium-breakpoint: 1024px;
-$big-breakpoint: 1365px;
+$medium-breakpoint: 1180px;
 
 $product-thumbnail-size: 100px;
 $cart-thumbnail-size: 175px;
@@ -83,6 +82,7 @@ $sigil-size-medium: 50px;
 $sigil-size-big: $hugo-head-size;
 
 $footer-items-width: 202px;
+$newsletter-items-width: 560px;
 $hint-width: 275px;
 $hint-width-large: 575px;
 $hint-height: 45px;
@@ -97,7 +97,7 @@ $max-width-small: 1080px;
 :root {
   --slider-height: 600px;
   --section-spacing-top-bottom: #{$section-spacing};
-  --section-spacing-left-right: 0;
+  --section-spacing-left-right: #{$spacing};
   --max-width: #{$max-width};
   --container-headline-spacing-bottom: #{$spacing-xl};
 
@@ -107,7 +107,6 @@ $max-width-small: 1080px;
 
   @media all and (max-width: $medium-breakpoint) {
     --section-spacing-top-bottom: #{$section-spacing-small};
-    --section-spacing-left-right: #{$spacing-s};
     --container-headline-spacing-bottom: #{$spacing};
   }
 }

@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             items: 1,
             gutter: 0,
             responsive: {
-                1300: {
+                898: {
                     items: 2,
                     gutter: 50,
                 }

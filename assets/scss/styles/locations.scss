@@ -1,22 +1,17 @@
 #locations {
   background: $grau none;
 
+  .container > div {
+    @include gridView($footer-items-width);
+  }
+
   .container {
     h2 {
       color: #fff;
     }
 
     > div {
-      display: grid;
-      grid-template-columns: $footer-items-width $footer-items-width $footer-items-width $footer-items-width $footer-items-width;
-      grid-template-rows: auto;
-      gap: $spacing $spacing-s;
-      justify-items: stretch;
-      justify-content: space-between;
-
       > div {
-        flex: 0 0 $footer-items-width;
-        width: $footer-items-width;
 
         img {
           width: 100%;
@@ -48,24 +43,6 @@
         > span {
           display: none;
         }
-      }
-
-      > div {
-        grid-template-columns: $footer-items-width $footer-items-width;
-        justify-items: center;
-      }
-    }
-
-    @media all and (max-width: $small-breakpoint) {
-      h2 {
-        > span {
-          display: none;
-        }
-      }
-
-      > div {
-        grid-template-columns: 1fr;
-        justify-items: center;
       }
     }
   }
