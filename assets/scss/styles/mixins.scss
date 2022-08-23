@@ -3,7 +3,7 @@
   justify-content: center;
   justify-items: center;
   gap: $spacing-l;
-  grid-template-columns: repeat(auto-fit, minmax(min($item-width, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min($item-width, 100%), $item-width));
 }
 
 @mixin productLinearGradient($color-left, $color-right) {
