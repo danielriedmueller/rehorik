@@ -1,3 +1,11 @@
+@mixin gridView($item-width) {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  gap: $spacing-l;
+  grid-template-columns: repeat(auto-fit, minmax(min($item-width, 100%), 1fr));
+}
+
 @mixin productLinearGradient($color-left, $color-right) {
   background: linear-gradient(90deg,  $color-left 50%, $color-right 50%);
 }

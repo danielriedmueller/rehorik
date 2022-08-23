@@ -6,15 +6,13 @@ footer {
     text-transform: none;
   }
 
+  .container > div {
+    @include gridView($footer-items-width);
+  }
+
   .container {
     > div {
-      display: flex;
-      justify-content: space-between;
-
       > div {
-        flex: 0 0 $footer-items-width;
-        width: $footer-items-width;
-
         > div {
           margin-bottom: $spacing-xl;
 
@@ -24,18 +22,6 @@ footer {
             font-size: $font-size-large;
           }
         }
-      }
-
-      @media all and (max-width: $medium-breakpoint) {
-        display: grid;
-        justify-items: center;
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      @media all and (max-width: $small-breakpoint) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
       }
     }
   }
