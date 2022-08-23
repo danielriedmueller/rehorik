@@ -2,12 +2,13 @@
   position: relative;
 
   background: transparent url("../img/marketing/breitbild-chemex-1920x390px.jpg") no-repeat center center;
+  background-size: cover;
 
-  @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+  @media all and (max-width: 1080px) and (min-width: 376px) {
     background-image: url("../img/marketing/breitbild-chemex-1080x390px.jpg");
   }
 
-  @media all and (max-width: $small-breakpoint) {
+  @media all and (max-width: 375px) {
     background-image: url("../img/marketing/breitbild-chemex-375x390px.jpg");
   }
 

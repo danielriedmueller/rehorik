@@ -21,12 +21,12 @@ get_template_part('templates/header/head', null, ['slider' => [
 get_template_part('templates/hint');
 get_template_part('templates/featured/slider');
 ?>
-<div class="marketing-banner max-width-small">
+<div class="marketing-banner">
     <div class="container">
         <div class="marketing-banner-text">
-            <h2>"Wir sind bunt, vielfältig und kreativ - voller Mut und Energie, etwas Besonderes zu erschaffen. Einen Raum der Inspiration und Lebensfreude.
-Wir verbinden Menschen durch Genuss,
-wir leben Leidenschaft für hochwertige Produkte. Und das seit Generationen." - Heiko Rehorik</h2>
+            <h2>Wir sind umtriebig, vielfältig und kreativ - voller Mut und Energie, etwas Besonderes zu erschaffen. Einen Raum der Inspiration und Lebensfreude.
+                Wir verbinden Menschen durch Genuss,
+                wir leben Leidenschaft für hochwertige Produkte. Und das seit Generationen.</h2>
             <a class="learn-more" href="/tradition">erfahre mehr</a>
         </div>
     </div>
