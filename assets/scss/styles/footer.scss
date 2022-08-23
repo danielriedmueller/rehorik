@@ -6,15 +6,13 @@ footer {
     text-transform: none;
   }
 
+  .container > div {
+    @include gridView($footer-items-width);
+  }
+
   .container {
     > div {
-      display: flex;
-      justify-content: space-between;
-
       > div {
-        flex: 0 0 $footer-items-width;
-        width: $footer-items-width;
-
         > div {
           margin-bottom: $spacing-xl;
 
@@ -24,20 +22,6 @@ footer {
             font-size: $font-size-large;
           }
         }
-      }
-
-      @media all and (max-width: $medium-breakpoint) {
-        display: grid;
-        justify-items: center;
-        justify-content: center;
-        gap: 25px 20px;
-        grid-template-columns: repeat(3, $footer-items-width);
-      }
-
-      @media all and (max-width: $small-breakpoint) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
       }
     }
   }
@@ -51,9 +35,4 @@ footer {
   @media all and (max-width: $very-small-breakpoint) {
     background-image: url("../img/footer/footer-mobil-375px.jpg");
   }
-}
-
-// Footer items width
-footer, #locations {
-
 }

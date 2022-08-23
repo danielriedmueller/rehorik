@@ -1,11 +1,8 @@
+
+
 .rehorik {
   ul.products.rehorik-products {
-    display: grid;
-    justify-content: flex-start;
-    @media all and (max-width: $medium-breakpoint) {
-      justify-content: center;
-    }
-    gap: $spacing;
+    @include gridView($product-category-width);
 
     li {
       border-radius: $border-radius;
@@ -14,8 +11,6 @@
     &::before, &::after {
       content: none;
     }
-
-    grid-template-columns: repeat(auto-fill, $product-category-width);
 
     &:empty {
       grid-template-columns: 1fr;
@@ -35,12 +30,7 @@
 
   &.home {
     ul.products.rehorik-products {
-      grid-template-columns: repeat(auto-fill, $product-category-width-large);
-      justify-content: space-between;
-      @media all and (max-width: $medium-breakpoint) {
-        justify-content: center;
-      }
-      gap: $spacing-l;
+      @include gridView($product-category-width-large);
     }
 
     #rehorik-featured-products ul.products.rehorik-products {
