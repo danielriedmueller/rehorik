@@ -77,7 +77,8 @@
 
     div.rehorik-product-quality-name {
       font-size: $font-size-large;
-      line-height: $line-height;
+      line-height: 1em;
+      text-transform: uppercase;
     }
 
     p.price {
