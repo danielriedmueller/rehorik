@@ -8,21 +8,11 @@ footer {
 
   .container > div {
     @include gridView($footer-items-width);
-  }
 
-  .container {
-    > div {
-      > div {
-        > div {
-          margin-bottom: $spacing-xl;
-
-          h3 {
-            margin: 0 0 $spacing 0;
-            padding: 0;
-            font-size: $font-size-large;
-          }
-        }
-      }
+    h3 {
+      margin: 0 0 $spacing 0;
+      padding: 0;
+      font-size: $font-size-large;
     }
   }
 
