@@ -29,7 +29,9 @@ footer {
       @media all and (max-width: $medium-breakpoint) {
         display: grid;
         justify-items: center;
-        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        gap: 25px 20px;
+        grid-template-columns: repeat(3, $footer-items-width);
       }
 
       @media all and (max-width: $small-breakpoint) {
@@ -49,4 +51,9 @@ footer {
   @media all and (max-width: $very-small-breakpoint) {
     background-image: url("../img/footer/footer-mobil-375px.jpg");
   }
+}
+
+// Footer items width
+footer, #locations {
+
 }

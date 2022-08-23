@@ -11,7 +11,6 @@
       grid-template-columns: $footer-items-width $footer-items-width $footer-items-width $footer-items-width $footer-items-width;
       grid-template-rows: auto;
       gap: $spacing $spacing-s;
-      justify-items: stretch;
       justify-content: space-between;
 
       > div {
@@ -51,8 +50,8 @@
       }
 
       > div {
-        grid-template-columns: $footer-items-width $footer-items-width;
-        justify-items: center;
+        grid-template-columns: $footer-items-width $footer-items-width $footer-items-width;
+        justify-content: center;
       }
     }
 
@@ -64,8 +63,21 @@
       }
 
       > div {
-        grid-template-columns: 1fr;
-        justify-items: center;
+        grid-template-columns: $footer-items-width $footer-items-width;
+        justify-content: center;
+      }
+    }
+
+    @media all and (max-width: $very-small-breakpoint) {
+      h2 {
+        > span {
+          display: none;
+        }
+      }
+
+      > div {
+        grid-template-columns: $footer-items-width;
+        justify-content: center;
       }
     }
   }
