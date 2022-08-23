@@ -38,7 +38,13 @@
   position: absolute;
 
   bottom: var(--section-spacing-top-bottom);
-  right: 218px;
+  right: 10%;
+
+  @media all and (max-width: $medium-breakpoint) {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
 
   .slider-title {
     margin-bottom: $spacing-s;
@@ -112,12 +118,6 @@
         margin-bottom: $spacing-s;
       }
     }
-  }
-
-  @media all and (max-width: $medium-breakpoint) {
-    left: 0;
-    right: 0;
-    margin: 0 auto;
   }
 }
 
