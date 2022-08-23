@@ -1,7 +1,15 @@
 .marketing-banner {
-  background: transparent url("../img/simongehr_twl_outdoor-49.jpg") no-repeat top -612px center;
-  background-size: 1920px;
   position: relative;
+
+  background: transparent url("../img/marketing/breitbild-chemex-1920x390px.jpg") no-repeat center center;
+
+  @media all and (max-width: $medium-breakpoint) and (min-width: $small-breakpoint + 1) {
+    background-image: url("../img/marketing/breitbild-chemex-1080x390px.jpg");
+  }
+
+  @media all and (max-width: $small-breakpoint) {
+    background-image: url("../img/marketing/breitbild-chemex-375x390px.jpg");
+  }
 
   .learn-more {
     position: absolute;
