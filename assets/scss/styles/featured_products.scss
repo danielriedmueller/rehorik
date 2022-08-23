@@ -50,6 +50,9 @@
 
       h3 {
         line-height: $font-size-large;
+        a {
+          color: $font-color;
+        }
       }
 
       .claim {
@@ -60,7 +63,7 @@
 
       .description {
         flex-grow: 1;
-        margin: $spacing 0 0 0;
+        margin: $line-height 0;
         display: block;
         text-align: justify;
         overflow: hidden;
