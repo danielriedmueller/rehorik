@@ -1,4 +1,6 @@
 .rehorik.single-product .rehorik-product.product.detail-view {
+  max-width: $max-width-small;
+  margin: 0 auto;
   text-align: left;
   margin-bottom: $product-view-grid-gap;
   display: grid;
@@ -77,7 +79,7 @@
 
     div.rehorik-product-quality-name {
       font-size: $font-size-large;
-      line-height: 1em;
+      line-height: $line-height-small;
       text-transform: uppercase;
     }
 

@@ -5,10 +5,11 @@
     max-width: $max-width-small;
     margin: auto;
     display: flex;
-    padding: $spacing var(--section-spacing-left-right);
+    padding: $spacing-l 0;
 
     @media all and (max-width: $medium-breakpoint) {
       flex-direction: column;
+      padding: $spacing var(--section-spacing-left-right);
     }
   }
 

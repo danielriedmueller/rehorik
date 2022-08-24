@@ -27,8 +27,8 @@ header.rehorik-header {
   background-color: $weinrot;
   justify-content: flex-start;
   flex-direction: row-reverse;
-  padding-left: $spacing;
-  padding-right: $spacing;
+  padding-left: var(--section-spacing-left-right);
+  padding-right: var(--section-spacing-left-right);
   height: $menu-height;
 
   .hamburger, input[type="checkbox"], input[type="checkbox"]:checked ~ .menu-hauptmenue-container {
@@ -60,7 +60,7 @@ header.rehorik-header {
       justify-content: center;
       align-content: center;
       flex-direction: column;
-      padding: $spacing-s $spacing;
+      padding: $spacing-s var(--section-spacing-left-right);
       position: relative;
     }
 
@@ -238,7 +238,7 @@ header.rehorik-header {
         }
 
         li.menu-item-has-children {
-          background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right $spacing;
+          background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right var(--section-spacing-left-right);
           background-size: 10px;
           $item-spacing: $spacing-xs;
           padding-top: $item-spacing;
@@ -252,7 +252,7 @@ header.rehorik-header {
 
           &:hover {
             height: auto;
-            background: rgba(206, 182, 127, 0.9) url("../img/pfeil-rot-oben.svg") no-repeat top 30px right $spacing;
+            background: rgba(206, 182, 127, 0.9) url("../img/pfeil-rot-oben.svg") no-repeat top 30px right var(--section-spacing-left-right);
             background-size: 10px;
 
             a {

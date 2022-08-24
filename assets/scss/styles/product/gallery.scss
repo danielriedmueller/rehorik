@@ -20,8 +20,8 @@
     }
 
     grid-auto-rows: $product-thumbnail-size;
-    gap: $spacing-xxs;
-    justify-content: space-between;
+    gap: $spacing-xs;
+    justify-content: flex-start;
 
     li {
       width: 100%;

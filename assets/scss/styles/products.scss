@@ -86,7 +86,7 @@
           width: 118px;
           font-family: $font-family-body;
           padding: 0 0 0 $spacing-xxs;
-          line-height: 1.1em;
+          line-height: $line-height-small;
           padding-top: 4px;
         }
 
@@ -116,4 +116,8 @@
 
 .woocommerce .products ul, .woocommerce ul.products {
   margin: 0;
+}
+
+.related.products .rehorik-products.products {
+  justify-content: center;
 }

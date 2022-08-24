@@ -1,9 +1,11 @@
-
-
 .rehorik {
   ul.products.rehorik-products {
     @include gridView($product-category-width);
-    justify-content: flex-start;
+
+    @media all and (min-width: $small-breakpoint + 1) {
+      justify-content: flex-start;
+    }
+
 
     li {
       border-radius: $border-radius;
