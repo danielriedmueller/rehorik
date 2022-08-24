@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             controlsPosition: 'bottom',
             lazyLoad: true,
             nav: false,
+            gutter: 0,
             autoWidth: true,
             controlsContainer: "#slider-header-controls"
         });
@@ -18,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         tns({
             container: '#slider-body',
             items: 1,
-            gutter: 0,
+            lazyLoad: true,
+            autoWidth: true,
+            gutter: 50,
             responsive: {
                 898: {
                     items: 2,
