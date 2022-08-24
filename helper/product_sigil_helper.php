@@ -1,5 +1,9 @@
 <?php
 
+function hasSigils(WC_Product $product): bool {
+    return isProductOfTheMonth($product) || hasBioSigil($product) || hasVeganSigil($product) || hasBiodynamicSigil($product) || hasRegionalSigil($product) || hasCottonSigil($product);
+}
+
 function isProductOfTheMonth(WC_Product $product): bool {
     return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Produkt des Monats');
 }

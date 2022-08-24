@@ -64,6 +64,10 @@ body.rehorik.woocommerce div.rehorik-product {
       }
     }
   }
+
+  .woocommerce-variation-availability {
+    display: none;
+  }
 }
 
 .rehorik .product.woocommerce.add_to_cart_inline {
