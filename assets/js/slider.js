@@ -20,12 +20,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             container: '#slider-body',
             items: 1,
             lazyLoad: true,
-            autoWidth: true,
             gutter: 50,
             responsive: {
                 898: {
                     items: 2,
-                    gutter: 50,
+                    gutter: 140,
                 }
             },
             nav: false,

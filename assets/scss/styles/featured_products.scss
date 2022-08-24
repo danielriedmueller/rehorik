@@ -37,7 +37,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding-left: $spacing-l;
+      padding: 0 $spacing-xxs 0 $spacing-s;
       box-sizing: border-box;
 
       .category {
@@ -68,7 +68,7 @@
       }
     }
 
-    @media all and (max-width: 1400px) {
+    @media all and (max-width: 1555px) {
       flex-direction: column;
 
       .image {
