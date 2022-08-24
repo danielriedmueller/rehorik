@@ -92,11 +92,18 @@ function goes_with() {
     global $product;
 
     $goesWith = $product->get_attribute('passt-zu');
+    $title = 'Passt zu';
+
+    if (empty($goesWith)) {
+        $goesWith = $product->get_attribute('aromen');
+        $title = 'Aromen';
+    }
 
     if (!empty($goesWith)) {
         $goesWith = str_replace(', ', ' - ', $goesWith);
         echo sprintf(
-            '<div class="rehorik-product-goes-with"><div>Passt zu</div><div>%s</div></div>',
+            '<div class="rehorik-product-goes-with"><div>%s</div><div>%s</div></div>',
+            $title,
             $goesWith
         );
     }

@@ -42,7 +42,6 @@ const HIDE_CATEGORIES = [
     'kaese-wurst'
 ];
 
-
 // Attributes
 const STRENGTH_ATTRIBUTE_SLUG = 'pa_staerke';
 const VARIETIES_ATTRIBUTE_SLUG = 'pa_sorte';
