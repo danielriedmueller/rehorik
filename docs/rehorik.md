@@ -510,3 +510,235 @@ Text für wein events oberkategorie
     - Regina
     - Heiko
     - Julian
+
+------------------------------------------------------------
+
+Marketing Aktion
+- Physiker Tagung Aktion (Regensburg Physik)
+
+GoogleMaps Foto (Hobi) --> Foto nicht der Brixener Hof
+
+Merch
+- Tshirt
+- Foto als Kategoriefoto
+- 100% Baumwolle-Katoen
+- S -> 1001536
+- M -> 1001537
+- L -> 1001538
+- XL -> 1001539
+- Rehorik Espresso und Cappu Tassen mit aufnehmen
+- Auch Flaschenöffner
+- Fotos machen
+- Beschreibungstext da wo Variationsauswahl ist
+- Ist Online
+
+Maschinen
+- Puristika auch in Creme?
+- Beides verfügbar
+- Preis immer "ab"
+- SKU könnte angelegt werden
+- E65s und Linea Mini erstmal nicht
+- Beschreibungstexte Kommen mit der zeit
+- Fotos hochladen, von Zuhause, dann Backup und Uploads ziehen
+- https://www.rehorik.de/produkt-kategorie/onlineshop/maschinen-equipment/ kann komplett weg?
+
+Schulung
+- Angebot wird geschickt
+
+190 Karte falsch
+- Nathalie hat nicht die digitale Version, wo ist die?
+- Julio weiß nix
+- neue karten kommen ende august
+
+SAP
+- aber was unabhängig geht ist preise und warenbestand abgleichen
+
+Jira
+- Lena hat auch Zugriff auf andere Projekte. Ist das schlimm?
+- einzige alernative ist ein neuer jira account, was blöd wäre
+
+Öffnungszeiten
+- welche sind die richtigen Öffnungszeiten
+- z.b. ist wohl Käseladen falsch
+- bekomm dokument
+
+Text für pop up tasting spirits
+Text für wein events oberkategorie
+Text zu Kaffee Kategorie
+
+Mit Regina in Demo einloggen und Lizenzen angucken
+
+- Ebay Kleinanzeigen Verkauf erneut machen
+    - 200 euro weniger
+- Jira Alternative von Regina für Teams angucken
+- Maschinen
+    - Nathalie machte Fotos
+    - Kategoriefotos mit Regina auswählen
+    - nur Maschine als kategorie
+- Stellenanzeige online wird nicht gemacht
+- Priorisierungen fehlen
+    - Regina
+    - Heiko
+
+Cappuccino Tasse inkl. Untersetzer (13,95 Euro Brutto)
+Espresso Tasse inkl. Untersetzer (9,95 Euro Brutto)
+Auswertung analysieren  
+- bis August
+- 2021 152.646,51 €
+- 2022 157.357,87 €
+- 2022 ohne Veranstaltungen 121.313,94 €
+- doppelte Kategorien führen nicht zu doppelten Umsatz in WooCommerce
+Cornerstone Page
+Wir sind bunt, vielfältig und kreativ - voller Mut und Energie, etwas Besonderes zu erschaffen. Einen Raum der Inspiration und Lebensfreude.
+Wir verbinden Menschen durch Genuss,
+wir leben Leidenschaft für hochwertige Produkte. Und das seit Generationen.
+
+Google login bestätigen
+
+--------------------------------------------------------------------------------
+
+Ab welcher Bestandsmenge sollen die Online auf nicht verfügbar gesetzt werden?
+
+Physiker Tagung
+- Kaffeevideos zu physikalischer Ebene Erklärungsvideo
+- ganz kurz auf INSTA, dann verlinken auf YT
+- 3 - 5 Minuten auf YT
+- 3.41 m lang
+- was ist wichtig bei YouTube
+- steckbrief durchschicken
+- Technisch
+- Format: MP4
+- Codec: h.264
+- Ratio: 16:9
+- Thumbnail benutzen
+- Rehorik logo
+- Große Schriftart
+- Keywords
+- video title (main keyword)
+- video description (main keyword + 1 - 2 related)
+- video tag (minimal inpact)
+- Timestamps
+- Topic tags
+- Video description
+- link zu rehorik.de
+- link zu social media
+- link zu produkten, die erwähnt werden
+- CTA
+- Aufforderung etwas zu tun
+- ganz nach oben
+- muss klar formuliert werden
+- richtige CTA seite auf rehorik.de fehlt noch
+- End card mit verlinkung zu anderen videos von uns
+- Erwähne warum wir das video gemacht haben
+- z.b. viele haben sich bestimmt schon mal gefragt, warum ...
+- Ask people to subscribe, like, comment, and share video
+- Begrüßungs- und Endsatz
+- z.b. Hallo, Freunde des Kaffees  -----  Und das war auch schon wieder
+- Kommentare beantworten
+- lieber regelmäßig veröffentlichen, als mehrere hintereinander und dann lange nichts
+- Playlist erstellen
+- Channel Trailer
+- Manuelle Untertitel
+- .srt Datei mit hochladen
+- YT Ads kaufen
+
+    - 7.9. Harald Lesch
+    - Physiker Mischung 
+    - Ziele
+        - mehr Kunden / Neukunden
+        - mehr Umsatz
+    - KickOff nächste Woche
+
+    - Urlaub bisher verbraucht: 7 Tage (mit Pilsen und void)
+
+- Startseite:
+    - Wein des Monats
+    - Kaffee des Monats
+    - Espresso des Monats
+    - Eine Maschine
+    - Eine Veranstaltung
+    - Tshirt
+
+- SAP
+    - SBO_Rehorik_DEMO_EH
+        - Account Profesionel
+          roestere
+          init
+        - manager gibts nicht mehr
+        - ist jetzt der prod manager
+            - kassen hängen dran
+    - aktuell: Ausgangsrechnung
+    - in zukunft: Kundenauftrag
+    - nur zu bestimmten uhrzeiten
+        - PENDING
+
+- wein des monats: katha fragen
+    - nicht im onlineshop
+
+- google analytics spinnt
+
+- geschenkkörbe
+    - + 2 Euro extra Versandkosten
+    - Fehler:
+        - Ab in den süden
+            - in excel und auf foto neu: festmischung
+            - in flyertext und auf foto alt: primissimo
+                - primissimo stimmt
+        - Grosses Gedeck
+            - Goufrais Goldtüte: nicht auf dem Flyer, aber auf den Fotos und in der Excel
+        - Ratisbona Love
+            - Ist "Kunder Buchpackung klein" das gleiche wie "Regensburger Pralinenpackung"?
+    - zeigen und besprechen
+        - kategorie bild
+        - header bild
+        - kategorie text
+
+
+- mahlgrad als spalte in sap
+- keywords mittelwert
+    - wie gehts weiter?
+
+
+------------------------------------------
+
+- nächste woche zwei produktfotos
+    - Regina hat infos zu neuen kaffees geschickt
+    - mit erika termin machen
+    - artikelnummer sind im screensho
+    - preise schickt regina
+
+- geschenkkörbe
+    - UM EUCH DEN BESTEN SERVICE ZU BIETEN, BEACHTET BITTE FOLGENDES:
+      Individuell gesteckte Geschenkkörbe ab 80€ nur auf Vorbestellung und mit 2 Tagen Vorlauf
+      Aufträge, die per Post verschickt werden, benötigen von der Bearbeitung bis zur Zustellung circa 5 Werktage.
+      Gesteckte Geschenkkörbe können nicht per Post verschickt werden. In diesem Fall wird die Ware bruchsicher in einen Geschenkkarton verpackt.
+      Die angegebenen Preise sind freibleibend.
+    - nicht in den header, sondern auf komplett weg
+    - hinweis für teureren versand
+
+- maschinen
+    - bissl text bei den maschinen
+    - auch in der produktliste
+
+------------------------------------------
+
+- ab 1.9 physiker kaffees
+- Links zu Kaffees zu Erika und Fiznik
+- Gutscheinkarte 9,81 %
+    - auf zettel machen
+    - SPACEROCKET
+    - GRAVITY
+
+- Geschenkkörbe ab Anfang Oktober
+    - Standard und Weihnacht gleichzeitig
+    - online ohne Korb
+
+- Event tickets als pdf
+- Freie Plätze auf Kategorie Sicht
+
+- Katha fragen wegen Aufkleber drucken
+    - Elmo
+
+- Email an Regina
+    - Was sind Zeitfresser?
+    - Wo ist potential?
