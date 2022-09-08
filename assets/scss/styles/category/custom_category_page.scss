@@ -107,6 +107,10 @@
     position: relative;
     font-size: $font-size;
 
+    @media all and (min-width: $small-breakpoint + 1) {
+      padding-left: 135px;
+    }
+
     &:before {
       content: "";
       display: block;

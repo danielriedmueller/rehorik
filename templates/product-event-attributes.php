@@ -8,6 +8,8 @@ if (!$event) {
 
 $location = tribe_get_venue($event->ID);
 
+$availableTickets = tribe_events_count_available_tickets($event);
+
 $startDatetime = $product->get_meta(TICKET_EVENT_DATE_START_META);
 $endDatetime = $product->get_meta(TICKET_EVENT_DATE_END_META);
 
@@ -32,6 +34,14 @@ $price = wc_price($product->get_price());
             <tr class="seperator">
                 <td colspan="2"><hr /></td>
             </tr>
+            <?php if($availableTickets) : ?>
+                <tr>
+                    <td colspan="2" class="available-tickets-attribute-cell">Noch <span><?= $availableTickets ?></span> <?php echo $availableTickets === 1 ? 'Platz' : 'Plätze' ?> verfügbar</td>
+                </tr>
+                <tr class="seperator">
+                    <td colspan="2"><hr /></td>
+                </tr>
+            <?php endif; ?>
             <?php if($date) : ?>
                 <tr>
                     <td>DATUM</td>
