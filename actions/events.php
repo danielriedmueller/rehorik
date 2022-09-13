@@ -26,7 +26,10 @@ add_action('save_post_tribe_events', function ($postId) {
     if ($tickets && is_array($tickets)) {
         foreach ($tickets as $ticket) {
             $product = wc_get_product($ticket->ID);
+
             setCategories($product, $postId);
+            considerVisibility($product, $postId);
+
             $product->save();
         }
     }
