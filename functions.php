@@ -102,7 +102,7 @@ $baseDir = get_stylesheet_directory();
 
 require_once($baseDir . '/includes/class-wc-shipping-bike.php');
 require_once($baseDir . '/includes/class-wc-shipping-free-shipping-bike.php');
-require_once($baseDir . '/includes/class-tribe-tickets-plus-woocommerce-main.php');
+//require_once($baseDir . '/includes/class-tribe-tickets-plus-woocommerce-main.php');
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');
@@ -113,7 +113,7 @@ require_once($baseDir . '/filter/product_view.php');
 require_once($baseDir . '/filter/sitemap.php');
 require_once($baseDir . '/actions/woocommerce.php');
 require_once($baseDir . '/actions/rehorik.php');
-require_once($baseDir . '/actions/events.php');
+//require_once($baseDir . '/actions/events.php');
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
