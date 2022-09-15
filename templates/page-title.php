@@ -15,7 +15,7 @@ if (tribe_is_event()
     || tribe_is_view()
     || 'tribe_events' == get_post_type()
     || is_singular('tribe_events')) {
-    $title = "events";
+    $title = "Veranstaltungen";
 }
 ?>
 <div class="page-title-outer"><div class="page-title"><h1><?= $title ?></h1></div></div>
