@@ -1,4 +1,4 @@
-.rehorik-tribe-events-main #tribe-events {
+main#tribe-events {
   .rehorik-tribe-events-single {
     .rehorik-tribe-events-single-event-info-outer {
       border-top: 1px solid $weinrot;
@@ -10,7 +10,8 @@
       }
 
       h2 {
-        margin-bottom: $spacing-s - 5px;
+        margin-bottom: $spacing-s;
+        text-align: left;
         padding: 0;
         text-transform: uppercase;
       }

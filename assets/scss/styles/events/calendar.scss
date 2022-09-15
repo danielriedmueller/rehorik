@@ -2,6 +2,10 @@ body.tribe-theme-rehorik {
   .tribe-common-l-container.tribe-events-l-container {
     padding: 0;
 
+    .tribe-events-calendar-month {
+      margin-bottom: $spacing;
+    }
+
     h3 {
       font-size: $font-size;
     }
@@ -39,35 +43,6 @@ body.tribe-theme-rehorik {
       }
     }
 
-    button.tribe-events-c-search__button {
-      padding: 0 $spacing;
-      height: 100%;
-      background-color: $anthrazit;
-
-      &:hover {
-        background-color: $beigegold;
-        color: #fff;
-      }
-      border-radius: 0;
-    }
-
-    .tribe-events-c-top-bar__datepicker-button, button.tribe-events-c-subscribe-dropdown__button-text {
-      background-color: transparent;
-      border-radius: 0;
-      color: $font-color;
-      font-size: $font-size;
-      padding: $spacing-xxs;
-      border: 1px solid $anthrazit;
-      font-weight: normal;
-      font-family: $font-family-headline;
-
-      &:hover {
-        background-color: $beigegold;
-        color: #fff;
-        border: 1px solid $beigegold;
-      }
-    }
-
     .tribe-events-c-top-bar__datepicker-container {
       .datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-bottom {
         top: 5px !important;
@@ -96,13 +71,6 @@ body.tribe-theme-rehorik {
 
     .tribe-common-c-svgicon.tribe-common-c-svgicon--messages-not-found.tribe-events-c-messages__message-icon-svg {
       margin-right: $spacing-xs;
-    }
-
-    .tribe-events-c-subscribe-dropdown__container {
-      div.tribe-events-c-subscribe-dropdown__button {
-        padding: 0;
-        margin: 0;
-      }
     }
   }
 }
