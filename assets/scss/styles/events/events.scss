@@ -50,6 +50,10 @@ main#tribe-events {
         font-family: $font-family-headline;
       }
     }
+
+    @media all and (max-width: $medium-breakpoint) {
+      margin-bottom: $spacing;
+    }
   }
 
   h2, .tribe-events-cost {
@@ -88,6 +92,12 @@ main#tribe-events {
 
   .tribe-events-schedule.tribe-clearfix {
     margin: 0;
+
+    @media all and (max-width: $medium-breakpoint) {
+      h2 {
+        text-align: left;
+      }
+    }
   }
 
   .tribe-tickets__tickets-item-quantity {
@@ -128,5 +138,11 @@ main#tribe-events {
 
   .tribe-common-c-svgicon--cal-export, .tribe-events-c-subscribe-dropdown__export-icon {
     display: none;
+  }
+
+  .tribe-events.tribe-common {
+    .tribe-events-c-subscribe-dropdown__container, .tribe-events-c-subscribe-dropdown, .tribe-events-c-subscribe-dropdown__button {
+      margin-bottom: 0;
+    }
   }
 }

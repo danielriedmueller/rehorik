@@ -10,6 +10,10 @@ body.tribe-theme-rehorik {
       font-size: $font-size;
     }
 
+    .tribe-events-calendar-month__header-column-title {
+      text-align: center;
+    }
+
     h3.tribe-events-calendar-month__calendar-event-title.tribe-common-h8.tribe-common-h--alt {
       font-size: $font-size;
     }
@@ -72,6 +76,21 @@ body.tribe-theme-rehorik {
     .tribe-common-c-svgicon.tribe-common-c-svgicon--messages-not-found.tribe-events-c-messages__message-icon-svg {
       margin-right: $spacing-xs;
     }
+
+    .tribe-events-calendar-month-mobile-events {
+      margin-bottom: $spacing;
+    }
+
+    button.tribe-events-calendar-month__day-cell--mobile {
+      padding: $spacing-xxs 0;
+      h3 {
+        font-size: $font-size !important;
+      }
+    }
+  }
+
+  .tribe-events-header {
+    width: 100%;
   }
 }
 
