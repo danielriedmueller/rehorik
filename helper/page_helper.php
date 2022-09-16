@@ -11,8 +11,10 @@ function createPageTitle($suffix) {
         return "Shop" . $suffix;
     }
 
-    if (tribe_is_event_query()) {
-        return tribe_get_events_title() . $suffix;
+    if (function_exists('tribe_is_event_query')) {
+        if (tribe_is_event_query()) {
+            return tribe_get_events_title() . $suffix;
+        }
     }
 
     return single_post_title() . $suffix;
