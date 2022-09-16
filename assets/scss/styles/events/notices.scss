@@ -4,4 +4,10 @@ main#tribe-events .tribe-events-notices,
   border: 1px solid $beigegold;
   background-color: transparent !important;
   color: $font-color;
+  padding: 0;
+
+  ul {
+    list-style: none;
+    padding: $spacing-xs;
+  }
 }
