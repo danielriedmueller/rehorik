@@ -1,7 +1,13 @@
-.rehorik-tribe-events-main .tribe-events-notices,
+main#tribe-events .tribe-events-notices,
 .tribe-common .tribe-tickets__notice--error {
   border-radius: 0 !important;
   border: 1px solid $beigegold;
   background-color: transparent !important;
   color: $font-color;
+  padding: 0;
+
+  ul {
+    list-style: none;
+    padding: $spacing-xs;
+  }
 }

@@ -1,7 +1,8 @@
-.rehorik-tribe-events-main #tribe-events {
+main#tribe-events {
   .rehorik-tribe-events-single {
     .tribe-events-event-meta {
-      margin: 0;
+      display: block;
+      margin: 0 0 $spacing 0;
       padding: 0;
       background: transparent none;
       border: none;
