@@ -1,14 +1,6 @@
 <?php
 get_template_part('templates/header/head', null, ['slider' => [
     [
-        'claim' => 'Wir leben, lieben und schätzen die Kaffeebohne!',
-        'primary' => true,
-        'img'=> 'header-tag-des-kaffees',
-        'buttons' => [
-            '/produkt-kategorie/onlineshop/kaffee/' => '10% Rabatt am Tag des Kaffees'
-        ]
-    ],
-    [
         'claim' => 'weil Kaffee Dich auf die richtige Bahn bringt',
         'img'=> 'header-neue-roesterei',
         'buttons' => [
@@ -34,9 +26,6 @@ get_template_part('templates/header/head', null, ['slider' => [
     ]
 ]]);
 get_template_part('templates/hint');
-get_template_part('templates/introduction', null, [
-    'text' => '<span>Am <a href="https://www.internationalcoffeeday.org/">internationalen Tag des Kaffees</a> feiern wir diejenigen, die hart arbeiten, um die drei Milliarden köstlichen Tassen Kaffee herzustellen, die wir jeden Tag auf der ganzen Welt genießen. Wir wollen zeigen, was in und hinter der Bohne steckt und warum sie so schmeckt, wie sie schmeckt. Begebt Euch mit uns auf einer kleinen Weltreise und verkostet mit unserm Kaffeeakademie-Team am 01.10.22 in unserer Filiale im Donaueinkaufszenturm die Vielfalt des Kaffees. Nicht in Regensburg? Dann stöbert doch einfach ein bisschen hier im Onlineshop und entdeckt neue Lieblingssorten. Dafür gibt’s am 01.10.22 10% Rabatt auf alle Kaffees.</span>',
-]);
 get_template_part('templates/featured/slider');
 ?>
 <div class="marketing-banner">
