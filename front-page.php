@@ -1,14 +1,6 @@
 <?php
 get_template_part('templates/header/head', null, ['slider' => [
     [
-        'claim' => 'weil Kaffee Dich auf die richtige Bahn bringt',
-        'img'=> 'header-neue-roesterei',
-        'buttons' => [
-            '/produkt/gravity' => 'Gravity',
-            '/produkt/space-rocket' => 'Space Rocket'
-        ]
-    ],
-    [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
         'img'=> 'startseite-header-roesterei',
         'buttons' => [
