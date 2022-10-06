@@ -20,7 +20,14 @@ if (!$event) {
 
 $location = tribe_get_venue($event->ID);
 
-$availableTickets = ($isSalePast(Tribe__Tickets__Tickets::get_all_event_tickets($event->ID)) || $event->post_status === 'trash') ? null : tribe_events_count_available_tickets($event);
+$availableTickets = ($isSalePast(Tribe__Tickets__Tickets::get_all_event_tickets($event->ID)) || $event->post_status === 'trash')
+    ? null
+    : tribe_events_count_available_tickets($event);
+if (is_numeric($availableTickets)) {
+    if ($availableTickets < 1) {
+        $availableTickets = null;
+    }
+}
 
 $startDatetime = $product->get_meta(TICKET_EVENT_DATE_START_META);
 $endDatetime = $product->get_meta(TICKET_EVENT_DATE_END_META);
