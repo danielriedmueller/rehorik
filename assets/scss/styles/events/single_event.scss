@@ -22,19 +22,6 @@ body.tribe-theme-rehorik {
           margin-bottom: $spacing;
         }
       }
-
-      > div:last-child {
-        display: flex;
-        flex-direction: column;
-
-        > div {
-          order: unset;
-
-          &:last-child {
-            margin-top: auto;
-          }
-        }
-      }
     }
 
     .rehorik-tribe-events-single-description {
