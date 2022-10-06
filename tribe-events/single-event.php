@@ -57,7 +57,6 @@ get_template_part('templates/tribe-events-attendee-list');
                 <!-- Calendar links -->
                 <?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
                 <?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
-                <div class="rehorik-tribe-events-single-hint">Bitte beachtet, dass die Anmeldung verbindlich ist und <b>nicht verschoben, storniert oder umgetauscht</b> werden kann!</div>
             </div>
 		</div> <!-- #post-x -->
 		<?php if ( get_post_type() == Tribe__Events__Main::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template() ?>
