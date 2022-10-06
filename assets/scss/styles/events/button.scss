@@ -10,18 +10,7 @@ button.tribe-events-c-search__button {
   border-radius: 0;
 }
 
-.tribe-events-c-subscribe-dropdown__container {
-  @media all and (min-width: $medium-breakpoint + 1) {
-    float: right;
-  }
-
-  div.tribe-events-c-subscribe-dropdown__button, .tribe-events-c-subscribe-dropdown {
-    padding: 0;
-    margin: 0;
-  }
-}
-
-.tribe-events-c-top-bar__datepicker .tribe-events-c-top-bar__datepicker-button, button.tribe-events-c-subscribe-dropdown__button-text {
+.tribe-events-c-top-bar__datepicker .tribe-events-c-top-bar__datepicker-button {
   background-color: transparent;
   border-radius: 0;
   color: $font-color;
@@ -36,11 +25,6 @@ button.tribe-events-c-search__button {
     color: #fff;
     border: 1px solid $beigegold;
   }
-}
-
-button.tribe-events-c-subscribe-dropdown__button-text {
-  font-family: $font-family-body;
-  font-size: $font-size-small;
 }
 
 .rehorik-tribe-event-tickets a.tribe-common-c-btn.tribe-common-c-btn--small,
