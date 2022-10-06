@@ -11,6 +11,10 @@ button.tribe-events-c-search__button {
 }
 
 .tribe-events-c-subscribe-dropdown__container {
+  @media all and (min-width: $small-breakpoint + 1) {
+    float: right;
+  }
+
   div.tribe-events-c-subscribe-dropdown__button, .tribe-events-c-subscribe-dropdown {
     padding: 0;
     margin: 0;

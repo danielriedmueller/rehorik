@@ -19,7 +19,7 @@ main#tribe-events {
       .rehorik-tribe-events-single-event-info {
         @media all and (min-width: $small-breakpoint + 1) {
           display: grid;
-          grid-template-columns: 3fr 5fr;
+          grid-template-columns: 2fr 3fr;
           column-gap: $spacing-xl;
         }
 
