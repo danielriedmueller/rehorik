@@ -54,11 +54,6 @@ get_template_part('templates/tribe-events-attendee-list');
                 <!-- .tribe-events-single-event-description -->
                 <?php tribe_get_template_part( 'modules/meta' ); ?>
                 <?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
-                <div class="rehorik-tribe-events-single-hint">
-                    Falls es bei Eurer Veranstaltung die Möglichkeit gibt einen Deliteller zu buchen, dann werdet ihr mit feinen Käse- und Wurstspezialitäten aus unserem Deliladen überrascht. Bei vegetarischen Delitellern ersetzen wir die Wurst natürlich durch eine weitere Käseauswahl.
-                    Bitte beachtet, dass unsere Küche am Abend der Veranstaltung geschlossen ist und wir leider keine spontanen Essens-Wünsche erfüllen können.
-                    Bitte beachtet, dass die Anmeldung verbindlich ist und <b>nicht verschoben, storniert oder umgetauscht</b> werden kann!
-                </div>
                 <!-- Calendar links -->
                 <?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
                 <?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
