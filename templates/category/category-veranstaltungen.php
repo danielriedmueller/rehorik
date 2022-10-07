@@ -90,7 +90,7 @@ $eventInfos = [
     'pop-up-wine-tasting' => [
         'img' => 'veranstaltungen-wein',
         'claim' => 'POP UP TASTING: UNKOMPLIZIERT & ENTSPANNT',
-        'intro' => 'Das Schöne beim Wein: Es gibt keine dummen Fragen und keine falschen Antworten, wenn es um Riechen und Schmecken geht. Also lasst uns über Wein reden! Denn nur so versteht Ihr mit der Zeit, was sich in Euren Gläsern befindet. Verkostet werden fünf Weine, mal aus schwarzen Gläsern, mal nur Riesling, dann wieder Schaumwein. Je nachdem, was unserer Sommelière gerade in den Sinn kommt.',
+        'intro' => 'Das Schöne beim Wein: Es gibt keine dummen Fragen und keine falschen Antworten, wenn es um Riechen und Schmecken geht. Also lasst uns über Wein reden! Denn nur so versteht Ihr mit der Zeit, was sich in Euren Gläsern befindet. Verkostet werden in einem ungezwungenen und gemütlichen Weintasting im Stehen fünf Weine. Mal aus schwarzen Gläsern, mal nur Riesling, dann wieder Schaumwein. Je nachdem, was unserer Sommelière gerade in den Sinn kommt.',
     ],
     'virtuelle-events' => [
         'img' => 'veranstaltungen-virtuelleevents',
