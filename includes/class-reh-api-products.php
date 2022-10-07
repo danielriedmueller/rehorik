@@ -15,8 +15,12 @@ class Reh_Api_Products
             'status' => $parameters['status'] ?? 'publish'
         ];
 
+        // Limit products query to specific category
         if (isset($parameters['category'])) {
-            $args['category'] = $parameters['category'];
+            $term = get_term($parameters['category'], 'product_cat', ARRAY_A);
+            if ($catSlug = $term['slug'] ?? null) {
+                $args['category'] = $catSlug;
+            }
         }
 
         $fields = isset($parameters['_fields'])
