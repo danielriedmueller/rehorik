@@ -21,7 +21,7 @@ class Reh_Api_Products
 
         $fields = isset($parameters['_fields'])
             ? explode(',', $parameters['_fields'])
-            : ['id', 'name', 'sku', 'stock_quantity', 'regular_price'];
+            : ['id', 'name', 'sku', 'stock_quantity', 'regular_price', 'category_ids'];
 
         return new WP_REST_Response(array_merge(
             $this->getSimpleProducts($args, $fields),
@@ -65,6 +65,14 @@ class Reh_Api_Products
         $products = [];
         foreach ($variableProducts as $variableProduct) {
             /** @var WC_Product_Variable $variableProduct */
+
+            // Extract category field
+            $categories = null;
+            if ($categoryFieldKey = array_search('category_ids', $fields, true)) {
+                unset($fields[$categoryFieldKey]);
+                $categories = $variableProduct->get_category_ids();
+            }
+
             foreach ($variableProduct->get_children() as $variationId) {
                 $variation = wc_get_product($variationId);
 
@@ -75,6 +83,10 @@ class Reh_Api_Products
                 $variationData = [];
                 foreach ($fields as $field) {
                     $variationData[$field] = $variation->get_data()[$field];
+                }
+
+                if ($categories) {
+                    $variationData['category_ids'] = $categories;
                 }
 
                 $products[] = $variationData;
