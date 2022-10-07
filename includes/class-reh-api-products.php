@@ -70,10 +70,9 @@ class Reh_Api_Products
         foreach ($variableProducts as $variableProduct) {
             /** @var WC_Product_Variable $variableProduct */
 
-            // Extract category field
-            $categories = null;
-            if ($categoryFieldKey = array_search('category_ids', $fields, true)) {
-                unset($fields[$categoryFieldKey]);
+            // Set categories for each variation
+            $categories = [];
+            if (array_search('category_ids', $fields, true)) {
                 $categories = $variableProduct->get_category_ids();
             }
 
@@ -86,12 +85,11 @@ class Reh_Api_Products
 
                 $variationData = [];
                 foreach ($fields as $field) {
+                    if ($field === 'category_ids') continue;
+
                     $variationData[$field] = $variation->get_data()[$field];
                 }
-
-                if ($categories) {
-                    $variationData['category_ids'] = $categories;
-                }
+                $variationData['category_ids'] = $categories;
 
                 $products[] = $variationData;
             }
