@@ -65,8 +65,12 @@ class Reh_Api_Products
         $products = [];
         foreach ($variableProducts as $variableProduct) {
             /** @var WC_Product_Variable $variableProduct */
-            foreach ($variableProduct->get_available_variations() as $variation) {
-                $variation = wc_get_product($variation['variation_id']);
+            foreach ($variableProduct->get_children() as $variationId) {
+                $variation = wc_get_product($variationId);
+
+                if (!$variation->exists()) {
+                    continue;
+                }
 
                 $variationData = [];
                 foreach ($fields as $field) {
