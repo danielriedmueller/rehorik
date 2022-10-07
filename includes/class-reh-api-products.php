@@ -2,29 +2,45 @@
 
 class Reh_Api_Products
 {
+    /**
+     * Fetches products and variations.
+     */
     public function fetchProducts(WP_REST_Request $request): WP_REST_Response
     {
         $parameters = $request->get_params();
 
-        //http://localhost/wp-json/wc/v3/products?category=735&status=publish&_fields=sku%2Cstock_quantity%2Cregular_price%2Cmanage_stock%2Cvirtual%2Cstatus%2Ctype%2Cid%2Cname%2Ccategories&per_page=100
         $args = [
             'limit' => -1,
             'virtual' => $parameters['virtual'] ?? false,
-            'status' => $parameters['status'] ?? 'publish',
+            'status' => $parameters['status'] ?? 'publish'
         ];
 
         if (isset($parameters['category'])) {
             $args['category'] = $parameters['category'];
         }
 
-        $fields = $parameters['_fields']
+        $fields = isset($parameters['_fields'])
             ? explode(',', $parameters['_fields'])
-            : ['name', 'sku', 'stock_quantity', 'regular_price'];
+            : ['id', 'name', 'sku', 'stock_quantity', 'regular_price'];
 
         return new WP_REST_Response(array_merge(
             $this->getSimpleProducts($args, $fields),
             $this->getVariableProducts($args, $fields),
         ));
+    }
+
+    /**
+     * Updates stock and price of products and variations.
+     */
+    public function updateProducts(WP_REST_Request $request): void
+    {
+        foreach (json_decode($request->get_body(), true) as $productData) {
+            $product = wc_get_product($productData['id']);
+            $product->set_manage_stock(true);
+            $product->set_regular_price($productData['regular_price']);
+            $product->set_stock_quantity($productData['stock_quantity']);
+            $product->save();
+        }
     }
 
     private function getSimpleProducts(array $args, array $fields): array
@@ -50,13 +66,11 @@ class Reh_Api_Products
         foreach ($variableProducts as $variableProduct) {
             /** @var WC_Product_Variable $variableProduct */
             foreach ($variableProduct->get_available_variations() as $variation) {
-                if ($variation instanceof WC_Product_Variation) {
-                    $variation = $variation->get_data();
-                }
+                $variation = wc_get_product($variation['variation_id']);
 
                 $variationData = [];
                 foreach ($fields as $field) {
-                    $variationData[$field] = $variation[$field];
+                    $variationData[$field] = $variation->get_data()[$field];
                 }
 
                 $products[] = $variationData;
