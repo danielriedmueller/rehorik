@@ -1,6 +1,17 @@
 <?php
 show_admin_bar(true);
 
+add_filter( 'wp_is_application_passwords_available', '__return_true' );
+function allow_unsafe_urls ( $args ) {
+    $args['reject_unsafe_urls'] = false;
+    return $args;
+} ;
+
+add_filter( 'http_request_args', 'allow_unsafe_urls' );
+add_filter( 'http_request_host_is_external', function() {
+    return true;
+} );
+
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
@@ -103,6 +114,7 @@ $baseDir = get_stylesheet_directory();
 require_once($baseDir . '/includes/class-wc-shipping-bike.php');
 require_once($baseDir . '/includes/class-wc-shipping-free-shipping-bike.php');
 require_once($baseDir . '/includes/class-tribe-tickets-plus-woocommerce-main.php');
+require_once($baseDir . '/includes/class-reh-api-products.php');
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');
@@ -114,6 +126,7 @@ require_once($baseDir . '/filter/sitemap.php');
 require_once($baseDir . '/actions/woocommerce.php');
 require_once($baseDir . '/actions/rehorik.php');
 require_once($baseDir . '/actions/events.php');
+require_once($baseDir . '/actions/api/endpoints.php');
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
