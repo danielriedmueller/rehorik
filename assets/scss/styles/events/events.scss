@@ -54,6 +54,10 @@ main#tribe-events {
     @media all and (max-width: $medium-breakpoint) {
       margin-bottom: $spacing;
     }
+
+    .rehorik-cup-of-coffee-price-outer {
+      text-align: center;
+    }
   }
 
   h2, .tribe-events-cost {
