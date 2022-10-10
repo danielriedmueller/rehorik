@@ -8,6 +8,8 @@ body.tribe-theme-rehorik {
     }
 
     .rehorik-tribe-events-single-event-content {
+      margin-top: $spacing-l;
+
       @media all and (min-width: $small-breakpoint + 1) {
         display: grid;
         grid-template-columns: 2fr 3fr;
@@ -22,16 +24,16 @@ body.tribe-theme-rehorik {
       }
     }
 
-    .rehorik-tribe-events-single-event-content {
-      margin-top: $spacing-l;
-    }
-
     .rehorik-tribe-events-single-description {
       text-align: justify;
     }
 
     .rehorik-tribe-events-single-hint {
       margin-top: $spacing;
+      @media all and (max-width: $medium-breakpoint) {
+        margin-bottom: $spacing;
+      }
+
       background-color: transparent;
       padding: $spacing-xs;
       font-size: $font-size-small;

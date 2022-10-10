@@ -1,0 +1,39 @@
+.tribe-events-c-subscribe-dropdown__container {
+  display: inline-block !important;
+
+  div.tribe-events-c-subscribe-dropdown__button, .tribe-events-c-subscribe-dropdown {
+    padding: 0;
+    margin: 0;
+  }
+
+  button.tribe-events-c-subscribe-dropdown__button-text {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: $font-color-accent-dark;
+    text-transform: none;
+    font-family: $font-family-body;
+    font-size: $font-size;
+
+    &+svg {
+      margin-left: 0 !important;
+      margin-bottom: 5px;
+    }
+  }
+
+  .tribe-events-c-subscribe-dropdown__content {
+    ul.tribe-events-c-subscribe-dropdown__list {
+      padding: 0;
+      transform: none;
+
+      li {
+        padding: 0;
+
+        a {
+          font-size: $font-size;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
