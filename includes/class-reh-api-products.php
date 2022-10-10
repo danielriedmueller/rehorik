@@ -40,10 +40,13 @@ class Reh_Api_Products
     {
         foreach (json_decode($request->get_body(), true) as $productData) {
             $product = wc_get_product($productData['id']);
-            $product->set_manage_stock(true);
-            $product->set_regular_price($productData['regular_price']);
-            $product->set_stock_quantity($productData['stock_quantity']);
-            $product->save();
+
+            if ($product) {
+                $product->set_manage_stock(true);
+                $product->set_regular_price($productData['regular_price']);
+                $product->set_stock_quantity($productData['stock_quantity']);
+                $product->save();
+            }
         }
     }
 

@@ -1,17 +1,6 @@
 <?php
 show_admin_bar(true);
 
-add_filter( 'wp_is_application_passwords_available', '__return_true' );
-function allow_unsafe_urls ( $args ) {
-    $args['reject_unsafe_urls'] = false;
-    return $args;
-} ;
-
-add_filter( 'http_request_args', 'allow_unsafe_urls' );
-add_filter( 'http_request_host_is_external', function() {
-    return true;
-} );
-
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
