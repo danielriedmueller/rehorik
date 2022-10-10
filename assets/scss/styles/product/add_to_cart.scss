@@ -59,7 +59,26 @@ body.rehorik.woocommerce div.rehorik-product {
       grid-area: add-to-cart-button;
 
       .woocommerce-variation-add-to-cart {
-        display: flex;
+        display: grid;
+        max-width: 300px;
+        grid-template-columns: 70px auto;
+        grid-template-areas:
+            "quantity checkout-button"
+            "paypal-express paypal-express"
+        ;
+
+        div.quantity {
+          grid-area: quantity;
+        }
+
+        button.single_add_to_cart_button {
+          grid-area: checkout-button;
+        }
+
+        .woo-paypalplus-checkout-button {
+          grid-area: paypal-express;
+        }
+
         margin-top: $product-view-grid-gap / 2;
       }
     }
