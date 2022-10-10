@@ -8,7 +8,7 @@ body.rehorik.woocommerce div.rehorik-product {
       display: flex;
     }
 
-    form.variations_form.cart {
+    form.variations_form.cart > div {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas:
