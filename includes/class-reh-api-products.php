@@ -2,6 +2,9 @@
 
 class Reh_Api_Products
 {
+    // Fields from plugin Germanized
+    const GERMANIZED_FIELDS = ['unit_amount', 'unit_regular_price'];
+
     /**
      * Fetches products and variations.
      */
@@ -25,7 +28,10 @@ class Reh_Api_Products
 
         $fields = isset($parameters['_fields'])
             ? explode(',', $parameters['_fields'])
-            : ['id', 'name', 'sku', 'stock_quantity', 'regular_price', 'category_ids'];
+            : array_merge(
+                ['id', 'name', 'sku', 'stock_quantity', 'regular_price', 'category_ids'],
+                self::GERMANIZED_FIELDS
+            );
 
         return new WP_REST_Response(array_merge(
             $this->getSimpleProducts($args, $fields),
@@ -45,6 +51,20 @@ class Reh_Api_Products
                 $product->set_manage_stock(true);
                 $product->set_regular_price($productData['regular_price']);
                 $product->set_stock_quantity($productData['stock_quantity']);
+
+                // Set values for fields from plugin Germanized
+                $gzdProduct = null;
+                foreach (self::GERMANIZED_FIELDS as $germanizedField) {
+                    if (array_key_exists($germanizedField, $productData)) {
+                        $gzdProduct = $this->setGermanizedFieldValue($germanizedField, $productData[$germanizedField], $product);
+                    }
+                }
+
+                if ($gzdProduct) {
+                    $gzdProduct->get_wc_product()->save();
+                    $gzdProduct->save();
+                }
+
                 $product->save();
             }
         }
@@ -56,8 +76,11 @@ class Reh_Api_Products
 
         return array_map(function (WC_Product_Simple $product) use ($fields) {
             $result = [];
+
             foreach ($fields as $field) {
-                $result[$field] = $product->get_data()[$field];
+                $result[$field] = in_array($field, self::GERMANIZED_FIELDS)
+                    ? $this->getGermanizedFieldValue($field, $product)
+                    : $product->get_data()[$field];
             }
 
             return $result;
@@ -90,7 +113,9 @@ class Reh_Api_Products
                 foreach ($fields as $field) {
                     if ($field === 'category_ids') continue;
 
-                    $variationData[$field] = $variation->get_data()[$field];
+                    $variationData[$field] = in_array($field, self::GERMANIZED_FIELDS)
+                        ? $this->getGermanizedFieldValue($field, $variation)
+                        : $variation->get_data()[$field];
                 }
                 $variationData['category_ids'] = $categories;
 
@@ -99,5 +124,59 @@ class Reh_Api_Products
         }
 
         return $products;
+    }
+
+    /**
+     * @throws Exception
+     * @return mixed
+     */
+    private function getGermanizedFieldValue(string $field, WC_Product $product)
+    {
+        if (!is_plugin_active('woocommerce-germanized/woocommerce-germanized.php')) {
+            throw new Exception('WooCommerce Plugin Germanized is not installed');
+        }
+
+        $gzdProduct = wc_gzd_get_gzd_product($product);
+        $value = null;
+
+        if ($gzdProduct) {
+            // Unit amount field
+            if ($field === self::GERMANIZED_FIELDS[0]) {
+                $value = $gzdProduct->get_unit_product();
+            }
+
+            // Unit regular price field
+            if ($field === self::GERMANIZED_FIELDS[1]) {
+                $value = $gzdProduct->get_unit_price_regular();
+            }
+        }
+
+        return $value;
+    }
+
+    /**
+     * @throws Exception
+     */
+    private function setGermanizedFieldValue(string $field, $value, WC_Product $product): ?WC_GZD_Product
+    {
+        if (!is_plugin_active('woocommerce-germanized/woocommerce-germanized.php')) {
+            throw new Exception('WooCommerce Plugin Germanized is not installed');
+        }
+
+        if ($gzdProduct = wc_gzd_get_gzd_product($product)) {
+            // Unit amount field
+            if ($field === self::GERMANIZED_FIELDS[0]) {
+                $gzdProduct->set_unit_product($value);
+            }
+
+            // Unit regular price field
+            if ($field === self::GERMANIZED_FIELDS[1]) {
+                $gzdProduct->set_unit_price_regular($value);
+            }
+
+            return $gzdProduct;
+        }
+
+         return null;
     }
 }
