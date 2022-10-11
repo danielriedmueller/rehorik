@@ -15,7 +15,6 @@
         }
 
         var updatePrice = function () {
-            console.log($priceEl.text())
             priceArr = $priceEl.text().match(/[+-]?([0-9]*[,])?[0-9]+/g);
             adjustedPriceArr = priceArr.map(function(x) {
                 var res = x.replace(',', '.') / divider;
