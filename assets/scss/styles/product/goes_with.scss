@@ -1,6 +1,6 @@
 .rehorik-product-goes-with {
   @media all and (min-width: $small-breakpoint + 1) {
-    max-width: 263px;
+    max-width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
   }
 
   text-transform: uppercase;
