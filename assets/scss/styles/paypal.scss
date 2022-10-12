@@ -6,6 +6,14 @@
   }
 }
 
+.rehorik:not(.single-product) {
+  .ppc-button-wrapper {
+    @media all and (max-width: $medium-breakpoint) {
+      width: 100%;
+    }
+  }
+}
+
 .rehorik.woocommerce-checkout {
   .ppc-button-wrapper {
     margin-left: auto;
