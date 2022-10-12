@@ -1,4 +1,6 @@
 <?php
+require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php');
+
 /**
  * Prevent comma seperated implode of values
  */

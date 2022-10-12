@@ -48,6 +48,8 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
     <div class="rehorik-sigils-bar"><?php do_action('rehorik_product_view_sigils_bar'); ?></div>
     <div class="rehorik-product-information"><?php do_action('rehorik_product_information'); ?></div>
     <div class="rehorik-product-ingredients"><?php do_action('rehorik_product_ingredients'); ?></div>
+
+    <?php do_action( 'woocommerce_single_product_summary' ); ?>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
