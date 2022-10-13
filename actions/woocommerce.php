@@ -3,7 +3,6 @@ require_once('admin/woocommerce/add_cat_video_field.php');
 require_once('admin/woocommerce/add_product_preperation_recommendation_field.php');
 require_once('admin/woocommerce/add_product_video_field.php');
 require_once('shop/frontpage_categories.php');
-require_once('admin/woocommerce/add_product_nutrition_field.php');
 require_once('admin/woocommerce/add_product_title_claim_field.php');
 
 add_action('after_setup_theme', function () {

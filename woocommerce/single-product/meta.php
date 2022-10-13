@@ -35,6 +35,9 @@ global $product;
                 break;
             }
         }
+        if (isItCategory($product, GIFTS_CATEGORY_SLUG)) {
+            echo '<span><a href="' . INGREDIENT_AND_NUTRITION_INFORMATION . '">Allergene & Inhaltsstoffe</a></span>';
+        }
     ?>
     <?php do_action( 'woocommerce_product_meta_end' ); ?>
 </div>

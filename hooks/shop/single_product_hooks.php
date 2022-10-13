@@ -27,7 +27,6 @@ add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice', 1); 
 add_action('rehorik_product_view', 'goes_with', 1); // Meta
 add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
 
-
 add_action('rehorik_product_view_sigils_bar', 'sigils', 1); // Sigils
 
 add_action('rehorik_product_information', 'description', 1); // Description
@@ -35,9 +34,6 @@ add_action('rehorik_product_information', 'categories', 1); // Categories
 add_action('rehorik_product_information', 'single_product_attributes', 1); // Attributes
 add_action('rehorik_product_information', 'short_description', 1); // Short Description
 add_action('rehorik_product_information', 'preperation_recommendation', 1); // Preperation Recommendation
-
-add_action('rehorik_product_ingredients', 'nutrition_table', 1); // Nutrition Table
-add_action('rehorik_product_ingredients', 'ingredient_list', 1); // Ingredient List
 
 function description() {
     global $product;
@@ -112,25 +108,6 @@ function goes_with() {
             $goesWith
         );
     }
-}
-
-function ingredient_list() {
-    global $product;
-
-    $ingredients = $product->get_meta('reh_ingredient_list');
-
-    if (!empty($ingredients)) {
-        echo sprintf(
-            '<div class="rehorik-ingredient-list"><h4>Zutatenliste / Allergene</h4><div>%s</div></div>',
-            $ingredients
-        );
-    }
-}
-
-function nutrition_table() {
-    global $product;
-
-    get_template_part('templates/product-nutrition-table', null, ['product' => $product]);
 }
 
 function preperation_recommendation() {

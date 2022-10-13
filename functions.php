@@ -11,6 +11,11 @@ const EVENT_EMAIL = 'events@rehorik.de';
 const DELIVERY_SHIPPING_METHOD = 'bike';
 const FREE_DELIVERY_SHIPPING_METHOD = 'free_shipping_bike';
 
+// PDFs
+const MENU_190 = '/speisekarte/Speisekarte190.pdf';
+const MENU_STRAUBINGER = '/speisekarte/SpeisekarteStraubinger.pdf';
+const INGREDIENT_AND_NUTRITION_INFORMATION = '/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe_2022.pdf';
+
 // Categories
 const COFFEE_CATEGORY_SLUG = 'kaffee';
 const WINE_CATEGORY_SLUG = 'wein';
@@ -39,7 +44,6 @@ const WINE_CATEGORY_SLUGS = [
 ];
 const HIDE_CATEGORIES = [
     'delikatessen-onlineshop',
-    'geschenke-gutscheine',
     'kaese-wurst'
 ];
 
@@ -66,7 +70,7 @@ const WINERY_ATTRIBUTE_SLUG = 'pa_weingut';
 const GOES_WITH_ATTRIBUTE_SLUG = 'pa_passt-zu';
 const QUALITY_NAME_ATTRIBUTE_SLUG = 'pa_qualitaetsbezeichnung';
 const MANUFACTURER_ATTRIBUTE_SLUG = 'pa_hersteller';
-const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-praesentkarton';
+const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-geschenkkorb';
 const SIZE_ATTRIBUTE_SLUG = 'pa_groesse';
 const TECHNICAL_DETAILS_ATTRIBUTE_SLUG = 'pa_technische-daten';
 

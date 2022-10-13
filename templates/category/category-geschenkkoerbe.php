@@ -7,25 +7,15 @@ get_template_part('templates/header/head', null, [
             'claim' => 'Einfach für jeden Anlass',
             'img' => 'header-geschenkkoerbe',
             'buttons' => [
-                '/' => 'TODO',
+                'produkt/heiliger-bimbam' => 'Etwas für unterm Baum gesucht?<br>Hiliger Bimbam',
             ],
         ],
     ],
 ]);
 get_template_part('templates/introduction', null, [
-    'text' => 'NOCH NICHT DAS PASSENDE DABEI??<br>Alle Pakete im Flyer sind Vorschläge aus unserem Sortiment. Natür-
-lich erstellen wir auch Geschenke ganz nach Euren Vorstellungen –
-einfach anrufen, eine Mail schreiben oder persönlich vorbeikommen.<br>Telefon 0941 / 586 52 76 ODER E-Mail brixener@rehorik.de<br>
-UM EUCH DEN BESTEN SERVICE ZU BIETEN,
-BEACHTET BITTE FOLGENDES:
-<ul>
-    <li>Individuell gesteckte Geschenkkörbe ab 80€ nur auf Vorbestellung und mit 2 Tagen Vorlauf</li>
-    <li>Aufträge, die per Post verschickt werden, benötigen von der Bearbeitung bis zur
-    Zustellung circa 5 Werktage.</li>
-    <li>Gesteckte Geschenkkörbe können nicht per Post verschickt werden. In diesem Fall
-    wird die Ware bruchsicher in einen Geschenkkarton verpackt.</li>
-    <li>Die angegebenen Preise sind freibleibend.</li>
-</ul>',
+    'text' => '<span>NOCH NICHT DAS PASSENDE DABEI?<br>Alle Pakete im Flyer sind Vorschläge aus unserem Sortiment.<br>Natürlich erstellen wir auch Geschenke ganz nach Euren Vorstellungen –
+einfach anrufen, eine Mail schreiben oder persönlich vorbeikommen.<br>Telefon <a href="tel:0941 / 586 52 76">0941 / 586 52 76</a> oder E-Mail an <a href="mailto:brixener@rehorik.de">brixener@rehorik.de</a>.<br>Der Verpackungsaufwand ist höher, deswegen müssen wir leider 2€ mehr Versand aufschlagen.
+</span>',
 ]);
 get_template_part('templates/page-title');
 ?>
