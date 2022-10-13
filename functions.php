@@ -21,6 +21,7 @@ const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
 const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
 const BLACK_AND_WINE = 'blackwine';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
+const GIFTS_CATEGORY_SLUG = 'geschenkkoerbe';
 const ONLINESHOP_CATEGORY_SLUG = 'onlineshop';
 const VIRTUAL_EVENTS_CATEGORY_SLUG = 'virtuelle-events';
 const VIRTUAL_EVENTS_CATEGORY_SLUGS = [
