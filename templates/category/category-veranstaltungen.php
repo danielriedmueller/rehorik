@@ -79,18 +79,18 @@ $eventInfos = [
     ],
     'weinprobe' => [
         'img' => 'veranstaltungen-wein',
-        'claim' => 'WEINPROBE: PROBIEREN – ENTDECKEN - GENIEßEN',
+        'claim' => 'PROBIEREN – ENTDECKEN - GENIEßEN',
         'intro' => 'Zweimal im Jahr bringen wir die internationale Weinwelt nach Regensburg: Weit über 50 Weine stehen zum Verkosten bereit. Die Winzer:innen und unsere Weinexpert:innen begleiten Euch durch den Abend und verraten Euch Ihre Geheimtipps. Und wer weiß, vielleicht findet Ihr an diesem Abend Eure neuen Lieblingsweine?',
     ],
     'weinseminare' => [
         'img' => 'veranstaltungen-wein',
-        'claim' => 'UNSERE WEINSEMINARE: WEINWISSEN VOM FEINSTEN',
+        'claim' => 'WEINWISSEN VOM FEINSTEN',
         'intro' => 'Bei den großen Weinseminaren verkostet und besprecht Ihr mit unseren Weinexpert:innen bis zu zehn Weine je nach Veranstaltung. Dazu gibt’s Vorträge zu aktuellen Themen der Weinwelt. Ob Veltliner vs. Riesling, eine Weinreise durch Italien oder internationale Neuentdeckungen – wir öffnen an diesen Abenden die feinsten Tropfen für Euch.',
     ],
     'pop-up-wine-tasting' => [
         'img' => 'veranstaltungen-wein',
-        'claim' => 'POP UP TASTING: UNKOMPLIZIERT & ENTSPANNT',
-        'intro' => 'Das Schöne beim Wein: Es gibt keine dummen Fragen und keine falschen Antworten, wenn es um Riechen und Schmecken geht. Also lasst uns über Wein reden! Denn nur so versteht Ihr mit der Zeit, was sich in Euren Gläsern befindet. Verkostet werden fünf Weine, mal aus schwarzen Gläsern, mal nur Riesling, dann wieder Schaumwein. Je nachdem, was unserer Sommelière gerade in den Sinn kommt.',
+        'claim' => 'UNKOMPLIZIERT & ENTSPANNT',
+        'intro' => 'Das Schöne beim Wein: Es gibt keine dummen Fragen und keine falschen Antworten, wenn es um Riechen und Schmecken geht. Also lasst uns über Wein reden! Denn nur so versteht Ihr mit der Zeit, was sich in Euren Gläsern befindet. Verkostet werden in einem ungezwungenen und gemütlichen Weintasting im Stehen fünf Weine. Mal aus schwarzen Gläsern, mal nur Riesling, dann wieder Schaumwein. Je nachdem, was unserer Sommelière gerade in den Sinn kommt.',
     ],
     'virtuelle-events' => [
         'img' => 'veranstaltungen-virtuelleevents',

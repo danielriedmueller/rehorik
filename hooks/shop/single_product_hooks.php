@@ -2,7 +2,7 @@
 /**
  * Product Detail View Hooks
  */
-remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
+remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10);
 
 add_action('rehorik_product_view', 'product_video', 1); // Video
 
@@ -13,16 +13,21 @@ add_action('rehorik_product_view_title_price', 'woocommerce_template_single_pric
 
 add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
 
-add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_add_to_cart', 1); // Variations / Add to cart
-add_action('rehorik_product_view_add_to_cart', 'cup_of_coffee', 1); // Cup of Coffee
-add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_meta', 1); // Meta
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+
+add_action('woocommerce_single_product_summary', 'cup_of_coffee', 35); // Cup of Coffee
+add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
 
 add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice', 1); // Text if product can not be bought online
 
 add_action('rehorik_product_view', 'goes_with', 1); // Meta
 add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
 
-add_action('rehorik_product_view_sigils_bar', 'hugo_head', 2); // Hugo Head
+
 add_action('rehorik_product_view_sigils_bar', 'sigils', 1); // Sigils
 
 add_action('rehorik_product_information', 'description', 1); // Description
@@ -92,11 +97,18 @@ function goes_with() {
     global $product;
 
     $goesWith = $product->get_attribute('passt-zu');
+    $title = 'Passt zu';
+
+    if (empty($goesWith)) {
+        $goesWith = $product->get_attribute('aromen');
+        $title = 'Aroma';
+    }
 
     if (!empty($goesWith)) {
         $goesWith = str_replace(', ', ' - ', $goesWith);
         echo sprintf(
-            '<div class="rehorik-product-goes-with"><div>Passt zu</div><div>%s</div></div>',
+            '<div class="rehorik-product-goes-with"><div>%s</div><div>%s</div></div>',
+            $title,
             $goesWith
         );
     }

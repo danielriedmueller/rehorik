@@ -1,9 +1,17 @@
 <?php
 global $product;
+
 $event = tribe_events_get_ticket_event($product->get_id());
 
 if (!$event) {
     return;
+}
+
+// TODO: Assume all tickets have shared capacity, take first ticket for ticket count
+$availableTickets = null;
+$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($event->ID);
+if (is_array($tickets) && sizeof($tickets) > 0) {
+    $availableTickets = $tickets[0]->available();
 }
 
 $location = tribe_get_venue($event->ID);
@@ -29,25 +37,42 @@ $price = wc_price($product->get_price());
     <div class='rehorik-product-min-price'><?= ($product->is_type('variable') ? "ab " : "") . $price . " *" ?></div>
     <table>
         <tbody>
-            <tr class="seperator">
-                <td colspan="2"><hr /></td>
+        <tr class="seperator">
+            <td colspan="2">
+                <hr/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="available-tickets-attribute-cell">
+                <?php if ($availableTickets) : ?>
+                    Noch
+                    <span><?= $availableTickets ?></span> <?php echo $availableTickets === 1 ? 'Platz' : 'Plätze' ?> verfügbar
+                <?php else : ?>
+                    Nicht länger verfügbar
+                <?php endif; ?>
+            </td>
+        </tr>
+        <tr class="seperator">
+            <td colspan="2">
+                <hr/>
+            </td>
+        </tr>
+        <?php if ($date) : ?>
+            <tr>
+                <td>DATUM</td>
+                <td class="rehorik-product-attribute-list"><?= $date ?></td>
             </tr>
-            <?php if($date) : ?>
-                <tr>
-                    <td>DATUM</td>
-                    <td class="rehorik-product-attribute-list"><?= $date ?></td>
-                </tr>
-            <?php endif; ?>
-            <?php if($time) : ?>
+        <?php endif; ?>
+        <?php if ($time) : ?>
             <tr>
                 <td>UHRZEIT</td>
                 <td class="rehorik-product-attribute-list"><?= $time ?></td>
             </tr>
-            <?php endif; ?>
-            <tr>
-                <td>ORT</td>
-                <td class="rehorik-product-attribute-list"><?= $location ?></td>
-            </tr>
+        <?php endif; ?>
+        <tr>
+            <td>ORT</td>
+            <td class="rehorik-product-attribute-list"><?= $location ?></td>
+        </tr>
         </tbody>
     </table>
 </div>

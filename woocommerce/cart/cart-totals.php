@@ -114,9 +114,11 @@ defined( 'ABSPATH' ) || exit;
     <div class="rehorik-shipping-rest-amount">
         <?php
             $shippingMethods = WC()->session->get( 'chosen_shipping_methods' );
-            if (count($shippingMethods) > 0) {
-                if (!empty($shippingMethods[0])) {
-                    do_action('render_rest_amount_for_free_shipping');
+            if ($shippingMethods) {
+                if (count($shippingMethods) > 0) {
+                    if (!empty($shippingMethods[0])) {
+                        do_action('render_rest_amount_for_free_shipping');
+                    }
                 }
             }
         ?>

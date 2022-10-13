@@ -1,7 +1,36 @@
+button.tribe-events-c-search__button {
+  padding: 0 $spacing;
+  height: 100%;
+  background-color: $anthrazit;
+
+  &:hover {
+    background-color: $beigegold;
+    color: #fff;
+  }
+  border-radius: 0;
+}
+
+.tribe-events-c-top-bar__datepicker .tribe-events-c-top-bar__datepicker-button {
+  background-color: transparent;
+  border-radius: 0;
+  color: $font-color;
+  font-size: $font-size;
+  padding: $spacing-xxs;
+  border: 1px solid $anthrazit;
+  font-weight: normal;
+  font-family: $font-family-headline;
+
+  &:hover {
+    background-color: $beigegold;
+    color: #fff;
+    border: 1px solid $beigegold;
+  }
+}
+
 .rehorik-tribe-event-tickets a.tribe-common-c-btn.tribe-common-c-btn--small,
 .tribe-common-c-btn.tribe-common-c-btn--small.tribe-tickets__registration-submit,
-.rehorik-tribe-events-main #tribe-events .rehorik-tribe-event-tickets button.rehorik-tribe-event-tickets-add-to-cart-button,
-.rehorik-tribe-events-main #tribe-events .rehorik-tribe-event-tickets button.tribe-tickets__tickets-buy,
+main#tribe-events .rehorik-tribe-event-tickets button.rehorik-tribe-event-tickets-add-to-cart-button,
+main#tribe-events .rehorik-tribe-event-tickets button.tribe-tickets__tickets-buy,
 .tribe-checkout-backlinks a {
   font-family: $font-family-body;
   font-size: $font-size;
@@ -21,8 +50,8 @@
 
 .rehorik {
   .tribe-events-button {
-    background-color: $grau !important;
-    border: 1px solid $grau !important;
+    background-color: $anthrazit !important;
+    border: 1px solid $anthrazit !important;
     border-radius: $border-radius;
 
     &:hover {

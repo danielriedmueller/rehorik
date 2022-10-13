@@ -1,0 +1,57 @@
+.marketing-banner {
+  position: relative;
+
+  background: transparent url("../img/marketing/breitbild-chemex-1920x390px.jpg") no-repeat center center;
+  background-size: cover;
+
+  @media all and (max-width: 1080px) and (min-width: 376px) {
+    background-image: url("../img/marketing/breitbild-chemex-1080x390px.jpg");
+  }
+
+  @media all and (max-width: 375px) {
+    background-image: url("../img/marketing/breitbild-chemex-375x390px.jpg");
+  }
+
+  .learn-more {
+    position: absolute;
+    margin: 0;
+    bottom: var(--section-spacing-top-bottom);
+  }
+
+  *, .learn-more {
+    color: #fff;
+
+    &:hover {
+      color: $font-color-accent;
+    }
+  }
+
+  .marketing-banner-text {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: var(--section-spacing-top-bottom) 0;
+
+    h2 {
+      font-size: $font-size-large;
+      text-align: justify;
+      color: #fff;
+
+      @media all and (max-width: $small-breakpoint) {
+        font-size: $font-size;
+      }
+    }
+
+    a {
+      margin-top: $spacing;
+      width: fit-content;
+    }
+  }
+
+  &.left {
+    .rehorik-page-introduction {
+      align-items: flex-start;
+    }
+  }
+}

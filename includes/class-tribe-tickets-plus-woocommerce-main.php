@@ -1,5 +1,9 @@
 <?php
 
+if (!class_exists(Tribe__Tickets_Plus__Tickets::class)) {
+    return;
+}
+
 use Tribe__Utils__Array as Arr;
 
 class Tribe__Tickets_Plus__Commerce__WooCommerce__Main extends Tribe__Tickets_Plus__Tickets {

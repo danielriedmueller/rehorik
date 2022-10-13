@@ -2,8 +2,9 @@ $opacity: 0.65;
 $weinrot: #5C0D2F;
 $hellbraun: #996B23;
 $dunkelbraun: #663700;
-$grau: #393536;
-$grau-opacity: rgba(57, 53, 54, $opacity);
+$hellgrau: #500030;
+$anthrazit: #3C3C3B;
+$anthrazit-opacity: rgba(57, 53, 54, $opacity);
 $beigegold: #CEB67F;
 $tuerkis: #003c4a;
 $lila: #2d253c;
@@ -11,7 +12,7 @@ $lila: #2d253c;
 $font-family-body: "Cond";
 $font-family-headline: "Cond Bold";
 
-$font-color: $grau;
+$font-color: $anthrazit;
 $font-color-accent: $beigegold;
 $font-color-accent-dark: $hellbraun;
 
@@ -21,7 +22,7 @@ $product-default-header-text-color: #fff;
 $product-filterkaffee-color: $weinrot;
 $product-espresso-color: #393e1c;
 $product-crema-color: $tuerkis;
-$product-default-color: $grau;
+$product-default-color: $anthrazit;
 $product-alternative-body-text-color: #fff;
 $product-alternative-header-text-color: $beigegold;
 $product-of-month-color: $beigegold;
@@ -33,8 +34,9 @@ $font-size: 20px;
 $font-size-small: 17px;
 
 $line-height: 1.4em;
+$line-height-small: 1.1em;
 
-$text-shadow: -1px -1px 0 $grau, 1px -1px 0 $grau, -1px 1px 0 $grau, 1px 1px 0 $grau;
+$text-shadow: -1px -1px 0 $anthrazit, 1px -1px 0 $anthrazit, -1px 1px 0 $anthrazit, 1px 1px 0 $anthrazit;
 
 $very-small-breakpoint: 442px;
 $small-breakpoint: 767px;
@@ -63,7 +65,9 @@ $menu-sub-item-hover-color: $weinrot;
 
 $img-size-big: 690px;
 
-$product-view-grid-gap: $spacing-l;
+$product-view-grid-gap: $spacing-xl;
+$product-view-cart-button-quantity-width: 75px;
+$product-view-cart-button-width: 225px;
 
 $border-radius: 8px;
 $border-radius-large: 17px;
@@ -71,7 +75,7 @@ $border-radius-large: 17px;
 $logo-size: 135px;
 $logo-size-small: 80px;
 
-$cart-coupon-width: 300px;
+$cart-coupon-width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
 $cart-coupon-width-broad: 380px;
 
 $sidebar-width: 250px;
@@ -91,25 +95,22 @@ $timeline-height: 800px;
 $section-spacing: $spacing-xxl;
 $section-spacing-small: $spacing-l;
 
-$max-width: 1505px;
-$max-width-small: 1080px;
+$max-width-small: 1280px;
 
 :root {
   --slider-height: 600px;
   --section-spacing-top-bottom: #{$section-spacing};
   --section-spacing-left-right: #{$spacing};
-  --max-width: #{$max-width};
+  --max-width: 1600px;
+  --container-headline-spacing-bottom: #{$spacing-xl};
 
   @media all and (max-width: $small-breakpoint) {
     --slider-height: 485px;
+    --section-spacing-left-right: #{$spacing-xs};
   }
 
   @media all and (max-width: $medium-breakpoint) {
     --section-spacing-top-bottom: #{$section-spacing-small};
+    --container-headline-spacing-bottom: #{$spacing};
   }
-}
-
-.max-width-small,
-.rehorik.single-product {
-  --max-width: #{$max-width-small};
 }

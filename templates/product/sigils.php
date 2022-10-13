@@ -1,4 +1,5 @@
 <?php $product = $args['product']; ?>
+<?php if(hasSigils($product)): ?>
 <div class="sigil-container">
     <?php if (isProductOfTheMonth($product)): ?>
         <div title="Produkt des Monats" class="<?= getProductOfTheMonthClass($product) ?>"></div>
@@ -20,3 +21,4 @@
         <div title="Baumwolle" class="<?= getCottonSigilClass($product) ?>"></div>
     <?php endif; ?>
 </div>
+<?php endif; ?>

@@ -4,11 +4,14 @@
   background-size: $hugo-head-size;
   background-image: url("../img/svg/hugo_head.svg");
   margin-right: -$hugo-head-size / 2;
+  right: 0;
+  bottom: 0;
   background-repeat: no-repeat;
   background-position: right;
-  flex: 1;
+  position: absolute;
 
   @media all and (max-width: $medium-breakpoint) {
     margin-right: calc(var(--section-spacing-left-right) * -1);
+    bottom: 26px;
   }
 }

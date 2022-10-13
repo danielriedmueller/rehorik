@@ -2,7 +2,6 @@
 get_template_part('templates/header/head', null, ['slider' => [
     [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
-        'primary' => true,
         'img'=> 'startseite-header-roesterei',
         'buttons' => [
             '/tradition' => 'Tradition',
@@ -18,9 +17,19 @@ get_template_part('templates/header/head', null, ['slider' => [
         ]
     ]
 ]]);
+get_template_part('templates/hint');
+get_template_part('templates/featured/slider');
 ?>
-<?php get_template_part('templates/hint') ?>
-<?php get_template_part('templates/featured/slider'); ?>
+<div class="marketing-banner">
+    <div class="container">
+        <div class="marketing-banner-text">
+            <h2>Wir sind umtriebig, vielfältig und kreativ - voller Mut und Energie, etwas Besonderes zu erschaffen. Einen Raum der Inspiration und Lebensfreude.
+                Wir verbinden Menschen durch Genuss,
+                wir leben Leidenschaft für hochwertige Produkte. Und das seit Generationen.</h2>
+            <a class="learn-more" href="/tradition">erfahre mehr</a>
+        </div>
+    </div>
+</div>
 <div class="container">
     <ul class="rehorik-products products">
         <li class="product-category product">

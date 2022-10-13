@@ -17,6 +17,9 @@ add_action('wp_ajax_hide_past_event_tickets', function () {
                 if (!$event) {
                     echo sprintf('no event: <a href="%s">%s</a><br>', $product->get_permalink(), $product->get_title());
                     $updateStock($product);
+                } else if ($event->post_status === 'trash') {
+                    echo sprintf('trashed event: <a href="%s">%s</a><br>', $product->get_permalink(), $product->get_title());
+                    $updateStock($product);
                 } else if (tribe_is_past_event($event)) {
                     echo sprintf('past event: <a href="%s">%s</a><br>', $product->get_permalink(), $product->get_title());
                     $updateStock($product);

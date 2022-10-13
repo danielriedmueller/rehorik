@@ -1,4 +1,6 @@
 <?php
+require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php');
+
 /**
  * Prevent comma seperated implode of values
  */
@@ -26,6 +28,7 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
         ATTRIBUTE_SLUG_PREFIX . GOES_WITH_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX . QUALITY_NAME_ATTRIBUTE_SLUG,
         ATTRIBUTE_SLUG_PREFIX . SIZE_ATTRIBUTE_SLUG,
+        ATTRIBUTE_SLUG_PREFIX . FLAVOUR_ATTRIBUTE_SLUG,
         WEIGHT_SLUG,
     ];
 

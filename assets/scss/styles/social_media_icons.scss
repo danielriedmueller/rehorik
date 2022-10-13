@@ -85,7 +85,7 @@ $element-height: 42px;
     @include icon-size($spacing-s, $spacing-s);
 
     display: none;
-    right: $spacing;
+    right: var(--section-spacing-left-right);
     top: $menu-height + $spacing-s;
     padding: 0;
 

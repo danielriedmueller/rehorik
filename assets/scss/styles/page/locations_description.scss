@@ -1,29 +1,15 @@
 #locations-description {
   padding: var(--section-spacing-top-bottom) 0;
 
-  * {
-    scroll-margin-top: 150px;
-  }
-
-  > div {
-    padding: $spacing 0;
-
-    &:first-child {
-      padding: 0 0 $spacing 0;
-    }
-
-    &:last-child {
-      padding: $spacing 0 0 0;
-    }
-  }
-
   > div > div {
     max-width: $max-width-small;
     margin: auto;
     display: flex;
+    padding: $spacing-l 0;
 
     @media all and (max-width: $medium-breakpoint) {
       flex-direction: column;
+      padding: $spacing var(--section-spacing-left-right);
     }
   }
 
@@ -64,6 +50,12 @@
 
   .location-img {
     order: 3;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
 
     @media all and (max-width: $medium-breakpoint) {
       order: 1;

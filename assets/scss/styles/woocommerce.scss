@@ -2,6 +2,10 @@
   margin-top: $spacing-s;
 }
 
+.woocommerce form .form-row .required {
+  color: $beigegold;
+}
+
 .woocommerce a.remove {
   @media all and (max-width: $small-breakpoint) {
     background-position: left top;
@@ -89,7 +93,7 @@ body.rehorik.woocommerce-cart {
   #content .quantity input.qty,
   #content .quantity input.qty {
     border-radius: $border-radius;
-    background-color: $grau;
+    background-color: $anthrazit;
     color: #fff;
     font-size: $font-size;
     padding: $spacing-xxs;

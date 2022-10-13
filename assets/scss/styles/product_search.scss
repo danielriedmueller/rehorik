@@ -1,6 +1,6 @@
 .rehorik {
   .rehorik-product-search-widget {
-    padding-left: $spacing;
+    padding-left: var(--section-spacing-left-right);
 
     .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input, .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:hover, .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:focus {
       border: none;
