@@ -66,16 +66,11 @@ $classes = [
             <input type="hidden" name="tribe_tickets_saving_attendees" value="1"/>
             <input type="hidden" name="tribe_tickets_ar" value="1"/>
             <input type="hidden" name="tribe_tickets_ar_data" value="" id="tribe_tickets_block_ar_data"/>
-
-
             <?php $this->template( 'v2/tickets/commerce/fields' ); ?>
-
             <?php $this->template( 'v2/tickets/items' ); ?>
-
+            <?php get_template_part('templates/veranstaltungen/single-event-info'); ?>
             <?php $this->template( 'v2/tickets/footer' ); ?>
-
             <?php $this->template( 'v2/tickets/item/inactive' ); ?>
-
             <?php $this->template( 'v2/components/loader/loader' ); ?>
         </div>
 	</form>

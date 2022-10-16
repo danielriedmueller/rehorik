@@ -2,6 +2,10 @@
   margin-top: $spacing-s;
 }
 
+.woocommerce form .form-row .required {
+  color: $beigegold;
+}
+
 .woocommerce a.remove {
   @media all and (max-width: $small-breakpoint) {
     background-position: left top;

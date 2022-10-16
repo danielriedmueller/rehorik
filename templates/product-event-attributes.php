@@ -1,16 +1,5 @@
 <?php
 global $product;
-global $is_sale_past;
-
-$isSalePast = function ($tickets) {
-    $is_sale_past = !empty($tickets);
-
-    foreach ($tickets as $ticket) {
-        $is_sale_past = ($is_sale_past && $ticket->date_is_later());
-    }
-
-    return $is_sale_past;
-};
 
 $event = tribe_events_get_ticket_event($product->get_id());
 
@@ -18,9 +7,14 @@ if (!$event) {
     return;
 }
 
-$location = tribe_get_venue($event->ID);
+// TODO: Assume all tickets have shared capacity, take first ticket for ticket count
+$availableTickets = null;
+$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($event->ID);
+if (is_array($tickets) && sizeof($tickets) > 0) {
+    $availableTickets = $tickets[0]->available();
+}
 
-$availableTickets = ($isSalePast(Tribe__Tickets__Tickets::get_all_event_tickets($event->ID)) || $event->post_status === 'trash') ? null : tribe_events_count_available_tickets($event);
+$location = tribe_get_venue($event->ID);
 
 $startDatetime = $product->get_meta(TICKET_EVENT_DATE_START_META);
 $endDatetime = $product->get_meta(TICKET_EVENT_DATE_END_META);
