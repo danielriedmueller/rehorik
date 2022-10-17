@@ -82,8 +82,8 @@ const ATTRIBUTE_SLUG_PREFIX = 'attribute_';
 const ONLINE_META_KEY = 'Online';
 const CANCELED_META_KEY = 'Abgesagt';
 
-// Generated coupon
-const ORDER_COUPON_CODE_PRODUCT = 'coupon_code_product';
+// Generated coupon code saved in order item
+const ORDER_ITEM_COUPON_CODE = 'order_item_coupon_code';
 
 // Payment methods
 const PAYMENT_METHOD_CASH = 'cod';
