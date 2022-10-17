@@ -27,7 +27,6 @@ add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice', 1); 
 add_action('rehorik_product_view', 'goes_with', 1); // Meta
 add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
 
-
 add_action('rehorik_product_view_sigils_bar', 'sigils', 1); // Sigils
 
 add_action('rehorik_product_information', 'description', 1); // Description

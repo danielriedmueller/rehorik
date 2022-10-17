@@ -5,6 +5,13 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
  * Prevent comma seperated implode of values
  */
 add_filter('woocommerce_attribute', function ($formatted_values, $attribute, $values) {
+    // On Geschenkkörbe, remove links
+    if ($attribute->get_name() === GIFT_CONTENT_ATTRIBUTE_SLUG) {
+        $values = array_map(function ($value) {
+            return strip_tags($value);
+        }, $values);
+    }
+
     if (sizeof($values) > 1) {
         $formatted_values = implode("</li><li>", $values);
 

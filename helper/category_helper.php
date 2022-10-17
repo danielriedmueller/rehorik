@@ -130,6 +130,7 @@ function getShopFrontPageCategories()
     $frontPageCategories[] = $categories[array_search(WINE_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(SPIRITS_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(TICKET_CATEGORY_SLUG, $keys)];
+    $frontPageCategories[] = $categories[array_search(GIFTS_CATEGORY_SLUG, $keys)];
 
     return $frontPageCategories;
 }
