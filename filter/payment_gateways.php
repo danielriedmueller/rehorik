@@ -1,8 +1,10 @@
 <?php
 add_filter('woocommerce_available_payment_gateways', function($available_gateways) {
     // Cash payment should be disallowed for non-company users
-    if (!isCashPaymentAllowed()) {
-        unset($available_gateways[PAYMENT_METHOD_CASH]);
+    if (in_array(PAYMENT_METHOD_CASH, $available_gateways)) {
+        if (!isCashPaymentAllowed()) {
+            unset($available_gateways[PAYMENT_METHOD_CASH]);
+        }
     }
 
     // Direct transfer payment should be disallowed for event tickets
