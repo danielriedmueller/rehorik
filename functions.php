@@ -44,6 +44,7 @@ const WINE_CATEGORY_SLUGS = [
 ];
 const HIDE_CATEGORIES = [
     'delikatessen-onlineshop',
+    'geschenke-gutscheine',
     'kaese-wurst'
 ];
 
