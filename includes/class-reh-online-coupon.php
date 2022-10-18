@@ -1,6 +1,6 @@
 <?php
 
-require_once get_stylesheet_directory() . '/lib/dompdf/autoload.inc.php';
+require_once 'lib/dompdf/autoload.inc.php';
 use Dompdf\Dompdf;
 
 class Reh_Create_Coupon
