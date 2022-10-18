@@ -124,12 +124,12 @@ function getShopFrontPageCategories(): array
 
     // Frontpage categories
     return [
+        $categories[array_search(GIFTS_CATEGORY_SLUG, $keys)],
         $categories[array_search(MACHINE_CATEGORY_SLUG, $keys)],
+        $categories[array_search(COUPON_CATEGORY_SLUG, $keys)],
         $categories[array_search(WINE_CATEGORY_SLUG, $keys)],
         $categories[array_search(SPIRITS_CATEGORY_SLUG, $keys)],
         $categories[array_search(TICKET_CATEGORY_SLUG, $keys)],
-        $categories[array_search(GIFTS_CATEGORY_SLUG, $keys)],
-        $categories[array_search(COUPON_CATEGORY_SLUG, $keys)],
     ];
 }
 
