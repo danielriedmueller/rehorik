@@ -1,8 +1,8 @@
 @import "../mixins";
 
-
-// Exception for merch. Move position of description to the top
-body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .rehorik-product-information {
+// Exception for merch and gifts. Move position of description to the top
+body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .rehorik-product-information,
+body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-geschenke .rehorik-product-information {
   grid-area: goes-with;
   background-color: transparent;
   padding: 0;
@@ -22,6 +22,26 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .re
 
   .rehorik-product-information-category {
     display: none;
+  }
+
+  .rehorik-product-attributes {
+    margin: 0;
+  }
+
+  .woocommerce-product-attributes-item--attribute_pa_inhalt-praesentkarton {
+    th {
+      display: none;
+    }
+
+    td {
+      padding-top: 0 !important;
+    }
+
+    td li {
+      color: $font-color;
+      background: transparent url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIGZpbGw9IiMzOTM1MzYiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTIyLjg4cHgiIGhlaWdodD0iMTIyLjg4cHgiIHZpZXdCb3g9IjAgMCAxMjIuODggMTIyLjg4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjIuODggMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYxLjQzOCwwYzMzLjkzLDAsNjEuNDQxLDI3LjUxMiw2MS40NDEsNjEuNDQxIGMwLDMzLjkyOS0yNy41MTIsNjEuNDM4LTYxLjQ0MSw2MS40MzhDMjcuNTEyLDEyMi44OCwwLDk1LjM3LDAsNjEuNDQxQzAsMjcuNTEyLDI3LjUxMiwwLDYxLjQzOCwwTDYxLjQzOCwweiIvPjwvZz48L3N2Zz4=") no-repeat top 15px left;
+      background-size: 2px;
+    }
   }
 }
 
@@ -118,6 +138,19 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
 
       text-align: justify;
       font-size: $font-size;
+
+      ul {
+        font-size: $font-size;
+        list-style-type:none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          padding: 0 0 0 $spacing-xxs;
+          background: transparent url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIGZpbGw9IiMzOTM1MzYiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTIyLjg4cHgiIGhlaWdodD0iMTIyLjg4cHgiIHZpZXdCb3g9IjAgMCAxMjIuODggMTIyLjg4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjIuODggMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYxLjQzOCwwYzMzLjkzLDAsNjEuNDQxLDI3LjUxMiw2MS40NDEsNjEuNDQxIGMwLDMzLjkyOS0yNy41MTIsNjEuNDM4LTYxLjQ0MSw2MS40MzhDMjcuNTEyLDEyMi44OCwwLDk1LjM3LDAsNjEuNDQxQzAsMjcuNTEyLDI3LjUxMiwwLDYxLjQzOCwwTDYxLjQzOCwweiIvPjwvZz48L3N2Zz4=") no-repeat top 15px left;
+          background-size: 2px;
+        }
+      }
     }
 
     .rehorik-product-information-category {

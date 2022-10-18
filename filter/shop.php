@@ -18,34 +18,6 @@ add_filter('woocommerce_show_page_title', function () {
 });
 
 /**
- * Direct transfer payment should be disallowed for virtual products
- * and virtual events with degustation package (which is not virtual).
- */
-function disallow_direct_transfer_payment_for_virtual_products($available_gateways)
-{
-    if (!is_checkout()) {
-        return $available_gateways;
-    }
-
-    $unset = false;
-    foreach (WC()->cart->get_cart_contents() as $values) {
-        $product = wc_get_product($values['product_id']);
-        if ($product->is_virtual()
-            || isItCategory($values['data'], VIRTUAL_EVENTS_CATEGORY_SLUG)) {
-            $unset = true;
-            break;
-        }
-    }
-
-    if ($unset === true) {
-        unset($available_gateways[PAYMENT_METHOD_DIRECT_TRANSFER]);
-    }
-
-    return $available_gateways;
-}
-add_filter( 'woocommerce_available_payment_gateways', 'disallow_direct_transfer_payment_for_virtual_products');
-
-/**
  * Add bike delivery shipping method
  */
 add_filter('woocommerce_shipping_methods', function ($methods) {
@@ -98,3 +70,15 @@ add_filter( 'wc_add_to_cart_message_html', function( $message, $products ) {
         esc_url($url)
     );
 }, 10, 2);
+
+/*
+* Reduce the strength requirement for woocommerce registration password.
+* Strength Settings:
+* 0 = Nothing = Anything
+* 1 = Weak
+* 2 = Medium
+* 3 = Strong (default)
+*/
+add_filter( 'woocommerce_min_password_strength', 'wpglorify_woocommerce_password_filter', 10 );
+function wpglorify_woocommerce_password_filter() {
+    return 2; } //2 represent medium strength password

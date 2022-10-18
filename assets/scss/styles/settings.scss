@@ -46,6 +46,7 @@ $product-thumbnail-size: 100px;
 $cart-thumbnail-size: 175px;
 $product-category-width: 235px;
 $product-category-width-large: 350px;
+$product-category-frontpage-height: 402px;
 $product-height: 515px;
 
 $spacing: 25px;
@@ -66,6 +67,8 @@ $menu-sub-item-hover-color: $weinrot;
 $img-size-big: 690px;
 
 $product-view-grid-gap: $spacing-xl;
+$product-view-cart-button-quantity-width: 75px;
+$product-view-cart-button-width: 225px;
 
 $border-radius: 8px;
 $border-radius-large: 17px;
@@ -73,7 +76,7 @@ $border-radius-large: 17px;
 $logo-size: 135px;
 $logo-size-small: 80px;
 
-$cart-coupon-width: 300px;
+$cart-coupon-width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
 $cart-coupon-width-broad: 380px;
 
 $sidebar-width: 250px;

@@ -44,10 +44,9 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
     <?php do_action('rehorik_product_view'); ?>
     <div class="rehorik-product-view-title-price"><?php do_action('rehorik_product_view_title_price'); ?></div>
     <div class="rehorik-product-view-gallery"><?php do_action('rehorik_product_view_gallery'); ?></div>
-    <div class="rehorik-add-to-cart-container"><?php isProductSelling($product) ? do_action('rehorik_product_view_add_to_cart') : do_action('rehorik_product_view_not_selling_notice'); ?></div>
+    <div class="rehorik-add-to-cart-container"><?php isProductSelling($product) ? do_action('woocommerce_single_product_summary') : do_action('rehorik_product_view_not_selling_notice'); ?></div>
     <div class="rehorik-sigils-bar"><?php do_action('rehorik_product_view_sigils_bar'); ?></div>
     <div class="rehorik-product-information"><?php do_action('rehorik_product_information'); ?></div>
-    <div class="rehorik-product-ingredients"><?php do_action('rehorik_product_ingredients'); ?></div>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

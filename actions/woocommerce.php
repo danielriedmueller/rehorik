@@ -3,7 +3,6 @@ require_once('admin/woocommerce/add_cat_video_field.php');
 require_once('admin/woocommerce/add_product_preperation_recommendation_field.php');
 require_once('admin/woocommerce/add_product_video_field.php');
 require_once('shop/frontpage_categories.php');
-require_once('admin/woocommerce/add_product_nutrition_field.php');
 require_once('admin/woocommerce/add_product_title_claim_field.php');
 
 add_action('after_setup_theme', function () {
@@ -17,48 +16,6 @@ add_action('after_setup_theme', function () {
  * Removes breadcrumb.
  */
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
-
-/**
- * For offline event tickets sale.
- * Only company user accounts are allowed to buy tickets by cheque
- * In this case, set order to complete.
- */
-add_action('woocommerce_thankyou', function ($order_id) {
-    if (!$order_id) {
-        return;
-    }
-
-    $order = new WC_Order($order_id);
-    if (!$order) {
-        return;
-    }
-
-    // Only paying cash, set order status
-    if ($order->get_payment_method() !== PAYMENT_METHOD_CASH) {
-        return;
-    }
-
-    $items = $order->get_items();
-
-    $updateOrderStatus = false;
-    foreach ($items as $item) {
-        $product = $item->get_product();
-
-        if ($product) {
-            /**
-             * @var WC_Product $product
-             */
-            $eventCatId = get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat')->term_id;
-            if ($product->is_virtual() && in_array($eventCatId, $product->get_category_ids())) {
-                $updateOrderStatus = true;
-            }
-        }
-    }
-
-    if ($updateOrderStatus) {
-        $order->update_status('completed');
-    }
-}, 10, 1);
 
 // Add delete account feature
 add_action('woocommerce_after_edit_account_form', function () {

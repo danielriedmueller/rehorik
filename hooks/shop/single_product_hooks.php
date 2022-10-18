@@ -2,7 +2,7 @@
 /**
  * Product Detail View Hooks
  */
-remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
+remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10);
 
 add_action('rehorik_product_view', 'product_video', 1); // Video
 
@@ -13,16 +13,20 @@ add_action('rehorik_product_view_title_price', 'woocommerce_template_single_pric
 
 add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
 
-add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_add_to_cart', 1); // Variations / Add to cart
-add_action('rehorik_product_view_add_to_cart', 'cup_of_coffee', 1); // Cup of Coffee
-add_action('rehorik_product_view_add_to_cart', 'woocommerce_template_single_meta', 1); // Meta
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+
+add_action('woocommerce_single_product_summary', 'cup_of_coffee', 35); // Cup of Coffee
+add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
 
 add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice', 1); // Text if product can not be bought online
 
 add_action('rehorik_product_view', 'goes_with', 1); // Meta
 add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
 
-add_action('rehorik_product_view_add_to_cart', 'hugo_head', 2); // Hugo Head
 add_action('rehorik_product_view_sigils_bar', 'sigils', 1); // Sigils
 
 add_action('rehorik_product_information', 'description', 1); // Description
@@ -30,9 +34,6 @@ add_action('rehorik_product_information', 'categories', 1); // Categories
 add_action('rehorik_product_information', 'single_product_attributes', 1); // Attributes
 add_action('rehorik_product_information', 'short_description', 1); // Short Description
 add_action('rehorik_product_information', 'preperation_recommendation', 1); // Preperation Recommendation
-
-add_action('rehorik_product_ingredients', 'nutrition_table', 1); // Nutrition Table
-add_action('rehorik_product_ingredients', 'ingredient_list', 1); // Ingredient List
 
 function description() {
     global $product;
@@ -107,25 +108,6 @@ function goes_with() {
             $goesWith
         );
     }
-}
-
-function ingredient_list() {
-    global $product;
-
-    $ingredients = $product->get_meta('reh_ingredient_list');
-
-    if (!empty($ingredients)) {
-        echo sprintf(
-            '<div class="rehorik-ingredient-list"><h4>Zutatenliste / Allergene</h4><div>%s</div></div>',
-            $ingredients
-        );
-    }
-}
-
-function nutrition_table() {
-    global $product;
-
-    get_template_part('templates/product-nutrition-table', null, ['product' => $product]);
 }
 
 function preperation_recommendation() {

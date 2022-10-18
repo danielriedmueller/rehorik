@@ -22,6 +22,11 @@ const EVENT_EMAIL = 'events@rehorik.de';
 const DELIVERY_SHIPPING_METHOD = 'bike';
 const FREE_DELIVERY_SHIPPING_METHOD = 'free_shipping_bike';
 
+// PDFs
+const MENU_190 = '/speisekarte/Speisekarte190.pdf';
+const MENU_STRAUBINGER = '/speisekarte/SpeisekarteStraubinger.pdf';
+const INGREDIENT_AND_NUTRITION_INFORMATION = '/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe_2022.pdf';
+
 // Categories
 const COFFEE_CATEGORY_SLUG = 'kaffee';
 const WINE_CATEGORY_SLUG = 'wein';
@@ -32,6 +37,7 @@ const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
 const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
 const BLACK_AND_WINE = 'blackwine';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
+const GIFTS_CATEGORY_SLUG = 'geschenke';
 const ONLINESHOP_CATEGORY_SLUG = 'onlineshop';
 const VIRTUAL_EVENTS_CATEGORY_SLUG = 'virtuelle-events';
 const VIRTUAL_EVENTS_CATEGORY_SLUGS = [
@@ -123,6 +129,7 @@ require_once($baseDir . '/filter/shop.php');
 require_once($baseDir . '/filter/categories.php');
 require_once($baseDir . '/filter/product_view.php');
 require_once($baseDir . '/filter/sitemap.php');
+require_once($baseDir . '/filter/payment_gateways.php');
 require_once($baseDir . '/actions/woocommerce.php');
 require_once($baseDir . '/actions/rehorik.php');
 require_once($baseDir . '/actions/events.php');
