@@ -1,3 +1,7 @@
+.rehorik.home ul.rehorik-products.products li.product-category.product {
+  height: $product-category-frontpage-height;
+}
+
 ul.rehorik-products.products {
   position: relative;
   list-style: none;
@@ -16,7 +20,7 @@ ul.rehorik-products.products {
     }
 
     img {
-      object-fit: fill;
+      object-fit: cover;
       padding: 0;
       margin: 0;
       display: block;
