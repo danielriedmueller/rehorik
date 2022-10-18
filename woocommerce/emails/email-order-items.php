@@ -59,6 +59,8 @@ foreach ( $items as $item_id => $item ) :
             echo sprintf('<div>Name: %s,<br>Ort: %s,<br>Zeit: %s</div>', $title, $location, $date);
         }
 
+
+
 		// SKU.
 		if ( $show_sku && $sku ) {
 			echo wp_kses_post( ' (#' . $sku . ')' );
@@ -67,6 +69,8 @@ foreach ( $items as $item_id => $item ) :
 		// allow other plugins to add additional product information here.
 		do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, $plain_text );
 
+        // TODO: below line was added to get coupoun output
+        $item->read_meta_data();
 		wc_display_item_meta(
 			$item,
 			array(
