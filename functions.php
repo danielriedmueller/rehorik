@@ -72,7 +72,7 @@ const WINERY_ATTRIBUTE_SLUG = 'pa_weingut';
 const GOES_WITH_ATTRIBUTE_SLUG = 'pa_passt-zu';
 const QUALITY_NAME_ATTRIBUTE_SLUG = 'pa_qualitaetsbezeichnung';
 const MANUFACTURER_ATTRIBUTE_SLUG = 'pa_hersteller';
-const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-geschenkkorb';
+const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-praesentkarton';
 const SIZE_ATTRIBUTE_SLUG = 'pa_groesse';
 const TECHNICAL_DETAILS_ATTRIBUTE_SLUG = 'pa_technische-daten';
 

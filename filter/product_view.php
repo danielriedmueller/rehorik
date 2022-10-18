@@ -49,7 +49,7 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
     if ($productAttributes[ATTRIBUTE_SLUG_PREFIX . VARIETIES_ATTRIBUTE_SLUG]
         && !empty(generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG)))
     ) {
-        $productAttributes[ATTRIBUTE_SLUG_PREFIX . VARIETIES_ATTRIBUTE_SLUG]["value"] = addBioBeforhandSorte(
+        $productAttributes[ATTRIBUTE_SLUG_PREFIX . VARIETIES_ATTRIBUTE_SLUG]["value"] = addBioBeforehandSorte(
             $productAttributes[ATTRIBUTE_SLUG_PREFIX . VARIETIES_ATTRIBUTE_SLUG]["value"]
         );
     }
@@ -141,7 +141,7 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
     return $productAttributes;
 }, 10, 2);
 
-function addBioBeforhandSorte($value, $seperator = ", ")
+function addBioBeforehandSorte($value, $seperator = ", "): string
 {
     if (str_contains($value, "<li>")) {
         return str_replace("<li>", "<li>BIO ", $value);

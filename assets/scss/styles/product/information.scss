@@ -2,7 +2,7 @@
 
 // Exception for merch and gifts. Move position of description to the top
 body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .rehorik-product-information,
-body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-geschenkkoerbe .rehorik-product-information {
+body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-geschenke .rehorik-product-information {
   grid-area: goes-with;
   background-color: transparent;
   padding: 0;
@@ -28,7 +28,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-geschenkk
     margin: 0;
   }
 
-  .woocommerce-product-attributes-item--attribute_pa_inhalt-geschenkkorb {
+  .woocommerce-product-attributes-item--attribute_pa_inhalt-praesentkarton {
     th {
       display: none;
     }
