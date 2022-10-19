@@ -29,7 +29,7 @@ add_action('wp_ajax_create_test_coupon', function () {
     //$couponFactory->createCoupon(12.5);
     //$couponFactory->deleteCoupon('ouqnq');
 
-    $order_id = 30542;
+    $order_id = 30552;
     $allmails = WC()->mailer()->emails;
     $email = $allmails['WC_Email_Customer_Completed_Order'];
     $email->trigger( $order_id );

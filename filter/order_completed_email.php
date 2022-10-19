@@ -65,3 +65,13 @@ add_filter('woocommerce_email_attachments', function (array $attachments, string
     return $attachments;
 }, 10, 3);
 
+/**
+ * Add display key "Gutscheincode" for coupon order item meta
+ */
+add_filter('woocommerce_order_item_display_meta_key', function (string $display_key, WC_Meta_Data $meta, WC_Order_Item $item) {
+    if ($display_key === ORDER_ITEM_COUPON_CODE) {
+        return "Gutscheincode";
+    }
+
+    return $display_key;
+}, 10, 3);
