@@ -6,7 +6,9 @@
 </head>
 <body>
 <div id="wrapper">
-    <div id="html_div"><?= $args['code'] ?></div>
+    <div>Code: <?= $args['code'] ?></div>
+    <div>Name: <?= $args['name'] ?></div>
+    <div>Preis: <?= $args['price'] ?></div>
 </div>
 </body>
 </html>

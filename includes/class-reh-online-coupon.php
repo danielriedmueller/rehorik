@@ -3,34 +3,45 @@
 require_once 'lib/dompdf/autoload.inc.php';
 use Dompdf\Dompdf;
 
-class Reh_Create_Coupon
+class Reh_Online_Coupon
 {
-    public function createCoupon(float $value): string
+    public static function createCoupon(float $value): string
     {
         $coupon = new WC_Coupon();
 
-        $code = $this->generateCouponCode();
-        $coupon->set_code($code); // Coupon code
-        $coupon->set_amount($value); // Discount amount
+        $code = self::generateCouponCode();
+
+        $coupon->set_code($code);
+        $coupon->set_amount($value);
 
         $coupon->save();
 
         return $code;
     }
 
-    public function deleteCoupon(string $code): void
+    // TODO: implement delete coupon. work in progress
+    public static function deleteCoupon(string $code): void
     {
         $coupon = new WC_Coupon($code);
         $coupon->delete();
     }
 
-    public function createCouponPdf(string $code): ?string
-    {
+    public static function createCouponPdf(
+        string $code,
+        string $price,
+        string $name,
+        int $orderItemId
+    ): ?string {
         $dompdf = new Dompdf();
-        $filePath = get_temp_dir() . 'Coupon.pdf';
+
+        $filePath = get_temp_dir() . 'Rehorik-Online-Coupon-' . date('Ymd') . $orderItemId . '.pdf';
 
         ob_start();
-        get_template_part('/templates/online-coupon/coupon-pdf', null, ['code' => $code]);
+        get_template_part('/templates/online-coupon/coupon-pdf', null, [
+            'code' => $code,
+            'price' => $price,
+            'name' => $name
+        ]);
         $dompdf->loadHtml(ob_get_clean());
         $dompdf->setPaper('A4');
         $dompdf->render();
@@ -42,9 +53,9 @@ class Reh_Create_Coupon
         return null;
     }
 
-    private function generateCouponCode(): string
+    private static function generateCouponCode(): string
     {
-        $length = 6;
-        return substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length);
+        $length = 7;
+        return strtoupper(substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length));
     }
 }

@@ -27,7 +27,7 @@ const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
 const BLACK_AND_WINE = 'blackwine';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
 const COUPON_CATEGORY_SLUG = 'gutscheine';
-const GIFTS_CATEGORY_SLUG = 'geschenkkoerbe';
+const GIFTS_CATEGORY_SLUG = 'geschenke';
 const ONLINESHOP_CATEGORY_SLUG = 'onlineshop';
 const VIRTUAL_EVENTS_CATEGORY_SLUG = 'virtuelle-events';
 const VIRTUAL_EVENTS_CATEGORY_SLUGS = [
@@ -72,7 +72,7 @@ const WINERY_ATTRIBUTE_SLUG = 'pa_weingut';
 const GOES_WITH_ATTRIBUTE_SLUG = 'pa_passt-zu';
 const QUALITY_NAME_ATTRIBUTE_SLUG = 'pa_qualitaetsbezeichnung';
 const MANUFACTURER_ATTRIBUTE_SLUG = 'pa_hersteller';
-const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-geschenkkorb';
+const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-praesentkarton';
 const SIZE_ATTRIBUTE_SLUG = 'pa_groesse';
 const TECHNICAL_DETAILS_ATTRIBUTE_SLUG = 'pa_technische-daten';
 
@@ -84,7 +84,7 @@ const ONLINE_META_KEY = 'Online';
 const CANCELED_META_KEY = 'Abgesagt';
 
 // Generated coupon code saved in order item
-const ORDER_ITEM_COUPON_CODE = 'order_item_coupon_code';
+const ORDER_ITEM_COUPON_CODE = '_order_item_coupon_code';
 
 // Payment methods
 const PAYMENT_METHOD_CASH = 'cod';

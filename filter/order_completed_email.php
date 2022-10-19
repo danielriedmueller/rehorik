@@ -45,12 +45,19 @@ add_filter('woocommerce_email_attachments', function (array $attachments, string
             continue;
         }
 
-        $couponCode = $item->get_meta(ORDER_ITEM_COUPON_CODE);
-        if ($couponCode) {
-            $couponFactory = new Reh_Create_Coupon();
-            $pdfFilePath = $couponFactory->createCouponPdf($couponCode);
-            if ($pdfFilePath) {
-                $attachments[] = $pdfFilePath;
+        $couponCodes = $item->get_meta(ORDER_ITEM_COUPON_CODE, false);
+        if (!empty($couponCodes)) {
+            /** @var WC_Product $product */
+            $product = $item->get_product();
+            foreach ($couponCodes as $couponCode) {
+                /** @var WC_Meta_Data $couponCode */
+                $name = $product->get_name();
+                $price = $product->get_price();
+                $metaData = $couponCode->get_data();
+                $pdfFilePath = Reh_Online_Coupon::createCouponPdf($metaData['value'], $price, $name, $metaData['id']);
+                if ($pdfFilePath) {
+                    $attachments[] = $pdfFilePath;
+                }
             }
         }
     }
