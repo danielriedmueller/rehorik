@@ -12,21 +12,23 @@ add_action('woocommerce_order_status_completed', function ($order_id): void {
         return;
     }
 
-    $items = $order->get_items();
-    foreach ($items as $item) {
+    foreach ($order->get_items() as $item) {
+        // Prevent create multiple coupons
+        if ($item->meta_exists(ORDER_ITEM_COUPON_CODE)) {
+            continue;
+        }
+
+        /** @var WC_Product $product */
         $product = $item->get_product();
 
-        if ($product) {
-            /** @var WC_Product $product */
-            $couponCatId = get_term_by('slug', COUPON_CATEGORY_SLUG, 'product_cat')->term_id;
-            if ($product->is_virtual() && in_array($couponCatId, $product->get_category_ids())) {
-                $couponFactory = new Reh_Create_Coupon();
-                /** @var WC_Coupon $coupon */
-                $couponCode = $couponFactory->createCoupon($product->get_price());
-                $item->add_meta_data(ORDER_ITEM_COUPON_CODE, $couponCode);
-                $item->save_meta_data();
-                $item->save();
-            }
+        $couponCatId = get_term_by('slug', COUPON_CATEGORY_SLUG, 'product_cat')->term_id;
+        if ($product->is_virtual() && in_array($couponCatId, $product->get_category_ids())) {
+            $couponFactory = new Reh_Create_Coupon();
+            /** @var WC_Coupon $coupon */
+            $couponCode = $couponFactory->createCoupon($product->get_price());
+            $item->add_meta_data(ORDER_ITEM_COUPON_CODE, $couponCode);
+            $item->save_meta_data();
+            $item->save();
         }
     }
 }, 10, 1);

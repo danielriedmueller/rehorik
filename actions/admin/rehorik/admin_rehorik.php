@@ -25,9 +25,14 @@ add_action('admin_enqueue_scripts', function ($hook) {
 });
 
 add_action('wp_ajax_create_test_coupon', function () {
-    $couponFactory = new Reh_Create_Coupon();
-    $couponFactory->createCoupon(12.5);
+    //$couponFactory = new Reh_Create_Coupon();
+    //$couponFactory->createCoupon(12.5);
     //$couponFactory->deleteCoupon('ouqnq');
+
+    $order_id = 30524;
+    $allmails = WC()->mailer()->emails;
+    $email = $allmails['WC_Email_Customer_Completed_Order'];
+    $email->trigger( $order_id );
 });
 
 add_action('wp_ajax_update_sku', function () {

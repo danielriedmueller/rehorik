@@ -19,11 +19,8 @@ class Reh_Create_Coupon
         $code = $this->generateCouponCode();
         $coupon->set_code($code); // Coupon code
         $coupon->set_amount($value); // Discount amount
-        $coupon->set_usage_limit(1);
 
         $coupon->save();
-
-        $filePath = $this->createCouponPdf($code);
 
         return $code;
     }
@@ -32,8 +29,6 @@ class Reh_Create_Coupon
     {
         $coupon = new WC_Coupon($code);
         $coupon->delete();
-        // send mail
-        //wp_mail('it@rehorik.de', 'Coupon deleted', 'foobarfoo');
     }
 
     private function generateCouponCode(): string
@@ -42,15 +37,23 @@ class Reh_Create_Coupon
         return substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length);
     }
 
-    private function createCouponPdf(string $code): string
+    /**
+     * @throws \Dompdf\Exception
+     */
+    public function createCouponPdf(string $code): ?string
     {
-        $this->dompdf->loadHtml($code);
-        $this->dompdf->setPaper('A4', 'landscape');
+        $filePath = get_temp_dir() . 'Coupon2.pdf';
+
+        ob_start();
+        require("html-to-pdf/coupon_mail.html");
+        $this->dompdf->loadHtml(ob_get_clean());
+        $this->dompdf->setPaper('A4');
         $this->dompdf->render();
 
-        $f = file_put_contents(get_temp_dir() . '/Coupon2.pdf', $this->dompdf->output());
-        print $f;
+        if (file_put_contents($filePath, $this->dompdf->output())) {
+            return $filePath;
+        }
 
-        return "";
+        return null;
     }
 }
