@@ -30,20 +30,22 @@ add_action('wp_ajax_create_test_coupon', function () {
     //$couponFactory->deleteCoupon('ouqnq');
 
 
+    /*
     $code = strtoupper(substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil(10 / strlen($x)))), 1, 10));
     try {
         Reh_Online_Coupon::createCouponPdf($code, '199.95', "Popup Tasting", '5678');
     } catch (Exception $exception) {
         echo $exception->getMessage();
-    }
+   }
+    */
 
 
-    /*
-    $order_id = 30552;
+
+    $order_id = 30558;
     $allmails = WC()->mailer()->emails;
     $email = $allmails['WC_Email_Customer_Completed_Order'];
     $email->trigger( $order_id );
-    */
+
 });
 
 add_action('wp_ajax_update_sku', function () {

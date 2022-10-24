@@ -1,6 +1,7 @@
 <?php
 
 require_once 'lib/dompdf/autoload.inc.php';
+
 use Dompdf\Dompdf;
 
 class Reh_Online_Coupon
@@ -30,8 +31,9 @@ class Reh_Online_Coupon
         string $code,
         string $price,
         string $name,
-        int $serialNumber
-    ): ?string {
+        int    $serialNumber
+    ): ?string
+    {
         $dompdf = new Dompdf([
             'enable_remote' => true,
         ]);
