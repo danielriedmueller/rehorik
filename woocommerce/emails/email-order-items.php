@@ -21,6 +21,7 @@ $text_align  = is_rtl() ? 'right' : 'left';
 $margin_side = is_rtl() ? 'left' : 'right';
 
 foreach ( $items as $item_id => $item ) :
+    $item->read_meta_data();
 	$product       = $item->get_product();
 	$sku           = '';
 	$purchase_note = '';

@@ -29,7 +29,7 @@ add_filter('woocommerce_email_additional_content_customer_completed_order', func
         }
     }
 
-    return 'deine Bestellung ist abgeschlossen. Vielen Dank für Deinen Einkauf!';
+    return 'Deine Bestellung ist abgeschlossen. Vielen Dank für Deinen Einkauf!';
 }, 10, 3);
 
 /**
@@ -41,6 +41,7 @@ add_filter('woocommerce_email_attachments', function (array $attachments, string
     }
 
     foreach ($order->get_items() as $item) {
+        $item->read_meta_data();
         if (!$item->meta_exists(ORDER_ITEM_COUPON_CODE)) {
             continue;
         }
@@ -51,11 +52,13 @@ add_filter('woocommerce_email_attachments', function (array $attachments, string
             $product = $item->get_product();
             foreach ($couponCodes as $couponCode) {
                 /** @var WC_Meta_Data $couponCode */
-                $name = $product->get_name();
-                $price = $product->get_price();
                 $metaData = $couponCode->get_data();
-                $pdfFilePath = Reh_Online_Coupon::createCouponPdf($metaData['value'], $price, $name, $metaData['id']);
-                if ($pdfFilePath) {
+                if ($pdfFilePath = Reh_Online_Coupon::createCouponPdf(
+                    $metaData['value'],
+                    $product->get_price(),
+                    $product->get_name(),
+                    $metaData['id']
+                )) {
                     $attachments[] = $pdfFilePath;
                 }
             }
