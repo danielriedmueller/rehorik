@@ -30,11 +30,18 @@ class Reh_Online_Coupon
         string $code,
         string $price,
         string $name,
-        int $orderItemId
+        int $serialNumber
     ): ?string {
-        $dompdf = new Dompdf();
+        $dompdf = new Dompdf([
+            'enable_remote' => true,
+        ]);
+        $assetsDir = get_stylesheet_directory_uri() . '/assets/';
+        $dompdf->getFontMetrics()->registerFont(
+            ['family' => 'Cond', 'style' => 'normal', 'weight' => 'normal'],
+            $assetsDir . '/fonts/cond.ttf'
+        );
 
-        $filePath = get_temp_dir() . 'Rehorik-Online-Coupon-' . date('Ymd') . $orderItemId . '.pdf';
+        $filePath = get_temp_dir() . 'Rehorik-Online-Coupon-' . date('Ymd') . $serialNumber . '.pdf';
 
         ob_start();
         get_template_part('/templates/online-coupon/coupon-pdf', null, [
