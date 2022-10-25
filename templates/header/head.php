@@ -2,10 +2,19 @@
 require_once(get_stylesheet_directory() . '/helper/page_helper.php');
 
 $hasSlider = !empty($args['slider']);
+$isProd = $_SERVER['HOST'] === 'rehorik.de'
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '');
+    </script>
     <title><?= createPageTitle('Rehorik') ?></title>
     <meta charset="<?php bloginfo('charset'); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -31,6 +40,7 @@ $hasSlider = !empty($args['slider']);
 </head>
 <body <?php body_class('rehorik' . ($hasSlider ? ' has-slider' : '')); ?>>
 <div id="page-container">
+    host: <?= home_url()   ?>
     <?php if ($hasSlider) {
         get_template_part('templates/header/slider', null, ['items' => $args['slider']]);
     } ?>
