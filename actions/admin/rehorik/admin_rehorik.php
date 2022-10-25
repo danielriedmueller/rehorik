@@ -12,6 +12,7 @@ add_action('admin_menu', function () {
             <button class="rehorik-admin-action-button" data-action="hide_past_event_tickets">Hide Past Event Tickets</button>
             <button class="rehorik-admin-action-button" data-action="update_tickets_date">Update All Tickets</button>
             <button class="rehorik-admin-action-button" data-action="create_test_coupon">Create Test Coupon</button>
+            <button class="rehorik-admin-action-button" data-action="send_test_mail">Send Test Mail</button>
         </div>
         <?php
     }, null, 3);
@@ -22,6 +23,10 @@ add_action('admin_enqueue_scripts', function ($hook) {
         $assetsDir = get_stylesheet_directory_uri() . '/assets/';
         wp_enqueue_script('rehorik-admin', $assetsDir . 'js/admin.js', ['jquery'], 1, false);
     }
+});
+
+add_action('wp_ajax_send_test_mail', function () {
+    
 });
 
 add_action('wp_ajax_create_test_coupon', function () {
@@ -39,13 +44,10 @@ add_action('wp_ajax_create_test_coupon', function () {
    }
     */
 
-
-
     $order_id = 30558;
     $allmails = WC()->mailer()->emails;
     $email = $allmails['WC_Email_Customer_Completed_Order'];
     $email->trigger( $order_id );
-
 });
 
 add_action('wp_ajax_update_sku', function () {
