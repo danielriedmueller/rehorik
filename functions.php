@@ -1,6 +1,8 @@
 <?php
 show_admin_bar(true);
 
+const PROD_URL = 'https://www.rehorik.de';
+
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
@@ -26,8 +28,8 @@ const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
 const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
 const BLACK_AND_WINE = 'blackwine';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
-const COUPON_CATEGORY_SLUG = 'gutscheine';
 const GIFTS_CATEGORY_SLUG = 'geschenke';
+const COUPON_CATEGORY_SLUG = 'gutscheine';
 const ONLINESHOP_CATEGORY_SLUG = 'onlineshop';
 const VIRTUAL_EVENTS_CATEGORY_SLUG = 'virtuelle-events';
 const VIRTUAL_EVENTS_CATEGORY_SLUGS = [
