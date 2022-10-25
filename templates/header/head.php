@@ -17,7 +17,6 @@ $hasSlider = !empty($args['slider']);
         </script>
     <?php endif; ?>
     <title><?= createPageTitle('Rehorik') ?></title>
-    <meta test="<?= home_url() ?>"/>
     <meta charset="<?php bloginfo('charset'); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="manifest" href="<?= get_stylesheet_directory_uri() . '/assets/manifest.json' ?>">
