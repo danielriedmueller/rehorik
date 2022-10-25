@@ -7,14 +7,15 @@ $hasSlider = !empty($args['slider']);
 <html <?php language_attributes(); ?>>
 <head>
     <?php if (home_url() === PROD_URL): ?>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6H63MW5X4"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-X6H63MW5X4', { 'anonymize_ip': true });
-        </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6H63MW5X4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-X6H63MW5X4', { 'anonymize_ip': true });
+    </script>
     <?php endif; ?>
     <title><?= createPageTitle('Rehorik') ?></title>
     <meta charset="<?php bloginfo('charset'); ?>"/>
