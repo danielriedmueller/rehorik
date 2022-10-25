@@ -1,7 +1,7 @@
 <?php
 show_admin_bar(true);
 
-const PROD_URL = 'http://www.rehorik.de';
+const PROD_URL = 'https://www.rehorik.de';
 
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
