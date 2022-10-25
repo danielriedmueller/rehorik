@@ -13,7 +13,7 @@ $hasSlider = !empty($args['slider']);
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-X6H63MW5X4');
+            gtag('config', 'G-X6H63MW5X4', { 'anonymize_ip': true });
         </script>
     <?php endif; ?>
     <title><?= createPageTitle('Rehorik') ?></title>
