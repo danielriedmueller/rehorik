@@ -31,22 +31,25 @@
 <body>
 <div id="wrapper">
     <div id="logo"><img src="<?= $assetsDir ?>/img/logos/logo_192px.png" /></div>
+    <h1>Rehorik</h1>
+    <h2>Onlinegutschein</h2>
     <div>
-        <div>Code: <?= $args['code'] ?></div>
+        <div>Gutscheincode: <?= $args['code'] ?></div>
         <div>Name: <?= $args['name'] ?></div>
         <div>Preis: <?= $args['price'] ?></div>
     </div>
+    <p>Bitte beachten: Der Gutschein ist nur im Onlineshop unter www.rehorik.de einlösbar.</p>
+    <p>
+        Euer Puls schlägt höher, wenn Euch Euer Lieblingsbarista eine Tulpe in die Tasse zaubert? Wie wird die Milch nur so schön feinporig? Das und noch viel mehr findet Ihr in unserem Latte Art Kurs heraus. Hier dreht sich alles um die richtige Milch und die passende Schäumtechnik. Der optimale Espresso bietet dabei die Grundlage für die Kunst des Milchgießens. Ob Euch das Herz oder das Blatt besser liegt, finden wir einfach gemeinsam heraus. Ihr trinkt keine Kuhmilch? Keine Sorge: bei uns gibt’s auch Hafer, Soja und Erbsendrinks.
+    </p>
+    <p>Möchtet ihr mit dem Gutschein lieber Kaffee kaufen? Kein Problem! Der Gutschein ist für alle Produkte im Onlineshop einlösbar. Der Restwert bleibt erhalten.</p>
     <footer>
         <p>
-            Den aktuellen Gutscheinwert können Sie in unseren Warenhäusern, über unser Kundenzentrum oder im Internet
-            unter www.manufactum.de/wertabfrage abrufen. Bei Diebstahl, Verlust oder Unbrauchbarkeit leisten wir
-            keinen Ersatz. Das Guthaben dieses Gutscheins wird nicht verzinst oder bar ausgezahlt.
-            Es gelten unsere allgemeinen Geschäftsbedingungen – diese können unter www.manufactum.de eingesehen werden.
-            Beachten Sie bitte, dass Ausstellungs- und Einlösewährung identisch sein müssen. Der Gutschein ist unbegrenzt
-            gültig und in unseren Warenhäusern sowie über unser Kundenzentrum wiederaufladbar.
+            Der Gutschein ist unbegrenzt gültig und kann beliebig oft unter www.rehorik.de verwendet werden, solange ein Restwert vorhanden ist.
+            Das Guthaben dieses Gutscheins wird nicht verzinst, vesteuert oder bar ausgezahlt.
+            Bei Diebstahl, Verlust oder Unbrauchbarkeit leisten wir keinen Ersatz.
+            Es gelten unsere allgemeinen Geschäftsbedingungen – diese können unter www.rehorik.de eingesehen werden.
         </p>
-        <p>Einlösbar bei jeder Bestellung aus unseren Katalogen, in unserem Online-Shop
-            oder bei einem Einkauf in unseren Warenhäusern.</p>
         <table border="0" cellpadding="10" cellspacing="0" width="590   " id="template_footer">
             <tr>
                 <td valign="top">
