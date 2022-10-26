@@ -1,4 +1,4 @@
-.cat-chooser {
+ul.rehorik-products.products li.product-category.product .cat-chooser {
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -6,38 +6,23 @@
   min-height: $product-category-frontpage-height;
   width: 100%;
 
+  h2.woocommerce-loop-category__title {
+    background: transparent linear-gradient(0deg, rgba(0,0,0,$opacity) 5%, rgba(0,0,0,0) 45%);
+  }
+
   .cat-names {
     flex-grow: 1;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: space-around;
     pointer-events: none;
-    margin-bottom: $spacing-s;
+    margin-bottom: $spacing;
+    width: 100%;
 
     h2 {
-      flex: 1 1 0;
-      background: transparent;
-      backdrop-filter: none;
-      padding: 0 $spacing-xxs;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: auto;
-      text-shadow: $text-shadow;
+      color: $font-color-accent;
+      font-size: $font-size;
     }
-  }
-
-  h2 {
-    height: 60px;
-    color: $beigegold;
-    width: 100%;
-    padding: $spacing-xs;
-    background: rgba(0, 0, 0, $opacity) none;
-    backdrop-filter: blur(3px);
-    font-size: $font-size;
-    text-align: center;
-    text-transform: uppercase;
-    z-index: 1;
   }
 
   label, a {

@@ -7,9 +7,11 @@
     <label for="rehorik-rosterei-kaffehaus">
         <input type="radio" id="rehorik-rosterei-kaffehaus" value="rehorik-rosterei-kaffehaus" name="orderbird-radio" />
     </label>
-    <div class="cat-names">
-        <h2>Café 190°</h2>
-        <h2>Rösterei & Kaffeehaus</h2>
-    </div>
-    <h2><span>Reservieren</span></h2>
+    <h2 class="woocommerce-loop-category__title">
+        <div class="cat-names">
+            <h2>Café 190°</h2>
+            <h2>Rösterei & Kaffeehaus</h2>
+        </div>
+        <span>Reservieren</span>
+    </h2>
 </div>
