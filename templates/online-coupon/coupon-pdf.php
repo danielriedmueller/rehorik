@@ -39,10 +39,7 @@
         <div>Preis: <?= $args['price'] ?></div>
     </div>
     <p>Bitte beachten: Der Gutschein ist nur im Onlineshop unter www.rehorik.de einlösbar.</p>
-    <p>
-        Euer Puls schlägt höher, wenn Euch Euer Lieblingsbarista eine Tulpe in die Tasse zaubert? Wie wird die Milch nur so schön feinporig? Das und noch viel mehr findet Ihr in unserem Latte Art Kurs heraus. Hier dreht sich alles um die richtige Milch und die passende Schäumtechnik. Der optimale Espresso bietet dabei die Grundlage für die Kunst des Milchgießens. Ob Euch das Herz oder das Blatt besser liegt, finden wir einfach gemeinsam heraus. Ihr trinkt keine Kuhmilch? Keine Sorge: bei uns gibt’s auch Hafer, Soja und Erbsendrinks.
-    </p>
-    <p>Möchtet ihr mit dem Gutschein lieber Kaffee kaufen? Kein Problem! Der Gutschein ist für alle Produkte im Onlineshop einlösbar. Der Restwert bleibt erhalten.</p>
+    <p>Möchtest du den Gutschein lieber für Kaffee, Wein oder Spirits verwenden? Kein Problem! Der Gutschein ist für alle Produkte im Onlineshop einlösbar. Der Restwert bleibt erhalten.</p>
     <footer>
         <p>
             Der Gutschein ist unbegrenzt gültig und kann beliebig oft unter www.rehorik.de verwendet werden, solange ein Restwert vorhanden ist.
