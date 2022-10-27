@@ -20,11 +20,10 @@ $mergeDescriptions = function ($description, $shortDescription, $claim) {
 
     $result = $shortDescription ? $cleanUpText($description) . ' ' . $cleanUpText($shortDescription) : $cleanUpText($description);
 
-
-    $charsToNewLine = 41;
+    $charsToNewLine = 52;
     $claimLength = strlen($claim);
     $claimLines = $claimLength > 0 ? (int) ceil($claimLength / $charsToNewLine) : 0;
-    $width = 310 - $charsToNewLine * $claimLines;
+    $width = 350 - $charsToNewLine * $claimLines;
 
     return mb_strimwidth($result, 0, $width, "...");
 };

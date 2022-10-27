@@ -33,7 +33,7 @@
 
   &.home {
     ul.products.rehorik-products {
-      @include gridView($product-category-width-large);
+      @include gridView($product-category-width);
     }
 
     #rehorik-featured-products ul.products.rehorik-products {

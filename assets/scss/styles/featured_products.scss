@@ -1,5 +1,5 @@
 #page-container #rehorik-featured-products {
-  $imgSize: $product-category-width-large;
+  $imgSize: $product-category-width;
   //$textSize: $imgSize / 1.618;
   $textSize: $imgSize;
 
@@ -37,7 +37,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 0 0 0 $spacing-s;
+      margin-left: $product-view-grid-gap;
       box-sizing: border-box;
 
       .category {

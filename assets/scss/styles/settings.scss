@@ -42,13 +42,6 @@ $very-small-breakpoint: 442px;
 $small-breakpoint: 767px;
 $medium-breakpoint: 1180px;
 
-$product-thumbnail-size: 100px;
-$cart-thumbnail-size: 175px;
-$product-category-width: 235px;
-$product-category-width-large: 350px;
-$product-category-frontpage-height: 402px;
-$product-height: 515px;
-
 $spacing: 25px;
 $spacing-l: 35px;
 $spacing-xl: 50px;
@@ -57,6 +50,12 @@ $spacing-s: 20px;
 $spacing-xs: 15px;
 $spacing-xxs: 8px;
 $spacing-xxxs: 3px;
+
+$product-thumbnail-size: 100px;
+$cart-thumbnail-size: 175px;
+$product-category-width: 350px;
+$product-category-frontpage-height: $product-category-width;
+$product-height: 515px;
 
 $menu-height: 60px;
 $menu-gap-to-top: $spacing-s;
@@ -96,13 +95,15 @@ $timeline-height: 800px;
 $section-spacing: $spacing-xxl;
 $section-spacing-small: $spacing-l;
 
+// Arise of of 4 category items
+$max-width: $product-category-width + $product-view-grid-gap + $product-category-width + $product-view-grid-gap + $product-category-width + $product-view-grid-gap + $product-category-width;
 $max-width-small: 1280px;
 
 :root {
   --slider-height: 600px;
   --section-spacing-top-bottom: #{$section-spacing};
-  --section-spacing-left-right: #{$spacing};
-  --max-width: 1600px;
+  --section-spacing-left-right: 0;
+  --max-width: #{$max-width};
   --container-headline-spacing-bottom: #{$spacing-xl};
 
   @media all and (max-width: $small-breakpoint) {
