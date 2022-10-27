@@ -53,6 +53,7 @@ $spacing-xxxs: 3px;
 
 $product-thumbnail-size: 100px;
 $cart-thumbnail-size: 175px;
+$product-gallery-width: 235px;
 $product-category-width: 350px;
 $product-category-frontpage-height: $product-category-width;
 $product-height: 515px;
@@ -65,7 +66,6 @@ $menu-sub-item-hover-color: $weinrot;
 
 $img-size-big: 690px;
 
-$product-view-grid-gap: $spacing-xl;
 $product-view-cart-button-quantity-width: 75px;
 $product-view-cart-button-width: 225px;
 
@@ -96,7 +96,7 @@ $section-spacing: $spacing-xxl;
 $section-spacing-small: $spacing-l;
 
 // Arise of of 4 category items
-$max-width: $product-category-width + $product-view-grid-gap + $product-category-width + $product-view-grid-gap + $product-category-width + $product-view-grid-gap + $product-category-width;
+$max-width: $product-category-width + $spacing-xl + $product-category-width + $spacing-xl + $product-category-width + $spacing-xl + $product-category-width;
 $max-width-small: 1280px;
 
 :root {
@@ -105,10 +105,18 @@ $max-width-small: 1280px;
   --section-spacing-left-right: 0;
   --max-width: #{$max-width};
   --container-headline-spacing-bottom: #{$spacing-xl};
+  --product-view-grid-gap: #{$spacing-xl};
+  --product-view-grid-gap-half: #{$spacing-xl / 2};
+
+  @media all and (max-width: $max-width) {
+    --section-spacing-left-right: #{$spacing};
+  }
 
   @media all and (max-width: $small-breakpoint) {
     --slider-height: 485px;
     --section-spacing-left-right: #{$spacing-xs};
+    --product-view-grid-gap: #{$spacing-l};
+    --product-view-grid-gap-half: #{$spacing-l / 2};
   }
 
   @media all and (max-width: $medium-breakpoint) {

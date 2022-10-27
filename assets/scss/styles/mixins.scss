@@ -1,6 +1,6 @@
 @mixin gridView($item-width) {
   display: grid;
-  gap: $product-view-grid-gap;
+  gap: var(--product-view-grid-gap);
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(min($item-width, 100%), $item-width));
 

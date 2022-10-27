@@ -7,7 +7,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-geschenke
   background-color: transparent;
   padding: 0;
   @media all and (min-width: $medium-breakpoint + 1) {
-    margin: 0 0 0 $product-view-grid-gap / 2;
+    margin: 0 0 0 var(--product-view-grid-gap-half);
   }
 
   display: flex;
@@ -46,12 +46,12 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-geschenke
 }
 
 body.rehorik.woocommerce #main-content div.rehorik-product {
-  $row-padding: $product-view-grid-gap / 2;
+  $row-padding: var(--product-view-grid-gap-half);
 
   .rehorik-product-information {
     background-color: $product-default-color;
     border: none;
-    padding: $product-view-grid-gap;
+    padding: var(--product-view-grid-gap);
 
 
     ul {

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             lazyLoad: true,
             gutter: 0,
             responsive: {
-                898: {
+                765: {
                     items: 2,
                     gutter: 50,
                 }
