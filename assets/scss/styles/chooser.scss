@@ -7,7 +7,7 @@ ul.rehorik-products.products li.product-category.product .cat-chooser {
   width: 100%;
 
   h2.woocommerce-loop-category__title {
-    background: transparent linear-gradient(0deg, rgba(0,0,0,$opacity) 5%, rgba(0,0,0,0) 45%);
+    background: transparent linear-gradient(0deg, rgba(0, 0, 0, $opacity) 10%, rgba(0, 0, 0, 0) 60%);
   }
 
   .cat-names {
@@ -19,9 +19,9 @@ ul.rehorik-products.products li.product-category.product .cat-chooser {
     margin-bottom: $spacing;
     width: 100%;
 
-    h2 {
-      color: $font-color-accent;
-      font-size: $font-size;
+    > span {
+      flex-basis: $product-category-width / 2;
+      padding: 0 $spacing-xs;
     }
   }
 
@@ -35,22 +35,41 @@ ul.rehorik-products.products li.product-category.product .cat-chooser {
     background-size: cover;
 
     &:hover {
-      filter: sepia(100%);
+      filter: sepia(80%);
+
+      &:first-of-type {
+        & ~ h2 {
+          color: #fff;
+
+          .cat-names span:nth-child(2) {
+            color: $font-color-accent;
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        & ~ h2 {
+          color: #fff;
+
+          .cat-names span:first-child {
+            color: $font-color-accent;
+          }
+        }
+      }
     }
 
     &:nth-of-type(1) {
       left: 0;
 
-      &:hover~div h2:nth-child(1) {
+      &:hover ~ div h2:nth-child(1) {
         color: #fff;
       }
     }
 
     &:nth-of-type(2) {
       right: 0;
-      border-left: 1px solid $beigegold;
 
-      &:hover~div h2:nth-child(2) {
+      &:hover ~ div h2:nth-child(2) {
         color: #fff;
       }
     }
