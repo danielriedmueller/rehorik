@@ -26,6 +26,14 @@ ul.rehorik-products.products {
       display: block;
       height: 100%;
       width: 100%;
+
+      &:hover {
+        filter: sepia(80%);
+
+        &+h2 {
+          color: #fff;
+        }
+      }
     }
 
     video {
@@ -56,20 +64,22 @@ ul.rehorik-products.products {
     }
 
     h2.woocommerce-loop-category__title {
-      z-index: 10;
-      $titleHeight: 60px;
-      height: $titleHeight;
-      margin: -$titleHeight 0 0 0;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      position: absolute;
+      bottom: 0;
       color: $font-color-accent;
       width: 100%;
-      padding: $spacing-xs;
-      background: rgba(0, 0, 0, $opacity) none;
-      backdrop-filter: blur(3px);
+      height: 100%;
+      background: transparent linear-gradient(0deg, rgba(0,0,0,$opacity) 10%, rgba(0,0,0,0) 35%);
+      pointer-events: none;
       font-size: $font-size;
       font-weight: normal;
       text-align: center;
       text-transform: uppercase;
+      padding: 0 0 $spacing 0;
     }
 
     div.rehorik-category-description {
@@ -81,7 +91,6 @@ ul.rehorik-products.products {
       border-bottom-left-radius: $border-radius;
       font-size: $font-size-small;
       position: relative;
-
     }
   }
 }

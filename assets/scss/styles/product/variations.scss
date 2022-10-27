@@ -13,7 +13,7 @@ body.rehorik.woocommerce div.product.rehorik-product {
 
     table.variations {
       tbody tr:first-child ul {
-        margin-bottom: $product-view-grid-gap;
+        margin-bottom: var(--product-view-grid-gap);
       }
 
       th {

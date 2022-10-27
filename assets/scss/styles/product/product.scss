@@ -2,7 +2,7 @@
   max-width: $max-width-small;
   margin: 0 auto;
   text-align: left;
-  margin-bottom: $product-view-grid-gap;
+  margin-bottom: var(--product-view-grid-gap);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -16,15 +16,15 @@
     "ingredients ingredients"
 ;
 
-  .rehorik-product-view-gallery {margin: 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2 0;}
-  .rehorik-product-view-title-price {margin: 0 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2;}
-  .rehorik-add-to-cart-container {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2;}
-  .rehorik-product-goes-with:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2;}
-  .woocommerce-notices-wrapper:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 $product-view-grid-gap / 2;}
-  .rehorik-product-video:not(:empty) {margin: $product-view-grid-gap / 2 $product-view-grid-gap / 2 $product-view-grid-gap / 2 0;}
-  .rehorik-sigils-bar:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
-  .rehorik-product-information {margin: $product-view-grid-gap / 2 0 0 0;}
-  .rehorik-product-ingredients:not(:empty) {margin: $product-view-grid-gap / 2 0 0 0;}
+  .rehorik-product-view-gallery {margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;}
+  .rehorik-product-view-title-price {margin: 0 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
+  .rehorik-add-to-cart-container {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
+  .rehorik-product-goes-with:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
+  .woocommerce-notices-wrapper:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
+  .rehorik-product-video:not(:empty) {margin: var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;}
+  .rehorik-sigils-bar:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
+  .rehorik-product-information {margin: var(--product-view-grid-gap-half) 0 0 0;}
+  .rehorik-product-ingredients:not(:empty) {margin: var(--product-view-grid-gap-half) 0 0 0;}
 
   @media all and (max-width: $medium-breakpoint) {
     grid-template-columns: 1fr;
@@ -40,15 +40,15 @@
     "ingredients"
   ;
 
-    .rehorik-product-view-gallery {margin: 0 0 $product-view-grid-gap / 2 0;}
-    .rehorik-product-view-title-price {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
-    .rehorik-add-to-cart-container {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
-    .rehorik-product-goes-with:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
-    .woocommerce-notices-wrapper:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
-    .rehorik-product-video:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
-    .rehorik-sigils-bar:not(:empty) {margin: $product-view-grid-gap / 2 0 $product-view-grid-gap / 2 0;}
-    .rehorik-product-information {margin: $product-view-grid-gap / 2 0 0 0;}
-    .rehorik-product-ingredients:not(:empty) {margin: $product-view-grid-gap / 2 0 0 0;}
+    .rehorik-product-view-gallery {margin: 0 0 var(--product-view-grid-gap-half) 0;}
+    .rehorik-product-view-title-price {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
+    .rehorik-add-to-cart-container {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
+    .rehorik-product-goes-with:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
+    .woocommerce-notices-wrapper:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
+    .rehorik-product-video:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
+    .rehorik-sigils-bar:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
+    .rehorik-product-information {margin: var(--product-view-grid-gap-half) 0 0 0;}
+    .rehorik-product-ingredients:not(:empty) {margin: var(--product-view-grid-gap-half) 0 0 0;}
   }
 
   .rehorik-product-view-gallery {
@@ -86,7 +86,8 @@
     p.price {
       color: $font-color;
       font-size: $font-size-large;
-      margin-top: $product-view-grid-gap;
+      margin: var(--product-view-grid-gap) 0 0 0;
+      padding: 0;
 
       > span {
         font-size: $font-size-large;
