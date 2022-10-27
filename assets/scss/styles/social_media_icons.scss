@@ -84,10 +84,22 @@ $element-height: 42px;
     @include gold-without-background;
     @include icon-size($spacing-s, $spacing-s);
 
+    .rehorik-logo {
+      background-image: url("../img/svg/logo_inverted.svg");
+      flex: 0 0 35px;
+      width: 35px;
+      height: 35px;
+      background-size: 35px;
+      margin-right: auto;
+    }
+
     display: none;
-    right: var(--section-spacing-left-right);
-    top: $menu-height + $spacing-s;
-    padding: 0;
+    padding: 0 var(--section-spacing-left-right);
+    left: 0;
+    width: 100%;
+    top: $menu-height + $spacing-xs;
+    justify-content: flex-end;
+    align-items: center;
 
     &.hide-for-mobile {
       display: none;
@@ -130,9 +142,25 @@ $element-height: 42px;
       &.scrolled {
         @include gold-without-background;
 
+        .rehorik-logo {
+          background-image: url("../img/svg/logo_inverted.svg");
+          $border-size: 1px;
+          flex: 0 0 $logo-size-very-small + $spacing + $border-size;
+          width: $logo-size-very-small;
+          height: $logo-size-very-small;
+          background-size: $logo-size-very-small;
+          background-repeat: no-repeat;
+          background-position: $spacing center;
+          border-left: $border-size solid $beigegold;
+          order: 4;
+          margin-left: $spacing;
+        }
+
         display: flex;
+        align-items: center;
+        height: $menu-height;
         left: 0;
-        top: 10px;
+        top: 0;
         width: 145px;
 
         @media all and (max-width: 1400px) {
