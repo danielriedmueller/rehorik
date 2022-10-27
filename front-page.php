@@ -18,7 +18,7 @@ get_template_part('templates/header/head', null, ['slider' => [
     ]
 ]]);
 get_template_part('templates/hint');
-get_template_part('templates/featured/slider');
+get_template_part('templates/featured/slider')
 ?>
 <div class="marketing-banner">
     <div class="container">

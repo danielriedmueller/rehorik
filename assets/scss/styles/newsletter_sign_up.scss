@@ -22,12 +22,6 @@
           color: #fff;
           font-size: $font-size;
         }
-
-        padding-right: $spacing-xl;
-
-        @media all and (max-width: $small-breakpoint) {
-          padding-right: 0;
-        }
       }
 
       .newsletter-sign-up-form {

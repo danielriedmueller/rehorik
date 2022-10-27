@@ -7,7 +7,7 @@
   justify-content: flex-start;
 
   .flex-viewport {
-    margin-bottom: $product-view-grid-gap / 2;
+    margin-bottom: var(--product-view-grid-gap-half);
   }
 
   ol.flex-control-nav.flex-control-thumbs {
