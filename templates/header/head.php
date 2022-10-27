@@ -50,7 +50,6 @@ $isProd = $_SERVER['HOST'] === 'rehorik.de'
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57QPNFQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php endif; ?>
 <div id="page-container">
-    host: <?= home_url()   ?>
     <?php if ($hasSlider) {
         get_template_part('templates/header/slider', null, ['items' => $args['slider']]);
     } ?>
