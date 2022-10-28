@@ -10,11 +10,12 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
     }
 
     $events = tribe_get_events([
-        'posts_per_page' => 8,
+        'posts_per_page' => 6,
         'start_date'     => 'now',
     ]);
 
     $html = '<div class="rehorik-upcoming-events">';
+
     foreach ($events as $event) {
         /** @var WP_Post $event */
         $link = tribe_get_event_link($event->ID);
