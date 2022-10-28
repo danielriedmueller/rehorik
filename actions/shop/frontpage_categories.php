@@ -10,7 +10,7 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
     }
 
     $events = tribe_get_events([
-        'posts_per_page' => 11,
+        'posts_per_page' => 8,
         'start_date'     => 'now',
     ]);
 
