@@ -67,7 +67,11 @@ $imgPathSuffix = ')';
             <?php endif; ?>
         </div>
     <?php endif; ?>
+    <div class="slider-snow">
+        <?php for ($i = 0; $i < 199; $i++): ?>
+            <div class="snowflake"></div>
+        <?php endfor; ?>
+    </div>
 </div>
-
 <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
 
