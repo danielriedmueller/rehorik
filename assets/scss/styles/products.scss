@@ -2,7 +2,7 @@
   li.product.rehorik-product {
     overflow: hidden;
     text-align: center;
-    width: $product-category-width;
+    width: $product-gallery-width;
     height: $product-height;
     border-radius: $border-radius;
     margin: 0;
@@ -38,7 +38,7 @@
     a {
       img {
         margin: 0 0 $spacing-xxs 0;
-        width: $product-category-width;
+        width: $product-gallery-width;
         height: auto;
         object-fit: cover;
         border-bottom-left-radius: 0;

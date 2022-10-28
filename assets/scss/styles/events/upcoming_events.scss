@@ -1,4 +1,4 @@
-li.veranstaltungen {
+ul.rehorik-products.products li.veranstaltungen.product-category.product {
   div.rehorik-upcoming-events {
     position: absolute;
     top: 0;
@@ -6,8 +6,7 @@ li.veranstaltungen {
     z-index: 1;
     padding: $spacing-s;
     width: 100%;
-    height: 406px;
-    backdrop-filter: blur(3px);
+    height: $product-category-frontpage-height;
 
     > a {
       display: flex;
