@@ -46,7 +46,7 @@ add_filter('woocommerce_display_product_attributes', function ($productAttribute
     /**
      * If Bio, add "BIO" beforehand Sorte value
      */
-    if ($productAttributes[ATTRIBUTE_SLUG_PREFIX . VARIETIES_ATTRIBUTE_SLUG]
+    if (isset($productAttributes[ATTRIBUTE_SLUG_PREFIX . VARIETIES_ATTRIBUTE_SLUG])
         && !empty(generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG)))
     ) {
         $productAttributes[ATTRIBUTE_SLUG_PREFIX . VARIETIES_ATTRIBUTE_SLUG]["value"] = addBioBeforehandSorte(

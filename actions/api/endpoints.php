@@ -4,11 +4,13 @@ add_action('rest_api_init', function () {
 
     register_rest_route($ns, '/products', [
         'methods' => 'GET',
-        'callback' => [new Reh_Api_Products, 'fetchProducts']
+        'callback' => [new Reh_Api_Products, 'fetchProducts'],
+        'permission_callback' => '__return_true'
     ]);
 
     register_rest_route($ns, '/products/update', [
         'methods' => 'POST',
-        'callback' => [new Reh_Api_Products, 'updateProducts']
+        'callback' => [new Reh_Api_Products, 'updateProducts'],
+        'permission_callback' => '__return_true'
     ]);
 });
