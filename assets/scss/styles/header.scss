@@ -225,8 +225,8 @@ header.rehorik-header {
       position: absolute;
       top: $menu-height;
       left: 0;
-      background: transparent url("../img/burger_bg_tile.png") repeat top left;
-      background-size: 150px;
+      background: $weinrot url("../img/burger_bg.jpg") no-repeat top left;
+      background-size: 100%;
       width: 100%;
 
       ul.menu {
