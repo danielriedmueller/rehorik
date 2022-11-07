@@ -225,16 +225,16 @@ header.rehorik-header {
       position: absolute;
       top: $menu-height;
       left: 0;
-      background-color: transparent;
+      background: transparent url("../img/burger_bg_tile.png") repeat top left;
+      background-size: 150px;
       width: 100%;
-      border-bottom: 1px solid $beigegold;
 
       ul.menu {
         flex-direction: column;
         background-color: transparent;
 
         > li {
-          background-color: $weinrot;
+          background-color: transparent;
         }
 
         li.menu-item-has-children {
