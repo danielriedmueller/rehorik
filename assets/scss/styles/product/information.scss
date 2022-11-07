@@ -2,7 +2,8 @@
 
 // Exception for merch and gifts. Move position of description to the top
 body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .rehorik-product-information,
-body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-geschenke .rehorik-product-information {
+body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-geschenke .rehorik-product-information,
+body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-gutscheine .rehorik-product-information {
   grid-area: goes-with;
   background-color: transparent;
   padding: 0;
