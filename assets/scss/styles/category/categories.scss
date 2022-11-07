@@ -30,7 +30,7 @@ ul.rehorik-products.products {
       &:hover {
         filter: sepia(80%);
 
-        &+h2 {
+        &+h2, &~.rehorik-category-description {
           color: #fff;
         }
       }
@@ -84,13 +84,13 @@ ul.rehorik-products.products {
 
     div.rehorik-category-description {
       flex-grow: 1;
-      background-color: $weinrot;
-      color: $product-alternative-body-text-color;
+      height: 100%;
+      pointer-events: none;
+      background: transparent linear-gradient(180deg, rgba(0,0,0,$opacity) 10%, rgba(0,0,0,0) 50%);
+      color: $product-alternative-header-text-color;
       padding: $spacing-xs;
-      border-bottom-right-radius: $border-radius;
-      border-bottom-left-radius: $border-radius;
-      font-size: $font-size-small;
-      position: relative;
+      font-size: $font-size;
+      position: absolute;
     }
   }
 }

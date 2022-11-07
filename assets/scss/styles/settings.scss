@@ -74,6 +74,7 @@ $border-radius-large: 17px;
 
 $logo-size: 135px;
 $logo-size-small: 80px;
+$logo-size-very-small: 80px;
 
 $cart-coupon-width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
 $cart-coupon-width-broad: 380px;
@@ -107,6 +108,7 @@ $max-width-small: 1280px;
   --container-headline-spacing-bottom: #{$spacing-xl};
   --product-view-grid-gap: #{$spacing-xl};
   --product-view-grid-gap-half: #{$spacing-xl / 2};
+  --product-view-grid-gap-quarter: #{$spacing-xl / 4};
 
   @media all and (max-width: $max-width) {
     --section-spacing-left-right: #{$spacing};
@@ -117,6 +119,7 @@ $max-width-small: 1280px;
     --section-spacing-left-right: #{$spacing-xs};
     --product-view-grid-gap: #{$spacing-l};
     --product-view-grid-gap-half: #{$spacing-l / 2};
+    --product-view-grid-gap-quarter: #{$spacing-l / 4};
   }
 
   @media all and (max-width: $medium-breakpoint) {

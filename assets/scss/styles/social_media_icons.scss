@@ -5,6 +5,10 @@ $element-height: 42px;
   justify-content: space-between;
   align-items: flex-start;
   z-index: 13;
+
+  .rehorik-logo {
+    display: none;
+  }
 }
 
 @mixin white-with-background {
@@ -84,10 +88,23 @@ $element-height: 42px;
     @include gold-without-background;
     @include icon-size($spacing-s, $spacing-s);
 
+    .rehorik-logo {
+      display: block;
+      background-image: url("../img/svg/logo.svg");
+      flex: 0 0 $logo-size-very-small;
+      width: $logo-size-very-small;
+      height: $logo-size-very-small;
+      background-size: $logo-size-very-small;
+      margin-right: auto;
+    }
+
     display: none;
-    right: var(--section-spacing-left-right);
-    top: $menu-height + $spacing-s;
-    padding: 0;
+    padding: 0 var(--section-spacing-left-right);
+    left: 0;
+    width: 100%;
+    top: $menu-height + $spacing;
+    justify-content: flex-end;
+    align-items: center;
 
     &.hide-for-mobile {
       display: none;
@@ -97,7 +114,7 @@ $element-height: 42px;
   // burger
   header.rehorik-header {
     .menu-hauptmenue-container {
-      padding-top: $menu-height;
+      padding-top: $menu-height + $spacing + $spacing-xl;
       background-color: $weinrot;
     }
 
@@ -131,8 +148,10 @@ $element-height: 42px;
         @include gold-without-background;
 
         display: flex;
+        align-items: center;
+        height: $menu-height;
         left: 0;
-        top: 10px;
+        top: 0;
         width: 145px;
 
         @media all and (max-width: 1400px) {
