@@ -46,9 +46,9 @@ const WINE_CATEGORY_SLUGS = [
     'champagner-und-sekt'
 ];
 const HIDE_CATEGORIES = [
-    'delikatessen-onlineshop',
-    'gutscheine',
-    'kaese-wurst'
+    746, // 'delikatessen-onlineshop'
+    606, // 'gutscheine'
+    513, // 'kaese-wurst'
 ];
 
 // Attributes
