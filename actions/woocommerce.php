@@ -26,19 +26,23 @@ add_action('woocommerce_after_edit_account_form', function () {
 /**
  * Hide specific categories
  *
- * TODO: Remove when Delikatessen and Geschenkkörbe are being sold again
+ * TODO: Remove when Delikatessen are being sold again
  */
 add_filter('get_terms', function ($terms, $taxonomies, $args) {
     $new_terms = [];
 
     // if a product category and on the shop page
     if (in_array('product_cat', $taxonomies) && !is_admin()) {
-        foreach ($terms as $key => $term) {
+        foreach ($terms as $term) {
+            if (is_numeric($term)) {
+                $term = get_term($term, 'product_cat');
+            }
             if (!in_array($term->slug, HIDE_CATEGORIES)) {
                 $new_terms[] = $term;
             }
         }
         $terms = $new_terms;
     }
+
     return $terms;
 }, 10, 3);
