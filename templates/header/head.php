@@ -2,7 +2,6 @@
 require_once(get_stylesheet_directory() . '/helper/page_helper.php');
 
 $hasSlider = !empty($args['slider']);
-$isProd = $_SERVER['HOST'] === 'rehorik.de'
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
