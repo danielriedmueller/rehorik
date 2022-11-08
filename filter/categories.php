@@ -26,7 +26,6 @@ add_filter('woocommerce_get_catalog_ordering_args', function ($args) {
     return $args;
 });
 
-
 add_filter('woocommerce_default_catalog_orderby_options', 'custom_woocommerce_catalog_orderby');
 add_filter('woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby');
 function custom_woocommerce_catalog_orderby($sortby)
@@ -39,3 +38,13 @@ function custom_woocommerce_catalog_orderby($sortby)
 
     return $sortby;
 }
+
+add_filter('woocommerce_product_categories_widget_args', function(array $args) {
+    $catsIncluded = explode(',', $args['include']);
+
+    if (!empty($catsIncluded)) {
+        $args['include'] = implode(',', array_diff($catsIncluded, HIDE_CATEGORIES));
+    }
+
+    return $args;
+});

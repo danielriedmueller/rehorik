@@ -28,7 +28,6 @@ const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
 const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
 const BLACK_AND_WINE = 'blackwine';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
-const COUPON_CATEGORY_SLUG = 'gutscheine';
 const GIFTS_CATEGORY_SLUG = 'geschenke';
 const ONLINESHOP_CATEGORY_SLUG = 'onlineshop';
 const VIRTUAL_EVENTS_CATEGORY_SLUG = 'virtuelle-events';
@@ -46,8 +45,9 @@ const WINE_CATEGORY_SLUGS = [
     'champagner-und-sekt'
 ];
 const HIDE_CATEGORIES = [
-    'delikatessen-onlineshop',
-    'kaese-wurst'
+    746, // 'delikatessen-onlineshop'
+    606, // 'gutscheine'
+    513, // 'kaese-wurst'
 ];
 
 // Attributes
@@ -84,9 +84,6 @@ const ATTRIBUTE_SLUG_PREFIX = 'attribute_';
 const ONLINE_META_KEY = 'Online';
 const CANCELED_META_KEY = 'Abgesagt';
 
-// Generated coupon code saved in order item
-const ORDER_ITEM_COUPON_CODE = 'order_item_coupon_code';
-
 // Payment methods
 const PAYMENT_METHOD_CASH = 'cod';
 const PAYMENT_METHOD_DIRECT_TRANSFER = 'bacs';
@@ -114,7 +111,6 @@ $baseDir = get_stylesheet_directory();
 require_once($baseDir . '/includes/class-wc-shipping-bike.php');
 require_once($baseDir . '/includes/class-wc-shipping-free-shipping-bike.php');
 require_once($baseDir . '/includes/class-tribe-tickets-plus-woocommerce-main.php');
-require_once($baseDir . '/includes/class-reh-online-coupon.php');
 require_once($baseDir . '/includes/class-reh-api-products.php');
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
@@ -125,7 +121,6 @@ require_once($baseDir . '/filter/categories.php');
 require_once($baseDir . '/filter/product_view.php');
 require_once($baseDir . '/filter/sitemap.php');
 require_once($baseDir . '/filter/payment_gateways.php');
-require_once($baseDir . '/filter/order_completed_email.php');
 require_once($baseDir . '/actions/woocommerce.php');
 require_once($baseDir . '/actions/rehorik.php');
 require_once($baseDir . '/actions/events.php');

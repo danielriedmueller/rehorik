@@ -7,6 +7,10 @@ $product = $args['product'];
 
 $mergeDescriptions = function ($description, $shortDescription, $claim) {
     $cleanUpText = function($text) {
+        if (empty($text)) {
+            return "";
+        }
+
         $text = str_replace( '</li>', ', ', $text);
         $text = ucfirst(trim(strip_tags($text)));
         $text = rtrim($text, ',');
