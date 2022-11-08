@@ -8,8 +8,8 @@
         html, body {
             font-family: 'Cond', serif;
             color: #3C3C3B;
-            font-size: 20px;
-            line-height: 1.4em;
+            font-size: 59px;
+            line-height: 52px;
             height: 100%;
             margin: 0;
             padding: 0;
@@ -22,61 +22,136 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        #wrapper {
-            max-width: 600px;
-            margin: 0 auto;
+        a {
+            color: #3C3C3B;
+            text-decoration: none;
+            font-family: 'Cond', serif;
+            font-size: 59px;
+            line-height: 52px;
+        }
+
+        h3, h3 a {
+            font-family: 'Cond Bold', serif;
+            color: #3C3C3B;
+            font-size: 59px;
+            line-height: 52px;
+            margin: 0;
+            padding: 0;
+            display: inline;
+        }
+
+        h1 {
+            font-family: 'Cond Bold', serif;
+            color: #C6B480;
+            font-size: 436px;
+            line-height: 315px;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-family: 'Cond Bold', serif;
+            color: #3C3C3B;
+            text-transform: uppercase;
+            font-size: 70px;
+            line-height: 70px;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        hr {
+            margin: 100px 0;
+            width: 100%;
+            border: 4px solid #C6B480;
+            border-radius: 0;
+        }
+
+        #content {
+            padding: 150px 150px 0 634px;
+        }
+
+        #headline {
+            margin-bottom: 200px;
+            height: 391px;
+        }
+
+        #logo {
+            position: absolute;
+            left: 150px;
+            top: 150px;
+        }
+
+        #hugo {
+            position: absolute;
+            right: 170px;
+            top: 700px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 1000px;
+        }
+
+        footer img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        footer #owner {
+            position: absolute;
+            bottom: 230px;
+            right: 150px;
         }
     </style>
 </head>
 <body>
-<div id="wrapper">
-    <div id="logo"><img src="<?= $assetsDir ?>/img/logos/logo_192px.png" /></div>
-    <div>
-        <div>Code: <?= $args['code'] ?></div>
-        <div>Name: <?= $args['name'] ?></div>
-        <div>Preis: <?= $args['price'] ?></div>
+<div id="logo"><img src="<?= $assetsDir ?>/img/logos/logo-391px.png" /></div>
+<div id="hugo"><img src="<?= $assetsDir ?>/img/hugo/hugo-365px.png" /></div>
+<div id="content">
+    <div id="headline"><h1>Gutschein</h1></div>
+    <div id="code">
+        <h2>Gutscheincode: <?= $args['code'] ?></h2>
+        <h2>Name: <?= $args['name'] ?></h2>
+        <h2>Preis: <?= $args['price'] ?> €</h2>
     </div>
-    <footer>
+    <hr />
+    <div id="legal">
+        <h2>Bitte beachten</h2>
+        <span>Der Gutschein ist nur im Onlineshop unter</span> <h3><a href="https://www.rehorik.de">www.rehorik.de</a></h3> <span>einlösbar.</span>
+        <p>Möchtest du den Gutschein lieber für Kaffee, Wein oder Spirits verwenden? Kein Problem! Der Gutschein ist für alle Produkte im Onlineshop einlösbar. Der Restwert bleibt erhalten.</p>
         <p>
-            Den aktuellen Gutscheinwert können Sie in unseren Warenhäusern, über unser Kundenzentrum oder im Internet
-            unter www.manufactum.de/wertabfrage abrufen. Bei Diebstahl, Verlust oder Unbrauchbarkeit leisten wir
-            keinen Ersatz. Das Guthaben dieses Gutscheins wird nicht verzinst oder bar ausgezahlt.
-            Es gelten unsere allgemeinen Geschäftsbedingungen – diese können unter www.manufactum.de eingesehen werden.
-            Beachten Sie bitte, dass Ausstellungs- und Einlösewährung identisch sein müssen. Der Gutschein ist unbegrenzt
-            gültig und in unseren Warenhäusern sowie über unser Kundenzentrum wiederaufladbar.
+            Der Gutschein ist unbegrenzt gültig und kann beliebig oft unter www.rehorik.de verwendet werden, solange ein Restwert vorhanden ist.
+            Das Guthaben dieses Gutscheins wird nicht verzinst, vesteuert oder bar ausgezahlt.
+            Bei Diebstahl, Verlust oder Unbrauchbarkeit leisten wir keinen Ersatz.
+            Es gelten unsere allgemeinen Geschäftsbedingungen – diese können unter www.rehorik.de eingesehen werden.
         </p>
-        <p>Einlösbar bei jeder Bestellung aus unseren Katalogen, in unserem Online-Shop
-            oder bei einem Einkauf in unseren Warenhäusern.</p>
-        <table border="0" cellpadding="10" cellspacing="0" width="590   " id="template_footer">
-            <tr>
-                <td valign="top">
-                    <table border="0" cellpadding="10" cellspacing="0" width="100%">
-                        <tr>
-                            <td colspan="2" valign="middle">
-                                <img src="https://img.mailinblue.com/3459467/images/rnb/original/604f71b8e203d77dd84bd755.png?t=1615819213902" alt="streifen"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" valign="middle" id="credit">
-                                <p>
-                                    Rehorik Rösterei &amp; Feinkost GmbH
-                                    <br>
-                                    Am Brixener Hof 6 &#183; 93047 Regensburg
-                                    <br>
-                                    <a href="tel:0941/7883530">0941/7883530</a> &#183; <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a> &#183; <a href="https://www.rehorik.de">www.rehorik.de</a>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" valign="middle" id="owner">
-                                <p>Geschäftsführer: Heiko Rehorik &#183; Handelsregister Regensburg HRB 3945</p>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-    </footer>
+    </div>
+    <hr style="width: 1250px"/>
+    <div id="contact">
+        <h2>Kontakt</h2>
+        <p>Rehorik Rösterei &amp; Feinkost GmbH</p>
+        <p>Am Brixener Hof 6, 93047 Regensburg</p>
+        <p>Telefon: <a href="tel:0941/7883530">0941/7883530</a></p>
+        <p>E-Mail: <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a></p>
+        <p><a href="https://www.rehorik.de">www.rehorik.de</a></p>
+    </div>
 </div>
+<footer>
+    <div id="owner">
+        <p>Geschäftsführer: Heiko Rehorik</p>
+        <p>Handelsregister Regensburg HRB 3945</p>
+    </div>
+    <img src="<?= $assetsDir ?>/img/footer/footer-pdf-2480px.png" />
+</footer>
 </body>
 </html>

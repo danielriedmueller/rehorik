@@ -29,6 +29,7 @@ const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
 const BLACK_AND_WINE = 'blackwine';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
 const GIFTS_CATEGORY_SLUG = 'geschenke';
+const COUPON_CATEGORY_SLUG = 'gutscheine';
 const ONLINESHOP_CATEGORY_SLUG = 'onlineshop';
 const VIRTUAL_EVENTS_CATEGORY_SLUG = 'virtuelle-events';
 const VIRTUAL_EVENTS_CATEGORY_SLUGS = [
@@ -46,7 +47,6 @@ const WINE_CATEGORY_SLUGS = [
 ];
 const HIDE_CATEGORIES = [
     746, // 'delikatessen-onlineshop'
-    606, // 'gutscheine'
     513, // 'kaese-wurst'
 ];
 
