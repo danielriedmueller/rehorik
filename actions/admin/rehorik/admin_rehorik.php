@@ -25,7 +25,7 @@ add_action('admin_enqueue_scripts', function ($hook) {
 });
 
 add_action('wp_ajax_send_test_mail', function () {
-    
+
 });
 
 add_action('wp_ajax_create_test_coupon', function () {
@@ -43,7 +43,7 @@ add_action('wp_ajax_create_test_coupon', function () {
    }
     */
 
-    $order_id = 30558;
+    $order_id = 30555;
     $allmails = WC()->mailer()->emails;
     $email = $allmails['WC_Email_Customer_Completed_Order'];
     $email->trigger( $order_id );

@@ -36,11 +36,16 @@ class Reh_Online_Coupon
     {
         $dompdf = new Dompdf([
             'enable_remote' => true,
+            'dpi' => 300
         ]);
         $assetsDir = get_stylesheet_directory_uri() . '/assets/';
         $dompdf->getFontMetrics()->registerFont(
             ['family' => 'Cond', 'style' => 'normal', 'weight' => 'normal'],
             $assetsDir . '/fonts/cond.ttf'
+        );
+        $dompdf->getFontMetrics()->registerFont(
+            ['family' => 'Cond Bold', 'style' => 'normal', 'weight' => 'bold'],
+            $assetsDir . '/fonts/cond-bold.ttf'
         );
 
         $filePath = get_temp_dir() . 'Rehorik-Online-Coupon-' . date('Ymd') . $serialNumber . '.pdf';
