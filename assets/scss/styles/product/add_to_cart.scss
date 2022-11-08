@@ -4,11 +4,25 @@ body.rehorik.woocommerce div.rehorik-product {
     display: flex;
     flex-direction: column;
 
+    form.cart {
+      .quantity {
+        width: $product-view-cart-button-quantity-width;
+
+        input {
+          width: 100%;
+        }
+      }
+
+      button {
+        width: $product-view-cart-button-width;
+      }
+    }
+
     form:not(.variations_form).cart {
       display: flex;
     }
 
-    form.variations_form.cart {
+    form.variations_form.cart > div {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas:
@@ -26,7 +40,7 @@ body.rehorik.woocommerce div.rehorik-product {
 
     table.variations {
       grid-area: variations;
-      margin-bottom: $product-view-grid-gap / 2;
+      margin-bottom: var(--product-view-grid-gap);
     }
 
     div.quantity {
@@ -60,8 +74,12 @@ body.rehorik.woocommerce div.rehorik-product {
 
       .woocommerce-variation-add-to-cart {
         display: flex;
-        margin-top: $product-view-grid-gap / 2;
+        margin-top: var(--product-view-grid-gap-half);
       }
+    }
+
+    p.stock.in-stock {
+      display: none;
     }
   }
 

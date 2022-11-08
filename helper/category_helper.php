@@ -62,15 +62,20 @@ function isItCategory($product, $categorySlug): bool
  * If no subcategories, returns category.
  *
  * @param WC_Product $product
+ * @param bool $linked
  * @return string
  */
-function getSubCategories(WC_Product $product, $linked = false): string
+function getSubCategories(WC_Product $product, bool $linked = false): string
 {
+    $terms = get_the_terms($product->get_id(), 'product_cat');
+
+    if (!$terms) {
+        return "";
+    }
+
     $nameMapFn = function ($a) use ($linked) {
         return $linked ? '<a href="' . get_term_link($a) . '">' . $a->name . '</a>' : $a->name;
     };
-
-    $terms = get_the_terms( $product->get_id(), 'product_cat' );
 
     // Dont show "Vollautomat", if coffee is also "Espresso" or "Filterkaffee"
     if (isItCategory($product, COFFEE_CATEGORY_SLUG) && sizeof($terms) > 1) {
@@ -126,6 +131,7 @@ function getShopFrontPageCategories()
 
     $keys = array_column($categories, 'slug');
 
+    $frontPageCategories[] = $categories[array_search(GIFTS_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(MACHINE_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(WINE_CATEGORY_SLUG, $keys)];
     $frontPageCategories[] = $categories[array_search(SPIRITS_CATEGORY_SLUG, $keys)];

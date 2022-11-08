@@ -1,6 +1,14 @@
 <?php
 get_template_part('templates/header/head', null, ['slider' => [
     [
+        'claim' => 'Etwas für unterm Baum gesucht?',
+        'img' => 'header-geschenkkoerbe',
+        'buttons' => [
+            '/produkt-kategorie/onlineshop/geschenke-gutscheine/geschenke/' => 'Einfach für jeden Anlass',
+            '/produkt/heiliger-bimbam' => 'Heiliger Bimbam',
+        ],
+    ],
+    [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
         'img'=> 'startseite-header-roesterei',
         'buttons' => [
@@ -18,7 +26,7 @@ get_template_part('templates/header/head', null, ['slider' => [
     ]
 ]]);
 get_template_part('templates/hint');
-get_template_part('templates/featured/slider');
+get_template_part('templates/featured/slider')
 ?>
 <div class="marketing-banner">
     <div class="container">

@@ -1,3 +1,7 @@
+.rehorik.home ul.rehorik-products.products li.product-category.product {
+  height: $product-category-frontpage-height;
+}
+
 ul.rehorik-products.products {
   position: relative;
   list-style: none;
@@ -16,12 +20,20 @@ ul.rehorik-products.products {
     }
 
     img {
-      object-fit: fill;
+      object-fit: cover;
       padding: 0;
       margin: 0;
       display: block;
       height: 100%;
       width: 100%;
+
+      &:hover {
+        filter: sepia(80%);
+
+        &+h2, &~.rehorik-category-description {
+          color: #fff;
+        }
+      }
     }
 
     video {
@@ -52,32 +64,33 @@ ul.rehorik-products.products {
     }
 
     h2.woocommerce-loop-category__title {
-      z-index: 10;
-      $titleHeight: 60px;
-      height: $titleHeight;
-      margin: -$titleHeight 0 0 0;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      position: absolute;
+      bottom: 0;
       color: $font-color-accent;
       width: 100%;
-      padding: $spacing-xs;
-      background: rgba(0, 0, 0, $opacity) none;
-      backdrop-filter: blur(3px);
+      height: 100%;
+      background: transparent linear-gradient(0deg, rgba(0,0,0,$opacity) 10%, rgba(0,0,0,0) 35%);
+      pointer-events: none;
       font-size: $font-size;
       font-weight: normal;
       text-align: center;
       text-transform: uppercase;
+      padding: 0 0 $spacing 0;
     }
 
     div.rehorik-category-description {
       flex-grow: 1;
-      background-color: $weinrot;
-      color: $product-alternative-body-text-color;
+      height: 100%;
+      pointer-events: none;
+      background: transparent linear-gradient(180deg, rgba(0,0,0,$opacity) 10%, rgba(0,0,0,0) 50%);
+      color: $product-alternative-header-text-color;
       padding: $spacing-xs;
-      border-bottom-right-radius: $border-radius;
-      border-bottom-left-radius: $border-radius;
-      font-size: $font-size-small;
-      position: relative;
-
+      font-size: $font-size;
+      position: absolute;
     }
   }
 }

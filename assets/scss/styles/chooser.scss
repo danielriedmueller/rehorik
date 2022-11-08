@@ -1,43 +1,28 @@
-.cat-chooser {
+ul.rehorik-products.products li.product-category.product .cat-chooser {
   background-color: transparent;
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 466px;
+  min-height: $product-category-frontpage-height;
   width: 100%;
+
+  h2.woocommerce-loop-category__title {
+    background: transparent linear-gradient(0deg, rgba(0, 0, 0, $opacity) 10%, rgba(0, 0, 0, 0) 60%);
+  }
 
   .cat-names {
     flex-grow: 1;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: space-around;
     pointer-events: none;
-    margin-bottom: $spacing-s;
-
-    h2 {
-      flex: 1 1 0;
-      background: transparent;
-      backdrop-filter: none;
-      padding: 0 $spacing-xxs;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: auto;
-      text-shadow: $text-shadow;
-    }
-  }
-
-  h2 {
-    height: 60px;
-    color: $beigegold;
+    margin-bottom: $spacing;
     width: 100%;
-    padding: $spacing-xs;
-    background: rgba(0, 0, 0, $opacity) none;
-    backdrop-filter: blur(3px);
-    font-size: $font-size;
-    text-align: center;
-    text-transform: uppercase;
-    z-index: 1;
+
+    > span {
+      flex-basis: $product-category-width / 2;
+      padding: 0 $spacing-xs;
+    }
   }
 
   label, a {
@@ -50,22 +35,41 @@
     background-size: cover;
 
     &:hover {
-      filter: sepia(100%);
+      filter: sepia(80%);
+
+      &:first-of-type {
+        & ~ h2 {
+          color: #fff;
+
+          .cat-names span:nth-child(2) {
+            color: $font-color-accent;
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        & ~ h2 {
+          color: #fff;
+
+          .cat-names span:first-child {
+            color: $font-color-accent;
+          }
+        }
+      }
     }
 
     &:nth-of-type(1) {
       left: 0;
 
-      &:hover~div h2:nth-child(1) {
+      &:hover ~ div h2:nth-child(1) {
         color: #fff;
       }
     }
 
     &:nth-of-type(2) {
       right: 0;
-      border-left: 1px solid $beigegold;
 
-      &:hover~div h2:nth-child(2) {
+      &:hover ~ div h2:nth-child(2) {
         color: #fff;
       }
     }

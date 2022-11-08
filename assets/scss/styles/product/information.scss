@@ -1,13 +1,17 @@
 @import "../mixins";
 
-
-// Exception for merch. Move position of description to the top
-body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .rehorik-product-information {
+// Exception for merch and gifts. Move position of description to the top
+body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .rehorik-product-information,
+body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-geschenke .rehorik-product-information {
   grid-area: goes-with;
   background-color: transparent;
   padding: 0;
   @media all and (min-width: $medium-breakpoint + 1) {
-    margin: 0 0 0 $product-view-grid-gap / 2;
+    margin: 0 0 0 var(--product-view-grid-gap-quarter);
+  }
+
+  @media all and (max-width: $medium-breakpoint) {
+    margin: var(--product-view-grid-gap-quarter) 0 var(--product-view-grid-gap-quarter) 0;
   }
 
   display: flex;
@@ -23,16 +27,33 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .re
   .rehorik-product-information-category {
     display: none;
   }
+
+  .rehorik-product-attributes {
+    margin: 0;
+  }
+
+  .woocommerce-product-attributes-item--attribute_pa_inhalt-praesentkarton {
+    th {
+      display: none;
+    }
+
+    td {
+      padding-top: 0 !important;
+    }
+
+    td li {
+      color: $font-color;
+      background: transparent url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIGZpbGw9IiMzOTM1MzYiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTIyLjg4cHgiIGhlaWdodD0iMTIyLjg4cHgiIHZpZXdCb3g9IjAgMCAxMjIuODggMTIyLjg4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjIuODggMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYxLjQzOCwwYzMzLjkzLDAsNjEuNDQxLDI3LjUxMiw2MS40NDEsNjEuNDQxIGMwLDMzLjkyOS0yNy41MTIsNjEuNDM4LTYxLjQ0MSw2MS40MzhDMjcuNTEyLDEyMi44OCwwLDk1LjM3LDAsNjEuNDQxQzAsMjcuNTEyLDI3LjUxMiwwLDYxLjQzOCwwTDYxLjQzOCwweiIvPjwvZz48L3N2Zz4=") no-repeat top 15px left;
+      background-size: 2px;
+    }
+  }
 }
 
 body.rehorik.woocommerce #main-content div.rehorik-product {
-  $row-padding: $product-view-grid-gap / 2;
-
   .rehorik-product-information {
     background-color: $product-default-color;
     border: none;
-    padding: $product-view-grid-gap;
-
+    padding: var(--product-view-grid-gap-half);
 
     ul {
       font-size: $font-size;
@@ -58,27 +79,27 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
     "short-description attributes";
 
     .rehorik-product-information-category {
-      margin: 0 $row-padding $row-padding 0;
+      margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
     }
 
     .rehorik-product-description {
-      margin: 0 $row-padding $row-padding 0;
+      margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
     }
 
     .rehorik-recommendation {
-      margin: 0 $row-padding $row-padding 0;
+      margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
     }
 
     .rehorik-product-short-description {
-      margin: 0 $row-padding 0 0;
+      margin: 0 var(--product-view-grid-gap-half) 0 0;
     }
 
     .rehorik-product-attributes {
-      margin: 0 0 0 $row-padding;
+      margin: 0 0 0 var(--product-view-grid-gap-half);
     }
 
     @media all and (max-width: $medium-breakpoint) {
-      padding: $row-padding;
+      padding: var(--product-view-grid-gap-half);
       grid-template-columns: 1fr;
       grid-template-areas:
       "category"
@@ -88,16 +109,16 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       "short-description";
 
       .rehorik-product-information-category {
-        margin: 0 0 $row-padding 0;
+        margin: 0 0 var(--product-view-grid-gap-half) 0;
       }
       .rehorik-product-attributes {
-        margin: 0 0 $row-padding 0;
+        margin: 0 0 var(--product-view-grid-gap-half) 0;
       }
       .rehorik-product-description {
-        margin: 0 0 $row-padding 0;
+        margin: 0 0 var(--product-view-grid-gap-half) 0;
       }
       .rehorik-recommendation {
-        margin: 0 0 $row-padding 0;
+        margin: 0 0 var(--product-view-grid-gap-half) 0;
       }
       .rehorik-product-short-description {
         margin: 0 0 0 0;
@@ -118,6 +139,19 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
 
       text-align: justify;
       font-size: $font-size;
+
+      ul {
+        font-size: $font-size;
+        list-style-type:none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          padding: 0 0 0 $spacing-xxs;
+          background: transparent url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIGZpbGw9IiMzOTM1MzYiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTIyLjg4cHgiIGhlaWdodD0iMTIyLjg4cHgiIHZpZXdCb3g9IjAgMCAxMjIuODggMTIyLjg4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjIuODggMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYxLjQzOCwwYzMzLjkzLDAsNjEuNDQxLDI3LjUxMiw2MS40NDEsNjEuNDQxIGMwLDMzLjkyOS0yNy41MTIsNjEuNDM4LTYxLjQ0MSw2MS40MzhDMjcuNTEyLDEyMi44OCwwLDk1LjM3LDAsNjEuNDQxQzAsMjcuNTEyLDI3LjUxMiwwLDYxLjQzOCwwTDYxLjQzOCwweiIvPjwvZz48L3N2Zz4=") no-repeat top 15px left;
+          background-size: 2px;
+        }
+      }
     }
 
     .rehorik-product-information-category {
@@ -168,8 +202,8 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
         tr {
           &:not(:last-child) {
             th, td {
-              padding-top: $row-padding / 2;
-              padding-bottom: $row-padding / 2;
+              padding-top: var(--product-view-grid-gap-quarter);
+              padding-bottom: var(--product-view-grid-gap-quarter);
               border-bottom: 1px solid $beigegold;
             }
           }
@@ -177,13 +211,13 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
           &:first-child {
             th, td {
               padding-top: 0;
-              padding-bottom: $row-padding / 2;
+              padding-bottom: var(--product-view-grid-gap-quarter);
             }
           }
 
           &:last-child {
             th, td {
-              padding-top: $row-padding / 2;
+              padding-top: var(--product-view-grid-gap-quarter);
               padding-bottom: 0;
             }
           }
