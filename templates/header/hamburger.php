@@ -1,3 +1,3 @@
 <?php ?>
-<input type="checkbox">
+<input id="burger-button" type="checkbox">
 <div class="hamburger"></div>

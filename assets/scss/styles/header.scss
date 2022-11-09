@@ -73,6 +73,10 @@ header.rehorik-header {
         a {
           padding: $spacing-s $spacing;
         }
+
+        &.Oeffnungszeiten {
+          display: none;
+        }
       }
 
       a {
@@ -81,10 +85,6 @@ header.rehorik-header {
         color: $font-color-accent;
         font-size: $font-size;
         font-family: $font-family-headline;
-      }
-
-      &.Oeffnungszeiten {
-        display: none;
       }
     }
 
@@ -229,16 +229,16 @@ header.rehorik-header {
       position: absolute;
       top: $menu-height;
       left: 0;
-      background-color: transparent;
+      background: $weinrot url("../img/burger_bg.jpg") no-repeat top left;
+      background-size: 100%;
       width: 100%;
-      border-bottom: 1px solid $beigegold;
 
       ul.menu {
         flex-direction: column;
         background-color: transparent;
 
         > li {
-          background-color: $weinrot;
+          background-color: transparent;
         }
 
         li.menu-item-has-children {
