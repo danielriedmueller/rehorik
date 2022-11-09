@@ -114,7 +114,7 @@ $element-height: 42px;
   // burger
   header.rehorik-header {
     .menu-hauptmenue-container {
-      padding-top: $menu-height + $spacing + $spacing-xl;
+      padding-top: $menu-height + $spacing + $spacing-l + $menu-height;
       background-color: $weinrot;
     }
 
@@ -152,7 +152,7 @@ $element-height: 42px;
         height: $menu-height;
         left: 0;
         top: 0;
-        width: 145px;
+        width: $social-media-container-width;
 
         @media all and (max-width: 1400px) {
           display: none;
@@ -175,7 +175,7 @@ $element-height: 42px;
     display: flex;
     left: 0;
     top: 10px;
-    width: 145px;
+    width: $social-media-container-width;
     padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
 
     @media all and (max-width: 1400px) {
