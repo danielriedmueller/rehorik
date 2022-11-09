@@ -82,6 +82,10 @@ header.rehorik-header {
         font-size: $font-size;
         font-family: $font-family-headline;
       }
+
+      &.Oeffnungszeiten {
+        display: none;
+      }
     }
 
     li.menu-item-has-children {

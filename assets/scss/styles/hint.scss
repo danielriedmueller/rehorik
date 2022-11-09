@@ -1,10 +1,11 @@
 .rehorik-hints {
   position: absolute;
   left: 0;
-  top: calc(var(--slider-height) - #{var(--section-spacing-top-bottom)} - #{$hint-height * 2 + $spacing});
+  top: calc(var(--slider-height) - #{var(--section-spacing-top-bottom)} - #{$hint-height});
   z-index: 8;
 
   .rehorik-hint {
+    display: block;
     color: $beigegold;
     height: 0;
     position: relative;
@@ -41,19 +42,25 @@
         }
 
         &:checked + h5 {
-          background-image: url("../img/pfeil-gold-oben.svg");
+          background-image: url("../img/pfeil-weiss-oben.svg");
           border-bottom-right-radius: 0;
         }
 
         @media all and (min-width: $small-breakpoint + 1) {
           &:checked {
-            width: $hint-width-large;
+            width: $hint-width;
           }
 
           &:checked ~ div {
-            width: $hint-width-large;
+            width: $hint-width;
           }
         }
+      }
+
+      color: #fff;
+      > h5 {
+        background-color: $beigegold;
+        background-image: url("../img/pfeil-weiss-unten.svg");
       }
     }
 
@@ -68,23 +75,31 @@
       background-size: 9px;
       display: table-cell;
       vertical-align: middle;
+      text-align: right;
     }
 
     > div:last-of-type {
       width: $hint-width;
       display: none;
-      padding: $spacing-xs $spacing-l;
+      padding: $spacing-xs $spacing $spacing-xs $spacing-xs;
       background-color: $weinrot;
       border-bottom-right-radius: $border-radius;
-      border-top-right-radius: $border-radius;
       position: absolute;
       top: $hint-height;
       left: 0;
       font-size: $font-size-small;
+      text-align: right;
     }
 
     @media all and (max-width: $medium-breakpoint) {
       display: none;
+    }
+  }
+
+  a.rehorik-hint {
+    > h5 {
+      background-image: none !important;
+      padding-right: $spacing-xs;
     }
   }
 }
