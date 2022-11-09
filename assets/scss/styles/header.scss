@@ -230,6 +230,7 @@ header.rehorik-header {
       top: 0;
       left: 0;
       max-height: 100vh;
+      overflow: scroll;
       background-color: $weinrot;
       background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
       background-repeat: no-repeat, repeat;
@@ -238,8 +239,6 @@ header.rehorik-header {
       width: 100%;
 
       ul.menu {
-        overflow: scroll;
-        height: 100%;
         flex-direction: column;
         background-color: transparent;
 
