@@ -114,7 +114,7 @@ $element-height: 42px;
   // burger
   header.rehorik-header {
     .menu-hauptmenue-container {
-      padding-top: $menu-height + $spacing + $spacing-xl;
+      padding-top: $menu-height + $spacing + $spacing-l + $menu-height;
       background-color: $weinrot;
     }
 

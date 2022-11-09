@@ -227,9 +227,14 @@ header.rehorik-header {
     .menu-hauptmenue-container {
       display: none;
       position: absolute;
-      top: $menu-height;
+      top: 0;
       left: 0;
-      background: $weinrot url("../img/burger_bg.jpg") no-repeat top left;
+      max-height: 100vh;
+      overflow: scroll;
+      background-color: $weinrot;
+      background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
+      background-repeat: no-repeat, repeat;
+      background-position: left top, right bottom;
       background-size: 100%;
       width: 100%;
 
