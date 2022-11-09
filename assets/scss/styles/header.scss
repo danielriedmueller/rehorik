@@ -230,7 +230,6 @@ header.rehorik-header {
       top: 0;
       left: 0;
       max-height: 100vh;
-      overflow: scroll;
       background-color: $weinrot;
       background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
       background-repeat: no-repeat, repeat;
@@ -239,6 +238,8 @@ header.rehorik-header {
       width: 100%;
 
       ul.menu {
+        overflow: scroll;
+        height: 100%;
         flex-direction: column;
         background-color: transparent;
 
@@ -259,6 +260,10 @@ header.rehorik-header {
             pointer-events: none;
           }
 
+          > ul.sub-menu {
+            pointer-events: none;
+          }
+
           &:hover {
             height: auto;
             background: rgba(206, 182, 127, 0.9) url("../img/pfeil-rot-oben.svg") no-repeat top 30px right var(--section-spacing-left-right);
@@ -269,9 +274,10 @@ header.rehorik-header {
             }
 
             > ul.sub-menu {
+              pointer-events: all;
               padding-top: 0;
               padding-bottom: 0;
-              margin-top: $spacing-s;
+              margin-top: $spacing;
               background: transparent;
               display: grid;
               grid-template-columns: 1fr 1fr;
