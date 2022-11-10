@@ -1,11 +1,11 @@
 <?php
 get_template_part('templates/header/head', null, ['slider' => [
     [
-        'claim' => 'Etwas für unterm Baum gesucht?',
+        'claim' => 'Es Weinachtet!',
         'img' => 'header-geschenkkoerbe',
         'buttons' => [
+            '/produkt-kategorie/veranstaltungen/unsere-feste/' => 'Weinachtsmarkt am 26.11',
             '/produkt-kategorie/onlineshop/geschenke-gutscheine/geschenke/' => 'Einfach für jeden Anlass',
-            '/produkt/heiliger-bimbam' => 'Heiliger Bimbam',
         ],
     ],
     [

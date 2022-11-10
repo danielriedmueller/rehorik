@@ -60,6 +60,9 @@
     h2 {
       font-size: $font-size-very-very-large;
       color: #fff;
+      @media all and (min-width: $medium-breakpoint + 1) {
+        min-width: 500px + $spacing-l;
+      }
     }
   }
 
@@ -81,7 +84,7 @@
       font-family: $font-family-headline;
       background-color: $weinrot;
       color: $beigegold;
-      padding: $spacing-xxs;
+      padding: $spacing-xxs $spacing-xs;
       min-width: 200px;
       text-align: center;
       display: inline-block;

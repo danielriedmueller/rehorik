@@ -27,6 +27,7 @@ const COFFEE_ESPRESSO_CATEGORY_SLUG = 'espresso';
 const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
 const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
 const BLACK_AND_WINE = 'blackwine';
+const WEINACHTSMARKT = 'unsere-feste';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
 const GIFTS_CATEGORY_SLUG = 'geschenke';
 const ONLINESHOP_CATEGORY_SLUG = 'onlineshop';
