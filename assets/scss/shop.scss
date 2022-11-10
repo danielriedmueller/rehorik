@@ -228,6 +228,10 @@ table {
   margin-bottom: $spacing-s;
 }
 
+.section-spacing-bottom {
+  margin-bottom: var(--section-spacing-top-bottom);
+}
+
 hr {
   margin: $spacing-xxxs 0;
 }
