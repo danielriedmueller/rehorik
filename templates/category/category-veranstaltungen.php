@@ -111,11 +111,6 @@ $eventInfos = [
         'img' => 'veranstaltungen-rehorikevents',
         'intro' => 'Locker, lässig und leger geht es bei unseren Rehorik Events zu. Genuss und Spaß stehen an erster Stelle!',
     ],
-    'unsere-feste' => [
-        'img' => 'veranstaltungen-rehorikevents',
-        'claim' => 'WIR WOLLEN MIT EUCH FEIERN',
-        'intro' => 'Die Freude am Genuss vermitteln wir bei unseren Rehorik Events. Läutet den Feierabend zusammen mit Euren Freunden und Bekannten bei einem Gläschen Wein ein oder feiert bei unserem großen Sommerfest gemeinsam mit uns und unseren Winzer:innen bis tief in die Nacht. Wir freuen uns auf Euch!',
-    ],
     'blackwine' => [
         'img' => 'blackwine'
     ]

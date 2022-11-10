@@ -7,11 +7,8 @@ add_action('admin_menu', function () {
         ?>
         <div>
             <div id="status">OK</div>
-            <button class="rehorik-admin-action-button" data-action="update_coffee_price">Update Coffee Price</button>
             <button class="rehorik-admin-action-button" data-action="hide_past_event_tickets">Hide Past Event Tickets</button>
-            <button class="rehorik-admin-action-button" data-action="update_tickets_date">Update All Tickets</button>
-            <button class="rehorik-admin-action-button" data-action="create_test_coupon">Create Test Coupon</button>
-            <button class="rehorik-admin-action-button" data-action="send_test_mail">Send Test Mail</button>
+            <button disabled class="rehorik-admin-action-button" data-action="update_tickets_date">Update All Tickets</button>
         </div>
         <?php
     }, null, 3);
@@ -22,31 +19,6 @@ add_action('admin_enqueue_scripts', function ($hook) {
         $assetsDir = get_stylesheet_directory_uri() . '/assets/';
         wp_enqueue_script('rehorik-admin', $assetsDir . 'js/admin.js', ['jquery'], 1, false);
     }
-});
-
-add_action('wp_ajax_send_test_mail', function () {
-
-});
-
-add_action('wp_ajax_create_test_coupon', function () {
-    //$couponFactory = new Reh_Create_Coupon();
-    //$couponFactory->createCoupon(12.5);
-    //$couponFactory->deleteCoupon('ouqnq');
-
-
-    /*
-    $code = strtoupper(substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil(10 / strlen($x)))), 1, 10));
-    try {
-        Reh_Online_Coupon::createCouponPdf($code, '199.95', "Popup Tasting", '5678');
-    } catch (Exception $exception) {
-        echo $exception->getMessage();
-   }
-    */
-
-    $order_id = 30555;
-    $allmails = WC()->mailer()->emails;
-    $email = $allmails['WC_Email_Customer_Completed_Order'];
-    $email->trigger( $order_id );
 });
 
 add_action('wp_ajax_update_sku', function () {
