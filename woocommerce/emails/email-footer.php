@@ -57,7 +57,7 @@ defined('ABSPATH') || exit;
                                     <br>
                                     Am Brixener Hof 6 &#183; 93047 Regensburg
                                     <br>
-                                    <a href="tel:0941/7883530">0941/7883530</a> &#183; <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a> &#183; <a href="https://www.rehorik.de">www.rehorik.de</a>
+                                    <a href="tel:<?= CONTACT_PHONE ?>"><?= CONTACT_PHONE ?></a> &#183; <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a> &#183; <a href="https://www.rehorik.de">www.rehorik.de</a>
                                 </p>
                             </td>
                         </tr>

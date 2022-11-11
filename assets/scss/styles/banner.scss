@@ -2,9 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: transparent url("../img/stripes.png") repeat left top;
+  background: transparent url("../img/stripes.png") repeat-x left center;
   width: 100%;
-  height: 35px;
   margin-bottom: $spacing-l;
 
   > * {
@@ -14,5 +13,14 @@
     background-color: #fff;
     font-family: $font-family-headline;
     text-transform: uppercase;
+  }
+
+  a, p a {
+    font-family: $font-family-headline;
+    color: $weinrot;
+
+    &:hover {
+      color: $beigegold;
+    }
   }
 }
