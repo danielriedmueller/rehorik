@@ -31,7 +31,7 @@ get_template_part('templates/featured/slider')
 <div class="marketing-banner weinachtsmarkt">
     <div class="container">
         <div class="marketing-banner-text">
-            <h2>Komm zum Rehorik Weinachtsmarkt!<br>Am 26.11. / 13 Uhr, am Brixener Hof 6, 93047 Regensburg.<br>Was wirds geben?</h2>
+            <h2>Komm zum Rehorik <span>Wein</span>achtsmarkt!<br>Am 26.11. / 13 Uhr, am Brixener Hof 6, 93047 Regensburg.<br>Was wirds geben?</h2>
             <a class="learn-more" href="/produkt-kategorie/veranstaltungen/weinachtsmarkt/">erfahre mehr</a>
         </div>
     </div>
