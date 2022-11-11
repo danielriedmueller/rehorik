@@ -1,6 +1,6 @@
 <?php ?>
 <div id="special-category" class="weinachtsmarkt">
-    <h2>Der Rehorik <span>Wein</span>achtsmarkt!</h2>
+    <h2>Der Rehorik <span class="beigegold">Wein</span>achtsmarkt!</h2>
     <p><b>Wo:</b> <a target="_blank" href="https://goo.gl/maps/nAmqc8nwH3hGWkWY6">Am Brixener Hof
             6</a></p>
     <p><b>Wann:</b> Am 26.11. / 13 Uhr</p>
@@ -19,14 +19,14 @@
         </ul>
     </div>
     <div class="flex-images mt">
-        <div><img alt="Black & Wine 1"
-                  src="<?= get_stylesheet_directory_uri() . '/assets/img/veranstaltungen/weinachtsmarkt/wm-1.jpg' ?>">
+        <div><img alt="Weinachtsmarkt 1"
+                  src="<?= get_stylesheet_directory_uri() . '/assets/img/veranstaltungen/weinachtsmarkt/xmas-markt1.jpg' ?>">
         </div>
-        <div><img alt="Black & Wine 2"
-                  src="<?= get_stylesheet_directory_uri() . '/assets/img/veranstaltungen/weinachtsmarkt/wm-2.jpg' ?>">
+        <div><img alt="Weinachtsmarkt 2"
+                  src="<?= get_stylesheet_directory_uri() . '/assets/img/veranstaltungen/weinachtsmarkt/xmas-markt2.jpg' ?>">
         </div>
-        <div><img alt="Black & Wine 3"
-                  src="<?= get_stylesheet_directory_uri() . '/assets/img/veranstaltungen/weinachtsmarkt/wm-3.jpg' ?>">
+        <div><img alt="Weinachtsmarkt 3"
+                  src="<?= get_stylesheet_directory_uri() . '/assets/img/veranstaltungen/weinachtsmarkt/xmas-markt3.jpg' ?>">
         </div>
     </div>
 </div>

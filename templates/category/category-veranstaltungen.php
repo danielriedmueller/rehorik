@@ -116,7 +116,7 @@ $eventInfos = [
     ],
     'weinachtsmarkt' => [
         'img' => 'xmas',
-        'claim' => 'Es Weinachtet!',
+        'claim' => 'Es <span class="beigegold">Wein</span>achtet!',
     ]
 ];
 
@@ -131,7 +131,9 @@ if (isProductCategory(TICKET_CATEGORY_SLUG) && !empty($eventCat) && isset($event
 } else {
     get_template_part('templates/header/head');
 }
-get_template_part('templates/page-title');
+if (!isProductCategory(WEINACHTSMARKT)) {
+    get_template_part('templates/page-title');
+}
 ?>
 <div class="container">
     <div id="main-content">
