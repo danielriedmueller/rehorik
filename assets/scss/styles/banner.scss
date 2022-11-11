@@ -14,13 +14,4 @@
     font-family: $font-family-headline;
     text-transform: uppercase;
   }
-
-  a, p a {
-    font-family: $font-family-headline;
-    color: $weinrot;
-
-    &:hover {
-      color: $beigegold;
-    }
-  }
 }

@@ -20,12 +20,21 @@ defined('ABSPATH') || exit;
 get_template_part('templates/header/slider', null, [
     'items' => [
         [
-            'claim' => 'Vielen Dank für deine Bestellung!',
+            'claim' => 'Vielen Dank!',
             'img' => 'xmas'
         ],
     ],
 ]);
 ?>
+<div class="rehorik-page-introduction-outer">
+    <div class="container">
+        <div class="rehorik-page-introduction">
+            <span>
+            Du hast von uns eine E-Mail mit den Details deiner Bestellung erhalten.<br>Hast du noch Fragen oder sind Probleme aufgetreten?<br>Schreib uns einfach eine Mail an <a href="mailto:<?= CONTACT_MAIL ?>?subject=Kundenanfrage&body=Hallo%20Rehorik-Team,%0D%0A%0D%0AHIER%20STEHT%20DEINE%20NACHRICHT"><?= CONTACT_MAIL ?></a><br>oder ruf an <a href="tel:<?= CONTACT_PHONE ?>"><?= CONTACT_PHONE ?></a>.
+                </span>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="rehorik-order woocommerce-order">
         <?php
@@ -49,8 +58,6 @@ get_template_part('templates/header/slider', null, [
             </p>
 
         <?php else : ?>
-            <?php get_template_part('templates/thank-you-page'); ?>
-
             <ul class="rehorik-order-overview woocommerce-order-overview woocommerce-thankyou-order-details order_details">
 
                 <li class="woocommerce-order-overview__order order">
@@ -83,14 +90,9 @@ get_template_part('templates/header/slider', null, [
                 <?php endif; ?>
 
             </ul>
-
         <?php endif; ?>
-
             <?php do_action('woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id()); ?>
             <?php do_action('woocommerce_thankyou', $order->get_id()); ?>
-
-        <?php else : ?>
-            <?php get_template_part('templates/thank-you-page'); ?>
         <?php endif; ?>
     </div>
 </div>

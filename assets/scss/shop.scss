@@ -81,6 +81,7 @@
 @import "styles/marketing_banner";
 @import "styles/paypal";
 @import "styles/snow";
+@import "styles/checkout/thank_you";
 
 @font-face {
   font-family: "Cond";
@@ -223,21 +224,12 @@ table {
 .mt {
   margin-top: $spacing;
 }
-
-.mb {
-  margin-bottom: $spacing;
-}
-
 .mb-s {
   margin-bottom: $spacing-s;
 }
 
 .section-spacing-bottom {
   margin-bottom: var(--section-spacing-top-bottom);
-}
-
-.center {
-  text-align: center;
 }
 
 hr {

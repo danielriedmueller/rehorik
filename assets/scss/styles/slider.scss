@@ -131,10 +131,11 @@ body.woocommerce-order-received .slider-claim {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  h1 {
-    font-size: $font-size-insanely-large;
+  @media all and (min-width: $medium-breakpoint + 1) {
+    h1 {
+      font-size: $font-size-insanely-large;
+    }
   }
-
 }
 
 ul.slider, ul.slider li, ul.slider li img {
