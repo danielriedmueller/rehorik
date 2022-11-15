@@ -14,6 +14,7 @@ if (empty($products)) {
     <div class="container">
         <?php if (sizeof($products) > 1) : ?>
             <ul id="slider-body" class="slider">
+                <li><?php get_template_part('templates/featured/geschenke') ?></li>
                 <?php foreach ($products as $product): ?>
                     <li><?php get_template_part('templates/featured/item', null, ['product' => $product]) ?></li>
                 <?php endforeach; ?>
