@@ -1,5 +1,5 @@
 <div id="rehorik-social-media-icons" data-scrollpos>
-    <?php if ($args['withLogo']) : ?>
+    <?php if (!empty($args['withLogo'])) : ?>
         <a class="rehorik-logo" href="<?php echo get_home_url(); ?>" target="_self" title="Rehorik"></a>
     <?php endif; ?>
     <a class="instagram" href="https://www.instagram.com/rehorik" target="_blank" title="Rehorik Instagram"></a>
