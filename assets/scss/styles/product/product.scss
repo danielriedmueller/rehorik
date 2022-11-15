@@ -75,6 +75,10 @@
       color: $font-color-accent;
       text-align: left;
       margin-top: -11px;
+
+      @media all and (max-width: $medium-breakpoint) {
+        word-break: break-all;
+      }
     }
 
     div.rehorik-product-quality-name {

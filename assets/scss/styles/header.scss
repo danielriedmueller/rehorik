@@ -73,6 +73,10 @@ header.rehorik-header {
         a {
           padding: $spacing-s $spacing;
         }
+
+        &.Oeffnungszeiten {
+          display: none;
+        }
       }
 
       a {
@@ -223,18 +227,23 @@ header.rehorik-header {
     .menu-hauptmenue-container {
       display: none;
       position: absolute;
-      top: $menu-height;
+      top: 0;
       left: 0;
-      background-color: transparent;
+      max-height: 100vh;
+      overflow: scroll;
+      background-color: $weinrot;
+      background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
+      background-repeat: no-repeat, repeat;
+      background-position: left top, right bottom;
+      background-size: 100%;
       width: 100%;
-      border-bottom: 1px solid $beigegold;
 
       ul.menu {
         flex-direction: column;
         background-color: transparent;
 
         > li {
-          background-color: $weinrot;
+          background-color: transparent;
         }
 
         li.menu-item-has-children {
@@ -250,6 +259,10 @@ header.rehorik-header {
             pointer-events: none;
           }
 
+          > ul.sub-menu {
+            pointer-events: none;
+          }
+
           &:hover {
             height: auto;
             background: rgba(206, 182, 127, 0.9) url("../img/pfeil-rot-oben.svg") no-repeat top 30px right var(--section-spacing-left-right);
@@ -260,9 +273,10 @@ header.rehorik-header {
             }
 
             > ul.sub-menu {
+              pointer-events: all;
               padding-top: 0;
               padding-bottom: 0;
-              margin-top: $spacing-s;
+              margin-top: $spacing;
               background: transparent;
               display: grid;
               grid-template-columns: 1fr 1fr;

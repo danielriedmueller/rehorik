@@ -47,12 +47,6 @@
   }
 
   .slider-title {
-    margin-bottom: $spacing-s;
-
-    @media all and (max-width: $small-breakpoint) {
-      margin-bottom: $spacing-s;
-    }
-
     h1, h2 {
       font-family: "Cond Black", serif;
     }
@@ -60,6 +54,9 @@
     h2 {
       font-size: $font-size-very-very-large;
       color: #fff;
+      @media all and (min-width: $medium-breakpoint + 1) {
+        min-width: 500px + $spacing-l;
+      }
     }
   }
 
@@ -76,12 +73,18 @@
     display: flex;
     justify-content: space-evenly;
 
+    margin-top: $spacing-s;
+
+    @media all and (max-width: $small-breakpoint) {
+      margin-top: $spacing-s;
+    }
+
     .button {
       transition: none;
       font-family: $font-family-headline;
       background-color: $weinrot;
       color: $beigegold;
-      padding: $spacing-xxs;
+      padding: $spacing-xxs $spacing-xs;
       min-width: 200px;
       text-align: center;
       display: inline-block;
@@ -117,6 +120,20 @@
       .button:first-child:not(:last-child) {
         margin-bottom: $spacing-s;
       }
+    }
+  }
+}
+
+// Thank you page
+body.woocommerce-order-received .slider-claim {
+  top: 50%;
+  bottom: unset;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media all and (min-width: $medium-breakpoint + 1) {
+    h1 {
+      font-size: $font-size-insanely-large;
     }
   }
 }

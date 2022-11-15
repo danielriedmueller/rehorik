@@ -7,10 +7,8 @@ add_action('admin_menu', function () {
         ?>
         <div>
             <div id="status">OK</div>
-            <button disabled class="rehorik-admin-action-button" data-action="update_coffee_price">Update Coffee Price</button>
-            <button disabled class="rehorik-admin-action-button" data-action="update_sku">Update SKUs</button>
             <button class="rehorik-admin-action-button" data-action="hide_past_event_tickets">Hide Past Event Tickets</button>
-            <button class="rehorik-admin-action-button" data-action="update_tickets_date">Update All Tickets</button>
+            <button disabled class="rehorik-admin-action-button" data-action="update_tickets_date">Update All Tickets</button>
         </div>
         <?php
     }, null, 3);
@@ -185,40 +183,40 @@ add_action('wp_ajax_update_sku', function () {
 
 add_action('wp_ajax_update_coffee_price', function () {
     $newPrices = [
-        'Schümli' => [6.50, 12.50, 25.00],
-        '190°' => [8.25, 16.00, 32.00],
-        'Kenya Gourmet' => [8.25, 16.00, 32.00],
-        'Arabica Due' => [6.75, 13.00, 26.00],
-        'Bergsport' => [7.75, 15.00, 30.00],
-        'Amazonas' => [7.25, 14.00, 28.00],
-        'Spätlese' => [6.75, 13.00, 26.00],
-        'Café Felix' => [6.50, 12.50, 25.00],
-        'La Victoria' => [7.25, 14.00, 28.00],
-        'Primissimo' => [6.50, 12.50, 25.00],
-        'Röstmeister' => [6.75, 13.00, 26.00],
-        'Nuovo' => [6.75, 13.00, 26.00],
-        'Primo' => [6.25, 12.00, 24.00],
-        'Diavolo' => [6.75, 13.00, 26.00],
-        'Espresso Entkoffeiniert' => [6.75, 13.00, 26.00],
-        'Mokka' => [7.25, 14.00, 28.00],
-        'Gakundu' => [8.25, 16.00, 32.00],
-        'La Passeio' => [7.00, 13.50, 27.00],
-        'Filterkaffee Spätlese' => [6.75, 13.00, 26.00],
-        'Horizontes' => [6.75, 13.00, 26.00],
-        'La Cascada' => [6.75, 13.00, 26.00],
-        'Filterkaffee La Victoria' => [6.75, 13.00, 26.00],
-        'Filterkaffee Amazonas' => [7.25, 14.00, 28.00],
-        'Sumatra' => [7.25, 14.00, 28.00],
-        'Monsooned Malabar' => [6.75, 13.00, 26.00],
-        'Karlsbader Mischung' => [7.00, 13.50, 27.00],
-        'Festmischung' => [6.25, 12.00, 24.00],
-        'Regensburger Mischung' => [6.75, 13.00, 26.00],
-        'Premium Blend' => [7.00, 13.50, 27.00],
-        'Spezial Mischung' => [5.75, 11.00, 22.00],
-        'Malega' => [6.75, 13.00, 26.00],
-        'Filterkaffee Entkoffeiniert' => [6.50, 12.50, 25.00],
-        'Weihnachtsmischung' => [7.25, 14.00, 28.00],
-        'Ostermischung' => [7.25, 14.00, 28.00],
+        'Schümli' => [7.90, 14.95, 29.50],
+        '190°' => [9.5, 17.95, 35.50],
+        'Kenya Gourmet' => [9.5, 17.95, 35.50],
+        'Arabica Due' => [7.9, 14.95, 29.50],
+        'Bergsport' => [8.5, 15.95, 31.50],
+        'Amazonas (Espresso)' => [8.9, 16.95, 33.5],
+        'Spätlese (Espresso)' => [7.5, 13.95, 27.50],
+        'Café Felix' => [7.50, 13.95, 27.50],
+        'La Victoria (Espresso)' => [8.9, 16.95, 33.50],
+        'Primissimo' => [7.5, 13.95, 27.50],
+        'Röstmeister' => [7.9, 14.95, 29.50],
+        'Nuovo' => [7.5, 13.95, 27.50],
+        'Primo' => [7.5, 13.95, 27.50],
+        'Diavolo' => [7.9, 14.95, 29.95],
+        'Entkoffeiniert (Espresso)' => [7.9, 14.95, 29.50],
+        'Mokka' => [8.5, 15.95, 31.50],
+        'Gakundu' => [8.9, 16.95, 33.50],
+        'La Passeio' => [7.9, 14.95, 29.50],
+        'Spätlese (Filter)' => [7.5, 13.95, 27.5],
+        'Horizontes' => [7.9, 14.95, 29.50],
+        'La Cascada' => [7.9, 14.95, 29.50],
+        'La Victoria (Filter)' => [7.9, 14.95, 29.50],
+        'Amazonas (Filter)' => [8.5, 15.95, 31.50],
+        'Sumatra' => [8.5, 15.95, 31.50],
+        'Monsooned Malabar' => [7.9, 14.95, 29.50],
+        'Karlsbader Mischung' => [7.9, 14.95, 29.50],
+        'Festmischung' => [7.5, 13.95, 27.5],
+        'Regensburger Mischung' => [7.9, 14.95, 29.50],
+        'Premium Blend' => [8.5, 15.95, 31.50],
+        'Spezial Mischung' => [7.5, 13.95, 27.5],
+        'Malega' => [7.9, 14.95, 29.50],
+        'Entkoffeiniert (Filter)' => [7.9, 14.95, 29.50],
+        'Weihnachtsmischung' => [8.5, 15.95, 31.50],
+        'Ostermischung' => [8.5, 15.95, 31.50],
     ];
 
     try {
@@ -238,6 +236,8 @@ add_action('wp_ajax_update_coffee_price', function () {
             /** @var WC_Product_Simple $foundProduct */
             $foundProduct = current($found);
 
+            echo sprintf('%s -> %s <br>', $coffee, $foundProduct->get_title());
+
             if (!$foundProduct) {
                 throw new Exception('no product found');
             }
@@ -256,14 +256,16 @@ add_action('wp_ajax_update_coffee_price', function () {
 
                     if ($unit === '0.25') {
                         $gzd_product->get_wc_product()->set_regular_price($newPrice[0]);
-                        $gzd_product->set_unit_price_regular($newPrice[2] + 1);
-                        $gzd_product->set_unit_price($newPrice[2] + 1);
+                        $unitPrice = $newPrice[0] / (float) $unit;
+                        $gzd_product->set_unit_price_regular($unitPrice);
+                        $gzd_product->set_unit_price($unitPrice);
                     }
 
                     if ($unit === '0.5') {
                         $gzd_product->get_wc_product()->set_regular_price($newPrice[1]);
-                        $gzd_product->set_unit_price_regular($newPrice[2]);
-                        $gzd_product->set_unit_price($newPrice[2]);
+                        $unitPrice = $newPrice[1] / (float) $unit;
+                        $gzd_product->set_unit_price_regular($unitPrice);
+                        $gzd_product->set_unit_price($unitPrice);
 
                     }
 

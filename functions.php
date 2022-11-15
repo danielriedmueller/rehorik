@@ -17,6 +17,7 @@ const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
 const CONTACT_MAIL = 'kaffee@rehorik.de';
+const CONTACT_PHONE = '0941 / 788 353 0';
 const IT_SUPPORT_EMAIL = 'it@rehorik.de';
 const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
 const EVENT_EMAIL = 'events@rehorik.de';
@@ -37,6 +38,7 @@ const COFFEE_ESPRESSO_CATEGORY_SLUG = 'espresso';
 const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
 const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
 const BLACK_AND_WINE = 'blackwine';
+const WEINACHTSMARKT = 'weinachtsmarkt';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
 const GIFTS_CATEGORY_SLUG = 'geschenke';
 const ONLINESHOP_CATEGORY_SLUG = 'onlineshop';
@@ -55,9 +57,9 @@ const WINE_CATEGORY_SLUGS = [
     'champagner-und-sekt'
 ];
 const HIDE_CATEGORIES = [
-    'delikatessen-onlineshop',
-    'gutscheine',
-    'kaese-wurst'
+    746, // 'delikatessen-onlineshop'
+    606, // 'gutscheine'
+    513, // 'kaese-wurst'
 ];
 
 // Attributes

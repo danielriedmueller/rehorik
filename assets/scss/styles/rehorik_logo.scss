@@ -14,6 +14,6 @@
     height: $logo-size-small;
     background-size: $logo-size-small;
     top: $menu-height + $spacing;
-    left: $spacing;
+    left: var(--section-spacing-left-right);
   }
 }

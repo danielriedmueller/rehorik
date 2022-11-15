@@ -94,7 +94,9 @@
 /*
  * Remove product count
  *  - Black & Wine
+ *  - Unsere Feste
  */
-ul.children > li.cat-item-895 > span.count {
+ul.children > li.cat-item-895 > span.count,
+ul.children > li.cat-item-884 > span.count{
   display: none;
 }

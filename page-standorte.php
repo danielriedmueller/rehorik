@@ -35,6 +35,9 @@ get_template_part('templates/header/head', null, [
                                     <td>SA.</td>
                                     <td>09:00 - 18:00</td>
                                 </tr>
+                                <tr>
+                                    <td colspan="4">Hinweis: Am 12.11.2022 ist ab 16.00 Uhr geschlossene Gesellschaft</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </td>
@@ -145,7 +148,7 @@ get_template_part('templates/header/head', null, [
                     </tr>
                     <tr>
                         <td>Verwaltung</td>
-                        <td>0941 / 788 353 0</td>
+                        <td><?= CONTACT_PHONE ?></td>
                         <td>
                             <table>
                                 <tbody>
