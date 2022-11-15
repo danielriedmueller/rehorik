@@ -41,6 +41,7 @@ class Reh_Api_Products
 
     /**
      * Updates stock and price of products and variations.
+     * @throws Exception
      */
     public function updateProducts(WP_REST_Request $request): void
     {
@@ -48,14 +49,21 @@ class Reh_Api_Products
             $product = wc_get_product($productData['id']);
 
             if ($product) {
-                $product->set_manage_stock(true);
-                $product->set_regular_price($productData['regular_price']);
-                $product->set_stock_quantity($productData['stock_quantity']);
+                if (isset($productData['regular_price']) && is_numeric($productData['regular_price'])) {
+                    $product->set_regular_price($productData['regular_price']);
+                }
+
+                if (isset($productData['stock_quantity']) && is_numeric($productData['stock_quantity'])) {
+                    if (!$product->get_manage_stock()) {
+                        $product->set_manage_stock(true);
+                    }
+                    $product->set_stock_quantity($productData['stock_quantity']);
+                }
 
                 // Set values for fields from plugin Germanized
                 $gzdProduct = null;
                 foreach (self::GERMANIZED_FIELDS as $germanizedField) {
-                    if (array_key_exists($germanizedField, $productData)) {
+                    if (isset($productData[$germanizedField]) && is_numeric($productData[$germanizedField])) {
                         $gzdProduct = $this->setGermanizedFieldValue($germanizedField, $productData[$germanizedField], $product);
                     }
                 }
