@@ -17,5 +17,9 @@ function createPageTitle($suffix) {
         }
     }
 
+    if (is_404()) {
+        return "404" . $suffix;
+    }
+
     return single_post_title() . $suffix;
 }

@@ -67,7 +67,7 @@ get_template_part('templates/tribe-events-attendee-list');
         <div class="rehorik-tribe-events-single-event-info">
             <div>
                 <p><b>VERANSTALTER:</b> Rehorik Rösterei & Feinkost GmbH</p>
-                <p><b>TELEFON:</b> <a href="tel:+49941 / 7883530">0941 / 7883530</a></p>
+                <p><b>TELEFON:</b> <a href="tel:<?= CONTACT_PHONE ?>"><?= CONTACT_PHONE ?></a></p>
                 <p><b>E-MAIL:</b> <a href="mailto:events@rehorik.de">events@rehorik.de</a></p>
             </div>
             <div>
