@@ -2,17 +2,33 @@
   background-color: $weinrot;
 
   .rehorik-page-introduction {
-    text-align: justify;
+    text-align: left;
     color: $beigegold;
     $hugo-head-size: 100px;
     min-height: $hugo-head-size;
     display: flex;
-    align-items: center;
     background: transparent url("../img/svg/hugo_head_gold.svg") no-repeat center right;
     background-size: $hugo-head-size;
     padding-right: $hugo-head-size + $section-spacing-small;
 
+    @media all and (min-width: $small-breakpoint + 1) {
+      flex-direction: row;
+
+      > span:only-child {
+        flex-basis: 100%;
+      }
+
+      > span {
+        flex-basis: 50%;
+      }
+
+      > span:nth-child(2) {
+        margin-left: $spacing;
+      }
+    }
+
     @media all and (max-width: $small-breakpoint) {
+      flex-direction: column;
       padding-right: 0;
       padding-bottom: $hugo-head-size;
       background-position: bottom right;

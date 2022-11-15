@@ -3,6 +3,10 @@ if (isProductCategory(TICKET_CATEGORY_SLUG)) {
     get_template_part('templates/veranstaltungen/veranstaltungen-footer');
 }
 
+if (isProductCategory(GIFTS_CATEGORY_SLUG)) {
+    get_template_part('templates/category/geschenke-footer');
+}
+
 get_template_part('templates/newsletter-sign-up');
 get_template_part('templates/rehorik-locations');
 ?>
