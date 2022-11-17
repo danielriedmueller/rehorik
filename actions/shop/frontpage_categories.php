@@ -3,6 +3,7 @@
  * Add coming next events to frontpage category pane
  */
 add_action('woocommerce_after_subcategory', function(WP_Term $category) {
+    return;
     if (!is_front_page()
         || !function_exists('tribe_get_events')
         || !class_exists(Tribe__Tickets__Tickets::class)
