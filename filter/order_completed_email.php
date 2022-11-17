@@ -23,13 +23,39 @@ add_filter('woocommerce_email_additional_content_customer_completed_order', func
     string                            $additionalContent,
     WC_Order                          $order,
     WC_Email_Customer_Completed_Order $email) {
+
+    $hasCoupon = false;
+    $hasShippableProducts = false;
+
     foreach ($order->get_items() as $item) {
-        if (!$item->get_product()->is_virtual()) {
-            return $additionalContent;
+        if ($hasCoupon && $hasShippableProducts) {
+            continue;
+        }
+
+        /** @var WC_Order_Item_Product $item */
+        if ($item instanceof WC_Order_Item_Product) {
+            $product = $item->get_product();
+            if (!$hasCoupon && isItCategory($product, COUPON_CATEGORY_SLUG)) {
+                $hasCoupon = true;
+            }
+
+            if (!$hasShippableProducts && !$product->is_virtual()) {
+                $hasShippableProducts = true;
+            }
         }
     }
 
-    return 'Deine Bestellung ist abgeschlossen. Vielen Dank für Deinen Einkauf!';
+    $emailMessage = "Deine Bestellung ist abgeschlossen. Vielen Dank für Deinen Einkauf!";
+
+    if ($hasShippableProducts) {
+        $emailMessage .= " " . $additionalContent;
+    }
+
+    if ($hasCoupon) {
+        $emailMessage .= " " . "Deine Gutscheine haben wir in dieser Email zum Ausdrucken angehängt.";
+    }
+
+    return $emailMessage;
 }, 10, 3);
 
 /**

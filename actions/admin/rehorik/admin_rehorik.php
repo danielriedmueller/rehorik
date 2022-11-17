@@ -42,7 +42,7 @@ add_action('wp_ajax_create_test_coupon', function () {
    }
     */
 
-    $order_id = 30555;
+    $order_id = 30584;
     $allmails = WC()->mailer()->emails;
     $email = $allmails['WC_Email_Customer_Completed_Order'];
     $email->trigger( $order_id );
