@@ -5,6 +5,7 @@
 add_action('woocommerce_after_subcategory', function(WP_Term $category) {
     if (!is_front_page()
         || !function_exists('tribe_get_events')
+        || !class_exists(Tribe__Tickets__Tickets::class)
         || $category->slug !== TICKET_CATEGORY_SLUG) {
         return;
     }
