@@ -1,5 +1,5 @@
 <?php
-show_admin_bar(true);
+show_admin_bar(false);
 
 const PROD_URL = 'https://www.rehorik.de';
 
@@ -7,6 +7,7 @@ const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
 const CONTACT_MAIL = 'kaffee@rehorik.de';
+const CONTACT_PHONE = '0941 / 788 353 0';
 const IT_SUPPORT_EMAIL = 'it@rehorik.de';
 const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
 const EVENT_EMAIL = 'events@rehorik.de';
@@ -27,6 +28,7 @@ const COFFEE_ESPRESSO_CATEGORY_SLUG = 'espresso';
 const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
 const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
 const BLACK_AND_WINE = 'blackwine';
+const WEINACHTSMARKT = 'weinachtsmarkt';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
 const GIFTS_CATEGORY_SLUG = 'geschenke';
 const COUPON_CATEGORY_SLUG = 'gutscheine';

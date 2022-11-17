@@ -7,9 +7,8 @@ add_action('admin_menu', function () {
         ?>
         <div>
             <div id="status">OK</div>
-            <button class="rehorik-admin-action-button" data-action="update_coffee_price">Update Coffee Price</button>
             <button class="rehorik-admin-action-button" data-action="hide_past_event_tickets">Hide Past Event Tickets</button>
-            <button class="rehorik-admin-action-button" data-action="update_tickets_date">Update All Tickets</button>
+            <button disabled class="rehorik-admin-action-button" data-action="update_tickets_date">Update All Tickets</button>
             <button class="rehorik-admin-action-button" data-action="create_test_coupon">Create Test Coupon</button>
             <button class="rehorik-admin-action-button" data-action="send_test_mail">Send Test Mail</button>
         </div>

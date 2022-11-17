@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             container: '#slider-body',
             items: 1,
             lazyLoad: true,
-            gutter: 0,
+            gutter: 20,
             responsive: {
                 765: {
                     items: 2,

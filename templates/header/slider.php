@@ -54,7 +54,7 @@ $imgPathSuffix = ')';
         ></div>
         <div class="slider-claim">
             <?php if (isset($item['claim'])): ?>
-                <div class="slider-title"><h2><?= $item['claim'] ?></h2></div>
+                <div class="slider-title"><h1><?= $item['claim'] ?></h1></div>
             <?php endif; ?>
             <?php if (isset($item['buttons'])): ?>
                 <div class="auto-width button-container">

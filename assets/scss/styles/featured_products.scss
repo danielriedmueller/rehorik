@@ -73,9 +73,13 @@
 
       .image {
         margin: 0 auto $spacing auto;
+        width: 100%;
+        max-width: $imgSize;
       }
 
       .text {
+        width: 100%;
+        max-width: $textSize;
         margin: 0 auto;
         padding: 0 0;
       }

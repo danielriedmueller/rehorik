@@ -145,7 +145,7 @@ get_template_part('templates/header/head', null, [
                     </tr>
                     <tr>
                         <td>Verwaltung</td>
-                        <td>0941 / 788 353 0</td>
+                        <td><?= CONTACT_PHONE ?></td>
                         <td>
                             <table>
                                 <tbody>

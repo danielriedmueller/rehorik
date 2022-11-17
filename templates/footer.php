@@ -3,6 +3,10 @@ if (isProductCategory(TICKET_CATEGORY_SLUG)) {
     get_template_part('templates/veranstaltungen/veranstaltungen-footer');
 }
 
+if (isProductCategory(GIFTS_CATEGORY_SLUG)) {
+    get_template_part('templates/category/geschenke-footer');
+}
+
 get_template_part('templates/newsletter-sign-up');
 get_template_part('templates/rehorik-locations');
 ?>
@@ -33,7 +37,7 @@ get_template_part('templates/rehorik-locations');
                     <p>Ihr habt noch Fragen?</p>
                     <p>Einfach anrufen, persönlich vorbeikommen oder schreibt uns eine Mail.</p>
                     <p><a href="mailto:<?= CONTACT_MAIL ?>?subject=Kundenanfrage&body=Hallo%20Rehorik-Team,%0D%0A%0D%0AHIER%20STEHT%20DEINE%20NACHRICHT"><?= CONTACT_MAIL ?></a></p>
-                    <p>0941 / 788 353 0</p>
+                    <p><a href="tel:<?= CONTACT_PHONE ?>"><?= CONTACT_PHONE ?></a></p>
                 </div>
             </div>
             <div>

@@ -1,0 +1,46 @@
+.thank-you {
+  position: relative;
+  background: transparent url("../img/thankyou/header-bestellung-danke-hintergrund-1080x720px.jpg") repeat top left;
+
+  padding-top: 150px;
+  @media all and (max-width: $medium-breakpoint) {
+    padding-top: 100px;
+    padding-bottom: 450px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: $spacing;
+    z-index: 1;
+    width: 500px;
+    height: 751px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center bottom -$spacing-s;
+    background-image: url("../img/thankyou/briefumschlag-offen-mobil-300px.png");
+
+    @media all and (max-width: $medium-breakpoint) {
+      width: 300px;
+      height: 451px;
+      background-image: url("../img/thankyou/briefumschlag-offen-mobil-300px.png");
+    }
+  }
+
+  > div {
+
+    h1 {
+      font-size: 155px;
+      color: $font-color;
+      text-align: left;
+      margin: 0 0 0 -11px;
+
+      @media all and (max-width: $medium-breakpoint) {
+        margin: 0 0 0 -6px;
+        font-size: 100px;
+      }
+    }
+  }
+}

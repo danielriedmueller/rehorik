@@ -8,6 +8,8 @@
       @media all and (max-width: $small-breakpoint) {
         flex-direction: column;
         align-items: start;
+        padding-right: 0;
+        width: 100%;
       }
     }
 
@@ -18,7 +20,7 @@
 
     .rehorik-coupon {
       @media all and (max-width: $small-breakpoint) {
-        width: $cart-coupon-width;
+        width: 100%;
         margin-bottom: $spacing;
         margin-right: 0;
       }
