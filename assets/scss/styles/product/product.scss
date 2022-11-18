@@ -123,8 +123,20 @@
  * Exception for machine category
  * Prepend "ab" to price
 */
-.rehorik.single-product .rehorik-product.product.detail-view.product_cat-maschinen-equipment .rehorik-product-view-title-price p.price {
-  > span::before {
-    content: "ab ";
+.rehorik.single-product .rehorik-product.product.detail-view.product_cat-maschinen-equipment {
+  grid-template-areas:
+    "gallery title-price"
+    "gallery add-to-cart"
+    "information information"
+;
+
+  #resmio-rehorik-maschinenberatung {
+    margin-left: -7px;
+  }
+
+  .rehorik-product-view-title-price p.price {
+    > span::before {
+      content: "ab ";
+    }
   }
 }

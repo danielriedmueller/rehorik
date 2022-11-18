@@ -224,8 +224,13 @@ table {
 .mt {
   margin-top: $spacing;
 }
+
 .mb-s {
   margin-bottom: $spacing-s;
+}
+
+.mb-l {
+  margin-top: $spacing-l;
 }
 
 .section-spacing-bottom {
