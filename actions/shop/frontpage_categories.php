@@ -27,10 +27,13 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
         $ticketsAvailable = false;
         foreach ($tickets as $ticket) {
             /** @var  Tribe__Tickets__Ticket_Object $ticket */
-            $available = $ticket->available();
+            /**
+             * Disabled du to performance issues
+             */
+            //$available = $ticket->available();
             $dateInRange = $ticket->date_in_range('now');
 
-            if ($available && $dateInRange) {
+            if ($dateInRange) {
                 $ticketsAvailable = true;
                 break;
             }
