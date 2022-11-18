@@ -29,7 +29,7 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
             /**
              * Disabled du to performance issues
              */
-            $available = $ticket->available();
+            //$available = $ticket->available();
             $dateInRange = $ticket->date_in_range('now');
 
             if ($dateInRange) {
