@@ -3,7 +3,6 @@
  * Add coming next events to frontpage category pane
  */
 add_action('woocommerce_after_subcategory', function(WP_Term $category) {
-    return;
     if (!is_front_page()
         || !function_exists('tribe_get_events')
         || !class_exists(Tribe__Tickets__Tickets::class)
@@ -30,7 +29,7 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
             /**
              * Disabled du to performance issues
              */
-            //$available = $ticket->available();
+            $available = $ticket->available();
             $dateInRange = $ticket->date_in_range('now');
 
             if ($dateInRange) {
