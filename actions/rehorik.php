@@ -21,3 +21,23 @@ add_action('render_rest_amount_for_free_shipping', function () {
         echo 'Nur noch <span>' . $restAmount . ' &euro;</span> bis zum kostenlosen Versand!';
     }
 });
+
+//Remove JQuery migrate
+add_action('wp_default_scripts', function($scripts) {
+    if (!is_admin() && isset($scripts->registered['jquery'])) {
+        $script = $scripts->registered['jquery'];
+
+        if ($script->deps) { // Check whether the script has any dependencies
+            $script->deps = array_diff($script->deps, array(
+                'jquery-migrate'
+            ));
+        }
+    }
+});
+
+// Prevent PayPal loading in every page
+add_action( 'wp_enqueue_scripts', function () {
+    if (!is_product() && !is_cart() && !is_checkout()) {
+        wp_dequeue_script('ppcp-smart-button');
+    }
+}, 20);

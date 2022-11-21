@@ -58,6 +58,10 @@ function getProductOfTheMonthClass(WC_Product $product): string {
 }
 
 function getIsEventOnlineClass(WC_Product $product): string {
+    if (!function_exists('tribe_events_get_ticket_event')) {
+        return "";
+    }
+
     $event = tribe_events_get_ticket_event($product->get_id());
 
     if (!$event) {

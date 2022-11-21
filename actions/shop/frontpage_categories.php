@@ -5,6 +5,7 @@
 add_action('woocommerce_after_subcategory', function(WP_Term $category) {
     if (!is_front_page()
         || !function_exists('tribe_get_events')
+        || !class_exists(Tribe__Tickets__Tickets::class)
         || $category->slug !== TICKET_CATEGORY_SLUG) {
         return;
     }
@@ -25,10 +26,13 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
         $ticketsAvailable = false;
         foreach ($tickets as $ticket) {
             /** @var  Tribe__Tickets__Ticket_Object $ticket */
-            $available = $ticket->available();
+            /**
+             * Disabled du to performance issues
+             */
+            //$available = $ticket->available();
             $dateInRange = $ticket->date_in_range('now');
 
-            if ($available && $dateInRange) {
+            if ($dateInRange) {
                 $ticketsAvailable = true;
                 break;
             }
