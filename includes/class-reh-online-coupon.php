@@ -10,7 +10,7 @@ class Reh_Online_Coupon
     {
         $coupon = new WC_Coupon();
 
-        $code = self::generateCouponCode($orderNumber);
+        $code = self::generateCouponCode();
 
         $coupon->set_code($code);
         $coupon->set_amount($value);
@@ -19,13 +19,6 @@ class Reh_Online_Coupon
         $coupon->save();
 
         return $code;
-    }
-
-    // TODO: implement delete coupon. work in progress
-    public static function deleteCoupon(string $code): void
-    {
-        $coupon = new WC_Coupon($code);
-        $coupon->delete();
     }
 
     public static function createCouponPdf(
@@ -68,8 +61,9 @@ class Reh_Online_Coupon
         return null;
     }
 
-    private static function generateCouponCode(int $salt): string
+    private static function generateCouponCode(): string
     {
-        return uniqid();
+        $length = 8;
+        return strtoupper(substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length));
     }
 }
