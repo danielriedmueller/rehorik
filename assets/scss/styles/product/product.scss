@@ -130,6 +130,15 @@
     "information information"
 ;
 
+  @media all and (max-width: $medium-breakpoint) {
+    grid-template-areas:
+    "gallery"
+    "title-price"
+    "add-to-cart"
+    "information"
+  ;
+  }
+
   #resmio-rehorik-maschinenberatung {
     margin-left: -7px;
   }
