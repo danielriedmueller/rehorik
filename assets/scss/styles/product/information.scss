@@ -7,16 +7,21 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-gutschein
   grid-area: goes-with;
   background-color: transparent;
   padding: 0;
+
   @media all and (min-width: $medium-breakpoint + 1) {
-    margin: 0 0 0 var(--product-view-grid-gap-quarter);
+    margin: 0 0 0 var(--product-view-grid-gap-half);
   }
 
   @media all and (max-width: $medium-breakpoint) {
-    margin: var(--product-view-grid-gap-quarter) 0 var(--product-view-grid-gap-quarter) 0;
+    margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;
   }
 
   display: flex;
   flex-direction: column;
+
+  .rehorik-product-description {
+    margin-bottom: 0;
+  }
 
   .rehorik-product-description,
   .rehorik-product-short-description {

@@ -131,6 +131,7 @@
         <p>Möchtest du den Gutschein lieber für Kaffee, Wein oder Spirits verwenden? Kein Problem! Der Gutschein ist für alle Produkte im Onlineshop einlösbar. Der Restwert bleibt erhalten.</p>
         <p>
             Der Gutschein ist unbegrenzt gültig und kann beliebig oft unter www.rehorik.de verwendet werden, solange ein Restwert vorhanden ist.
+            Über die Höhe des Restwerts, geben wir Dir gerne Auskunft. Schreibe uns dazu eine Mail an <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a>.
             Das Guthaben dieses Gutscheins wird nicht verzinst, vesteuert oder bar ausgezahlt.
             Bei Diebstahl, Verlust oder Unbrauchbarkeit leisten wir keinen Ersatz.
             Es gelten unsere allgemeinen Geschäftsbedingungen – diese können unter www.rehorik.de eingesehen werden.
