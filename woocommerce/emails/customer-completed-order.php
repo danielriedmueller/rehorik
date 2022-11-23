@@ -54,6 +54,12 @@ do_action( 'woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text, 
  */
 do_action( 'woocommerce_email_customer_details', $order, $sent_to_admin, $plain_text, $email );
 
+?>
+<span>Hast du noch Fragen oder sind Probleme aufgetreten?<br>Schreib uns einfach eine Mail an <a
+            href="mailto:<?= CONTACT_MAIL ?>?subject=Frage zu Bestellung #<?= $order->get_id() ?>&body=Hallo%20Rehorik-Team,%0D%0A%0D%0AHIER%20STEHT%20DEINE%20NACHRICHT"><?= CONTACT_MAIL ?></a><br>oder ruf uns an <a
+            href="tel:<?= CONTACT_PHONE ?>"><?= CONTACT_PHONE ?></a>.</span>
+<?php
+
 /*
  * @hooked WC_Emails::email_footer() Output the email footer
  */

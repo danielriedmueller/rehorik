@@ -4,7 +4,7 @@ defined('ABSPATH') || exit;
 get_template_part('templates/header/head', null, [
     'slider' => [
         [
-            'claim' => 'Einfach für jeden Anlass',
+            'claim' => 'Einfach für jeden Anlass!',
             'img' => 'header-geschenkkoerbe',
             'buttons' => [
                 '/produkt/heiliger-bimbam' => 'Etwas für unterm Baum gesucht?<br>Heiliger Bimbam',

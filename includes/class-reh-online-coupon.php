@@ -6,14 +6,15 @@ use Dompdf\Dompdf;
 
 class Reh_Online_Coupon
 {
-    public static function createCoupon(float $value): string
+    public static function createCoupon(float $value, int $orderNumber): string
     {
         $coupon = new WC_Coupon();
 
-        $code = self::generateCouponCode();
+        $code = self::generateCouponCode($orderNumber);
 
         $coupon->set_code($code);
         $coupon->set_amount($value);
+        $coupon->set_description('Erstellt durch Bestellung #' . $orderNumber);
 
         $coupon->save();
 
@@ -67,9 +68,8 @@ class Reh_Online_Coupon
         return null;
     }
 
-    private static function generateCouponCode(): string
+    private static function generateCouponCode(int $salt): string
     {
-        $length = 7;
-        return strtoupper(substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length));
+        return uniqid();
     }
 }
