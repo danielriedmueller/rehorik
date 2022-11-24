@@ -49,7 +49,8 @@ $hasSlider = !empty($args['slider']);
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57QPNFQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php endif; ?>
 <div id="page-container">
-    <?php if ($hasSlider) {
-        get_template_part('templates/header/slider', null, ['items' => $args['slider']]);
-    } ?>
-    <?php get_template_part('templates/header/menu'); ?>
+    <?php
+    if ($hasSlider) get_template_part('templates/header/slider', null, ['items' => $args['slider']]);
+    get_template_part('templates/header/menu');
+    get_template_part('templates/header/mini-cart');
+    ?>

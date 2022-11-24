@@ -1,0 +1,57 @@
+#rehorik-mini-cart {
+  position: relative;
+  &:hover #rehorik-mini-cart-content {
+    display: block;
+  }
+
+  #rehorik-mini-cart-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    padding-top: 44px;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: auto;
+
+    > div {
+      overflow-y: auto;
+      max-height: 85vh;
+      padding: $spacing-xs;
+      background-color: $weinrot;
+      background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
+      background-repeat: no-repeat, repeat;
+      background-position: left bottom, right bottom;
+      background-size: 100%;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      color: #fff;
+
+      img {
+        width: 100px;
+      }
+
+      .cart-content-items {
+        .cart-item {
+          margin-bottom: $spacing-s;
+          display: flex;
+          justify-content: space-between;
+
+          > div:not(:first-child) {
+            margin-left: $spacing-xs;
+          }
+        }
+      }
+
+      .cart-content-info {
+        margin-bottom: $spacing-s;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .cart-content-total {
+        margin-bottom: $spacing-s;
+      }
+    }
+  }
+}
