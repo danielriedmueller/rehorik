@@ -3,6 +3,7 @@
 $product = $args['product'];
 
 if (!isItCategory($product, COFFEE_CATEGORY_SLUG)) return;
+if (!function_exists('wc_gzd_get_product')) return;
 
 $woocommerceGzdProduct = wc_gzd_get_product($product);
 
