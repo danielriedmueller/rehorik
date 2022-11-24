@@ -10,7 +10,7 @@ get_template_part('templates/header/head', null, [
     ],
 ]);
 get_template_part('templates/introduction', null, [
-    'text' => 'Zum selbst Ausdrucken und direkt nach dem Kauf verwendbar. Für Veranstaltungen, Kaffee und alle Produkte, die sich hier so finden lassen.<br>Noch ein Hinweis: Die Onlinegutscheine sind nur im Onlineshop einlösbar. An unseren Standorten kann man mit den Onlinegutscheinen leider noch nicht shoppen gehen.',
+    'text' => 'Zum Selbstausdrucken und direkt nach dem Kauf verwendbar. Für Veranstaltungen, Kaffee und alle Produkte, die sich hier so finden lassen.<br>Noch ein Hinweis: Die Onlinegutscheine sind nur im Onlineshop einlösbar. An unseren Standorten kann man mit den Onlinegutscheinen leider noch nicht shoppen gehen.',
 ]);
 get_template_part('templates/page-title');
 ?>
