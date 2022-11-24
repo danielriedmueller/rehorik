@@ -2,7 +2,7 @@
 /**
  * Product Detail View Hooks
  */
-remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10);
+remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices');
 
 add_action('rehorik_product_view', 'product_video', 1); // Video
 

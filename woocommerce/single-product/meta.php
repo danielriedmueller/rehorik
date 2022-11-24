@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if (!function_exists('wc_gzd_get_product')) return;
+
 global $product;
 ?>
 <div class="rehorik-product-meta product_meta">
