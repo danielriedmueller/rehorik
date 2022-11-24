@@ -1,0 +1,28 @@
+#rehorik-mini-cart {
+  position: relative;
+  &:hover #rehorik-mini-cart-content {
+    display: block;
+  }
+
+  #rehorik-mini-cart-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    padding-top: 44px + $spacing-xs;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: auto;
+
+    > div {
+      padding: $spacing-xs;
+      background-color: $anthrazit;
+      border-radius: $border-radius;
+      color: #fff;
+
+      img {
+        width: 100px;
+      }
+    }
+  }
+}
