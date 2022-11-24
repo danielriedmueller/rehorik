@@ -37,12 +37,32 @@
     flex-direction: column;
     flex-basis: 60%;
 
-    .wc-gzd-checkbox-placeholder.wc-gzd-checkbox-placeholder-legal {
+    #order_review_heading {
       order: 1;
     }
 
-    .wc-gzd-order-submit {
+    .shop_table.woocommerce-checkout-review-order-table {
+      order: 2;
+    }
+
+    #order_payment_heading {
       order: 3;
+    }
+
+    #payment {
+      order: 4;
+    }
+
+    .wc-gzd-checkbox-placeholder.wc-gzd-checkbox-placeholder-legal {
+      order: 5;
+    }
+
+    .wc-gzd-order-submit {
+      order: 6;
+    }
+
+    .dhl-preferred-service-content:empty {
+      display: none;
     }
   }
 
