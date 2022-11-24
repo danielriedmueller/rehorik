@@ -1,46 +1,61 @@
 <?php
-if (!class_exists( 'woocommerce') || !WC()->cart) {
+if (!class_exists('woocommerce') || !WC()->cart) {
     return;
 }
+$cart = WC()->cart;
 ?>
 <div id="rehorik-mini-cart">
-<a href="<?= wc_get_cart_url() ?>" class="rehorik-cart-info"><div class='rehorik-cart-info-number'><?php echo WC()->cart->get_cart_contents_count() > 0 ? WC()->cart->get_cart_contents_count() : "" ?></div></a>
+    <a href="<?= wc_get_cart_url() ?>" class="rehorik-cart-info">
+        <div class='rehorik-cart-info-number'><?php echo WC()->cart->get_cart_contents_count() > 0 ? $cart->get_cart_contents_count() : "" ?></div>
+    </a>
+    <?php if (!$cart->is_empty()): ?>
+        <div id="rehorik-mini-cart-content">
+            <div>
+                <div class="cart-content-info">
+                    <div><?= $cart->get_cart_contents_count() ?> Artikel</div>
+                    <div><a href="<?= wc_get_cart_url() ?>">Warenkorb</a></div>
+                </div>
+                <div class="cart-content-items">
+                    <?php foreach ($cart->get_cart() as $cart_item_key => $cart_item): ?>
+                        <div class="cart-item">
+                            <?php $product = $cart_item['data'] ?>
+                            <img alt="mini-cart-product-image"
+                                 src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"/>
+                            <div>
+                                <a href="<?= $product->get_permalink($cart_item); ?>"><?= $product->get_title() ?></a>
+                                <div><?= $cart->get_product_price($product) ?></div>
+                                <?php
+                                if ($cart_item['data']->is_type('variation') && is_array($cart_item['variation'])) {
+                                    foreach ($cart_item['variation'] as $name => $value) {
+                                        $taxonomy = wc_attribute_taxonomy_name(str_replace('attribute_pa_', '', urldecode($name)));
 
-<?php
-$cart = WC()->cart;
-$subtotal = $cart->get_cart_subtotal();
-$total = $cart->get_total();
-foreach ($cart->get_cart() as $cart_item_key => $cart_item) {
-    $product = $cart_item['data'];
-    $product_id = $cart_item['product_id'];
-    $variation_id = $cart_item['variation_id'];
-    $quantity = $cart_item['quantity'];
-    $price = WC()->cart->get_product_price( $product );
-    $subtotal = WC()->cart->get_product_subtotal( $product, $cart_item['quantity'] );
-    $link = $product->get_permalink( $cart_item );
-    // Anything related to $product, check $product tutorial
-    $attributes = $product->get_attributes();
-    $whatever_attribute = $product->get_attribute( 'whatever' );
-    $whatever_attribute_tax = $product->get_attribute( 'pa_whatever' );
-    $any_attribute = $cart_item['variation']['attribute_whatever'];
-    $meta = wc_get_formatted_cart_item_data( $cart_item );
-}
-?>
-<div id="rehorik-mini-cart-content">
-    <div>
-        <?php foreach ($cart->get_cart() as $cart_item_key => $cart_item): ?>
-            <?php $product = $cart_item['data'] ?>
-            <img alt="mini-cart-product-image" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
-            <a href="<?= $product->get_permalink( $cart_item ); ?>"><?= $product->get_title() ?></a>
-            <span><?= $cart->get_product_price($product) ?></span>
-            <span><?= $cart_item['quantity'] ?></span>
-        <?php endforeach;?>
-        <div>
-            <?= $subtotal ?>
-            <?= $total ?>
-            <a href="<?= wc_get_cart_url() ?>">Warenkorb</a>
-            <a href="<?= wc_get_checkout_url() ?>">Kasse</a>
+                                        if (taxonomy_exists($taxonomy)) {
+                                            $term = get_term_by('slug', $value, $taxonomy);
+                                            if (!is_wp_error($term) && $term && $term->name) {
+                                                $value = $term->name;
+                                            }
+                                        } else {
+                                            $value = apply_filters('woocommerce_variation_option_name', $value, null, $taxonomy, $cart_item['data']);
+                                        }
+
+                                        echo '<div>' . $value . '</div>';
+                                    }
+                                }
+                                ?>
+                            </div>
+                            <div>#<?= $cart_item['quantity'] ?></div>
+                            <div>
+                                <?= $cart->get_product_subtotal($product, $cart_item['quantity']) ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="cart-content-total">
+                    <div>Versandkosten: <?= $cart->get_cart_shipping_total() ?> </div>
+                    <div>Gesamtsumme: <?= $cart->get_total() ?></div>
+                </div>
+                <div><a href="<?= wc_get_checkout_url() ?>">zur Kasse</a></div>
+            </div>
         </div>
-    </div>
-</div>
+    <?php endif; ?>
 </div>
