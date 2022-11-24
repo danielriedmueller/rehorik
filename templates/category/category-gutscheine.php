@@ -5,7 +5,7 @@ get_template_part('templates/header/head', null, [
     'slider' => [
         [
             'claim' => 'Zum Verschenken oder Selbsteinlösen!',
-            'img' => 'header-veranstaltungen-kaffee',
+            'img' => 'header-gutscheine',
         ],
     ],
 ]);
