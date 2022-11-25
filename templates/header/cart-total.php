@@ -5,17 +5,18 @@ if (!class_exists('woocommerce') || !WC()->cart) {
 $cart = WC()->cart;
 ?>
 <div id="rehorik-mini-cart">
-    <a href="<?= wc_get_cart_url() ?>" class="rehorik-cart-info">
+    <input id="mini-cart-button" type="checkbox">
+    <div class="rehorik-cart-info">
         <div class='rehorik-cart-info-number'><?php echo WC()->cart->get_cart_contents_count() > 0 ? $cart->get_cart_contents_count() : "" ?></div>
-    </a>
-    <?php if (!$cart->is_empty()): ?>
-        <div id="rehorik-mini-cart-content">
-            <div>
-                <div class="cart-content-info">
-                    <div><?= $cart->get_cart_contents_count() ?> Artikel</div>
-                    <div><a href="<?= wc_get_cart_url() ?>">Warenkorb</a></div>
-                </div>
-                <div class="cart-content-items">
+    </div>
+    <div id="rehorik-mini-cart-content">
+        <div>
+            <div class="cart-content-info">
+                <div><?= $cart->get_cart_contents_count() ?> Artikel</div>
+                <div><a href="<?= wc_get_cart_url() ?>">Warenkorb</a></div>
+            </div>
+            <div class="cart-content-items">
+                <?php if (!$cart->is_empty()): ?>
                     <?php foreach ($cart->get_cart() as $cart_item_key => $cart_item): ?>
                         <div class="cart-item">
                             <?php $product = $cart_item['data'] ?>
@@ -49,13 +50,15 @@ $cart = WC()->cart;
                             </div>
                         </div>
                     <?php endforeach; ?>
-                </div>
-                <div class="cart-content-total">
-                    <div>Versandkosten: <?= $cart->get_cart_shipping_total() ?> </div>
-                    <div>Gesamtsumme: <?= $cart->get_total() ?></div>
-                </div>
-                <div><a href="<?= wc_get_checkout_url() ?>">zur Kasse</a></div>
+                <?php else: ?>
+                    <div>Keine Artikel im Warenkorb</div>
+                <?php endif; ?>
             </div>
+            <div class="cart-content-total">
+                <div>Versandkosten: <?= $cart->get_cart_shipping_total() ?> </div>
+                <div>Gesamtsumme: <?= $cart->get_total() ?></div>
+            </div>
+            <div><a href="<?= wc_get_checkout_url() ?>">zur Kasse</a></div>
         </div>
-    <?php endif; ?>
+    </div>
 </div>

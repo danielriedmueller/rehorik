@@ -1,19 +1,18 @@
 #rehorik-mini-cart {
-  position: relative;
-  &:hover #rehorik-mini-cart-content {
-    display: block;
+  #mini-cart-button:checked ~ #rehorik-mini-cart-content {
+    margin-right: 0;
   }
 
   #rehorik-mini-cart-content {
-    display: none;
     position: absolute;
     background-color: transparent;
-    padding-top: 44px;
-    top: 0;
-    left: 0;
+    padding-top: 0;
+    top: $menu-height;
+    right: 0;
+    margin-right: -350px;
     width: 350px;
-    height: auto;
-
+    height: 100%;
+    transition: margin 350ms;
     > div {
       overflow-y: auto;
       max-height: 85vh;

@@ -1,3 +1,14 @@
+input#mini-cart-button {
+  opacity: 0;
+  width: $menu-icon-size;
+  height: $menu-icon-size;
+  z-index: 20;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transform: translateX(18px);
+}
+
 .rehorik-cart-info {
   position: relative;
 

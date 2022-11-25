@@ -31,7 +31,7 @@ header.rehorik-header {
   padding-right: var(--section-spacing-left-right);
   height: $menu-height;
 
-  .hamburger, input[type="checkbox"], input[type="checkbox"]:checked ~ .menu-hauptmenue-container {
+  .hamburger, input#burger-button, input#burger-button:checked ~ .menu-hauptmenue-container {
     display: block;
   }
 
@@ -42,7 +42,7 @@ header.rehorik-header {
     height: $menu-height;
     flex-direction: row;
 
-    .hamburger, input[type="checkbox"] {
+    .hamburger, input#burger-button {
       display: none;
     }
   }
@@ -206,7 +206,7 @@ header.rehorik-header {
 // Hamburger view
 @media all and (max-width: $medium-breakpoint) {
   header.rehorik-header {
-    input[type="checkbox"] {
+    input#burger-button {
       margin-left: -33px;
       opacity: 0;
       width: $menu-icon-size;
