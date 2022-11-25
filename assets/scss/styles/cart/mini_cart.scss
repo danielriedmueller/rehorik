@@ -5,26 +5,38 @@
 
   #rehorik-mini-cart-content {
     position: absolute;
-    background-color: transparent;
     padding-top: 0;
     top: $menu-height;
     right: 0;
-    margin-right: -350px;
-    width: 350px;
-    height: 100%;
+    $widthLeft: 178px;
+    $widthRight: 300px;
+    margin-right: -($widthLeft+$widthRight);
+    display: flex;
     transition: margin 350ms;
+
+    background-color: $weinrot;
+    background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: left bottom, right bottom;
+    background-size: 100%;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    color: #fff;
+
     > div {
+      &:first-child {
+        flex: $widthLeft 0 0;
+        width: $widthLeft;
+      }
+
+      &:last-child {
+        flex: $widthRight 0 0;
+        width: $widthRight;
+      }
+
       overflow-y: auto;
       max-height: 85vh;
       padding: $spacing-xs;
-      background-color: $weinrot;
-      background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
-      background-repeat: no-repeat, repeat;
-      background-position: left bottom, right bottom;
-      background-size: 100%;
-      border-bottom-left-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
-      color: #fff;
 
       img {
         width: 100px;

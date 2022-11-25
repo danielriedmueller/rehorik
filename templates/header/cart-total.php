@@ -10,6 +10,9 @@ $cart = WC()->cart;
         <div class='rehorik-cart-info-number'><?php echo WC()->cart->get_cart_contents_count() > 0 ? $cart->get_cart_contents_count() : "" ?></div>
     </div>
     <div id="rehorik-mini-cart-content">
+        <div class="cart-content-featured">
+            <?php get_template_part('templates/featured/sidebar') ?>
+        </div>
         <div>
             <div class="cart-content-info">
                 <div><?= $cart->get_cart_contents_count() ?> Artikel</div>

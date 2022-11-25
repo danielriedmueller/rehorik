@@ -3,6 +3,11 @@ if (!isset($args['product'])) {
     return;
 }
 
+// Default show description
+if (!isset($args['description'])) {
+    $args['description'] = true;
+}
+
 $product = $args['product'];
 
 $mergeDescriptions = function ($description, $shortDescription, $claim) {
@@ -45,7 +50,9 @@ $mergeDescriptions = function ($description, $shortDescription, $claim) {
         <?php if($claim = $product->get_meta('reh_product_title_claim')) {
             echo "<span class='claim'>${claim}</span>";
         } ?>
+        <?php if ($args['description']): ?>
         <span class="description"><?= $mergeDescriptions($product->get_description(), $product->get_short_description(), $product->get_meta('reh_product_title_claim')) ?></span>
+        <?php endif; ?>
         <span class="learn-more"><a href="<?= $product->get_permalink() ?>">erfahre mehr</a></span>
     </div>
 </div>
