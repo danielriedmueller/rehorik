@@ -120,10 +120,22 @@ header.rehorik-header {
     li.menu-item.rehorik-calendar-icon {
       a {
         font-size: 0;
-        background: transparent url("../img/kalender-16px.svg") no-repeat center center;
+        background: transparent url("../img/svg/kalender.svg") no-repeat center center;
         background-size: $menu-icon-size;
         width: $menu-icon-size;
         height: $menu-icon-size;
+      }
+    }
+
+    // My account menu item
+    li.menu-item.rehorik-user-icon {
+      a {
+        font-size: 0;
+        background: transparent url("../img/svg/user.svg") no-repeat center center;
+        $iconSize: $menu-icon-size + 4px;
+        background-size: $iconSize;
+        width: $iconSize;
+        height: $iconSize;
       }
     }
 
