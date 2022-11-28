@@ -1,67 +1,82 @@
 #rehorik-mini-cart {
-  #mini-cart-button:checked ~ #rehorik-mini-cart-content {
-    transform: translateX(0);
+  $animationTime: 350ms;
+  $widthLeft: 280px;
+  $widthRight: 450px;
+  opacity: 0;
+  transition: opacity $animationTime linear;
+  pointer-events: none;
+
+  &.show {
+    pointer-events: all;
+    opacity: 1;
+
+    .mini-cart-content {
+      transform: translateX(0);
+    }
   }
 
-  #rehorik-mini-cart-content {
-    position: fixed;
-    padding-top: $menu-height;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    z-index: 20;
-    $widthLeft: 280px;
-    $widthRight: 450px;
-    transform: translateX($widthLeft+$widthRight);
-    display: flex;
-    transition: transform 350ms;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 102;
 
+  #mini-cart-overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .mini-cart-content {
     background-color: $weinrot;
     background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
     background-repeat: no-repeat, repeat;
     background-position: left bottom, right bottom;
     background-size: 100%;
-    color: #fff;
+    transform: translateX($widthLeft + $widthRight);
+    transition: transform $animationTime;
+    position: absolute;
+    width: $widthLeft + $widthRight;
+    height: 100%;
+    right: 0;
+    top: 0;
 
     > div {
-      &:first-child {
-        flex: $widthLeft 0 0;
-        width: $widthLeft;
-      }
-
-      &:last-child {
-        flex: $widthRight 0 0;
-        width: $widthRight;
-      }
-
-      overflow-y: auto;
-      max-height: 85vh;
-      padding: $spacing-xs;
-
-      img {
-        width: 100px;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(1, 1, 1, 0.3);
+      padding: $spacing-s;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+            "info info"
+            "featured items"
+            "total total"
+    ;
+      .cart-content-info {
+        grid-area: info;
       }
 
       .cart-content-items {
-        .cart-item {
-          margin-bottom: $spacing-s;
-          display: flex;
-          justify-content: space-between;
-
-          > div:not(:first-child) {
-            margin-left: $spacing-xs;
-          }
-        }
+        grid-area: items;
       }
 
-      .cart-content-info {
-        margin-bottom: $spacing-s;
-        display: flex;
-        justify-content: space-between;
+      .cart-content-featured {
+        grid-area: featured;
       }
 
       .cart-content-total {
-        margin-bottom: $spacing-s;
+        grid-area: total;
+      }
+
+      #rehorik-mini-cart-update-message {
+        display: none;
+      }
+
+      img {
+        width: 100px;
       }
     }
   }

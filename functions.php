@@ -1,5 +1,5 @@
 <?php
-show_admin_bar(true);
+show_admin_bar(false);
 
 const PROD_URL = 'https://www.rehorik.de';
 
@@ -36,7 +36,7 @@ const VIRTUAL_EVENTS_CATEGORY_SLUG = 'virtuelle-events';
 const VIRTUAL_EVENTS_CATEGORY_SLUGS = [
     VIRTUAL_EVENTS_CATEGORY_SLUG,
     'virtuelle-events-spirits',
-    'virtuelle-events-wein'
+    'virtuelle-events-wein',
 ];
 const WINE_CATEGORY_SLUGS = [
     'rotwein',
@@ -44,7 +44,7 @@ const WINE_CATEGORY_SLUGS = [
     'weisswein',
     'rose',
     'naturwein',
-    'champagner-und-sekt'
+    'champagner-und-sekt',
 ];
 const HIDE_CATEGORIES = [
     746, // 'delikatessen-onlineshop'
@@ -126,24 +126,32 @@ require_once($baseDir . '/actions/rehorik.php');
 require_once($baseDir . '/actions/events.php');
 require_once($baseDir . '/actions/api/endpoints.php');
 
+// todo enable fragments
+add_action('wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 11);
+function dequeue_woocommerce_cart_fragments()
+{
+    wp_dequeue_script('wc-cart-fragments');
+}
+
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
     wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.97);
-    wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', array('jquery'), 1, true);
+    wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);
     wp_enqueue_script('scroll', $assetsDir . 'js/scroll.js', false, 1, true);
     wp_enqueue_script('product-cat-video', $assetsDir . 'js/product_cat_video.js', false, 1, true);
     wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
     wp_enqueue_script('tiny-slider-js', $assetsDir . 'js/res/tiny-slider-min-2.9.4.js', null, 1, true);
     wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
+    wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
 
     if (is_front_page()) {
-        wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', array('jquery'), 1, true);
+        wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', ['jquery'], 1, true);
     }
 });
 
-add_action('init', function() {
+add_action('init', function () {
     register_nav_menus([
-        'main'   => 'Hauptmenü'
+        'main' => 'Hauptmenü',
     ]);
 });
 
