@@ -24,8 +24,12 @@ function action_woocommerce_checkout_create_order_coupon_item( $item, $code, $co
 }
 add_action( 'woocommerce_checkout_create_order_coupon_item', 'action_woocommerce_checkout_create_order_coupon_item', 10, 4 );
 
-function add_to_cart_fragment( $fragments ) {
+add_filter( 'woocommerce_add_to_cart_fragments', function ($fragments) {
     $fragments[ '.rehorik-cart-info' ] = '<div class="rehorik-cart-info"><div class="rehorik-cart-info-number">' . (WC()->cart->get_cart_contents_count() > 0 ? WC()->cart->get_cart_contents_count() : "") . '</div></div>';
+
+    ob_start();
+    get_template_part('templates/header/mini-cart');
+    $fragments['#rehorik-mini-cart-content'] = ob_get_clean();
+
     return $fragments;
-}
-add_filter( 'woocommerce_add_to_cart_fragments', 'add_to_cart_fragment' );
+});

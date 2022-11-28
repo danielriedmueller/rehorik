@@ -10,8 +10,8 @@
     right: 0;
     height: 100vh;
     z-index: 20;
-    $widthLeft: 178px;
-    $widthRight: 300px;
+    $widthLeft: 280px;
+    $widthRight: 450px;
     transform: translateX($widthLeft+$widthRight);
     display: flex;
     transition: transform 350ms;
