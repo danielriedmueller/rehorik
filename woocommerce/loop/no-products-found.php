@@ -19,8 +19,6 @@ defined( 'ABSPATH' ) || exit;
 
 if (isProductCategory(BLACK_AND_WINE)) {
     get_template_part('templates/veranstaltungen/black-and-wine');
-} else if (isProductCategory(WEINACHTSMARKT)) {
-    get_template_part('templates/veranstaltungen/weinachtsmarkt');
 } else {
 ?>
 <p class="woocommerce-info">
