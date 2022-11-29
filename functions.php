@@ -6,6 +6,7 @@ const PROD_URL = 'https://www.rehorik.de';
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
+const DEFAULT_MAX_PRODUCT_STOCK_INPUT = 20;
 const CONTACT_MAIL = 'kaffee@rehorik.de';
 const CONTACT_PHONE = '0941 / 788 353 0';
 const IT_SUPPORT_EMAIL = 'it@rehorik.de';

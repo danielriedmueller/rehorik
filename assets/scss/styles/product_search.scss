@@ -43,7 +43,7 @@
     div.quantity {
       max-width: $spacing-xl;
 
-      input {
+      input, select {
         height: $spacing-l !important;
         border-top-right-radius: 0 !important;
         border-bottom-right-radius: 0 !important;
