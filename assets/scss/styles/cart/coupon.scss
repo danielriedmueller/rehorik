@@ -2,7 +2,7 @@
   table.cart-table {
     .rehorik-coupon-container {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       padding-right: $spacing;
 
       @media all and (max-width: $small-breakpoint) {
@@ -24,8 +24,7 @@
         margin-bottom: $spacing;
         margin-right: 0;
       }
-      margin-right: $spacing;
-      width: $cart-coupon-width-broad;
+      width: $cart-coupon-width;
 
       label {
         border: 1px solid $beigegold;
