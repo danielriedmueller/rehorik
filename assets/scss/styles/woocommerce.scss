@@ -84,29 +84,6 @@
   }
 }
 
-body.rehorik,
-body.rehorik.woocommerce,
-body.rehorik.woocommerce-page,
-body.rehorik.woocommerce-cart {
-  .quantity input.qty,
-  .quantity input.qty,
-  #content .quantity input.qty,
-  #content .quantity input.qty {
-    border-radius: $border-radius;
-    background-color: $anthrazit;
-    color: #fff;
-    font-size: $font-size;
-    padding: $spacing-xxs;
-    height: 50px;
-    border: none;
-    font-family: $font-family-body;
-
-    &:focus {
-      color: #fff;
-    }
-  }
-}
-
 .woocommerce div.product div.images {
   margin-bottom: 0;
 }

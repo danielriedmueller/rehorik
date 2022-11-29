@@ -1,0 +1,25 @@
+body.rehorik .quantity select.rehorik-quantity.qty {
+  border-radius: $border-radius;
+  background-color: $anthrazit;
+  color: #fff;
+  font-size: $font-size;
+  line-height: $font-size;
+  padding: 0 $spacing-xs;
+  height: 50px;
+  border: none;
+  font-family: $font-family-body;
+  border-right: $spacing-xs solid transparent;
+  text-align: left;
+  outline: none;
+
+  option {
+    padding: $spacing-xxs;
+    border: none;
+    outline: none;
+  }
+
+  &:focus:active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
