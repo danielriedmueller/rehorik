@@ -1,14 +1,6 @@
 <?php
 get_template_part('templates/header/head', null, ['slider' => [
     [
-        'claim' => 'Es <span class="beigegold">Wein</span>achtet!',
-        'img' => 'header-geschenkkoerbe',
-        'buttons' => [
-            '/produkt-kategorie/veranstaltungen/weinachtsmarkt/' => 'Weinachtsmarkt am 26.11',
-            '/produkt-kategorie/onlineshop/geschenke-gutscheine/geschenke/' => 'Einfach für jeden Anlass',
-        ],
-    ],
-    [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
         'img'=> 'startseite-header-roesterei',
         'buttons' => [
@@ -28,11 +20,13 @@ get_template_part('templates/header/head', null, ['slider' => [
 get_template_part('templates/hint');
 get_template_part('templates/featured/slider')
 ?>
-<div class="marketing-banner weinachtsmarkt">
+<div class="marketing-banner">
     <div class="container">
         <div class="marketing-banner-text">
-            <h2>Komm zum Rehorik <span class="beigegold">Wein</span>achtsmarkt!<br>Am 26.11. / 13 Uhr, am Brixener Hof 6, 93047 Regensburg.<br>Was wirds geben?</h2>
-            <a class="learn-more" href="/produkt-kategorie/veranstaltungen/weinachtsmarkt/">erfahre mehr</a>
+            <h2>Wir sind umtriebig, vielfältig und kreativ - voller Mut und Energie, etwas Besonderes zu erschaffen. Einen Raum der Inspiration und Lebensfreude.
+                Wir verbinden Menschen durch Genuss,
+                wir leben Leidenschaft für hochwertige Produkte. Und das seit Generationen.</h2>
+            <a class="learn-more" href="/tradition">erfahre mehr</a>
         </div>
     </div>
 </div>
@@ -64,16 +58,6 @@ get_template_part('templates/featured/slider')
             }
         ?>
     </ul>
-</div>
-<div class="marketing-banner section-spacing-bottom">
-    <div class="container">
-        <div class="marketing-banner-text">
-            <h2>Wir sind umtriebig, vielfältig und kreativ - voller Mut und Energie, etwas Besonderes zu erschaffen. Einen Raum der Inspiration und Lebensfreude.
-                Wir verbinden Menschen durch Genuss,
-                wir leben Leidenschaft für hochwertige Produkte. Und das seit Generationen.</h2>
-            <a class="learn-more" href="/tradition">erfahre mehr</a>
-        </div>
-    </div>
 </div>
 <?php
 get_footer();
