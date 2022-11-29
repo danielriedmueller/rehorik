@@ -21,6 +21,7 @@ $text_align  = is_rtl() ? 'right' : 'left';
 $margin_side = is_rtl() ? 'left' : 'right';
 
 foreach ( $items as $item_id => $item ) :
+    $item->read_meta_data();
 	$product       = $item->get_product();
 	$sku           = '';
 	$purchase_note = '';
@@ -67,6 +68,7 @@ foreach ( $items as $item_id => $item ) :
 		// allow other plugins to add additional product information here.
 		do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, $plain_text );
 
+        // TODO: below line was added to get coupon output
 		wc_display_item_meta(
 			$item,
 			array(

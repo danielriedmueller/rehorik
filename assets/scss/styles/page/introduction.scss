@@ -2,6 +2,8 @@
   background-color: $weinrot;
 
   .rehorik-page-introduction {
+    font-family: $font-family-headline;
+    align-items: center;
     text-align: left;
     color: $beigegold;
     $hugo-head-size: 100px;

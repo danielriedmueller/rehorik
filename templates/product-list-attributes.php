@@ -47,7 +47,7 @@ $attributes[HERSTELLUNG_ATTRIBUTE_SLUG] = $product->get_attribute(HERSTELLUNG_AT
 $attributes = array_filter($attributes);
 ?>
 <div class="rehorik-product-attributes">
-    <div class='rehorik-product-min-price'><?= ($product->is_type('variable') ? "ab " : "") . $price . " *" ?></div>
+    <div class='rehorik-product-min-price'><?= ($product->is_type('variable') ? "ab " : "") . $price . ((!$product->is_virtual() && $product->is_taxable()) ? " *" : "") ?></div>
     <table>
         <tbody>
             <?php if($strength): ?>

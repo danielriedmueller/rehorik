@@ -48,5 +48,25 @@
         margin: $spacing-xxs 0;
       }
     }
+
+    &.product_cat-gutscheine {
+      &:after {
+        content: "Gutschein";
+        display: block;
+        font-family: $font-family-headline;
+        position: absolute;
+        width: 245px;
+        height: 50px;
+        line-height: 50px;
+        background-color: $weinrot;
+        background-image: url("../img/burger_bg_tile.jpg");
+        background-repeat: repeat;
+        background-position: right bottom;
+        color: $beigegold;
+        text-transform: uppercase;
+        bottom: 0;
+        transform: rotate(-45deg) translateX(60px);
+      }
+    }
   }
 }

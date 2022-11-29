@@ -24,7 +24,7 @@ if (isProductCategory(BLACK_AND_WINE)) {
 <p class="woocommerce-info">
     <?php
         if (isProductCategory(TICKET_CATEGORY_SLUG)) {
-            echo "Momentan sind leider alle Termine ausgebucht.";
+            echo "Momentan sind alle Termine ausgebucht.";
         } else {
             esc_html_e( 'No products were found matching your selection.', 'woocommerce' );
         }
