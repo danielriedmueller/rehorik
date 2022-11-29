@@ -32,9 +32,9 @@
                 <div><?php
                     woocommerce_quantity_input(
                         array(
-                            'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
+                            'min_value'   => 0,
                             'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
-                            'input_value' => isset( $cart_item['quantity'] ) ? wc_stock_amount( wp_unslash( $cart_item['quantity'] ) ) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
+                            'input_value' => isset( $cart_item['quantity'] ) ? wc_stock_amount( wp_unslash( $cart_item['quantity'] ) ) : $product->get_min_purchase_quantity(),
                         )
                     );
                     ?></div>
