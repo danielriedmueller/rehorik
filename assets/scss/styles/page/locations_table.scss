@@ -20,6 +20,7 @@ table#locations-table {
 
   > tbody > tr > td {
     font-size: $font-size;
+    font-family: $font-family-body;
     color: #fff;
 
     &:first-child, a {
