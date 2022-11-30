@@ -2,7 +2,7 @@
   table.cart-table {
     .rehorik-coupon-container {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       padding-right: $spacing;
 
       @media all and (max-width: $small-breakpoint) {
@@ -16,6 +16,7 @@
     button.button[name="apply_coupon"][type="submit"] {
       border-radius: 0;
       width: unset;
+      padding: $spacing-xxs $spacing-s;
     }
 
     .rehorik-coupon {
@@ -24,8 +25,7 @@
         margin-bottom: $spacing;
         margin-right: 0;
       }
-      margin-right: $spacing;
-      width: $cart-coupon-width-broad;
+      width: $cart-coupon-width;
 
       label {
         border: 1px solid $beigegold;
@@ -45,7 +45,7 @@
           text-align: center;
           flex-grow: 1;
           font-size: $font-size;
-          padding: 11px 0 13px 0;
+          padding: 0;
 
           &:focus-visible {
             outline: none;

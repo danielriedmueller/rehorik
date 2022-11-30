@@ -31,6 +31,10 @@ if ( $max_value && $min_value === $max_value ) {
         $max_value = DEFAULT_MAX_PRODUCT_STOCK_INPUT;
     }
 
+    if ($input_value > $max_value) {
+        $max_value = $input_value;
+    }
+
     if (empty($min_value)) {
         $min_value = 0;
     }

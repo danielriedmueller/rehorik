@@ -6,14 +6,12 @@ const PROD_URL = 'https://www.rehorik.de';
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
-const DEFAULT_MAX_PRODUCT_STOCK_INPUT = 20;
+const DEFAULT_MAX_PRODUCT_STOCK_INPUT = 100;
 const CONTACT_MAIL = 'kaffee@rehorik.de';
 const CONTACT_PHONE = '0941 / 788 353 0';
 const IT_SUPPORT_EMAIL = 'it@rehorik.de';
 const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
 const EVENT_EMAIL = 'events@rehorik.de';
-const DELIVERY_SHIPPING_METHOD = 'bike';
-const FREE_DELIVERY_SHIPPING_METHOD = 'free_shipping_bike';
 
 // PDFs
 const MENU_190 = '/speisekarte/Speisekarte190.pdf';
@@ -141,6 +139,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
     wp_enqueue_script('tiny-slider-js', $assetsDir . 'js/res/tiny-slider-min-2.9.4.js', null, 1, true);
     wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
+    wp_enqueue_script('update-cart-ajax', $assetsDir . 'js/update_cart_ajax.js', array('jquery'), 1, true);
 
     if (is_front_page()) {
         wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', false, 1, true);
