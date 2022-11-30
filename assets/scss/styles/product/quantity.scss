@@ -2,24 +2,26 @@ body.rehorik .quantity select.rehorik-quantity.qty {
   border-radius: $border-radius;
   background-color: $anthrazit;
   color: #fff;
-  font-size: $font-size;
-  line-height: $font-size;
-  padding: 0 $spacing-xs;
+  font-size: $font-size-small;
+  line-height: $font-size-small;
+  padding: 0 12px;
   height: 50px;
   border: none;
   font-family: $font-family-body;
-  border-right: $spacing-xs solid transparent;
+  border-right: $spacing-xxs solid transparent;
   text-align: left;
   outline: none;
+  width: auto;
 
   option {
+    font-size: $font-size-small;
+    line-height: $font-size-small;
     padding: $spacing-xxs;
     border: none;
     outline: none;
   }
 
   &:focus:active {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-radius: 0;
   }
 }

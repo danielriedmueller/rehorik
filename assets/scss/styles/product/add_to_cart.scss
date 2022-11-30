@@ -48,6 +48,7 @@ body.rehorik.woocommerce div.rehorik-product {
       float: none;
 
       input, select {
+        width: 100%;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
       }
@@ -56,7 +57,7 @@ body.rehorik.woocommerce div.rehorik-product {
     button[type="submit"].single_add_to_cart_button {
       transition: none;
       padding: $spacing-xxs $spacing-s $spacing-xxs 37px;
-      background: $beigegold url("../img/warenkorb-white.svg") no-repeat left 10px center;
+      background: $beigegold url("../img/warenkorb-white.svg") no-repeat left $spacing-xs center;
       background-size: $spacing-s;
       margin-top: 0;
       border-radius: 0 $border-radius $border-radius 0;
@@ -64,7 +65,7 @@ body.rehorik.woocommerce div.rehorik-product {
 
       &:hover {
         color: $beigegold;
-        background: $weinrot url("../img/warenkorb-16px.svg") no-repeat left 10px center;
+        background: $weinrot url("../img/warenkorb-16px.svg") no-repeat left $spacing-xs center;
         background-size: $spacing-s !important;
       }
     }
