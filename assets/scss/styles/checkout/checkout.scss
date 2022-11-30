@@ -53,12 +53,16 @@
       order: 4;
     }
 
-    .wc-gzd-checkbox-placeholder.wc-gzd-checkbox-placeholder-legal {
+    .wc-gzd-checkbox-placeholder-data-age-verification {
       order: 5;
     }
 
-    .wc-gzd-order-submit {
+    .wc-gzd-checkbox-placeholder.wc-gzd-checkbox-placeholder-legal {
       order: 6;
+    }
+
+    .wc-gzd-order-submit {
+      order: 7;
     }
 
     .dhl-preferred-service-content:empty {
@@ -70,15 +74,16 @@
     grid-area: notice;
   }
 
+  .wc-gzd-checkbox-placeholder-data-age-verification,
   .wc-gzd-checkbox-placeholder-legal {
-    margin-bottom: $spacing-xs;
+    margin-bottom: $spacing-xxs;
 
     p.form-row {
       margin: 0 0 $spacing-xxs 0;
       padding: 0 !important;
 
       .input-checkbox {
-        margin: 8px $spacing-xxs 0 0;
+        margin: 5px $spacing-xxs 0 0;
       }
 
       label {
