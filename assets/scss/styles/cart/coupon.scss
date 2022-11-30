@@ -1,5 +1,12 @@
 .woocommerce-cart.woocommerce-page {
   table.cart-table {
+    tr:last-child td.actions {
+      @media all and (max-width: $small-breakpoint) {
+        border-bottom: none;
+        border-top: none;
+      }
+    }
+
     .rehorik-coupon-container {
       display: flex;
       justify-content: flex-end;
@@ -22,7 +29,6 @@
     .rehorik-coupon {
       @media all and (max-width: $small-breakpoint) {
         width: 100%;
-        margin-bottom: $spacing;
         margin-right: 0;
       }
       width: $cart-coupon-width;
