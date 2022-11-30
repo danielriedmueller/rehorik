@@ -12,6 +12,7 @@ body.rehorik .quantity select.rehorik-quantity.qty {
   text-align: left;
   outline: none;
   width: auto;
+  -webkit-appearance:none;
 
   option {
     font-size: $font-size-small;
