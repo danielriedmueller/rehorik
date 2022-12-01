@@ -94,6 +94,10 @@
   .rehorik-coupon-container .woocommerce-notices-wrapper {
     width: $cart-coupon-width;
 
+    &:empty {
+      display: none;
+    }
+
     > div {
       padding: $spacing-xxs;
       margin: 0;
