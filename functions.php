@@ -11,8 +11,6 @@ const CONTACT_PHONE = '0941 / 788 353 0';
 const IT_SUPPORT_EMAIL = 'it@rehorik.de';
 const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
 const EVENT_EMAIL = 'events@rehorik.de';
-const DELIVERY_SHIPPING_METHOD = 'bike';
-const FREE_DELIVERY_SHIPPING_METHOD = 'free_shipping_bike';
 
 // PDFs
 const MENU_190 = '/speisekarte/Speisekarte190.pdf';
