@@ -9,7 +9,7 @@
 
     .rehorik-coupon-container {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       padding-right: $spacing;
 
       @media all and (max-width: $small-breakpoint) {
@@ -17,6 +17,10 @@
         align-items: start;
         padding-right: 0;
         width: 100%;
+      }
+
+      .rehorik-update-cart {
+        display: none;
       }
     }
 

@@ -1,3 +1,7 @@
+.woocommerce .blockUI.blockOverlay::before {
+  background: transparent url("../img/svg/strength_filled.svg") no-repeat center center;
+}
+
 .woocommerce-pagination {
   margin-top: $spacing-s;
 }

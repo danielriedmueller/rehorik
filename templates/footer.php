@@ -26,8 +26,7 @@ get_template_part('templates/rehorik-locations');
                     <p>Wir versenden mit DHL</p>
                     <p><img alt="Logo DHL"
                             src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-dhl.svg' ?>"></p>
-                    <p>Versandkosten: 5,80 €</p>
-                    <p>Kostenloser Versand ab: <?= FREE_SHIPPING_AMOUNT ?> €</p>
+                    <p>Versandkosten geschenkt</p>
                     <p><small>* Alle Preise sind inkl. MwSt., zzgl. Versand</small></p>
                 </div>
             </div>

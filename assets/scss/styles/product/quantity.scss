@@ -29,7 +29,7 @@ body.rehorik .quantity {
       outline: none;
     }
 
-    &:focus:active, &:active {
+    &:active, &:focus {
       border-radius: 0;
     }
   }

@@ -6,7 +6,7 @@ ul.rehorik-products.products li.veranstaltungen.product-category.product {
     z-index: 1;
     padding: $spacing-s;
     width: 100%;
-    height: $product-category-frontpage-height;
+    height: 0;
 
     > a {
       display: flex;
