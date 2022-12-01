@@ -9,6 +9,9 @@
   > * {
     font-size: $font-size;
     padding: $spacing-s;
+    @media all and (max-width: $small-breakpoint) {
+      padding: 0;
+    }
     color: $beigegold;
     background-color: #fff;
     font-family: $font-family-headline;
