@@ -20,31 +20,11 @@ add_filter('woocommerce_show_page_title', function () {
 });
 
 /**
- * Add bike delivery shipping method
- */
-add_filter('woocommerce_shipping_methods', function ($methods) {
-    $methods[DELIVERY_SHIPPING_METHOD] = 'WC_Shipping_Bike';
-    $methods[FREE_DELIVERY_SHIPPING_METHOD] = 'WC_Shipping_Free_Shipping_Bike';
-
-    return $methods;
-});
-
-/**
  * Displays shipping estimates for WC shipping rates
  */
-add_filter('woocommerce_cart_shipping_method_full_label', function($label, $method) {
-    $label .= '<br /><small>';
-
-    if ($method->method_id === FREE_DELIVERY_SHIPPING_METHOD
-        || $method->method_id === DELIVERY_SHIPPING_METHOD) {
-        $label .= 'DI. und DO. ab 13 Uhr ';
-    } else {
-        $label .= 'Lieferzeit: 3 - 5 Werktage';
-    }
-
-    $label .= '</small>';
-    return $label;
-}, 10, 2);
+add_filter('woocommerce_cart_shipping_method_full_label', function($label) {
+    return $label . '<br /><small>Lieferzeit: 3 - 5 Werktage</small>';
+});
 
 /**
  * Remove Ancient Custom Fields metabox from post editor

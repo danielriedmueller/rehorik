@@ -129,17 +129,6 @@
   }
 
   .rehorik-update-cart button.button[name="update_cart"][type="submit"] {
-    width: $cart-coupon-width;
-
-    @media all and (max-width: $small-breakpoint) {
-      width: 100%;
-      padding: $spacing-xxs;
-    }
-  }
-
-  .rehorik-update-cart {
-    @media all and (max-width: $small-breakpoint) {
-      width: 100%;
-    }
+    display: none;
   }
 }

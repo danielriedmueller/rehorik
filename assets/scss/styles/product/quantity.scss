@@ -1,25 +1,56 @@
-body.rehorik .quantity select.rehorik-quantity.qty {
-  border-radius: $border-radius;
-  background-color: $anthrazit;
-  color: #fff;
-  font-size: $font-size;
-  line-height: $font-size;
-  padding: 0 $spacing-xs;
-  height: 50px;
-  border: none;
-  font-family: $font-family-body;
-  border-right: $spacing-xs solid transparent;
-  text-align: left;
-  outline: none;
-
-  option {
-    padding: $spacing-xxs;
+body.rehorik .quantity {
+  select.rehorik-quantity.qty {
+    border-radius: $border-radius;
+    background-color: $anthrazit;
+    color: #fff;
+    font-size: $font-size-small;
+    line-height: $font-size-small;
+    padding: 0 $spacing-s;
+    height: 50px;
     border: none;
+    font-family: $font-family-body;
+    border-right: $spacing-xxs solid transparent;
+    text-align: left;
     outline: none;
+    width: auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    option {
+      font-size: $font-size-small;
+      line-height: $font-size-small;
+      padding: $spacing-xxs;
+      border: none;
+      outline: none;
+    }
+
+    &:focus:active, &:active {
+      border-radius: 0;
+    }
   }
 
-  &:focus:active {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    background: transparent url("../img/pfeil-weiss-unten.svg") no-repeat center right;
+    background-size: 12px;
+    width: 12px;
+    height: 12px;
+    left: 40px;
+    top: 21px;
+    position: absolute;
+    pointer-events: none;
   }
+}
+
+.woocommerce-variation-add-to-cart-disabled .quantity select.rehorik-quantity.qty {
+  pointer-events: none;
+  opacity: 0.5;
 }

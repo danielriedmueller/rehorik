@@ -24,7 +24,7 @@ get_template_part('templates/cart-header');
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-	<table class="cart-table" cellspacing="0">
+	<table class="cart-table woocommerce-cart-form__contents" cellspacing="0">
 		<thead>
 			<tr>
 				<th class="product-thumbnail">&nbsp;</th>
