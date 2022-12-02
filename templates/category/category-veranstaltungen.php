@@ -60,7 +60,7 @@ $eventInfos = [
     'spirituosen-seminare' => [
         'img' => 'header-veranstaltungen-spirits',
         'claim' => 'ERLEBE DEN SPIRIT',
-        'intro' => 'Gin Tonic ist dein Lieblingsdrink? Du brennst für Cognac oder Whisky? Komm zu uns und verbringe einen Abend unter Gleichgesinnten. Spirituosenexperte Dominik und Barfachmann Julio geben Tipps und sorgen für die richtige Stimmung.',
+        'intro' => 'Gin Tonic ist dein Lieblingsdrink? Du brennst für Whisky oder Rum? Komm zu uns und verbringe einen Abend unter Gleichgesinnten. Unsere Spirituosenexperten geben Tipps und sorgen für die richtige Stimmung.',
     ],
     'tequila-mezcal' => [
         'img' => 'header-veranstaltungen-spirits',
