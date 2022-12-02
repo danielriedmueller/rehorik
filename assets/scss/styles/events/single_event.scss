@@ -36,6 +36,11 @@ body.tribe-theme-rehorik {
       font-size: $font-size;
       color: #fff;
       border: none;
+
+      a {
+        color: #fff;
+        text-decoration: underline;
+      }
     }
 
     .tribe-events-event-image img {
