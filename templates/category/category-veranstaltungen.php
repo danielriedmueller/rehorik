@@ -72,7 +72,7 @@ $eventInfos = [
         'claim' => 'Natürlich, vielfältig, Whisk(e)y!',
         'intro' => 'Whisk(e)y, die vielfältigste Spirituose überhaupt. Und das nur mit natürlichen Zutaten! Die Herstellung und oft auch die Zutaten sind je nach Land und Brennblase unterschiedlich. Wir verkosten einzigartige Tropfen und finden heraus: Schmeckt der Whisk(e)y eher mild und fruchtig oder kräftig und torfig? Spirituosenexperte Dominik versorgt Euch mit reichlich Background-Wissen.',
     ],
-    'wein' => [
+    'wein-events' => [
         'img' => 'header-veranstaltungen-wein',
         'claim' => 'VIVA EL VINO',
         'intro' => 'Euer Weinvorrat ist geplündert und Ihr habt Lust auf etwas Neues? Dann seid Ihr bei uns richtig! Spannend und abwechslungsreich geht es bei unseren Weinveranstaltungen zu. Egal, ob bei Euch auf dem Sofa, bei uns im Weinkeller oder auf der Terrasse in unserem Café – mit unseren Weinexpert:innen verkostet Ihr hochwertige Weine und lernt verschiedenste Weinbauregionen kennen.',
