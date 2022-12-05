@@ -7,7 +7,7 @@ function rehorik_add_to_cart()
     $product_id = absint($_POST['product_id']);
     $variation_id = absint($_POST['variation_id']);
     $product = wc_get_product($product_id);
-    $variation = array();
+    $attributes = $_POST['attributes'];
     $product_url = apply_filters('woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id);
     $error_contact_msg = sprintf(
         'Hoppla, hier gibts ein technisches Problem. Bitte schreibe uns eine Mail an <a href="%s">%s</a> und wir schauen uns die Sache an oder probiere es einfach später nochmal.',
@@ -40,8 +40,18 @@ function rehorik_add_to_cart()
 
     $quantity = empty($_POST['quantity']) ? 1 : wc_stock_amount(wp_unslash($_POST['quantity']));
 
+    $variation = [];
     if ('variable' === $type) {
-        $variation = $product->get_variation_attributes();
+        foreach ($product->get_variation_attributes() as $name => $values) {
+            $attribute_key = 'attribute_' . sanitize_title($name);
+
+            foreach ($attributes as $attribute) {
+                if ($attribute['name'] === $attribute_key && in_array($attribute['value'], $values)) {
+                    $variation[$attribute_key] = $attribute['value'];
+                    break;
+                }
+            }
+        }
     }
 
     $passed_validation = apply_filters('woocommerce_add_to_cart_validation', true, $product_id, $quantity);
