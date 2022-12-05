@@ -46,47 +46,6 @@
     }
   }
 
-  .woocommerce .product-name a.remove {
-    $closeSize: 18px;
-    text-align: left;
-    border-radius: 0;
-    position: relative;
-    margin: $spacing-s 0 0 0;
-    padding-left: $closeSize + 3px;
-
-    &:hover {
-      background-color: transparent;
-      color: grey !important;
-    }
-
-    .close {
-      position: absolute;
-      left: -$spacing-xxs;
-      top: 1px;
-    }
-
-    .close:hover {
-      opacity: 1;
-    }
-
-    .close:before, .close:after {
-      position: absolute;
-      left: 15px;
-      content: ' ';
-      height: $closeSize;
-      width: 2px;
-      background-color: #333;
-    }
-
-    .close:before {
-      transform: rotate(45deg);
-    }
-
-    .close:after {
-      transform: rotate(-45deg);
-    }
-  }
-
   .single-price-info, .units-info, .variation {
     color: $font-color-accent;
     padding-bottom: 0;
@@ -130,5 +89,25 @@
 
   .rehorik-update-cart button.button[name="update_cart"][type="submit"] {
     display: none;
+  }
+
+  .rehorik-coupon-container .woocommerce-notices-wrapper {
+    width: $cart-coupon-width;
+
+    &:empty {
+      display: none;
+    }
+
+    > div {
+      padding: $spacing-xxs;
+      margin: 0;
+      text-align: center;
+    }
+
+    @media all and (max-width: $small-breakpoint) {
+      width: 100%;
+      margin: $spacing 0 0 0;
+      order: 1;
+    }
   }
 }

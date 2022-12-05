@@ -121,6 +121,8 @@ get_template_part('templates/cart-header');
             <tr>
                 <td colspan="6" class="actions">
                     <div class="rehorik-coupon-container">
+                        <?php do_action( 'rehorik_cart_notices' ); ?>
+
                         <?php if ( wc_coupons_enabled() ) { ?>
                             <div class="rehorik-coupon">
                                 <label>
