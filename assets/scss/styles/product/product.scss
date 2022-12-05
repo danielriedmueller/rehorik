@@ -26,7 +26,7 @@
   .rehorik-product-information {margin: var(--product-view-grid-gap-half) 0 0 0;}
   .rehorik-product-ingredients:not(:empty) {margin: var(--product-view-grid-gap-half) 0 0 0;}
 
-  @media all and (max-width: $medium-breakpoint) {
+  @media all and (max-width: $small-breakpoint) {
     grid-template-columns: 1fr;
     grid-template-areas:
     "gallery"
@@ -76,7 +76,7 @@
       text-align: left;
       margin-top: -11px;
 
-      @media all and (max-width: $medium-breakpoint) {
+      @media all and (max-width: $small-breakpoint) {
         word-break: break-all;
       }
     }
@@ -130,7 +130,7 @@
     "information information"
 ;
 
-  @media all and (max-width: $medium-breakpoint) {
+  @media all and (max-width: $small-breakpoint) {
     grid-template-areas:
     "gallery"
     "title-price"
