@@ -9,7 +9,7 @@ body.rehorik.woocommerce div.rehorik-product {
 
     span:last-child {
       flex-basis: 33.33%;
-      background-image: url("../img/warenkorb-white.svg");
+      background-image: url("../img/cart/warenkorb-white.svg");
       background-color: $beigegold;
       background-repeat: no-repeat;
       background-position: center center;
@@ -20,7 +20,7 @@ body.rehorik.woocommerce div.rehorik-product {
 
       &:hover {
         background-color: $product-default-color;
-        background-image: url("../img/warenkorb-16px.svg");
+        background-image: url("../img/cart/warenkorb.svg");
       }
 
       a {
