@@ -33,13 +33,8 @@ foreach ( $customer_orders as $customer_order ) {
                     <div><?= $cart->get_cart_contents_count() ?> Artikel</div>
                     <div><a href="<?= wc_get_cart_url() ?>">Warenkorb</a></div>
                 </div>
-                <?php get_template_part('templates/mini-cart/cart-items') ?>
+                <div class="widget_shopping_cart_content"></div>
                 <div class="cart-content-featured"></div>
-                <div class="cart-content-total">
-                    <div>Versandkosten: <?= $cart->get_cart_shipping_total() ?> </div>
-                    <div>Gesamtsumme: <?= $cart->get_total() ?></div>
-                </div>
-                <div><a href="<?= wc_get_checkout_url() ?>">zur Kasse</a></div>
             </div>
         </div>
     </div>
