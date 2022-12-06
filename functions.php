@@ -130,13 +130,6 @@ require_once($baseDir . '/actions/rehorik.php');
 require_once($baseDir . '/actions/events.php');
 require_once($baseDir . '/actions/api/endpoints.php');
 
-// todo enable fragments
-add_action('wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 11);
-function dequeue_woocommerce_cart_fragments()
-{
-    wp_dequeue_script('wc-cart-fragments');
-}
-
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
     wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.97);
