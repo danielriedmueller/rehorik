@@ -35,16 +35,17 @@ main#tribe-events .rehorik-tribe-event-tickets button.tribe-tickets__tickets-buy
   font-family: $font-family-body;
   font-size: $font-size;
   border-radius: $border-radius;
-  padding: $spacing-xxs $spacing-s $spacing-xxs 42px;
-  background: $beigegold url("../img/cart/warenkorb-white.svg") no-repeat left 15px center;
+  padding: $spacing-xxs 42px $spacing-xxs $spacing-s;
+  background: $beigegold url("../img/cart/warenkorb-white.svg") no-repeat right $spacing-xs center;
   background-size: $product-view-cart-button-width-icon-size;
   margin: 0;
   color: #fff;
+  text-align: left;
 
   &:hover {
     color: $beigegold;
-    background: $weinrot url("../img/cart/warenkorb.svg") no-repeat left 15px center;
-    background-size: $product-view-cart-button-width-icon-size !important;
+    background-image: url("../img/cart/warenkorb.svg");
+    background-color: $weinrot;
   }
 }
 
