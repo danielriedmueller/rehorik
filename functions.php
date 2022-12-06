@@ -148,6 +148,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
     wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
     wp_enqueue_script('update-cart-ajax', $assetsDir . 'js/update_cart_ajax.js', array('jquery'), 1, true);
+    wp_enqueue_script('add-to-cart-ajax', $assetsDir . 'js/add_to_cart_ajax.js', array('jquery'), 1, true);
 
     if (is_front_page()) {
         wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', ['jquery'], 1, true);
