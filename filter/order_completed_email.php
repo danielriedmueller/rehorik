@@ -61,8 +61,12 @@ add_filter('woocommerce_email_additional_content_customer_completed_order', func
 /**
  * Add coupon pdf attachment to email.
  */
-add_filter('woocommerce_email_attachments', function (array $attachments, string $email_id, WC_Order$order) {
+add_filter('woocommerce_email_attachments', function (array $attachments, string $email_id, $order) {
     if ($email_id !== 'customer_completed_order') {
+        return $attachments;
+    }
+
+    if (!($order instanceof WC_Order)) {
         return $attachments;
     }
 
