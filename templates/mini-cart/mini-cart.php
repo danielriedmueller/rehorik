@@ -33,7 +33,7 @@ foreach ( $customer_orders as $customer_order ) {
                     <div><?= $cart->get_cart_contents_count() ?> Artikel</div>
                     <div><a href="<?= wc_get_cart_url() ?>">Warenkorb</a></div>
                 </div>
-                <div class="widget_shopping_cart_content"></div>
+                <div class="widget_shopping_cart_content"><?php wc_get_template('cart/mini-cart'); ?></div>
                 <div class="cart-content-featured"></div>
             </div>
         </div>

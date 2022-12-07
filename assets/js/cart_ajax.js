@@ -23,76 +23,69 @@
         }).get();
     };
 
-    // Add to cart
-    $(document).ready(function ($) {
-        if (typeof settings === 'undefined') {
-            return false;
-        }
+    if (typeof settings === 'undefined') {
+        return false;
+    }
 
-        $('.single_add_to_cart_button:not(.disabled)').on('click', function (e) {
-            e.preventDefault();
+    const addToCart = (e) => {
+        e.preventDefault();
 
-            const me = $(this);
-            const $form = me.closest('form.cart');
-            const id = me.val();
-            const product_id = $form.find('input[name=product_id]').val() || id;
-            const product_qty = $form.find('input[name=quantity]').val() || $form.find('select[name=quantity]').val() || 1;
-            const variation_id = $form.find('input[name=variation_id]').val() || 0;
-            const attributes = $form.find('input:not([name="product_id"]):not([name="quantity"]):not([name="variation_id"]), select, button, textarea').serializeArrayAll() || [];
+        const me = $(e.currentTarget);
+        const $form = me.closest('form.cart');
+        const id = me.val();
+        const product_id = $form.find('input[name=product_id]').val() || id;
+        const product_qty = $form.find('input[name=quantity]').val() || $form.find('select[name=quantity]').val() || 1;
+        const variation_id = $form.find('input[name=variation_id]').val() || 0;
+        const attributes = $form.find('input:not([name="product_id"]):not([name="quantity"]):not([name="variation_id"]), select, button, textarea').serializeArrayAll() || [];
 
-            $.ajax({
-                type: 'post',
-                url: setttings.ajax_url,
-                data: {
-                    action: 'rehorik_ajax_add_to_cart',
-                    product_id: product_id,
-                    quantity: product_qty,
-                    variation_id: variation_id,
-                    attributes: attributes
-                },
-                beforeSend: function (response) {
-                    me.removeClass('added').addClass('loading');
-                },
-                complete: function (response) {
-                    me.addClass('added').removeClass('loading');
-                },
-                success: function (response) {
-                    if (response.error && response.product_url) {
-                        window.location = response.product_url;
-                    } else {
-                        $(document.body).trigger('added_to_cart', [
-                            response.fragments,
-                            response.cart_hash,
-                            me
-                        ]);
-                    }
-                },
-            });
+        $.ajax({
+            type: 'post',
+            url: settings.ajax_url,
+            data: {
+                action: 'rehorik_ajax_add_to_cart',
+                nonce: settings.add_nonce,
+                product_id: product_id,
+                quantity: product_qty,
+                variation_id: variation_id,
+                attributes: attributes
+            },
+            beforeSend: function (response) {
+                me.removeClass('added').addClass('loading');
+            },
+            complete: function (response) {
+                me.addClass('added').removeClass('loading');
+            },
+            success: function (response) {
+                if (response.error && response.redirect_url) {
+                    window.location = response.redirect_url;
+                } else {
+                    $(document.body).trigger('added_to_cart', [
+                        response.fragments,
+                        response.cart_hash,
+                        me
+                    ]);
+                }
+            }
         });
-    });
+    }
 
-    // Update cart
-    $(document).on('change', 'select.rehorik-quantity:not(.disabled)', function () {
-        if (typeof settings === 'undefined') {
-            return false;
-        }
-
+    const updateCart = (e) => {
         // Is there a submit button?
         $submitButton = $('button[name="update_cart"]');
         if ($submitButton.length) {
             $submitButton.trigger('click');
         } else {
             // No submit button? Do ajax update.
-
-            const me = $(this);
+            const me = $(e.currentTarget);
             const cart_item_key = me.attr('name');
             const cart_item_value = me.val();
 
             $.ajax({
                 type: 'post',
-                url: setttings.ajax_url,
+                url: settings.ajax_url,
                 data: {
                     action: 'rehorik_ajax_update_cart',
+                    nonce: settings.update_nonce,
                     cart_item_key: cart_item_key,
                     cart_item_value: cart_item_value,
                 },
@@ -103,8 +96,20 @@
                     me.addClass('added').removeClass('loading');
                 },
                 success: function (response) {
-                },
+                    if (response.error && response.redirect_url) {
+                        window.location = response.redirect_url;
+                    } else {
+                        $(document.body).trigger('added_to_cart', [
+                            response.fragments,
+                            response.cart_hash,
+                            me
+                        ]);
+                    }
+                }
             });
         }
-    });
+    }
+
+    $(document).on('click', 'button.single_add_to_cart_button:not(.disabled)', addToCart);
+    $(document).on('change', 'select.rehorik-quantity:not(.disabled)', updateCart);
 })(jQuery);

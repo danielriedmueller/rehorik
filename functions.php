@@ -143,8 +143,12 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
     wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
 
-    wp_enqueue_script('cart-ajax', $assetsDir . 'js/update_cart_ajax.js', ['jquery'], 1, true);
-    wp_localize_script( 'cart-ajax', 'settings', ['ajax_url' => admin_url( 'admin-ajax.php')]);
+    wp_enqueue_script('cart-ajax', $assetsDir . 'js/cart_ajax.js', ['jquery'], 1, true);
+    wp_localize_script( 'cart-ajax', 'settings', [
+        'ajax_url' => admin_url( 'admin-ajax.php'),
+        'add_nonce' => wp_create_nonce( 'rehorik-add-to-cart' ),
+        'update_nonce' => wp_create_nonce( 'rehorik-update-cart' ),
+    ]);
 
     if (is_front_page()) {
         wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', ['jquery'], 1, true);
