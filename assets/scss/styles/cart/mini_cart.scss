@@ -81,7 +81,18 @@
     }
 
     &.loading {
+      opacity: 0.3;
+      &::after {
+        background-image: url("../img/svg/strength_filled_white.svg");
+        background-size: 14px;
+      }
 
+      &:hover {
+        &::after {
+          background-image: url("../img/svg/strength_filled.svg");
+          background-size: 14px;
+        }
+      }
     }
   }
 }
