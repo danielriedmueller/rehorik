@@ -24,15 +24,10 @@ foreach ( $customer_orders as $customer_order ) {
 }
 */
 ?>
-    <div id="rehorik-mini-cart" class="show">
+    <div id="rehorik-mini-cart">
         <div id="mini-cart-overlay"></div>
         <div class="mini-cart-content">
             <div>
-                <div class="cart-content-info">
-                    <div id="rehorik-mini-cart-update-message">Warenkorb wurde aktualisiert!</div>
-                    <div><?= $cart->get_cart_contents_count() ?> Artikel</div>
-                    <div><a href="<?= wc_get_cart_url() ?>">Warenkorb</a></div>
-                </div>
                 <div class="widget_shopping_cart_content"><?php wc_get_template('cart/mini-cart'); ?></div>
                 <div class="cart-content-featured"></div>
             </div>

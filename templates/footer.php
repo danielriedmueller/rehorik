@@ -61,7 +61,7 @@ get_template_part('templates/rehorik-locations');
         </div>
     </div>
 </footer>
-<?php get_template_part('templates/mini-cart/mini-cart'); ?>
+<?php get_template_part('templates/mini-cart'); ?>
 <?php wp_footer(); ?>
 </div>
 </body>
