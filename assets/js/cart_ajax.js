@@ -79,7 +79,7 @@
             const me = $(e.currentTarget);
             const cart_item_key = me.attr('name');
             const cart_item_value = me.val();
-            const miniCart = me.parents('.mini-cart-content');
+            const miniCart = me.parents('#rehorik-mini-cart');
             $.ajax({
                 type: 'post',
                 url: settings.ajax_url,
@@ -90,10 +90,10 @@
                     cart_item_value: cart_item_value,
                 },
                 beforeSend: function (response) {
-                    miniCart.addClass('loading');
+                    miniCart.addClass('loading').removeClass('updated');
                 },
                 complete: function (response) {
-                    miniCart.removeClass('loading');
+                    miniCart.removeClass('loading').addClass('updated');
                 },
                 success: function (response) {
                     if (response.error && response.redirect_url) {
