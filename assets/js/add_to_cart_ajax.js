@@ -24,6 +24,10 @@
     };
 
     $(document).ready(function ($) {
+        if (typeof wc_add_to_cart_params === 'undefined') {
+            return false;
+        }
+
         $('.single_add_to_cart_button:not(.disabled)').on('click', function (e) {
             e.preventDefault();
 
