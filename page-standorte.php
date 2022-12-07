@@ -35,6 +35,10 @@ get_template_part('templates/header/head', null, [
                                     <td>SA.</td>
                                     <td>09:00 - 18:00</td>
                                 </tr>
+                                <tr>
+                                    <td>9., 15., 20.12</td>
+                                    <td>09:00 - 17:00</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </td>
