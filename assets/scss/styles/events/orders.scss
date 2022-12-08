@@ -21,7 +21,7 @@ main#tribe-events #tribe-events-content {
     font-size: $font-size;
     border: 2px solid;
     border-radius: 3px;
-    transition: all 0.2s;
+    transition: all var(--animation-time);
     text-align: center;
     box-shadow: none;
     text-shadow: none;

@@ -122,7 +122,11 @@ get_template_part('templates/cart-header');
                 <td colspan="6" class="actions">
                     <div class="rehorik-coupon-container">
                         <?php do_action( 'rehorik_cart_notices' ); ?>
-
+                        <div class="rehorik-update-cart">
+                            <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+                            <?php do_action( 'woocommerce_cart_actions' ); ?>
+                            <?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+                        </div>
                         <?php if ( wc_coupons_enabled() ) { ?>
                             <div class="rehorik-coupon">
                                 <label>
@@ -132,12 +136,6 @@ get_template_part('templates/cart-header');
                                 <?php do_action( 'woocommerce_cart_coupon' ); ?>
                             </div>
                         <?php } ?>
-
-                        <div class="rehorik-update-cart">
-                            <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
-                            <?php do_action( 'woocommerce_cart_actions' ); ?>
-                            <?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
-                        </div>
                     </div>
                 </td>
             </tr>

@@ -95,16 +95,23 @@ body.rehorik.woocommerce div.rehorik-product {
           background-image: url("../img/svg/strength_filled_white.svg");
           background-size: 14px;
         }
+
+        &:hover {
+          &::after {
+            background-image: url("../img/svg/strength_filled.svg");
+            background-size: 14px;
+          }
+        }
       }
 
       &.added {
         &::after {
-          background-image: url("../img/cart/check-white.svg");
+          background-image: url("../img/cart/warenkorb-check-white.svg");
         }
 
         &:hover {
           &::after {
-            background-image: url("../img/cart/check.svg");
+            background-image: url("../img/cart/warenkorb-check.svg");
           }
         }
       }

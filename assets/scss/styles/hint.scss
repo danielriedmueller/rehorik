@@ -16,7 +16,7 @@
     }
 
     transform: translate($social-media-container-width - $hint-width);
-    transition: 200ms ease-in-out;
+    transition: var(--animation-time) ease-in-out;
 
     input[type="checkbox"] {
       cursor: pointer;

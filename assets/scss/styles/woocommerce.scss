@@ -1,3 +1,7 @@
+.woocommerce a.added_to_cart.wc-forward {
+  display: none;
+}
+
 .woocommerce .blockUI.blockOverlay::before {
   background: transparent url("../img/svg/strength_filled.svg") no-repeat center center;
 }

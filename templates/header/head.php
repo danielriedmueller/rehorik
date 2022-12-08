@@ -52,5 +52,4 @@ $hasSlider = !empty($args['slider']);
     <?php
     if ($hasSlider) get_template_part('templates/header/slider', null, ['items' => $args['slider']]);
     get_template_part('templates/header/menu');
-    get_template_part('templates/header/mini-cart');
     ?>
