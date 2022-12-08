@@ -1,0 +1,50 @@
+#rehorik-mini-cart .mini-cart-content {
+  $widthLeft: 280px;
+  $widthRight: 450px;
+  transform: translateX($widthLeft + $widthRight);
+  transition: transform var(--animation-time);
+  position: absolute;
+  width: $widthLeft + $widthRight;
+  @media all and (max-width: $widthLeft + $widthRight) {
+    width: 100%;
+  }
+  height: 100%;
+  right: 0;
+  top: 0;
+
+  background-color: $weinrot;
+  background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
+  background-repeat: no-repeat, repeat;
+  background-position: left bottom, right bottom;
+  background-size: 100%;
+
+  > div {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    padding: $spacing-s;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+            "close close"
+            "featured items"
+            "featured items";
+
+    #mini-cart-close {
+      grid-area: close;
+    }
+
+    .cart-content-featured {
+      grid-area: featured;
+    }
+
+    .widget_shopping_cart_content {
+      grid-area: items;
+    }
+
+    img {
+      width: 100px;
+    }
+  }
+}
