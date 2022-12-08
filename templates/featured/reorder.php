@@ -60,17 +60,16 @@ if ($current_customer_id !== 0) {
     }
 }
 ?>
-<ul>
+<ul class="rehorik-mini-cart-item-list">
     <?php foreach ($items as $item) : ?>
-        <li>
+        <li class="rehorik-mini-cart-item">
             <?php if (empty($item['product_permalink'])) : ?>
-                <?php echo $item['thumbnail'] . wp_kses_post($item['product_name']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                <?php echo $item['thumbnail'] . wp_kses_post($item['product_name']); ?>
             <?php else : ?>
                 <a href="<?php echo esc_url($item['product_permalink']); ?>">
-                    <?php echo $item['thumbnail'] . wp_kses_post($item['product_name']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                    <?php echo $item['thumbnail'] . wp_kses_post($item['product_name']); ?>
                 </a>
             <?php endif; ?>
-            <div><?= $item['product_name'] ?></div>
             <div><?= $item['product_price'] ?></div>
             <div>
                 <?php foreach ($item['attributes'] as $attribute) {

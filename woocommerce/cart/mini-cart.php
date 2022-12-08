@@ -23,7 +23,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 <div id="rehorik-mini-cart-update-message"><span>Warenkorb aktualisiert!</span></div>
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 
-	<ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
+	<ul class="rehorik-mini-cart-item-list">
 		<?php
 		do_action( 'woocommerce_before_mini_cart_contents' );
 
@@ -37,7 +37,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 				$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $product ), $cart_item, $cart_item_key );
 				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $product->is_visible() ? $product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 				?>
-				<li class="woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
+				<li class="rehorik-mini-cart-item">
 					<?php if ( empty( $product_permalink ) ) : ?>
 						<?php echo $thumbnail . wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<?php else : ?>
@@ -58,9 +58,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
                         $product,
                         false
                     );
-
                     echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . $product_quantity . '</span>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
                     ?>
 				</li>
 				<?php

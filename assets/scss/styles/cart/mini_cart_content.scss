@@ -21,7 +21,7 @@
 
   > div {
     max-height: 100vh;
-    overflow: scroll;
+    overflow-y: auto;
     width: 100%;
     background-color: transparent;
     padding: $spacing-s;
