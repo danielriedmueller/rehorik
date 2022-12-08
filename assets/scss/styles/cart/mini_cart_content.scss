@@ -48,6 +48,7 @@
       grid-area: featured;
 
       button.add-to-cart-recent-order-item {
+        cursor: pointer;
         width: 30px;
         height: 30px;
         background: transparent url("../img/cart/warenkorb-plus.svg") no-repeat center center;

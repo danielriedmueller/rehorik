@@ -112,11 +112,14 @@
     }
 
     const addToCartRecentOrderItem = (e) => {
+        e.preventDefault();
+
         const me = $(e.currentTarget);
         const miniCart = me.parents('#rehorik-mini-cart');
         const product_id = me.attr('data-product-id');
         const variation_id = me.attr('data-variation-id');
-        const attributes = JSON.parse(me.attr('data-attributes'));
+        const data_attributes = me.attr('data-attributes');
+        const attributes = data_attributes ? JSON.parse(data_attributes) : [];
         const product_qty = 1;
 
         $.ajax({
