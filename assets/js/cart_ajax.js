@@ -80,6 +80,7 @@
             const cart_item_key = me.attr('name');
             const cart_item_value = me.val();
             const miniCart = me.parents('#rehorik-mini-cart');
+
             $.ajax({
                 type: 'post',
                 url: settings.ajax_url,
