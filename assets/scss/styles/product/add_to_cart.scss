@@ -106,12 +106,12 @@ body.rehorik.woocommerce div.rehorik-product {
 
       &.added {
         &::after {
-          background-image: url("../img/cart/check-white.svg");
+          background-image: url("../img/cart/warenkorb-check-white.svg");
         }
 
         &:hover {
           &::after {
-            background-image: url("../img/cart/check.svg");
+            background-image: url("../img/cart/warenkorb-check.svg");
           }
         }
       }

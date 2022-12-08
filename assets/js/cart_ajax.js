@@ -110,6 +110,46 @@
         }
     }
 
+    const addToCartRecentOrderItem = (e) => {
+        const me = $(e.currentTarget);
+        const miniCart = me.parents('#rehorik-mini-cart');
+        const product_id = me.attr('data-product-id');
+        const variation_id = me.attr('data-variation-id');
+        const attributes = JSON.parse(me.attr('data-attributes'));
+        const product_qty = 1;
+
+        $.ajax({
+            type: 'post',
+            url: settings.ajax_url,
+            data: {
+                action: 'rehorik_ajax_add_to_cart',
+                nonce: settings.add_nonce,
+                product_id: product_id,
+                quantity: product_qty,
+                variation_id: variation_id,
+                attributes: attributes
+            },
+            beforeSend: function (response) {
+                miniCart.addClass('loading').removeClass('updated');
+            },
+            complete: function (response) {
+                miniCart.removeClass('loading').addClass('updated');
+            },
+            success: function (response) {
+                if (response.error && response.redirect_url) {
+                    window.location = response.redirect_url;
+                } else {
+                    $(document.body).trigger('added_to_cart', [
+                        response.fragments,
+                        response.cart_hash,
+                        me
+                    ]);
+                }
+            }
+        });
+    }
+
     $(document).on('click', 'button.single_add_to_cart_button:not(.disabled)', addToCart);
     $(document).on('change', 'select.rehorik-quantity:not(.disabled)', updateCart);
+    $(document).on('click', 'button.add-to-cart-recent-order-item', addToCartRecentOrderItem);
 })(jQuery);

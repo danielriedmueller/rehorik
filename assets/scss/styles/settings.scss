@@ -110,7 +110,7 @@ $max-width-small: 1280px;
   --product-view-grid-gap: #{$spacing-xl};
   --product-view-grid-gap-half: #{$spacing-xl / 2};
   --product-view-grid-gap-quarter: #{$spacing-xl / 4};
-  --animation-time: 0.3s;
+  --animation-time: 350ms;
 
   @media all and (max-width: $max-width) {
     --section-spacing-left-right: #{$spacing};
