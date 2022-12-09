@@ -6,7 +6,7 @@ body.tribe-theme-rehorik {
       margin-bottom: $spacing;
     }
 
-    a h3 {
+    a h3, .tribe-events-calendar-month__multiday-event-bar h3 {
       color: $font-color-accent-dark;
 
       &:hover {
