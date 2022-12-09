@@ -1,5 +1,4 @@
-<?php ?>
-<div id="rehorik-mini-cart">
+<div id="rehorik-mini-cart" class="show">
     <div id="mini-cart-overlay"></div>
     <div class="mini-cart-content">
         <div>

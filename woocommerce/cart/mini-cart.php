@@ -17,10 +17,15 @@
  * @version 5.2.0
  */
 
+use model\Reh_Mini_Cart_Item;
+
 defined( 'ABSPATH' ) || exit;
 
-do_action( 'woocommerce_before_mini_cart' ); ?>
+do_action( 'woocommerce_before_mini_cart' );
+?>
+
 <div id="rehorik-mini-cart-update-message"><span>Warenkorb aktualisiert!</span></div>
+
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 
 	<ul class="rehorik-mini-cart-item-list">
@@ -28,6 +33,8 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 		do_action( 'woocommerce_before_mini_cart_contents' );
 
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+            $miniCartItem = Reh_Mini_Cart_Item::createFromWcCartItem($cart_item);
+
 			$product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 			$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
