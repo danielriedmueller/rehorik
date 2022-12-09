@@ -10,8 +10,12 @@ body.tribe-theme-rehorik {
       color: $font-color-accent-dark;
 
       &:hover {
-        color: $font-color-accent
+        color: $font-color-accent;
       }
+    }
+
+    .tribe-events-calendar-month__multiday-event-bar:hover h3 {
+      color: $font-color-accent;
     }
 
     h3 {
