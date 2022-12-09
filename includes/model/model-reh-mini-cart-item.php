@@ -71,8 +71,13 @@ class Reh_Mini_Cart_Item
         if ($isVariation) {
             foreach ($item['variation'] as $key => $value) {
                 $key = rawurldecode((string)$key);
-                $value = rawurldecode((string)$value);
                 $attribute_key = str_replace('attribute_', '', $key);
+
+                if ($attribute_key === 'pa_gewicht' || $attribute_key === 'pa_groesse') {
+                    continue;
+                }
+
+                $value = rawurldecode((string)$value);
                 $display_key = wc_attribute_label($attribute_key, $product);
                 $display_value = wp_kses_post($value);
 
@@ -132,7 +137,7 @@ class Reh_Mini_Cart_Item
 
     public function getPrice(): string
     {
-        return $this->product->get_price();
+        return wc_price($this->product->get_price());
     }
 
     public function getPermalink(): ?string
