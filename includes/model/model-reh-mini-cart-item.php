@@ -2,40 +2,33 @@
 
 namespace model;
 
+use WC_Product;
+
 class Reh_Mini_Cart_Item
 {
+    private WC_Product $product;
     private int $id;
     private ?int $variationId;
     private bool $isVariation;
     private array $attributes;
-    private string $name;
-    private string $thumbnail;
-    private string $price;
-    private ?string $permalink;
 
     private function __construct(
+        WC_Product $product,
         int $id,
         ?int $variationId,
         array $attributes,
-        string $name,
-        string $thumbnail,
-        string $price,
-        ?string $permalink,
         bool $isVariation
     ) {
+        $this->product = $product;
         $this->id = $id;
         $this->variationId = $variationId;
         $this->attributes = $attributes;
-        $this->name = $name;
-        $this->thumbnail = $thumbnail;
-        $this->price = $price;
-        $this->permalink = $permalink;
         $this->isVariation = $isVariation;
     }
 
     public static function createFromWcOrderItem(\WC_Order_Item $item): ?self
     {
-        /** @var \WC_Product $product */
+        /** @var WC_Product $product */
         $product = $item->get_product();
 
         if (!$product || !$product->exists()) {
@@ -54,13 +47,10 @@ class Reh_Mini_Cart_Item
         }
 
         return new self(
+            $product,
             $id,
             $variationId,
             $attributes,
-            $product->get_name(),
-            $product->get_image(),
-            $product->get_price(),
-            $product->get_permalink(),
             $isVariation
         );
     }
@@ -79,19 +69,40 @@ class Reh_Mini_Cart_Item
         $attributes = [];
 
         if ($isVariation) {
-            $attributes = $item->get_formatted_meta_data();
+            foreach ($item['variation'] as $key => $value) {
+                $key = rawurldecode((string)$key);
+                $value = rawurldecode((string)$value);
+                $attribute_key = str_replace('attribute_', '', $key);
+                $display_key = wc_attribute_label($attribute_key, $product);
+                $display_value = wp_kses_post($value);
+
+                if (taxonomy_exists($attribute_key)) {
+                    $term = get_term_by('slug', $value, $attribute_key);
+                    if (!is_wp_error($term) && is_object($term) && $term->name) {
+                        $display_value = $term->name;
+                    }
+                }
+                $attributes[] = (object)[
+                    'key' => $attribute_key,
+                    'value' => $value,
+                    'display_key' => $display_key,
+                    'display_value' => $display_value,
+                ];
+            }
         }
 
         return new self(
+            $product,
             $id,
             $variationId,
             $attributes,
-            $product->get_name(),
-            $product->get_image(),
-            $product->get_price(),
-            $product->get_permalink(),
             $isVariation
         );
+    }
+
+    public function getProduct(): WC_Product
+    {
+        return $this->product;
     }
 
     public function getId(): int
@@ -111,27 +122,35 @@ class Reh_Mini_Cart_Item
 
     public function getName(): string
     {
-        return wp_kses_post($this->name);
+        return wp_kses_post($this->product->get_name());
     }
 
     public function getThumbnail(): string
     {
-        return $this->thumbnail;
+        return $this->product->get_image();
     }
 
     public function getPrice(): string
     {
-        return $this->price;
+        return $this->product->get_price();
     }
 
     public function getPermalink(): ?string
     {
-        return $this->permalink;
+        return $this->product->get_permalink();
     }
 
     public function hasPermalink(): bool
     {
         return empty($this->permalink);
+    }
+
+    /**
+     * @return int Quantity or -1 if unlimited.
+     */
+    public function getMaxPurchaseQuantity(): int
+    {
+        return $this->product->get_max_purchase_quantity();
     }
 
     /**

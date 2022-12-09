@@ -1,10 +1,6 @@
 <?php
 $reh_mini_cart = Reh_Mini_Cart::instance();
 $items = $reh_mini_cart->getReorderItems();
-
-foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-    $foo = $cart_item['product_id'];
-}
 ?>
 <ul class="rehorik-mini-cart-item-list">
     <?php foreach ($items as $item) : ?>

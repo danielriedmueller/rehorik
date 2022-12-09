@@ -33,41 +33,38 @@ do_action( 'woocommerce_before_mini_cart' );
 		do_action( 'woocommerce_before_mini_cart_contents' );
 
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-            $miniCartItem = Reh_Mini_Cart_Item::createFromWcCartItem($cart_item);
-
-			$product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-			$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
-
-			if ( $product && $product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-				$product_name      = apply_filters( 'woocommerce_cart_item_name', $product->get_name(), $cart_item, $cart_item_key );
-				$thumbnail         = apply_filters( 'woocommerce_cart_item_thumbnail', $product->get_image(), $cart_item, $cart_item_key );
-				$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $product ), $cart_item, $cart_item_key );
-				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $product->is_visible() ? $product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
+            $item = Reh_Mini_Cart_Item::createFromWcCartItem($cart_item);
+			if ( $item && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				?>
-				<li class="rehorik-mini-cart-item">
-					<?php if ( empty( $product_permalink ) ) : ?>
-						<?php echo $thumbnail . wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-					<?php else : ?>
-						<a href="<?php echo esc_url( $product_permalink ); ?>">
-							<?php echo $thumbnail . wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-						</a>
-					<?php endif; ?>
-					<?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-					<?php
+                <li class="rehorik-mini-cart-item">
+                    <?php if ($item->hasPermalink()) : ?>
+                        <a href="<?php echo esc_url($item->getPermalink()); ?>">
+                            <?php echo $item->getThumbnail() . $item->getName(); ?>
+                        </a>
+                    <?php else : ?>
+                        <?php echo $item->getThumbnail() . $item->getName(); ?>
+                    <?php endif; ?>
+                    <div><?= $item->getPrice() ?></div>
+                    <div>
+                        <?php foreach ($item->getViewAttributes() as $attribute) {
+                            echo $attribute;
+                        } ?>
+                    </div>
+                    <?php
                     $product_quantity = woocommerce_quantity_input(
                         array(
                             'input_name'   => $cart_item_key,
                             'input_value'  => $cart_item['quantity'],
-                            'max_value'    => $product->get_max_purchase_quantity(),
+                            'max_value'    => $item->getMaxPurchaseQuantity(),
                             'min_value'    => '0',
-                            'product_name' => $product->get_name(),
+                            'product_name' => $item->getName(),
                         ),
-                        $product,
+                        $item->getProduct(),
                         false
                     );
                     echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . $product_quantity . '</span>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     ?>
-				</li>
+                </li>
 				<?php
 			}
 		}
