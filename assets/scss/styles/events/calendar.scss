@@ -14,8 +14,8 @@ body.tribe-theme-rehorik {
       }
     }
 
-    .tribe-events-calendar-month__multiday-event-bar:hover h3 {
-      color: $font-color-accent;
+    .tribe-events-calendar-month__multiday-event-wrapper:hover h3 {
+      color: $font-color-accent !important;
     }
 
     h3 {
