@@ -6,6 +6,14 @@ body.tribe-theme-rehorik {
       margin-bottom: $spacing;
     }
 
+    a h3 {
+      color: $font-color-accent-dark;
+
+      &:hover {
+        color: $font-color-accent
+      }
+    }
+
     h3 {
       font-size: $font-size;
     }
