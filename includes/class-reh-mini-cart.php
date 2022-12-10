@@ -39,22 +39,29 @@ class Reh_Mini_Cart
         });
     }
 
-    /**
-     * @return Reh_Mini_Cart_Item[]
-     */
-    public function getReorderItems(): array
+    public function getCurrentUserId(): ?int
     {
         $currentCustomerId = get_current_user_id();
 
         if ($currentCustomerId === 0) {
-            return [];
+            return null;
         }
 
-        $limit = 5;
-        $customerOrders = wc_get_orders([
-            'customer_id' => get_current_user_id(),
-            'limit' => $limit,
-        ]);
+        return $currentCustomerId;
+    }
+
+    /**
+     * @return Reh_Mini_Cart_Item[]
+     */
+    public function getReorderItems(?int $userId): array
+    {
+        $limit = 3;
+
+        $args = ['limit' => $limit];
+        if ($userId) {
+            $args['customer_id'] = $userId;
+        }
+        $customerOrders = wc_get_orders($args);
 
         $items = [];
         foreach ($customerOrders as $customerOrder) {
