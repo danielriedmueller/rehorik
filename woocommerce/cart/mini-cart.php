@@ -21,18 +21,21 @@ use model\Reh_Mini_Cart_Item;
 
 defined( 'ABSPATH' ) || exit;
 
+$cart = WC()->cart;
+$cartCount = $cart->get_cart_contents_count();
+
 do_action( 'woocommerce_before_mini_cart' );
 ?>
-
+<h3>Warenkorb</h3>
+<span class="mini-cart-count"><?= $cartCount ?> Artikel</span>
 <div id="rehorik-mini-cart-update-message"><span>Warenkorb aktualisiert!</span></div>
 
-<?php if ( ! WC()->cart->is_empty() ) : ?>
-
+<?php if ( ! $cart->is_empty() ) : ?>
 	<ul class="rehorik-mini-cart-item-list">
 		<?php
 		do_action( 'woocommerce_before_mini_cart_contents' );
 
-		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+		foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) {
             $item = Reh_Mini_Cart_Item::createFromWcCartItem($cart_item);
 			if ( $item && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				?>
@@ -81,10 +84,19 @@ do_action( 'woocommerce_before_mini_cart' );
 		 * @hooked woocommerce_widget_shopping_cart_subtotal - 10
 		 */
 		do_action( 'woocommerce_widget_shopping_cart_total' );
+
 		?>
 	</p>
 
+    <div class="rehorik-shipping-rest-amount">
+        <?php
+            do_action('render_rest_amount_for_free_shipping');
+        ?>
+    </div>
+
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
+
+    <?= getShippingDurationMessage() ?>
 
 	<p class="woocommerce-mini-cart__buttons buttons"><?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?></p>
 

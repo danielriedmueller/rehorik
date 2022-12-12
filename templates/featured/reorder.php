@@ -5,7 +5,7 @@ $items = $reh_mini_cart->getReorderItems($userId);
 ?>
 <h3>
     <?php if(!$userId) : ?>
-        Was andere besetllt haben:
+        Was andere bestellt haben:
     <?php else: ?>
         Nochmal kaufen?
     <?php endif; ?>

@@ -18,3 +18,8 @@ function getAmountTillFreeShipping(): float
 
     return getFreeShippingAmount() - $totalPrice;
 }
+
+function getShippingDurationMessage(): string
+{
+    return sprintf('%s <br /><small>Lieferzeit: %s</small>', $label, SHIPPING_DURATION_MESSAGE);
+}

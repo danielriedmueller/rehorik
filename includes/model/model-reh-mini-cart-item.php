@@ -11,15 +11,18 @@ class Reh_Mini_Cart_Item
     private ?int $variationId;
     private bool $isVariation;
     private array $attributes;
+    private float $price;
 
     private function __construct(
         WC_Product $product,
         int $id,
+        float $price,
         ?int $variationId,
         array $attributes,
         bool $isVariation
     ) {
         $this->product = $product;
+        $this->price = $price;
         $this->id = $id;
         $this->variationId = $variationId;
         $this->attributes = $attributes;
@@ -49,6 +52,7 @@ class Reh_Mini_Cart_Item
         return new self(
             $product,
             $id,
+            (float) $product->get_price(),
             $variationId,
             $attributes,
             $isVariation
@@ -99,6 +103,7 @@ class Reh_Mini_Cart_Item
         return new self(
             $product,
             $id,
+            $item['line_total'] + $item['line_tax'],
             $variationId,
             $attributes,
             $isVariation
@@ -137,7 +142,7 @@ class Reh_Mini_Cart_Item
 
     public function getPrice(): string
     {
-        return wc_price($this->product->get_price());
+        return wc_price($this->price);
     }
 
     public function getPermalink(): ?string

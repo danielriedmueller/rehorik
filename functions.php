@@ -92,6 +92,9 @@ const ORDER_ITEM_COUPON_CODE = 'order_item_coupon_code';
 const PAYMENT_METHOD_CASH = 'cod';
 const PAYMENT_METHOD_DIRECT_TRANSFER = 'bacs';
 
+// Default shipping
+const SHIPPING_DURATION_MESSAGE = '3 - 5 Werktage';
+
 // Pages
 const STANDORTE_PAGE_ID = 26672;
 const LOGIN_PAGE_ID = 667;

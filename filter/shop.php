@@ -32,7 +32,7 @@ add_filter('woocommerce_show_page_title', function () {
  * Displays shipping estimates for WC shipping rates
  */
 add_filter('woocommerce_cart_shipping_method_full_label', function($label) {
-    return $label . '<br /><small>Lieferzeit: 3 - 5 Werktage</small>';
+    return $label . ' ' . getShippingDurationMessage();
 });
 
 /**

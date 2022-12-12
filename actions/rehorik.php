@@ -19,6 +19,8 @@ add_action('render_rest_amount_for_free_shipping', function () {
 
     if ($restAmount > 0) {
         echo 'Nur noch <span>' . $restAmount . ' &euro;</span> bis zum kostenlosen Versand!';
+    } else {
+        echo 'Versandkostenfrei!';
     }
 });
 
