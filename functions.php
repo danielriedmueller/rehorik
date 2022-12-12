@@ -1,5 +1,5 @@
 <?php
-show_admin_bar(true);
+show_admin_bar(false);
 
 const PROD_URL = 'https://www.rehorik.de';
 
@@ -92,6 +92,9 @@ const ORDER_ITEM_COUPON_CODE = 'order_item_coupon_code';
 const PAYMENT_METHOD_CASH = 'cod';
 const PAYMENT_METHOD_DIRECT_TRANSFER = 'bacs';
 
+// Default shipping
+const SHIPPING_DURATION_MESSAGE = '3 - 5 Werktage';
+
 // Pages
 const STANDORTE_PAGE_ID = 26672;
 const LOGIN_PAGE_ID = 667;
@@ -115,6 +118,7 @@ $baseDir = get_stylesheet_directory();
 require_once($baseDir . '/includes/class-tribe-tickets-plus-woocommerce-main.php');
 require_once($baseDir . '/includes/class-reh-online-coupon.php');
 require_once($baseDir . '/includes/class-reh-api-products.php');
+require_once($baseDir . '/includes/class-reh-mini-cart.php');
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');

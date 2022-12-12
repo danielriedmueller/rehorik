@@ -1,7 +1,9 @@
 #rehorik-mini-cart .mini-cart-content {
+  background-color: #fff;
   $widthLeft: 280px;
   $widthRight: 450px;
   $width: $widthLeft + $widthRight;
+  $closeHeight: 80px;
   transform: translateX($width);
   transition: transform var(--animation-time);
   position: absolute;
@@ -13,19 +15,9 @@
   right: 0;
   top: 0;
 
-  background-color: $weinrot;
-  background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
-  background-repeat: no-repeat, repeat;
-  background-position: left bottom, right bottom;
-  background-size: 100%;
-
   > div {
-    max-height: 100vh;
-    overflow-y: auto;
     width: 100%;
     background-color: transparent;
-    padding: $spacing-s;
-    color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -40,8 +32,19 @@
             "featured";
     }
 
+    .widget_shopping_cart_content,
+    .cart-content-featured {
+      padding: $spacing;
+      max-height: calc(100vh - #{$closeHeight});
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
     #mini-cart-close {
       grid-area: close;
+
+      height: $closeHeight;
+      border-bottom: 1px solid $beigegold;
     }
 
     .cart-content-featured {
