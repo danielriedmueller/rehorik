@@ -26,7 +26,7 @@ $cartCount = $cart->get_cart_contents_count();
 
 do_action( 'woocommerce_before_mini_cart' );
 ?>
-<h3>Warenkorb</h3>
+<h2>Warenkorb</h2>
 <span class="mini-cart-count"><?= $cartCount ?> Artikel</span>
 <div id="rehorik-mini-cart-update-message"><span>Warenkorb aktualisiert!</span></div>
 

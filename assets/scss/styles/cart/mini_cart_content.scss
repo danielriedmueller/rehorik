@@ -1,7 +1,7 @@
 #rehorik-mini-cart .mini-cart-content {
   background-color: #fff;
-  $widthLeft: 280px;
-  $widthRight: 450px;
+  $widthLeft: 175px;
+  $widthRight: 360px;
   $width: $widthLeft + $widthRight;
   $closeHeight: 80px;
   transform: translateX($width);
@@ -19,7 +19,7 @@
     width: 100%;
     background-color: transparent;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: $widthLeft $widthRight;
     grid-template-areas:
             "close close"
             "featured items"
@@ -44,22 +44,24 @@
       grid-area: close;
 
       height: $closeHeight;
-      border-bottom: 1px solid $beigegold;
     }
 
     .cart-content-featured {
       grid-area: featured;
 
+      background-color: $beigegold;
+
       button.add-to-cart-recent-order-item {
         cursor: pointer;
-        width: 30px;
+        width: 55px;
         height: 30px;
-        background: transparent url("../img/cart/warenkorb-plus.svg") no-repeat center center;
+        background: $anthrazit url("../img/cart/warenkorb-plus-white.svg") no-repeat center center;
         background-size: 30px;
         border-radius: $border-radius;
+        padding: $spacing;
 
         &:hover {
-          background-image: url("../img/cart/warenkorb-plus-white.svg");
+          background-image: url("../img/cart/warenkorb-plus.svg");
         }
       }
     }
@@ -70,6 +72,10 @@
 
     img {
       width: 100px;
+    }
+
+    .woocommerce-Price-amount.amount {
+      font-weight: bold;
     }
   }
 }

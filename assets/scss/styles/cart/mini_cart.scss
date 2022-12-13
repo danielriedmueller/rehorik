@@ -9,6 +9,14 @@
   width: 100%;
   z-index: 102;
 
+  h2 {
+    font-family: $font-family-headline;
+    font-size: $font-size-very-large;
+    color: #fff;
+    line-height: $line-height-small;
+    text-align: left;
+  }
+
   &.show {
     pointer-events: all;
     opacity: 1;

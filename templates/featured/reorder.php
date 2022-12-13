@@ -3,13 +3,13 @@ $reh_mini_cart = Reh_Mini_Cart::instance();
 $userId = $reh_mini_cart->getCurrentUserId();
 $items = $reh_mini_cart->getReorderItems($userId);
 ?>
-<h3>
+<h2>
     <?php if(!$userId) : ?>
-        Was andere bestellt haben:
+        Andere kauften auch:
     <?php else: ?>
         Nochmal kaufen?
     <?php endif; ?>
-</h3>
+</h2>
 <ul class="rehorik-mini-cart-item-list">
     <?php foreach ($items as $item) : ?>
         <li class="rehorik-mini-cart-item">
