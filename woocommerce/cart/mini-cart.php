@@ -26,7 +26,7 @@ do_action('woocommerce_before_mini_cart');
 ?>
 <div class="mini-cart-stripes"><h2>Warenkorb</h2></div>
 <div class="mini-cart-content-shopping">
-    <div id="rehorik-mini-cart-update-message"><span>Warenkorb aktualisiert!</span></div>
+    <div id="rehorik-mini-cart-update-message"><span>Warenkorb aktualisiert.</span></div>
     <?php if (!$cart->is_empty()) : ?>
         <ul class="rehorik-mini-cart-item-list">
             <?php

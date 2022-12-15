@@ -27,6 +27,7 @@
             "featured items";
 
     @media all and (max-width: $width) {
+      grid-template-columns: auto;
       grid-template-areas:
             "close"
             "items"
@@ -96,22 +97,26 @@
           padding: 0;
         }
 
-        ul.woocommerce-shipping-methods li {
-          margin: 0;
-          label {
-            width: 100%;
-            display: block;
-            position: relative;
+        ul.woocommerce-shipping-methods {
+          list-style: none;
 
-            .woocommerce-Price-amount.amount {
-              font-weight: normal;
-              position: absolute;
-              right: 0;
-            }
+          li {
+            margin: 0;
+            label {
+              width: 100%;
+              display: block;
+              position: relative;
 
-            small {
-              font-size: $font-size;
-              font-weight: normal;
+              .woocommerce-Price-amount.amount {
+                font-weight: normal;
+                position: absolute;
+                right: 0;
+              }
+
+              small {
+                font-size: $font-size;
+                font-weight: normal;
+              }
             }
           }
         }
