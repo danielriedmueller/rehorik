@@ -17,9 +17,31 @@ ul.rehorik-mini-cart-item-list {
 }
 
 .mini-cart-content-featured ul.rehorik-mini-cart-item-list {
+  $widthLeft: 240px;
+  $widthRight: 420px;
+  $width: $widthLeft + $widthRight;
+
+  @media all and (max-width: $width) {
+    display: flex;
+  }
+
   li.rehorik-mini-cart-item {
     &:not(:last-child) {
       border-bottom: 1px solid #fff;
+    }
+
+    @media all and (max-width: $width) {
+      flex: 0 0 $cart-thumbnail-size;
+
+      &:not(:last-child) {
+        border-bottom: none;
+        border-right: 1px solid #fff;
+      }
+
+      padding-bottom: 0;
+      margin-bottom: 0;
+      padding-right: $spacing-l;
+      margin-right: $spacing-l;
     }
 
     a {

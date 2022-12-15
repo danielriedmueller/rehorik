@@ -1,8 +1,8 @@
 <div id="rehorik-mini-cart" class="show">
     <div id="mini-cart-overlay"></div>
     <div class="mini-cart-content">
+        <div id="mini-cart-close">Weiter einkaufen</div>
         <div>
-            <div id="mini-cart-close">Weiter einkaufen</div>
             <div class="mini-cart-content-featured">
                 <?php get_template_part('templates/featured/reorder') ?>
             </div>

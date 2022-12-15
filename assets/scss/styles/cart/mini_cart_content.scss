@@ -15,24 +15,40 @@
   height: 100%;
   right: 0;
   top: 0;
+  display: flex;
+  flex-direction: column;
 
-  > div {
+  #mini-cart-close {
+    display: flex;
+    align-items: center;
+    padding-left: $spacing * 2;
+    height: $closeHeight;
+    background: $weinrot url("../img/pfeil_rot.svg") no-repeat left $spacing center;
+    background-size: 10px;
+    color: $font-color-accent;
+    font-size: $font-size;
+    font-family: $font-family-headline;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background-image: url("../img/pfeil_weiss.svg");
+    }
+  }
+
+  > div:last-child {
     width: 100%;
     background-color: transparent;
-    display: grid;
-    grid-template-columns: $widthLeft $widthRight;
-    grid-template-areas:
-            "close close"
-            "featured items"
-            "featured items";
+    display: flex;
 
     @media all and (max-width: $width) {
-      grid-template-columns: auto;
-      grid-template-areas:
-            "close"
-            "items"
-            "featured";
+      flex-direction: column;
     }
+
+    max-height: calc(100vh - #{$closeHeight});
+    overflow-y: auto;
+    overflow-x: hidden;
 
     .widget_shopping_cart_content,
     .mini-cart-content-featured {
@@ -41,35 +57,30 @@
       overflow-x: hidden;
     }
 
-    #mini-cart-close {
-      grid-area: close;
-
-      display: flex;
-      align-items: center;
-      padding-left: $spacing * 2;
-      height: $closeHeight;
-      background: $weinrot url("../img/pfeil_rot.svg") no-repeat left $spacing center;
-      background-size: 10px;
-      color: $font-color-accent;
-      font-size: $font-size;
-      font-family: $font-family-headline;
-      text-transform: uppercase;
-      cursor: pointer;
-
-      &:hover {
-        color: #fff;
-        background-image: url("../img/pfeil_weiss.svg");
-      }
-    }
-
     .mini-cart-content-featured {
-      grid-area: featured;
+      flex: 0 0 $widthLeft;
+
+      @media all and (max-width: $width) {
+        order: 2;
+        flex: unset;
+        max-height: unset;
+        overflow-y: hidden;
+        overflow-x: auto;
+        padding: $spacing;
+      }
+
       padding: $spacing-l $spacing $spacing $spacing;
       background-color: $beigegold;
     }
 
     .widget_shopping_cart_content {
-      grid-area: items;
+      flex: 0 0 $widthRight;
+
+      @media all and (max-width: $width) {
+        flex-shrink: 1;
+        order: 1;
+      }
+
       background-color: #fff;
 
       .mini-cart-stripes {
