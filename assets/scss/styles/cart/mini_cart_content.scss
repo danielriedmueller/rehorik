@@ -1,17 +1,17 @@
 #rehorik-mini-cart .mini-cart-content {
   background-color: #fff;
   box-shadow: -5px 0 20px 0 $anthrazit-opacity;
-  $widthLeft: 240px;
-  $widthRight: 420px;
-  $width: $widthLeft + $widthRight;
+
   $closeHeight: $menu-height;
-  transform: translateX($width);
+  transform: translateX($mini-cart-width);
   transition: transform var(--animation-time);
   position: absolute;
-  width: $width;
-  @media all and (max-width: $width) {
+  width: $mini-cart-width;
+
+  @media all and (max-width: $mini-cart-width) {
     width: 100%;
   }
+
   height: 100%;
   right: 0;
   top: 0;
@@ -23,6 +23,7 @@
     align-items: center;
     padding-left: $spacing * 2;
     height: $closeHeight;
+    flex: 0 0 $closeHeight;
     background: $weinrot url("../img/pfeil_rot.svg") no-repeat left $spacing center;
     background-size: 10px;
     color: $font-color-accent;
@@ -40,47 +41,16 @@
   > div:last-child {
     width: 100%;
     background-color: transparent;
-    display: flex;
-
-    @media all and (max-width: $width) {
-      flex-direction: column;
-    }
-
     max-height: calc(100vh - #{$closeHeight});
     overflow-y: auto;
     overflow-x: hidden;
 
-    .widget_shopping_cart_content,
     .mini-cart-content-featured {
-      max-height: calc(100vh - #{$closeHeight});
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-
-    .mini-cart-content-featured {
-      flex: 0 0 $widthLeft;
-
-      @media all and (max-width: $width) {
-        order: 2;
-        flex: unset;
-        max-height: unset;
-        overflow-y: hidden;
-        overflow-x: auto;
-        padding: $spacing;
-      }
-
-      padding: $spacing-l $spacing $spacing $spacing;
       background-color: $beigegold;
+      padding: $spacing 0 $spacing $spacing;
     }
 
     .widget_shopping_cart_content {
-      flex: 0 0 $widthRight;
-
-      @media all and (max-width: $width) {
-        flex-shrink: 1;
-        order: 1;
-      }
-
       background-color: #fff;
 
       .mini-cart-stripes {
@@ -162,6 +132,29 @@
             background-color: $anthrazit;
           }
         }
+      }
+    }
+
+    // Desktop view
+    @media all and (min-width: $mini-cart-width + 1) {
+      display: flex;
+
+      .widget_shopping_cart_content,
+      .mini-cart-content-featured {
+        max-height: calc(100vh - #{$closeHeight});
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .mini-cart-content-featured {
+        order: 1;
+        flex: 0 0 $mini-cart-left-width;
+        padding: $spacing-l $spacing $spacing $spacing;
+      }
+
+      .widget_shopping_cart_content {
+        order: 2;
+        flex: 0 0 $mini-cart-right-width;
       }
     }
   }

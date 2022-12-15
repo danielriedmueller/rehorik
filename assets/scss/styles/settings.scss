@@ -44,6 +44,10 @@ $very-small-breakpoint: 442px;
 $small-breakpoint: 767px;
 $medium-breakpoint: 1180px;
 
+$mini-cart-left-width: 240px;
+$mini-cart-right-width: 420px;
+$mini-cart-width: $mini-cart-left-width + $mini-cart-right-width;
+
 $spacing: 25px;
 $spacing-l: 35px;
 $spacing-xl: 50px;
