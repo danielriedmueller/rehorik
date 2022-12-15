@@ -20,17 +20,19 @@ $items = $reh_mini_cart->getReorderItems($userId);
             <?php else : ?>
                 <?php echo $item->getThumbnail() . $item->getName(); ?>
             <?php endif; ?>
-            <div><?= $item->getPrice() ?></div>
-            <div>
+            <div class="mini-cart-item-attributes">
                 <?php foreach ($item->getViewAttributes() as $attribute) {
                     echo $attribute;
                 } ?>
             </div>
-            <button class="add-to-cart-recent-order-item"
-                    data-product-id="<?= $item->getId() ?>"
-                    data-variation-id="<?= $item->getVariationId() ?>"
-                    data-attributes='<?= json_encode($item->getDataAttributes()) ?>'
-            ></button>
+            <div>
+                <button class="add-to-cart-recent-order-item"
+                        data-product-id="<?= $item->getId() ?>"
+                        data-variation-id="<?= $item->getVariationId() ?>"
+                        data-attributes='<?= json_encode($item->getDataAttributes()) ?>'
+                ></button>
+                <div class="mini-cart-item-price"><?= $item->getPrice() ?></div>
+            </div>
         </li>
     <?php endforeach; ?>
 </ul>

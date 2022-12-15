@@ -27,7 +27,7 @@
   }
 
   &.show.updated {
-    .mini-cart-content .widget_shopping_cart_content {
+    .mini-cart-content .mini-cart-content-shopping {
       #rehorik-mini-cart-update-message {
         display: block;
       }
@@ -35,12 +35,12 @@
   }
 
   &.loading {
-    .widget_shopping_cart_content {
+    .mini-cart-content-shopping {
       position: relative;
       pointer-events: none;
     }
 
-    .mini-cart-content .widget_shopping_cart_content #rehorik-mini-cart-update-message {
+    .mini-cart-content .mini-cart-content-shopping #rehorik-mini-cart-update-message {
       display: block;
       position: absolute;
       width: 100%;

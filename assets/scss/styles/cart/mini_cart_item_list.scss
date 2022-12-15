@@ -1,8 +1,109 @@
 ul.rehorik-mini-cart-item-list {
+  margin-top: $spacing-l;
   list-style-type: none;
 
   li.rehorik-mini-cart-item {
-    display: grid;
+    &:not(:last-child) {
+      padding-bottom: $spacing-l;
+      margin-bottom: $spacing-l;
+    }
 
+    img {
+      width: $cart-thumbnail-size;
+      height: $cart-thumbnail-size;
+      object-fit: cover;
+    }
+  }
+}
+
+.mini-cart-content-featured ul.rehorik-mini-cart-item-list {
+  li.rehorik-mini-cart-item {
+    &:not(:last-child) {
+      border-bottom: 1px solid #fff;
+    }
+
+    a {
+      font-weight: bold;
+
+      &:hover {
+        color: #fff;
+      }
+
+      img {
+        margin-bottom: $spacing-xxs;
+      }
+
+      margin-bottom: $spacing-xxs;
+    }
+
+    .mini-cart-item-attributes {
+      margin-bottom: $spacing-xxs;
+    }
+
+    div:last-child {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .mini-cart-item-price {
+        font-weight: bold;
+        margin-left: $spacing-xxs;
+      }
+
+      .added_to_cart.wc-forward {
+        display: none;
+      }
+
+      button.add-to-cart-recent-order-item {
+        cursor: pointer;
+        width: 55px;
+        height: 30px;
+        background: $anthrazit url("../img/cart/warenkorb-plus-white.svg") no-repeat center center;
+        background-size: 30px;
+        border-radius: $border-radius;
+        padding: $spacing;
+
+        &:hover {
+          background-image: url("../img/cart/warenkorb-plus.svg");
+        }
+      }
+    }
+  }
+}
+
+.mini-cart-content-shopping {
+  padding: $spacing;
+
+  ul.rehorik-mini-cart-item-list li.rehorik-mini-cart-item {
+    display: flex;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $beigegold;
+    }
+
+    .mini-cart-item-thumbnail {
+      margin: 0 $spacing-xs 0 0;
+
+      a {
+        height: $cart-thumbnail-size;
+        display: block;
+      }
+    }
+
+    .mini-cart-item-details {
+      width: $cart-thumbnail-size;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      > div:first-child > div:not(:last-child) {
+        margin-bottom: $spacing-xxs;
+      }
+
+      > div:last-child > div:last-child {
+        text-align: right;
+        font-weight: bold;
+      }
+    }
   }
 }
