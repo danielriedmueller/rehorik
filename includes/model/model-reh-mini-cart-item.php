@@ -169,7 +169,7 @@ class Reh_Mini_Cart_Item
     public function getViewAttributes(): array
     {
         return array_values(array_map(function ($attribute) {
-            return sprintf('%s: %s', $attribute->display_key, $attribute->display_value);
+            return strip_tags(sprintf('%s: %s', $attribute->display_key, $attribute->display_value));
         }, $this->attributes));
     }
 

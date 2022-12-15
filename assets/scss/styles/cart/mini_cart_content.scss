@@ -1,75 +1,161 @@
 #rehorik-mini-cart .mini-cart-content {
   background-color: #fff;
-  $widthLeft: 280px;
-  $widthRight: 450px;
-  $width: $widthLeft + $widthRight;
-  $closeHeight: 80px;
-  transform: translateX($width);
+  box-shadow: -5px 0 20px 0 $anthrazit-opacity;
+
+  $closeHeight: $menu-height;
+  transform: translateX($mini-cart-width);
   transition: transform var(--animation-time);
   position: absolute;
-  width: $width;
-  @media all and (max-width: $width) {
+  width: $mini-cart-width;
+
+  @media all and (max-width: $mini-cart-width) {
     width: 100%;
   }
+
   height: 100%;
   right: 0;
   top: 0;
+  display: flex;
+  flex-direction: column;
 
-  > div {
+  #mini-cart-close {
+    display: flex;
+    align-items: center;
+    padding-left: $spacing * 2;
+    height: $closeHeight;
+    flex: 0 0 $closeHeight;
+    background: $weinrot url("../img/pfeil_rot.svg") no-repeat left $spacing center;
+    background-size: 10px;
+    color: $font-color-accent;
+    font-size: $font-size;
+    font-family: $font-family-headline;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background-image: url("../img/pfeil_weiss.svg");
+    }
+  }
+
+  > div:last-child {
     width: 100%;
     background-color: transparent;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-            "close close"
-            "featured items"
-            "featured items";
+    max-height: calc(100vh - #{$closeHeight});
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    @media all and (max-width: $width) {
-      grid-template-areas:
-            "close"
-            "items"
-            "featured";
+    .mini-cart-content-featured {
+      background-color: $beigegold;
+      padding: $spacing 0 $spacing $spacing;
     }
 
-    .widget_shopping_cart_content,
-    .cart-content-featured {
-      padding: $spacing;
-      max-height: calc(100vh - #{$closeHeight});
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
+    .widget_shopping_cart_content {
+      background-color: #fff;
 
-    #mini-cart-close {
-      grid-area: close;
+      .mini-cart-stripes {
+        background: transparent url("../img/stripes.png") repeat-x center center;
+        text-align: center;
+        margin-top: $spacing-l;
 
-      height: $closeHeight;
-      border-bottom: 1px solid $beigegold;
-    }
+        h2 {
+          color: $font-color-accent;
+          background-color: #fff;
+          padding: $spacing-s;
+          display: inline;
+        }
+      }
 
-    .cart-content-featured {
-      grid-area: featured;
+      .mini-cart-subtotal {
+        padding: $spacing-l 0;
+        margin: $spacing-l 0;
+        border-bottom: 1px solid $beigegold;
+        border-top: 1px solid $beigegold;
 
-      button.add-to-cart-recent-order-item {
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        background: transparent url("../img/cart/warenkorb-plus.svg") no-repeat center center;
-        background-size: 30px;
-        border-radius: $border-radius;
+        > div:first-child, p.total.total-cart-tax.wc-gzd-total-mini-cart {
+          display: flex;
+          justify-content: space-between;
+          padding: 0;
+        }
 
-        &:hover {
-          background-image: url("../img/cart/warenkorb-plus-white.svg");
+        ul.woocommerce-shipping-methods {
+          list-style: none;
+
+          li {
+            margin: 0;
+            label {
+              width: 100%;
+              display: block;
+              position: relative;
+
+              .woocommerce-Price-amount.amount {
+                font-weight: normal;
+                position: absolute;
+                right: 0;
+              }
+
+              small {
+                font-size: $font-size;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+
+        .rehorik-shipping-rest-amount {
+          color: $beigegold;
+        }
+
+        p.shipping-costs-cart-info {
+          display: none;
+        }
+      }
+
+      .mini-cart-total {
+        margin-bottom: $spacing-l;
+        display: flex;
+        justify-content: space-between;
+        span {
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+
+      .mini-cart-buttons {
+        a {
+          width: 100%;
+          display: block;
+          padding: $spacing-xxs $spacing;
+
+          &:last-child {
+            margin-top: $spacing-xs;
+            background-color: $anthrazit;
+          }
         }
       }
     }
 
-    .widget_shopping_cart_content {
-      grid-area: items;
-    }
+    // Desktop view
+    @media all and (min-width: $mini-cart-width + 1) {
+      display: flex;
 
-    img {
-      width: 100px;
+      .widget_shopping_cart_content,
+      .mini-cart-content-featured {
+        max-height: calc(100vh - #{$closeHeight});
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .mini-cart-content-featured {
+        order: 1;
+        flex: 0 0 $mini-cart-left-width;
+        padding: $spacing-l $spacing $spacing $spacing;
+      }
+
+      .widget_shopping_cart_content {
+        order: 2;
+        flex: 0 0 $mini-cart-right-width;
+      }
     }
   }
 }

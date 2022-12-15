@@ -11,6 +11,7 @@ $lila: #2d253c;
 
 $font-family-body: "Cond", serif;
 $font-family-headline: "Cond Bold", serif;
+$font-family-bold: "Cond Black", serif;
 
 $font-color: $anthrazit;
 $font-color-accent: $beigegold;
@@ -42,6 +43,10 @@ $text-shadow: -1px -1px 0 $anthrazit, 1px -1px 0 $anthrazit, -1px 1px 0 $anthraz
 $very-small-breakpoint: 442px;
 $small-breakpoint: 767px;
 $medium-breakpoint: 1180px;
+
+$mini-cart-left-width: 240px;
+$mini-cart-right-width: 420px;
+$mini-cart-width: $mini-cart-left-width + $mini-cart-right-width;
 
 $spacing: 25px;
 $spacing-l: 35px;
