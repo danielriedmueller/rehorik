@@ -70,7 +70,7 @@ $eventInfos = [
     'whisky-events' => [
         'img' => 'header-veranstaltungen-spirits',
         'claim' => 'Natürlich, vielfältig, Whisk(e)y!',
-        'intro' => 'Whisk(e)y, die vielfältigste Spirituose überhaupt. Und das nur mit natürlichen Zutaten! Die Herstellung und oft auch die Zutaten sind je nach Land und Brennblase unterschiedlich. Wir verkosten einzigartige Tropfen und finden heraus: Schmeckt der Whisk(e)y eher mild und fruchtig oder kräftig und torfig? Spirituosenexperte Dominik versorgt Euch mit reichlich Background-Wissen.',
+        'intro' => 'Whisk(e)y, die vielfältigste Spirituose überhaupt. Und das nur mit natürlichen Zutaten! Die Herstellung und oft auch die Zutaten sind je nach Land und Brennblase unterschiedlich. Wir verkosten einzigartige Tropfen und finden heraus: Schmeckt der Whisk(e)y eher mild und fruchtig oder kräftig und torfig? Spirituosenexperte Julian versorgt Euch mit reichlich Background-Wissen.',
     ],
     'wein-events' => [
         'img' => 'header-veranstaltungen-wein',
