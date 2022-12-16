@@ -125,13 +125,13 @@
         <h2>Preis: <?= $args['price'] ?> €</h2>
     </div>
     <hr />
+    <h2>Das Bayernwerk wünscht frohe Weihnachten!</h2>
+    <hr />
     <div id="legal">
         <h2>Bitte beachten</h2>
-        <span>Der Gutschein ist nur im Onlineshop unter</span> <h3><a href="https://www.rehorik.de">www.rehorik.de</a></h3> <span>einlösbar.</span>
-        <p>Möchtest du den Gutschein lieber für Kaffee, Wein oder Spirits verwenden? Kein Problem! Der Gutschein ist für alle Produkte im Onlineshop einlösbar. Der Restwert bleibt erhalten.</p>
+        <span>Der Gutschein ist nur zur einmaligen Nutzung verwendbar. Ein Restwert bleibt nicht erhalten.</span>
+        <span>Er ist nur im Onlineshop unter</span> <h3><a href="https://www.rehorik.de">www.rehorik.de</a></h3> <span>einlösbar. Einfach an der Kasse oder im Warenkorb im entsprechenden Feld einlösen.</span>
         <p>
-            Der Gutschein ist unbegrenzt gültig und kann beliebig oft unter www.rehorik.de verwendet werden, solange ein Restwert vorhanden ist.
-            Über die Höhe des Restwerts, geben wir Dir gerne Auskunft. Schreibe uns dazu eine Mail an <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a>.
             Das Guthaben dieses Gutscheins wird nicht verzinst, vesteuert oder bar ausgezahlt.
             Bei Diebstahl, Verlust oder Unbrauchbarkeit leisten wir keinen Ersatz.
             Es gelten unsere allgemeinen Geschäftsbedingungen – diese können unter www.rehorik.de eingesehen werden.
