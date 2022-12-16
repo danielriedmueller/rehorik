@@ -125,14 +125,14 @@
         <h2>Preis: <?= $args['price'] ?> €</h2>
     </div>
     <hr />
-    <h2>Das Bayernwerk wünscht frohe Weihnachten!</h2>
+    <h2>bag2future wünscht frohe Weihnachten!</h2>
     <hr />
     <div id="legal">
         <h2>Bitte beachten</h2>
         <span>Der Gutschein ist nur zur einmaligen Nutzung verwendbar. Ein Restwert bleibt nicht erhalten.</span>
         <span>Er ist nur im Onlineshop unter</span> <h3><a href="https://www.rehorik.de">www.rehorik.de</a></h3> <span>einlösbar. Einfach an der Kasse oder im Warenkorb im entsprechenden Feld einlösen.</span>
         <p>
-            Das Guthaben dieses Gutscheins wird nicht verzinst, vesteuert oder bar ausgezahlt.
+            Das Guthaben dieses Gutscheins wird nicht verzinst, versteuert oder bar ausgezahlt.
             Bei Diebstahl, Verlust oder Unbrauchbarkeit leisten wir keinen Ersatz.
             <br>Es gelten unsere allgemeinen Geschäftsbedingungen.
         </p>
