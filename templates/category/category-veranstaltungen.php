@@ -70,7 +70,7 @@ $eventInfos = [
     'whisky-events' => [
         'img' => 'header-veranstaltungen-spirits',
         'claim' => 'Natürlich, vielfältig, Whisk(e)y!',
-        'intro' => 'Whisk(e)y, die vielfältigste Spirituose überhaupt. Und das nur mit natürlichen Zutaten! Die Herstellung und oft auch die Zutaten sind je nach Land und Brennblase unterschiedlich. Wir verkosten einzigartige Tropfen und finden heraus: Schmeckt der Whisk(e)y eher mild und fruchtig oder kräftig und torfig? Spirituosenexperte Dominik versorgt Euch mit reichlich Background-Wissen.',
+        'intro' => 'Whisk(e)y, die vielfältigste Spirituose überhaupt. Und das nur mit natürlichen Zutaten! Die Herstellung und oft auch die Zutaten sind je nach Land und Brennblase unterschiedlich. Wir verkosten einzigartige Tropfen und finden heraus: Schmeckt der Whisk(e)y eher mild und fruchtig oder kräftig und torfig? Spirituosenexperte Julian versorgt Euch mit reichlich Background-Wissen.',
     ],
     'wein-events' => [
         'img' => 'header-veranstaltungen-wein',
@@ -118,6 +118,9 @@ $eventInfos = [
         'img' => 'header-w-d-dv',
         'claim' => '5 Gänge, Sommelière & fette Beats',
         'intro' => 'Herzlich Willkommen zu unserem neuen Eventformat. Hier kombinieren wir all das, was wir wirklich gut können und lieben. Lasst Euch ein auf eine kulinarische Reise bei einem 5-Gänge Menü mit außergewöhnlichen Weinen. Anschließend servieren wir crazy Cocktails zu passende Beats in feinster Club-Atmosphäre.',
+    ],
+    'roestereifuehrungen' => [
+        'img' => 'header-roestereifuehrungen'
     ]
 ];
 

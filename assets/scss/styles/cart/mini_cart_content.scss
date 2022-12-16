@@ -102,7 +102,7 @@
           }
         }
 
-        .rehorik-shipping-rest-amount, #shipping_method label {
+        .rehorik-shipping-rest-amount, #shipping_method label[for*="free_shipping"] {
           color: $beigegold;
         }
 

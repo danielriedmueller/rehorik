@@ -79,7 +79,7 @@ do_action('woocommerce_before_mini_cart');
                                         false
                                     );
                                     echo apply_filters('woocommerce_widget_cart_item_quantity',
-                                        '<span class="quantity">' . $product_quantity . '</span>', $cart_item,
+                                        $product_quantity, $cart_item,
                                         $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                     ?>
                                 </div>
@@ -103,7 +103,12 @@ do_action('woocommerce_before_mini_cart');
 
             <div>
                 <?php wc_cart_totals_shipping_html(); ?>
-                <div class="rehorik-shipping-rest-amount"><?php do_action('render_rest_amount_for_free_shipping'); ?></div>
+                <div class="rehorik-shipping-rest-amount"><?php
+                    /**
+                     *
+                     * do_action('render_rest_amount_for_free_shipping');
+                     */
+                ?></div>
             </div>
 
             <?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
