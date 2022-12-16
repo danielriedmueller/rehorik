@@ -122,19 +122,19 @@
       }
 
       .mini-cart-buttons {
-        a {
+        a.button.wc-forward {
           width: 100%;
           display: block;
           padding: $spacing-xxs $spacing;
 
-          &:last-of-type {
+          &.checkout {
             margin-top: $spacing-xs;
             background-color: $anthrazit;
           }
         }
 
         // Hide PayPal button
-        p {
+        p, #wc-ppcp-minicart-ppcp {
           display: none;
         }
       }
