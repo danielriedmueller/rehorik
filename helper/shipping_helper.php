@@ -10,10 +10,19 @@ function getAmountTillFreeShipping(): float
 {
     $cart = WC()->cart;
     $totalPrice = 0;
+    $needsShipping = false;
     foreach ($cart->get_cart() as $product) {
-        /** @var WC_Product_Variation $variation */
-        $variation = $product['data'];
-        $totalPrice += ($variation->get_price('edit') * $product['quantity']);
+        /** @var WC_Product_Simple $data */
+        $data = $product['data'];
+        $totalPrice += ($data->get_price('edit') * $product['quantity']);
+
+        if ($data->needs_shipping()) {
+            $needsShipping = true;
+        }
+    }
+
+    if (!$needsShipping) {
+        return 0;
     }
 
     return getFreeShippingAmount() - $totalPrice;
@@ -21,5 +30,5 @@ function getAmountTillFreeShipping(): float
 
 function getShippingDurationMessage(): string
 {
-    return sprintf('%s <br /><small>Lieferzeit: %s</small>', $label, SHIPPING_DURATION_MESSAGE);
+    return sprintf('<br /><small>Lieferzeit: %s</small>', SHIPPING_DURATION_MESSAGE);
 }

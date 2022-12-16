@@ -36,6 +36,10 @@ ul.rehorik-mini-cart-item-list {
     @media all and (max-width: $mini-cart-width) {
       flex: 0 0 $cart-thumbnail-size;
 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
       &:not(:last-child) {
         border-bottom: none;
         border-right: 1px solid #fff;
@@ -63,6 +67,10 @@ ul.rehorik-mini-cart-item-list {
 
     .mini-cart-item-attributes {
       margin-bottom: $spacing-xxs;
+
+      &:empty {
+        display: none;
+      }
     }
 
     div:last-child {

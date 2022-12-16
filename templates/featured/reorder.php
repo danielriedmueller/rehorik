@@ -20,11 +20,7 @@ $items = $reh_mini_cart->getReorderItems($userId);
             <?php else : ?>
                 <?php echo $item->getThumbnail() . $item->getName(); ?>
             <?php endif; ?>
-            <div class="mini-cart-item-attributes">
-                <?php foreach ($item->getViewAttributes() as $attribute) {
-                    echo $attribute;
-                } ?>
-            </div>
+            <div class="mini-cart-item-attributes"><?php foreach ($item->getViewAttributes() as $attribute) {echo $attribute;} ?></div>
             <div>
                 <button class="add-to-cart-recent-order-item"
                         data-product-id="<?= $item->getId() ?>"
