@@ -118,12 +118,10 @@ do_action('woocommerce_before_mini_cart');
 
         <div class="mini-cart-buttons">
             <?php do_action('woocommerce_widget_shopping_cart_buttons'); ?>
-            <?php do_action('woocommerce_widget_shopping_cart_after_buttons'); ?>
         </div>
 
     <?php else : ?>
-        <p class="woocommerce-mini-cart__empty-message"><?php esc_html_e('No products in the cart.',
-                'woocommerce'); ?></p>
+        <p class="woocommerce-mini-cart__empty-message"><?php esc_html_e('No products in the cart.', 'woocommerce'); ?></p>
     <?php endif; ?>
 
     <?php do_action('woocommerce_after_mini_cart'); ?>

@@ -127,10 +127,15 @@
           display: block;
           padding: $spacing-xxs $spacing;
 
-          &:last-child {
+          &:last-of-type {
             margin-top: $spacing-xs;
             background-color: $anthrazit;
           }
+        }
+
+        // Hide PayPal button
+        p {
+          display: none;
         }
       }
     }
