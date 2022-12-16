@@ -103,7 +103,12 @@ do_action('woocommerce_before_mini_cart');
 
             <div>
                 <?php wc_cart_totals_shipping_html(); ?>
-                <div class="rehorik-shipping-rest-amount"><?php do_action('render_rest_amount_for_free_shipping'); ?></div>
+                <div class="rehorik-shipping-rest-amount"><?php
+                    /**
+                     *
+                     * do_action('render_rest_amount_for_free_shipping');
+                     */
+                ?></div>
             </div>
 
             <?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
