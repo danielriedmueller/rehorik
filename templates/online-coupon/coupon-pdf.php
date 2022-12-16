@@ -134,7 +134,7 @@
         <p>
             Das Guthaben dieses Gutscheins wird nicht verzinst, vesteuert oder bar ausgezahlt.
             Bei Diebstahl, Verlust oder Unbrauchbarkeit leisten wir keinen Ersatz.
-            Es gelten unsere allgemeinen Geschäftsbedingungen – diese können unter www.rehorik.de eingesehen werden.
+            Es gelten unsere allgemeinen Geschäftsbedingungen.
         </p>
     </div>
     <hr style="width: 1250px"/>
