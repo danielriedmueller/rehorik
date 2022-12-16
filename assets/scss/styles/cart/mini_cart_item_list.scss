@@ -33,12 +33,12 @@ ul.rehorik-mini-cart-item-list {
       border-bottom: 1px solid #fff;
     }
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     @media all and (max-width: $mini-cart-width) {
       flex: 0 0 $cart-thumbnail-size;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
 
       &:not(:last-child) {
         border-bottom: none;

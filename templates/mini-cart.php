@@ -1,4 +1,4 @@
-<div id="rehorik-mini-cart" class="show">
+<div id="rehorik-mini-cart">
     <div id="mini-cart-overlay"></div>
     <div class="mini-cart-content">
         <div id="mini-cart-close">Weiter einkaufen</div>
