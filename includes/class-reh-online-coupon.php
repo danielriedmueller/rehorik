@@ -46,9 +46,9 @@ class Reh_Online_Coupon
 
         ob_start();
         get_template_part('/templates/online-coupon/coupon-pdf', null, [
-            'code' => $code,
-            'price' => $price,
-            'name' => $name
+            'code' => BAYERNWERK_COUPON_CODE,
+            'price' => '15',
+            'name' => 'bag2future'
         ]);
         $dompdf->loadHtml(ob_get_clean());
         $dompdf->setPaper('A4');
