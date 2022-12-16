@@ -118,6 +118,9 @@ $eventInfos = [
         'img' => 'header-w-d-dv',
         'claim' => '5 Gänge, Sommelière & fette Beats',
         'intro' => 'Herzlich Willkommen zu unserem neuen Eventformat. Hier kombinieren wir all das, was wir wirklich gut können und lieben. Lasst Euch ein auf eine kulinarische Reise bei einem 5-Gänge Menü mit außergewöhnlichen Weinen. Anschließend servieren wir crazy Cocktails zu passende Beats in feinster Club-Atmosphäre.',
+    ],
+    'roestereifuehrungen' => [
+        'img' => 'header-roestereifuehrungen'
     ]
 ];
 

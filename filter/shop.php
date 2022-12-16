@@ -12,15 +12,6 @@ add_filter('body_class', function ($classes) {
     return $classes;
 });
 
-add_filter('woocommerce_checkout_fields', function ($fields) {
-    $fields['billing']['billing_address_1']['label'] = 'Straße und Hausnummer';
-    $fields['shipping']['shipping_address_1']['label'] = 'Straße und Hausnummer';
-    unset($fields['billing']['billing_address_2']);
-    unset($fields['shipping']['shipping_address_2']);
-
-    return $fields;
-});
-
 /**
  * Removes page title in content area.
  */
