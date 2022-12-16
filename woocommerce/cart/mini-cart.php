@@ -79,7 +79,7 @@ do_action('woocommerce_before_mini_cart');
                                         false
                                     );
                                     echo apply_filters('woocommerce_widget_cart_item_quantity',
-                                        '<span class="quantity">' . $product_quantity . '</span>', $cart_item,
+                                        $product_quantity, $cart_item,
                                         $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                     ?>
                                 </div>
