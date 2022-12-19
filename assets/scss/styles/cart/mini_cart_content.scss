@@ -146,7 +146,7 @@
 
       .widget_shopping_cart_content,
       .mini-cart-content-featured {
-        max-height: calc(100vh - #{$closeHeight});
+        height: calc(100vh - #{$closeHeight});
         overflow-y: auto;
         overflow-x: hidden;
       }
