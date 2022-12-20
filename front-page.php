@@ -4,7 +4,7 @@ get_template_part('templates/header/head', null, ['slider' => [
         'claim' => 'Versandkosten geschenkt',
         'img'=> 'header-xmas-versand',
         'buttons' => [
-            '/produkt-kategorie/onlineshop/' => 'Jetzt grenzenlos shoppen & Nachause liefern lassen'
+            '/produkt-kategorie/onlineshop/' => 'Jetzt grenzenlos shoppen & Nachhause liefern lassen'
         ]
     ],
     [

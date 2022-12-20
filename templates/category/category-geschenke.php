@@ -7,7 +7,7 @@ get_template_part('templates/header/head', null, [
             'claim' => 'Einfach für jeden Anlass!',
             'img' => 'header-geschenkkoerbe',
             'buttons' => [
-                '/produkt/heiliger-bimbam' => 'Etwas für unterm Baum gesucht?<br>Heiliger Bimbam',
+                '/produkt/santa-bohne' => 'Etwas für unterm Baum gesucht?<br>Santa Bohne',
             ],
         ],
     ],

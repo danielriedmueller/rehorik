@@ -9,7 +9,6 @@ function rehorik_add_to_cart(): void
     $product_id = absint($_POST['product_id']);
     $variation_id = absint($_POST['variation_id']);
     $product = wc_get_product($product_id);
-    $attributes = $_POST['attributes'];
     $product_url = apply_filters('woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id);
 
     if (!$product || !wp_verify_nonce($_POST['nonce'], 'rehorik-add-to-cart')) {
@@ -31,6 +30,7 @@ function rehorik_add_to_cart(): void
     if ('variable' === $type) {
         foreach ($product->get_variation_attributes() as $name => $values) {
             $attribute_key = 'attribute_' . sanitize_title($name);
+            $attributes = $_POST['attributes'] ?? [];
 
             foreach ($attributes as $attribute) {
                 if ($attribute['name'] === $attribute_key && in_array($attribute['value'], $values)) {
