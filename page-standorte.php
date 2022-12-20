@@ -36,8 +36,12 @@ get_template_part('templates/header/head', null, [
                                     <td>09:00 - 18:00</td>
                                 </tr>
                                 <tr>
-                                    <td>9., 15., 20.12</td>
+                                    <td>9. / 15. / 20.12</td>
                                     <td>09:00 - 17:00</td>
+                                </tr>
+                                <tr>
+                                    <td>24.12 / 31.12</td>
+                                    <td>09:00 - 14:00</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -57,6 +61,10 @@ get_template_part('templates/header/head', null, [
                                     <tr>
                                         <td>MO. - SO.</td>
                                         <td>09:00 - 18:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>24.12 / 31.12</td>
+                                        <td>09:00 - 13:00</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -85,6 +93,10 @@ get_template_part('templates/header/head', null, [
                                         <td>SA.</td>
                                         <td>09:00 - 18:00</td>
                                     </tr>
+                                    <tr>
+                                        <td>24.12 / 31.12</td>
+                                        <td>09:00 - 13:00</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </td>
@@ -111,6 +123,10 @@ get_template_part('templates/header/head', null, [
                                         <td>SA.</td>
                                         <td>09:00 - 18:00</td>
                                     </tr>
+                                    <tr>
+                                        <td>24.12 / 31.12</td>
+                                        <td>09:00 - 13:00</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </td>
@@ -124,6 +140,10 @@ get_template_part('templates/header/head', null, [
                                 <tr>
                                     <td>MO. - SA.</td>
                                     <td>09:30 - 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>24.12 / 31.12</td>
+                                    <td>09:30 - 13:00</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -142,6 +162,10 @@ get_template_part('templates/header/head', null, [
                                 <tr>
                                     <td>SA.</td>
                                     <td>10:00 - 18:00</td>
+                                </tr>
+                                <tr>
+                                    <td>24.12 / 31.12</td>
+                                    <td>10:00 - 13:00</td>
                                 </tr>
                                 </tbody>
                             </table>
