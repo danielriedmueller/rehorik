@@ -143,7 +143,7 @@ get_template_part('templates/header/head', null, [
                                 </tr>
                                 <tr>
                                     <td>24.12 / 31.12</td>
-                                    <td>09:30 - 13:00</td>
+                                    <td>09:30 - 14:00</td>
                                 </tr>
                                 </tbody>
                             </table>
