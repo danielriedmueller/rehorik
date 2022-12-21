@@ -36,7 +36,7 @@ table#locations-table {
     }
 
     > table tr td:first-child {
-      padding: 0 $spacing 0 0;
+      width: 90px + $spacing;
     }
   }
 
