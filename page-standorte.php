@@ -179,7 +179,7 @@ get_template_part('templates/header/head', null, [
                                 <tbody>
                                 <tr>
                                     <td>MO - FR.</td>
-                                    <td>08:00 - 16:00</td>
+                                    <td>08:00 - 15:00</td>
                                 </tr>
                                 </tbody>
                             </table>
