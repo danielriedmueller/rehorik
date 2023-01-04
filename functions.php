@@ -117,7 +117,6 @@ $priority = 1000;
 // In case of an child them use get stylesheet directory
 $baseDir = get_stylesheet_directory();
 
-require_once($baseDir . '/includes/class-tribe-tickets-plus-woocommerce-main.php');
 require_once($baseDir . '/includes/class-reh-online-coupon.php');
 require_once($baseDir . '/includes/class-reh-api-products.php');
 require_once($baseDir . '/includes/class-reh-mini-cart.php');
