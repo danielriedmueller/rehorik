@@ -58,6 +58,20 @@ add_filter('woocommerce_email_additional_content_customer_completed_order', func
     return $emailMessage;
 }, 10, 3);
 
+add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachments, string $email_id, $order) {
+    if ($email_id !== 'wootickets') {
+        return $attachments;
+    }
+
+    if (!($order instanceof WC_Order)) {
+        return $attachments;
+    }
+
+    // Add Pdf Tickets here
+
+    return $attachments;
+}, 10, 3);
+
 /**
  * Add coupon pdf attachment to email.
  */
