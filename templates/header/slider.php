@@ -4,6 +4,8 @@ $imgLargePathSuffix = '-1920x600px.jpg';
 $imgMediumPathSuffix = '-1080x600px.jpg';
 $imgSmallPathSuffix = '-375x485px.jpg';
 $imgPathSuffix = ')';
+
+$letItSnow = false;
 ?>
 <div class="slider-outer">
     <?php if (sizeof($args['items']) > 1) : ?>
@@ -67,11 +69,13 @@ $imgPathSuffix = ')';
             <?php endif; ?>
         </div>
     <?php endif; ?>
-    <div class="slider-snow">
-        <?php for ($i = 0; $i < 199; $i++): ?>
-            <div class="snowflake"></div>
-        <?php endfor; ?>
-    </div>
+    <?php if($letItSnow): ?>
+        <div class="slider-snow">
+            <?php for ($i = 0; $i < 199; $i++): ?>
+                <div class="snowflake"></div>
+            <?php endfor; ?>
+        </div>
+    <?php endif; ?>
 </div>
 <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
 

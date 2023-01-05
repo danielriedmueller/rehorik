@@ -12,7 +12,7 @@
             <div>
                 <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#stammhaus"><img alt="Standort Stammhaus" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/footer-standorte-320x213px-stammhaus.jpg' ?>"></a>
                 <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#stammhaus"><h3>Stammhaus</h3></a>
-                <p>Mit <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#kaffeeroesterei">Kaffeerösterei</a> | <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#cafe190">Café 190°</a> | <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#kaffeeladen">Kafeeladen</a> | <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#weinkeller">Weinkeller</a></p>
+                <p>Mit <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#kaffeeroesterei">Kaffeerösterei</a> | <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#cafe190">Café 190°</a> | <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#kaffeeladen">Kaffeeladen</a> | <a href="<?= get_page_link(STANDORTE_PAGE_ID) ?>#weinkeller">Weinkeller</a></p>
                 <p>Am Brixener Hof 6</p>
                 <p>93047 Regensburg</p>
             </div>

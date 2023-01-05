@@ -1,0 +1,28 @@
+#jobs {
+  > div {
+    &:nth-child(2) {
+      background-color: $beigegold;
+    }
+
+    > div {
+      text-align: center;
+      max-width: $max-width-small;
+      margin: auto;
+      padding: $spacing-xl 0;
+
+      @media all and (max-width: $medium-breakpoint) {
+        flex-direction: column;
+        padding: $spacing-l var(--section-spacing-left-right);
+      }
+
+      h2 {
+        margin-bottom: $spacing-s;
+      }
+
+      a.button {
+        margin-top: $spacing-s;
+        display: inline-block;
+      }
+    }
+  }
+}

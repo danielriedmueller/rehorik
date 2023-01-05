@@ -16,8 +16,8 @@ get_template_part('templates/rehorik-locations');
             <div>
                 <div>
                     <h3>Zahlungsarten</h3>
-                    <p>Vorkasse, Paypal</p>
-                    <p>Lastschrift, Kreditkarte</p>
+                    <p>Vorkasse</p>
+                    <p>Paypal, Kreditkarte</p>
                 </div>
             </div>
             <div>
@@ -26,7 +26,8 @@ get_template_part('templates/rehorik-locations');
                     <p>Wir versenden mit DHL</p>
                     <p><img alt="Logo DHL"
                             src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-dhl.svg' ?>"></p>
-                    <p>Versandkosten geschenkt</p>
+                    <p>Versandkosten: 5,80 €</p>
+                    <p>Kostenloser Versand ab: <?= FREE_SHIPPING_AMOUNT ?> €</p>
                     <p><small>* Alle Preise sind inkl. MwSt., zzgl. Versand</small></p>
                 </div>
             </div>
