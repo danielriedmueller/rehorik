@@ -71,7 +71,6 @@
 
     const updateCart = (e) => {
         // Is there a submit button?
-        console.log('updateCart');
         $submitButton = $('button[name="update_cart"]');
         if ($submitButton.length) {
             $submitButton.trigger('click');
