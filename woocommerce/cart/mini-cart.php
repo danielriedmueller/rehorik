@@ -69,6 +69,7 @@ do_action('woocommerce_before_mini_cart');
                                     <?php
                                     $product_quantity = woocommerce_quantity_input(
                                         array(
+                                            'classes' => 'ajax-update',
                                             'input_name' => $cart_item_key,
                                             'input_value' => $cart_item['quantity'],
                                             'max_value' => $item->getMaxPurchaseQuantity(),
