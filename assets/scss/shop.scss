@@ -35,7 +35,6 @@
 @import "styles/product/information";
 @import "styles/category/category";
 @import "styles/category/custom_category_page";
-@import "styles/category/lieferservice_category_page";
 @import "styles/category/veranstaltungen_category_page";
 @import "styles/product_search";
 @import "styles/page_title";
@@ -66,7 +65,6 @@
 @import "styles/page/timeline";
 @import "styles/product/mahlgrade";
 @import "styles/product/goes_with";
-@import "styles/events/upcoming_events";
 @import "styles/product/add_to_cart_message";
 @import "styles/user/orders";
 @import "styles/user/myaccount_navigation";
@@ -87,6 +85,7 @@
 @import "styles/cart/mini_cart_content";
 @import "styles/cart/mini_cart_item_list";
 @import "styles/page/jobs";
+@import "styles/category/frontpage_categories";
 
 @font-face {
   font-family: "Cond";

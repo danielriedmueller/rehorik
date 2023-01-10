@@ -15,7 +15,7 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
         'start_date'     => 'now',
     ]);
 
-    $html = '<div class="rehorik-upcoming-events">';
+    $html = '<div class="frontpage-category-action">';
 
     foreach ($events as $event) {
         /** @var WP_Post $event */
@@ -47,6 +47,19 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
         );
     }
     $html .= '</div>';
+
+    echo $html;
+}, 10, 1);
+
+/**
+ * Add machine consultation appointment button to frontpage category pane
+ */
+add_action('woocommerce_after_subcategory', function(WP_Term $category) {
+    if (!is_front_page() || $category->slug !== MACHINE_CATEGORY_SLUG) {
+        return;
+    }
+
+    $html = '<div class="frontpage-category-action"><a class="button" target="_blank" href="https://app.resmio.com/rehorik-maschinenberatung/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Jetzt Beratungstermin vereinbaren</a></div>';
 
     echo $html;
 }, 10, 1);

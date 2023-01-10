@@ -1,0 +1,66 @@
+.home ul.rehorik-products.products {
+  li.product-category.product div.frontpage-category-action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+  }
+
+  // Machine consulting appoinment
+  li.maschinen-equipment.product-category.product {
+    div.frontpage-category-action {
+      text-align: center;
+      top: 45%;
+
+      a.button {
+        padding: $spacing-xxs $spacing-xs;
+      }
+    }
+  }
+
+  // Upcoming Events
+  li.veranstaltungen.product-category.product {
+    div.frontpage-category-action {
+      padding: $spacing-s;
+      height: 0;
+
+      > a {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+
+        &:hover > span {
+          text-decoration: underline;
+        }
+
+        span {
+          color: $font-color-accent-dark;
+          font-size: $font-size-small;
+          font-family: $font-family-headline;
+          font-weight: normal;
+          white-space: nowrap;
+          padding: 0 2px;
+
+          &:first-child {
+            margin-right: $spacing-xs;
+            flex-shrink: 0;
+          }
+
+          &:last-child {
+            flex-shrink: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0;
+          }
+        }
+
+        &.tickets-not-available span {
+          color: $font-color-accent;
+          opacity: $opacity;
+          text-shadow: none;
+        }
+      }
+    }
+  }
+}

@@ -90,6 +90,7 @@ get_template_part('templates/cart-header');
 						} else {
 							$product_quantity = woocommerce_quantity_input(
 								array(
+                                    'classes' => 'ajax-update',
 									'input_name'   => "cart[{$cart_item_key}][qty]",
 									'input_value'  => $cart_item['quantity'],
 									'max_value'    => $_product->get_max_purchase_quantity(),

@@ -154,6 +154,6 @@
     }
 
     $(document).on('click', 'button.single_add_to_cart_button:not(.disabled)', addToCart);
-    $(document).on('change', 'select.rehorik-quantity:not(.disabled)', updateCart);
+    $(document).on('change', 'select.rehorik-quantity.ajax-update:not(.disabled)', updateCart);
     $(document).on('click', 'button.add-to-cart-recent-order-item', addToCartRecentOrderItem);
 })(jQuery);
