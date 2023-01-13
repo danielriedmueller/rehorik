@@ -63,7 +63,8 @@ class Reh_Product_Feed
      */
     private function saveToCsv(string $filename, array $products): void
     {
-        $path = wp_upload_dir()['basedir'];
+        $path = wp_upload_dir();
+        $path = $path['basedir'] . '/reh-feed/';
 
         if (!is_dir($path)) {
             if (!mkdir($path)) {
