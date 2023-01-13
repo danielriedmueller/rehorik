@@ -72,7 +72,7 @@ class Reh_Product_Feed
             }
         }
 
-        $path = $path . '/reh-feed/' . $filename;
+        $path = $path . 'reh-feed/' . $filename;
 
         if (!is_writable($path) ) {
             throw new Exception($path . ' is not writable');
