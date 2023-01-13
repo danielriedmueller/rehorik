@@ -120,6 +120,7 @@ require_once($baseDir . '/includes/class-tribe-tickets-plus-woocommerce-main.php
 require_once($baseDir . '/includes/class-reh-online-coupon.php');
 require_once($baseDir . '/includes/class-reh-api-products.php');
 require_once($baseDir . '/includes/class-reh-mini-cart.php');
+require_once($baseDir . '/includes/class-reh-product-feed.php');
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');

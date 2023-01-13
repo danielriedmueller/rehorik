@@ -10,7 +10,7 @@ add_action('admin_menu', function () {
             <button class="rehorik-admin-action-button" data-action="hide_past_event_tickets">Hide Past Event Tickets</button>
             <button disabled class="rehorik-admin-action-button" data-action="update_tickets_date">Update All Tickets</button>
             <button class="rehorik-admin-action-button" data-action="create_test_coupon">Create Test Coupon</button>
-            <button class="rehorik-admin-action-button" data-action="send_test_mail">Send Test Mail</button>
+            <button class="rehorik-admin-action-button" data-action="create_product_feeds">Create Product Feeds</button>
         </div>
         <?php
     }, null, 3);
@@ -23,8 +23,15 @@ add_action('admin_enqueue_scripts', function ($hook) {
     }
 });
 
-add_action('wp_ajax_send_test_mail', function () {
+add_action('wp_ajax_create_product_feeds', function () {
+    $productFeed = Reh_Product_Feed::instance();
 
+    try {
+        $productFeed->reh_feed();
+        echo "OK";
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
 });
 
 add_action('wp_ajax_create_test_coupon', function () {
