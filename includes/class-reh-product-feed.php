@@ -67,14 +67,14 @@ class Reh_Product_Feed
         $path = $path['basedir'] . '/reh-feed/';
 
         if (!is_dir($path)) {
-            if (!mkdir($path)) {
+            if (!wp_mkdir_p($path)) {
                 throw new Exception('Cannot create directory');
             }
         }
 
-        $path = $path . '/reh-feed/' . $filename;
+        $path = trailingslashit($path) . $filename;
 
-        if (!is_writable($path) ) {
+        if (!is_writable($path)) {
             throw new Exception($path . ' is not writable');
         }
 
