@@ -8,7 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 jQuery.post(ajaxurl, {
                     'action': action,
                 }, function(response) {
-                    status.innerHTML = response;
+                    if (response.success) {
+                        status.innerHTML = 'Done!';
+
+                        if (response.data) {
+                            if (response.data.refresh) {
+                                location.reload();
+                            }
+                        }
+                    } else {
+                        status.innerHTML = 'Error: ' + response.data;
+                    }
                 });
             }
         }
