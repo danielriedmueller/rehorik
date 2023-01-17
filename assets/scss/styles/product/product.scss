@@ -69,7 +69,6 @@
 
   .rehorik-product-view-title-price {
     grid-area: title-price;
-    max-width: 400px;
 
     h1.product_title {
       color: $font-color-accent;
@@ -86,6 +85,7 @@
       font-size: $font-size-large;
       line-height: $line-height-small;
       text-transform: uppercase;
+      margin-top: $spacing-xs;
     }
 
     p.price {
