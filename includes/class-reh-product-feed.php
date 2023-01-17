@@ -1,9 +1,15 @@
 <?php
+if (!class_exists(Reh_Product_Feed::class)) {
+    return;
+}
 
 class Reh_Product_Feed
 {
     // Fields from plugin Germanized
-    const GERMANIZED_FIELDS = ['unit_amount', 'unit_regular_price', 'unit'];
+    private const GERMANIZED_FIELDS = ['unit_amount', 'unit_regular_price', 'unit'];
+
+    const CRON_HOOK = 'reh_product_feed';
+    const DIR_NAME = 'reh-feed';
 
     protected static $_instance = null;
 
@@ -15,7 +21,65 @@ class Reh_Product_Feed
         return self::$_instance;
     }
 
-    public function reh_feed()
+    private function __construct()
+    {
+        add_action(self::CRON_HOOK, [$this, 'updateFeed']);
+    }
+
+    /**
+     * @throws Exception
+     */
+    public static function activate(): void
+    {
+        self::checkWritable();
+
+        if (wp_next_scheduled(self::CRON_HOOK)) {
+            throw new Exception('Product feed is already active');
+        }
+
+        add_action(self::CRON_HOOK, [self::class, 'updateFeed']);
+
+        $error = wp_schedule_event(time(), 'hourly', self::CRON_HOOK, [], true);
+
+        if ($error instanceof WP_Error) {
+            throw new Exception($error->get_error_message());
+        }
+    }
+
+    /**
+     * @throws Exception
+     */
+    public static function deactivate(): void
+    {
+        $error = wp_clear_scheduled_hook(self::CRON_HOOK, [], true);
+
+        if ($error instanceof WP_Error) {
+            throw new Exception($error->get_error_message());
+        }
+    }
+
+    /**
+     * @throws Exception
+     */
+    private static function checkWritable(): void
+    {
+        $path = wp_upload_dir();
+        $path = $path['basedir'] . '/' . self::DIR_NAME . '/';
+
+        if (!is_dir($path)) {
+            if (!wp_mkdir_p($path)) {
+                throw new Exception('Cannot create directory');
+            }
+        }
+
+        $path = trailingslashit($path);
+
+        if (!is_writable($path)) {
+            throw new Exception($path . ' is not writable');
+        }
+    }
+
+    public function updateFeed(): void
     {
         $productIds = [14018, 1313, 28571, 29236, 18738];
 
@@ -64,21 +128,21 @@ class Reh_Product_Feed
     private function saveToCsv(string $filename, array $products): void
     {
         $path = wp_upload_dir();
-        $path = $path['basedir'] . '/reh-feed/';
+        $path = $path['basedir'] . '/' . self::DIR_NAME . '/';
 
         if (!is_dir($path)) {
-            if (!mkdir($path)) {
+            if (!wp_mkdir_p($path)) {
                 throw new Exception('Cannot create directory');
             }
         }
 
-        $path = $path . $filename;
+        $path = trailingslashit($path);
 
-        if (!is_writable($path) ) {
+        if (!is_writable($path)) {
             throw new Exception($path . ' is not writable');
         }
 
-        $fp = fopen($path, 'w');
+        $fp = fopen($path . $filename, 'w');
 
         foreach ($products as $fields) {
             fputcsv($fp, $fields);

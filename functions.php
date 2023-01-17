@@ -166,6 +166,10 @@ add_action('init', function () {
     ]);
 });
 
+add_action('admin_init', function () {
+    Reh_Product_Feed::instance();
+});
+
 /**
  * Adds search widget area
  */
