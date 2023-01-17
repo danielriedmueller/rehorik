@@ -94,16 +94,17 @@ class Reh_Product_Feed
 
     public function updateFeed(): void
     {
-        $productIds = [14018, 1313, 28571, 29236, 18738];
-
         $args = [
             'limit' => -1,
             'virtual' => false,
             'status' => 'publish',
-            'include' => $productIds
+            'stock_status' => 'instock',
+            'category' => ['kaffee', 'spirits', 'wein'],
         ];
 
         $this->updateFeedForAtalanda($args);
+        $this->updateFeedForGoogleMerchant($args);
+        $this->updateFeedForInstagram($args);
     }
 
     public function updateFeedForAtalanda(array $args): void
@@ -124,7 +125,49 @@ class Reh_Product_Feed
 
         $products = $this->queryProducts($args, $fields);
 
-        $this->saveToCsv('reh-atalanda-feed.csv', $products);
+        $this->saveToCsv('atalanda-feed.csv', $products);
+    }
+
+    public function updateFeedForGoogleMerchant(array $args): void
+    {
+        $fields = array_merge(
+            [
+                'id',
+                'image',
+                'description',
+                'short_description',
+                'name',
+                'sku',
+                'stock_quantity',
+                'regular_price'
+            ],
+            self::GERMANIZED_FIELDS
+        );
+
+        $products = $this->queryProducts($args, $fields);
+
+        $this->saveToCsv('google-merchant-feed.csv', $products);
+    }
+
+    public function updateFeedForInstagram(array $args): void
+    {
+        $fields = array_merge(
+            [
+                'id',
+                'image',
+                'description',
+                'short_description',
+                'name',
+                'sku',
+                'stock_quantity',
+                'regular_price'
+            ],
+            self::GERMANIZED_FIELDS
+        );
+
+        $products = $this->queryProducts($args, $fields);
+
+        $this->saveToCsv('instagram-feed.csv', $products);
     }
 
     private function queryProducts($args, $fields): array

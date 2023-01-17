@@ -20,6 +20,7 @@ class Reh_Api_Products
 
         // Limit products query to specific category
         if (isset($parameters['category'])) {
+            // TODO: check array a output parameter
             $term = get_term($parameters['category'], 'product_cat', ARRAY_A);
             if ($catSlug = $term['slug'] ?? null) {
                 $args['category'] = $catSlug;
