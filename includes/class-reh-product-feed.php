@@ -58,21 +58,34 @@ class Reh_Product_Feed
         }
     }
 
+    public static function getFeedUrl(): string
+    {
+        $path = wp_upload_dir();
+        $path = $path['baseurl'] . '/' . self::DIR_NAME . '/';
+
+        return trailingslashit($path);
+    }
+
+    public static function getFeedPath(): string
+    {
+        $path = wp_upload_dir();
+        $path = $path['basedir'] . '/' . self::DIR_NAME . '/';
+
+        return trailingslashit($path);
+    }
+
     /**
      * @throws Exception
      */
     private static function checkWritable(): void
     {
-        $path = wp_upload_dir();
-        $path = $path['basedir'] . '/' . self::DIR_NAME . '/';
+        $path = self::getFeedPath();
 
         if (!is_dir($path)) {
             if (!wp_mkdir_p($path)) {
                 throw new Exception('Cannot create directory');
             }
         }
-
-        $path = trailingslashit($path);
 
         if (!is_writable($path)) {
             throw new Exception($path . ' is not writable');
@@ -127,20 +140,8 @@ class Reh_Product_Feed
      */
     private function saveToCsv(string $filename, array $products): void
     {
-        $path = wp_upload_dir();
-        $path = $path['basedir'] . '/' . self::DIR_NAME . '/';
-
-        if (!is_dir($path)) {
-            if (!wp_mkdir_p($path)) {
-                throw new Exception('Cannot create directory');
-            }
-        }
-
-        $path = trailingslashit($path);
-
-        if (!is_writable($path)) {
-            throw new Exception($path . ' is not writable');
-        }
+        $path = self::getFeedPath();
+        self::checkWritable();
 
         $fp = fopen($path . $filename, 'w');
 

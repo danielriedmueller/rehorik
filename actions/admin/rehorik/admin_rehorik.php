@@ -12,6 +12,8 @@ add_action('admin_enqueue_scripts', function ($hook) {
 // Add admin page
 add_action('admin_menu', function () {
     add_menu_page('Rehorik', 'Rehorik', 'administrator', 'rehorik-admin', function () {
+        $nextFeed = wp_next_scheduled(Reh_Product_Feed::CRON_HOOK);
+        $feeds = array_diff(scandir(Reh_Product_Feed::getFeedPath()), array('.', '..'));
         ?>
         <h2>Rehorik Admin</h2>
         <div style="margin-top: 20px">
@@ -23,14 +25,41 @@ add_action('admin_menu', function () {
         </div>
         <div style="margin-top: 20px">
             <fieldset>
-                <legend>Product Feed -> <?php if ($nextEvent = wp_next_scheduled(Reh_Product_Feed::CRON_HOOK)) {
-                        echo '<span style="color: green">active (' . date('d.m.Y H:i:s', $nextEvent) . ')</span>';
+                <legend>Product Feed -> <?php if ($nextFeed) {
+                        echo '<span style="color: green">active (' . date('d.m.Y H:i:s', $nextFeed) . ')</span>';
                     } else {
                         echo '<span style="color: red">inactive</span>';
                     } ?>
                 </legend>
-                <button class="rehorik-admin-action-button" data-action="activate_product_feeds">Activate</button>
-                <button class="rehorik-admin-action-button" data-action="deactivate_product_feeds">Deactivate</button>
+                <button class="rehorik-admin-action-button" data-action="create_product_feeds">Update now</button>
+                <?php if ($nextFeed): ?>
+                    <button class="rehorik-admin-action-button" data-action="deactivate_product_feeds">Deactivate
+                        Schedule
+                    </button>
+                <?php else: ?>
+                    <button class="rehorik-admin-action-button" data-action="activate_product_feeds">Activate Schedule
+                    </button>
+                <?php endif; ?>
+                <div>
+                    <h3>Feeds</h3>
+                    <ul>
+                        <?php foreach ($feeds as $feed): ?>
+                            <li>
+                                <a href="<?= Reh_Product_Feed::getFeedUrl() . $feed; ?>"
+                                   target="_blank"><?= $feed ?></a>
+                                <span>
+                                    <?php
+                                    if ($changed = filemtime(Reh_Product_Feed::getFeedPath() . $feed)) {
+                                        echo date('d.m.Y H:i:s', $changed);
+                                    } else {
+                                        echo 'unknown';
+                                    }
+                                    ?>
+                                </span>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
             </fieldset>
         </div>
         <div style="margin-top: 20px">
