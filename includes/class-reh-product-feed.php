@@ -11,16 +11,20 @@ class Reh_Product_Feed
 
     public function __construct()
     {
-        /**
-         * $this->loader->add_action( 'admin_init', $plugin_admin, 'register_weekly_cron');
-         * $this->loader->add_action('rex_feed_weekly_update', $plugin_admin, 'activate_weekly_update');
+        $this->registerHooks();
+    }
 
-        $this->define_admin_hooks();
-         if( ! wp_next_scheduled( 'rex_feed_weekly_update' ) ) {
-        wp_schedule_event( time(), 'weekly', 'rex_feed_weekly_update' );
-         $error = wp_schedule_event(time(), 'daily', 'reh_feed_daily', true);
+    private function registerHooks(): void
+    {
+        add_action('admin_init', [$this, 'registerCron']);
+        add_action(self::CRON_HOOK, [$this, 'updateFeed']);
+    }
+
+    private function registerCron(): void
+    {
+        if (!wp_next_scheduled(self::CRON_HOOK)) {
+            wp_schedule_event(time(), 'daily', self::CRON_HOOK);
         }
-         **/
     }
 
     public static function instance()
@@ -31,7 +35,7 @@ class Reh_Product_Feed
         return self::$_instance;
     }
 
-    public function reh_feed()
+    private function updateFeed()
     {
         $productIds = [14018, 1313, 28571, 29236, 18738];
 
