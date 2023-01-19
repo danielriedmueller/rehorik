@@ -311,7 +311,7 @@ get_template_part('templates/header/head', null, [
                     </tr>
                     <tr>
                         <td>SA.</td>
-                        <td>09:00 - 18:00 Uhr</td>
+                        <td>09:00 - 16:00 Uhr</td>
                     </tr>
                     <tr>
                         <td>SO.</td>
