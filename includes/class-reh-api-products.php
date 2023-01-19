@@ -20,6 +20,7 @@ class Reh_Api_Products
 
         // Limit products query to specific category
         if (isset($parameters['category'])) {
+            // TODO: check array a output parameter
             $term = get_term($parameters['category'], 'product_cat', ARRAY_A);
             if ($catSlug = $term['slug'] ?? null) {
                 $args['category'] = $catSlug;
@@ -85,10 +86,12 @@ class Reh_Api_Products
         return array_map(function (WC_Product_Simple $product) use ($fields) {
             $result = [];
 
+            $data = $product->get_data();
+
             foreach ($fields as $field) {
                 $result[$field] = in_array($field, self::GERMANIZED_FIELDS)
                     ? $this->getGermanizedFieldValue($field, $product)
-                    : $product->get_data()[$field];
+                    : $data[$field];
             }
 
             return $result;
@@ -117,13 +120,14 @@ class Reh_Api_Products
                     continue;
                 }
 
+                $data = $variation->get_data();
                 $variationData = [];
                 foreach ($fields as $field) {
                     if ($field === 'category_ids') continue;
 
                     $variationData[$field] = in_array($field, self::GERMANIZED_FIELDS)
                         ? $this->getGermanizedFieldValue($field, $variation)
-                        : $variation->get_data()[$field];
+                        : $data[$field];
                 }
                 $variationData['category_ids'] = $categories;
 
