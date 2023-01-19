@@ -174,7 +174,7 @@ class Reh_Product_Feed
         foreach ($products as $product) {
             $child = $channel->addChild('item');
             $child->addChild('id', $product['id'], $googleNS);
-            $child->addChild('title', '<![CDATA[' . $product['name'] . ']]>');
+            $child->addChild('title', $product['name']);
             $child->addChild('description', '<![CDATA[' . $product['description'] . ']]>');
             $child->addChild('link', get_permalink($product['id']));
             $child->addChild('image_link', $product['image'], $googleNS);
@@ -216,7 +216,7 @@ class Reh_Product_Feed
         foreach ($products as $product) {
             $child = $channel->addChild('item');
             $child->addChild('id', $product['id'], $ns);
-            $child->addChild('title', '<![CDATA[' . $product['name'] . ']]>', $ns);
+            $child->addChild('title', $product['name'], $ns);
             $child->addChild('description', '<![CDATA[' . $product['description'] . ']]>', $ns);
             $child->addChild('link', get_permalink($product['id']), $ns);
             $child->addChild('image_link', $product['image'], $ns);
@@ -399,11 +399,11 @@ class Reh_Product_Feed
         foreach ($products as $product) {
             $ganzeBohne = $product;
 
-            $product['name'] .= '- gemahlen';
+            $product['name'] .= ' - gemahlen';
             $product['id'] .= 'gemahlen';
             $product['parent_id'] .= 'gemahlen';
 
-            $ganzeBohne['name'] .= '- ganze Bohne';
+            $ganzeBohne['name'] .= ' - ganze Bohne';
             $ganzeBohne['id'] .= 'ganzebohne';
             $ganzeBohne['parent_id'] .= 'ganzebohne';
 
