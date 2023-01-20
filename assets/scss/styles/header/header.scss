@@ -1,0 +1,83 @@
+// transparent header
+@media all and (min-width: $medium-breakpoint + 1) {
+  body.rehorik.has-slider {
+    #page-container {
+      padding-top: 0;
+
+      .rehorik-header-outer {
+        top: $menu-gap-to-top;
+
+        header.rehorik-header {
+          background-color: transparent;
+
+          @for $i from 1 through 218 {
+            &[data-ypos="#{$i}"] {
+              background-color: rgba(92, 13, 47, $i / 100);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+header.rehorik-header {
+  position: fixed;
+  width: 100%;
+  background-color: $weinrot;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  padding-left: var(--section-spacing-left-right);
+  padding-right: var(--section-spacing-left-right);
+  height: $menu-height;
+
+  .hamburger, input#burger-button, input#burger-button:checked ~ .menu-hauptmenue-container {
+    display: block;
+  }
+
+  @media all and (min-width: $medium-breakpoint + 1) {
+    position: sticky;
+    justify-content: center;
+    padding: 0;
+    height: $menu-height;
+    flex-direction: row;
+
+    .hamburger, input#burger-button {
+      display: none;
+    }
+  }
+
+  top: 0;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+
+  .rehorik-cart-info {
+    background: transparent url("../img/cart/warenkorb.svg") no-repeat center center;
+    background-size: $menu-icon-size;
+    width: $menu-icon-size;
+    height: $menu-icon-size;
+    padding-left: $spacing;
+    padding-right: $spacing;
+  }
+}
+
+.rehorik-header-outer {
+  @media all and (min-width: $medium-breakpoint + 1) {
+    $height: $menu-height + $section-spacing;
+    position: absolute;
+    height: calc(100% - #{$height});
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    pointer-events: none;
+
+    > * {
+      pointer-events: auto;
+    }
+  }
+}
+
+body.admin-bar header.rehorik-header {
+  top: 32px;
+}

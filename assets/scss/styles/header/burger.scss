@@ -1,0 +1,126 @@
+@media all and (max-width: $medium-breakpoint) {
+  header.rehorik-header {
+    input#burger-button {
+      margin-left: -33px;
+      opacity: 0;
+      width: $menu-icon-size;
+      height: $menu-icon-size;
+      z-index: 20;
+    }
+
+    .hamburger {
+      background: transparent url("../img/menue-16px.svg") no-repeat center center;
+      background-size: $menu-icon-size;
+      width: $menu-icon-size;
+      height: $menu-icon-size;
+      padding-left: $spacing;
+      padding-right: $spacing;
+      z-index: 10;
+    }
+
+    .rehorik-product-search-widget {
+      position: absolute;
+      left: 0;
+
+      &::after, .rehorik-product-search-form {
+        left: 0;
+        right: unset;
+        width: 100vw;
+        border-bottom-left-radius: $border-radius;
+      }
+    }
+
+    .menu-hauptmenue-container {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-height: 100vh;
+      overflow: scroll;
+      background-color: $weinrot;
+      background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
+      background-repeat: no-repeat, repeat;
+      background-position: left top, right bottom;
+      background-size: 100%;
+      width: 100%;
+
+      ul.menu {
+        flex-direction: column;
+        background-color: transparent;
+
+        > li {
+          background-color: transparent;
+        }
+
+        li.menu-item-has-children {
+          background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right var(--section-spacing-left-right);
+          background-size: 10px;
+          $item-spacing: $spacing-xs;
+          padding-top: $item-spacing;
+          padding-bottom: $item-spacing;
+
+          > a {
+            width: -moz-fit-content;
+            width: fit-content;
+            pointer-events: none;
+          }
+
+          > ul.sub-menu {
+            pointer-events: none;
+          }
+
+          &:hover {
+            height: auto;
+            background: rgba(206, 182, 127, 0.9) url("../img/pfeil-rot-oben.svg") no-repeat top 30px right var(--section-spacing-left-right);
+            background-size: 10px;
+
+            a {
+              color: $weinrot;
+            }
+
+            > ul.sub-menu {
+              pointer-events: all;
+              padding-top: 0;
+              padding-bottom: 0;
+              margin-top: $spacing;
+              background: transparent;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: auto;
+              grid-auto-flow: row;
+              position: relative;
+              grid-column-gap: 0;
+              top: 0;
+              left: 0;
+              margin-left: -$item-spacing;
+
+              li {
+                padding: 0;
+                border: none;
+
+                a {
+                  padding: $item-spacing;
+                }
+
+                &:nth-child(2n-1):not(:only-child) {
+                  border-right: 1px solid rgba(92, 13, 47, 0.5);
+                }
+              }
+            }
+          }
+        }
+
+        // Calendar menu item
+        li.menu-item.rehorik-calendar-icon {
+          a {
+            font-size: 0;
+            background: transparent url("../img/kalender-16px.svg") no-repeat center center;
+            background-size: $menu-icon-size;
+            width: $menu-icon-size;
+            height: $menu-icon-size;
+          }
+        }
+      }
+    }
+  }
+}
