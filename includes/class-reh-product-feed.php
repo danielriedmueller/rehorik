@@ -42,8 +42,7 @@ class Reh_Product_Feed
             throw new Exception('Product feed is already active');
         }
 
-
-        $error = wp_schedule_event(time(), 'hourly', self::CRON_HOOK, [], true);
+        $error = wp_schedule_event(time(), 'daily', self::CRON_HOOK, [], true);
         if ($error instanceof WP_Error) {
             throw new Exception($error->get_error_message());
         }
