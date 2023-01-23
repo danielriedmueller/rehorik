@@ -9,13 +9,14 @@ class Reh_Product_Feed
     private const GERMANIZED_FIELDS = ['unit_amount', 'unit_regular_price', 'unit'];
 
     const CRON_HOOK = 'reh_product_feed';
+    const CRON_HANDLE = 'handle';
     const DIR_NAME = 'reh-feed';
 
     const SHIPPING_COST = '5.80';
 
     protected static $_instance = null;
 
-    public static function instance()
+    public static function instance(): self
     {
         if (is_null(self::$_instance)) {
             self::$_instance = new self();
@@ -25,7 +26,13 @@ class Reh_Product_Feed
 
     private function __construct()
     {
-        add_action(self::CRON_HOOK, [$this, 'updateFeed']);
+        add_action(self::CRON_HOOK, [$this, self::CRON_HANDLE]);
+    }
+
+    public static function handle(): void
+    {
+        $productFeed = self::instance();
+        $productFeed->updateFeed();
     }
 
     /**
@@ -39,7 +46,7 @@ class Reh_Product_Feed
             throw new Exception('Product feed is already active');
         }
 
-        add_action(self::CRON_HOOK, [self::class, 'updateFeed']);
+        add_action(self::CRON_HOOK, [self::class, self::CRON_HANDLE]);
 
         $error = wp_schedule_event(time(), 'hourly', self::CRON_HOOK, [], true);
 
