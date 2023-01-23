@@ -293,7 +293,9 @@ class Reh_Product_Feed
             return !empty($product['parent_id']);
         });
 
-        $productsWithoutVariants = array_diff($onlyNonAlcoholicProducts, $productsWithVariants);
+        $productsWithoutVariants = array_filter($products, function ($product) {
+            return empty($product['parent_id']);
+        });
 
         $this->createInstagramFeedWithVariants($productsWithVariants);
         $this->createInstagramFeedWithoutVariants($productsWithoutVariants);
@@ -651,7 +653,7 @@ class Reh_Product_Feed
             }
         }
 
-        return implode(', ', $categoryNames);
+        return implode(' > ', $categoryNames);
     }
 
     /**
