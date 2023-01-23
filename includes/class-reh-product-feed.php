@@ -15,6 +15,9 @@ class Reh_Product_Feed
 
     const SHIPPING_COST = '5.80';
 
+    const GOOGLE_WINE_CATEGORY = 421; // has alcohol
+    const GOOGLE_COFFEE_CATEGORY = 1868; // has caffeine
+
     protected static $_instance = null;
 
     public static function instance(): self
@@ -153,8 +156,17 @@ class Reh_Product_Feed
                 } else {
                     $categoryIds = [$product['category_ids']];
                 }
+
                 $product['category_ids'] = $this->getGoogleProductCategory($categoryIds);
                 $product['category_names'] = $this->getCategoryNames($categoryIds);
+
+                // Check for alcohol
+                $product['alcoholic'] = false;
+                if ($product['category_ids']) {
+                    if (self::GOOGLE_WINE_CATEGORY === $product['category_ids']) {
+                        $product['alcoholic'] = true;
+                    }
+                }
             }
         }
 
@@ -166,6 +178,10 @@ class Reh_Product_Feed
      */
     public function updateFeedForAtalanda(array $products): void
     {
+        if (empty($products)) {
+            return;
+        }
+
         $path = self::get_feed_path();
         self::checkWritable();
 
@@ -212,6 +228,10 @@ class Reh_Product_Feed
      */
     public function updateFeedForGoogleMerchant(array $products): void
     {
+        if (empty($products)) {
+            return;
+        }
+
         $path = self::get_feed_path();
         self::checkWritable();
 
@@ -259,16 +279,21 @@ class Reh_Product_Feed
     }
 
     /**
+     * Only non alcoholic products are allowed
+     *
      * @throws Exception
      */
     public function updateFeedForInstagram(array $products): void
     {
-        $productsWithVariants = array_filter($products, function ($product) {
+        $onlyNonAlcoholicProducts = array_filter($products, function ($product) {
+            return !$product['alcoholic'];
+        });
+
+        $productsWithVariants = array_filter($onlyNonAlcoholicProducts, function ($product) {
             return !empty($product['parent_id']);
         });
-        $productsWithoutVariants = array_filter($products, function ($product) {
-            return empty($product['parent_id']);
-        });
+
+        $productsWithoutVariants = array_diff($onlyNonAlcoholicProducts, $productsWithVariants);
 
         $this->createInstagramFeedWithVariants($productsWithVariants);
         $this->createInstagramFeedWithoutVariants($productsWithoutVariants);
@@ -279,6 +304,10 @@ class Reh_Product_Feed
      */
     private function createInstagramFeedWithVariants(array $products): void
     {
+        if (empty($products)) {
+            return;
+        }
+
         $path = self::get_feed_path();
         self::checkWritable();
         $path .= 'facebook-shopping-variants-feed.csv';
@@ -336,6 +365,10 @@ class Reh_Product_Feed
 
     private function createInstagramFeedWithoutVariants(array $products): void
     {
+        if (empty($products)) {
+            return;
+        }
+
         $path = self::get_feed_path();
         self::checkWritable();
         $path .= 'facebook-shopping-feed.csv';
@@ -587,8 +620,8 @@ class Reh_Product_Feed
     private function getGoogleProductCategory(array $categoryIds): ?int
     {
         $googleProductCategoriesMapping = [
-            WINE_CATEGORY_SLUG => 421,
-            COFFEE_CATEGORY_SLUG => 1868
+            WINE_CATEGORY_SLUG => self::GOOGLE_WINE_CATEGORY,
+            COFFEE_CATEGORY_SLUG => self::GOOGLE_COFFEE_CATEGORY
         ];
 
         if (empty($categoryIds)) {
