@@ -231,7 +231,7 @@ class Reh_Product_Feed
             $child->addChild('brand', 'Rehorik', $ns);
             $child->addChild('google_product_category', $product['category_ids'], $ns);
             $child->addChild('product_type', $product['category_names'], $ns);
-            $child->addChild('identifier_exists', true, $ns);
+            $child->addChild('identifier_exists', 'ja', $ns);
             $tax = $child->addChild('tax', null, $ns);
             $tax->addChild('rate', 19, $ns);
 
