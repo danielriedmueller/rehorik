@@ -263,9 +263,25 @@ class Reh_Product_Feed
      */
     public function updateFeedForInstagram(array $products): void
     {
+        $productsWithVariants = array_filter($products, function ($product) {
+            return !empty($product['parent_id']);
+        });
+        $productsWithoutVariants = array_filter($products, function ($product) {
+            return empty($product['parent_id']);
+        });
+
+        $this->createInstagramFeedWithVariants($productsWithVariants);
+        $this->createInstagramFeedWithoutVariants($productsWithoutVariants);
+    }
+
+    /**
+     * @throws Exception
+     */
+    private function createInstagramFeedWithVariants(array $products): void
+    {
         $path = self::get_feed_path();
         self::checkWritable();
-        $path .= 'facebook-shopping-feed.csv';
+        $path .= 'facebook-shopping-variants-feed.csv';
 
         $fp = fopen($path, 'w');
 
@@ -303,10 +319,61 @@ class Reh_Product_Feed
             $csvProduct['size'] = $product['unit_amount'] . ' ' . $product['unit'];
             $csvProduct['shipping'] = 'DE::Ground:' . self::SHIPPING_COST . ' EUR';
 
-            if (!empty($product['parent_id'])) {
-                $csvProduct['item_group_id'] = $product['parent_id'];
+            if (empty($product['parent_id'])) {
+                throw new Exception('Product without variants should not be in this feed');
             }
+            $csvProduct['item_group_id'] = $product['parent_id'];
 
+            $csvProducts[] = $csvProduct;
+        }
+
+        foreach ($csvProducts as $fields) {
+            fputcsv($fp, $fields);
+        }
+
+        fclose($fp);
+    }
+
+    private function createInstagramFeedWithoutVariants(array $products): void
+    {
+        $path = self::get_feed_path();
+        self::checkWritable();
+        $path .= 'facebook-shopping-feed.csv';
+
+        $fp = fopen($path, 'w');
+
+        $header = [
+            'id',
+            'title',
+            'availability',
+            'condition',
+            'description',
+            'image_link',
+            'link',
+            'price',
+            'brand',
+            'google_product_category',
+            'size',
+            'shipping'
+        ];
+
+        fputcsv($fp, $header);
+
+        $csvProducts = [];
+        foreach ($products as $product) {
+            $csvProduct = [];
+            $csvProduct['id'] = $product['id'];
+            $csvProduct['title'] = $product['name'];
+            $csvProduct['availability'] = $product['stock_quantity'] > 0 ? 'in stock' : 'out of stock';
+            $csvProduct['condition'] = 'new';
+            $csvProduct['description'] = $product['description'];
+            $csvProduct['image_link'] = $product['image'];
+            $csvProduct['link'] = get_permalink($product['id']);
+            $csvProduct['price'] = $product['regular_price'] . ' EUR';
+            $csvProduct['brand'] = $product['sku'];
+            $csvProduct['google_product_category'] = $product['category_ids'];
+            $csvProduct['size'] = $product['unit_amount'] . ' ' . $product['unit'];
+            $csvProduct['shipping'] = 'DE::Ground:' . self::SHIPPING_COST . ' EUR';
             $csvProducts[] = $csvProduct;
         }
 
