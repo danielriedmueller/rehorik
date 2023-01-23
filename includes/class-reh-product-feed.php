@@ -290,7 +290,7 @@ class Reh_Product_Feed
         $csvProducts = [];
         foreach ($products as $product) {
             $csvProduct = [];
-            $csvProduct['id'] = $product['sku'];
+            $csvProduct['id'] = $product['id'];
             $csvProduct['title'] = $product['name'];
             $csvProduct['availability'] = $product['stock_quantity'] > 0 ? 'in stock' : 'out of stock';
             $csvProduct['condition'] = 'new';
