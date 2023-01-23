@@ -13,7 +13,7 @@ add_action('admin_enqueue_scripts', function ($hook) {
 add_action('admin_menu', function () {
     add_menu_page('Rehorik', 'Rehorik', 'administrator', 'rehorik-admin', function () {
         $nextFeed = wp_next_scheduled(Reh_Product_Feed::CRON_HOOK);
-        $feeds = array_diff(scandir(Reh_Product_Feed::getFeedPath()), array('.', '..'));
+        $feeds = array_diff(scandir(Reh_Product_Feed::get_feed_path()), array('.', '..'));
         ?>
         <h2>Rehorik Admin</h2>
         <div style="margin-top: 20px">
@@ -40,26 +40,28 @@ add_action('admin_menu', function () {
                     <button class="rehorik-admin-action-button" data-action="activate_product_feeds">Activate Schedule
                     </button>
                 <?php endif; ?>
-                <div>
-                    <h3>Feeds</h3>
-                    <ul>
-                        <?php foreach ($feeds as $feed): ?>
-                            <li>
-                                <a href="<?= Reh_Product_Feed::getFeedUrl() . $feed; ?>"
-                                   target="_blank"><?= $feed ?></a>
-                                <span>
+                <?php if (!empty($feeds)): ?>
+                    <div>
+                        <h3>Feeds</h3>
+                        <ul>
+                            <?php foreach ($feeds as $feed): ?>
+                                <li>
+                                    <a href="<?= Reh_Product_Feed::get_feed_url() . $feed; ?>"
+                                       target="_blank"><?= $feed ?></a>
+                                    <span>
                                     <?php
-                                    if ($changed = filemtime(Reh_Product_Feed::getFeedPath() . $feed)) {
+                                    if ($changed = filemtime(Reh_Product_Feed::get_feed_path() . $feed)) {
                                         echo date('d.m.Y H:i:s', $changed);
                                     } else {
                                         echo 'unknown';
                                     }
                                     ?>
                                 </span>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
             </fieldset>
         </div>
         <div style="margin-top: 20px">

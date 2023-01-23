@@ -3,13 +3,14 @@ if (!class_exists(Reh_Product_Feed::class)) {
     return;
 }
 
+add_action(Reh_Product_Feed::CRON_HOOK, [Reh_Product_Feed::class, 'run_event']);
+
 class Reh_Product_Feed
 {
     // Fields from plugin Germanized
     private const GERMANIZED_FIELDS = ['unit_amount', 'unit_regular_price', 'unit'];
 
     const CRON_HOOK = 'reh_product_feed';
-    const CRON_HANDLE = 'handle';
     const DIR_NAME = 'reh-feed';
 
     const SHIPPING_COST = '5.80';
@@ -21,24 +22,19 @@ class Reh_Product_Feed
         if (is_null(self::$_instance)) {
             self::$_instance = new self();
         }
+
         return self::$_instance;
     }
 
-    private function __construct()
+    public static function run_event(): void
     {
-        add_action(self::CRON_HOOK, [$this, self::CRON_HANDLE]);
-    }
-
-    public static function handle(): void
-    {
-        $productFeed = self::instance();
-        $productFeed->updateFeed();
+        self::instance()->updateFeed();
     }
 
     /**
      * @throws Exception
      */
-    public static function activate(): void
+    public static function schedule_event(): void
     {
         self::checkWritable();
 
@@ -46,10 +42,8 @@ class Reh_Product_Feed
             throw new Exception('Product feed is already active');
         }
 
-        add_action(self::CRON_HOOK, [self::class, self::CRON_HANDLE]);
 
         $error = wp_schedule_event(time(), 'hourly', self::CRON_HOOK, [], true);
-
         if ($error instanceof WP_Error) {
             throw new Exception($error->get_error_message());
         }
@@ -58,7 +52,7 @@ class Reh_Product_Feed
     /**
      * @throws Exception
      */
-    public static function deactivate(): void
+    public static function clear_schedule(): void
     {
         $error = wp_clear_scheduled_hook(self::CRON_HOOK, [], true);
 
@@ -67,7 +61,7 @@ class Reh_Product_Feed
         }
     }
 
-    public static function getFeedUrl(): string
+    public static function get_feed_url(): string
     {
         $path = wp_upload_dir();
         $path = $path['baseurl'] . '/' . self::DIR_NAME . '/';
@@ -75,7 +69,7 @@ class Reh_Product_Feed
         return trailingslashit($path);
     }
 
-    public static function getFeedPath(): string
+    public static function get_feed_path(): string
     {
         $path = wp_upload_dir();
         $path = $path['basedir'] . '/' . self::DIR_NAME . '/';
@@ -88,7 +82,7 @@ class Reh_Product_Feed
      */
     private static function checkWritable(): void
     {
-        $path = self::getFeedPath();
+        $path = self::get_feed_path();
 
         if (!is_dir($path)) {
             if (!wp_mkdir_p($path)) {
@@ -145,7 +139,7 @@ class Reh_Product_Feed
             }
 
             if (!empty($product['short_description'])) {
-                $product['description'] = ucfirst($product['short_description']) . " " .  $product['description'];
+                $product['description'] = ucfirst($product['short_description']) . " " . $product['description'];
             }
 
             $product['description'] = htmlspecialchars(strip_tags($product['description']));
@@ -167,7 +161,7 @@ class Reh_Product_Feed
 
     public function updateFeedForAtalanda(array $products): void
     {
-        $path = self::getFeedPath();
+        $path = self::get_feed_path();
         self::checkWritable();
 
         $googleNS = 'http://base.google.com/ns/1.0';
@@ -210,7 +204,7 @@ class Reh_Product_Feed
 
     public function updateFeedForGoogleMerchant(array $products): void
     {
-        $path = self::getFeedPath();
+        $path = self::get_feed_path();
         self::checkWritable();
 
         $ns = 'http://base.google.com/ns/1.0';
