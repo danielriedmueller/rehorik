@@ -293,7 +293,7 @@ class Reh_Product_Feed
             return !empty($product['parent_id']);
         });
 
-        $productsWithoutVariants = array_filter($products, function ($product) {
+        $productsWithoutVariants = array_filter($onlyNonAlcoholicProducts, function ($product) {
             return empty($product['parent_id']);
         });
 
