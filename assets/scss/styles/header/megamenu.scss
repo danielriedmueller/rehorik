@@ -1,0 +1,159 @@
+// Bold links for Shop und Veranstaltungen
+#menu-item-686,
+#menu-item-20959 {
+  > ul.sub-menu > li.menu-item > a {
+    font-weight: bold;
+  }
+}
+
+@media all and (min-width: $medium-breakpoint + 1) {
+  header.rehorik-header .menu-hauptmenue-container,
+  header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
+    height: 100%;
+  }
+}
+
+header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
+  display: flex;
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    position: relative;
+
+    a {
+      width: fit-content;
+      width: -moz-fit-content;
+      color: $font-color-accent;
+      font-size: $font-size;
+      font-family: $font-family-headline;
+    }
+  }
+
+  // Top level menu items
+  > li.menu-item {
+    text-transform: uppercase;
+
+    a {
+      height: 100%;
+      padding: 0 $spacing-s;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  > li.menu-item-has-children {
+    background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right $spacing-xs;
+    background-size: 10px;
+
+    > a {
+      padding-right: $spacing-l;
+    }
+
+    &:hover {
+      background-color: $menu-hover-color;
+      background-image: url("../img/pfeil-rot-oben.svg");
+
+      a {
+        color: $weinrot;
+      }
+
+      > ul.sub-menu {
+        display: grid;
+      }
+    }
+  }
+
+  // Second Level menu items
+  > li.menu-item-has-children > ul.sub-menu {
+    display: none;
+    position: absolute;
+    top: $menu-height;
+    left: 0;
+    min-width: 100%;
+    flex-direction: column;
+    list-style: none;
+    border-radius: 0 0 $border-radius $border-radius;
+    background-color: $menu-hover-color;
+    color: #fff;
+    border-bottom: $border-radius solid $menu-sub-item-hover-color;
+
+    grid-template-columns: repeat(3, minmax(max-content, 1fr));
+    align-items: flex-start;
+    justify-items: flex-start;
+
+    a {
+      color: $weinrot;
+    }
+
+    li.menu-item {
+      text-transform: none;
+      width: 100%;
+      a {
+        font-family: $font-family-body;
+        padding: $spacing-s $spacing;
+        width: 100%;
+      }
+    }
+
+    > li.menu-item {
+      > a:hover {
+        background-color: $menu-sub-item-hover-color;
+        color: $beigegold;
+      }
+
+      &:only-child {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        width: 100%;
+
+        a {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // Third Level menu items
+  > li.menu-item-has-children > ul.sub-menu > li.menu-item-has-children {
+    > ul.sub-menu  {
+      li.menu-item {
+        a {
+          padding: $spacing-xxs $spacing;
+
+          &:hover {
+            background-color: $menu-sub-item-hover-color;
+            color: $beigegold;
+          }
+        }
+      }
+    }
+  }
+
+  @media all and (min-width: $medium-breakpoint + 1) {
+    // Calendar menu item
+    li.menu-item.rehorik-calendar-icon {
+      a {
+        font-size: 0;
+        background: transparent url("../img/svg/kalender.svg") no-repeat center center;
+        background-size: $menu-icon-size;
+        width: $menu-icon-size;
+        height: $menu-icon-size;
+      }
+    }
+
+    // My account menu item
+    li.menu-item.rehorik-user-icon {
+      a {
+        font-size: 0;
+        background: transparent url("../img/svg/user.svg") no-repeat center center;
+        $iconSize: $menu-icon-size + 4px;
+        background-size: $iconSize;
+        width: $iconSize;
+        height: $iconSize;
+      }
+    }
+  }
+}

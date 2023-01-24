@@ -2,19 +2,26 @@
 @import "styles/settings";
 @import "styles/woocommerce";
 @import "styles/container";
+@import "styles/button";
+@import "styles/input";
+
+// Header
+@import "styles/header/header";
+@import "styles/header/social_media_icons";
+@import "styles/header/rehorik_logo";
+@import "styles/header/megamenu";
+@import "styles/header/burger";
+@import "styles/header/slider";
+
 @import "styles/products";
 @import "styles/products_grid";
-@import "styles/header";
 @import "styles/footer";
 @import "styles/main";
 @import "styles/locations";
 @import "styles/cart/cart";
 @import "styles/cart/cart_totals";
 @import "styles/cart/coupon";
-@import "styles/input";
-@import "styles/button";
 @import "styles/sidebar";
-@import "styles/rehorik_logo";
 @import "styles/featured_products";
 @import "styles/product/product";
 @import "styles/product/gallery";
@@ -52,12 +59,8 @@
 @import "styles/events/button";
 @import "styles/events/dropdown";
 @import "styles/events/modal";
-@import "styles/social_media_icons";
-@import "styles/slider";
-@import "styles/mixins";
 @import "styles/events/notices";
 @import "styles/cart/shipping";
-@import "styles/hint";
 @import "styles/newsletter_sign_up";
 @import "styles/special_category";
 @import "styles/chooser";

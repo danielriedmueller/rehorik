@@ -1,0 +1,140 @@
+@media all and (max-width: $medium-breakpoint) {
+  header.rehorik-header {
+    input#burger-button {
+      margin-left: -33px;
+      opacity: 0;
+      width: $menu-icon-size;
+      height: $menu-icon-size;
+      z-index: 20;
+
+      &:checked ~ .menu-hauptmenue-container {
+        pointer-events: all;
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      &:checked ~ .burger-overlay {
+        opacity: 1;
+      }
+    }
+
+    .burger-overlay {
+      content: "";
+      display: block;
+      opacity: 0;
+      transition: opacity var(--animation-time) linear;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .hamburger {
+      background: transparent url("../img/menue-16px.svg") no-repeat center center;
+      background-size: $menu-icon-size;
+      width: $menu-icon-size;
+      height: $menu-icon-size;
+      padding-left: $spacing;
+      padding-right: $spacing;
+      z-index: 10;
+    }
+
+    .rehorik-product-search-widget {
+      position: absolute;
+      left: 0;
+
+      &::after, .rehorik-product-search-form {
+        left: 0;
+        right: unset;
+        width: 100vw;
+        border-bottom-left-radius: $border-radius;
+      }
+    }
+
+    .menu-hauptmenue-container {
+      opacity: 0;
+      transform: translateX(100%);
+      transition: transform var(--animation-time), opacity var(--animation-time) linear;
+      pointer-events: none;
+
+      $item-spacing: $spacing-xs;
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-height: 100vh;
+      overflow: scroll;
+      background-color: $weinrot;
+      background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
+      background-repeat: no-repeat, repeat;
+      background-position: left top, left bottom, right bottom;
+      background-size: 100%;
+      width: 100%;
+      padding-bottom: $item-spacing;
+
+      ul.menu#menu-hauptmenue {
+        flex-direction: column;
+        background-color: transparent;
+
+        > li.menu-item {
+          background-color: transparent;
+          padding: 0;
+          border: none;
+
+          a {
+            padding: $item-spacing var(--section-spacing-left-right);
+          }
+        }
+
+        > li.menu-item-has-children {
+          background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right var(--section-spacing-left-right);
+          background-size: 10px;
+
+          > a {
+            pointer-events: none;
+          }
+
+          a {
+            width: -moz-fit-content;
+            width: fit-content;
+          }
+
+          > ul.sub-menu {
+            display: none;
+            position: initial;
+            border: 0;
+
+            > li.menu-item {
+              a {
+                padding: $item-spacing calc(var(--section-spacing-left-right) + #{$item-spacing});
+              }
+            }
+
+            > li.menu-item-has-children > ul.sub-menu > li.menu-item {
+              a {
+                padding: $item-spacing calc(var(--section-spacing-left-right) + #{$item-spacing} + #{$item-spacing});
+              }
+            }
+          }
+
+          // Touch on menu item with children
+          &:hover {
+            height: auto;
+            background: rgba(206, 182, 127, 0.9) url("../img/pfeil-rot-oben.svg") no-repeat top 30px right var(--section-spacing-left-right);
+            background-size: 10px;
+
+            a {
+              color: $weinrot;
+            }
+
+            > ul.sub-menu {
+              display: block;
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
