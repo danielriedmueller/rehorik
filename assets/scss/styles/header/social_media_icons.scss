@@ -88,6 +88,10 @@ $element-height: 42px;
     @include gold-without-background;
     @include icon-size($spacing-s, $spacing-s);
 
+    display: flex;
+    opacity: 0;
+    transition: opacity var(--animation-time) linear;
+
     .rehorik-logo {
       display: block;
       background-image: url("../img/logos/logo.svg");
@@ -98,7 +102,6 @@ $element-height: 42px;
       margin-right: auto;
     }
 
-    display: none;
     padding: 0 var(--section-spacing-left-right);
     left: 0;
     width: 100%;
@@ -115,11 +118,10 @@ $element-height: 42px;
   header.rehorik-header {
     .menu-hauptmenue-container {
       padding-top: $menu-height + $spacing + $spacing-l + $menu-height;
-      background-color: $weinrot;
     }
 
-    input[type="checkbox"]:checked ~ #rehorik-social-media-icons {
-      display: flex;
+    input#burger-button:checked ~ #rehorik-social-media-icons {
+      opacity: 1;
     }
   }
 }

@@ -31,7 +31,7 @@ header.rehorik-header {
   padding-right: var(--section-spacing-left-right);
   height: $menu-height;
 
-  .hamburger, input#burger-button, input#burger-button:checked ~ .menu-hauptmenue-container {
+  .hamburger, input#burger-button {
     display: block;
   }
 

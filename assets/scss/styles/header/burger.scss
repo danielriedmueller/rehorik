@@ -6,6 +6,29 @@
       width: $menu-icon-size;
       height: $menu-icon-size;
       z-index: 20;
+
+      &:checked ~ .menu-hauptmenue-container {
+        pointer-events: all;
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      &:checked ~ .burger-overlay {
+        opacity: 1;
+      }
+    }
+
+    .burger-overlay {
+      content: "";
+      display: block;
+      opacity: 0;
+      transition: opacity var(--animation-time) linear;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.3);
     }
 
     .hamburger {
@@ -31,18 +54,24 @@
     }
 
     .menu-hauptmenue-container {
-      display: none;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: transform var(--animation-time), opacity var(--animation-time) linear;
+      pointer-events: none;
+
+      $item-spacing: $spacing-xs;
       position: absolute;
       top: 0;
       left: 0;
       max-height: 100vh;
       overflow: scroll;
       background-color: $weinrot;
-      background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
+      background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
       background-repeat: no-repeat, repeat;
-      background-position: left top, right bottom;
+      background-position: left top, left bottom, right bottom;
       background-size: 100%;
       width: 100%;
+      padding-bottom: $item-spacing;
 
       ul.menu {
         flex-direction: column;
@@ -52,12 +81,13 @@
           background-color: transparent;
         }
 
+        li.menu-item {
+          padding: $item-spacing var(--section-spacing-left-right);
+        }
+
         li.menu-item-has-children {
           background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right var(--section-spacing-left-right);
           background-size: 10px;
-          $item-spacing: $spacing-xs;
-          padding-top: $item-spacing;
-          padding-bottom: $item-spacing;
 
           > a {
             width: -moz-fit-content;
@@ -107,17 +137,6 @@
                 }
               }
             }
-          }
-        }
-
-        // Calendar menu item
-        li.menu-item.rehorik-calendar-icon {
-          a {
-            font-size: 0;
-            background: transparent url("../img/kalender-16px.svg") no-repeat center center;
-            background-size: $menu-icon-size;
-            width: $menu-icon-size;
-            height: $menu-icon-size;
           }
         }
       }
