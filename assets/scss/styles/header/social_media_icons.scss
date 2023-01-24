@@ -91,6 +91,7 @@ $element-height: 42px;
     display: flex;
     opacity: 0;
     transition: opacity var(--animation-time) linear;
+    pointer-events: none;
 
     .rehorik-logo {
       display: block;
@@ -122,6 +123,7 @@ $element-height: 42px;
 
     input#burger-button:checked ~ #rehorik-social-media-icons {
       opacity: 1;
+      pointer-events: auto;
     }
   }
 }
