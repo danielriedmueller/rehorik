@@ -66,12 +66,27 @@
       max-height: 100vh;
       overflow: scroll;
       background-color: $weinrot;
-      background-image: url("../img/burger_bg.jpg"), url("../img/burger_bg.jpg"), url("../img/burger_bg_tile.jpg");
+      background-image: url("../img/burger/burger_bg.jpg"), url("../img/burger/burger_bg_tile.jpg");
       background-repeat: no-repeat, repeat;
-      background-position: left top, left bottom, right bottom;
-      background-size: 100%;
+      background-position: left top, left bottom;
+      background-size: cover;
       width: 100%;
       padding-bottom: $item-spacing;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("../img/burger/burger_hand.jpg");
+        background-repeat: no-repeat;
+        background-position: right 25% bottom;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        width: 100%;
+        height: 100vh;
+        max-width: 100%;
+      }
 
       ul.menu#menu-hauptmenue {
         flex-direction: column;
