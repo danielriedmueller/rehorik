@@ -1,0 +1,52 @@
+#top-bar {
+  height: $top-bar-height;
+  background-color: $tuerkis;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 $spacing-l;
+  color: $beigegold;
+  $item-spacing: $spacing;
+
+
+  > div:not(:last-child) {
+    margin-right: $item-spacing;
+  }
+
+  #menu-top-bar {
+    list-style: none;
+    display: flex;
+
+    li.menu-item:not(:last-child) {
+      margin-right: $item-spacing;
+    }
+  }
+
+  @media all and (min-width: $medium-breakpoint + 1) {
+    // Calendar menu item
+    li.menu-item.rehorik-calendar-icon {
+      a {
+        display: block;
+        font-size: 0;
+        background: transparent url("../img/svg/kalender.svg") no-repeat center center;
+        background-size: $menu-icon-size;
+        width: $menu-icon-size;
+        height: $menu-icon-size;
+      }
+    }
+
+    // My account menu item
+    li.menu-item.rehorik-user-icon {
+      a {
+        display: block;
+        font-size: 0;
+        background: transparent url("../img/svg/user.svg") no-repeat center center;
+        $iconSize: $menu-icon-size + 4px;
+        background-size: $iconSize;
+        width: $iconSize;
+        height: $iconSize;
+      }
+    }
+  }
+}

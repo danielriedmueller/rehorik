@@ -1,0 +1,43 @@
+// transparent header
+@media all and (min-width: $medium-breakpoint + 1) {
+  body.rehorik.has-slider {
+    #page-container {
+      padding-top: $top-bar-height;
+
+      .rehorik-header-outer {
+        header.rehorik-header {
+          @for $i from 1 through 218 {
+            &[data-ypos="#{$i}"] #rehorik-menu {
+              background-color: rgba(92, 13, 47, $i / 100);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+header.rehorik-header > #rehorik-menu {
+  background-color: transparent;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  padding-left: var(--section-spacing-left-right);
+  padding-right: var(--section-spacing-left-right);
+  height: $menu-height;
+  position: relative;
+
+  .hamburger, input#burger-button {
+    display: block;
+  }
+
+  @media all and (min-width: $medium-breakpoint + 1) {
+    justify-content: center;
+    padding: 0;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    .hamburger, input#burger-button {
+      display: none;
+    }
+  }
+}
