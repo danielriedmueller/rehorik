@@ -8,7 +8,6 @@
   color: #fff;
   font-size: $font-size-small;
   font-weight: bold;
-  letter-spacing: 1px;
   padding: 0 0 0 $spacing-xs;
 
   .top-bar-center {
@@ -124,7 +123,11 @@
 
   // Mobile
   @media all and (max-width: $medium-breakpoint) {
-    background-color: $tuerkis;
+    position: absolute;
+    top: 11px * 2 + $logo-size-small;
+    background-color: transparent;
+    z-index: 30;
+    height: 80px;
 
     .top-bar-center {
       margin: 0;
@@ -132,8 +135,6 @@
       > div:not(:last-child) {
         margin-right: 0;
       }
-
-      display: none;
     }
 
     .top-bar-right {
