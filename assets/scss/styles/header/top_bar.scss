@@ -122,6 +122,7 @@
     padding-left: $icon-size + $spacing-xxs;
   }
 
+  // Mobile
   @media all and (max-width: $medium-breakpoint) {
     background-color: $tuerkis;
 

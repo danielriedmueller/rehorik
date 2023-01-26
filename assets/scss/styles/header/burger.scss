@@ -1,20 +1,72 @@
+// Mobile
 @media all and (max-width: $medium-breakpoint) {
+  $space-top: 11px;
+
+  body.rehorik:not(.has-slider) {
+    #page-container {
+      padding-top: $top-bar-height;
+    }
+
+    header.rehorik-header {
+      background-color: $weinrot;
+      height: $top-bar-height;
+    }
+  }
+
+  #rehorik-logo {
+    width: $logo-size-small;
+    height: $logo-size-small;
+    background-size: $logo-size-small;
+    top: $space-top;
+    left: var(--section-spacing-left-right);
+    z-index: 20;
+  }
+
   header.rehorik-header {
+    .hamburger-icon,
     input#burger-button {
-      margin-left: -33px;
-      opacity: 0;
+      position: absolute;
+      top: $space-top;
+      right: var(--section-spacing-left-right);
+      padding: 0;
+      margin: 0;
       width: $menu-icon-size;
       height: $menu-icon-size;
+    }
+
+    .hamburger-icon {
+      background: transparent url("../img/svg/hamburger-icon.svg") no-repeat center center;
+      background-size: $menu-icon-size;
+      z-index: 10;
+    }
+
+    #top-bar, #rehorik-menu {
+      opacity: 0;
+      transform: translateX(100%);
+      transition: transform var(--animation-time), opacity var(--animation-time) linear;
+      pointer-events: none;
+      background-color: transparent;
+    }
+
+    input#burger-button {
+      opacity: 0;
       z-index: 20;
 
-      &:checked ~ .menu-hauptmenue-container {
-        pointer-events: all;
-        opacity: 1;
-        transform: translateX(0);
-      }
+      &:checked {
+        & ~ .hamburger-icon {
+          background-image: url("../img/svg/hamburger-icon-white.svg");
+        }
 
-      &:checked ~ .burger-overlay {
-        opacity: 1;
+        & ~ #top-bar,
+        & ~ #rehorik-menu {
+          pointer-events: all;
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        & ~ .burger-overlay {
+          opacity: 1;
+        }
       }
     }
 
@@ -26,19 +78,10 @@
       width: 100%;
       height: 100vh;
       position: absolute;
+      pointer-events: none;
       left: 0;
       top: 0;
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-
-    .hamburger {
-      background: transparent url("../img/menue-16px.svg") no-repeat center center;
-      background-size: $menu-icon-size;
-      width: $menu-icon-size;
-      height: $menu-icon-size;
-      padding-left: $spacing;
-      padding-right: $spacing;
-      z-index: 10;
+      background-color: rgba(0, 0, 0, $opacity);
     }
 
     .rehorik-product-search-widget {
@@ -54,11 +97,6 @@
     }
 
     .menu-hauptmenue-container {
-      opacity: 0;
-      transform: translateX(100%);
-      transition: transform var(--animation-time), opacity var(--animation-time) linear;
-      pointer-events: none;
-
       $item-spacing: $spacing-xs;
       position: absolute;
       top: 0;

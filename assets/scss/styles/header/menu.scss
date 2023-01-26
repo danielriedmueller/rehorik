@@ -1,10 +1,5 @@
-// transparent header
-
-#page-container {
-  padding-top: $top-bar-height;
-  position: relative;
-}
-
+// Transparent header
+// Desktop
 @media all and (min-width: $medium-breakpoint + 1) {
   body.rehorik.has-slider {
     #page-container {
@@ -12,6 +7,7 @@
 
       .rehorik-header-outer {
         top: $spacing-xxs;
+
         header.rehorik-header {
           @for $i from 1 through 218 {
             &[data-ypos="#{$i}"] {
@@ -51,7 +47,7 @@ header.rehorik-header > #rehorik-menu {
   height: $menu-height;
   position: relative;
 
-  .hamburger, input#burger-button {
+  .hamburger-icon, input#burger-button {
     display: block;
   }
 
@@ -61,7 +57,7 @@ header.rehorik-header > #rehorik-menu {
     flex-direction: row;
     display: flex;
     align-items: center;
-    .hamburger, input#burger-button {
+    .hamburger-icon, input#burger-button {
       display: none;
     }
   }

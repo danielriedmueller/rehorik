@@ -1,5 +1,6 @@
 <div class="rehorik-header-outer">
     <header class="rehorik-header" data-scrollpos>
+        <?php get_template_part('templates/header/hamburger'); ?>
         <div id="top-bar">
             <div class="top-bar-left">
                 <?php
@@ -22,7 +23,6 @@
         </div>
         <div id="rehorik-menu">
             <?php
-            get_template_part('templates/header/hamburger');
             wp_nav_menu(['theme_location' => 'main']);
             get_template_part('templates/social-media-icons', null, ['withLogo' => true]);
             ?>

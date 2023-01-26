@@ -224,6 +224,10 @@ table {
   border-spacing: 0;
 }
 
+#page-container {
+  position: relative;
+}
+
 .mt {
   margin-top: $spacing;
 }
