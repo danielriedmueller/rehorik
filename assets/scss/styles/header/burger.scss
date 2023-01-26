@@ -23,6 +23,12 @@
   }
 
   header.rehorik-header {
+    background-color: $weinrot;
+    background-image: url("../img/burger/burger_bg.jpg"), url("../img/burger/burger_bg_tile.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: left top, left bottom;
+    background-size: cover;
+
     .hamburger-icon,
     input#burger-button {
       position: absolute;
@@ -103,11 +109,6 @@
       left: 0;
       max-height: 100vh;
       overflow: scroll;
-      background-color: $weinrot;
-      background-image: url("../img/burger/burger_bg.jpg"), url("../img/burger/burger_bg_tile.jpg");
-      background-repeat: no-repeat, repeat;
-      background-position: left top, left bottom;
-      background-size: cover;
       width: 100%;
       padding-bottom: $item-spacing;
 
