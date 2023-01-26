@@ -5,15 +5,29 @@
       color: #fff;
       background-color: transparent;
       border-radius: $border-radius;
-      text-transform: uppercase;
+      font-style: normal;
+      font-family: $font-family-body;
+      opacity: 1;
       font-size: $font-size-small;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: none;
 
       &::placeholder {
         color: #fff;
         font-style: normal;
-        font-size: $font-size-small;
         font-family: $font-family-body;
-        text-transform: uppercase;
+        opacity: 1;
+        font-size: $font-size-small;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: none;
+      }
+
+      &:focus {
+        &::placeholder {
+          opacity: $opacity;
+        }
       }
     }
 
@@ -23,6 +37,10 @@
 
     .dgwt-wcas-no-submit .dgwt-wcas-ico-magnifier {
       opacity: 1;
+    }
+
+    .dgwt-wcas-search-wrapp {
+      max-width: none;
     }
   }
 
@@ -43,8 +61,6 @@
 
   .dgwt-wcas-product-details {
     div.quantity {
-      max-width: $spacing-xl;
-
       input, select {
         height: $spacing-l !important;
         border-top-right-radius: 0 !important;

@@ -1,8 +1,11 @@
 #rehorik-cart {
   cursor: pointer;
+  display: flex;
+  align-items: center;
 
   .rehorik-cart-info {
     position: relative;
+    display: inline;
 
     .rehorik-cart-info-number {
       position: absolute;

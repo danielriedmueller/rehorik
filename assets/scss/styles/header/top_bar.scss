@@ -4,65 +4,94 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   color: #fff;
   font-size: $font-size-small;
   font-weight: bold;
   letter-spacing: 1px;
-  padding: 0 $spacing-xl 0 $spacing-xs;
+  padding: 0 0 0 $spacing-xs;
 
-  > div:nth-child(2) {
+  .top-bar-center {
     display: flex;
+    margin: 0 auto;
+
     > div:not(:last-child) {
       margin-right: $spacing-xl;
     }
   }
 
-  > div:last-child {
+  .top-bar-right {
     display: flex;
+    align-items: center;
+    width: 400px;
+    flex-basis: 400px;
 
     #rehorik-cart {
-      margin-right: $spacing-s;
+      margin-right: $spacing-xl;
     }
 
     #menu-top-bar {
       list-style: none;
       display: flex;
 
-      li.menu-item:not(:last-child) {
-        margin-right: $spacing;
+      li.menu-item {
+        margin-right: $spacing-xl;
       }
     }
   }
 
+  .top-bar-left {
+    width: 400px;
+    flex-basis: 400px;
+  }
+
   @media all and (min-width: $medium-breakpoint + 1) {
+    li.menu-item.rehorik-user-icon a,
+    li.menu-item.rehorik-calendar-icon a {
+      color: #fff;
+      display: block;
+      padding-left: $menu-icon-size + $spacing-xxs;
+      background-size: $menu-icon-size;
+      background-position: center left;
+      background-repeat: no-repeat;
+    }
+
     // Calendar menu item
-    li.menu-item.rehorik-calendar-icon {
-      a {
-        display: block;
-        font-size: 0;
-        background: transparent url("../img/svg/kalender_white.svg") no-repeat center center;
-        background-size: $menu-icon-size;
-        width: $menu-icon-size;
-        height: $menu-icon-size;
+    li.menu-item.rehorik-calendar-icon a {
+      background-image: url("../img/svg/kalender_white.svg");
+
+      &:hover {
+        color: $beigegold;
+        background-image: url("../img/svg/kalender.svg");
       }
     }
 
     // My account menu item
-    li.menu-item.rehorik-user-icon {
-      a {
-        display: block;
-        font-size: 0;
-        background: transparent url("../img/svg/user_white.svg") no-repeat center center;
-        $iconSize: $menu-icon-size + 2px;
-        background-size: $iconSize;
-        width: $iconSize;
-        height: $iconSize;
+    li.menu-item.rehorik-user-icon a {
+      background-image: url("../img/svg/user_white.svg");
+
+      &:hover {
+        color: $beigegold;
+        background-image: url("../img/svg/user.svg");
       }
     }
 
-    #rehorik-cart div.rehorik-cart-info {
-      background: transparent url("../img/cart/warenkorb-white.svg") no-repeat center center;
+    #rehorik-cart {
+      .rehorik-cart-info {
+        background: transparent url("../img/cart/warenkorb-white.svg") no-repeat center center;
+        background-size: $menu-icon-size;
+        width: $menu-icon-size;
+        height: $menu-icon-size;
+        margin-right: $spacing-xxs;
+        display: inline-block;
+      }
+
+      &:hover {
+        color: $beigegold;
+        .rehorik-cart-info {
+          background-image: url("../img/cart/warenkorb.svg");
+        }
+      }
     }
   }
 
