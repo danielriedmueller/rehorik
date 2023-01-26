@@ -33,12 +33,6 @@
   }
 
   header.rehorik-header {
-    background-color: $weinrot;
-    background-image: url("../img/burger/burger_bg.jpg"), url("../img/burger/burger_bg_tile.jpg");
-    background-repeat: no-repeat, repeat;
-    background-position: left top, left bottom;
-    background-size: cover;
-
     .hamburger-icon,
     input#burger-button {
       position: absolute;
@@ -69,10 +63,6 @@
       z-index: 20;
 
       &:checked {
-        & ~ .hamburger-icon {
-          background-image: url("../img/svg/hamburger-icon-white.svg");
-        }
-
         & ~ #top-bar,
         & ~ #rehorik-menu {
           pointer-events: all;
@@ -113,6 +103,12 @@
     }
 
     .menu-hauptmenue-container {
+      background-color: $weinrot;
+      background-image: url("../img/burger/burger_bg.jpg"), url("../img/burger/burger_bg_tile.jpg");
+      background-repeat: no-repeat, repeat;
+      background-position: left top, left bottom;
+      background-size: cover;
+
       $item-spacing: $spacing-xs;
       position: absolute;
       top: 0;
