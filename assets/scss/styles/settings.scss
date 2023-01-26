@@ -33,7 +33,7 @@ $font-size-very-very-large: 52px;
 $font-size-very-large: 39px;
 $font-size-large: 26px;
 $font-size: 20px;
-$font-size-small: 17px;
+$font-size-small: 16px;
 
 $line-height: 1.4em;
 $line-height-small: 1.1em;
@@ -65,8 +65,8 @@ $product-category-frontpage-height: $product-category-width;
 $product-height: 530px;
 
 $menu-height: 60px;
-$menu-gap-to-top: $spacing-s;
-$menu-icon-size: 18px;
+$top-bar-height: 38px;
+$menu-icon-size: $font-size-small;
 $menu-hover-color: $beigegold;
 $menu-sub-item-hover-color: $weinrot;
 

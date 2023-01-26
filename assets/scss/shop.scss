@@ -7,11 +7,14 @@
 
 // Header
 @import "styles/header/header";
+@import "styles/header/menu";
 @import "styles/header/social_media_icons";
 @import "styles/header/rehorik_logo";
+@import "styles/header/top_bar";
 @import "styles/header/megamenu";
 @import "styles/header/burger";
 @import "styles/header/slider";
+@import "styles/header/product_search";
 
 @import "styles/products";
 @import "styles/products_grid";
@@ -43,7 +46,6 @@
 @import "styles/category/category";
 @import "styles/category/custom_category_page";
 @import "styles/category/veranstaltungen_category_page";
-@import "styles/product_search";
 @import "styles/page_title";
 @import "styles/cart/cart_info";
 @import "styles/events/events";

@@ -163,6 +163,7 @@ add_action('wp_enqueue_scripts', function () {
 add_action('init', function () {
     register_nav_menus([
         'main' => 'Hauptmenü',
+        'top-bar' => 'Top Bar',
     ]);
 });
 

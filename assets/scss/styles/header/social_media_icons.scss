@@ -137,7 +137,7 @@ $element-height: 42px;
 
       display: flex;
       left: 0;
-      top: $menu-height + $menu-gap-to-top + $logo-size - $element-height;
+      top: $menu-height + $top-bar-height + $top-bar-height + $logo-size - $element-height;
       padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
 
       &.scrolled {

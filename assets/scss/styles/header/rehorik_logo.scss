@@ -5,7 +5,7 @@
   background-size: $logo-size;
   position: absolute;
   left: 150px + $spacing;
-  top: $menu-height + $menu-gap-to-top + $menu-gap-to-top;
+  top: $menu-height + $top-bar-height + $top-bar-height;
   bottom: 0;
   z-index: 9;
 

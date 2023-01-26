@@ -1,9 +1,8 @@
-// Bold links for Shop und Veranstaltungen
+// Bold links for Shop und Veranstaltungen, Rehorik
 #menu-item-686,
+#menu-item-632,
 #menu-item-20959 {
-  > ul.sub-menu > li.menu-item > a {
-    font-weight: bold;
-  }
+
 }
 
 @media all and (min-width: $medium-breakpoint + 1) {
@@ -52,6 +51,10 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
       padding-right: $spacing-l;
     }
 
+    > ul.sub-menu > li.menu-item > a {
+      font-weight: bold;
+    }
+
     &:hover {
       background-color: $menu-hover-color;
       background-image: url("../img/pfeil-rot-oben.svg");
@@ -75,10 +78,9 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
     min-width: 100%;
     flex-direction: column;
     list-style: none;
-    border-radius: 0 0 $border-radius $border-radius;
+    border-radius: 0;
     background-color: $menu-hover-color;
     color: #fff;
-    border-bottom: $border-radius solid $menu-sub-item-hover-color;
 
     grid-template-columns: repeat(3, minmax(max-content, 1fr));
     align-items: flex-start;
@@ -128,31 +130,6 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
             color: $beigegold;
           }
         }
-      }
-    }
-  }
-
-  @media all and (min-width: $medium-breakpoint + 1) {
-    // Calendar menu item
-    li.menu-item.rehorik-calendar-icon {
-      a {
-        font-size: 0;
-        background: transparent url("../img/svg/kalender.svg") no-repeat center center;
-        background-size: $menu-icon-size;
-        width: $menu-icon-size;
-        height: $menu-icon-size;
-      }
-    }
-
-    // My account menu item
-    li.menu-item.rehorik-user-icon {
-      a {
-        font-size: 0;
-        background: transparent url("../img/svg/user.svg") no-repeat center center;
-        $iconSize: $menu-icon-size + 4px;
-        background-size: $iconSize;
-        width: $iconSize;
-        height: $iconSize;
       }
     }
   }
