@@ -2,17 +2,32 @@
 @media all and (min-width: $medium-breakpoint + 1) {
   body.rehorik.has-slider {
     #page-container {
-      padding-top: $top-bar-height;
+      padding-top: 0;
 
       .rehorik-header-outer {
+        top: $spacing-xxs;
         header.rehorik-header {
           @for $i from 1 through 218 {
-            &[data-ypos="#{$i}"] #rehorik-menu {
-              background-color: rgba(92, 13, 47, $i / 100);
+            &[data-ypos="#{$i}"] {
+              #rehorik-menu {
+                background-color: rgba(92, 13, 47, $i / 100);
+              }
+              #top-bar {
+                background-color: rgba(0, 60, 74, $i / 100);
+              }
             }
           }
         }
       }
+    }
+  }
+
+  body.rehorik:not(.has-slider) {
+    #rehorik-menu {
+      background-color: $weinrot;
+    }
+    #top-bar {
+      background-color: $tuerkis;
     }
   }
 }

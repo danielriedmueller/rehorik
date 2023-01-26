@@ -7,17 +7,15 @@
     .rehorik-cart-info-number {
       position: absolute;
       font-size: $font-size-small;
-      top: -10px;
-      right: 3px;
+      top: -2px;
+      right: 0;
       display: block;
-      color: $beigegold;
+      color: #fff;
       $size: 22px;
       width: $size;
       height: $size;
       border-radius: $size;
-      padding-right: 1px;
-      background-color: $tuerkis;
-      border: 1px solid $lila;
+      background-color: $weinrot;
       text-align: center;
       line-height: 20px;
 
