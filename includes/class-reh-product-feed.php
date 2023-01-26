@@ -704,8 +704,11 @@ class Reh_Product_Feed
         return in_array($category, $allCategories);
     }
 
+    // TODO: Try without CDATA
     private function wrapValueInCdata(string $value): string
     {
-        return sprintf('<![CDATA[%s]]>', $value);
+        //return sprintf('<![CDATA[%s]]>', $value);
+
+        return $value;
     }
 }
