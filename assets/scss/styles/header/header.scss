@@ -8,15 +8,6 @@ header.rehorik-header {
     position: sticky;
     height: $menu-height;
   }
-
-  .rehorik-cart-info {
-    background: transparent url("../img/cart/warenkorb.svg") no-repeat center center;
-    background-size: $menu-icon-size;
-    width: $menu-icon-size;
-    height: $menu-icon-size;
-    padding-left: $spacing;
-    padding-right: $spacing;
-  }
 }
 
 .rehorik-header-outer {
