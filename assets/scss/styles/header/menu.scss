@@ -1,4 +1,10 @@
 // transparent header
+
+#page-container {
+  padding-top: $top-bar-height;
+  position: relative;
+}
+
 @media all and (min-width: $medium-breakpoint + 1) {
   body.rehorik.has-slider {
     #page-container {
@@ -23,12 +29,16 @@
   }
 
   body.rehorik:not(.has-slider) {
-    #rehorik-menu {
-      background-color: $weinrot;
+    #page-container {
+      padding-top: $top-bar-height + $menu-height;
+      #rehorik-menu {
+        background-color: $weinrot;
+      }
+      #top-bar {
+        background-color: $tuerkis;
+      }
     }
-    #top-bar {
-      background-color: $tuerkis;
-    }
+
   }
 }
 

@@ -9,9 +9,9 @@
                 ?>
             </div>
             <div class="top-bar-center">
-                <div>Hilfe / Beratung: <?= CONTACT_PHONE ?></div>
-                <div>Mit <span class="bean-icon"></span> aus Regensburg</div>
-                <div>Versandkostenfrei ab 69€</div>
+                <div class="help-icon">Hilfe / Kontakt: <?= CONTACT_PHONE ?></div>
+                <div class="bean-claim">Mit <span class="bean-icon"></span> aus Regensburg</div>
+                <div class="shipping-icon">Versandkostenfrei ab 69€</div>
             </div>
             <div class="top-bar-right">
                 <?php

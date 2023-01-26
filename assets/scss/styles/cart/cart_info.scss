@@ -10,8 +10,8 @@
     .rehorik-cart-info-number {
       position: absolute;
       font-size: $font-size-small;
-      top: -2px;
-      right: 0;
+      top: -3px;
+      right: $menu-icon-size + $spacing-xxs;
       display: block;
       color: #fff;
       $size: 22px;
