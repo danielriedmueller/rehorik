@@ -1,3 +1,13 @@
+@media all and (min-width: $medium-breakpoint + 1) {
+  header.rehorik-header {
+    .hamburger-icon,
+    .burger-overlay,
+    input#burger-button {
+      display: none;
+    }
+  }
+}
+
 // Mobile
 @media all and (max-width: $medium-breakpoint) {
   $space-top: 11px;
