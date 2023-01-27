@@ -121,9 +121,11 @@ $element-height: 42px;
 
     display: flex;
     left: 0;
-    top: 10px;
+    align-items: center;
+    height: $menu-height;
+    top: $top-bar-height;
     width: $social-media-container-width;
-    padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
+    padding: 0 $spacing-xs 0 $spacing;
 
     @media all and (max-width: 1400px) {
       display: none;

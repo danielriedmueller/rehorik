@@ -4,19 +4,18 @@
         <div id="rehorik-menu">
             <div id="top-bar">
                 <div class="left">
-                    <?php
-                    if (is_active_sidebar('productsearch')) {
-                        dynamic_sidebar('productsearch');
-                    }
-                    ?>
+                    <div class="help-icon">Hilfe & Kontakt: <?= CONTACT_PHONE ?></div>
                 </div>
                 <div class="center">
-                    <div class="help-icon">Hilfe / Kontakt: <?= CONTACT_PHONE ?></div>
+
                     <div class="bean-icon">Mit <span></span> aus Regensburg</div>
                     <div class="shipping-icon">Versandkostenfrei ab 69€</div>
                 </div>
                 <div class="right">
                     <?php
+                    if (is_active_sidebar('productsearch')) {
+                        dynamic_sidebar('productsearch');
+                    }
                     get_template_part('templates/header/cart-total');
                     foreach (wp_get_nav_menu_items('top-bar') as $item) {
                         echo sprintf('<a href="%s" class="%s">%s</a>', $item->url, implode(' ', $item->classes), $item->title);

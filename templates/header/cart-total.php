@@ -13,7 +13,6 @@ $showLink = is_cart() || is_checkout();
         <div class="rehorik-cart-info">
             <div class='rehorik-cart-info-number'><?php echo $contentCount > 0 ? $contentCount : "" ?></div>
         </div>
-        <span>Warenkorb</span>
 <?php if ($showLink) : ?>
     </a>
 <?php else : ?>

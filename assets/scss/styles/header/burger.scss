@@ -10,6 +10,10 @@
 
 // Mobile
 @media all and (max-width: $medium-breakpoint) {
+  header.rehorik-header {
+    height: $top-bar-height;
+  }
+
   body.rehorik:not(.has-slider) {
     #page-container {
       padding-top: $top-bar-height;
@@ -17,7 +21,6 @@
 
     header.rehorik-header {
       background-color: $weinrot;
-      height: $top-bar-height;
     }
   }
 
@@ -74,18 +77,6 @@
       left: 0;
       top: 0;
       background-color: rgba(0, 0, 0, $opacity);
-    }
-
-    .rehorik-product-search-widget {
-      position: absolute;
-      left: 0;
-
-      &::after, .rehorik-product-search-form {
-        left: 0;
-        right: unset;
-        width: 100vw;
-        border-bottom-left-radius: $border-radius;
-      }
     }
   }
 }

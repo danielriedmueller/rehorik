@@ -1,24 +1,54 @@
+//Hide second cart for desktop
+@media all and (min-width: $medium-breakpoint + 1) {
+  header.rehorik-header > #rehorik-cart {
+    display: none;
+  }
+}
+
+header.rehorik-header > #rehorik-cart {
+  position: absolute;
+  top: $mobile-space-to-top;
+  right: calc(var(--section-spacing-left-right) + #{$menu-icon-size} + #{$spacing-s});
+
+  .rehorik-cart-info {
+    background: transparent url("../img/cart/warenkorb.svg") no-repeat center center;
+  }
+}
+
 #rehorik-cart {
   cursor: pointer;
   display: flex;
   align-items: center;
 
+  &:hover {
+    color: $beigegold;
+
+    .rehorik-cart-info {
+      background-image: url("../img/cart/warenkorb.svg");
+    }
+  }
+
   .rehorik-cart-info {
     position: relative;
-    display: inline;
+    background: transparent url("../img/cart/warenkorb-white.svg") no-repeat center center;
+    background-size: $menu-icon-size;
+    width: $menu-icon-size;
+    height: $menu-icon-size;
+    margin-right: $spacing-xxs;
+    display: inline-block;
 
     .rehorik-cart-info-number {
       position: absolute;
       font-size: $font-size-small;
-      top: -3px;
-      right: $menu-icon-size + $spacing-xxs;
+      top: -4px;
+      right: -17px;
       display: block;
       color: #fff;
-      $size: 22px;
+      $size: 20px;
       width: $size;
       height: $size;
       border-radius: $size;
-      background-color: $weinrot;
+      background-color: $tuerkis;
       text-align: center;
       line-height: 20px;
 

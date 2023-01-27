@@ -13,7 +13,7 @@
 
   .left {
     justify-self: start;
-    padding-left: $spacing-xs;
+    padding-left: 28px;
   }
 
   .center {
@@ -41,7 +41,7 @@
 
   .rehorik-user-icon,
   .rehorik-calendar-icon {
-    color: #fff;
+    font-size: 0;
     display: block;
     padding-left: $menu-icon-size + $spacing-xxs;
     background-size: $menu-icon-size;
@@ -69,25 +69,6 @@
     }
   }
 
-  #rehorik-cart {
-    .rehorik-cart-info {
-      background: transparent url("../img/cart/warenkorb-white.svg") no-repeat center center;
-      background-size: $menu-icon-size;
-      width: $menu-icon-size;
-      height: $menu-icon-size;
-      margin-right: $spacing-xxs;
-      display: inline-block;
-    }
-
-    &:hover {
-      color: $beigegold;
-
-      .rehorik-cart-info {
-        background-image: url("../img/cart/warenkorb.svg");
-      }
-    }
-  }
-
   .bean-icon {
     display: flex;
     align-items: center;
@@ -104,7 +85,7 @@
   }
 
   .help-icon {
-    background: transparent url("../img/svg/question-square.svg") no-repeat left center;
+    background: transparent url("../img/svg/user-question.svg") no-repeat left center;
     background-size: $menu-icon-size;
     padding-left: $menu-icon-size + $spacing-xxs;
   }
@@ -119,24 +100,17 @@
   // Mobile
   @media all and (max-width: $medium-breakpoint) {
     position: absolute;
+    top: $mobile-space-to-top + $logo-size-small + $spacing;
+    left: 0;
     background-color: transparent;
     z-index: 30;
+    width: 100%;
+    grid-template-columns: 1fr;
+    color: $beigegold;
 
-    .rehorik-user-icon,
-    .rehorik-calendar-icon {
-      font-size: 0;
-      width: $menu-icon-size;
-      height: $menu-icon-size;
-      display: block;
-      padding: 0;
-      background-position: center center;
-    }
-
-    #rehorik-cart {
-      font-size: 0;
-      .rehorik-cart-info {
-        margin-right: 0;
-      }
+    > * {
+      margin: 0 !important;
+      padding: 0 !important;
     }
   }
 }
