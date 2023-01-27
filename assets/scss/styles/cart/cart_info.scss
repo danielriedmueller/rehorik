@@ -1,11 +1,11 @@
 //Hide second cart for desktop
 @media all and (min-width: $medium-breakpoint + 1) {
-  header.rehorik-header > #rehorik-cart {
+  header.rehorik-header > .rehorik-cart {
     display: none;
   }
 }
 
-header.rehorik-header > #rehorik-cart {
+header.rehorik-header > .rehorik-cart {
   position: absolute;
   top: $mobile-space-to-top;
   right: calc(var(--section-spacing-left-right) + #{$menu-icon-size} + #{$spacing-s});
@@ -15,7 +15,7 @@ header.rehorik-header > #rehorik-cart {
   }
 }
 
-#rehorik-cart {
+.rehorik-cart {
   cursor: pointer;
   display: flex;
   align-items: center;

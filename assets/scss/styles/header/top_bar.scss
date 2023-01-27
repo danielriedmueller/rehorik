@@ -112,5 +112,15 @@
       margin: 0 !important;
       padding: 0 !important;
     }
+
+    .right {
+      justify-items: center;
+      > * {
+        height: 50px;
+        width: 50px;
+        border: 1px solid $beigegold;
+        background-color: $beigegold;
+      }
+    }
   }
 }

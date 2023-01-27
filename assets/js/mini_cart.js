@@ -1,5 +1,5 @@
 (function ($) {
-    const $cartButton = $('#rehorik-cart');
+    const $cartButton = $('.rehorik-cart');
     const $overlayButton = $('#mini-cart-overlay');
     const $miniCart = $('#rehorik-mini-cart');
     const $miniCartClose = $('#mini-cart-close');
