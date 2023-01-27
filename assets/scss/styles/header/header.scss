@@ -6,13 +6,12 @@ header.rehorik-header {
 
   @media all and (min-width: $medium-breakpoint + 1) {
     position: sticky;
-    height: $menu-height;
   }
 }
 
 .rehorik-header-outer {
   @media all and (min-width: $medium-breakpoint + 1) {
-    $height: $menu-height + $section-spacing;
+    $height: $menu-height + $section-spacing + $top-bar-height;
     position: absolute;
     height: calc(100% - #{$height});
     top: 0;

@@ -22,6 +22,12 @@
         text-transform: none;
       }
 
+      @media all and (max-width: $medium-breakpoint) {
+        &::placeholder {
+          font-size: 0;
+        }
+      }
+
       &:focus {
         &::placeholder {
           opacity: $opacity;

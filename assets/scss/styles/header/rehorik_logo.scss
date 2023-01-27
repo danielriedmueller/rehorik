@@ -8,4 +8,13 @@
   top: $menu-height + $top-bar-height + $top-bar-height;
   bottom: 0;
   z-index: 9;
+
+  @media all and (max-width: $medium-breakpoint) {
+    width: $logo-size-small;
+    height: $logo-size-small;
+    background-size: $logo-size-small;
+    top: $mobile-space-to-top;
+    left: var(--section-spacing-left-right);
+    z-index: 20;
+  }
 }
