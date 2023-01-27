@@ -45,21 +45,21 @@ header.rehorik-header > #rehorik-menu {
   flex-direction: row-reverse;
   padding-left: var(--section-spacing-left-right);
   padding-right: var(--section-spacing-left-right);
-  height: $menu-height;
   position: relative;
-
-  .hamburger-icon, input#burger-button {
-    display: block;
-  }
 
   @media all and (min-width: $medium-breakpoint + 1) {
     justify-content: center;
     padding: 0;
-    flex-direction: row;
+    flex-direction: column;
     display: flex;
     align-items: center;
-    .hamburger-icon, input#burger-button {
-      display: none;
+
+    #top-bar {
+      height: $top-bar-height;
+    }
+
+    .menu-hauptmenue-container {
+      height: $menu-height;
     }
   }
 }

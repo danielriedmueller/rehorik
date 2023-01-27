@@ -8,7 +8,7 @@ $showLink = is_cart() || is_checkout();
 <?php if ($showLink) : ?>
     <a href="<?= wc_get_cart_url() ?>" id="rehorik-cart">
 <?php else : ?>
-    <div id="rehorik-cart">
+    <div role="button" id="rehorik-cart">
 <?php endif; ?>
         <div class="rehorik-cart-info">
             <div class='rehorik-cart-info-number'><?php echo $contentCount > 0 ? $contentCount : "" ?></div>

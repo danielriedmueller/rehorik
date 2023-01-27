@@ -156,7 +156,7 @@ $element-height: 42px;
         align-items: center;
         height: $menu-height;
         left: 0;
-        top: 0;
+        top: $top-bar-height;
         width: $social-media-container-width;
 
         @media all and (max-width: 1400px) {
