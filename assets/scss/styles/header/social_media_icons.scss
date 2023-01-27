@@ -82,16 +82,17 @@ $element-height: 42px;
   }
 }
 
+#rehorik-social-media-icons {
+  display: none;
+}
+
 // mobile
 @media all and (max-width: $medium-breakpoint) {
-  #rehorik-social-media-icons {
+  #rehorik-menu #rehorik-social-media-icons {
+    display: flex;
+
     @include gold-without-background;
     @include icon-size($spacing-s, $spacing-s);
-
-    display: flex;
-    opacity: 0;
-    transition: opacity var(--animation-time) linear;
-    pointer-events: none;
 
     .rehorik-logo {
       display: block;
@@ -106,30 +107,30 @@ $element-height: 42px;
     padding: 0 var(--section-spacing-left-right);
     left: 0;
     width: 100%;
-    top: $menu-height + $spacing;
+    top: $mobile-space-to-top;
     justify-content: flex-end;
     align-items: center;
+  }
+}
 
-    &.hide-for-mobile {
+@media all and (min-width: $medium-breakpoint + 1) {
+  // desktop without slider
+  body:not(.has-slider) header.rehorik-header #rehorik-social-media-icons {
+    @include gold-without-background;
+    @include icon-size($spacing, $spacing-xs);
+
+    display: flex;
+    left: 0;
+    top: 10px;
+    width: $social-media-container-width;
+    padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
+
+    @media all and (max-width: 1400px) {
       display: none;
     }
   }
 
-  // burger
-  header.rehorik-header {
-    .menu-hauptmenue-container {
-      padding-top: $menu-height + $spacing + $spacing-l + $menu-height;
-    }
-
-    input#burger-button:checked ~ #rehorik-social-media-icons {
-      opacity: 1;
-      pointer-events: auto;
-    }
-  }
-}
-
-// desktop with slider
-@media all and (min-width: $medium-breakpoint + 1) {
+  // desktop with slider
   body.has-slider {
     #rehorik-social-media-icons {
       @include white-with-background;
@@ -162,28 +163,6 @@ $element-height: 42px;
           display: none;
         }
       }
-    }
-  }
-}
-
-// desktop without slider
-@media all and (min-width: $medium-breakpoint + 1) {
-  #rehorik-social-media-icons {
-    display: none;
-  }
-
-  body:not(.has-slider) header.rehorik-header #rehorik-social-media-icons {
-    @include gold-without-background;
-    @include icon-size($spacing, $spacing-xs);
-
-    display: flex;
-    left: 0;
-    top: 10px;
-    width: $social-media-container-width;
-    padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
-
-    @media all and (max-width: 1400px) {
-      display: none;
     }
   }
 }

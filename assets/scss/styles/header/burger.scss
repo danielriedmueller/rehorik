@@ -10,8 +10,6 @@
 
 // Mobile
 @media all and (max-width: $medium-breakpoint) {
-  $space-top: 11px;
-
   body.rehorik:not(.has-slider) {
     #page-container {
       padding-top: $top-bar-height;
@@ -23,20 +21,11 @@
     }
   }
 
-  #rehorik-logo {
-    width: $logo-size-small;
-    height: $logo-size-small;
-    background-size: $logo-size-small;
-    top: $space-top;
-    left: var(--section-spacing-left-right);
-    z-index: 20;
-  }
-
   header.rehorik-header {
     .hamburger-icon,
     input#burger-button {
       position: absolute;
-      top: $space-top;
+      top: $mobile-space-to-top;
       right: var(--section-spacing-left-right);
       padding: 0;
       margin: 0;
@@ -50,7 +39,9 @@
       z-index: 10;
     }
 
-    #top-bar, #rehorik-menu {
+    #top-bar,
+    #rehorik-menu,
+    #rehorik-social-media-icons {
       opacity: 0;
       transform: translateX(100%);
       transition: transform var(--animation-time), opacity var(--animation-time) linear;
@@ -64,6 +55,7 @@
 
       &:checked {
         & ~ #top-bar,
+        & ~ #rehorik-menu #rehorik-social-media-icons,
         & ~ #rehorik-menu {
           pointer-events: all;
           opacity: 1;
@@ -117,6 +109,7 @@
       overflow: scroll;
       width: 100%;
       padding-bottom: $item-spacing;
+      padding-top: 300px;
 
       &::before {
         content: "";
