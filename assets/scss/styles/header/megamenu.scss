@@ -133,22 +133,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
 // Mobile
 @media all and (max-width: $medium-breakpoint) {
   header.rehorik-header .menu-hauptmenue-container {
-    background-color: $weinrot;
-    background-image: url("../img/burger/burger_bg.jpg"), url("../img/burger/burger_bg_tile.jpg");
-    background-repeat: no-repeat, repeat;
-    background-position: left top, left bottom;
-    background-size: cover;
-
     $item-spacing: $spacing-xs;
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-height: 100vh;
-    overflow: scroll;
-    width: 100%;
-    padding-bottom: $item-spacing;
-    padding-top: 300px;
-
     &::before {
       content: "";
       display: block;

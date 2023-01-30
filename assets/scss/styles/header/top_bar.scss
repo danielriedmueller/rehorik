@@ -99,27 +99,151 @@
 
   // Mobile
   @media all and (max-width: $medium-breakpoint) {
-    position: absolute;
-    top: $mobile-space-to-top + $logo-size-small + $spacing;
-    left: 0;
-    background-color: transparent;
+    position: relative;
+    height: auto;
     z-index: 30;
     width: 100%;
     grid-template-columns: 1fr;
     color: $beigegold;
+    padding: $spacing-xs var(--section-spacing-left-right);
+    margin: $spacing-xs 0;
+    background-color: $anthrazit-opacity;
 
-    > * {
-      margin: 0 !important;
-      padding: 0 !important;
+    .left, .center, .right {
+      margin: 0;
+      padding: 0;
+
+      &:not(:last-child) {
+        margin-bottom: $spacing-xs;
+      }
+    }
+
+    .left {
+      justify-self: center;
     }
 
     .right {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(40px, 1fr));
       justify-items: center;
-      > * {
-        height: 50px;
-        width: 50px;
+      align-items: center;
+      width: 100%;
+
+      $icon-size: 35%;
+
+      .rehorik-product-search-widget {
+        order: 1;
+      }
+
+      .rehorik-cart {
+        order: 4;
+      }
+
+      .rehorik-user-icon {
+        order: 3;
+      }
+
+      .rehorik-calendar-icon {
+        order: 2;
+      }
+
+      > div, > a {
+        display: block;
+        width: 100%;
+        max-width: 55px;
         border: 1px solid $beigegold;
-        background-color: $beigegold;
+        border-radius: $border-radius;
+        background-color: transparent;
+        margin-right: 0 !important;
+        padding: 0;
+        line-height: 0;
+      }
+
+      > a {
+        background-position: center;
+        background-size: $icon-size;
+
+        &::before {
+          content: "";
+          padding-bottom: 100%;
+          display: block;
+        }
+
+        &.rehorik-calendar-icon {
+          background-image: url("../img/svg/kalender.svg");
+
+          &:hover {
+            background-image: url("../img/svg/kalender_white.svg");
+          }
+        }
+
+        &.rehorik-user-icon {
+          background-image: url("../img/svg/user.svg");
+
+          &:hover {
+            background-image: url("../img/svg/user_white.svg");
+          }
+        }
+      }
+
+      .rehorik-cart .rehorik-cart-info {
+        padding-bottom: 100%;
+        width: 100%;
+        margin: 0;
+        background-position: center;
+        background-size: $icon-size;
+
+        background-image: url("../img/cart/warenkorb.svg");
+
+        &:hover {
+          background-image: url("../img/cart/warenkorb-white.svg");
+        }
+
+        .rehorik-cart-info-number {
+          display: none;
+        }
+      }
+
+      .rehorik-product-search-widget {
+        position: relative;
+
+        &::before {
+          content: "";
+          padding-bottom: 100%;
+          display: block;
+        }
+
+        .dgwt-wcas-search-wrapp {
+          min-width: unset;
+          position: absolute;
+          height: 100%;
+          top: 0;
+          left: 0;
+
+          form.dgwt-wcas-search-form {
+            height: 100%;
+
+            .dgwt-wcas-sf-wrapp {
+              height: 100%;
+
+              svg.dgwt-wcas-ico-magnifier {
+                margin: auto auto;
+                height: 100%;
+                width: $icon-size;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                max-width: unset;
+                max-height: unset;
+
+                path {
+                  fill: $beigegold;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
