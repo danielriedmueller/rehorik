@@ -105,8 +105,7 @@
     width: 100%;
     grid-template-columns: 1fr;
     color: $beigegold;
-    padding: $spacing-xs var(--section-spacing-left-right);
-    margin: $spacing-xs 0;
+    padding: $spacing-s var(--section-spacing-left-right);
     background-color: $anthrazit-opacity;
 
     .left, .center, .right {
