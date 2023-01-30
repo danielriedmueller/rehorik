@@ -1,5 +1,5 @@
 <?php
-show_admin_bar(false);
+show_admin_bar(true);
 
 const PROD_URL = 'https://www.rehorik.de';
 
