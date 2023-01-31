@@ -1,8 +1,6 @@
 <?php
 show_admin_bar(true);
 
-const PROD_URL = 'https://www.rehorik.de';
-
 const BAYERNWERK_COUPON_CODE = 'bayernwerkxmas22';
 
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
