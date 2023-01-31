@@ -121,6 +121,12 @@
       justify-self: center;
     }
 
+    .center {
+      > *:not(:last-child) {
+        margin-right: $spacing;
+      }
+    }
+
     .right {
       display: grid;
       grid-template-columns: repeat(4, minmax(40px, 1fr));
