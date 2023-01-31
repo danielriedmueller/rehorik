@@ -15,8 +15,15 @@ class Reh_Product_Feed
 
     const SHIPPING_COST = '5.80';
 
-    const GOOGLE_WINE_CATEGORY = 421; // has alcohol
-    const GOOGLE_COFFEE_CATEGORY = 1868; // has caffeine
+    const GOOGLE_WINE_CATEGORY = [
+        'id' => 421,
+        'text' => 'Nahrungsmittel, Getränke & Tabak > Getränke > Alkoholische Getränke > Wein'
+    ]; // has alcohol
+
+    const GOOGLE_COFFEE_CATEGORY = [
+        'id' => 1868,
+        'text' => 'Nahrungsmittel, Getränke & Tabak > Getränke > Kaffee'
+    ]; // has caffeine
 
     protected static $_instance = null;
 
@@ -130,6 +137,8 @@ class Reh_Product_Feed
         );
 
         $products = $this->refineProducts($this->queryProducts($args, $fields));
+        $products = $this->mapGoogleCategories($products);
+        $products = $this->markAlcoholicProducts($products);
 
         $this->updateFeedForAtalanda($products);
         $this->updateFeedForGoogleMerchant($products);
@@ -150,22 +159,36 @@ class Reh_Product_Feed
             $product['description'] = htmlspecialchars(strip_tags($product['description']));
             $product['name'] = htmlspecialchars(strip_tags($product['name']));
 
+            // Fix categories and add names
             if (!empty($product['category_ids'])) {
-                if (is_array($product['category_ids'])) {
-                    $categoryIds = $product['category_ids'];
-                } else {
-                    $categoryIds = [$product['category_ids']];
-                }
-
-                $product['category_ids'] = $this->getGoogleProductCategory($categoryIds);
+                $categoryIds = is_array($product['category_ids']) ? $product['category_ids'] : [$product['category_ids']];
                 $product['category_names'] = $this->getCategoryNames($categoryIds);
+            }
+        }
 
-                // Check for alcohol
-                $product['alcoholic'] = false;
-                if ($product['category_ids']) {
-                    if (self::GOOGLE_WINE_CATEGORY === $product['category_ids']) {
-                        $product['alcoholic'] = true;
-                    }
+        return $products;
+    }
+
+    private function mapGoogleCategories(array $products): array
+    {
+        foreach ($products as &$product) {
+            if (!empty($product['category_ids']) && is_array($product['category_ids'])) {
+                if ($googleCategory = $this->getGoogleCategory($product['category_ids'])) {
+                    $product['google_category_id'] = $googleCategory['id'];
+                    $product['google_category_name'] = htmlspecialchars(strip_tags($googleCategory['text']));
+                }
+            }
+        }
+
+        return $products;
+    }
+
+    private function markAlcoholicProducts(array $products): array
+    {
+        foreach ($products as &$product) {
+            if (!empty($product['google_category_id'])) {
+                if (self::GOOGLE_WINE_CATEGORY['id'] === $product['google_category_id']) {
+                    $product['alcoholic'] = true;
                 }
             }
         }
@@ -197,15 +220,15 @@ class Reh_Product_Feed
             $child = $channel->addChild('item');
             $child->addChild('id', $product['id'], $googleNS);
             $child->addChild('title', $product['name']);
-            $child->addChild('description', '<![CDATA[' . $product['description'] . ']]>');
+            $child->addChild('description', $this->wrapValueInCdata($product['description']));
             $child->addChild('link', get_permalink($product['id']));
             $child->addChild('image_link', $product['image'], $googleNS);
             $child->addChild('availability', $product['stock_quantity'] > 0 ? 'in stock' : 'out of stock', $googleNS);
             $child->addChild('price', $product['regular_price'] . ' EUR', $googleNS);
             $child->addChild('mpn', $product['sku']);
             $child->addChild('brand', 'Rehorik', $googleNS);
-            $child->addChild('google_product_category', $product['category_ids'], $googleNS);
-            $child->addChild('product_type', $product['category_names'], $googleNS);
+            $child->addChild('google_product_category', $this->wrapValueInCdata($product['google_category_name']), $googleNS);
+            $child->addChild('product_type', $this->wrapValueInCdata($product['google_category_name']), $googleNS);
             $child->addChild('identifier_exists', 'FALSE', $googleNS);
             $child->addChild('tax_rate', '19', $atalandaNS);
 
@@ -246,7 +269,7 @@ class Reh_Product_Feed
             $child = $channel->addChild('item');
             $child->addChild('id', $product['id'], $ns);
             $child->addChild('title', $product['name'], $ns);
-            $child->addChild('description', '<![CDATA[' . $product['description'] . ']]>', $ns);
+            $child->addChild('description', $this->wrapValueInCdata($product['description']), $ns);
             $child->addChild('link', get_permalink($product['id']), $ns);
             $child->addChild('image_link', $product['image'], $ns);
             $child->addChild('condition', 'new', $ns);
@@ -258,7 +281,7 @@ class Reh_Product_Feed
             $shipping->addChild('price', self::SHIPPING_COST . ' EUR', $ns);
             $child->addChild('mpn', $product['sku'], $ns);
             $child->addChild('brand', 'Rehorik', $ns);
-            $child->addChild('google_product_category', $product['category_ids'], $ns);
+            $child->addChild('google_product_category', $product['google_category_id'], $ns);
             $child->addChild('product_type', $product['category_names'], $ns);
             $child->addChild('identifier_exists', 'ja', $ns);
             $tax = $child->addChild('tax', null, $ns);
@@ -346,7 +369,7 @@ class Reh_Product_Feed
             $csvProduct['link'] = get_permalink($product['id']);
             $csvProduct['price'] = $product['regular_price'] . ' EUR';
             $csvProduct['brand'] = $product['sku'];
-            $csvProduct['google_product_category'] = $product['category_ids'];
+            $csvProduct['google_product_category'] = $product['google_category_id'];
             $csvProduct['size'] = $product['unit_amount'] . ' ' . $product['unit'];
             $csvProduct['shipping'] = 'DE::Ground:' . self::SHIPPING_COST . ' EUR';
 
@@ -406,7 +429,7 @@ class Reh_Product_Feed
             $csvProduct['link'] = get_permalink($product['id']);
             $csvProduct['price'] = $product['regular_price'] . ' EUR';
             $csvProduct['brand'] = $product['sku'];
-            $csvProduct['google_product_category'] = $product['category_ids'];
+            $csvProduct['google_product_category'] = $product['google_category_id'];
             $csvProduct['size'] = $product['unit_amount'] . ' ' . $product['unit'];
             $csvProduct['shipping'] = 'DE::Ground:' . self::SHIPPING_COST . ' EUR';
             $csvProducts[] = $csvProduct;
@@ -616,19 +639,17 @@ class Reh_Product_Feed
     /**
      * Maps the WooCommerce product category to the Google product category.
      * https://www.google.com/basepages/producttype/taxonomy-with-ids.de-DE.txt
-     *
-     * @param array $categoryIds
      */
-    private function getGoogleProductCategory(array $categoryIds): ?int
+    private function getGoogleCategory(array $categoryIds): ?array
     {
+        if (empty($categoryIds)) {
+            return null;
+        }
+
         $googleProductCategoriesMapping = [
             WINE_CATEGORY_SLUG => self::GOOGLE_WINE_CATEGORY,
             COFFEE_CATEGORY_SLUG => self::GOOGLE_COFFEE_CATEGORY
         ];
-
-        if (empty($categoryIds)) {
-            return null;
-        }
 
         if ($this->isCategory($categoryIds, WINE_CATEGORY_SLUG)) {
             return $googleProductCategoriesMapping[WINE_CATEGORY_SLUG];
@@ -681,5 +702,13 @@ class Reh_Product_Feed
         }
 
         return in_array($category, $allCategories);
+    }
+
+    // TODO: Try without CDATA
+    private function wrapValueInCdata(string $value): string
+    {
+        //return sprintf('<![CDATA[%s]]>', $value);
+
+        return $value;
     }
 }
