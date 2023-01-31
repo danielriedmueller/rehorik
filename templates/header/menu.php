@@ -9,7 +9,7 @@
                 <div class="center">
 
                     <div class="bean-icon">Mit <span></span> aus Regensburg</div>
-                    <div class="shipping-icon">Versandkostenfrei ab 100 €</div>
+                    <div class="shipping-icon">Versandkostenfrei ab 101 €</div>
                 </div>
                 <div class="right">
                     <?php
