@@ -15,6 +15,38 @@ $element-height: 42px;
   background: rgba(255, 255, 255, $opacity) none no-repeat center center;
   border-bottom-right-radius: $border-radius;
   border-top-right-radius: $border-radius;
+  padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
+
+  .fb {
+    background-image: url("../img/svg/facebook.svg");
+
+    &:hover {
+      background-image: url("../img/svg/facebook_white.svg");
+    }
+  }
+
+  .yt {
+    background-image: url("../img/svg/youtube.svg");
+
+    &:hover {
+      background-image: url("../img/svg/youtube_white.svg");
+    }
+  }
+
+  .instagram {
+    background-image: url("../img/svg/instagram.svg");
+
+    &:hover {
+      background-image: url("../img/svg/instagram_white.svg");
+    }
+  }
+}
+
+@mixin white-with-background-reversed {
+  background: rgba(255, 255, 255, $opacity) none no-repeat center center;
+  border-bottom-left-radius: $border-radius;
+  border-top-left-radius: $border-radius;
+  padding: $spacing-xxs var(--section-spacing-left-right) $spacing-xxs $spacing-xs;
 
   .fb {
     background-image: url("../img/svg/facebook.svg");
@@ -89,25 +121,15 @@ $element-height: 42px;
 // mobile
 @media all and (max-width: $medium-breakpoint) {
   #rehorik-menu #rehorik-social-media-icons {
-    display: flex;
-
-    @include gold-without-background;
+    @include white-with-background-reversed;
     @include icon-size($spacing-s, $spacing-s);
 
-    .rehorik-logo {
-      display: block;
-      background-image: url("../img/logos/logo.svg");
-      flex: 0 0 $logo-size-very-small;
-      width: $logo-size-very-small;
-      height: $logo-size-very-small;
-      background-size: $logo-size-very-small;
-      margin-right: auto;
-    }
-
-    padding: 0 var(--section-spacing-left-right);
-    left: 0;
-    width: 100%;
-    top: $mobile-space-to-top;
+    $height: 36px;
+    display: flex;
+    right: 0;
+    width: auto;
+    height: $height;
+    top: $mobile-space-to-top + $logo-size-small - $height;
     justify-content: flex-end;
     align-items: flex-end;
   }
@@ -141,7 +163,6 @@ $element-height: 42px;
       display: flex;
       left: 0;
       top: $menu-height + $top-bar-height + $top-bar-height + $logo-size - $element-height - $spacing-xxs;
-      padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
 
       &.scrolled {
         display: none;

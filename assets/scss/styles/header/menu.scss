@@ -72,6 +72,7 @@ header.rehorik-header > #rehorik-menu {
 
     .menu-hauptmenue-container {
       height: $menu-height;
+      order: 1;
     }
   }
 
@@ -84,7 +85,7 @@ header.rehorik-header > #rehorik-menu {
     background-repeat: no-repeat, repeat;
     background-position: left top, left bottom;
     background-size: cover;
-    max-height: 100vh;
+    height: 100vh;
     overflow: scroll;
   }
 }

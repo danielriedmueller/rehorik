@@ -2,7 +2,7 @@
   height: $top-bar-height;
   background-color: transparent;
   width: 100%;
-
+  order: 0;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
