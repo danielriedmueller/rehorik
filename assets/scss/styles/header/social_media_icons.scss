@@ -122,7 +122,7 @@ $element-height: 42px;
 @media all and (max-width: $medium-breakpoint) {
   #rehorik-menu #rehorik-social-media-icons {
     @include white-with-background-reversed;
-    @include icon-size($spacing-s, $spacing-s);
+    @include icon-size($icon-size, $spacing-s);
 
     $height: 36px;
     display: flex;

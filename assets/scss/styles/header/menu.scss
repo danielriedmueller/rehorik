@@ -78,7 +78,7 @@ header.rehorik-header > #rehorik-menu {
 
   // Mobile
   @media all and (max-width: $medium-breakpoint) {
-    padding-top: $mobile-space-to-top + $logo-size-small + $spacing-s;
+    padding-top: 133px + $spacing-l;
     padding-bottom: $spacing;
     background-color: $weinrot;
     background-image: url("../img/menu/burger-bg.jpg"), url("../img/menu/burger-bg-tile.jpg");

@@ -19,10 +19,15 @@
 }
 
 #rehorik-logo-mobile {
+  display: none;
+
+  @media all and (max-width: $medium-breakpoint) {
+    display: block;
+  }
+
   position: absolute;
   top: $mobile-space-to-top;
   left: var(--section-spacing-left-right);
-  display: block;
   background-image: url("../img/logos/logo.svg");
   flex: 0 0 $logo-size-very-small;
   width: $logo-size-very-small;
