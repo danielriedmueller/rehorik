@@ -61,12 +61,12 @@
 
   // My account menu item
   .rehorik-user-icon {
-    background-image: url("../img/menu/konto.svg");
+    background-image: url("../img/menu/konto-white.svg");
     height: $icon-size + 2px;
 
     &:hover {
       color: $beigegold;
-      background-image: url("../img/menu/konto-white.svg");
+      background-image: url("../img/menu/konto.svg");
     }
   }
 
