@@ -201,6 +201,10 @@
     .left {
       padding-left: 0;
       margin-bottom: $spacing-s;
+
+      .help-icon {
+        background-image: url("../img/menu/hilfe-kontakt.svg");
+      }
     }
 
     .center {
