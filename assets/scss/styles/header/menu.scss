@@ -16,7 +16,6 @@
               }
 
               #top-bar {
-                //background-color: rgba(0, 60, 74, $i / 100);
                 background-color: rgba(57, 53, 54, $i / 100);
               }
             }
@@ -78,14 +77,16 @@ header.rehorik-header > #rehorik-menu {
 
   // Mobile
   @media all and (max-width: $medium-breakpoint) {
-    padding-top: 133px + $spacing-l;
-    padding-bottom: $spacing;
-    background-color: $weinrot;
-    background-image: url("../img/menu/burger-bg.jpg"), url("../img/menu/burger-bg-tile.jpg");
-    background-repeat: no-repeat, repeat;
-    background-position: left top, left bottom;
-    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    background: $weinrot url("../img/menu/striche-dreieck-menu.svg") no-repeat top left;
+    background-size: 325px;
     height: 100vh;
     overflow: scroll;
+
+    .menu-hauptmenue-container {
+      margin-top: 133px + $spacing-l;
+      flex-grow: 1;
+    }
   }
 }

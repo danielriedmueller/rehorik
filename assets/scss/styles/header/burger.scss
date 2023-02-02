@@ -47,7 +47,6 @@
       transform: translateX(100%);
       transition: transform var(--animation-time), opacity var(--animation-time) linear;
       pointer-events: none;
-      background-color: transparent;
     }
 
     input#burger-button {

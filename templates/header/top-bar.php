@@ -3,7 +3,7 @@
         <div class="help-icon">Hilfe & Kontakt: <?= CONTACT_PHONE ?></div>
     </div>
     <div class="center">
-        <div class="bean-icon">Mit <span></span> aus Regensburg</div>
+        <div class="bean-icon"> <span></span> Kaffeerösterei aus Regensburg</div>
         <div class="shipping-icon">Versandkostenfrei ab <?= FREE_SHIPPING_AMOUNT ?> €</div>
     </div>
     <div class="right">
