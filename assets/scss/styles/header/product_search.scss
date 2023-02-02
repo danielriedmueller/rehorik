@@ -1,6 +1,8 @@
 .rehorik {
   .rehorik-product-search-widget {
-    .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input, .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:hover, .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:focus {
+    .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input,
+    .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:hover,
+    .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:focus {
       border: none;
       color: #fff;
       background-color: transparent;
@@ -11,6 +13,7 @@
       font-size: $font-size-small;
       font-weight: bold;
       text-transform: none;
+      padding-right: 0;
 
       &::placeholder {
         color: #fff;

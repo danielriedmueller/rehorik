@@ -16,7 +16,6 @@
               }
 
               #top-bar {
-                //background-color: rgba(0, 60, 74, $i / 100);
                 background-color: rgba(57, 53, 54, $i / 100);
               }
             }
@@ -72,19 +71,22 @@ header.rehorik-header > #rehorik-menu {
 
     .menu-hauptmenue-container {
       height: $menu-height;
+      order: 1;
     }
   }
 
   // Mobile
   @media all and (max-width: $medium-breakpoint) {
-    padding-top: $mobile-space-to-top + $logo-size-small + $spacing-s;
-    padding-bottom: $spacing;
-    background-color: $weinrot;
-    background-image: url("../img/burger/burger_bg.jpg"), url("../img/burger/burger_bg_tile.jpg");
-    background-repeat: no-repeat, repeat;
-    background-position: left top, left bottom;
-    background-size: cover;
-    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: $weinrot url("../img/menu/striche-dreieck-menu.svg") no-repeat top left;
+    background-size: 325px;
+    height: 100vh;
     overflow: scroll;
+
+    .menu-hauptmenue-container {
+      margin-top: 133px + $spacing-l;
+      flex-grow: 1;
+    }
   }
 }
