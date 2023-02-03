@@ -107,7 +107,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
       }
 
       > ul.sub-menu > li.menu-item > a {
-        font-weight: bold;
+        font-family: $font-family-bold;
       }
 
       &:hover {
@@ -178,7 +178,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
         }
 
         > a {
-          font-weight: bold;
+          font-family: $font-family-bold;
           width: 100%;
           background-image: url("../img/pfeil-rot-unten.svg");
           background-repeat: no-repeat;
