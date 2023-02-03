@@ -39,7 +39,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
     background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right $spacing-xs;
     background-size: 10px;
 
-    a {
+    > a {
       font-family: $font-family-headline;
     }
   }
