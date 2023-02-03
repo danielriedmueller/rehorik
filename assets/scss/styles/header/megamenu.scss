@@ -5,7 +5,6 @@
   }
 }
 
-// Desktop
 header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
   display: flex;
 
@@ -40,27 +39,6 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
   > li.menu-item-has-children {
     background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right $spacing-xs;
     background-size: 10px;
-
-    > a {
-      padding-right: $spacing-l;
-    }
-
-    > ul.sub-menu > li.menu-item > a {
-      font-weight: bold;
-    }
-
-    &:hover {
-      background-color: $menu-hover-color;
-      background-image: url("../img/pfeil-rot-oben.svg");
-
-      a {
-        color: $weinrot;
-      }
-
-      > ul.sub-menu {
-        display: grid;
-      }
-    }
   }
 
   // Second Level menu items
@@ -96,11 +74,6 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
     }
 
     > li.menu-item {
-      > a:hover {
-        background-color: $menu-sub-item-hover-color;
-        color: $beigegold;
-      }
-
       &:only-child {
         grid-column-start: 1;
         grid-column-end: 4;
@@ -119,10 +92,57 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
       li.menu-item {
         a {
           padding: $spacing-xxs $spacing;
+        }
+      }
+    }
+  }
+}
 
-          &:hover {
-            background-color: $menu-sub-item-hover-color;
-            color: $beigegold;
+// Desktop Hover
+@media all and (min-width: $medium-breakpoint + 1) {
+  header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
+    > li.menu-item-has-children {
+      > a {
+        padding-right: $spacing-l;
+      }
+
+      > ul.sub-menu > li.menu-item > a {
+        font-weight: bold;
+      }
+
+      &:hover {
+        background-color: $menu-hover-color;
+        background-image: url("../img/pfeil-rot-oben.svg");
+
+        a {
+          color: $weinrot;
+        }
+
+        > ul.sub-menu {
+          display: grid;
+        }
+      }
+    }
+
+    // Second Level menu items
+    > li.menu-item-has-children > ul.sub-menu {
+      > li.menu-item {
+        > a:hover {
+          background-color: $menu-sub-item-hover-color;
+          color: $beigegold;
+        }
+      }
+    }
+
+    // Third Level menu items
+    > li.menu-item-has-children > ul.sub-menu > li.menu-item-has-children {
+      > ul.sub-menu {
+        li.menu-item {
+          a {
+            &:hover {
+              background-color: $menu-sub-item-hover-color;
+              color: $beigegold;
+            }
           }
         }
       }
@@ -134,70 +154,63 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
 @media all and (max-width: $medium-breakpoint) {
   header.rehorik-header .menu-hauptmenue-container {
     $item-spacing: $spacing-s;
+
     ul.menu#menu-hauptmenue {
       flex-direction: column;
       background-color: transparent;
 
-      > li.menu-item {
-        background-color: transparent;
-        padding: 0;
-        border: none;
-
-        a {
-          padding: $item-spacing var(--section-spacing-left-right);
-        }
+      li.menu-item:not(.menu-item-has-children) {
+        font-weight: normal;
       }
 
-      > li.menu-item-has-children {
-        background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right var(--section-spacing-left-right);
-        background-size: 10px;
+      > li.menu-item {
+        background-color: transparent;
+        border: none;
+      }
 
-        > a {
-          pointer-events: none;
-        }
+      li.menu-item-has-children {
+        background: transparent none;
 
-        a {
-          width: -moz-fit-content;
-          width: fit-content;
-        }
-
-        > ul.sub-menu {
+        ul.sub-menu {
           display: none;
           position: initial;
           border: 0;
-
-          li {
-            padding: $item-spacing calc(var(--section-spacing-left-right) + #{$item-spacing});
-          }
-
-          > li.menu-item {
-            a {
-              padding: 0;
-            }
-          }
-
-          > li.menu-item-has-children > ul.sub-menu > li.menu-item {
-            a {
-              padding: 0;
-            }
-          }
         }
 
-        // Touch on menu item with children
-        &:hover {
-          height: auto;
-          background: rgba(206, 182, 127, 0.9) url("../img/pfeil-rot-oben.svg") no-repeat top 30px right var(--section-spacing-left-right);
-          background-size: 10px;
+        > a {
+          font-weight: bold;
+          width: 100%;
+          background-image: url("../img/pfeil-rot-unten.svg");
+          background-repeat: no-repeat;
+          background-position: top 30px right var(--section-spacing-left-right);
+          background-size: $icon-size;
 
-          a {
+          // Touch on menu item with children
+          &.open {
+            background-color: $beigegold;
+            background-image: url("../img/pfeil-rot-oben.svg");
             color: $weinrot;
-          }
 
-          > ul.sub-menu {
-            display: block;
-            background: transparent;
+            + ul.sub-menu {
+              display: block;
+              background: $beigegold;
+            }
           }
         }
+      }
+
+      > li.menu-item-has-children > a {
+        background-image: url("../img/pfeil-gold-unten.svg");
+      }
+
+      // Paddings
+      li.menu-item a {
+        padding: $item-spacing 0 $item-spacing var(--section-spacing-left-right);
+      }
+
+      // 2nd Level
+      > li.menu-item-has-children > ul.sub-menu > li.menu-item-has-children > ul.sub-menu > li.menu-item > a {
+        padding: $item-spacing 0 $item-spacing calc(var(--section-spacing-left-right)  + #{$spacing-l});
       }
     }
   }

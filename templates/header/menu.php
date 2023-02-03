@@ -4,7 +4,10 @@
         <div id="rehorik-menu">
             <?php
             get_template_part('templates/header/social-media-icons', null, ['withLogo' => true]);
-            wp_nav_menu(['theme_location' => 'main']);
+            wp_nav_menu([
+                    'theme_location' => 'main',
+                    'container' => 'nav',
+            ]);
             get_template_part('templates/header/top-bar');
             ?>
         </div>
