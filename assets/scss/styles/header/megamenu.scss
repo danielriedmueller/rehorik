@@ -20,7 +20,6 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
       width: -moz-fit-content;
       color: $font-color-accent;
       font-size: $font-size;
-      font-family: $font-family-headline;
     }
   }
 
@@ -39,6 +38,10 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
   > li.menu-item-has-children {
     background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right $spacing-xs;
     background-size: 10px;
+
+    a {
+      font-family: $font-family-headline;
+    }
   }
 
   // Second Level menu items
@@ -67,7 +70,6 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
       width: 100%;
 
       a {
-        font-family: $font-family-body;
         padding: $spacing-s $spacing;
         width: 100%;
       }
@@ -107,7 +109,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
       }
 
       > ul.sub-menu > li.menu-item > a {
-        font-family: $font-family-bold;
+        font-family: $font-family-headline;
       }
 
       &:hover {
@@ -178,7 +180,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
         }
 
         > a {
-          font-family: $font-family-bold;
+          font-family: $font-family-headline;
           width: 100%;
           background-image: url("../img/pfeil-rot-unten.svg");
           background-repeat: no-repeat;
