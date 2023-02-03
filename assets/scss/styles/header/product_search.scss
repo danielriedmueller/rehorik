@@ -8,20 +8,18 @@
       background-color: transparent;
       border-radius: $border-radius;
       font-style: normal;
-      font-family: $font-family-body;
       opacity: 1;
       font-size: $font-size-small;
-      font-weight: bold;
+      font-family: $font-family-bold;
       text-transform: none;
       padding-right: 0;
 
       &::placeholder {
         color: #fff;
         font-style: normal;
-        font-family: $font-family-body;
+        font-family: $font-family-bold;
         opacity: 1;
         font-size: $font-size-small;
-        font-weight: bold;
         text-transform: none;
       }
 
