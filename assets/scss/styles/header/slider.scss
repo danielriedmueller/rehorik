@@ -48,7 +48,7 @@
 
   .slider-title {
     h1, h2 {
-      font-family: $font-family-headline;
+      font-family: $font-family-black;
     }
 
     h2 {
@@ -81,7 +81,7 @@
 
     .button {
       transition: none;
-      font-family: $font-family-headline;
+      font-family: $font-family-bold;
       background-color: $weinrot;
       color: $beigegold;
       padding: $spacing-xxs $spacing-xs;

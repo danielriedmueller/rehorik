@@ -40,7 +40,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
     background-size: 10px;
 
     > a {
-      font-family: $font-family-headline;
+      font-family: $font-family-bold;
     }
   }
 
@@ -109,7 +109,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
       }
 
       > ul.sub-menu > li.menu-item > a {
-        font-family: $font-family-headline;
+        font-family: $font-family-bold;
       }
 
       &:hover {
@@ -186,7 +186,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
         }
 
         > a {
-          font-family: $font-family-headline;
+          font-family: $font-family-bold;
           width: 100%;
           background-image: url("../img/pfeil-rot-unten.svg");
           background-repeat: no-repeat;
