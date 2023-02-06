@@ -156,6 +156,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
 @media all and (max-width: $medium-breakpoint) {
   header.rehorik-header .menu-hauptmenue-container {
     background: transparent url("../img/menu/burger-hand.jpg") no-repeat bottom right var(--section-spacing-left-right);
+    background-size: 230px;
     @media all and (max-width: 375px) {
       background-size: 160px;
     }
