@@ -45,9 +45,6 @@
     overflow-y: auto;
     overflow-x: hidden;
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between;
 
     .mini-cart-content-featured {
       background-color: $beigegold;
@@ -144,7 +141,13 @@
       }
     }
 
-    // Desktop view
+    @media all and (max-width: $mini-cart-width) {
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    // Side to side view
     @media all and (min-width: $mini-cart-width + 1) {
       display: flex;
 
