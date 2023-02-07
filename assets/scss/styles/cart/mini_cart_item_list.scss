@@ -52,7 +52,7 @@ ul.rehorik-mini-cart-item-list {
     }
 
     a {
-      font-weight: bold;
+      font-family: $font-family-bold;
 
       &:hover {
         color: #fff;
@@ -79,7 +79,7 @@ ul.rehorik-mini-cart-item-list {
       align-items: center;
 
       .mini-cart-item-price {
-        font-weight: bold;
+        font-family: $font-family-bold;
         margin-left: $spacing-xxs;
       }
 
@@ -137,7 +137,7 @@ ul.rehorik-mini-cart-item-list {
 
       > div:last-child > div:last-child {
         text-align: right;
-        font-weight: bold;
+        font-family: $font-family-bold;
       }
     }
   }

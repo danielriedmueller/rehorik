@@ -28,7 +28,7 @@
     background-size: 10px;
     color: $font-color-accent;
     font-size: $font-size;
-    font-family: $font-family-headline;
+    font-family: $font-family-bold;
     text-transform: uppercase;
     cursor: pointer;
 
@@ -45,9 +45,6 @@
     overflow-y: auto;
     overflow-x: hidden;
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between;
 
     .mini-cart-content-featured {
       background-color: $beigegold;
@@ -121,7 +118,7 @@
         justify-content: space-between;
         span {
           text-transform: uppercase;
-          font-weight: bold;
+          font-family: $font-family-bold;
         }
       }
 
@@ -144,7 +141,13 @@
       }
     }
 
-    // Desktop view
+    @media all and (max-width: $mini-cart-width) {
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    // Side to side view
     @media all and (min-width: $mini-cart-width + 1) {
       display: flex;
 

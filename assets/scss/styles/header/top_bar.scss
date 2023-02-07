@@ -9,7 +9,7 @@
   grid-template-rows: 1fr;
   color: #fff;
   font-size: $font-size-small;
-  font-family: $font-family-headline;
+  font-family: $font-family-bold;
 
   .left {
     justify-self: start;
@@ -85,7 +85,7 @@
       background-size: $icon-size - 6px;
       width: $icon-size;
       height: $icon-size + 1;
-      margin-right: $icon-gap-to-text;
+      margin-right: $icon-gap-to-text - 6px;
     }
   }
 

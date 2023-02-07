@@ -14,4 +14,9 @@
     margin-right: calc(var(--section-spacing-left-right) * -1);
     bottom: 26px;
   }
+
+  // Hide if display too small
+  @media all and (max-width: $very-small-breakpoint) {
+    display: none;
+  }
 }

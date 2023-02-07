@@ -58,7 +58,7 @@
 
       .rehorik-product-min-price {
         font-size: $font-size-small;
-        font-family: $font-family-headline;
+        font-family: $font-family-bold;
         margin-bottom: $spacing-s;
       }
 
@@ -75,7 +75,7 @@
           text-transform: uppercase;
           font-size: $font-size-small;
           vertical-align: top;
-          font-family: $font-family-headline;
+          font-family: $font-family-bold;
         }
 
         tr td:first-child:not([colspan="2"]) {
