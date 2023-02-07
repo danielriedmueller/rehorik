@@ -40,6 +40,8 @@
 @import "styles/checkout/checkout";
 @import "styles/checkout/payment";
 @import "styles/checkout/review_order";
+@import "styles/payment/paypal";
+@import "styles/payment/stripe";
 @import "styles/category/categories";
 @import "styles/product/sigils";
 @import "styles/product/information";
@@ -82,7 +84,6 @@
 @import "styles/filter/filter";
 @import "styles/product/not_selling_notice";
 @import "styles/marketing_banner";
-@import "styles/paypal";
 @import "styles/snow";
 @import "styles/checkout/thank_you";
 @import "styles/product/quantity";

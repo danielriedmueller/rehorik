@@ -2,6 +2,8 @@
 require_once('shop/single_product_hooks.php');
 require_once('middleware/order_completed_webhook.php');
 require_once('shop/cart_hooks.php');
+require_once('shop/mini_cart_hooks.php');
+require_once('shop/checkout_hooks.php');
 
 function action_woocommerce_checkout_create_order_coupon_item( $item, $code, $coupon, $order ) {
     if ($coupon instanceof \WC_Coupon) {

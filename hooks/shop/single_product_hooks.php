@@ -2,7 +2,10 @@
 /**
  * Product Detail View Hooks
  */
-remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices');
+remove_action('woocommerce_before_single_product', 'woocommerce_output_all_notices');
+
+remove_action('woocommerce_after_add_to_cart_quantity', [WC_Stripe_Payment_Request::instance(), 'display_payment_request_button_html'], 1);
+remove_action('woocommerce_after_add_to_cart_quantity', [WC_Stripe_Payment_Request::instance(), 'display_payment_request_button_separator_html'], 2);
 
 add_action('rehorik_product_view', 'product_video', 1); // Video
 
@@ -13,16 +16,18 @@ add_action('rehorik_product_view_title_price', 'woocommerce_template_single_pric
 
 add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
 
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
 
+add_action('woocommerce_single_product_summary', [WC_Stripe_Payment_Request::instance(), 'display_payment_request_button_html'], 30);
 add_action('woocommerce_single_product_summary', 'cup_of_coffee', 35); // Cup of Coffee
 add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
 
-add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice', 1); // Text if product can not be bought online
+add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice',
+    1); // Text if product can not be bought online
 
 add_action('rehorik_product_view', 'goes_with', 1); // Meta
 add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
@@ -35,7 +40,8 @@ add_action('rehorik_product_information', 'single_product_attributes', 1); // At
 add_action('rehorik_product_information', 'short_description', 1); // Short Description
 add_action('rehorik_product_information', 'preperation_recommendation', 1); // Preperation Recommendation
 
-function description() {
+function description()
+{
     global $product;
 
     echo sprintf(
@@ -44,7 +50,8 @@ function description() {
     );
 }
 
-function short_description() {
+function short_description()
+{
     global $post;
     global $product;
 
@@ -64,7 +71,8 @@ function short_description() {
     }
 }
 
-function quality_name() {
+function quality_name()
+{
     global $product;
 
     $qualityName = $product->get_attribute('qualitaetsbezeichnung');
@@ -77,7 +85,8 @@ function quality_name() {
     }
 }
 
-function title_claim() {
+function title_claim()
+{
     global $product;
     $claim = $product->get_meta('reh_product_title_claim');
 
@@ -89,7 +98,8 @@ function title_claim() {
     }
 }
 
-function goes_with() {
+function goes_with()
+{
     global $product;
 
     $goesWith = $product->get_attribute('passt-zu');
@@ -110,49 +120,57 @@ function goes_with() {
     }
 }
 
-function preperation_recommendation() {
+function preperation_recommendation()
+{
     global $product;
 
     get_template_part('templates/product-preperation-recommendation', null, ['product' => $product]);
 }
 
-function categories() {
+function categories()
+{
     global $product;
     $categories = getSubCategories($product);
 
     echo sprintf('<div class="rehorik-product-information-category">%s</div>', $categories);
 }
 
-function single_product_attributes() {
+function single_product_attributes()
+{
     global $product;
 
     // Manipulated by woocommerce_display_product_attributes filter
     wc_display_product_attributes($product);
 }
 
-function product_video() {
+function product_video()
+{
     global $product;
 
     get_template_part('templates/product-video', null, ['product' => $product]);
 }
 
-function sigils() {
+function sigils()
+{
     global $product;
 
     get_template_part('templates/product/sigils', null, ['product' => $product]);
 }
 
-function hugo_head() {
+function hugo_head()
+{
     echo '<div class="rehorik-hugo-head"></div>';
 }
 
-function cup_of_coffee() {
+function cup_of_coffee()
+{
     global $product;
 
     get_template_part('templates/cup-of-coffee', null, ['product' => $product]);
 }
 
-function not_selling_notice() {
+function not_selling_notice()
+{
     get_template_part('templates/not-selling-notice');
 }
 

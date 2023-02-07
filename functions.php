@@ -149,7 +149,7 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_script('cart-ajax', $assetsDir . 'js/cart_ajax.js', ['jquery'], 1, true);
     wp_localize_script( 'cart-ajax', 'settings', [
-        'ajax_url' => admin_url( 'admin-ajax.php'),
+        'ajax_url' => admin_url( 'admin-ajax.php?pay_for_order=true' ),
         'add_nonce' => wp_create_nonce( 'rehorik-add-to-cart' ),
         'update_nonce' => wp_create_nonce( 'rehorik-update-cart' ),
     ]);
