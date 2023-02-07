@@ -1,7 +1,6 @@
 <?php
 require_once('shop/single_product_hooks.php');
 require_once('shop/cart_hooks.php');
-require_once('shop/mini_cart_hooks.php');
 require_once('shop/checkout_hooks.php');
 
 function action_woocommerce_checkout_create_order_coupon_item( $item, $code, $coupon, $order ) {
