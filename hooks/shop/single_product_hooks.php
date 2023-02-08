@@ -30,12 +30,14 @@ add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add 
 add_action('rehorik_product_view_sigils_bar', 'sigils', 1); // Sigils
 
 add_action('rehorik_product_information', 'description', 1); // Description
-add_action('rehorik_product_information', 'categories', 1); // Categories
-add_action('rehorik_product_information', 'single_product_attributes', 1); // Attributes
 add_action('rehorik_product_information', 'short_description', 1); // Short Description
 add_action('rehorik_product_information', 'preperation_recommendation', 1); // Preperation Recommendation
 
-function description() {
+add_action('rehorik_product_origin', 'single_product_attributes', 1); // Description
+add_action('rehorik_product_origin', 'categories', 1); // Categories
+add_action('rehorik_product_origin', 'categories', 1); // Categories
+
+function description(): void {
     global $product;
 
     echo sprintf(
@@ -44,7 +46,7 @@ function description() {
     );
 }
 
-function short_description() {
+function short_description(): void {
     global $post;
     global $product;
 
@@ -64,7 +66,7 @@ function short_description() {
     }
 }
 
-function quality_name() {
+function quality_name(): void {
     global $product;
 
     $qualityName = $product->get_attribute('qualitaetsbezeichnung');
@@ -77,7 +79,7 @@ function quality_name() {
     }
 }
 
-function title_claim() {
+function title_claim(): void {
     global $product;
     $claim = $product->get_meta('reh_product_title_claim');
 
@@ -89,7 +91,7 @@ function title_claim() {
     }
 }
 
-function goes_with() {
+function goes_with(): void {
     global $product;
 
     $goesWith = $product->get_attribute('passt-zu');
@@ -110,49 +112,49 @@ function goes_with() {
     }
 }
 
-function preperation_recommendation() {
+function preperation_recommendation(): void {
     global $product;
 
     get_template_part('templates/product-preperation-recommendation', null, ['product' => $product]);
 }
 
-function categories() {
+function categories(): void {
     global $product;
     $categories = getSubCategories($product);
 
     echo sprintf('<div class="rehorik-product-information-category">%s</div>', $categories);
 }
 
-function single_product_attributes() {
+function single_product_attributes(): void {
     global $product;
 
     // Manipulated by woocommerce_display_product_attributes filter
     wc_display_product_attributes($product);
 }
 
-function product_video() {
+function product_video(): void {
     global $product;
 
     get_template_part('templates/product-video', null, ['product' => $product]);
 }
 
-function sigils() {
+function sigils(): void {
     global $product;
 
     get_template_part('templates/product/sigils', null, ['product' => $product]);
 }
 
-function hugo_head() {
+function hugo_head(): void {
     echo '<div class="rehorik-hugo-head"></div>';
 }
 
-function cup_of_coffee() {
+function cup_of_coffee(): void {
     global $product;
 
     get_template_part('templates/cup-of-coffee', null, ['product' => $product]);
 }
 
-function not_selling_notice() {
+function not_selling_notice(): void {
     get_template_part('templates/not-selling-notice');
 }
 

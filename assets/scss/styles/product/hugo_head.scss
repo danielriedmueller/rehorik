@@ -4,7 +4,7 @@
   background-size: $hugo-head-size;
   background-image: url("../img/svg/hugo_head.svg");
   margin-right: -$hugo-head-size / 2;
-  right: 0;
+  right: var(--section-spacing-left-right);
   bottom: 0;
   background-repeat: no-repeat;
   background-position: right;
