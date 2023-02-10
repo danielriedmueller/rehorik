@@ -7,6 +7,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "gallery title-price"
+    "gallery short-description"
     "gallery goes-with"
     "gallery add-to-cart-message"
     "gallery add-to-cart"
@@ -19,6 +20,7 @@
   .rehorik-product-view-gallery {margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;}
   .rehorik-product-view-title-price {margin: 0 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
   .rehorik-add-to-cart-container {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
+  .rehorik-product-short-description:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
   .rehorik-product-goes-with:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
   .woocommerce-notices-wrapper:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
   .rehorik-product-video:not(:empty) {margin: var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;}
@@ -31,6 +33,7 @@
     grid-template-areas:
     "gallery"
     "title-price"
+    "short-description"
     "goes-with"
     "add-to-cart-message"
     "add-to-cart"
@@ -43,6 +46,7 @@
     .rehorik-product-view-gallery {margin: 0 0 var(--product-view-grid-gap-half) 0;}
     .rehorik-product-view-title-price {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
     .rehorik-add-to-cart-container {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
+    .rehorik-product-short-description:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
     .rehorik-product-goes-with:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
     .woocommerce-notices-wrapper:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
     .rehorik-product-video:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
@@ -57,6 +61,19 @@
 
   .rehorik-product-goes-with {
     grid-area: goes-with;
+  }
+
+  .rehorik-product-short-description {
+    grid-area: short-description;
+
+    text-align: justify;
+    font-size: $font-size;
+
+    h4 {
+      color: $beigegold;
+      font-size: $font-size;
+      text-transform: uppercase;
+    }
   }
 
   .rehorik-sigils-bar {

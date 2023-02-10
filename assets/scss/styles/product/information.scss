@@ -19,8 +19,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-gutschein
   display: flex;
   flex-direction: column;
 
-  .rehorik-product-description,
-  .rehorik-product-short-description {
+  .rehorik-product-description {
     margin-right: 0 !important;
     color: $font-color;
     text-align: justify;
@@ -92,10 +91,6 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
     }
 
-    .rehorik-product-short-description {
-      margin: 0 var(--product-view-grid-gap-half) 0 0;
-    }
-
     .rehorik-product-attributes {
       margin: 0 0 0 var(--product-view-grid-gap-half);
     }
@@ -122,14 +117,10 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       .rehorik-recommendation {
         margin: 0 0 var(--product-view-grid-gap-half) 0;
       }
-      .rehorik-product-short-description {
-        margin: 0 0 0 0;
-      }
     }
     .rehorik-product-information-category,
     .rehorik-product-description,
     .rehorik-recommendation,
-    .rehorik-product-short-description,
     .rehorik-product-attributes {
       &:empty {
         display: none;
@@ -224,19 +215,6 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
             }
           }
         }
-      }
-    }
-
-    .rehorik-product-short-description {
-      grid-area: short-description;
-
-      text-align: justify;
-      font-size: $font-size;
-
-      h4 {
-        color: $beigegold;
-        font-size: $font-size;
-        text-transform: uppercase;
       }
     }
 

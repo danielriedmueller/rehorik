@@ -7,8 +7,8 @@ remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_noti
 add_action('rehorik_product_view', 'product_video', 1); // Video
 
 add_action('rehorik_product_view_title_price', 'woocommerce_template_single_title', 1); // Title
-add_action('rehorik_product_view_title_price', 'title_claim', 1); // Title
-add_action('rehorik_product_view_title_price', 'quality_name', 1); // Title
+add_action('rehorik_product_view_title_price', 'title_claim', 1); // Claim
+add_action('rehorik_product_view_title_price', 'quality_name', 1); // Quality Name
 add_action('rehorik_product_view_title_price', 'woocommerce_template_single_price', 1); // Price
 
 add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
@@ -24,18 +24,18 @@ add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
 
 add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice', 1); // Text if product can not be bought online
 
-add_action('rehorik_product_view', 'goes_with', 1); // Meta
+add_action('rehorik_product_view', 'short_description', 1); // Goes with
+add_action('rehorik_product_view', 'goes_with', 1); // Goes with
 add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
 
 add_action('rehorik_product_view_sigils_bar', 'sigils', 1); // Sigils
 
 add_action('rehorik_product_information', 'description', 1); // Description
-add_action('rehorik_product_information', 'short_description', 1); // Short Description
+add_action('rehorik_product_information', 'categories', 1); // Categories
+add_action('rehorik_product_information', 'single_product_attributes', 1); // Attributes
 add_action('rehorik_product_information', 'preperation_recommendation', 1); // Preperation Recommendation
 
-add_action('rehorik_product_origin', 'single_product_attributes', 1); // Description
-add_action('rehorik_product_origin', 'categories', 1); // Categories
-add_action('rehorik_product_origin', 'categories', 1); // Categories
+add_action('rehorik_product_origin', 'origin', 1); // Description
 
 function description(): void {
     global $product;
@@ -48,24 +48,34 @@ function description(): void {
 
 function short_description(): void {
     global $post;
+
+    echo sprintf(
+        '<div class="rehorik-product-short-description">%s</div>',
+        $post->post_excerpt
+    );
+}
+
+function origin(): void {
+    global $post;
     global $product;
+
+    $origin = get_post_meta($post->ID, 'rehorik_product_origin', true);
 
     $weingut = $product->get_attribute('weingut');
 
     if (!empty($weingut)) {
         echo sprintf(
-            '<div class="rehorik-product-short-description"><h4>Weingut %s</h4>%s</div>',
+            '<div class="rehorik-product-origin"><h4>Weingut %s</h4>%s</div>',
             $weingut,
             $post->post_excerpt
         );
     } else {
         echo sprintf(
-            '<div class="rehorik-product-short-description">%s</div>',
-            $post->post_excerpt
+            '<div class="rehorik-product-origin">%s</div>',
+            $origin
         );
     }
 }
-
 function quality_name(): void {
     global $product;
 
