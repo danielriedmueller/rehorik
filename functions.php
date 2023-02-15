@@ -113,6 +113,7 @@ $priority = 1000;
 
 $baseDir = get_stylesheet_directory();
 
+require_once($baseDir . '/includes/class-reh-pdf-creator.php');
 require_once($baseDir . '/includes/class-reh-online-coupon.php');
 require_once($baseDir . '/includes/class-reh-api-products.php');
 require_once($baseDir . '/includes/class-reh-mini-cart.php');

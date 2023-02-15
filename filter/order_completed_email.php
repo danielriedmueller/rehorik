@@ -59,15 +59,38 @@ add_filter('woocommerce_email_additional_content_customer_completed_order', func
 }, 10, 3);
 
 add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachments, string $email_id, $order) {
-    if ($email_id !== 'wootickets') {
+    if ($email_id !== 'wootickets' || !($order instanceof WC_Order)) {
         return $attachments;
     }
 
-    if (!($order instanceof WC_Order)) {
-        return $attachments;
-    }
+    $wootickets = Tribe__Tickets_Plus__Commerce__WooCommerce__Main::get_instance();
+    $attendees = $wootickets->get_attendees_by_id($order->get_id());
 
-    // Add Pdf Tickets here
+    foreach ($attendees as $attendee) {
+        $ticketId = $attendees['ticket_id'];
+        $ticketName = $attendees['ticket_name'];
+        $holderName = $attendees['holder_name'];
+        $eventId = $attendees['event_id'];
+        $location = tribe_get_venue($eventId);
+        $organizer = tribe_get_organizer($eventId);
+        $date = tribe_get_start_date($eventId, false, 'd.m.Y');
+        $qrCode = $attendees['qr_ticket_id'];
+        $securityCode = $attendees['security_code'];
+
+        $file = 'Rehorik-Ticket-' . date('Ymd') . $securityCode . '.pdf';
+
+        Reh_Pdf_Creator::createPdf(
+            $file,
+            '/templates/pdf/coupon-pdf',
+            [
+                'code' => $code,
+                'price' => $price,
+                'name' => $name
+            ]
+        );
+
+        // do_action('tribe_tickets_ticket_email_ticket_bottom', $ticket);
+    }
 
     return $attachments;
 }, 10, 3);
@@ -76,11 +99,7 @@ add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachme
  * Add coupon pdf attachment to email.
  */
 add_filter('woocommerce_email_attachments', function (array $attachments, string $email_id, $order) {
-    if ($email_id !== 'customer_completed_order') {
-        return $attachments;
-    }
-
-    if (!($order instanceof WC_Order)) {
+    if ($email_id !== 'customer_completed_order' || !($order instanceof WC_Order)) {
         return $attachments;
     }
 
