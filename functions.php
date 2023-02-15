@@ -1,8 +1,6 @@
 <?php
 show_admin_bar(true);
 
-const PROD_URL = 'https://www.rehorik.de';
-
 const BAYERNWERK_COUPON_CODE = 'bayernwerkxmas22';
 
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
@@ -29,7 +27,6 @@ const COFFEE_ESPRESSO_CATEGORY_SLUG = 'espresso';
 const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
 const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
 const BLACK_AND_WINE = 'blackwine';
-const WEINACHTSMARKT = 'weinachtsmarkt';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
 const GIFTS_CATEGORY_SLUG = 'geschenke';
 const COUPON_CATEGORY_SLUG = 'gutscheine';
@@ -114,12 +111,12 @@ const TICKET_EVENT_DATE_END_META = '_event_timestamp_end';
 
 $priority = 1000;
 
-// In case of an child them use get stylesheet directory
 $baseDir = get_stylesheet_directory();
 
 require_once($baseDir . '/includes/class-reh-online-coupon.php');
 require_once($baseDir . '/includes/class-reh-api-products.php');
 require_once($baseDir . '/includes/class-reh-mini-cart.php');
+require_once($baseDir . '/includes/class-reh-product-feed.php');
 require_once($baseDir . '/helper/category_helper.php');
 require_once($baseDir . '/helper/shipping_helper.php');
 require_once($baseDir . '/helper/woocommerce_functions.php');
@@ -138,6 +135,7 @@ require_once($baseDir . '/actions/api/endpoints.php');
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
     wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.97);
+    wp_enqueue_script('mobile-menu', $assetsDir . 'js/mobile_menu.js', [], 1, true);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);
     wp_enqueue_script('overwrite-woocommerce', $assetsDir . 'js/overwrite_woocommerce.js', ['jquery'], 1, true);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);
@@ -162,7 +160,7 @@ add_action('wp_enqueue_scripts', function () {
 
 add_action('init', function () {
     register_nav_menus([
-        'main' => 'Hauptmenü',
+        'main' => 'Hauptmenü'
     ]);
 });
 

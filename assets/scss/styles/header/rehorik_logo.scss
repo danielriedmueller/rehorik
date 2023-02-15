@@ -1,0 +1,38 @@
+#rehorik-logo {
+  width: $logo-size;
+  height: $logo-size;
+  background: transparent url("../img/logos/logo.svg") no-repeat left top;
+  background-size: $logo-size;
+  position: absolute;
+  left: 150px + $spacing;
+  top: $menu-height + $top-bar-height + $top-bar-height;
+  bottom: 0;
+  z-index: 9;
+
+  @media all and (max-width: $medium-breakpoint) {
+    width: $logo-size-small;
+    height: $logo-size-small;
+    background-size: $logo-size-small;
+    top: $mobile-space-to-top;
+    left: var(--section-spacing-left-right);
+  }
+}
+
+#rehorik-logo-mobile {
+  display: none;
+
+  @media all and (max-width: $medium-breakpoint) {
+    display: block;
+  }
+
+  position: absolute;
+  top: $mobile-space-to-top;
+  left: var(--section-spacing-left-right);
+  background-image: url("../img/logos/logo.svg");
+  flex: 0 0 $logo-size-very-small;
+  width: $logo-size-very-small;
+  height: $logo-size-very-small;
+  background-size: $logo-size-very-small;
+  margin-right: auto;
+  z-index: 20;
+}

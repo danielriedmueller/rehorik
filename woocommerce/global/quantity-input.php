@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 4.0.0
+ * @version 7.2.1
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -49,7 +49,7 @@ if ( $max_value && $min_value === $max_value ) {
         <?php do_action( 'woocommerce_before_quantity_input_field' ); ?>
         <select
             id="<?php echo esc_attr( $input_id ); ?>"
-            class="rehorik-quantity <?php echo esc_attr( join( ' ', (array) $classes ) ); ?>"
+            class="rehorik-quantity input-text qty text <?php echo esc_attr( join( ' ', (array) $classes ) ); ?>"
             name="<?php echo esc_attr( $input_name ); ?>"
             title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ); ?>"
             placeholder="<?php echo esc_attr( $placeholder ); ?>"

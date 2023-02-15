@@ -63,7 +63,7 @@ defined('ABSPATH') || exit;
                         </tr>
                         <tr>
                             <td colspan="2" valign="middle" id="owner">
-                                <p>Geschäftsführer: Heiko Rehorik &#183; Handelsregister Regensburg HRB 3945</p>
+                                <p>Geschäftsführer: Heiko Rehorik &#183; Handelsregister Regensburg HRB 18004</p>
                             </td>
                         </tr>
                     </table>

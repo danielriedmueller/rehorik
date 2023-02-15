@@ -2,7 +2,7 @@
   background-color: #fff;
   box-shadow: -5px 0 20px 0 $anthrazit-opacity;
 
-  $closeHeight: $menu-height;
+  $closeHeight: $top-bar-height;
   transform: translateX($mini-cart-width);
   transition: transform var(--animation-time);
   position: absolute;
@@ -24,17 +24,17 @@
     padding-left: $spacing * 2;
     height: $closeHeight;
     flex: 0 0 $closeHeight;
-    background: $weinrot url("../img/pfeil_rot.svg") no-repeat left $spacing center;
+    background: $weinrot url("../img/pfeil-rot.svg") no-repeat left $spacing center;
     background-size: 10px;
     color: $font-color-accent;
     font-size: $font-size;
-    font-family: $font-family-headline;
+    font-family: $font-family-bold;
     text-transform: uppercase;
     cursor: pointer;
 
     &:hover {
       color: #fff;
-      background-image: url("../img/pfeil_weiss.svg");
+      background-image: url("../img/pfeil-weiss.svg");
     }
   }
 
@@ -44,6 +44,7 @@
     max-height: calc(100vh - #{$closeHeight});
     overflow-y: auto;
     overflow-x: hidden;
+    display: flex;
 
     .mini-cart-content-featured {
       background-color: $beigegold;
@@ -117,7 +118,7 @@
         justify-content: space-between;
         span {
           text-transform: uppercase;
-          font-weight: bold;
+          font-family: $font-family-bold;
         }
       }
 
@@ -140,7 +141,13 @@
       }
     }
 
-    // Desktop view
+    @media all and (max-width: $mini-cart-width) {
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    // Side to side view
     @media all and (min-width: $mini-cart-width + 1) {
       display: flex;
 

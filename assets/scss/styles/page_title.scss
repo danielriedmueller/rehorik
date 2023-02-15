@@ -24,10 +24,14 @@
     text-align: center;
     background-color: $beigegold;
     margin: auto;
+    overflow: hidden;
 
     h1 {
-      margin: 0 $spacing-xs;
       color: #fff;
+
+      @media all and (max-width: $small-breakpoint) {
+        font-size: $font-size-very-large;
+      }
     }
   }
 

@@ -48,7 +48,7 @@
 
   .slider-title {
     h1, h2 {
-      font-family: $font-family-bold;
+      font-family: $font-family-black;
     }
 
     h2 {
@@ -81,7 +81,7 @@
 
     .button {
       transition: none;
-      font-family: $font-family-headline;
+      font-family: $font-family-bold;
       background-color: $weinrot;
       color: $beigegold;
       padding: $spacing-xxs $spacing-xs;
@@ -153,16 +153,12 @@ ul.slider, ul.slider li, ul.slider li img {
   background-size: cover;
 }
 
-#slider-featured-controls.slider-controls button {
-  background-image: url("../img/pfeil_gold.svg");
-}
-
 #slider-header-controls.slider-controls button {
-  background-image: url("../img/pfeil_weiss.svg");
+  background-image: url("../img/pfeil-weiss.svg");
 }
 
 #slider-body-controls.slider-controls button {
-  background-image: url("../img/pfeil_rot.svg");
+  background-image: url("../img/pfeil-rot.svg");
 }
 
 .slider-outer {

@@ -1,26 +1,51 @@
 .rehorik {
   .rehorik-product-search-widget {
-    padding-left: $spacing-s;
-
-    .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input, .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:hover, .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:focus {
+    .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input,
+    .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:hover,
+    .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:focus {
       border: none;
-      color: $weinrot;
-      background-color: $beigegold;
+      color: #fff;
+      background-color: transparent;
       border-radius: $border-radius;
-      text-transform: uppercase;
+      font-style: normal;
+      opacity: 1;
       font-size: $font-size-small;
+      font-family: $font-family-bold;
+      text-transform: none;
+      padding-right: 0;
 
       &::placeholder {
-        color: $weinrot;
+        color: #fff;
         font-style: normal;
+        font-family: $font-family-bold;
+        opacity: 1;
         font-size: $font-size-small;
-        font-family: $font-family-body;
-        text-transform: uppercase;
+        text-transform: none;
+      }
+
+      @media all and (max-width: $medium-breakpoint) {
+        &::placeholder {
+          font-size: 0;
+        }
+      }
+
+      &:focus {
+        &::placeholder {
+          opacity: $opacity;
+        }
       }
     }
 
     .dgwt-wcas-no-submit.dgwt-wcas-search-wrapp .dgwt-wcas-ico-magnifier path, .dgwt-wcas-search-wrapp .dgwt-wcas-close path {
-      fill: $weinrot;
+      fill: #fff;
+    }
+
+    .dgwt-wcas-no-submit .dgwt-wcas-ico-magnifier {
+      opacity: 1;
+    }
+
+    .dgwt-wcas-search-wrapp {
+      max-width: none;
     }
   }
 
@@ -41,8 +66,6 @@
 
   .dgwt-wcas-product-details {
     div.quantity {
-      max-width: $spacing-xl;
-
       input, select {
         height: $spacing-l !important;
         border-top-right-radius: 0 !important;

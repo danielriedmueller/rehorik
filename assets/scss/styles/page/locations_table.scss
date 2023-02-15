@@ -28,7 +28,7 @@ table#locations-table {
       text-align: left;
       color: $font-color-accent;
       text-transform: uppercase;
-      font-family: $font-family-headline;
+      font-family: $font-family-bold;
     }
 
     a:hover {
@@ -36,7 +36,7 @@ table#locations-table {
     }
 
     > table tr td:first-child {
-      padding: 0 $spacing 0 0;
+      width: 90px + $spacing;
     }
   }
 

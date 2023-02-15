@@ -10,8 +10,8 @@ $tuerkis: #003c4a;
 $lila: #2d253c;
 
 $font-family-body: "Cond", serif;
-$font-family-headline: "Cond Bold", serif;
-$font-family-bold: "Cond Black", serif;
+$font-family-black: "Cond Black", serif;
+$font-family-bold: "Cond Bold", serif;
 
 $font-color: $anthrazit;
 $font-color-accent: $beigegold;
@@ -33,7 +33,7 @@ $font-size-very-very-large: 52px;
 $font-size-very-large: 39px;
 $font-size-large: 26px;
 $font-size: 20px;
-$font-size-small: 17px;
+$font-size-small: 16px;
 
 $line-height: 1.4em;
 $line-height-small: 1.1em;
@@ -42,6 +42,7 @@ $text-shadow: -1px -1px 0 $anthrazit, 1px -1px 0 $anthrazit, -1px 1px 0 $anthraz
 
 $very-small-breakpoint: 442px;
 $small-breakpoint: 767px;
+// Mobile menu breakpoint. Used in mobile_menu.js.
 $medium-breakpoint: 1180px;
 
 $mini-cart-left-width: 240px;
@@ -57,6 +58,8 @@ $spacing-xs: 15px;
 $spacing-xxs: 8px;
 $spacing-xxxs: 3px;
 
+$mobile-space-to-top: 13px;
+
 $product-thumbnail-size: 100px;
 $cart-thumbnail-size: 175px;
 $product-gallery-width: 235px;
@@ -65,8 +68,8 @@ $product-category-frontpage-height: $product-category-width;
 $product-height: 530px;
 
 $menu-height: 60px;
-$menu-gap-to-top: $spacing-s;
-$menu-icon-size: 18px;
+$top-bar-height: 45px;
+$icon-size: $spacing-s;
 $menu-hover-color: $beigegold;
 $menu-sub-item-hover-color: $weinrot;
 

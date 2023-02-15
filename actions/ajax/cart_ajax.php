@@ -58,7 +58,7 @@ function rehorik_update_cart(): void
     $key = sanitize_text_field($_POST['cart_item_key']);
     $value = intval(sanitize_text_field($_POST['cart_item_value']));
 
-    if (!$key || $value < 0 || !wp_verify_nonce($_POST['nonce'], 'rehorik-update-cart')) {
+    if (!$key || $value < 0 || !wp_verify_nonce($_POST['nonce'], 'rehorik-update-cart') || !WC()->cart->get_cart_item($key)) {
         handle_error($_SERVER['HTTP_REFERER']);
         return;
     }

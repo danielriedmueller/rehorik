@@ -69,12 +69,12 @@
 
   .rehorik-product-view-title-price {
     grid-area: title-price;
-    max-width: 400px;
 
     h1.product_title {
       color: $font-color-accent;
       text-align: left;
-      margin-top: -11px;
+      margin-top: -8px;
+      line-height: $line-height-small;
 
       @media all and (max-width: $small-breakpoint) {
         word-break: break-all;
@@ -85,6 +85,7 @@
       font-size: $font-size-large;
       line-height: $line-height-small;
       text-transform: uppercase;
+      margin-top: $spacing-xs;
     }
 
     p.price {
@@ -95,7 +96,7 @@
 
       > span {
         font-size: $font-size-large;
-        font-family: $font-family-headline;
+        font-family: $font-family-bold;
       }
     }
   }
