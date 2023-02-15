@@ -150,7 +150,7 @@
 <footer>
     <div id="owner">
         <p>Geschäftsführer: Heiko Rehorik</p>
-        <p>Handelsregister Regensburg HRB 3945</p>
+        <p>Handelsregister Regensburg HRB 18004</p>
     </div>
     <img src="<?= $assetsDir ?>/img/footer/footer-pdf-2480px.png" />
 </footer>
