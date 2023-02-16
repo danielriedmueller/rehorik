@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "gallery title"
-    "gallery add-to-cart-message"
+    "gallery woocommerce-notices"
     "gallery add-to-cart"
     "video ."
   ;
@@ -14,7 +14,7 @@
     grid-template-areas:
     "gallery"
     "title"
-    "add-to-cart-message"
+    "woocommerce-notices"
     "add-to-cart"
     "video"
   ;
@@ -41,7 +41,7 @@
   }
 
   .woocommerce-notices-wrapper {
-    grid-area: add-to-cart-message;
+    grid-area: woocommerce-notices;
   }
 
   .rehorik-product-title {
