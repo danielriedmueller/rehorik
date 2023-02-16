@@ -26,13 +26,13 @@ add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
 
 add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice', 1); // Text if product can not be bought online
 
-add_action('rehorik_product_view', 'goes_with', 1); // Goes with
 add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
 
 add_action('rehorik_product_information', 'description', 1); // Description
-add_action('rehorik_product_information', 'categories', 1); // Categories
+add_action('rehorik_product_information', 'title', 1); // Title
 add_action('rehorik_product_information', 'single_product_attributes', 1); // Attributes
-add_action('rehorik_product_information', 'preperation_recommendation', 1); // Preperation Recommendation
+
+add_action('rehorik_product_preperation_recommendation', 'preperation_recommendation', 1); // Preperation Recommendation
 
 add_action('rehorik_product_origin', 'origin', 1); // Description
 
@@ -102,38 +102,14 @@ function title_claim(): void {
     }
 }
 
-function goes_with(): void {
-    global $product;
-
-    $goesWith = $product->get_attribute('passt-zu');
-    $title = 'Passt zu';
-
-    if (empty($goesWith)) {
-        $goesWith = $product->get_attribute('aromen');
-        $title = 'Aroma';
-    }
-
-    if (!empty($goesWith)) {
-        $goesWith = str_replace(', ', ' - ', $goesWith);
-        echo sprintf(
-            '<div class="rehorik-product-goes-with"><div>%s</div><div>%s</div></div>',
-            $title,
-            $goesWith
-        );
-    }
-}
-
 function preperation_recommendation(): void {
     global $product;
 
     get_template_part('templates/product-preperation-recommendation', null, ['product' => $product]);
 }
 
-function categories(): void {
-    global $product;
-    $categories = getSubCategories($product);
-
-    echo sprintf('<div class="rehorik-product-information-category">%s</div>', $categories);
+function title(): void {
+    the_title( '<h2 class="rehorik-product-information-title">', '</h2>' );
 }
 
 function single_product_attributes(): void {

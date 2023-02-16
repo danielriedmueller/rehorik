@@ -1,3 +1,9 @@
+// Remove top container padding
+body.rehorik.single-product #page-container > .container {
+  max-width: unset;
+  padding: var(--section-spacing-top-bottom) 0;
+}
+
 .rehorik.single-product .rehorik-product.product.detail-view {
   max-width: $max-width-small;
   margin: 0 auto var(--product-view-grid-gap) auto;
@@ -6,7 +12,6 @@
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "gallery title"
-    "gallery goes-with"
     "gallery add-to-cart-message"
     "gallery add-to-cart"
     "video add-to-cart"
@@ -17,7 +22,6 @@
   .rehorik-product-view-gallery {margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;}
   .rehorik-product-view-title {margin: 0 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
   .rehorik-add-to-cart-container {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
-  .rehorik-product-goes-with:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
   .woocommerce-notices-wrapper:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
   .rehorik-product-video:not(:empty) {margin: var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;}
   .rehorik-product-information {margin: var(--product-view-grid-gap-half) 0 0 0;}
@@ -28,7 +32,6 @@
     grid-template-areas:
     "gallery"
     "title"
-    "goes-with"
     "add-to-cart-message"
     "add-to-cart"
     "video"
@@ -39,7 +42,6 @@
     .rehorik-product-view-gallery {margin: 0 0 var(--product-view-grid-gap-half) 0;}
     .rehorik-product-view-title {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
     .rehorik-add-to-cart-container {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
-    .rehorik-product-goes-with:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
     .woocommerce-notices-wrapper:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
     .rehorik-product-video:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
     .rehorik-product-information {margin: var(--product-view-grid-gap-half) 0 0 0;}
@@ -48,10 +50,6 @@
 
   .rehorik-product-view-gallery {
     grid-area: gallery;
-  }
-
-  .rehorik-product-goes-with {
-    grid-area: goes-with;
   }
 
   .woocommerce-notices-wrapper {

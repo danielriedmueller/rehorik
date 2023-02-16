@@ -70,7 +70,6 @@ const WEIGHT_SLUG = 'weight';
 const WEIGHT_ATTRIBUTE_SLUG = 'pa_gewicht';
 const FILLING_QUANTITY_ATTRIBUTE_SLUG = 'pa_fuellmenge';
 const WINERY_ATTRIBUTE_SLUG = 'pa_weingut';
-const GOES_WITH_ATTRIBUTE_SLUG = 'pa_passt-zu';
 const QUALITY_NAME_ATTRIBUTE_SLUG = 'pa_qualitaetsbezeichnung';
 const MANUFACTURER_ATTRIBUTE_SLUG = 'pa_hersteller';
 const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-praesentkarton';
