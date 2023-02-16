@@ -5,78 +5,8 @@ body.rehorik.single-product #page-container > .container {
 }
 
 .rehorik.single-product .rehorik-product.product.detail-view {
-  max-width: $max-width-small;
-  margin: 0 auto var(--product-view-grid-gap) auto;
-  text-align: left;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "gallery title"
-    "gallery add-to-cart-message"
-    "gallery add-to-cart"
-    "video add-to-cart"
-    "information information"
-    "ingredients ingredients"
-;
-
-  .rehorik-product-view-gallery {margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;}
-  .rehorik-product-view-title {margin: 0 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
-  .rehorik-add-to-cart-container {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
-  .woocommerce-notices-wrapper:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
-  .rehorik-product-video:not(:empty) {margin: var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;}
-  .rehorik-product-information {margin: var(--product-view-grid-gap-half) 0 0 0;}
-  .rehorik-product-ingredients:not(:empty) {margin: var(--product-view-grid-gap-half) 0 0 0;}
-
-  @media all and (max-width: $small-breakpoint) {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-    "gallery"
-    "title"
-    "add-to-cart-message"
-    "add-to-cart"
-    "video"
-    "information"
-    "ingredients"
-  ;
-
-    .rehorik-product-view-gallery {margin: 0 0 var(--product-view-grid-gap-half) 0;}
-    .rehorik-product-view-title {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
-    .rehorik-add-to-cart-container {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
-    .woocommerce-notices-wrapper:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
-    .rehorik-product-video:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
-    .rehorik-product-information {margin: var(--product-view-grid-gap-half) 0 0 0;}
-    .rehorik-product-ingredients:not(:empty) {margin: var(--product-view-grid-gap-half) 0 0 0;}
-  }
-
-  .rehorik-product-view-gallery {
-    grid-area: gallery;
-  }
-
-  .woocommerce-notices-wrapper {
-    grid-area: add-to-cart-message;
-  }
-
-  .rehorik-product-view-title {
-    grid-area: title;
-  }
-
-  .rehorik-product-information {
-    grid-area: information;
-  }
-
-  .rehorik-product-ingredients {
-    grid-area: ingredients;
-  }
-
-  .rehorik-add-to-cart-container {
-    grid-area: add-to-cart;
-
-    align-self: end;
-  }
-
-  .rehorik-product-video {
-    grid-area: video;
-  }
+  display: flex;
+  flex-direction: column;
 }
 
 /**
@@ -84,26 +14,11 @@ body.rehorik.single-product #page-container > .container {
  * Prepend "ab" to price
 */
 .rehorik.single-product .rehorik-product.product.detail-view.product_cat-maschinen-equipment {
-  grid-template-areas:
-    "gallery title"
-    "gallery add-to-cart"
-    "information information"
-;
-
-  @media all and (max-width: $small-breakpoint) {
-    grid-template-areas:
-    "gallery"
-    "title"
-    "add-to-cart"
-    "information"
-  ;
-  }
-
   #resmio-rehorik-maschinenberatung {
     margin-left: -7px;
   }
 
-  .rehorik-product-view-title p.price {
+  .rehorik-product-title p.price {
     > span::before {
       content: "ab ";
     }

@@ -10,23 +10,21 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
-add_action('rehorik_product_view', 'product_video', 1); // Video
+add_action('rehorik_product_title', 'woocommerce_template_single_title', 1); // Title
+add_action('rehorik_product_title', 'title_claim', 1); // Claim
+add_action('rehorik_product_title', 'short_description', 1); // Short Description
+add_action('rehorik_product_title', 'quality_name', 1); // Quality Name
+add_action('rehorik_product_title', 'woocommerce_output_all_notices', 1); // WooCommerce Notices
+add_action('rehorik_product_title', 'woocommerce_template_single_price', 1); // Price
 
-add_action('rehorik_product_view_title', 'woocommerce_template_single_title', 1); // Title
-add_action('rehorik_product_view_title', 'title_claim', 2); // Claim
-add_action('rehorik_product_view_title', 'short_description', 3); // Short Description
-add_action('rehorik_product_view_title', 'quality_name', 1); // Quality Name
-add_action('rehorik_product_view_title', 'woocommerce_template_single_price', 1); // Price
+add_action('rehorik_product_gallery', 'woocommerce_show_product_images', 1); // Gallery
+add_action('rehorik_product_gallery', 'sigils', 1); // Sigils
 
-add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
-add_action('rehorik_product_view_gallery', 'sigils', 1); // Sigils
+add_action('rehorik_product_video', 'product_video', 1); // Sigils
 
 add_action('woocommerce_single_product_summary', 'cup_of_coffee', 35); // Cup of Coffee
 add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
-
-add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice', 1); // Text if product can not be bought online
-
-add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
+add_action('rehorik_product_not_selling_notice', 'not_selling_notice', 1); // Notice if product is not selling
 
 add_action('rehorik_product_information', 'description', 1); // Description
 add_action('rehorik_product_information', 'title', 1); // Title

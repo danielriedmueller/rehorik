@@ -9,7 +9,7 @@
 }
 
 // Product page
-.rehorik.single-product .rehorik-product-view-gallery .sigil-container {
+.rehorik.single-product .rehorik-product-gallery .sigil-container {
   --sigil-size: 100px;
 
   @media all and (max-width: $medium-breakpoint) {
@@ -67,7 +67,7 @@ body:not(.rehorik.single-product) .sigil-container {
 }
 
 // Product page
-.rehorik.single-product .rehorik-product-view-gallery .sigil-container {
+.rehorik.single-product .rehorik-product-gallery .sigil-container {
   $aspectRatio: 1.5;
   position: absolute;
   top: $spacing-s;
