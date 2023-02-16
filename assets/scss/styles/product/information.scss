@@ -39,78 +39,14 @@ body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-gutschein
   }
 }
 
-body.rehorik.woocommerce #main-content div.rehorik-product .rehorik-product-information {
-  background-color: $beigegold;
-  border: none;
-  padding: var(--product-view-grid-gap-half);
-
-  ul {
-    font-size: $font-size;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      padding: 0 0 0 $spacing-xxs;
-      background: transparent url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIGZpbGw9IiNmZmYiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTIyLjg4cHgiIGhlaWdodD0iMTIyLjg4cHgiIHZpZXdCb3g9IjAgMCAxMjIuODggMTIyLjg4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjIuODggMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYxLjQzOCwwYzMzLjkzLDAsNjEuNDQxLDI3LjUxMiw2MS40NDEsNjEuNDQxIGMwLDMzLjkyOS0yNy41MTIsNjEuNDM4LTYxLjQ0MSw2MS40MzhDMjcuNTEyLDEyMi44OCwwLDk1LjM3LDAsNjEuNDQxQzAsMjcuNTEyLDI3LjUxMiwwLDYxLjQzOCwwTDYxLjQzOCwweiIvPjwvZz48L3N2Zz4=") no-repeat top 15px left;
-      background-size: 2px;
-    }
+body.rehorik.woocommerce #main-content div.rehorik-product {
+  .rehorik-product-information-outer {
+    background-color: $beigegold;
   }
 
-  border-radius: $border-radius;
-  color: #fff;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "title ."
-    "description attributes"
-    "recommendation attributes"
-    "short-description attributes";
+  .rehorik-product-information {
 
-  h2.rehorik-product-information-title {
-    margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
-  }
-
-  .rehorik-product-description {
-    margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
-  }
-
-  .rehorik-product-attributes {
-    margin: 0 0 0 var(--product-view-grid-gap-half);
-  }
-
-  @media all and (max-width: $small-breakpoint) {
     padding: var(--product-view-grid-gap-half);
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "title"
-      "attributes"
-      "description"
-      "recommendation"
-      "short-description";
-
-    h2.rehorik-product-information-title {
-      margin: 0 0 var(--product-view-grid-gap-half) 0;
-    }
-    .rehorik-product-attributes {
-      margin: 0 0 var(--product-view-grid-gap-half) 0;
-    }
-    .rehorik-product-description {
-      margin: 0 0 var(--product-view-grid-gap-half) 0;
-    }
-  }
-
-  .rehorik-product-description,
-  .rehorik-product-attributes {
-    &:empty {
-      display: none;
-    }
-  }
-
-  .rehorik-product-description {
-    grid-area: description;
-    color: $font-color;
-    text-align: justify;
 
     ul {
       font-size: $font-size;
@@ -120,76 +56,145 @@ body.rehorik.woocommerce #main-content div.rehorik-product .rehorik-product-info
 
       li {
         padding: 0 0 0 $spacing-xxs;
-        background: transparent url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIGZpbGw9IiMzOTM1MzYiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTIyLjg4cHgiIGhlaWdodD0iMTIyLjg4cHgiIHZpZXdCb3g9IjAgMCAxMjIuODggMTIyLjg4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjIuODggMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYxLjQzOCwwYzMzLjkzLDAsNjEuNDQxLDI3LjUxMiw2MS40NDEsNjEuNDQxIGMwLDMzLjkyOS0yNy41MTIsNjEuNDM4LTYxLjQ0MSw2MS40MzhDMjcuNTEyLDEyMi44OCwwLDk1LjM3LDAsNjEuNDQxQzAsMjcuNTEyLDI3LjUxMiwwLDYxLjQzOCwwTDYxLjQzOCwweiIvPjwvZz48L3N2Zz4=") no-repeat top 15px left;
+        background: transparent url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIGZpbGw9IiNmZmYiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTIyLjg4cHgiIGhlaWdodD0iMTIyLjg4cHgiIHZpZXdCb3g9IjAgMCAxMjIuODggMTIyLjg4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjIuODggMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYxLjQzOCwwYzMzLjkzLDAsNjEuNDQxLDI3LjUxMiw2MS40NDEsNjEuNDQxIGMwLDMzLjkyOS0yNy41MTIsNjEuNDM4LTYxLjQ0MSw2MS40MzhDMjcuNTEyLDEyMi44OCwwLDk1LjM3LDAsNjEuNDQxQzAsMjcuNTEyLDI3LjUxMiwwLDYxLjQzOCwwTDYxLjQzOCwweiIvPjwvZz48L3N2Zz4=") no-repeat top 15px left;
         background-size: 2px;
       }
     }
-  }
 
-  h2.rehorik-product-information-title {
-    grid-area: title;
+    border-radius: $border-radius;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "title ."
+    "description attributes"
+    "recommendation attributes"
+    "short-description attributes";
 
-    text-align: left;
-    color: $font-color;
-    font-size: $font-size-large;
-  }
+    h2.rehorik-product-information-title {
+      margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
+    }
 
-  .rehorik-product-attributes {
-    grid-area: attributes;
+    .rehorik-product-description {
+      margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
+    }
 
-    table {
-      width: 100%;
+    .rehorik-product-attributes {
+      margin: 0 0 0 var(--product-view-grid-gap-half);
+    }
 
-      tr th {
-        padding: 0 $spacing 0 0;
-        color: $beigegold;
-        vertical-align: top;
+    @media all and (max-width: $small-breakpoint) {
+      padding: var(--product-view-grid-gap-half);
+      grid-template-columns: 1fr;
+      grid-template-areas:
+      "title"
+      "attributes"
+      "description"
+      "recommendation"
+      "short-description";
+
+      h2.rehorik-product-information-title {
+        margin: 0 0 var(--product-view-grid-gap-half) 0;
       }
+      .rehorik-product-attributes {
+        margin: 0 0 var(--product-view-grid-gap-half) 0;
+      }
+      .rehorik-product-description {
+        margin: 0 0 var(--product-view-grid-gap-half) 0;
+      }
+    }
 
-      tr td p, tr th p {
+    .rehorik-product-description,
+    .rehorik-product-attributes {
+      &:empty {
+        display: none;
+      }
+    }
+
+    .rehorik-product-description {
+      grid-area: description;
+      color: $font-color;
+      text-align: justify;
+
+      ul {
+        font-size: $font-size;
+        list-style-type: none;
+        margin: 0;
         padding: 0;
-      }
 
-      tr td a {
-        color: #fff;
-
-        &:hover {
-          text-decoration: underline;
+        li {
+          padding: 0 0 0 $spacing-xxs;
+          background: transparent url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIGZpbGw9IiMzOTM1MzYiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTIyLjg4cHgiIGhlaWdodD0iMTIyLjg4cHgiIHZpZXdCb3g9IjAgMCAxMjIuODggMTIyLjg4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjIuODggMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYxLjQzOCwwYzMzLjkzLDAsNjEuNDQxLDI3LjUxMiw2MS40NDEsNjEuNDQxIGMwLDMzLjkyOS0yNy41MTIsNjEuNDM4LTYxLjQ0MSw2MS40MzhDMjcuNTEyLDEyMi44OCwwLDk1LjM3LDAsNjEuNDQxQzAsMjcuNTEyLDI3LjUxMiwwLDYxLjQzOCwwTDYxLjQzOCwweiIvPjwvZz48L3N2Zz4=") no-repeat top 15px left;
+          background-size: 2px;
         }
       }
+    }
 
-      tr th a {
-        color: $beigegold;
+    h2.rehorik-product-information-title {
+      grid-area: title;
 
-        &:hover {
-          text-decoration: underline;
+      text-align: left;
+      color: $font-color;
+      font-size: $font-size-large;
+    }
+
+    .rehorik-product-attributes {
+      grid-area: attributes;
+
+      table {
+        width: 100%;
+
+        tr th {
+          padding: 0 $spacing 0 0;
+          color: $beigegold;
+          vertical-align: top;
         }
-      }
 
-      tr th, tr td {
-        text-align: left;
-      }
+        tr td p, tr th p {
+          padding: 0;
+        }
 
-      tr {
-        &:not(:last-child) {
-          th, td {
-            padding-top: var(--product-view-grid-gap-quarter);
-            padding-bottom: var(--product-view-grid-gap-quarter);
-            border-bottom: 1px solid $beigegold;
+        tr td a {
+          color: #fff;
+
+          &:hover {
+            text-decoration: underline;
           }
         }
 
-        &:first-child {
-          th, td {
-            padding-top: 0;
-            padding-bottom: var(--product-view-grid-gap-quarter);
+        tr th a {
+          color: $beigegold;
+
+          &:hover {
+            text-decoration: underline;
           }
         }
 
-        &:last-child {
-          th, td {
-            padding-top: var(--product-view-grid-gap-quarter);
-            padding-bottom: 0;
+        tr th, tr td {
+          text-align: left;
+        }
+
+        tr {
+          &:not(:last-child) {
+            th, td {
+              padding-top: var(--product-view-grid-gap-quarter);
+              padding-bottom: var(--product-view-grid-gap-quarter);
+              border-bottom: 1px solid $beigegold;
+            }
+          }
+
+          &:first-child {
+            th, td {
+              padding-top: 0;
+              padding-bottom: var(--product-view-grid-gap-quarter);
+            }
+          }
+
+          &:last-child {
+            th, td {
+              padding-top: var(--product-view-grid-gap-quarter);
+              padding-bottom: 0;
+            }
           }
         }
       }

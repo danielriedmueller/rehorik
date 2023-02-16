@@ -19,8 +19,7 @@ add_action('rehorik_product_title', 'woocommerce_template_single_price', 1); // 
 
 add_action('rehorik_product_gallery', 'woocommerce_show_product_images', 1); // Gallery
 add_action('rehorik_product_gallery', 'sigils', 1); // Sigils
-
-add_action('rehorik_product_video', 'product_video', 1); // Sigils
+add_action('rehorik_product_gallery', 'product_video', 1); // Video
 
 add_action('woocommerce_single_product_summary', 'cup_of_coffee', 35); // Cup of Coffee
 add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head

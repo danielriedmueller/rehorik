@@ -1,38 +1,51 @@
-.rehorik.single-product .rehorik-product.product.detail-view .rehorik-product-gallery .woocommerce-product-gallery {
-  float: none;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
+.rehorik.single-product .rehorik-product.product.detail-view .rehorik-product-gallery {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 
-  .flex-viewport {
-    margin-bottom: var(--product-view-grid-gap-half);
+  /**
+  .rehorik-product-video:not(:empty) {margin: var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;}
+  @media all and (max-width: $small-breakpoint) {
+    .rehorik-product-video:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
   }
+   */
 
-  ol.flex-control-nav.flex-control-thumbs {
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: $product-thumbnail-size $product-thumbnail-size $product-thumbnail-size $product-thumbnail-size;
-    @media all and (max-width: $medium-breakpoint) {
-      grid-template-columns: $product-thumbnail-size $product-thumbnail-size $product-thumbnail-size;
-    }
-
-    grid-auto-rows: $product-thumbnail-size;
-    gap: $spacing-xs;
+  .woocommerce-product-gallery {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
 
-    li {
-      width: 100%;
-      float: none;
+    .flex-viewport {
+      margin-bottom: var(--product-view-grid-gap-half);
     }
-  }
 
-  .flex-viewport,
-  .flex-control-thumbs li img,
-  .woocommerce-product-gallery__image {
-    border-radius: $border-radius;
+    ol.flex-control-nav.flex-control-thumbs {
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: $product-thumbnail-size $product-thumbnail-size $product-thumbnail-size $product-thumbnail-size;
+      @media all and (max-width: $medium-breakpoint) {
+        grid-template-columns: $product-thumbnail-size $product-thumbnail-size $product-thumbnail-size;
+      }
+
+      grid-auto-rows: $product-thumbnail-size;
+      gap: $spacing-xs;
+      justify-content: flex-start;
+
+      li {
+        width: 100%;
+        float: none;
+      }
+    }
+
+    .flex-viewport,
+    .flex-control-thumbs li img,
+    .woocommerce-product-gallery__image {
+      border-radius: $border-radius;
+    }
   }
 }

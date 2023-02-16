@@ -7,6 +7,12 @@ body.rehorik.single-product #page-container > .container {
 .rehorik.single-product .rehorik-product.product.detail-view {
   display: flex;
   flex-direction: column;
+
+  > div {
+    max-width: $max-width-small;
+    margin: 0 auto;
+    padding: 0 var(--section-spacing-left-right);
+  }
 }
 
 /**

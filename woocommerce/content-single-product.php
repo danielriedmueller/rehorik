@@ -50,12 +50,20 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
                 : do_action('rehorik_product_not_selling_notice');
             ?>
         </div>
-        <div class="rehorik-product-video"><?php do_action('rehorik_product_video'); ?></div>
     </div>
-    <div class="rehorik-product-information"><?php do_action('rehorik_product_information'); ?></div>
-    <div class="rehorik-product-preperation-recommendation"><?php do_action('rehorik_product_preperation_recommendation'); ?></div>
-    <div class="rehorik-product-origin"><?php do_action('rehorik_product_origin'); ?></div>
-    <div class="rehorik-product-accesories"><?php do_action('rehorik_product_accesories'); ?></div>
+    <div class="rehorik-product-information-outer">
+        <div class="rehorik-product-information">
+            <?php do_action('rehorik_product_information'); ?>
+        </div>
+    </div>
+    <div class="rehorik-product-preperation-recommendation">
+        <?php do_action('rehorik_product_preperation_recommendation'); ?>
+    </div>
+    <div class="rehorik-product-origin-outer">
+        <div class="rehorik-product-origin">
+            <?php do_action('rehorik_product_origin'); ?>
+        </div>
+    </div>
 </div>
 <div class="container">
     <?php do_action('woocommerce_after_single_product'); ?>
