@@ -3,41 +3,28 @@
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "gallery title"
-    "gallery woocommerce-notices"
     "gallery add-to-cart"
   ;
 
-  // grid-gap: var(--product-view-grid-gap);
+  .rehorik-product-title {margin: 0 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
+  .rehorik-product-gallery {margin: 0 var(--product-view-grid-gap-half) 0 0;}
+  .rehorik-add-to-cart-container {margin: var(--product-view-grid-gap-half) 0 0 var(--product-view-grid-gap-half);}
+
   @media all and (max-width: $small-breakpoint) {
     grid-template-columns: 1fr;
     grid-template-areas:
-    "gallery"
     "title"
-    "woocommerce-notices"
+    "gallery"
     "add-to-cart"
   ;
 
-    /**
-    .rehorik-product-gallery {margin: 0 0 var(--product-view-grid-gap-half) 0;}
-    .rehorik-product-title {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
+    .rehorik-product-title {margin: 0 0 var(--product-view-grid-gap-half) 0;}
+    .rehorik-product-gallery {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
     .rehorik-add-to-cart-container {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
-    .woocommerce-notices-wrapper:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) 0;}
-    */
   }
-
-  /**
-  .rehorik-product-gallery {margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;}
-  .rehorik-product-title {margin: 0 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
-  .rehorik-add-to-cart-container {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
-  .woocommerce-notices-wrapper:not(:empty) {margin: var(--product-view-grid-gap-half) 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half);}
-   */
 
   .rehorik-product-gallery {
     grid-area: gallery;
-  }
-
-  .woocommerce-notices-wrapper {
-    grid-area: woocommerce-notices;
   }
 
   .rehorik-product-title {

@@ -12,6 +12,10 @@ body.rehorik.single-product #page-container > .container {
     max-width: $max-width-small;
     margin: 0 auto;
     padding: 0 var(--section-spacing-left-right);
+
+    &:not(:last-child) {
+      margin-bottom: var(--product-view-grid-gap);
+    }
   }
 }
 

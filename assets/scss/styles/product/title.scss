@@ -1,4 +1,4 @@
-.rehorik-product-title {
+.rehorik.single-product .rehorik-product.product.detail-view .rehorik-product-title {
   h1.product_title {
     color: $font-color-accent;
     text-align: left;
@@ -51,6 +51,12 @@
       color: $beigegold;
       font-size: $font-size;
       text-transform: uppercase;
+    }
+  }
+
+  .woocommerce-notices-wrapper {
+    &:not(:empty) {
+      margin-top: var(--product-view-grid-gap-half);
     }
   }
 }
