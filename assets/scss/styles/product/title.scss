@@ -26,18 +26,6 @@
     }
   }
 
-  p.price {
-    color: $font-color;
-    font-size: $font-size-large;
-    margin: var(--product-view-grid-gap) 0 0 0;
-    padding: 0;
-
-    > span {
-      font-size: $font-size-large;
-      font-family: $font-family-bold;
-    }
-  }
-
   .rehorik-product-short-description {
     &:not(:empty) {
       margin-top: var(--product-view-grid-gap-half);

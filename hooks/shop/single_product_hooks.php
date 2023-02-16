@@ -25,10 +25,11 @@ add_action('rehorik_product_gallery', 'product_video', 1); // Video
 add_action('woocommerce_after_add_to_cart_button', 'fire_after_submit_button_action');
 add_action('woocommerce_after_add_to_cart_button', 'woocommerce_template_single_price', 1); // Price
 add_action('woocommerce_after_add_to_cart_button', 'cup_of_coffee', 35); // Cup of Coffee
-add_action('woocommerce_after_add_to_cart_button', 'hugo_head', 50); // Hugo Head
 add_action( 'woocommerce_after_add_to_cart_button', 'woocommerce_template_single_meta', 40 ); // Meta
 add_filter('woocommerce_paypal_payments_single_product_renderer_hook', function () {return 'woocommerce_after_add_to_cart_button';}); // Filter for rendering PayPal Button
 add_action('rehorik_product_not_selling_notice', 'not_selling_notice', 1); // Notice if product is not selling
+
+add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
 
 add_action('rehorik_product_information', 'description', 1); // Description
 add_action('rehorik_product_information', 'title', 1); // Title
