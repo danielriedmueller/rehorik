@@ -3,29 +3,29 @@
  * Product Detail View Hooks
  */
 remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices');
-
-add_action('rehorik_product_view', 'product_video', 1); // Video
-
-add_action('rehorik_product_view_title_price', 'woocommerce_template_single_title', 1); // Title
-add_action('rehorik_product_view_title_price', 'title_claim', 1); // Claim
-add_action('rehorik_product_view_title_price', 'quality_name', 1); // Quality Name
-add_action('rehorik_product_view_title_price', 'woocommerce_template_single_price', 1); // Price
-
-add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
-add_action('rehorik_product_view_gallery', 'sigils', 1); // Sigils
-
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+add_action('rehorik_product_view', 'product_video', 1); // Video
+
+add_action('rehorik_product_view_title', 'woocommerce_template_single_title', 1); // Title
+add_action('rehorik_product_view_title', 'title_claim', 2); // Claim
+add_action('rehorik_product_view_title', 'short_description', 3); // Short Description
+add_action('rehorik_product_view_title', 'quality_name', 1); // Quality Name
+add_action('rehorik_product_view_title', 'woocommerce_template_single_price', 1); // Price
+
+add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
+add_action('rehorik_product_view_gallery', 'sigils', 1); // Sigils
 
 add_action('woocommerce_single_product_summary', 'cup_of_coffee', 35); // Cup of Coffee
 add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
 
 add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice', 1); // Text if product can not be bought online
 
-add_action('rehorik_product_view', 'short_description', 1); // Goes with
 add_action('rehorik_product_view', 'goes_with', 1); // Goes with
 add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
 
@@ -35,6 +35,8 @@ add_action('rehorik_product_information', 'single_product_attributes', 1); // At
 add_action('rehorik_product_information', 'preperation_recommendation', 1); // Preperation Recommendation
 
 add_action('rehorik_product_origin', 'origin', 1); // Description
+
+add_action('woocommerce_after_single_product', 'woocommerce_output_related_products', 10);
 
 function description(): void {
     global $product;
@@ -166,6 +168,3 @@ function cup_of_coffee(): void {
 function not_selling_notice(): void {
     get_template_part('templates/not-selling-notice');
 }
-
-remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
-add_action('woocommerce_after_single_product', 'woocommerce_output_related_products', 10);

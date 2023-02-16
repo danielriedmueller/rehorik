@@ -1,0 +1,58 @@
+.rehorik-product-view-title {
+  grid-area: title;
+
+  h1.product_title {
+    color: $font-color-accent;
+    text-align: left;
+    margin-top: -8px;
+    line-height: $line-height-small;
+  }
+
+  div.rehorik-product-quality-name {
+    &:not(:empty) {
+      margin-top: var(--product-view-grid-gap-half);
+    }
+
+    font-family: $font-family-bold;
+    font-size: $font-size-large;
+    line-height: $line-height;
+    text-transform: uppercase;
+
+    &:before {
+      content: "– ";
+      display: inline-block;
+      font-family: $font-family-bold;
+      font-size: $font-size-large;
+      line-height: $line-height;
+      margin-right: $spacing-xxs;
+    }
+  }
+
+  p.price {
+    color: $font-color;
+    font-size: $font-size-large;
+    margin: var(--product-view-grid-gap) 0 0 0;
+    padding: 0;
+
+    > span {
+      font-size: $font-size-large;
+      font-family: $font-family-bold;
+    }
+  }
+
+  .rehorik-product-short-description {
+    &:not(:empty) {
+      margin-top: var(--product-view-grid-gap-half);
+    }
+
+    text-align: justify;
+    font-size: $font-size;
+    line-height: $line-height;
+
+    h4 {
+      color: $beigegold;
+      font-size: $font-size;
+      text-transform: uppercase;
+    }
+  }
+}
