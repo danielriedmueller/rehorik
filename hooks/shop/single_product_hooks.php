@@ -108,7 +108,7 @@ function title_claim(): void {
 function preperation_recommendation(): void {
     global $product;
 
-    get_template_part('templates/product-preperation-recommendation', null, ['product' => $product]);
+    get_template_part('templates/product/preperation-recommendation', null, ['product' => $product]);
 }
 
 function title(): void {
@@ -125,7 +125,7 @@ function single_product_attributes(): void {
 function product_video(): void {
     global $product;
 
-    get_template_part('templates/product-video', null, ['product' => $product]);
+    get_template_part('templates/product/video', null, ['product' => $product]);
 }
 
 function sigils(): void {
@@ -141,9 +141,9 @@ function hugo_head(): void {
 function cup_of_coffee(): void {
     global $product;
 
-    get_template_part('templates/cup-of-coffee', null, ['product' => $product]);
+    get_template_part('templates/product/cup-of-coffee', null, ['product' => $product]);
 }
 
 function not_selling_notice(): void {
-    get_template_part('templates/not-selling-notice');
+    get_template_part('templates/product/not-selling-notice');
 }
