@@ -8,7 +8,10 @@ body.rehorik.single-product #page-container > .container {
   display: flex;
   flex-direction: column;
 
-  > div {
+  .rehorik-product-header,
+  .rehorik-product-information,
+  .rehorik-product-preperation-recommendation,
+  .rehorik-product-origin {
     max-width: $max-width-small;
     margin: 0 auto;
     padding: 0 var(--section-spacing-left-right);
