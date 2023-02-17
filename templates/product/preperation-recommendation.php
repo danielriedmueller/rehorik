@@ -13,10 +13,9 @@ $value = $product->get_meta('reh_preperation_recommendation');
 // If seperator ist not present, its legacy value format
 $seperator = "|";
 $textPieces = explode($seperator, $value);
-
-$type = $textPieces[0];
-$recipe = $textPieces[1];
-$video = $textPieces[2];
+$type = $textPieces[0] ?? "";
+$recipe = $textPieces[1] ?? "";
+$video = $textPieces[2] ?? "";
 
 if (empty($type) || empty($recipe) || empty($category)) {
     return;

@@ -16,10 +16,10 @@ body.rehorik.single-product #page-container > .container {
     margin: 0 auto;
   }
 
-  .rehorik-product-header,
-  .rehorik-product-information-outer,
-  .rehorik-product-preperation-recommendation,
-  .rehorik-product-origin-outer {
+  .rehorik-product-header:not(:empty),
+  .rehorik-product-information-outer:not(:empty),
+  .rehorik-product-preperation-recommendation:not(:empty),
+  .rehorik-product-origin-outer:not(:empty) {
     padding: var(--product-view-grid-gap) var(--section-spacing-left-right);
   }
 }

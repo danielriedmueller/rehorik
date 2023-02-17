@@ -1,3 +1,8 @@
+// Hide for Merch Category
+body.rehorik.woocommerce #main-content div.rehorik-product.product_cat-merch .rehorik-product-information-outer {
+  display: none;
+}
+
 body.rehorik.woocommerce #main-content div.rehorik-product {
   .rehorik-product-information-outer {
     background-color: $beigegold;

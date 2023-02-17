@@ -25,6 +25,10 @@
 
   .rehorik-product-gallery {
     grid-area: gallery;
+
+    .rehorik-product-video:not(:empty) {
+      margin: var(--product-view-grid-gap-half) 0 0 0;
+    }
   }
 
   .rehorik-product-title {

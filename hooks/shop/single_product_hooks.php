@@ -77,7 +77,7 @@ function origin(): void
             $weingut,
             $post->post_excerpt
         );
-    } else {
+    } else if (!empty($origin)) {
         echo sprintf(
             '<div class="rehorik-product-origin"><h2>Herkunft</h2><div>%s</div></div>',
             $origin
