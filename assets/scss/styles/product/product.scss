@@ -28,7 +28,20 @@ body.rehorik.single-product #page-container > .container {
     margin-left: -7px;
   }
 
-  .rehorik-product-title p.price {
+  .not-selling-notice p.price {
+    color: $font-color;
+    font-family: $font-family-bold;
+    font-size: $font-size-very-very-large;
+    line-height: 44px;
+    padding: 0;
+    margin-right: var(--product-view-grid-gap-half);
+
+    > span {
+      font-size: $font-size-very-very-large;
+      font-family: $font-family-bold;
+      line-height: 44px;
+    }
+
     > span::before {
       content: "ab ";
     }
