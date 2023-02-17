@@ -89,6 +89,16 @@
       }
     }
 
+    #payment {
+      ul.payment_methods li input {
+        margin: 0 $spacing-xs 0 0;
+      }
+
+      .payment_box p {
+        padding: 0;
+      }
+    }
+
     .wc-gzd-checkbox-placeholder,
     .wc-gzd-checkbox-placeholder-data-age-verification,
     .wc-gzd-checkbox-placeholder-legal {
@@ -102,12 +112,12 @@
           margin-bottom: $spacing-s;
           position: relative;
           display: block;
-          padding-left: $spacing-s;
+          padding-left: $spacing-xs + 13px;
 
           .input-checkbox {
             position: absolute;
             left: 0;
-            top: $spacing-xxs;
+            top: 7px;
             margin: 0;
           }
 
