@@ -88,41 +88,54 @@
         border: 1px solid $beigegold;
       }
     }
+
+    .wc-gzd-checkbox-placeholder,
+    .wc-gzd-checkbox-placeholder-data-age-verification,
+    .wc-gzd-checkbox-placeholder-legal {
+      margin-bottom: $spacing-xxs;
+
+      p.form-row {
+        margin: 0 0 $spacing-xxs 0;
+        padding: 0;
+
+        label {
+          margin-bottom: $spacing-s;
+          position: relative;
+          display: block;
+          padding-left: $spacing-s;
+
+          .input-checkbox {
+            position: absolute;
+            left: 0;
+            top: $spacing-xxs;
+            margin: 0;
+          }
+
+          span {
+            display: block;
+          }
+        }
+
+        &.legal label {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   .woocommerce-NoticeGroup {
     grid-area: notice;
   }
 
-  .wc-gzd-checkbox-placeholder-data-age-verification,
-  .wc-gzd-checkbox-placeholder-legal {
-    margin-bottom: $spacing-xxs;
-
-    p.form-row {
-      margin: 0 0 $spacing-xxs 0;
-      padding: 0 !important;
-
-      .input-checkbox {
-        margin: 5px $spacing-xxs 0 0;
-      }
-
-      label {
-        display: flex !important;
-        margin-bottom: $spacing-xs;
-      }
-
-      &.legal {
-        margin-bottom: 0;
-      }
+  p.legal.form-row.checkbox-legal.validate-required {
+    abbr.required {
+      display: none;
     }
   }
 
-  p.form-row {
-    margin: 0 0 $spacing-xxs 0;
-    padding: 0 !important;
-
-    &.legal {
-      margin-bottom: 0;
+  .form-row.woocommerce-invalid label {
+    a {
+      color: #a00;
     }
   }
 
