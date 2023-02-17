@@ -25,7 +25,7 @@ if (!$product_attributes) {
 ?>
 <div class="rehorik-product-attributes product-detail-view-attributes">
     <?php foreach ($product_attributes as $product_attribute_key => $product_attribute) : ?>
-        <div class="label"><?php echo wp_kses_post($product_attribute['label']); ?></div>
+        <div class="label"><strong><?php echo wp_kses_post($product_attribute['label']); ?></strong></div>
         <div><?php echo wp_kses_post($product_attribute['value']); ?></div>
     <?php endforeach; ?>
 </div>

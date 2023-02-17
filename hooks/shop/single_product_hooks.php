@@ -2,14 +2,14 @@
 /**
  * Product Detail View Hooks
  */
-remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices');
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+remove_action('woocommerce_before_single_product', 'woocommerce_output_all_notices');
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 
 add_action('rehorik_product_title', 'woocommerce_template_single_title', 1); // Title
 add_action('rehorik_product_title', 'title_claim', 1); // Claim
@@ -22,11 +22,12 @@ add_action('rehorik_product_gallery', 'sigils', 1); // Sigils
 add_action('rehorik_product_gallery', 'product_video', 1); // Video
 
 // Submit button block
-add_action('woocommerce_after_add_to_cart_button', 'fire_after_submit_button_action');
 add_action('woocommerce_after_add_to_cart_button', 'woocommerce_template_single_price', 1); // Price
 add_action('woocommerce_after_add_to_cart_button', 'cup_of_coffee', 35); // Cup of Coffee
-add_action( 'woocommerce_after_add_to_cart_button', 'woocommerce_template_single_meta', 40 ); // Meta
-add_filter('woocommerce_paypal_payments_single_product_renderer_hook', function () {return 'woocommerce_after_add_to_cart_button';}); // Filter for rendering PayPal Button
+add_action('woocommerce_after_add_to_cart_button', 'woocommerce_template_single_meta', 40); // Meta
+add_filter('woocommerce_paypal_payments_single_product_renderer_hook', function () {
+    return 'woocommerce_after_add_to_cart_button';
+}); // Filter for rendering PayPal Button
 add_action('rehorik_product_not_selling_notice', 'not_selling_notice', 1); // Notice if product is not selling
 
 add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
@@ -41,7 +42,8 @@ add_action('rehorik_product_origin', 'origin', 1); // Description
 
 add_action('woocommerce_after_single_product', 'woocommerce_output_related_products', 10);
 
-function description(): void {
+function description(): void
+{
     global $product;
 
     echo sprintf(
@@ -50,7 +52,8 @@ function description(): void {
     );
 }
 
-function short_description(): void {
+function short_description(): void
+{
     global $post;
 
     echo sprintf(
@@ -59,7 +62,8 @@ function short_description(): void {
     );
 }
 
-function origin(): void {
+function origin(): void
+{
     global $post;
     global $product;
 
@@ -80,7 +84,9 @@ function origin(): void {
         );
     }
 }
-function quality_name(): void {
+
+function quality_name(): void
+{
     global $product;
 
     $qualityName = $product->get_attribute('qualitaetsbezeichnung');
@@ -93,7 +99,8 @@ function quality_name(): void {
     }
 }
 
-function title_claim(): void {
+function title_claim(): void
+{
     global $product;
     $claim = $product->get_meta('reh_product_title_claim');
 
@@ -105,45 +112,55 @@ function title_claim(): void {
     }
 }
 
-function preperation_recommendation(): void {
+function preperation_recommendation(): void
+{
     global $product;
 
     get_template_part('templates/product/preperation-recommendation', null, ['product' => $product]);
 }
 
-function title(): void {
-    the_title( '<h2 class="rehorik-product-information-title">', '</h2>' );
+function title(): void
+{
+    the_title('<h2>', '</h2>');
 }
 
-function single_product_attributes(): void {
+function single_product_attributes(): void
+{
     global $product;
 
     // Manipulated by woocommerce_display_product_attributes filter
     wc_display_product_attributes($product);
 }
 
-function product_video(): void {
+function product_video(): void
+{
     global $product;
 
-    get_template_part('templates/product/video', null, ['product' => $product]);
+    get_template_part('templates/product/video', null, [
+        'video' => $product->get_meta('reh_product_video')
+    ]);
 }
 
-function sigils(): void {
+function sigils(): void
+{
     global $product;
 
     get_template_part('templates/product/sigils', null, ['product' => $product]);
 }
 
-function hugo_head(): void {
+function hugo_head(): void
+{
     echo '<div class="rehorik-hugo-head"></div>';
 }
 
-function cup_of_coffee(): void {
+function cup_of_coffee(): void
+{
     global $product;
 
     get_template_part('templates/product/cup-of-coffee', null, ['product' => $product]);
 }
 
-function not_selling_notice(): void {
+function not_selling_notice(): void
+{
     get_template_part('templates/product/not-selling-notice');
 }
