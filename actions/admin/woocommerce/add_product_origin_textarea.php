@@ -1,15 +1,22 @@
 <?php
-add_action( 'add_meta_boxes', function () {
-    function foo($post) {
+add_action( 'admin_enqueue_scripts', 'enqueue_gutenberg_scripts' );
+
+function enqueue_gutenberg_scripts() {
+    wp_enqueue_script( 'wp-blocks' );
+    wp_enqueue_script( 'wp-editor' );
+    wp_enqueue_script( 'wp-components' );
+    wp_enqueue_script( 'wp-i18n' );
+    wp_enqueue_style( 'wp-components' );
+    wp_enqueue_style( 'wp-editor' );
+}
+
+add_action('add_meta_boxes', function () {
+    function addOrigin($post)
+    {
         $valueFromField = get_post_meta($post->ID, 'rehorik_product_origin', true);
 
         $settings = array(
             'textarea_name' => 'rehorik_product_origin',
-            'quicktags' => array('buttons' => 'em,strong,link'),
-            'tinymce' => array(
-                'theme_advanced_buttons1' => 'bold,italic,strikethrough,separator,bullist,numlist,separator,blockquote,separator,justifyleft,justifycenter,justifyright,separator,link,unlink,separator,undo,redo,separator',
-                'theme_advanced_buttons2' => '',
-            ),
             'editor_css' => '<style>#wp-excerpt-editor-container .wp-editor-area{height:175px; width:100%;}</style>',
         );
 
@@ -22,7 +29,7 @@ add_action( 'add_meta_boxes', function () {
     add_meta_box(
         'rehorik_product_origin',
         'Herkunft',
-        'foo',
+        'addOrigin',
         'product',
         'normal'
     );
