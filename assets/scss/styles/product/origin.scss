@@ -1,0 +1,16 @@
+body.rehorik.woocommerce #main-content div.rehorik-product {
+  .rehorik-product-origin-outer {
+    background-color: $hellbraun;
+  }
+
+  .rehorik-product-origin {
+    h2 {
+      grid-area: title;
+
+      text-align: left;
+      color: $font-color;
+      font-size: $font-size-large;
+      margin-bottom: var(--product-view-grid-gap-half);
+    }
+  }
+}

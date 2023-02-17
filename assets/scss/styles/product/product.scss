@@ -1,7 +1,7 @@
 // Remove top container padding
 body.rehorik.single-product #page-container > .container {
   max-width: unset;
-  padding: var(--section-spacing-top-bottom) 0;
+  padding: 0;
 }
 
 .rehorik.single-product .rehorik-product.product.detail-view {
@@ -14,11 +14,13 @@ body.rehorik.single-product #page-container > .container {
   .rehorik-product-origin {
     max-width: $max-width-small;
     margin: 0 auto;
-    padding: 0 var(--section-spacing-left-right);
+  }
 
-    &:not(:last-child) {
-      margin-bottom: var(--product-view-grid-gap);
-    }
+  .rehorik-product-header,
+  .rehorik-product-information-outer,
+  .rehorik-product-preperation-recommendation,
+  .rehorik-product-origin-outer {
+    padding: var(--product-view-grid-gap) var(--section-spacing-left-right);
   }
 }
 

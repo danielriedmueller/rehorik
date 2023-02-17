@@ -1,8 +1,5 @@
 body.rehorik.woocommerce #main-content div.rehorik-product .rehorik-product-preperation-recommendation {
-  padding: var(--product-view-grid-gap);
-
   display: grid;
-
   grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content 1fr min-content;
   grid-template-areas:
@@ -16,7 +13,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product .rehorik-product-prep
   }
 
   .description {
-    margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
+    margin: 0 var(--product-view-grid-gap-half) 0 0;
   }
 
   .rehorik-product-video {
@@ -24,7 +21,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product .rehorik-product-prep
   }
 
   .make-appointment {
-    margin: 0 var(--product-view-grid-gap-half) 0 0;
+    margin: var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0 0;
   }
 
   h2 {

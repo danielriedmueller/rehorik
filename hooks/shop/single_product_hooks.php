@@ -73,13 +73,13 @@ function origin(): void
 
     if (!empty($weingut)) {
         echo sprintf(
-            '<div class="rehorik-product-origin"><h4>Weingut %s</h4>%s</div>',
+            '<div class="rehorik-product-origin"><h2>Weingut %s</h2>%s</div>',
             $weingut,
             $post->post_excerpt
         );
     } else {
         echo sprintf(
-            '<div class="rehorik-product-origin">%s</div>',
+            '<div class="rehorik-product-origin"><h2>Herkunft</h2><div>%s</div></div>',
             $origin
         );
     }

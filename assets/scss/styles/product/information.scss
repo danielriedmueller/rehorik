@@ -1,13 +1,9 @@
-@import "../mixins";
-
 body.rehorik.woocommerce #main-content div.rehorik-product {
   .rehorik-product-information-outer {
     background-color: $beigegold;
   }
 
   .rehorik-product-information {
-    padding: var(--product-view-grid-gap);
-
     ul {
       font-size: $font-size;
       list-style-type: none;
