@@ -8,7 +8,7 @@
 
   div.rehorik-product-quality-name {
     &:not(:empty) {
-      margin-top: var(--product-view-grid-gap-half);
+      margin-top: var(--product-view-grid-gap-quarter);
     }
 
     font-family: $font-family-bold;

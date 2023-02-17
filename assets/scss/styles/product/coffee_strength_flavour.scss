@@ -4,11 +4,6 @@
   }
 }
 
-// Product view
-td.woocommerce-product-attributes-item__value .rehorik-product-strength-flavour-container span {
-  display: inline-block !important;
-}
-
 // Category view
 .rehorik-product-strength-flavour-container {
   $width: 15px;
@@ -32,28 +27,28 @@ td.woocommerce-product-attributes-item__value .rehorik-product-strength-flavour-
     $bgSize: $width - (6 - ($i - 1));
 
     .rehorik-coffee-strength-#{$i} {
-      background-image: url("../img/svg/strength.svg");
+      background-image: url("../img/product/strength.svg");
       background-size: $bgSize;
       width: $bgSize;
       background-position: left bottom;
     }
 
     .rehorik-coffee-strength-#{$i}-filled {
-      background-image: url("../img/svg/strength_filled.svg");
+      background-image: url("../img/product/strength_filled.svg");
       background-size: $bgSize;
       width: $bgSize;
       background-position: left bottom;
     }
 
     .rehorik-coffee-flavour-#{$i} {
-      background-image: url("../img/svg/flavour.svg");
+      background-image: url("../img/product/flavour.svg");
       background-size: $bgSize;
       width: $bgSize;
       background-position: left top;
     }
 
     .rehorik-coffee-flavour-#{$i}-filled {
-      background-image: url("../img/svg/flavour_filled.svg");
+      background-image: url("../img/product/flavour_filled.svg");
       background-size: $bgSize;
       width: $bgSize;
       background-position: left top;
@@ -64,19 +59,41 @@ td.woocommerce-product-attributes-item__value .rehorik-product-strength-flavour-
 .product-of-month .rehorik-product-strength-flavour-container {
   @for $i from 1 through 6 {
     .rehorik-coffee-strength-#{$i} {
-      background-image: url("../img/svg/strength_white.svg");
+      background-image: url("../img/product/strength_white.svg");
     }
 
     .rehorik-coffee-strength-#{$i}-filled {
-      background-image: url("../img/svg/strength_filled_white.svg");
+      background-image: url("../img/product/strength_filled_white.svg");
     }
 
     .rehorik-coffee-flavour-#{$i} {
-      background-image: url("../img/svg/flavour_white.svg");
+      background-image: url("../img/product/flavour_white.svg");
     }
 
     .rehorik-coffee-flavour-#{$i}-filled {
-      background-image: url("../img/svg/flavour_filled_white.svg");
+      background-image: url("../img/product/flavour_filled_white.svg");
+    }
+  }
+}
+
+.rehorik-product-attributes.product-detail-view-attributes .rehorik-product-strength-flavour-container {
+  padding: 0;
+
+  @for $i from 1 through 6 {
+    .rehorik-coffee-strength-#{$i} {
+      background-image: url("../img/product/strength_black.svg");
+    }
+
+    .rehorik-coffee-strength-#{$i}-filled {
+      background-image: url("../img/product/strength_filled_black.svg");
+    }
+
+    .rehorik-coffee-flavour-#{$i} {
+      background-image: url("../img/product/flavour_black.svg");
+    }
+
+    .rehorik-coffee-flavour-#{$i}-filled {
+      background-image: url("../img/product/flavour_filled_black.svg");
     }
   }
 }

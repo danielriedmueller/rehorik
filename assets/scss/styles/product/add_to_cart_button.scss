@@ -70,13 +70,13 @@ div.rehorik-product.detail-view form.cart.variations_form .woocommerce-variation
       opacity: 1;
 
       &::after {
-        background-image: url("../img/svg/strength_filled_white.svg");
+        background-image: url("../img/product/strength_filled_white.svg");
         background-size: 14px;
       }
 
       &:hover {
         &::after {
-          background-image: url("../img/svg/strength_filled.svg");
+          background-image: url("../img/product/strength_filled.svg");
           background-size: 14px;
         }
       }

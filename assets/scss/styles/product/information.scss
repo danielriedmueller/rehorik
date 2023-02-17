@@ -7,7 +7,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
 
   .rehorik-product-information {
 
-    padding: var(--product-view-grid-gap-half);
+    padding: var(--product-view-grid-gap);
 
     ul {
       font-size: $font-size;
@@ -24,18 +24,18 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
     grid-template-areas:
-    "title ."
+    "title attributes"
     "description attributes"
-    "recommendation attributes"
-    "short-description attributes";
+    ;
 
     h2.rehorik-product-information-title {
       margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
     }
 
     .rehorik-product-description {
-      margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
+      margin: 0 var(--product-view-grid-gap-half) 0 0;
     }
 
     .rehorik-product-attributes {
@@ -49,17 +49,18 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       "title"
       "attributes"
       "description"
-      "recommendation"
-      "short-description";
+      ;
 
       h2.rehorik-product-information-title {
         margin: 0 0 var(--product-view-grid-gap-half) 0;
       }
+
       .rehorik-product-attributes {
         margin: 0 0 var(--product-view-grid-gap-half) 0;
       }
+
       .rehorik-product-description {
-        margin: 0 0 var(--product-view-grid-gap-half) 0;
+        margin: 0 0 0 0;
       }
     }
 
@@ -97,59 +98,61 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       font-size: $font-size-large;
     }
 
-    .rehorik-product-attributes {
+    .rehorik-product-attributes.product-detail-view-attributes {
       grid-area: attributes;
+      display: grid;
+      grid-template-columns: max-content 1fr;
 
-      table {
-        width: 100%;
+      > div {
+        &.label {
+          font-family: $font-family-bold;
+          padding-right: var(--product-view-grid-gap-half);
+          text-transform: uppercase;
 
-        tr {
-          td:first-child {
-            padding: 0 $spacing 0 0;
-            vertical-align: top;
+          a {
             font-family: $font-family-bold;
-            text-transform: uppercase;
-          }
-
-          td {
-            text-align: left;
-
-            a {
-              color: $anthrazit;
-
-              &:hover {
-                color: $anthrazit;
-                text-decoration: underline;
-              }
-            }
-          }
-
-          &:not(:last-child) {
-            th, td {
-              padding-top: var(--product-view-grid-gap-quarter);
-              padding-bottom: var(--product-view-grid-gap-quarter);
-              border-bottom: 1px solid $anthrazit;
-            }
-          }
-
-          &:first-child {
-            th, td {
-              padding-top: 0;
-              padding-bottom: var(--product-view-grid-gap-quarter);
-            }
-          }
-
-          &:last-child {
-            th, td {
-              padding-top: var(--product-view-grid-gap-quarter);
-              padding-bottom: 0;
-            }
-          }
-
-          td p, th p {
-            padding: 0;
           }
         }
+
+        color: $anthrazit;
+
+        a {
+          color: $anthrazit;
+
+          &:hover {
+            color: $anthrazit;
+            text-decoration: underline;
+          }
+        }
+
+        &:not(:first-child):not(:nth-child(2)) {
+          padding-top: $spacing-xs;
+        }
+
+        &:not(:last-child):not(:nth-last-child(2)) {
+          border-bottom: 1px solid $anthrazit;
+          padding-bottom: $spacing-xs;
+        }
+
+        ul {
+          list-style: none;
+          display: block;
+
+          li {
+            display: inline-block;
+            padding: 0;
+            background: transparent none;
+
+            &:not(:last-child) a::after {
+              content: ",\00a0";
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+      p {
+        padding: 0;
       }
     }
   }
