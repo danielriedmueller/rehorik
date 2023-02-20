@@ -131,7 +131,7 @@ require_once($baseDir . '/actions/api/endpoints.php');
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.97);
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.98);
     wp_enqueue_script('mobile-menu', $assetsDir . 'js/mobile_menu.js', [], 1, true);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);
     wp_enqueue_script('overwrite-woocommerce', $assetsDir . 'js/overwrite_woocommerce.js', ['jquery'], 1, true);
