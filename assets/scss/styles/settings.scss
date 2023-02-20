@@ -40,7 +40,7 @@ $text-shadow: -1px -1px 0 $anthrazit, 1px -1px 0 $anthrazit, -1px 1px 0 $anthraz
 $very-small-breakpoint: 442px;
 $small-breakpoint: 767px;
 // Mobile menu breakpoint. Used in mobile_menu.js.
-$medium-breakpoint: 1180px;
+$medium-breakpoint: 1035px;
 
 $mini-cart-left-width: 240px;
 $mini-cart-right-width: 420px;
@@ -63,6 +63,9 @@ $product-gallery-width: 235px;
 $product-category-width: 350px;
 $product-category-frontpage-height: $product-category-width;
 $product-height: 530px;
+
+$strength-flavour-icon-size: 18px;
+$strength-flavour-icon-size-large: $spacing;
 
 $menu-height: 60px;
 $top-bar-height: 45px;

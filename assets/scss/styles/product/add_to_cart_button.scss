@@ -9,8 +9,21 @@ div.rehorik-product.detail-view form.cart.variations_form .woocommerce-variation
     "price quantity button"
     ". paypal paypal"
     ". cup-of-coffee cup-of-coffee"
-    ". meta meta"
-;
+    ". meta meta";
+
+  @media all and (max-width: $small-breakpoint) {
+    grid-template-columns: $product-view-cart-button-quantity-width $product-view-cart-button-width;
+    grid-template-areas:
+    "price price"
+    "quantity button"
+    "paypal paypal"
+    "cup-of-coffee cup-of-coffee"
+    "meta meta";
+
+    p.price {
+      margin-bottom: var(--product-view-grid-gap);
+    }
+  }
 
   div.quantity {
     grid-area: quantity;
