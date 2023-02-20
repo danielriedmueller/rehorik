@@ -1,13 +1,16 @@
 div.rehorik-product-meta.product_meta {
   display: flex;
+  flex-wrap: wrap;
   border: none;
   padding: 0;
+  justify-content: flex-start;
+  grid-gap: $spacing-xxs;
+  width: 100%;
 
   > span, > div, >p {
     &:not(:last-child) {
       border-right: 1px solid $beigegold;
       padding-right: $spacing-xxs;
-      margin-right: $spacing-xxs;
     }
   }
 

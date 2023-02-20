@@ -5,6 +5,10 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
   }
 
   .rehorik-product-origin {
+    &.weingut {
+      padding-bottom: var(--product-view-grid-gap);
+    }
+
     h2 {
       grid-area: title;
 

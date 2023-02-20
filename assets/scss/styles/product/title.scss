@@ -7,6 +7,12 @@
   }
 
   div.rehorik-product-quality-name {
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    text-transform: uppercase;
+  }
+
+  div.rehorik-product-title-claim {
     &:not(:empty) {
       margin-top: var(--product-view-grid-gap-quarter);
     }
