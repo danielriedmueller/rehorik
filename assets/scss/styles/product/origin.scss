@@ -1,5 +1,6 @@
 body.rehorik.woocommerce #main-content div.rehorik-product {
   .rehorik-product-origin-outer {
+    padding-bottom: 0;
     background-color: $hellbraun;
   }
 
@@ -11,6 +12,68 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       color: $font-color;
       font-size: $font-size-large;
       margin-bottom: var(--product-view-grid-gap-half);
+    }
+
+    > div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+          "left right"
+          "images images";
+
+      .origin-text-left {
+        &:not(:empty) {
+          margin: 0 var(--product-view-grid-gap-half) 0 0;
+        }
+
+        text-align: justify;
+        grid-area: left;
+      }
+
+      .origin-text-right {
+        &:not(:empty) {
+          margin: 0 0 0 var(--product-view-grid-gap-half);
+        }
+
+        text-align: justify;
+        grid-area: right;
+      }
+
+      .origin-images {
+        &:not(:empty) {
+          margin: var(--product-view-grid-gap) 0 0 0;
+        }
+
+        grid-area: images;
+        display: flex;
+        grid-gap: $spacing-s;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        @media all and (max-width: $medium-breakpoint) {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        img {
+          border-radius: 0;
+          padding: 0;
+          margin: 0;
+        }
+      }
+
+      @media all and (max-width: $medium-breakpoint) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "left"
+            "right"
+            "images";
+
+        .origin-text-left:not(:empty) {margin: 0 0 var(--product-view-grid-gap-half) 0;}
+        .origin-text-right:not(:empty) {margin: 0 0 var(--product-view-grid-gap-half) 0;}
+        .origin-images:not(:empty) {margin: var(--product-view-grid-gap-half) 0 0 0;}
+      }
     }
   }
 }

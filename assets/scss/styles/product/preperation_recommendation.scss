@@ -7,6 +7,24 @@ body.rehorik.woocommerce #main-content div.rehorik-product .rehorik-product-prep
     "description video"
     "appointment .";
 
+  h2 {
+    margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0;
+  }
+
+  .description {
+    margin: 0 var(--product-view-grid-gap-half) 0 0;
+    text-align: justify;
+  }
+
+  .rehorik-product-video {
+    margin: 0 0 0 var(--product-view-grid-gap-half);
+  }
+
+  .make-appointment {
+    margin: var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0 0;
+    text-align: justify;
+  }
+
   @media all and (max-width: $medium-breakpoint) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -32,8 +50,6 @@ body.rehorik.woocommerce #main-content div.rehorik-product .rehorik-product-prep
       margin: 0 0 0 0;
     }
   }
-
-
 
   h2 {
     grid-area: title;

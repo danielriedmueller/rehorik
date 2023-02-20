@@ -19,6 +19,10 @@ add_action('add_meta_boxes', function () {
             htmlspecialchars_decode($valueFromField, ENT_QUOTES),
             'origin',
             [
+                'tinymce' => array(
+                    // Items for the Visual Tab
+                    'toolbar1' => 'styleselect',
+                ),
                 'textarea_name' => 'rehorik_product_origin',
             ]
         );
@@ -32,6 +36,35 @@ add_action('add_meta_boxes', function () {
         'normal'
     );
 });
+
 add_action('save_post', function ($post_id) {
     update_post_meta($post_id, 'rehorik_product_origin', filter_input(INPUT_POST, 'rehorik_product_origin'));
+});
+
+add_filter('tiny_mce_before_init', function (array $mceInit) {
+    if ($mceInit['selector'] !== '#origin') {
+        return $mceInit;
+    }
+
+    $style_formats = [
+        [
+            'title' => 'Text Links',
+            'block' => 'div',
+            'classes' => 'origin-text-left'
+        ],
+        [
+            'title' => 'Text Rechts',
+            'block' => 'div',
+            'classes' => 'origin-text-right'
+        ],
+        [
+            'title' => 'Bilder',
+            'block' => 'div',
+            'classes' => 'origin-images'
+        ]
+    ];
+
+    $mceInit['style_formats'] = json_encode($style_formats);
+
+    return $mceInit;
 });
