@@ -1,9 +1,7 @@
 div.rehorik-product-meta.product_meta {
   display: flex;
   border: none;
-  margin-top: $spacing-xxs;
   padding: 0;
-  line-height: 11px;
 
   > span, > div, >p {
     &:not(:last-child) {

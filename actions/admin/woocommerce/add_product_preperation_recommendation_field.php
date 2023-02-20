@@ -17,7 +17,7 @@ add_action('woocommerce_product_data_panels', function () {
     );
 });
 
-function render_preperation_recommendation_field()
+function render_preperation_recommendation_field(): string
 {
     global $thepostid;
     $values = getPreperationRecommendationValues($thepostid);
@@ -38,6 +38,13 @@ function render_preperation_recommendation_field()
             'value' => $values[1] ?? ""
         ]
     );
+    woocommerce_wp_text_input(
+        [
+            'id' => '_reh_preperation_recommendation_video',
+            'label' => "Video",
+            'value' => $values[2] ?? ""
+        ]
+    );
 
     echo '</div>'; // general end
     $output = ob_get_contents(); //Grab output
@@ -46,38 +53,20 @@ function render_preperation_recommendation_field()
     return $output;
 }
 
-function getPreperationRecommendationValues($thepostid)
+function getPreperationRecommendationValues($thepostid): array
 {
     $seperator = "|";
     $valueFromField = get_post_meta( $thepostid, 'reh_preperation_recommendation', true);
 
-    // If seperator ist not present, its legacy value format
-    if (!str_contains($valueFromField, $seperator)) {
-        return getPreperationRecommendationValuesFromLegacyFormat($valueFromField);
-    }
-
     return explode($seperator, $valueFromField);
 }
 
-/**
- * @Deprecated
- */
-function getPreperationRecommendationValuesFromLegacyFormat($value)
-{
-    $value = strip_tags($value);
-    $values = explode("Zubereitungsrezept: ", $value);
-    $values[0] = str_replace("Zubereitungsempfehlung: ", "", $values[0]);
-    $values[0] = str_replace("\r", "", $values[0]);
-    $values[0] = str_replace("\n", "", $values[0]);
-
-    return $values;
-}
-
 // Save Fields
-add_action('woocommerce_process_product_meta', function($term_id) {
+add_action('woocommerce_process_product_meta', function($term_id): void {
     $id = 'reh_preperation_recommendation';
     $type = filter_input(INPUT_POST, '_reh_preperation_recommendation_type');
     $recipe = filter_input(INPUT_POST, '_reh_preperation_recommendation_recipe');
+    $video = filter_input(INPUT_POST, '_reh_preperation_recommendation_video');
 
-    update_post_meta($term_id, $id, $type . '|' . $recipe);
+    update_post_meta($term_id, $id, $type . '|' . $recipe . '|' . $video);
 });

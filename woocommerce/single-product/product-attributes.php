@@ -17,18 +17,15 @@
  * @version 3.6.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-if ( ! $product_attributes ) {
-	return;
+if (!$product_attributes) {
+    return;
 }
 ?>
-<div class="rehorik-product-attributes"><table>
+<div class="rehorik-product-attributes product-detail-view-attributes">
     <?php foreach ($product_attributes as $product_attribute_key => $product_attribute) : ?>
-        <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--<?php echo esc_attr( $product_attribute_key ); ?>">
-            <th class="woocommerce-product-attributes-item__label"><?php echo wp_kses_post( $product_attribute['label'] ); ?></th>
-            <td class="woocommerce-product-attributes-item__value"><?php echo wp_kses_post( $product_attribute['value'] ); ?></td>
-        </tr>
+        <div class="label"><strong><?php echo wp_kses_post($product_attribute['label']); ?></strong></div>
+        <div><?php echo wp_kses_post($product_attribute['value']); ?></div>
     <?php endforeach; ?>
-</table>
 </div>

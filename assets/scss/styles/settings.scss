@@ -1,13 +1,10 @@
 $opacity: 0.65;
 $weinrot: #5C0D2F;
-$hellbraun: #996B23;
-$dunkelbraun: #663700;
-$hellgrau: #500030;
+$hellbraun: #AF8C6C; // RGB: 175/140/108
 $anthrazit: #3C3C3B;
 $anthrazit-opacity: rgba(57, 53, 54, $opacity);
 $beigegold: #CEB67F;
 $tuerkis: #003c4a;
-$lila: #2d253c;
 
 $font-family-body: "Cond", serif;
 $font-family-black: "Cond Black", serif;
@@ -35,7 +32,7 @@ $font-size-large: 26px;
 $font-size: 20px;
 $font-size-small: 16px;
 
-$line-height: 1.4em;
+$line-height: 1.3em;
 $line-height-small: 1.1em;
 
 $text-shadow: -1px -1px 0 $anthrazit, 1px -1px 0 $anthrazit, -1px 1px 0 $anthrazit, 1px 1px 0 $anthrazit;
@@ -43,7 +40,7 @@ $text-shadow: -1px -1px 0 $anthrazit, 1px -1px 0 $anthrazit, -1px 1px 0 $anthraz
 $very-small-breakpoint: 442px;
 $small-breakpoint: 767px;
 // Mobile menu breakpoint. Used in mobile_menu.js.
-$medium-breakpoint: 1180px;
+$medium-breakpoint: 1035px;
 
 $mini-cart-left-width: 240px;
 $mini-cart-right-width: 420px;
@@ -67,6 +64,9 @@ $product-category-width: 350px;
 $product-category-frontpage-height: $product-category-width;
 $product-height: 530px;
 
+$strength-flavour-icon-size: 18px;
+$strength-flavour-icon-size-large: $spacing;
+
 $menu-height: 60px;
 $top-bar-height: 45px;
 $icon-size: $spacing-s;
@@ -76,6 +76,7 @@ $menu-sub-item-hover-color: $weinrot;
 $img-size-big: 690px;
 
 $product-view-cart-button-quantity-width: 65px;
+$product-view-cart-button-quantity-height: 50px;
 $product-view-cart-button-width: 230px;
 $product-view-cart-button-width-icon-size: $spacing-s;
 
@@ -90,10 +91,6 @@ $cart-coupon-width: $product-view-cart-button-quantity-width + $product-view-car
 
 $sidebar-width: 250px;
 $hugo-head-size: 70px;
-
-$sigil-size-small: 35px;
-$sigil-size-medium: 50px;
-$sigil-size-big: $hugo-head-size;
 
 $footer-items-width: 202px;
 $newsletter-items-width: 560px;
@@ -115,9 +112,9 @@ $max-width-small: 1280px;
   --section-spacing-left-right: 0;
   --max-width: #{$max-width};
   --container-headline-spacing-bottom: #{$spacing-xl};
-  --product-view-grid-gap: #{$spacing-xl};
-  --product-view-grid-gap-half: #{$spacing-xl / 2};
-  --product-view-grid-gap-quarter: #{$spacing-xl / 4};
+  --product-view-grid-gap: #{$spacing-xxl};
+  --product-view-grid-gap-half: #{$spacing-xxl / 2};
+  --product-view-grid-gap-quarter: #{$spacing-xxl / 4};
   --animation-time: 350ms;
 
   @media all and (max-width: $max-width) {
