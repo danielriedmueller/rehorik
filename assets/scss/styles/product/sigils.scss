@@ -8,6 +8,15 @@
   --sigil-size: 35px;
 }
 
+// Product page
+.rehorik.single-product .rehorik-product-gallery .sigil-container {
+  --sigil-size: 100px;
+
+  @media all and (max-width: $medium-breakpoint) {
+    --sigil-size: 70px;
+  }
+}
+
 // Category view
 body:not(.rehorik.single-product) .sigil-container {
   position: absolute;
@@ -58,78 +67,65 @@ body:not(.rehorik.single-product) .sigil-container {
 }
 
 // Product page
-.rehorik.single-product .rehorik-sigils-bar {
-  $sigilHeight: $hugo-head-size;
+.rehorik.single-product .rehorik-product-gallery .sigil-container {
+  $aspectRatio: 1.5;
+  position: absolute;
+  top: $spacing-s;
+  left: 0;
   display: flex;
+  flex-direction: column;
+  grid-gap: $spacing-xs;
 
-  .sigil-container {
-    flex: 2;
-    display: grid;
+  > div {
+    width: var(--sigil-size);
+    background-size: var(--sigil-size);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: left top;
+    height: calc(var(--sigil-size) / #{$aspectRatio});
+  }
 
-    grid-gap: $spacing-xs;
-    grid-template-columns: repeat(6, auto) 1fr;
+  > .biosigil {
+    display: flex;
+    align-items: flex-end;
+    font-family: "Myriad Pro Regular", serif;
+    line-height: 3px;
 
-    @media all and (max-width: $small-breakpoint) {
-      grid-template-columns: auto 1fr;
+    $font-size: 11px;
+    font-size: $font-size;
+    background-image: url("../img/siegel/biosiegel.svg");
+    height: calc(var(--sigil-size) / #{$aspectRatio} + #{$font-size});
+  }
+
+  > .biosigil-de {
+    $aspectRatio: 1.19422;
+    height: calc(var(--sigil-size) / #{$aspectRatio});
+    background-image: url("../img/siegel/biosiegel-de.svg");
+  }
+
+  > .vegansigil {
+    background-image: url("../img/siegel/icon-vegan.svg");
+  }
+
+  > .biodynamicsigil {
+    background-image: url("../img/siegel/icon-biodynamisch.svg");
+  }
+
+  > .regionalsigil {
+    background-image: url("../img/siegel/icon-regional.svg");
+  }
+
+  > .product-of-month {
+    background-image: url("../img/siegel/productofmonth.svg");
+
+    &.wine-of-month {
+      background-image: url("../img/siegel/wineofmonth.svg");
     }
+  }
 
-    > .biosigil {
-      display: flex;
-      align-items: flex-end;
-      font-family: "Myriad Pro Regular", serif;
-      line-height: 3px;
-      font-size: 12px;
-      background: transparent url("../img/siegel/biosiegel.svg") no-repeat left top;
-      $bioSigilHeight: 0.81 * $sigilHeight;
-      $bioSigilHeight: 0.81 * $sigilHeight;
-      $bioSigilWidth: $bioSigilHeight * 1.5;
-      width: $bioSigilWidth;
-      height: $sigilHeight;
-      background-size: $bioSigilWidth $bioSigilHeight;
-    }
-
-    > .biosigil-de {
-      $deBioSigilHeight: $sigilHeight;
-      $deBioSigilWidth: $deBioSigilHeight * 1.2;
-      width: $deBioSigilWidth;
-      height: $deBioSigilHeight;
-      background: transparent url("../img/siegel/biosiegel-de.svg") no-repeat center center;
-      background-size: $deBioSigilWidth + 11px $deBioSigilHeight + 11px;
-    }
-
-    > .vegansigil {
-      background: transparent url("../img/siegel/icon-vegan.svg") no-repeat left top;
-      height: $sigilHeight;
-      width: $sigilHeight * 1.5;
-    }
-
-    > .biodynamicsigil {
-      background: transparent url("../img/siegel/icon-biodynamisch.svg") no-repeat left top;
-      height: $sigilHeight;
-      width: $sigilHeight * 1.5;
-    }
-
-    > .regionalsigil {
-      background: transparent url("../img/siegel/icon-regional.svg") no-repeat left top;
-      height: $sigilHeight;
-      width: $sigilHeight * 1.5;
-    }
-
-    > .product-of-month {
-      background: transparent url("../img/siegel/productofmonth.svg") no-repeat left top;
-      height: $sigilHeight;
-      width: $sigilHeight * 1.5;
-
-      &.wine-of-month {
-        background-image: url("../img/siegel/wineofmonth.svg");
-      }
-    }
-
-    > .cottonsigil {
-      background: transparent url("../img/siegel/icon-cotton.svg") no-repeat left top;
-      height: $sigilHeight;
-      width: $sigilHeight * 1.5;
-      background-size: $sigilHeight * 1.5 $sigilHeight;
-    }
+  > .cottonsigil {
+    $aspectRatio: 1.483;
+    height: calc(var(--sigil-size) / #{$aspectRatio});
+    background-image: url("../img/siegel/icon-cotton.svg");
   }
 }

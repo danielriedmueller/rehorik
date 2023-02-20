@@ -4,24 +4,6 @@ body.rehorik.woocommerce div.rehorik-product {
     display: flex;
     flex-direction: column;
 
-    form.cart {
-      .quantity {
-        width: $product-view-cart-button-quantity-width;
-
-        input {
-          width: 100%;
-        }
-      }
-
-      button {
-        width: $product-view-cart-button-width;
-      }
-    }
-
-    form:not(.variations_form).cart {
-      display: flex;
-    }
-
     form.variations_form.cart > div {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -43,87 +25,8 @@ body.rehorik.woocommerce div.rehorik-product {
       margin-bottom: var(--product-view-grid-gap);
     }
 
-    div.quantity {
-      margin: 0;
-      float: none;
-
-      input, select {
-        width: 100%;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-    }
-
-    button[type="submit"].single_add_to_cart_button {
-      transition: none;
-      padding: $spacing-xxs 40px $spacing-xxs $spacing;
-      background: $beigegold none;
-      margin-top: 0;
-      border-radius: 0 $border-radius $border-radius 0;
-      line-height: 0;
-      position: relative;
-      text-align: left;
-
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto 0;
-        right: $spacing;
-        background: transparent url("../img/cart/warenkorb-white.svg") no-repeat center center;
-        background-size: $product-view-cart-button-width-icon-size;
-        width: $product-view-cart-button-width-icon-size;
-        height: $product-view-cart-button-width-icon-size;
-      }
-
-      &:hover {
-        color: $beigegold;
-        background: $weinrot none;
-
-        &::after {
-          background-image: url("../img/cart/warenkorb.svg");
-        }
-      }
-
-      &.loading {
-        pointer-events: none;
-        opacity: 1;
-
-        &::after {
-          background-image: url("../img/svg/strength_filled_white.svg");
-          background-size: 14px;
-        }
-
-        &:hover {
-          &::after {
-            background-image: url("../img/svg/strength_filled.svg");
-            background-size: 14px;
-          }
-        }
-      }
-
-      &.added {
-        &::after {
-          background-image: url("../img/cart/warenkorb-check-white.svg");
-        }
-
-        &:hover {
-          &::after {
-            background-image: url("../img/cart/warenkorb-check.svg");
-          }
-        }
-      }
-    }
-
     div.single_variation_wrap {
       grid-area: add-to-cart-button;
-
-      .woocommerce-variation-add-to-cart {
-        display: flex;
-        margin-top: var(--product-view-grid-gap-half);
-      }
     }
 
     p.stock.in-stock {

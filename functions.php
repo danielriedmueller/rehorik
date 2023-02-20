@@ -1,8 +1,5 @@
 <?php
-show_admin_bar(true);
-
 const BAYERNWERK_COUPON_CODE = 'bayernwerkxmas22';
-
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
@@ -70,7 +67,6 @@ const WEIGHT_SLUG = 'weight';
 const WEIGHT_ATTRIBUTE_SLUG = 'pa_gewicht';
 const FILLING_QUANTITY_ATTRIBUTE_SLUG = 'pa_fuellmenge';
 const WINERY_ATTRIBUTE_SLUG = 'pa_weingut';
-const GOES_WITH_ATTRIBUTE_SLUG = 'pa_passt-zu';
 const QUALITY_NAME_ATTRIBUTE_SLUG = 'pa_qualitaetsbezeichnung';
 const MANUFACTURER_ATTRIBUTE_SLUG = 'pa_hersteller';
 const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-praesentkarton';
@@ -163,6 +159,8 @@ add_action('init', function () {
     register_nav_menus([
         'main' => 'Hauptmenü'
     ]);
+
+
 });
 
 /**
@@ -178,3 +176,5 @@ if (function_exists('register_sidebar')) {
         'after_title' => '</h3>',
     ]);
 }
+
+show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
