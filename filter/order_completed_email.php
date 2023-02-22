@@ -67,15 +67,33 @@ add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachme
     $attendees = $wootickets->get_attendees_by_id($order->get_id());
 
     foreach ($attendees as $attendee) {
-        $ticketId = $attendees['ticket_id'];
-        $ticketName = $attendees['ticket_name'];
-        $holderName = $attendees['holder_name'];
-        $eventId = $attendees['event_id'];
-        $location = tribe_get_venue($eventId);
-        $organizer = tribe_get_organizer($eventId);
-        $date = tribe_get_start_date($eventId, false, 'd.m.Y');
-        $qrCode = $attendees['qr_ticket_id'];
-        $securityCode = $attendees['security_code'];
+
+        $startDatetime = $product->get_meta(TICKET_EVENT_DATE_START_META);
+        $endDatetime = $product->get_meta(TICKET_EVENT_DATE_END_META);
+
+        if ($startDatetime && $endDatetime) {
+            $startDate = date('d.m.Y', $startDatetime);
+            $endDate = date('d.m.Y', $endDatetime);
+
+            if ($startDate === $endDate) {
+                $date = $startDate;
+                $time = sprintf('%s - %s', date('H:i', $startDatetime), date('H:i', $endDatetime));
+            } else {
+                $date = sprintf('%s - %s', date(DATE_FORMAT, $startDatetime), date(DATE_FORMAT, $endDatetime));
+            }
+        }
+
+        $infos = [
+            'ticket_id' => $attendee['ticket_id'],
+            'ticket_name' => $attendee['ticket_name'],
+            'holder_name' => $attendee['holder_name'],
+            'event_id' => $attendee['event_id'],
+            'location' => tribe_get_venue($attendee['event_id']),
+            'organizer' => tribe_get_organizer($attendee['event_id']),
+            'date' => tribe_get_start_date($attendee['event_id'], false, 'd.m.Y'),
+            'qr_ticket_id' => $attendee['qr_ticket_id'],
+            'security_code' => $attendee['security_code'],
+        ];
 
         $file = 'Rehorik-Ticket-' . date('Ymd') . $securityCode . '.pdf';
 
