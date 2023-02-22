@@ -67,47 +67,47 @@ add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachme
     $attendees = $wootickets->get_attendees_by_id($order->get_id());
 
     foreach ($attendees as $attendee) {
-
+        $product = wc_get_product($attendee['product_id']);
         $startDatetime = $product->get_meta(TICKET_EVENT_DATE_START_META);
         $endDatetime = $product->get_meta(TICKET_EVENT_DATE_END_META);
+        $date = '';
 
-        if ($startDatetime && $endDatetime) {
-            $startDate = date('d.m.Y', $startDatetime);
-            $endDate = date('d.m.Y', $endDatetime);
-
-            if ($startDate === $endDate) {
-                $date = $startDate;
-                $time = sprintf('%s - %s', date('H:i', $startDatetime), date('H:i', $endDatetime));
+        if ($startDatetime && $startDatetime) {
+            if ($startDatetime === $startDatetime) {
+                $date = date(DATE_FORMAT, $startDatetime);
             } else {
                 $date = sprintf('%s - %s', date(DATE_FORMAT, $startDatetime), date(DATE_FORMAT, $endDatetime));
             }
         }
 
-        $infos = [
+        $details = [
             'ticket_id' => $attendee['ticket_id'],
             'ticket_name' => $attendee['ticket_name'],
             'holder_name' => $attendee['holder_name'],
             'event_id' => $attendee['event_id'],
             'location' => tribe_get_venue($attendee['event_id']),
             'organizer' => tribe_get_organizer($attendee['event_id']),
-            'date' => tribe_get_start_date($attendee['event_id'], false, 'd.m.Y'),
+            'date' => $date,
             'qr_ticket_id' => $attendee['qr_ticket_id'],
-            'security_code' => $attendee['security_code'],
+            'security_code' => $attendee['security_code']
         ];
 
-        $file = 'Rehorik-Ticket-' . date('Ymd') . $securityCode . '.pdf';
+        if (!empty($details['ticket_id'])
+            && !empty($details['ticket_name'])
+            && !empty($details['holder_name'])
+            && !empty($details['event_id'])
+            && !empty($details['location'])
+            && !empty($details['organizer'])
+            && !empty($details['date'])
+            && !empty($details['qr_ticket_id'])
+            && !empty($details['security_code'])
+        ) {
+            $file = 'Rehorik-Ticket-' . date('Ymd') . $details['security_code'] . '.pdf';
 
-        Reh_Pdf_Creator::createPdf(
-            $file,
-            '/templates/pdf/coupon-pdf',
-            [
-                'code' => $code,
-                'price' => $price,
-                'name' => $name
-            ]
-        );
-
-        // do_action('tribe_tickets_ticket_email_ticket_bottom', $ticket);
+            if ($pdfFilePath = Reh_Pdf_Creator::createPdf($file, '/templates/pdf/ticket-pdf', $details)) {
+                $attachments[] = $pdfFilePath;
+            }
+        }
     }
 
     return $attachments;

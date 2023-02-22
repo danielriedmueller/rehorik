@@ -93,6 +93,14 @@
             top: 700px;
         }
 
+        #attendee-info {
+            margin-bottom: 200px;
+        }
+
+        #event-info {
+            margin-bottom: 200px;
+        }
+
         footer {
             position: absolute;
             bottom: 0;
@@ -119,31 +127,29 @@
 <div id="hugo"><img src="<?= $assetsDir ?>/img/hugo/hugo-365px.png" /></div>
 <div id="content">
     <div id="headline"><h1>Ticket</h1></div>
-    <div id="info">
-        <h2>Gutscheincode: <?= $args['code'] ?></h2>
-        <h2>Name: <?= $args['name'] ?></h2>
-        <h2>Preis: <?= $args['price'] ?> €</h2>
+    <div id="attendee-info">
+        <h2>Teilnehmer:in: ______________________________- ?></h2>
+        <h2>Ticket Art: <?= $args['ticket_name'] ?></h2>
+        <h2>Ticketnummer: <?= $args['ticket_id'] ?> €</h2>
+    </div>
+    <div id="event-info">
+        <h2>Veranstalter:in: <?= $args['organizer'] ?></h2>
+        <h2>Datum/Uhrzeit: <?= $args['date'] ?></h2>
+        <h2>Ort: <?= $args['location'] ?></h2>
     </div>
     <hr />
-    <div id="legal">
-        <h2>Bitte beachten</h2>
-        <span>Der Gutschein ist nur im Onlineshop unter</span> <h3><a href="https://www.rehorik.de">www.rehorik.de</a></h3> <span>einlösbar.</span>
-        <p>Möchtest du den Gutschein lieber für Kaffee, Wein oder Spirits verwenden? Kein Problem! Der Gutschein ist für alle Produkte im Onlineshop einlösbar. Der Restwert bleibt erhalten.</p>
-        <p>
-            Der Gutschein ist unbegrenzt gültig und kann beliebig oft unter www.rehorik.de verwendet werden, solange ein Restwert vorhanden ist.
-            Über die Höhe des Restwerts, geben wir Dir gerne Auskunft. Schreibe uns dazu eine Mail an <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a>.
-            Das Guthaben dieses Gutscheins wird nicht verzinst, versteuert oder bar ausgezahlt.
-            Bei Diebstahl, Verlust oder Unbrauchbarkeit leisten wir keinen Ersatz.
-            Es gelten unsere allgemeinen Geschäftsbedingungen – diese können unter www.rehorik.de eingesehen werden.
-        </p>
+    <div>
+        <?php Tribe__Tickets_Plus__Main::instance()->qr()->inject_qr($args); ?>
+        <p>Sicherheits-Code: <?= $args['security_code'] ?></p>
+        <p>Ticket-Käufer:in: <?= $args['holder_name'] ?></p>
+        <p>Bitte beachtet, dass die Anmeldung verbindlich ist und nicht verschoben, storniert oder umgetauscht werden kann!</p>
     </div>
-    <hr style="width: 1250px"/>
+    <hr />
     <div id="contact">
         <h2>Kontakt</h2>
-        <p>Rehorik Rösterei &amp; Feinkost GmbH</p>
-        <p>Am Brixener Hof 6, 93047 Regensburg</p>
-        <p>Telefon: <a href="tel:0941/7883530">0941/7883530</a></p>
-        <p>E-Mail: <a href="mailto:kaffee@rehorik.de">kaffee@rehorik.de</a></p>
+        <p>Rehorik Rösterei &amp; Feinkost GmbH, Am Brixener Hof 6, 93047 Regensburg</p>
+        <p>E-Mail: <a href="mailto:events@rehorik.de">events@rehorik.de</a></p>
+        <p>Telefon: <a href="tel:0941/7883530">0941 / 788 35 30</a></p>
         <p><a href="https://www.rehorik.de">www.rehorik.de</a></p>
     </div>
 </div>
