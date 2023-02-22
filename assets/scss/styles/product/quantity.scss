@@ -6,7 +6,7 @@ body.rehorik .quantity {
     font-size: $font-size-small;
     line-height: $font-size-small;
     padding: 0 $spacing-s;
-    height: 50px;
+    height: $product-view-cart-button-quantity-height;
     border: none;
     font-family: $font-family-body;
     border-right: $spacing-xxs solid transparent;
@@ -29,8 +29,8 @@ body.rehorik .quantity {
       outline: none;
     }
 
-    &:active, &:focus {
-      border-radius: 0;
+    &:focus-within:focus-visible:active {
+      border-bottom-left-radius: 0;
     }
   }
 
