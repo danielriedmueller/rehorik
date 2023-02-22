@@ -7,7 +7,7 @@ get_template_part('templates/header/head', null, ['slider' => [
         'img'=> 'header-weltfrauentag',
         'buttons' => [
             '/seminar/workshop-starke-frauen-starker-kaffee-empowerment-von-frauen-in-der-wertschoepfungskette-des-kaffees' => 'Starke Frauen',
-            '/produkt/diavolo' => 'Starker Kaffee'
+            '/produkt/java-nica' => 'Starker Kaffee'
         ]
     ],
     [
