@@ -11,7 +11,7 @@ $letItSnow = false;
     <?php if (sizeof($args['items']) > 1) : ?>
         <ul id="slider-header" class="slider">
             <?php foreach ($args['items'] as $item): ?>
-                <li>
+                <li <?php if (isset($item['classes']) && $item['classes']): ?>class="<?= $item['classes'] ?>" <?php endif; ?>>
                     <div class="slider-image"
                          style='
                                  --image-small:<?= $imgPathPrefix . $item['img'] . $imgSmallPathSuffix . $imgPathSuffix ?>;
