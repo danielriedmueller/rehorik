@@ -29,8 +29,8 @@ body.rehorik .quantity {
       outline: none;
     }
 
-    &:active, &:focus {
-      border-radius: 0;
+    &:focus-within:focus-visible:active {
+      border-bottom-left-radius: 0;
     }
   }
 

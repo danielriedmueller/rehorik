@@ -12,10 +12,10 @@ remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_re
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 
 add_action('rehorik_product_title', 'woocommerce_template_single_title', 1); // Title
-add_action('rehorik_product_title', 'title_claim', 1); // Claim
-add_action('rehorik_product_title', 'short_description', 1); // Short Description
-add_action('rehorik_product_title', 'quality_name', 1); // Quality Name
-add_action('rehorik_product_title', 'woocommerce_output_all_notices', 1); // WooCommerce Notices
+add_action('rehorik_product_title', 'quality_name', 2); // Quality Name
+add_action('rehorik_product_title', 'title_claim', 3); // Claim
+add_action('rehorik_product_title', 'short_description', 4); // Short Description
+add_action('rehorik_product_title', 'woocommerce_output_all_notices', 5); // WooCommerce Notices
 
 add_action('rehorik_product_gallery', 'woocommerce_show_product_images', 1); // Gallery
 add_action('rehorik_product_gallery', 'sigils', 1); // Sigils
@@ -73,7 +73,7 @@ function origin(): void
 
     if (!empty($weingut)) {
         echo sprintf(
-            '<div class="rehorik-product-origin"><h2>Weingut %s</h2>%s</div>',
+            '<div class="rehorik-product-origin weingut"><h2>Weingut %s</h2>%s</div>',
             $weingut,
             $post->post_excerpt
         );
@@ -106,7 +106,7 @@ function title_claim(): void
 
     if (!empty($claim)) {
         echo sprintf(
-            '<div class="rehorik-product-quality-name">%s</div>',
+            '<div class="rehorik-product-title-claim">%s</div>',
             $claim
         );
     }
