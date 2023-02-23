@@ -74,6 +74,7 @@
 
         #content {
             padding: 150px 150px 0 634px;
+            z-index: 100;
         }
 
         #headline {
@@ -94,11 +95,21 @@
         }
 
         #attendee-info {
-            margin-bottom: 200px;
+            margin-bottom: 100px;
         }
 
-        #event-info {
-            margin-bottom: 200px;
+        #attendee-info h2 span, #event-info h2 span {
+            font-family: 'Cond', serif;
+            text-transform: none;
+            font-size: 59px;
+            font-weight: normal;
+        }
+
+        #ticket-qr-code {
+            width: 500px;
+            height: 500px;
+            margin-left: -60px;
+            margin-right: 60px;
         }
 
         footer {
@@ -106,6 +117,7 @@
             bottom: 0;
             width: 100%;
             height: 1000px;
+            z-index: -1;
         }
 
         footer img {
@@ -128,21 +140,37 @@
 <div id="content">
     <div id="headline"><h1>Ticket</h1></div>
     <div id="attendee-info">
-        <h2>Teilnehmer:in: ______________________________- ?></h2>
-        <h2>Ticket Art: <?= $args['ticket_name'] ?></h2>
-        <h2>Ticketnummer: <?= $args['ticket_id'] ?> €</h2>
+        <h2>Teilnehmer:in: _________________________</h2>
+        <h2>Ticket Art: <span>asdfsaf</span></h2>
+        <h2>Ticketnummer: <span><?= $args['ticket_id'] ?> €</span></h2>
     </div>
     <div id="event-info">
-        <h2>Veranstalter:in: <?= $args['organizer'] ?></h2>
-        <h2>Datum/Uhrzeit: <?= $args['date'] ?></h2>
-        <h2>Ort: <?= $args['location'] ?></h2>
+        <h2>Veranstalter:in: <span><?= $args['organizer'] ?></span></h2>
+        <h2>Datum/Uhrzeit: <span><?= $args['date'] ?></span></h2>
+        <h2>Ort: <span><?= $args['location'] ?></span></h2>
     </div>
     <hr />
-    <div>
-        <?php Tribe__Tickets_Plus__Main::instance()->qr()->inject_qr($args); ?>
-        <p>Sicherheits-Code: <?= $args['security_code'] ?></p>
-        <p>Ticket-Käufer:in: <?= $args['holder_name'] ?></p>
-        <p>Bitte beachtet, dass die Anmeldung verbindlich ist und nicht verschoben, storniert oder umgetauscht werden kann!</p>
+    <div id="qr-info">
+        <table>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <?php Tribe__Tickets_Plus__Main::instance()->qr()->inject_qr($args); ?>
+                            </td>
+                            <td>
+                                <h2><?php esc_html_e('Check in for this event', 'event-tickets-plus'); ?></h2>
+                                <p><?php esc_html_e('Scan this QR code at the event to check in.', 'event-tickets-plus'); ?></p>
+                                <p>Sicherheits-Code: <?= $args['security_code'] ?></p>
+                                <p>Ticket-Käufer:in: <?= $args['holder_name'] ?></p>
+                                <p>Bitte beachtet, dass die Anmeldung verbindlich ist und nicht verschoben, storniert oder umgetauscht werden kann!</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
     </div>
     <hr />
     <div id="contact">
