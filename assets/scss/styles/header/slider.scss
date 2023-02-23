@@ -34,6 +34,7 @@
   @media all and (max-width: $small-breakpoint) {
     max-width: 350px;
   }
+  padding: 0 var(--section-spacing-left-right);
   display: inline-block;
   position: absolute;
 
@@ -49,9 +50,6 @@
   .slider-title {
     h1, h2 {
       font-family: $font-family-black;
-    }
-
-    h2 {
       font-size: $font-size-very-very-large;
       color: #fff;
       @media all and (min-width: $medium-breakpoint + 1) {
@@ -121,6 +119,19 @@
         margin-bottom: $spacing-s;
       }
     }
+  }
+}
+
+// Exception for Weltfrauentag
+@media all and (max-width: $small-breakpoint) {
+  .slider-item-weltfrauentag .slider-claim .slider-title h1 {
+    font-size: $font-size-very-large;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .slider-item-weltfrauentag .slider-claim .slider-title h1 {
+    font-size: $font-size-large;
   }
 }
 
