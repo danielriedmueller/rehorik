@@ -1,9 +1,5 @@
 <?php
 
-require_once 'lib/dompdf/autoload.inc.php';
-
-use Dompdf\Dompdf;
-
 class Reh_Online_Coupon
 {
     public static function createCoupon(float $value, int $orderNumber): string
@@ -28,37 +24,17 @@ class Reh_Online_Coupon
         int    $serialNumber
     ): ?string
     {
-        $dompdf = new Dompdf([
-            'enable_remote' => true,
-            'dpi' => 300
-        ]);
-        $assetsDir = get_stylesheet_directory_uri() . '/assets/';
-        $dompdf->getFontMetrics()->registerFont(
-            ['family' => 'Cond', 'style' => 'normal', 'weight' => 'normal'],
-            $assetsDir . '/fonts/cond.ttf'
+        $file = 'Rehorik-Online-Coupon-' . date('Ymd') . $serialNumber . '.pdf';
+
+        return Reh_Pdf_Creator::createPdf(
+            $file,
+            '/templates/pdf/coupon-pdf',
+            [
+                'code' => $code,
+                'price' => $price,
+                'name' => $name
+            ]
         );
-        $dompdf->getFontMetrics()->registerFont(
-            ['family' => 'Cond Bold', 'style' => 'normal', 'weight' => 'bold'],
-            $assetsDir . '/fonts/cond-bold.ttf'
-        );
-
-        $filePath = get_temp_dir() . 'Rehorik-Online-Coupon-' . date('Ymd') . $serialNumber . '.pdf';
-
-        ob_start();
-        get_template_part('/templates/online-coupon/coupon-pdf', null, [
-            'code' => BAYERNWERK_COUPON_CODE,
-            'price' => '15',
-            'name' => 'bag2future'
-        ]);
-        $dompdf->loadHtml(ob_get_clean());
-        $dompdf->setPaper('A4');
-        $dompdf->render();
-
-        if (file_put_contents($filePath, $dompdf->output())) {
-            return $filePath;
-        }
-
-        return null;
     }
 
     private static function generateCouponCode(): string

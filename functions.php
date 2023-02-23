@@ -1,13 +1,10 @@
 <?php
-show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
-
 const BAYERNWERK_COUPON_CODE = 'bayernwerkxmas22';
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
 const DEFAULT_MAX_PRODUCT_STOCK_INPUT = 100;
 const CONTACT_MAIL = 'kaffee@rehorik.de';
-const JOBS_MAIL = 'jobs@rehorik.de';
 const CONTACT_PHONE = '0941 / 788 353 0';
 const IT_SUPPORT_EMAIL = 'it@rehorik.de';
 const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
@@ -112,6 +109,7 @@ $priority = 1000;
 
 $baseDir = get_stylesheet_directory();
 
+require_once($baseDir . '/includes/class-reh-pdf-creator.php');
 require_once($baseDir . '/includes/class-reh-online-coupon.php');
 require_once($baseDir . '/includes/class-reh-api-products.php');
 require_once($baseDir . '/includes/class-reh-mini-cart.php');
@@ -133,7 +131,7 @@ require_once($baseDir . '/actions/api/endpoints.php');
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.98);
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.97);
     wp_enqueue_script('mobile-menu', $assetsDir . 'js/mobile_menu.js', [], 1, true);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);
     wp_enqueue_script('overwrite-woocommerce', $assetsDir . 'js/overwrite_woocommerce.js', ['jquery'], 1, true);
@@ -147,7 +145,7 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_script('cart-ajax', $assetsDir . 'js/cart_ajax.js', ['jquery'], 1, true);
     wp_localize_script( 'cart-ajax', 'settings', [
-        'ajax_url' => admin_url( 'admin-ajax.php?pay_for_order=true' ),
+        'ajax_url' => admin_url( 'admin-ajax.php'),
         'add_nonce' => wp_create_nonce( 'rehorik-add-to-cart' ),
         'update_nonce' => wp_create_nonce( 'rehorik-update-cart' ),
     ]);
@@ -161,6 +159,8 @@ add_action('init', function () {
     register_nav_menus([
         'main' => 'Hauptmenü'
     ]);
+
+
 });
 
 /**
@@ -176,3 +176,5 @@ if (function_exists('register_sidebar')) {
         'after_title' => '</h3>',
     ]);
 }
+
+show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
