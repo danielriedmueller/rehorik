@@ -1,0 +1,22 @@
+.rehorik .rehorik-products-subcategories-outer {
+  overflow-y: hidden;
+  overflow-x: auto;
+  margin-top: $spacing-l;
+  margin-bottom: $spacing-xl;
+  white-space: nowrap;
+  max-width: 100%;
+
+  ul.rehorik-products-subcategories.rehorik-products.products {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    grid-gap: $spacing-s;
+
+    li.rehorik-product-subcategory {
+      $size: $product-gallery-width;
+      flex: $size 0 0;
+      width: $size;
+      height: $size;
+    }
+  }
+}
