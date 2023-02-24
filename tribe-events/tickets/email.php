@@ -206,7 +206,7 @@ foreach ($tickets as $ticket) {
                     <span><?php echo $ticket['ticket_name']; ?></span>
                 </td>
                 <td valign="top" align="left" width="196">
-                    <h3>Teilnehmer:in</h3>
+                    <h3>Ticket-Käufer:in</h3>
                     <span><?php echo $ticket['holder_name']; ?></span>
                 </td>
             </tr>

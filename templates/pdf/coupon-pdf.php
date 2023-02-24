@@ -9,7 +9,7 @@
             font-family: 'Cond', serif;
             color: #3C3C3B;
             font-size: 59px;
-            line-height: 52px;
+            line-height: 50px;
             height: 100%;
             margin: 0;
             padding: 0;
@@ -55,7 +55,7 @@
             color: #3C3C3B;
             text-transform: uppercase;
             font-size: 70px;
-            line-height: 70px;
+            line-height: 64px;
             margin: 0;
             padding: 0;
         }
@@ -152,7 +152,7 @@
         <p>Geschäftsführer: Heiko Rehorik</p>
         <p>Handelsregister Regensburg HRB 18004</p>
     </div>
-    <img src="<?= $assetsDir ?>/img/footer/footer-pdf-2480px.png" />
+    <img src="<?= $assetsDir ?>/img/footer/footer-pdf-2480px-min.png" />
 </footer>
 </body>
 </html>

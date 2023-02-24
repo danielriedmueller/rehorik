@@ -9,7 +9,7 @@
             font-family: 'Cond', serif;
             color: #3C3C3B;
             font-size: 59px;
-            line-height: 52px;
+            line-height: 50px;
             height: 100%;
             margin: 0;
             padding: 0;
@@ -55,7 +55,7 @@
             color: #3C3C3B;
             text-transform: uppercase;
             font-size: 70px;
-            line-height: 70px;
+            line-height: 64px;
             margin: 0;
             padding: 0;
         }
@@ -106,8 +106,8 @@
         }
 
         #ticket-qr-code {
-            width: 500px;
-            height: 500px;
+            width: 520px;
+            height: 520px;
             margin-left: -60px;
             margin-right: 60px;
         }
@@ -129,7 +129,7 @@
 
         footer #owner {
             position: absolute;
-            bottom: 230px;
+            bottom: 200px;
             right: 150px;
         }
     </style>
@@ -141,12 +141,12 @@
     <div id="headline"><h1>Ticket</h1></div>
     <div id="attendee-info">
         <h2>Teilnehmer:in: _________________________</h2>
-        <h2>Ticket Art: <span>asdfsaf</span></h2>
-        <h2>Ticketnummer: <span><?= $args['ticket_id'] ?> €</span></h2>
+        <h2>Ticket Typ: <span>asdfsaf</span></h2>
+        <h2>Ticketnummer: <span><?= $args['ticket_id'] ?></span></h2>
     </div>
     <div id="event-info">
         <h2>Veranstalter:in: <span><?= $args['organizer'] ?></span></h2>
-        <h2>Datum/Uhrzeit: <span><?= $args['date'] ?></span></h2>
+        <h2>Datum/Uhrzeit: <span><?= $args['date'] ? $args['date'] . ' Uhr' : '' ?></span></h2>
         <h2>Ort: <span><?= $args['location'] ?></span></h2>
     </div>
     <hr />
@@ -172,7 +172,7 @@
             </tr>
         </table>
     </div>
-    <hr />
+    <hr style="width: 1200px" />
     <div id="contact">
         <h2>Kontakt</h2>
         <p>Rehorik Rösterei &amp; Feinkost GmbH, Am Brixener Hof 6, 93047 Regensburg</p>
@@ -186,7 +186,7 @@
         <p>Geschäftsführer: Heiko Rehorik</p>
         <p>Handelsregister Regensburg HRB 18004</p>
     </div>
-    <img src="<?= $assetsDir ?>/img/footer/footer-pdf-2480px.png" />
+    <img src="<?= $assetsDir ?>/img/footer/footer-ticket-pdf-2480px.png" />
 </footer>
 </body>
 </html>
