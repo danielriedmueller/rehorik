@@ -1,0 +1,90 @@
+body.rehorik.archive, // Category  page
+body.rehorik.post-type-archive-product { // Top Category page
+  $height: 80px;
+
+  #main-content {
+    position: relative;
+    margin-top: $height;
+
+    .rehorik-result-count-and-ordering {
+      position: absolute;
+      top: -($height + $spacing-l);
+      right: var(--section-spacing-left-right);
+      height: $height;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin-bottom: $spacing;
+      gap: $spacing-xxxs;
+      align-items: center;
+
+      .woocommerce-result-count {
+        float: unset;
+        font-size: $font-size-small;
+        color: $font-color-accent;
+        margin: 0;
+        padding: 0;
+        order: 2;
+      }
+
+      form.woocommerce-ordering {
+        order: 1;
+        float: unset;
+        font-size: $font-size-small;
+        margin: 0;
+        padding: 0;
+
+        position: relative;
+
+        &:after {
+          content: '';
+          display: block;
+          background: transparent url("../img/pfeil-weiss-unten.svg") no-repeat center right;
+          background-size: 12px;
+          width: 12px;
+          height: 12px;
+          right: $spacing-xs;
+          top: 21px;
+          position: absolute;
+          pointer-events: none;
+        }
+
+        select.orderby {
+          border-radius: $border-radius;
+          background-color: $anthrazit;
+          color: #fff;
+          font-size: $font-size-small;
+          line-height: $font-size-small + 2px;
+          padding: 0 $spacing-xs + 12px 0 $spacing-xs;
+          height: $product-view-cart-button-quantity-height;
+          border: none;
+          font-family: $font-family-body;
+          border-right: $spacing-xxs solid transparent;
+          text-align: left;
+          outline: none;
+          width: auto;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+
+          &::-ms-expand {
+            display: none;
+          }
+
+          option {
+            font-size: $font-size-small;
+            line-height: $font-size-small;
+            padding: $spacing-xxs;
+            border: none;
+            outline: none;
+          }
+
+          &:focus-within:focus-visible:active {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}

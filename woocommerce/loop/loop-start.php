@@ -28,7 +28,6 @@ if (is_product_category() || is_shop()) {
 
 ?>
 <?php if (!empty($subcategories)) : ?>
-    <div style="clear: both"></div>
     <div class="rehorik-products-subcategories-outer">
         <ul class="rehorik-products-subcategories rehorik-products products">
             <?php foreach ($subcategories as $term) : ?>

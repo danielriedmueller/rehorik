@@ -1,8 +1,8 @@
 .rehorik .rehorik-products-subcategories-outer {
   overflow-y: hidden;
   overflow-x: auto;
-  margin-top: $spacing-l;
-  margin-bottom: $spacing-xl;
+  margin-top: 0;
+  margin-bottom: $spacing-l;
   white-space: nowrap;
   max-width: 100%;
 
@@ -13,10 +13,48 @@
     grid-gap: $spacing-s;
 
     li.rehorik-product-subcategory {
-      $size: $product-gallery-width;
+      display: block;
+      $size: $product-gallery-width / 2;
       flex: $size 0 0;
       width: $size;
-      height: $size;
+      border-radius: 0;
+      overflow: visible;
+
+      a {
+        img {
+          border-radius: $size;
+          height: $size;
+          width: $size;
+        }
+
+        h2 {
+          display: block;
+          position: relative;
+          color: $font-color;
+          background: transparent none;
+          margin-top: $spacing-xxxs;
+          padding: 0;
+
+          span {
+            white-space: normal;
+          }
+        }
+
+        &:hover {
+          img {
+            filter: sepia(80%);
+          }
+
+          h2 {
+            color: $font-color-accent-dark;
+            width: $size;
+          }
+        }
+
+        .rehorik-category-description {
+          display: none;
+        }
+      }
     }
   }
 }
