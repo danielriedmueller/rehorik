@@ -5,9 +5,16 @@ body.rehorik.post-type-archive-product { // Top Category page
     margin-top: 0;
 
     .rehorik-result-count-and-ordering {
-      position: absolute;
-      top: 0;
-      right: var(--section-spacing-left-right);
+      @media all and (min-width: $small-breakpoint + 1) {
+        position: absolute;
+        top: 0;
+        right: var(--section-spacing-left-right);
+      }
+
+      @media all and (max-width: $small-breakpoint) {
+        margin-bottom: $spacing-l;
+      }
+
       display: flex;
       flex-direction: column;
       justify-content: flex-end;

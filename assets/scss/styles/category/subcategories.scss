@@ -11,6 +11,7 @@
     flex-wrap: nowrap;
     width: 100%;
     grid-gap: var(--products-grid-gap);
+    justify-content: unset;
 
     li.rehorik-product-subcategory {
       display: block;
