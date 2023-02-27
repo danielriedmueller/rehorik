@@ -10,7 +10,7 @@
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    grid-gap: $spacing-s;
+    grid-gap: var(--products-grid-gap);
 
     li.rehorik-product-subcategory {
       display: block;

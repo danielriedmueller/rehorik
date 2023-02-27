@@ -1,20 +1,16 @@
 body.rehorik.archive, // Category  page
 body.rehorik.post-type-archive-product { // Top Category page
-  $height: 80px;
-
   #main-content {
     position: relative;
-    margin-top: $height;
+    margin-top: 0;
 
     .rehorik-result-count-and-ordering {
       position: absolute;
-      top: -($height + $spacing-l);
+      top: 0;
       right: var(--section-spacing-left-right);
-      height: $height;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      margin-bottom: $spacing;
       gap: $spacing-xxxs;
       align-items: center;
 

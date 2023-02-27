@@ -62,7 +62,7 @@ $cart-thumbnail-size: 175px;
 $product-gallery-width: 235px;
 $product-category-width: 350px;
 $product-category-frontpage-height: $product-category-width;
-$product-height: 545px;
+$product-height: 525px;
 
 $strength-flavour-icon-size: 16px;
 $strength-flavour-icon-size-large: $spacing;
@@ -89,7 +89,7 @@ $logo-size-very-small: 80px;
 
 $cart-coupon-width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
 
-$sidebar-width: 250px;
+$sidebar-width: 200px;
 $hugo-head-size: 70px;
 
 $footer-items-width: 202px;
@@ -112,7 +112,7 @@ $max-width-small: 1280px;
   --section-spacing-left-right: 0;
   --max-width: #{$max-width};
   --container-headline-spacing-bottom: #{$spacing-xl};
-  --products-grid-gap: #{$spacing};
+  --products-grid-gap: #{$spacing-l};
   --product-view-grid-gap: #{$spacing-xxl};
   --product-view-grid-gap-half: #{$spacing-xxl / 2};
   --product-view-grid-gap-quarter: #{$spacing-xxl / 4};
