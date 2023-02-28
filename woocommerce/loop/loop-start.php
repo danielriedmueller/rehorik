@@ -22,15 +22,25 @@ if (!defined('ABSPATH')) {
 $subcategories = null;
 $taxonomy = 'product_cat';
 if (is_product_category() || is_shop()) {
+    $cats = [];
     $term_id = get_queried_object_id();
-    $subcategories = woocommerce_get_product_subcategories($term_id);
+    $cats = array_merge($cats, woocommerce_get_product_subcategories($term_id));
+    $parents = get_ancestors($term_id, $taxonomy);
+    foreach ($parents as $parent_id) {
+        $siblings = get_terms($taxonomy, [
+            'parent' => $parent_id,
+            'hide_empty' => false,
+            'exclude'  => $term_id,
+        ]);
+        $cats = array_merge($cats, $siblings);
+    }
 }
 
 ?>
-<?php if (!empty($subcategories)) : ?>
+<?php if (!empty($cats)) : ?>
     <div class="rehorik-products-subcategories-outer">
         <ul class="rehorik-products-subcategories">
-            <?php foreach ($subcategories as $term) : ?>
+            <?php foreach ($cats as $term) : ?>
                 <li class="rehorik-product-subcategory product-category product">
                     <a href="<?php echo get_term_link($term, $taxonomy); ?>">
                         <?php

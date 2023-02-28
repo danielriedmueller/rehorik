@@ -22,5 +22,14 @@
                 document.body.style.overflow = 'scroll';
             }
         })
+
+        // Mobile product filter button
+        const sidebar = document.getElementById('sidebar');
+        document.getElementById('product-filter-button').addEventListener('click', (event) => {
+            sidebar.classList.toggle('visible');
+        });
+        document.getElementById('product-filter-close-button').addEventListener('click', (event) => {
+            sidebar.classList.remove('visible');
+        });
     });
 })();

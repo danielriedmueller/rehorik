@@ -13,15 +13,21 @@
     grid-gap: var(--products-grid-gap);
     list-style: none;
 
+    @media all and (max-width: $small-breakpoint) {
+      justify-content: center;
+    }
+
     li.rehorik-product-subcategory {
       display: block;
       $size: $product-gallery-width / 2;
       flex: $size 0 0;
-      width: $size;
       border-radius: 0;
       overflow: visible;
 
       a {
+        display: flex;
+        flex-direction: column;
+
         img {
           border-radius: $size;
           height: $size;

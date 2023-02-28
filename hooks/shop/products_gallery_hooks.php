@@ -3,13 +3,13 @@
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 
-add_action('woocommerce_before_shop_loop', 'result_count_and_ordering', 20);
 
-function result_count_and_ordering()
+add_action('woocommerce_before_shop_loop', 'product_filter_button', 20);
+
+
+
+function product_filter_button()
 {
-    echo '<div class="rehorik-result-count-and-ordering">';
-    woocommerce_result_count();
-    woocommerce_catalog_ordering();
-    echo '</div>';
+    echo '<button id="product-filter-button">Filtern & Sortieren</button>';
 }
 
