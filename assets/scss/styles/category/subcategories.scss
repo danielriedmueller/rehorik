@@ -6,12 +6,12 @@
   white-space: nowrap;
   max-width: 100%;
 
-  ul.rehorik-products-subcategories.rehorik-products.products {
+  ul.rehorik-products-subcategories {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
     grid-gap: var(--products-grid-gap);
-    justify-content: unset;
+    list-style: none;
 
     li.rehorik-product-subcategory {
       display: block;
@@ -26,6 +26,7 @@
           border-radius: $size;
           height: $size;
           width: $size;
+          object-fit: cover;
         }
 
         h2 {
@@ -35,6 +36,7 @@
           background: transparent none;
           margin-top: $spacing-xxxs;
           padding: 0;
+          font-size: $font-size;
 
           span {
             white-space: normal;

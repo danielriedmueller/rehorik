@@ -29,7 +29,7 @@ if (is_product_category() || is_shop()) {
 ?>
 <?php if (!empty($subcategories)) : ?>
     <div class="rehorik-products-subcategories-outer">
-        <ul class="rehorik-products-subcategories rehorik-products products">
+        <ul class="rehorik-products-subcategories">
             <?php foreach ($subcategories as $term) : ?>
                 <li class="rehorik-product-subcategory product-category product">
                     <a href="<?php echo get_term_link($term, $taxonomy); ?>">
