@@ -3,6 +3,10 @@ if (!is_plugin_active('woocommerce/woocommerce.php')) {
     throw new Exception('WooCommerce is not installed');
 }
 
+if ( ! defined( 'ABSPATH' ) ) {
+    die( '-1' );
+}
+
 require_once('model/model-reh-mini-cart-item.php');
 
 use model\Reh_Mini_Cart_Item;

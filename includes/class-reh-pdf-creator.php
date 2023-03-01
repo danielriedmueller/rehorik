@@ -1,11 +1,17 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+    die( '-1' );
+}
+
 require_once 'lib/dompdf/autoload.inc.php';
 
 use Dompdf\Dompdf;
 
 class Reh_Pdf_Creator
 {
+    const DIR_NAME = 'reh-pdf';
+
     public static function createPdf(
         string $file,
         string $template,
@@ -26,7 +32,7 @@ class Reh_Pdf_Creator
             $assetsDir . '/fonts/cond-bold.ttf'
         );
 
-        $filePath = get_temp_dir() . $file;
+        $filePath = self::get_file_path() . $file;
 
         ob_start();
         get_template_part($template, null, $templateData);
@@ -41,5 +47,13 @@ class Reh_Pdf_Creator
         }
 
         return null;
+    }
+
+    public static function get_file_path(): string
+    {
+        $path = wp_upload_dir();
+        $path = $path['basedir'] . '/' . self::DIR_NAME . '/';
+
+        return trailingslashit($path);
     }
 }
