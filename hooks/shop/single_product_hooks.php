@@ -11,6 +11,8 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 
+
+
 add_action('rehorik_product_title', 'woocommerce_template_single_title', 1); // Title
 add_action('rehorik_product_title', 'quality_name', 2); // Quality Name
 add_action('rehorik_product_title', 'title_claim', 3); // Claim
@@ -28,6 +30,7 @@ add_action('woocommerce_after_add_to_cart_button', 'woocommerce_template_single_
 add_filter('woocommerce_paypal_payments_single_product_renderer_hook', function () {
     return 'woocommerce_after_add_to_cart_button';
 }); // Filter for rendering PayPal Button
+
 add_action('rehorik_product_not_selling_notice', 'not_selling_notice', 1); // Notice if product is not selling
 
 add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
