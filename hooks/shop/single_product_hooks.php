@@ -3,44 +3,49 @@
  * Product Detail View Hooks
  */
 remove_action('woocommerce_before_single_product', 'woocommerce_output_all_notices');
-
-remove_action('woocommerce_after_add_to_cart_quantity', [WC_Stripe_Payment_Request::instance(), 'display_payment_request_button_html'], 1);
-remove_action('woocommerce_after_add_to_cart_quantity', [WC_Stripe_Payment_Request::instance(), 'display_payment_request_button_separator_html'], 2);
-
-add_action('rehorik_product_view', 'product_video', 1); // Video
-
-add_action('rehorik_product_view_title_price', 'woocommerce_template_single_title', 1); // Title
-add_action('rehorik_product_view_title_price', 'title_claim', 1); // Title
-add_action('rehorik_product_view_title_price', 'quality_name', 1); // Title
-add_action('rehorik_product_view_title_price', 'woocommerce_template_single_price', 1); // Price
-
-add_action('rehorik_product_view_gallery', 'woocommerce_show_product_images', 1); // Gallery
-
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 
-add_action('woocommerce_single_product_summary', [WC_Stripe_Payment_Request::instance(), 'display_payment_request_button_html'], 30);
-add_action('woocommerce_single_product_summary', 'cup_of_coffee', 35); // Cup of Coffee
+
+
+add_action('rehorik_product_title', 'woocommerce_template_single_title', 1); // Title
+add_action('rehorik_product_title', 'quality_name', 2); // Quality Name
+add_action('rehorik_product_title', 'title_claim', 3); // Claim
+add_action('rehorik_product_title', 'short_description', 4); // Short Description
+add_action('rehorik_product_title', 'woocommerce_output_all_notices', 5); // WooCommerce Notices
+
+add_action('rehorik_product_gallery', 'woocommerce_show_product_images', 1); // Gallery
+add_action('rehorik_product_gallery', 'sigils', 1); // Sigils
+add_action('rehorik_product_gallery', 'product_video', 1); // Video
+
+// Submit button block
+add_action('woocommerce_after_add_to_cart_button', 'woocommerce_template_single_price', 1); // Price
+add_action('woocommerce_after_add_to_cart_button', 'cup_of_coffee', 35); // Cup of Coffee
+add_action('woocommerce_after_add_to_cart_button', 'woocommerce_template_single_meta', 40); // Meta
+add_filter('woocommerce_paypal_payments_single_product_renderer_hook', function () {
+    return 'woocommerce_after_add_to_cart_button';
+}); // Filter for rendering PayPal Button
+
+add_action('rehorik_product_not_selling_notice', 'not_selling_notice', 1); // Notice if product is not selling
+
 add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
 
-add_action('rehorik_product_view_not_selling_notice', 'not_selling_notice',
-    1); // Text if product can not be bought online
-
-add_action('rehorik_product_view', 'goes_with', 1); // Meta
-add_action('rehorik_product_view', 'woocommerce_output_all_notices', 1); // Add to cart message
-
-add_action('rehorik_product_view_sigils_bar', 'sigils', 1); // Sigils
-
 add_action('rehorik_product_information', 'description', 1); // Description
-add_action('rehorik_product_information', 'categories', 1); // Categories
+add_action('rehorik_product_information', 'title', 1); // Title
 add_action('rehorik_product_information', 'single_product_attributes', 1); // Attributes
-add_action('rehorik_product_information', 'short_description', 1); // Short Description
-add_action('rehorik_product_information', 'preperation_recommendation', 1); // Preperation Recommendation
 
-function description()
+add_action('rehorik_product_preperation_recommendation', 'preperation_recommendation', 1); // Preperation Recommendation
+
+add_action('rehorik_product_origin', 'origin', 1); // Description
+
+add_action('woocommerce_after_single_product', 'woocommerce_output_related_products', 10);
+
+function description(): void
 {
     global $product;
 
@@ -50,28 +55,40 @@ function description()
     );
 }
 
-function short_description()
+function short_description(): void
+{
+    global $post;
+
+    echo sprintf(
+        '<div class="rehorik-product-short-description">%s</div>',
+        $post->post_excerpt
+    );
+}
+
+function origin(): void
 {
     global $post;
     global $product;
+
+    $origin = get_post_meta($post->ID, 'rehorik_product_origin', true);
 
     $weingut = $product->get_attribute('weingut');
 
     if (!empty($weingut)) {
         echo sprintf(
-            '<div class="rehorik-product-short-description"><h4>Weingut %s</h4>%s</div>',
+            '<div class="rehorik-product-origin weingut"><h2>Weingut %s</h2>%s</div>',
             $weingut,
             $post->post_excerpt
         );
-    } else {
+    } else if (!empty($origin)) {
         echo sprintf(
-            '<div class="rehorik-product-short-description">%s</div>',
-            $post->post_excerpt
+            '<div class="rehorik-product-origin"><h2>Herkunft</h2><div>%s</div></div>',
+            $origin
         );
     }
 }
 
-function quality_name()
+function quality_name(): void
 {
     global $product;
 
@@ -85,57 +102,32 @@ function quality_name()
     }
 }
 
-function title_claim()
+function title_claim(): void
 {
     global $product;
     $claim = $product->get_meta('reh_product_title_claim');
 
     if (!empty($claim)) {
         echo sprintf(
-            '<div class="rehorik-product-quality-name">%s</div>',
+            '<div class="rehorik-product-title-claim">%s</div>',
             $claim
         );
     }
 }
 
-function goes_with()
+function preperation_recommendation(): void
 {
     global $product;
 
-    $goesWith = $product->get_attribute('passt-zu');
-    $title = 'Passt zu';
-
-    if (empty($goesWith)) {
-        $goesWith = $product->get_attribute('aromen');
-        $title = 'Aroma';
-    }
-
-    if (!empty($goesWith)) {
-        $goesWith = str_replace(', ', ' - ', $goesWith);
-        echo sprintf(
-            '<div class="rehorik-product-goes-with"><div>%s</div><div>%s</div></div>',
-            $title,
-            $goesWith
-        );
-    }
+    get_template_part('templates/product/preperation-recommendation', null, ['product' => $product]);
 }
 
-function preperation_recommendation()
+function title(): void
 {
-    global $product;
-
-    get_template_part('templates/product-preperation-recommendation', null, ['product' => $product]);
+    the_title('<h2>', '</h2>');
 }
 
-function categories()
-{
-    global $product;
-    $categories = getSubCategories($product);
-
-    echo sprintf('<div class="rehorik-product-information-category">%s</div>', $categories);
-}
-
-function single_product_attributes()
+function single_product_attributes(): void
 {
     global $product;
 
@@ -143,36 +135,35 @@ function single_product_attributes()
     wc_display_product_attributes($product);
 }
 
-function product_video()
+function product_video(): void
 {
     global $product;
 
-    get_template_part('templates/product-video', null, ['product' => $product]);
+    get_template_part('templates/product/video', null, [
+        'video' => $product->get_meta('reh_product_video')
+    ]);
 }
 
-function sigils()
+function sigils(): void
 {
     global $product;
 
     get_template_part('templates/product/sigils', null, ['product' => $product]);
 }
 
-function hugo_head()
+function hugo_head(): void
 {
     echo '<div class="rehorik-hugo-head"></div>';
 }
 
-function cup_of_coffee()
+function cup_of_coffee(): void
 {
     global $product;
 
-    get_template_part('templates/cup-of-coffee', null, ['product' => $product]);
+    get_template_part('templates/product/cup-of-coffee', null, ['product' => $product]);
 }
 
-function not_selling_notice()
+function not_selling_notice(): void
 {
-    get_template_part('templates/not-selling-notice');
+    get_template_part('templates/product/not-selling-notice');
 }
-
-remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
-add_action('woocommerce_after_single_product', 'woocommerce_output_related_products', 10);

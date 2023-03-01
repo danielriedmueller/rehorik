@@ -1,0 +1,148 @@
+div.rehorik-product.detail-view form.cart:not(.variations_form),
+div.rehorik-product.detail-view form.cart.variations_form .woocommerce-variation-add-to-cart.variations_button {
+  display: grid;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  align-items: flex-start;
+  grid-template-columns: min-content $product-view-cart-button-quantity-width $product-view-cart-button-width;
+  grid-template-areas:
+    "price quantity button"
+    ". paypal paypal"
+    ". cup-of-coffee cup-of-coffee"
+    ". meta meta";
+
+  @media all and (max-width: $small-breakpoint) {
+    grid-template-columns: $product-view-cart-button-quantity-width $product-view-cart-button-width;
+    grid-template-areas:
+    "price price"
+    "quantity button"
+    "paypal paypal"
+    "cup-of-coffee cup-of-coffee"
+    "meta meta";
+
+    p.price {
+      margin-bottom: var(--product-view-grid-gap);
+    }
+  }
+
+  div.quantity {
+    grid-area: quantity;
+
+    width: $product-view-cart-button-quantity-width;
+    height: $product-view-cart-button-quantity-height;
+
+    margin: 0;
+    float: none;
+
+    input, select {
+      width: 100%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  button[type="submit"].single_add_to_cart_button {
+    grid-area: button;
+
+    width: $product-view-cart-button-width;
+    height: $product-view-cart-button-quantity-height;
+
+    transition: none;
+    padding: $spacing-xxs 40px $spacing-xxs $spacing;
+    background: $beigegold none;
+    margin-top: 0;
+    border-radius: 0 $border-radius $border-radius 0;
+    line-height: 0;
+    position: relative;
+    text-align: left;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      right: $spacing;
+      background: transparent url("../img/cart/warenkorb-white.svg") no-repeat center center;
+      background-size: $product-view-cart-button-width-icon-size;
+      width: $product-view-cart-button-width-icon-size;
+    }
+
+    &:hover {
+      color: $beigegold;
+      background: $weinrot none;
+
+      &::after {
+        background-image: url("../img/cart/warenkorb.svg");
+      }
+    }
+
+    &.loading {
+      pointer-events: none;
+      opacity: 1;
+
+      &::after {
+        background-image: url("../img/product/strength_filled_white.svg");
+        background-size: 14px;
+      }
+
+      &:hover {
+        &::after {
+          background-image: url("../img/product/strength_filled.svg");
+          background-size: 14px;
+        }
+      }
+    }
+
+    &.added {
+      &::after {
+        background-image: url("../img/cart/warenkorb-check-white.svg");
+      }
+
+      &:hover {
+        &::after {
+          background-image: url("../img/cart/warenkorb-check.svg");
+        }
+      }
+    }
+  }
+
+  p.price {
+    grid-area: price;
+    color: $font-color;
+    font-family: $font-family-bold;
+    font-size: $font-size-very-very-large;
+    line-height: 44px;
+    padding: 0;
+    margin-right: var(--product-view-grid-gap-half);
+
+    > span {
+      font-size: $font-size-very-very-large;
+      font-family: $font-family-bold;
+      line-height: 44px;
+    }
+  }
+
+  // PayPal
+  .ppc-button-wrapper {
+    grid-area: paypal;
+    margin: $spacing-xs 0 0 0;
+  }
+
+  .rehorik-cup-of-coffee-price-outer {
+    grid-area: cup-of-coffee;
+    margin: $spacing-xxs 0 0 0;
+  }
+
+  .rehorik-product-meta {
+    grid-area: meta;
+
+    margin: $spacing-xxs 0 0 0;
+  }
+
+  // Stripe
+  #wc-stripe-payment-request-button-separator {
+    display: none;
+  }
+}

@@ -1,6 +1,7 @@
 <?php
 require_once('admin/woocommerce/add_cat_video_field.php');
 require_once('admin/woocommerce/add_product_preperation_recommendation_field.php');
+require_once('admin/woocommerce/add_product_origin_textarea.php');
 require_once('admin/woocommerce/add_product_video_field.php');
 require_once('shop/frontpage_categories.php');
 require_once('admin/woocommerce/add_product_title_claim_field.php');
@@ -23,3 +24,4 @@ remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 add_action('woocommerce_after_edit_account_form', function () {
     echo sprintf('<div class="delete-me">%s</div>', do_shortcode('[plugin_delete_me /]'));
 }, 10, 0);
+

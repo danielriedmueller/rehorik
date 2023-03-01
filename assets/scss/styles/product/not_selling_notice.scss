@@ -1,3 +1,7 @@
 .not-selling-notice {
   text-align: justify;
+
+  p.price {
+    margin-top: var(--product-view-grid-gap);
+  }
 }

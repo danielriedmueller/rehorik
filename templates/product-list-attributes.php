@@ -52,13 +52,13 @@ $attributes = array_filter($attributes);
         <tbody>
             <?php if($strength): ?>
                 <tr>
-                    <td class="rehorik-product-strength-flavour-label-first"><?= wc_attribute_label(STRENGTH_ATTRIBUTE_SLUG) ?></td>
+                    <td class="rehorik-product-strength-flavour-label first-label"><?= wc_attribute_label(STRENGTH_ATTRIBUTE_SLUG) ?></td>
                     <td><?= getStrengthFlavourHtml($strength, 'strength') ?></td>
                 </tr>
             <?php endif; ?>
             <?php if($flavoursvariety): ?>
                 <tr>
-                    <td class="rehorik-product-strength-flavour-label-second"><?= wc_attribute_label(FLAVOUR_VARIETY_ATTRIBUTE_SLUG) ?></td>
+                    <td class="rehorik-product-strength-flavour-label second-label"><?= wc_attribute_label(FLAVOUR_VARIETY_ATTRIBUTE_SLUG) ?></td>
                     <td><?= getStrengthFlavourHtml($flavoursvariety, 'flavour'); ?></td>
                 </tr>
             <?php endif; ?>

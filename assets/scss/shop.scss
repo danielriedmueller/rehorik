@@ -27,15 +27,20 @@
 @import "styles/sidebar";
 @import "styles/featured_products";
 @import "styles/product/product";
+@import "styles/product/product_header";
+@import "styles/product/title";
 @import "styles/product/gallery";
 @import "styles/product/video";
 @import "styles/product/variations";
 @import "styles/product/cup_of_coffee_price";
 @import "styles/product/add_to_cart";
+@import "styles/product/add_to_cart_button";
 @import "styles/product/meta";
 @import "styles/product/grid_attributes";
 @import "styles/product/hugo_head";
 @import "styles/product/coffee_strength_flavour";
+@import "styles/product/preperation_recommendation";
+@import "styles/product/origin";
 @import "styles/banner";
 @import "styles/checkout/checkout";
 @import "styles/checkout/payment";
@@ -71,8 +76,6 @@
 @import "styles/page/introduction";
 @import "styles/page/timeline";
 @import "styles/product/mahlgrade";
-@import "styles/product/goes_with";
-@import "styles/product/add_to_cart_message";
 @import "styles/user/orders";
 @import "styles/user/myaccount_navigation";
 @import "styles/page/locations_table";
@@ -180,6 +183,11 @@ h3, h4 {
 
 h5, h6 {
   font-size: $font-size;
+  text-transform: uppercase;
+}
+
+strong {
+  font-family: $font-family-bold;
   text-transform: uppercase;
 }
 

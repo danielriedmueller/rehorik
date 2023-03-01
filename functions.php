@@ -1,8 +1,7 @@
 <?php
-show_admin_bar(true);
+show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
 
 const BAYERNWERK_COUPON_CODE = 'bayernwerkxmas22';
-
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
@@ -70,7 +69,6 @@ const WEIGHT_SLUG = 'weight';
 const WEIGHT_ATTRIBUTE_SLUG = 'pa_gewicht';
 const FILLING_QUANTITY_ATTRIBUTE_SLUG = 'pa_fuellmenge';
 const WINERY_ATTRIBUTE_SLUG = 'pa_weingut';
-const GOES_WITH_ATTRIBUTE_SLUG = 'pa_passt-zu';
 const QUALITY_NAME_ATTRIBUTE_SLUG = 'pa_qualitaetsbezeichnung';
 const MANUFACTURER_ATTRIBUTE_SLUG = 'pa_hersteller';
 const GIFT_CONTENT_ATTRIBUTE_SLUG = 'pa_inhalt-praesentkarton';
@@ -113,7 +111,7 @@ $priority = 1000;
 
 $baseDir = get_stylesheet_directory();
 
-require_once($baseDir . '/includes/class-tribe-tickets-plus-woocommerce-main.php');
+require_once($baseDir . '/includes/class-reh-pdf-creator.php');
 require_once($baseDir . '/includes/class-reh-online-coupon.php');
 require_once($baseDir . '/includes/class-reh-api-products.php');
 require_once($baseDir . '/includes/class-reh-mini-cart.php');
@@ -135,7 +133,7 @@ require_once($baseDir . '/actions/api/endpoints.php');
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.97);
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.98);
     wp_enqueue_script('mobile-menu', $assetsDir . 'js/mobile_menu.js', [], 1, true);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);
     wp_enqueue_script('overwrite-woocommerce', $assetsDir . 'js/overwrite_woocommerce.js', ['jquery'], 1, true);

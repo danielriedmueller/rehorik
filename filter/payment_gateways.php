@@ -1,4 +1,5 @@
 <?php
+
 add_filter('woocommerce_available_payment_gateways', function($available_gateways) {
     // Cash payment should be disallowed for non-company users
     if (array_key_exists(PAYMENT_METHOD_CASH, $available_gateways)) {

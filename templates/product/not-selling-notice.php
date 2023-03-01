@@ -1,3 +1,6 @@
+<?php
+global $product;
+?>
 <div class="not-selling-notice">
     <p>Um Dir eine optimale Beratung geben zu können, verkaufen wir dir die Maschinen nicht online. Gerne führen wir Dich in die Welt der Siebträgermaschinen persönlich ein.</p>
     <p><strong>Wo:</strong> Ausstellungsraum Rehorik Rösterei & Kaffeehaus | <a target="_blank" href="https://goo.gl/maps/7syuH8WaSkARVtDf6">Straubinger Straße 62a</a></p>
@@ -10,4 +13,5 @@
             rjs.parentNode.insertBefore(js, rjs);
         }(document, "script"));
     </script>
+    <?php 'ab' . woocommerce_template_single_price(); ?>
 </div>

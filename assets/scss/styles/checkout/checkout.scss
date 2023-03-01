@@ -68,41 +68,84 @@
     .dhl-preferred-service-content:empty {
       display: none;
     }
+
+    .place-order {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      button#place_order {
+        order: 1;
+        width: $product-view-cart-button-width;
+      }
+
+      #ppcp-cancel {
+        order: 0;
+        text-align: left;
+        margin: 0 0 $spacing 0;
+        border-radius: $border-radius;
+        padding: $spacing;
+        border: 1px solid $beigegold;
+      }
+    }
+
+    #payment {
+      ul.payment_methods li input {
+        margin: 0 $spacing-xs 0 0;
+      }
+
+      .payment_box p {
+        padding: 0;
+      }
+    }
+
+    .wc-gzd-checkbox-placeholder,
+    .wc-gzd-checkbox-placeholder-data-age-verification,
+    .wc-gzd-checkbox-placeholder-legal {
+      margin-bottom: $spacing-xxs;
+
+      p.form-row {
+        margin: 0 0 $spacing-xxs 0;
+        padding: 0;
+
+        label {
+          margin-bottom: $spacing-s;
+          position: relative;
+          display: block;
+          padding-left: $spacing-xs + 13px;
+
+          .input-checkbox {
+            position: absolute;
+            left: 0;
+            top: 7px;
+            margin: 0;
+          }
+
+          span {
+            display: block;
+          }
+        }
+
+        &.legal label {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   .woocommerce-NoticeGroup {
     grid-area: notice;
   }
 
-  .wc-gzd-checkbox-placeholder-data-age-verification,
-  .wc-gzd-checkbox-placeholder-legal {
-    margin-bottom: $spacing-xxs;
-
-    p.form-row {
-      margin: 0 0 $spacing-xxs 0;
-      padding: 0 !important;
-
-      .input-checkbox {
-        margin: 5px $spacing-xxs 0 0;
-      }
-
-      label {
-        display: flex !important;
-        margin-bottom: $spacing-xs;
-      }
-
-      &.legal {
-        margin-bottom: 0;
-      }
+  p.legal.form-row.checkbox-legal.validate-required {
+    abbr.required {
+      display: none;
     }
   }
 
-  p.form-row {
-    margin: 0 0 $spacing-xxs 0;
-    padding: 0 !important;
-
-    &.legal {
-      margin-bottom: 0;
+  .form-row.woocommerce-invalid label {
+    a {
+      color: #a00;
     }
   }
 
@@ -119,7 +162,7 @@
     background-color: $anthrazit;
     color: $beigegold;
     padding: $spacing-xs (($spacing * 2) + $spacing-xxs) $spacing-xs $spacing;
-    background-image: url("../img/svg/strength_filled.svg");
+    background-image: url("../img/product/strength_filled.svg");
     background-size: 20px;
     background-position: right $spacing center;
     background-repeat: no-repeat;
@@ -127,7 +170,7 @@
     &:hover {
       background-color: $beigegold;
       color: #fff;
-      background-image: url("../img/svg/strength_filled_white.svg");
+      background-image: url("../img/product/strength_filled_white.svg");
     }
   }
 }
