@@ -21,6 +21,9 @@ class Reh_Online_Coupon
         return $code;
     }
 
+    /**
+     * @throws Exception
+     */
     public static function createCouponPdf(
         string $code,
         string $price,
