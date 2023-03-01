@@ -34,6 +34,7 @@ class Reh_Pdf_Creator
         $dompdf->setPaper('A4');
         $dompdf->render();
 
+        error_log('Reh: Try write file to ' . $filePath);
         if (file_put_contents($filePath, $dompdf->output())) {
             error_log('Reh: Written file to ' . $filePath);
             return $filePath;
