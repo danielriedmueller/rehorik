@@ -15,9 +15,32 @@
  * @version     3.3.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+$subcategories = null;
+$taxonomy = 'product_cat';
+if (is_product_category() || is_shop()) {
+    $term_id = get_queried_object_id();
+    $subcategories = woocommerce_get_product_subcategories($term_id);
 }
 
 ?>
+<?php if (!empty($subcategories)) : ?>
+    <div class="rehorik-products-subcategories-outer">
+        <ul class="rehorik-products-subcategories rehorik-products products">
+            <?php foreach ($subcategories as $term) : ?>
+                <li class="rehorik-product-subcategory product-category product">
+                    <a href="<?php echo get_term_link($term, $taxonomy); ?>">
+                        <?php
+                        woocommerce_subcategory_thumbnail($term);
+                        woocommerce_template_loop_category_title($term);
+                        ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
 <ul class="rehorik-products products">

@@ -16,8 +16,9 @@
 @import "styles/header/slider";
 @import "styles/header/product_search";
 
-@import "styles/products";
-@import "styles/products_grid";
+@import "styles/products-gallery/products";
+@import "styles/products-gallery/products_grid";
+@import "styles/products-gallery/count_and_ordering";
 @import "styles/footer";
 @import "styles/main";
 @import "styles/locations";
@@ -95,6 +96,7 @@
 @import "styles/cart/mini_cart_item_list";
 @import "styles/page/jobs";
 @import "styles/category/frontpage_categories";
+@import "styles/category/subcategories";
 
 @font-face {
   font-family: "Cond";
