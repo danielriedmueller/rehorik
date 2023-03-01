@@ -35,6 +35,7 @@ class Reh_Pdf_Creator
         $dompdf->render();
 
         if (file_put_contents($filePath, $dompdf->output())) {
+            error_log('Reh: Written file to ' . $filePath);
             return $filePath;
         }
 
