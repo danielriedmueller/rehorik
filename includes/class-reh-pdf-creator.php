@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+    die( '-1' );
+}
+
 require_once 'lib/dompdf/autoload.inc.php';
 
 use Dompdf\Dompdf;
