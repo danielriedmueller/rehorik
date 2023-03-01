@@ -12,6 +12,9 @@ class Reh_Pdf_Creator
 {
     const DIR_NAME = 'reh-pdf';
 
+    /**
+     * @throws Exception
+     */
     public static function createPdf(
         string $file,
         string $template,
@@ -40,20 +43,36 @@ class Reh_Pdf_Creator
         $dompdf->setPaper('A4');
         $dompdf->render();
 
-        error_log('Reh: Try write file to ' . $filePath);
         if (file_put_contents($filePath, $dompdf->output())) {
-            error_log('Reh: Written file to ' . $filePath);
             return $filePath;
         }
 
         return null;
     }
 
+    /**
+     * @throws Exception
+     */
     public static function get_file_path(): string
     {
-        $path = wp_upload_dir();
-        $path = $path['basedir'] . '/' . self::DIR_NAME . '/';
+        try {
+            $path = wp_upload_dir();
+            $path = $path['basedir'] . '/' . self::DIR_NAME . '/';
 
-        return trailingslashit($path);
+            if (!is_dir($path)) {
+                if (!wp_mkdir_p($path)) {
+                    throw new Exception('Cannot create directory');
+                }
+            }
+
+            if (!is_writable($path)) {
+                throw new Exception($path . ' is not writable');
+            }
+
+            return trailingslashit($path);
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            throw $e;
+        }
     }
 }
