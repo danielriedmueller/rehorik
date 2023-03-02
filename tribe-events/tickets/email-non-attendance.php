@@ -31,7 +31,7 @@ if ($include_event_date && function_exists('tribe_events_event_schedule_details'
     $event_date = tribe_events_event_schedule_details($event_id);
 }
 
-wc_get_template('emails/email-header.php', ['email_heading' => "Deine Karten"]);
+wc_get_template('emails/email-header.php', ['email_heading' => "Deine Tickets"]);
 ?>
 <?php
 /**

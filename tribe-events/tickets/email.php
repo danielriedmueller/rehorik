@@ -53,7 +53,7 @@
  * @var array $tickets An array of tickets in the format documented above.
  */
 
-wc_get_template('emails/email-header.php', ['email_heading' => "Deine Karten"]);
+wc_get_template('emails/email-header.php', ['email_heading' => "Deine Tickets"]);
 ?>
 
 <?php

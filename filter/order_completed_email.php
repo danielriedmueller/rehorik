@@ -58,7 +58,9 @@ add_filter('woocommerce_email_additional_content_customer_completed_order', func
     return $emailMessage;
 }, 10, 3);
 
-add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachments, string $email_id, $order) {
+add_filter(/**
+ * @throws Exception
+ */ 'tribe_tickets_plus_woo_email_attachments', function (array $attachments, string $email_id, $order) {
     if ($email_id !== 'wootickets' || !($order instanceof WC_Order)) {
         return $attachments;
     }
@@ -102,7 +104,7 @@ add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachme
             && !empty($details['qr_ticket_id'])
             && !empty($details['security_code'])
         ) {
-            $file = 'Rehorik-Ticket-' . date('Ymd') . $details['security_code'] . '.pdf';
+            $file = 'Rehorik-Ticket-Geschenkdesign-' . $details['security_code'] . '.pdf';
 
             if ($pdfFilePath = Reh_Pdf_Creator::createPdf($file, '/templates/pdf/ticket-pdf', $details)) {
                 $attachments[] = $pdfFilePath;

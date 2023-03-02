@@ -19,7 +19,7 @@
  * @version 4.5.1
  */
 
-wc_get_template('emails/email-header.php', ['email_heading' => "Deine Karten"]);
+wc_get_template('emails/email-header.php', ['email_heading' => "Deine Tickets"]);
 ?>
 <?php
 /**

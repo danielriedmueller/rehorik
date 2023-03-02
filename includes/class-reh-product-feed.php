@@ -310,7 +310,7 @@ class Reh_Product_Feed
     public function updateFeedForInstagram(array $products): void
     {
         $onlyNonAlcoholicProducts = array_filter($products, function ($product) {
-            return !$product['alcoholic'];
+            return empty($product['alcoholic']);
         });
 
         $productsWithVariants = array_filter($onlyNonAlcoholicProducts, function ($product) {
