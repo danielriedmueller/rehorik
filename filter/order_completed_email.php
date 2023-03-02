@@ -68,16 +68,18 @@ add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachme
 
     foreach ($attendees as $attendee) {
         $product = wc_get_product($attendee['product_id']);
+
         $startDatetime = $product->get_meta(TICKET_EVENT_DATE_START_META);
         $endDatetime = $product->get_meta(TICKET_EVENT_DATE_END_META);
         $date = '';
-
-        if ($startDatetime && $startDatetime) {
-            if ($startDatetime === $startDatetime) {
+        if ($startDatetime && $endDatetime) {
+            if ($startDatetime === $endDatetime) {
                 $date = date(DATE_FORMAT, $startDatetime);
             } else {
                 $date = sprintf('%s - %s', date(DATE_FORMAT, $startDatetime), date(DATE_FORMAT, $endDatetime));
             }
+        } elseif ($startDatetime) {
+            $date = date(DATE_FORMAT, $startDatetime);
         }
 
         $details = [
@@ -102,7 +104,7 @@ add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachme
             && !empty($details['qr_ticket_id'])
             && !empty($details['security_code'])
         ) {
-            $file = 'Rehorik-Ticket-' . date('Ymd') . $details['security_code'] . '.pdf';
+            $file = 'Rehorik-Ticket-Geschenkdesign-' . $details['security_code'] . '.pdf';
 
             if ($pdfFilePath = Reh_Pdf_Creator::createPdf($file, '/templates/pdf/ticket-pdf', $details)) {
                 $attachments[] = $pdfFilePath;

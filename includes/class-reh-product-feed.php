@@ -1,6 +1,7 @@
 <?php
-if (!class_exists(Reh_Product_Feed::class)) {
-    return;
+
+if ( ! defined( 'ABSPATH' ) ) {
+    die( '-1' );
 }
 
 add_action(Reh_Product_Feed::CRON_HOOK, [Reh_Product_Feed::class, 'run_event']);
@@ -309,7 +310,7 @@ class Reh_Product_Feed
     public function updateFeedForInstagram(array $products): void
     {
         $onlyNonAlcoholicProducts = array_filter($products, function ($product) {
-            return !$product['alcoholic'];
+            return empty($product['alcoholic']);
         });
 
         $productsWithVariants = array_filter($onlyNonAlcoholicProducts, function ($product) {

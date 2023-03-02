@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+    die( '-1' );
+}
+
 class Reh_Online_Coupon
 {
     public static function createCoupon(float $value, int $orderNumber): string
@@ -17,6 +21,9 @@ class Reh_Online_Coupon
         return $code;
     }
 
+    /**
+     * @throws Exception
+     */
     public static function createCouponPdf(
         string $code,
         string $price,
