@@ -195,14 +195,7 @@ foreach ($tickets as $ticket) {
                     <span><?php echo $ticket['ticket_id']; ?></span>
                 </td>
                 <td valign="top" align="left" width="196">
-                    <h3><?php
-                        echo esc_html(
-                            sprintf(
-                                _x('%s Type', 'ticket type email heading', 'event-tickets'),
-                                tribe_get_ticket_label_singular('ticket_type_email_heading')
-                            )
-                        ); ?>
-                    </h3>
+                    <h3>Ticket-Typ</h3>
                     <span><?php echo $ticket['ticket_name']; ?></span>
                 </td>
                 <td valign="top" align="left" width="196">
