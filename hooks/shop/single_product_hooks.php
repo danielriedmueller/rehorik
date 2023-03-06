@@ -40,6 +40,8 @@ add_action('rehorik_product_preperation_recommendation', 'preperation_recommenda
 
 add_action('rehorik_product_origin', 'origin', 1); // Description
 
+add_action('rehorik_product_processing', 'processing', 1); // Description
+
 add_action('woocommerce_after_single_product', 'woocommerce_output_related_products', 10);
 
 function description(): void
@@ -81,6 +83,20 @@ function origin(): void
         echo sprintf(
             '<div class="rehorik-product-origin"><h2>Herkunft</h2><div>%s</div></div>',
             $origin
+        );
+    }
+}
+
+function processing(): void
+{
+    global $post;
+
+    $preparation = get_post_meta($post->ID, 'rehorik_product_processing', true);
+
+    if (!empty($preparation)) {
+        echo sprintf(
+            '<div class="rehorik-product-processing"><h2>Aufbereitung</h2><div>%s</div></div>',
+            $preparation
         );
     }
 }

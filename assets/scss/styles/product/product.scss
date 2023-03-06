@@ -19,7 +19,7 @@ body.rehorik.single-product #page-container > .container {
   .rehorik-product-header:not(:empty),
   .rehorik-product-information-outer:not(:empty),
   .rehorik-product-preperation-recommendation:not(:empty),
-  .rehorik-product-origin-outer:not(:empty) {
+  .rehorik-product-textarea-outer:not(:empty) {
     padding: var(--product-view-grid-gap) var(--section-spacing-left-right);
   }
 }
