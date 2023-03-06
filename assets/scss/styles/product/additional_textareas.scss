@@ -1,7 +1,5 @@
 body.rehorik.woocommerce #main-content div.rehorik-product {
   .rehorik-product-textarea-outer {
-    padding-bottom: 0;
-
     &.hellbraun {
       background-color: $hellbraun;
     }
@@ -32,7 +30,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
 
       .additional-text-left {
         &:not(:empty) {
-          margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap) 0;
+          margin: 0 var(--product-view-grid-gap-half) 0 0;
         }
 
         text-align: justify;
@@ -41,7 +39,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
 
       .additional-text-right {
         &:not(:empty) {
-          margin: 0 0 var(--product-view-grid-gap) var(--product-view-grid-gap-half);
+          margin: 0 0 0 var(--product-view-grid-gap-half);
         }
 
         text-align: justify;
@@ -73,9 +71,6 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
             "left"
             "right"
             "images";
-
-        .additional-text-left:not(:empty) {margin: 0 0 var(--product-view-grid-gap-half) 0;}
-        .additional-text-right:not(:empty) {margin: 0 0 var(--product-view-grid-gap-half) 0;}
       }
     }
   }
