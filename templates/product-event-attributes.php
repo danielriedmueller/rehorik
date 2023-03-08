@@ -7,11 +7,14 @@ if (!$event) {
     return;
 }
 
-// TODO: Assume all tickets have shared capacity, take first ticket for ticket count
 $availableTickets = null;
 $tickets = Tribe__Tickets__Tickets::get_all_event_tickets($event->ID);
-if (is_array($tickets) && sizeof($tickets) > 0) {
-    $availableTickets = $tickets[0]->available();
+if (!empty($tickets)) {
+    foreach ($tickets as $ticket) {
+        if ($ticket->ID === $product->get_id()) {
+            $availableTickets = $ticket->available();
+        }
+    }
 }
 
 $location = tribe_get_venue($event->ID);
