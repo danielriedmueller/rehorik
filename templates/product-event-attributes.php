@@ -49,7 +49,7 @@ $price = wc_price($product->get_price());
             <td colspan="2" class="available-tickets-attribute-cell">
                 <?php if ($availableTickets) : ?>
                     Noch
-                    <span><?= $availableTickets ?></span> <?php echo $availableTickets === 1 ? 'Platz' : 'Plätze' ?> verfügbar
+                    <span><?= $availableTickets ?></span> <?= $availableTickets === 1 ? 'Platz' : 'Plätze' ?> verfügbar
                 <?php else : ?>
                     Nicht länger verfügbar
                 <?php endif; ?>
