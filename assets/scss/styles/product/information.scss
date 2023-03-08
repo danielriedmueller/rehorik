@@ -101,6 +101,7 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       grid-area: attributes;
       display: grid;
       grid-template-columns: max-content 1fr;
+      grid-auto-rows: max-content;
 
       > div {
         &.label {
