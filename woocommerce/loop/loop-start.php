@@ -22,18 +22,7 @@ if (!defined('ABSPATH')) {
 $subcategories = null;
 $taxonomy = 'product_cat';
 if (is_product_category() || is_shop()) {
-    $cats = [];
-    $term_id = get_queried_object_id();
-    $cats = array_merge($cats, woocommerce_get_product_subcategories($term_id));
-    $parents = get_ancestors($term_id, $taxonomy);
-    foreach ($parents as $parent_id) {
-        $siblings = get_terms($taxonomy, [
-            'parent' => $parent_id,
-            'hide_empty' => false,
-            'exclude'  => $term_id,
-        ]);
-        $cats = array_merge($cats, $siblings);
-    }
+    $cats = woocommerce_get_product_subcategories(get_queried_object_id());
 }
 
 ?>
