@@ -25,10 +25,11 @@
         flex-direction: column;
 
         img {
-          border-radius: $size;
+          border-radius: $border-radius;
           height: $size;
           width: $size;
           object-fit: cover;
+          align-self: center;
         }
 
         h2 {
