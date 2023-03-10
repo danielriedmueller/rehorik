@@ -28,7 +28,7 @@ button#product-filter-button {
       background: #fff none;
       margin: 0;
       z-index: 1000;
-      padding: $top-bar-height var(--section-spacing-left-right);
+      padding: $top-bar-height + $spacing-l var(--section-spacing-left-right) $spacing-l var(--section-spacing-left-right);
 
       &.show {
         pointer-events: all;
@@ -38,6 +38,25 @@ button#product-filter-button {
 
       &:not(.show) {
         transform: translateX(100vw);
+      }
+
+      button#product-filter-close-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+        height: $top-bar-height;
+        flex: 0 0 $top-bar-height;
+        padding-left: $spacing * 2;
+        text-align: left;
+        background: $weinrot url("../img/pfeil-rot.svg") no-repeat left $spacing center;
+        background-size: 10px;
+        color: $font-color-accent;
+        font-size: $font-size;
+        font-family: $font-family-bold;
+        text-transform: uppercase;
+        line-height: 0;
       }
     }
   }

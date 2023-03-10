@@ -4,7 +4,7 @@
 ?>
 
 <div id="sidebar" class="rehorik-sidebar">
-    <button id="product-filter-close-button"></button>
+    <button id="product-filter-close-button">Weiter einkaufen</button>
     <?php the_widget('WC_Widget_Product_Categories', [
             'show_children_only' => false,
             'count' => false,
