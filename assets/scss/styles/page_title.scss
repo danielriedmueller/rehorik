@@ -8,7 +8,7 @@
     content: "";
     display: block;
     background: transparent url("../img/striche-weiss-80px.png") no-repeat center center;
-    width: 401px;
+    width: 400px;
   }
 
   &:before {
@@ -32,6 +32,13 @@
       @media all and (max-width: $small-breakpoint) {
         font-size: $font-size-very-large;
       }
+    }
+  }
+
+  @media all and (max-width: $medium-breakpoint) {
+    padding: var(--section-spacing-top-bottom) 0;
+    &:before, &:after {
+      width: 200px;
     }
   }
 

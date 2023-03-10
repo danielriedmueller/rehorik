@@ -3,24 +3,27 @@ button#product-filter-button {
   display: none;
 }
 
-@media all and (max-width: $small-breakpoint) {
+@media all and (max-width: $medium-breakpoint) {
   body.rehorik #main-content {
+    button#product-filter-close-button,
     button#product-filter-button {
       display: block;
-      cursor: pointer;
     }
 
-    button#product-filter-close-button {
-      display: block;
-      cursor: pointer;
+    button#product-filter-button {
+      margin: 0 auto $spacing-l auto;
+      width: $product-gallery-width;
     }
 
     #sidebar {
+      opacity: 0;
+      transition: opacity var(--animation-time) linear;
+      pointer-events: none;
       position: fixed;
       right: 0;
       top: 0;
+      height: 100%;
       width: 100%;
-      height: 100vh;
       overflow: scroll;
       background: #fff none;
       margin: 0;

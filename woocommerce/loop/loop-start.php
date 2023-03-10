@@ -23,6 +23,11 @@ $subcategories = null;
 $taxonomy = 'product_cat';
 if (is_product_category() || is_shop()) {
     $cats = woocommerce_get_product_subcategories(get_queried_object_id());
+    if (empty($cats)) {
+        $cats = array_filter(woocommerce_get_product_subcategories(get_queried_object()->parent), function ($cat) {
+            return $cat->term_id !== get_queried_object_id();
+        });
+    }
 }
 
 ?>
@@ -42,4 +47,5 @@ if (is_product_category() || is_shop()) {
         </ul>
     </div>
 <?php endif; ?>
+<button id="product-filter-button">Filtern & Sortieren</button>
 <ul class="rehorik-products products">
