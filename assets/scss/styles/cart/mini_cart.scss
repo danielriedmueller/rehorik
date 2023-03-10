@@ -1,6 +1,6 @@
 #rehorik-mini-cart {
   opacity: 0;
-  transition: opacity var(--animation-time) linear;
+  transition: opacity var(--animation-time);
   pointer-events: none;
   position: fixed;
   top: 0;

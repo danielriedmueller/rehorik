@@ -17,7 +17,7 @@ button#product-filter-button {
 
     #sidebar {
       opacity: 0;
-      transition: opacity var(--animation-time) linear;
+      transition: transform var(--animation-time), opacity var(--animation-time);
       pointer-events: none;
       position: fixed;
       right: 0;
@@ -30,8 +30,14 @@ button#product-filter-button {
       z-index: 1000;
       padding: $top-bar-height var(--section-spacing-left-right);
 
-      &:not(.visible) {
-        right: -100vw;
+      &.show {
+        pointer-events: all;
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      &:not(.show) {
+        transform: translateX(100vw);
       }
     }
   }
