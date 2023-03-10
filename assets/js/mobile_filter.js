@@ -18,9 +18,17 @@
             document.body.style.overflow = 'scroll';
         }
 
-        document.getElementById('product-filter-button').addEventListener('click', (event) => {
-            sidebar.classList.contains(showCls) ? hideFilter() : showFilter();
-        });
-        document.getElementById('product-filter-close-button').addEventListener('click', (event) => hideFilter());
+        const productFilterButton = document.getElementById('product-filter-button');
+        const productFilterCloseButton = document.getElementById('product-filter-close-button');
+
+        if (productFilterButton) {
+            productFilterButton.addEventListener('click', (event) => {
+                sidebar.classList.contains(showCls) ? hideFilter() : showFilter();
+            });
+        }
+
+        if (productFilterCloseButton) {
+            productFilterCloseButton.addEventListener('click', hideFilter);
+        }
     });
 })();
