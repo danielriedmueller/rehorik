@@ -52,7 +52,8 @@ ul.rehorik-mini-cart-item-list {
     }
 
     a {
-      font-family: $font-family-bold;
+      font-family: $font-family-body;
+      color: $font-color;
 
       &:hover {
         color: #fff;
@@ -62,7 +63,7 @@ ul.rehorik-mini-cart-item-list {
         margin-bottom: $spacing-xxs;
       }
 
-      margin-bottom: $spacing-xxs;
+      margin-bottom: $spacing-s;
     }
 
     .mini-cart-item-attributes {
