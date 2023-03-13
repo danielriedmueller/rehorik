@@ -112,9 +112,9 @@ $max-width-small: 1280px;
   --section-spacing-left-right: 0;
   --max-width: #{$max-width};
   --container-headline-spacing-bottom: #{$spacing-xl};
-  --product-view-grid-gap: #{$spacing-xxl};
-  --product-view-grid-gap-half: #{$spacing-xxl / 2};
-  --product-view-grid-gap-quarter: #{$spacing-xxl / 4};
+  --product-view-grid-gap: #{$spacing-xl};
+  --product-view-grid-gap-half: #{$spacing-xl / 2};
+  --product-view-grid-gap-quarter: #{$spacing-xl / 4};
   --animation-time: 350ms;
 
   @media all and (max-width: $max-width) {
