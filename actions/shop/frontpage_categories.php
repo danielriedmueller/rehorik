@@ -2,7 +2,7 @@
 /**
  * Add coming next events to frontpage category pane
  */
-add_action('woocommerce_after_subcategory', function(WP_Term $category) {
+add_action('woocommerce_after_subcategory', function (WP_Term $category) {
     if (!is_front_page()
         || !function_exists('tribe_get_events')
         || !class_exists(Tribe__Tickets__Tickets::class)
@@ -12,7 +12,7 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
 
     $events = tribe_get_events([
         'posts_per_page' => 6,
-        'start_date'     => 'now',
+        'start_date' => 'now',
     ]);
 
     $html = '<div class="frontpage-category-action">';
@@ -20,24 +20,8 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
     foreach ($events as $event) {
         /** @var WP_Post $event */
         $link = tribe_get_event_link($event->ID);
-        //$event->get( 'is_sale_past' );
-        $tickets = Tribe__Tickets__Tickets::get_all_event_tickets( $event->ID );
 
-        $ticketsAvailable = false;
-        foreach ($tickets as $ticket) {
-            /** @var  Tribe__Tickets__Ticket_Object $ticket */
-            /**
-             * Disabled du to performance issues
-             */
-            //$available = $ticket->available();
-            $dateInRange = $ticket->date_in_range('now');
-
-            if ($dateInRange) {
-                $ticketsAvailable = true;
-                break;
-            }
-        }
-
+        $ticketsAvailable = true;
         $html .= sprintf(
             '<a class="%s" href="%s"><span>%s</span><span>%s</span></a>',
             $ticketsAvailable ? "" : "tickets-not-available",
@@ -54,7 +38,7 @@ add_action('woocommerce_after_subcategory', function(WP_Term $category) {
 /**
  * Add machine consultation appointment button to frontpage category pane
  */
-add_action('woocommerce_after_subcategory', function(WP_Term $category) {
+add_action('woocommerce_after_subcategory', function (WP_Term $category) {
     if (!is_front_page() || $category->slug !== MACHINE_CATEGORY_SLUG) {
         return;
     }

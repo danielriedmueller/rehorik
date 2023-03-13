@@ -71,6 +71,9 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
             "left"
             "right"
             "images";
+
+        .additional-text-left:not(:empty) {margin: 0 0 var(--product-view-grid-gap-half) 0;}
+        .additional-text-right:not(:empty) {margin: 0 0 var(--product-view-grid-gap-half) 0;}
       }
     }
   }
