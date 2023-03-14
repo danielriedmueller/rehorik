@@ -23,7 +23,7 @@ if (empty($type) || empty($recipe) || empty($category)) {
 ?>
 <h2>Zubereitungsempfehlung</h2>
 <div class="description">
-    <div>Dich hat die Abenteuerlust fest im Griff? Dann empfehlen wir, Dir <?= $title ?> in der
+    <div>Dich hat die Abenteuerlust fest im Griff? Dann empfehlen wir Dir, <?= $title ?> in der
         <strong><?= $type ?></strong> zuzubereiten. Hier erfährst Du mehr zur richtigen Zubereitung
         von <?= $category ?>.
     </div>
