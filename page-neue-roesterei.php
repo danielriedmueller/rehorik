@@ -22,8 +22,8 @@ get_template_part('templates/header/head', null, [
                     <p class="mb-s">Die letzten Monate waren wir fleißig.<br>
                         Was dabei herauskam? Eine schicke neue Rösterei mit Kaffeebar und Restaurantbetrieb in der
                         <b>Straubinger Straße 62 a</b>.<br>
-                        Kleines Zuckerl on top: Ab sofort könnt Ihr Filterwasser bei uns abfüllen. Kanister
-                        mitbringen, Wasser abzapfen, fertig. Und für alle Nachtschwärmer:innen, Parties, Dinners &
+                        Kleines Zuckerl on top: Ab sofort kannst Du Filterwasser bei uns abfüllen. Kanister
+                        mitbringen, Wasser abzapfen, fertig. Und für alle Nachtschwärmer:innen: Parties, Dinners &
                         Tastings kommen in der neuen Rösterei natürlich auch nicht zu kurz.</p>
                     <div><b>ÖFFNUNGSZEITEN</b></div>
                     <table class="mb-s">
@@ -71,22 +71,22 @@ get_template_part('templates/header/head', null, [
                     <img class="mb-s" alt="Rehorik Neue Roesterei"
                          src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_Roesterei-kaffeehaus-1.jpg' ?>">
                     <p class="mb-s">
-                        Und es geht noch mehr: Probiert Euch an der Kaffeebar durch unser Kaffeesortiment oder kommt
-                        zum Mittagessen auf eine Bowl vorbei. Euer Weinvorrat ist geplündert? In unserem
-                        Verkaufsbereich findet Ihr ausgewählte Weine, Spirits und Delikatessen. Und falls Ihr auf
-                        der Suche nach der perfekten Espressomaschine oder dem richtigen Kaffeezubehör seid – wir
-                        bringen einiges an Kaffeeequipment und viel Erfahrung mit, um Euch vor Ort zu beraten.
+                        Und es geht noch mehr: Probiere Dich an der Kaffeebar durch unser Kaffeesortiment oder komm
+                        zum Mittagessen auf eine Bowl vorbei. Dein Weinvorrat ist geplündert? In unserem
+                        Verkaufsbereich findest Du ausgewählte Weine, Spirits und Delikatessen. Und falls Du auf
+                        der Suche nach der perfekten Espressomaschine oder dem richtigen Kaffeezubehör bist – wir
+                        bringen einiges an Kaffeeequipment und viel Erfahrung mit, um Dich vor Ort zu beraten.
                     </p>
                     <img class="mb-s" alt="Rehorik Neue Roesterei"
                          src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_Baustelle_9.jpg' ?>">
                     <p>
                         <b>» KOKUMI «</b> kommt aus dem Japanischen und bedeutet so viel wie <b>» Mundfülle «</b> –
-                        ein intensives, ausgewogenes Geschmackserlebnis. Und genau das bekommt Ihr von unserem
+                        ein intensives, ausgewogenes Geschmackserlebnis. Und genau das bekommst Du von unserem
                         Küchenchef Tim. Er spielt mit Aromen, Texturen und Temperaturen und hat den gesamten Prozess
                         selbst in der Hand: vom ursprünglichen Produkt bis zum fertigen Gericht. Dabei
                         experimentiert er mit verschiedenen Verarbeitungsmethoden wie Fermentation, Pökeln und
                         Räuchern. Ein internationales Crossover mit Zutaten, die wir überwiegend aus der Region
-                        beziehen. Tradition neu interpretiert – so wie Ihr das von Rehorik kennt.<br>
+                        beziehen. Tradition neu interpretiert – so wie Du das von Rehorik kennst.<br>
                         <b>Vom Frühstück und dem täglichen Mittagsangebot bis zu exklusiven Dinner Abenden.</b>
                     </p>
                 </div>
