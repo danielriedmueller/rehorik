@@ -23,15 +23,15 @@ if (empty($type) || empty($recipe) || empty($category)) {
 ?>
 <h2>Zubereitungsempfehlung</h2>
 <div class="description">
-    <div>Euch hat die Abenteuerlust fest im Griff? Dann empfehlen wir, Euren <?= $title ?> in der
-        <strong><?= $type ?></strong> zuzubereiten. Hier erfahrt Ihr mehr zur richtigen Zubereitung
+    <div>Dich hat die Abenteuerlust fest im Griff? Dann empfehlen wir, Dir <?= $title ?> in der
+        <strong><?= $type ?></strong> zuzubereiten. Hier erfährst Du mehr zur richtigen Zubereitung
         von <?= $category ?>.
     </div>
     <div><strong>Rezept:</strong> <span><?= $recipe ?></span></div>
-    <div>Ihr habt keine <strong><?= $type ?></strong> daheim? Unser <?= $title ?> bringt Euch auch mit jeder anderen
-        Zubereitungsart zu Höchstleistungen - ganz so, wie IHR es am Liebsten habt. Falls Ihr auf der Suche nach dem
+    <div>Du hast keine <strong><?= $type ?></strong> daheim? Unser <?= $title ?> bringt Dich auch mit jeder anderen
+        Zubereitungsart zu Höchstleistungen - ganz so, wie DU es am Liebsten hast. Falls Du auf der Suche nach dem
         richtigen
-        Kaffeezubehör seid – einfach einen persönlichen Beratungstermin vereinbaren und vorbeikommen.
+        Kaffeezubehör bist – einfach einen persönlichen Beratungstermin vereinbaren und vorbeikommen.
     </div>
 </div>
 <?php get_template_part('templates/product/video', null, ['video' => $video]);

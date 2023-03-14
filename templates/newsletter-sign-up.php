@@ -6,8 +6,8 @@
             <div class="newsletter-sign-up-description">
                 <h4>Lust auf mehr Kaffee, Wein, Spirits & Feinkost?</h4>
                 <p>
-                    Dann meldet Euch einfach für den Rehorik Newsletter an und
-                    wir halten Euch auf dem Laufenden - Erfahre immer als Erstes,
+                    Dann melde Dich einfach für den Rehorik Newsletter an und
+                    wir halten Dich auf dem Laufenden - Erfahre immer als Erstes,
                     was es Neues bei Rehorik gibt!
                 </p>
             </div>
