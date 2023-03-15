@@ -8,6 +8,7 @@ if (!$event) {
 }
 
 $availableTickets = null;
+$time = null;
 $tickets = Tribe__Tickets__Tickets::get_all_event_tickets($event->ID);
 if (!empty($tickets)) {
     foreach ($tickets as $ticket) {
