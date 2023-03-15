@@ -14,9 +14,8 @@
             'orderby' => 'order',
             'dropdown' => ['type' => 'select']
     ]);
-    echo '<div class="rehorik-result-count-and-ordering">';
-    woocommerce_result_count();
-    woocommerce_catalog_ordering();
+    echo '<div class="rehorik-result-ordering">';
+        woocommerce_catalog_ordering();
     echo '</div>';
     if (wc_get_loop_prop( 'total' ) > 0): ?>
         <?= do_shortcode('[wpf-filters id=1]') ?>

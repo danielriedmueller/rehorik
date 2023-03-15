@@ -1,7 +1,7 @@
 .rehorik .wpfMainWrapper {
-  background: transparent url("../img/strichl-muster-60px.png") no-repeat left top;
+  background: transparent none;
   margin-bottom: $spacing-s;
-  padding-top: $spacing-xl;
+  padding-top: $spacing;
   color: $anthrazit;
 
   .wpfFilterWrapper {
@@ -41,6 +41,75 @@
     .wpfLoaderIconTemplate .spinner,
     .woobewoo-filter-loader.spinner {
       background: transparent url("../img/product/strength.svg") no-repeat center center !important;
+    }
+  }
+}
+
+
+.widget_product_categories {
+  margin-top: $spacing-s;
+}
+
+.select2.select2-container {
+  border-radius: 0;
+  border: 1px solid $hellgrau;
+  padding: $spacing-xxs 0;
+  width: 100%;
+  height: $product-view-cart-button-quantity-height;
+
+  .select2-selection--single {
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    .select2-selection__arrow {
+      height: 100%;
+
+      b {
+        border: none;
+        margin: 0;
+
+        &:after {
+          content: '';
+          display: block;
+          background: transparent url("../img/pfeil-schwarz-unten.svg") no-repeat center right;
+          background-size: 12px;
+          width: 12px;
+          height: 12px;
+          right: 0;
+          top: -5px;
+          position: absolute;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .select2-selection__rendered {
+      font-family: $font-family-body;
+      font-size: $font-size-small;
+      line-height: 34px;
+      border-radius: 0;
+      padding-right: 22px + $spacing-xs;
+      border: none;
+      color: $font-color;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.select2-container .select2-dropdown {
+  .select2-search {
+    input.select2-search__field {
+      padding: $spacing-xxs;
+    }
+  }
+
+  .select2-results__options {
+    .select2-results__option {
+      font-family: $font-family-body;
+      font-size: $font-size-small;
+      text-transform: uppercase;
     }
   }
 }
