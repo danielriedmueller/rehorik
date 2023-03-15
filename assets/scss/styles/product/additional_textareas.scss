@@ -24,56 +24,32 @@ body.rehorik.woocommerce #main-content div.rehorik-product {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
-      grid-template-areas:
-          "left right"
-          "images images";
 
-      .additional-text-left {
-        &:not(:empty) {
-          margin: 0 var(--product-view-grid-gap-half) 0 0;
-        }
-
+      p {
         text-align: justify;
-        grid-area: left;
+        margin: 0;
       }
 
-      .additional-text-right {
-        &:not(:empty) {
-          margin: 0 0 0 var(--product-view-grid-gap-half);
-        }
+      @media all and (min-width: $medium-breakpoint + 1) {
+        p {
+          // Left paragraphs
+          &:nth-child(2n + 1) {
+            &:not(:empty) {
+              margin: 0 var(--product-view-grid-gap-half) 0 0;
+            }
+          }
 
-        text-align: justify;
-        grid-area: right;
-      }
-
-      .additional-text-images {
-        grid-area: images;
-        display: flex;
-        grid-gap: $spacing-s;
-        align-items: flex-end;
-        justify-content: space-between;
-
-        @media all and (max-width: $medium-breakpoint) {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        img {
-          border-radius: 0;
-          padding: 0;
-          margin: 0;
+          // Right paragraphs
+          &:nth-child(2n) {
+            &:not(:empty) {
+              margin: 0 0 0 var(--product-view-grid-gap-half);
+            }
+          }
         }
       }
 
       @media all and (max-width: $medium-breakpoint) {
         grid-template-columns: 1fr;
-        grid-template-areas:
-            "left"
-            "right"
-            "images";
-
-        .additional-text-left:not(:empty) {margin: 0 0 var(--product-view-grid-gap-half) 0;}
-        .additional-text-right:not(:empty) {margin: 0 0 var(--product-view-grid-gap-half) 0;}
       }
     }
   }
