@@ -23,7 +23,7 @@ if (empty($type) || empty($recipe) || empty($category)) {
 ?>
 <h2>Zubereitungsempfehlung</h2>
 <div class="description">
-    <div>Dich hat die Abenteuerlust fest im Griff? Dann empfehlen wir, Dir <?= $title ?> in der
+    <div>Dich hat die Abenteuerlust fest im Griff? Dann empfehlen wir Dir, unseren <?= $title ?> in der
         <strong><?= $type ?></strong> zuzubereiten. Hier erfährst Du mehr zur richtigen Zubereitung
         von <?= $category ?>.
     </div>
@@ -38,6 +38,6 @@ if (empty($type) || empty($recipe) || empty($category)) {
 ?>
 <div class="make-appointment">
     <a class="button" target="_blank"
-       href="https://app.resmio.com/rehorik-maschinenberatung/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Beratungstermin
+       href="https://app.resmio.com/rehorik-maschinenberatung/widget?backgroundColor=%235c0d2f&color=%23C6B47F&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23C6B47F&newsletterSignup=false">Beratungstermin
         vereinbaren</a>
 </div>

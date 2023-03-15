@@ -45,7 +45,7 @@ $text_lighter_40 = wc_hex_lighter( $text, 40 );
 
 $email_width = '590px';
 
-$accent = '#CEB67F';
+$accent = '#C6B47F';
 $primary = '#5C0D2F';
 $text_color = '#3c3c3b';
 $text_color_light = '#fff';

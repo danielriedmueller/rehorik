@@ -43,7 +43,7 @@ add_action('woocommerce_after_subcategory', function (WP_Term $category) {
         return;
     }
 
-    $html = '<div class="frontpage-category-action"><a class="button" target="_blank" href="https://app.resmio.com/rehorik-maschinenberatung/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Jetzt Beratungstermin vereinbaren</a></div>';
+    $html = '<div class="frontpage-category-action"><a class="button" target="_blank" href="https://app.resmio.com/rehorik-maschinenberatung/widget?backgroundColor=%235c0d2f&color=%23C6B47F&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23C6B47F&newsletterSignup=false">Jetzt Beratungstermin vereinbaren</a></div>';
 
     echo $html;
 }, 10, 1);
