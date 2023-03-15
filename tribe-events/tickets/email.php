@@ -255,15 +255,15 @@ foreach ($tickets as $ticket) {
         do_action('tribe_tickets_ticket_email_after_details', $ticket, $event);
         ?>
         <div class="qr-code">
-            <table class="content" align="center" width="620" cellspacing="0" cellpadding="0" border="0" bgcolor="#CEB67F" style="margin:15px auto 0; padding:0;">
+            <table class="content" align="center" width="620" cellspacing="0" cellpadding="0" border="0" bgcolor="#C6B47F" style="margin:15px auto 0; padding:0;">
                 <tr>
                     <td align="center" valign="top" class="wrapper" width="620">
-                        <table class="inner-wrapper" border="0" cellpadding="0" cellspacing="0" width="620" bgcolor="#CEB67F" style="margin:0 auto !important; width:620px; padding:0;">
+                        <table class="inner-wrapper" border="0" cellpadding="0" cellspacing="0" width="620" bgcolor="#C6B47F" style="margin:0 auto !important; width:620px; padding:0;">
                             <tr>
-                                <td valign="top" class="ticket-content" align="left" width="140" border="0" cellpadding="20" cellspacing="0" style="padding:20px; background:#CEB67F;">
+                                <td valign="top" class="ticket-content" align="left" width="140" border="0" cellpadding="20" cellspacing="0" style="padding:20px; background:#C6B47F;">
                                     <?php do_action('tribe_tickets_ticket_email_ticket_bottom', $ticket); ?>
                                 </td>
-                                <td valign="top" class="ticket-content" align="left" border="0" cellpadding="20" cellspacing="0" style="padding:20px; background:#CEB67F;">
+                                <td valign="top" class="ticket-content" align="left" border="0" cellpadding="20" cellspacing="0" style="padding:20px; background:#C6B47F;">
                                     <h3 style="color:#0a0a0e; margin:0 0 10px 0 !important; font-family: 'Helvetica Neue', Helvetica, sans-serif; font-style:normal; font-weight:700; font-size:28px; letter-spacing:normal; text-align:left;line-height: 100%;">
                                         <span style="color:#0a0a0e !important"><?php esc_html_e( 'Check in for this event', 'event-tickets-plus' ); ?></span>
                                     </h3>

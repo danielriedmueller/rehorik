@@ -1,12 +1,11 @@
 $opacity: 0.65;
 $weinrot: #5C0D2F;
-$hellbraun: #82624B;
-$dunkelbraun: #AF8C6C;
+$hellbraun: #AF8C6C;
+$dunkelbraun: #82624B;
 $cappucino: #996B23;
 $anthrazit: #3C3C3B;
 $anthrazit-opacity: rgba(57, 53, 54, $opacity);
-$beigegold: #CEB67F;
-// $beigegold: #C6B47F laut brandguide;
+$beigegold: #C6B47F;
 $tuerkis: #003C4A;
 $hellgrau: #EEEDED;
 
@@ -16,7 +15,7 @@ $font-family-bold: "Cond Bold", serif;
 
 $font-color: $anthrazit;
 $font-color-accent: $beigegold;
-$font-color-accent-dark: $dunkelbraun;
+$font-color-accent-dark: $cappucino;
 
 // Product colors
 $product-default-body-text-color: $font-color;

@@ -1,6 +1,10 @@
 body.rehorik.woocommerce #main-content div.rehorik-product {
   .rehorik-product-textarea-outer {
     &.hellbraun {
+      background-color: $hellbraun;
+    }
+
+    &.dunkelbraun {
       background-color: $dunkelbraun;
     }
   }
