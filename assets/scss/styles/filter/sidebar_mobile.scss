@@ -1,23 +1,10 @@
-button#product-filter-close-button,
-button#product-filter-button {
-  display: none;
-}
-
 @media all and (max-width: $medium-breakpoint) {
   body.rehorik #main-content {
-    button#product-filter-close-button,
-    button#product-filter-button {
-      display: block;
-    }
-
-    button#product-filter-button {
-      margin: 0 auto $spacing-l auto;
-      width: $product-gallery-width;
-    }
-
     #sidebar {
+      opacity: 0;
+      transform: translateX(100vw);
+      pointer-events: none;
       transition: transform var(--animation-time), opacity var(--animation-time);
-
       position: fixed;
       right: 0;
       top: 0;
@@ -27,17 +14,12 @@ button#product-filter-button {
       background: #fff none;
       margin: 0;
       padding: $top-bar-height var(--section-spacing-left-right) $spacing-l var(--section-spacing-left-right);
+      z-index: 12;
 
       &.show {
         pointer-events: all;
         opacity: 1;
         transform: translateX(0);
-      }
-
-      &:not(.show) {
-        opacity: 0;
-        transform: translateX(100vw);
-        pointer-events: none;
       }
 
       button#product-filter-close-button {
@@ -62,7 +44,6 @@ button#product-filter-button {
       .wpfMainWrapper {
         margin: 0;
         padding: 0;
-        background: transparent none;
 
         .wpfFilterButtons {
           margin-top: $spacing-l;
@@ -70,5 +51,20 @@ button#product-filter-button {
         }
       }
     }
+
+    button#product-filter-close-button,
+    button#product-filter-button {
+      display: block;
+    }
+
+    button#product-filter-button {
+      margin: 0 auto $spacing-l auto;
+      width: $product-gallery-width;
+    }
   }
+}
+
+button#product-filter-close-button,
+button#product-filter-button {
+  display: none;
 }

@@ -2,12 +2,23 @@
   .wpfFilterContent {
     margin-bottom: $spacing;
     float: unset;
-
     order: 1;
     font-size: $font-size-small;
     padding: 0;
-
     position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      background: transparent url("../img/pfeile/pfeil-schwarz-unten.svg") no-repeat center right;
+      background-size: 12px;
+      width: 12px;
+      height: 12px;
+      right: $spacing-xs;
+      top: 21px;
+      position: absolute;
+      pointer-events: none;
+    }
 
     select {
       border-radius: 0;
