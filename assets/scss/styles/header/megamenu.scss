@@ -21,6 +21,12 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
       color: $font-color-accent;
       font-size: $font-size;
     }
+
+    .hide-for-desktop {
+      @media all and (min-width: $medium-breakpoint + 1) {
+        display: none;
+      }
+    }
   }
 
   // Top level menu items
@@ -218,7 +224,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
 
       // 2nd Level
       > li.menu-item-has-children > ul.sub-menu > li.menu-item-has-children > ul.sub-menu > li.menu-item > a {
-        padding: $item-spacing 0 $item-spacing calc(var(--section-spacing-left-right)  + #{$spacing-l});
+        padding: $item-spacing 0 $item-spacing calc(var(--section-spacing-left-right) + #{$spacing-l});
       }
     }
   }
