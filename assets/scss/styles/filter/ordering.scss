@@ -1,5 +1,5 @@
 #sidebar.rehorik-sidebar {
-  form.woocommerce-ordering {
+  .wpfFilterContent {
     margin-bottom: $spacing;
     float: unset;
 
@@ -9,20 +9,7 @@
 
     position: relative;
 
-    &:after {
-      content: '';
-      display: block;
-      background: transparent url("../img/pfeile/pfeil-schwarz-unten.svg") no-repeat center right;
-      background-size: 12px;
-      width: 12px;
-      height: 12px;
-      right: $spacing-xs;
-      top: 21px;
-      position: absolute;
-      pointer-events: none;
-    }
-
-    select.orderby {
+    select {
       border-radius: 0;
       background-color: transparent;
       border: 1px solid $hellgrau;
