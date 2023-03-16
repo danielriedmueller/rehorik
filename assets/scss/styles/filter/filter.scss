@@ -1,6 +1,6 @@
 body.rehorik #main-content {
   .wpfMainWrapper {
-    background: transparent none;
+    background: transparent url("../img/strichl-muster-60px.png") no-repeat left top;
     margin-bottom: $spacing-s;
     padding-top: $spacing-xl;
     color: $anthrazit;
@@ -27,20 +27,116 @@ body.rehorik #main-content {
       font-size: $font-size-small;
       color: $tuerkis;
     }
+
+    .wpfPreview.wpfPreviewLoader {
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      top: 150px;
+
+      ul.products .spinner,
+      .la-spinner,
+      .wpfIconPreview .spinner,
+      .wpfLoaderIconTemplate .spinner,
+      .woobewoo-filter-loader.spinner {
+        background: transparent url("../img/product/strength.svg") no-repeat center center !important;
+      }
+    }
+
+    .wpfFilterButtons {
+      margin-top: $spacing-l;
+
+      .wpfFilterButton, .wpfClearButton {
+        border-radius: 0;
+        width: 100%;
+      }
+
+      .wpfFilterButton {
+        margin: 0;
+        padding: $spacing-xxs $spacing-xs;
+      }
+
+      .wpfClearButton {
+        margin: $spacing-xs 0 0 0;
+        padding: $spacing-xxxs $spacing-xxs;
+        background-color: $hellgrau;
+        color: $font-color;
+        font-size: $font-size-small;
+        font-family: $font-family-body;
+
+        &:hover {
+          background-color: $weinrot;
+          color: $font-color-accent;
+        }
+      }
+    }
+  }
+}
+
+.widget_product_categories {
+  margin: $spacing 0;
+}
+
+.select2.select2-container {
+  border-radius: 0;
+  border: 1px solid $hellgrau;
+  padding: $spacing-xxs 0;
+  width: 100%;
+  height: $product-view-cart-button-quantity-height;
+
+  .select2-selection--single {
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    .select2-selection__arrow {
+      height: 100%;
+
+      b {
+        border: none;
+        margin: 0;
+
+        &:after {
+          content: '';
+          display: block;
+          background: transparent url("../img/pfeile/pfeil-schwarz-unten.svg") no-repeat center right;
+          background-size: 12px;
+          width: 12px;
+          height: 12px;
+          right: 0;
+          top: -5px;
+          position: absolute;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .select2-selection__rendered {
+      font-family: $font-family-body;
+      font-size: $font-size-small;
+      line-height: 34px;
+      border-radius: 0;
+      padding-right: 22px + $spacing-xs;
+      border: none;
+      color: $font-color;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.select2-container .select2-dropdown {
+  .select2-search {
+    input.select2-search__field {
+      padding: $spacing-xxs;
+    }
   }
 
-  .wpfPreview.wpfPreviewLoader {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    top: 150px;
-
-    ul.products .spinner,
-    .la-spinner,
-    .wpfIconPreview .spinner,
-    .wpfLoaderIconTemplate .spinner,
-    .woobewoo-filter-loader.spinner {
-      background: transparent url("../img/product/strength.svg") no-repeat center center !important;
+  .select2-results__options {
+    .select2-results__option {
+      font-family: $font-family-body;
+      font-size: $font-size-small;
+      text-transform: uppercase;
     }
   }
 }

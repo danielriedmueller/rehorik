@@ -15,7 +15,6 @@ if (is_product()) return;
         'dropdown' => ['type' => 'select']
     ]);
     woocommerce_catalog_ordering();
-    if (wc_get_loop_prop('total') > 0): ?>
-        <?= do_shortcode('[wpf-filters id=1]') ?>
-    <?php endif; ?>
+    echo do_shortcode('[wpf-filters id=1]')
+    ?>
 </div>

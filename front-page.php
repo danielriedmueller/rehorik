@@ -1,16 +1,6 @@
 <?php
 get_template_part('templates/header/head', null, ['slider' => [
     [
-        'claim' => 'EMPOWERMENT VON FRAUEN IN DER WERTSCHÖPFUNGSKETTE DES KAFFEES',
-        'primary' => true,
-        'classes' => 'slider-item-weltfrauentag',
-        'img'=> 'header-weltfrauentag',
-        'buttons' => [
-            '/seminar/workshop-starke-frauen-starker-kaffee-empowerment-von-frauen-in-der-wertschoepfungskette-des-kaffees' => 'Starke Frauen',
-            '/produkt/java-nica' => 'Starker Kaffee'
-        ]
-    ],
-    [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
         'img'=> 'startseite-header-roesterei',
         'buttons' => [

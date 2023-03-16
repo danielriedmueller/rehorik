@@ -1,10 +1,13 @@
 $opacity: 0.65;
 $weinrot: #5C0D2F;
-$hellbraun: #AF8C6C; // RGB: 175/140/108
+$hellbraun: #AF8C6C;
+$dunkelbraun: #82624B;
+$cappucino: #996B23;
 $anthrazit: #3C3C3B;
 $anthrazit-opacity: rgba(57, 53, 54, $opacity);
-$beigegold: #CEB67F;
-$tuerkis: #003c4a;
+$beigegold: #C6B47F;
+$tuerkis: #003C4A;
+$hellgrau: #EEEDED;
 
 $font-family-body: "Cond", serif;
 $font-family-black: "Cond Black", serif;
@@ -12,7 +15,7 @@ $font-family-bold: "Cond Bold", serif;
 
 $font-color: $anthrazit;
 $font-color-accent: $beigegold;
-$font-color-accent-dark: $hellbraun;
+$font-color-accent-dark: $cappucino;
 
 // Product colors
 $product-default-body-text-color: $font-color;
@@ -113,9 +116,9 @@ $max-width-small: 1280px;
   --max-width: #{$max-width};
   --container-headline-spacing-bottom: #{$spacing-xl};
   --products-grid-gap: #{$spacing-l};
-  --product-view-grid-gap: #{$spacing-xxl};
-  --product-view-grid-gap-half: #{$spacing-xxl / 2};
-  --product-view-grid-gap-quarter: #{$spacing-xxl / 4};
+  --product-view-grid-gap: #{$spacing-xl};
+  --product-view-grid-gap-half: #{$spacing-xl / 2};
+  --product-view-grid-gap-quarter: #{$spacing-xl / 4};
   --animation-time: 350ms;
 
   @media all and (max-width: $max-width) {

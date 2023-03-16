@@ -26,6 +26,7 @@
 @import "styles/cart/cart_totals";
 @import "styles/cart/coupon";
 @import "styles/filter/sidebar";
+@import "styles/filter/ordering";
 @import "styles/featured_products";
 @import "styles/product/product";
 @import "styles/product/product_header";
@@ -147,6 +148,7 @@ html, body {
   background: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 * {

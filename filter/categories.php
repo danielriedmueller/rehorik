@@ -26,15 +26,21 @@ add_filter('woocommerce_get_catalog_ordering_args', function ($args) {
     return $args;
 });
 
+add_filter('woocommerce_default_catalog_orderby', function (string $sortBy) {
+    if (isProductCategory(TICKET_CATEGORY_SLUG)) {
+        return 'sort_by_event_date';
+    }
+
+    return 'popularity';
+});
 add_filter('woocommerce_default_catalog_orderby_options', 'custom_woocommerce_catalog_orderby');
 add_filter('woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby');
-function custom_woocommerce_catalog_orderby($sortby)
+function custom_woocommerce_catalog_orderby(array $sortby): array
 {
     if (isProductCategory(TICKET_CATEGORY_SLUG)) {
         $sortby = [];
         $sortby['sort_by_event_date'] = 'Veranstaltungsdatum';
     }
-
 
     return $sortby;
 }

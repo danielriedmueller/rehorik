@@ -53,4 +53,4 @@ if (
 	return;
 }
 ?>
-<div class="rehorik-cup-of-coffee-price-outer">Noch <?php echo $available_count ?> Plätze verfügbar</div>
+<div class="rehorik-cup-of-coffee-price-outer">Noch <?= $available_count ?> <?= $available_count === 1 ? 'Platz' : 'Plätze' ?> verfügbar</div>

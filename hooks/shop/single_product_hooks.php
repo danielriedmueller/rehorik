@@ -50,7 +50,7 @@ function description(): void
 
     echo sprintf(
         '<div class="rehorik-product-description">%s</div>',
-        $product->get_description()
+        apply_filters('the_content', $product->get_description())
     );
 }
 
@@ -60,7 +60,7 @@ function short_description(): void
 
     echo sprintf(
         '<div class="rehorik-product-short-description">%s</div>',
-        $post->post_excerpt
+        apply_filters('the_content', $post->post_excerpt)
     );
 }
 
@@ -77,13 +77,15 @@ function origin(): void
         echo sprintf(
             '<div class="rehorik-product-origin weingut"><h2>Weingut %s</h2>%s</div>',
             $weingut,
-            $post->post_excerpt
+            apply_filters('the_content', $post->post_excerpt)
         );
-    } else if (!empty($origin)) {
-        echo sprintf(
-            '<div class="rehorik-product-origin"><h2>Herkunft</h2><div>%s</div></div>',
-            $origin
-        );
+    } else {
+        if (!empty($origin)) {
+            echo sprintf(
+                '<div class="rehorik-product-origin"><h2>Herkunft</h2><div>%s</div></div>',
+                apply_filters('the_content', $origin)
+            );
+        }
     }
 }
 
@@ -96,7 +98,7 @@ function processing(): void
     if (!empty($preparation)) {
         echo sprintf(
             '<div class="rehorik-product-processing"><h2>Aufbereitung</h2><div>%s</div></div>',
-            $preparation
+            apply_filters('the_content', $preparation)
         );
     }
 }
