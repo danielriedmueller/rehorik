@@ -26,8 +26,7 @@ button#product-filter-button {
       overflow: scroll;
       background: #fff none;
       margin: 0;
-      z-index: 1000;
-      padding: $top-bar-height + $spacing-l var(--section-spacing-left-right) $spacing-l var(--section-spacing-left-right);
+      padding: $top-bar-height var(--section-spacing-left-right) $spacing-l var(--section-spacing-left-right);
 
       &.show {
         pointer-events: all;

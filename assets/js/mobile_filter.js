@@ -16,6 +16,8 @@
 
         const productFilterButton = document.getElementById('product-filter-button');
         const productFilterCloseButton = document.getElementById('product-filter-close-button');
+        const wpfFilterButton = document.querySelector('button.wpfFilterButton');
+        const wpfFilterResetButton = document.querySelector('button.wpfClearButton');
 
         if (productFilterButton) {
             productFilterButton.addEventListener('click', (event) => {
@@ -25,6 +27,14 @@
 
         if (productFilterCloseButton) {
             productFilterCloseButton.addEventListener('click', hideFilter);
+        }
+
+        if (wpfFilterButton) {
+            wpfFilterButton.addEventListener('click', hideFilter);
+        }
+
+        if (wpfFilterResetButton) {
+            wpfFilterResetButton.addEventListener('click', hideFilter);
         }
     });
 })();
