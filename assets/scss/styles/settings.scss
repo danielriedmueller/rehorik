@@ -1,10 +1,13 @@
 $opacity: 0.65;
 $weinrot: #5C0D2F;
-$hellbraun: #AF8C6C; // RGB: 175/140/108
+$hellbraun: #AF8C6C;
+$dunkelbraun: #82624B;
+$cappucino: #996B23;
 $anthrazit: #3C3C3B;
 $anthrazit-opacity: rgba(57, 53, 54, $opacity);
-$beigegold: #CEB67F;
-$tuerkis: #003c4a;
+$beigegold: #C6B47F;
+$tuerkis: #003C4A;
+$hellgrau: #EEEDED;
 
 $font-family-body: "Cond", serif;
 $font-family-black: "Cond Black", serif;
@@ -12,7 +15,7 @@ $font-family-bold: "Cond Bold", serif;
 
 $font-color: $anthrazit;
 $font-color-accent: $beigegold;
-$font-color-accent-dark: $hellbraun;
+$font-color-accent-dark: $cappucino;
 
 // Product colors
 $product-default-body-text-color: $font-color;
@@ -62,9 +65,9 @@ $cart-thumbnail-size: 175px;
 $product-gallery-width: 235px;
 $product-category-width: 350px;
 $product-category-frontpage-height: $product-category-width;
-$product-height: 525px;
+$product-height: 530px;
 
-$strength-flavour-icon-size: 16px;
+$strength-flavour-icon-size: 18px;
 $strength-flavour-icon-size-large: $spacing;
 
 $menu-height: 60px;
@@ -89,7 +92,7 @@ $logo-size-very-small: 80px;
 
 $cart-coupon-width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
 
-$sidebar-width: 200px;
+$sidebar-width: 250px;
 $hugo-head-size: 70px;
 
 $footer-items-width: 202px;
@@ -102,7 +105,7 @@ $timeline-height: 800px;
 $section-spacing: $spacing-xxl;
 $section-spacing-small: $spacing-l;
 
-// Arise of 4 frontpage category items
+// Arise of of 4 category items
 $max-width: $product-category-width + $spacing-xl + $product-category-width + $spacing-xl + $product-category-width + $spacing-xl + $product-category-width;
 $max-width-small: 1280px;
 
@@ -112,10 +115,9 @@ $max-width-small: 1280px;
   --section-spacing-left-right: 0;
   --max-width: #{$max-width};
   --container-headline-spacing-bottom: #{$spacing-xl};
-  --products-grid-gap: #{$spacing-l};
-  --product-view-grid-gap: #{$spacing-xxl};
-  --product-view-grid-gap-half: #{$spacing-xxl / 2};
-  --product-view-grid-gap-quarter: #{$spacing-xxl / 4};
+  --product-view-grid-gap: #{$spacing-xl};
+  --product-view-grid-gap-half: #{$spacing-xl / 2};
+  --product-view-grid-gap-quarter: #{$spacing-xl / 4};
   --animation-time: 350ms;
 
   @media all and (max-width: $max-width) {

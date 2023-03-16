@@ -52,8 +52,9 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
         </div>
     </div>
     <div id="more-information" class="rehorik-product-information-outer"><div class="rehorik-product-information"><?php do_action('rehorik_product_information'); ?></div></div>
-    <div class="rehorik-product-preperation-recommendation"><?php do_action('rehorik_product_preperation_recommendation'); ?></div>
-    <div class="rehorik-product-origin-outer"><?php do_action('rehorik_product_origin'); ?></div>
+    <div class="rehorik-product-textarea-outer hellbraun"><?php do_action('rehorik_product_processing'); ?></div>
+    <div class="rehorik-product-textarea-outer"><div class="rehorik-product-preperation-recommendation"><?php do_action('rehorik_product_preperation_recommendation'); ?></div></div>
+    <div class="rehorik-product-textarea-outer dunkelbraun"><?php do_action('rehorik_product_origin'); ?></div>
 </div>
 <div class="container">
     <?php do_action('woocommerce_after_single_product'); ?>

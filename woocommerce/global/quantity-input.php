@@ -12,7 +12,10 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 7.2.1
+ * @version 7.4.0
+ *
+ * @var bool   $readonly If the input should be set to readonly mode.
+ * @var string $type     The input type attribute.
  */
 
 defined( 'ABSPATH' ) || exit;

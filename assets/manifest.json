@@ -4,7 +4,7 @@
   "lang": "de-DE",
   "start_url": "/index.php",
   "display": "standalone",
-  "background_color": "#CEB67F",
+  "background_color": "#C6B47F",
   "theme_color": "#5C0D2F",
   "icons": [{
     "src": "/wp-content/themes/rehorik/assets/img/logos/logo_128px.png",

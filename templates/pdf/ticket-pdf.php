@@ -141,7 +141,7 @@
     <div id="headline"><h1>Ticket</h1></div>
     <div id="attendee-info">
         <h2>Teilnehmer:in: _________________________</h2>
-        <h2>Ticket Typ: <span>asdfsaf</span></h2>
+        <h2>Ticket-Typ: <span><?= $args['ticket_name'] ?></span></h2>
         <h2>Ticketnummer: <span><?= $args['ticket_id'] ?></span></h2>
     </div>
     <div id="event-info">

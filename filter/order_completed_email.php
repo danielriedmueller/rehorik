@@ -58,9 +58,7 @@ add_filter('woocommerce_email_additional_content_customer_completed_order', func
     return $emailMessage;
 }, 10, 3);
 
-add_filter(/**
- * @throws Exception
- */ 'tribe_tickets_plus_woo_email_attachments', function (array $attachments, string $email_id, $order) {
+add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachments, string $email_id, $order) {
     if ($email_id !== 'wootickets' || !($order instanceof WC_Order)) {
         return $attachments;
     }
@@ -70,16 +68,18 @@ add_filter(/**
 
     foreach ($attendees as $attendee) {
         $product = wc_get_product($attendee['product_id']);
+
         $startDatetime = $product->get_meta(TICKET_EVENT_DATE_START_META);
         $endDatetime = $product->get_meta(TICKET_EVENT_DATE_END_META);
         $date = '';
-
-        if ($startDatetime && $startDatetime) {
-            if ($startDatetime === $startDatetime) {
+        if ($startDatetime && $endDatetime) {
+            if ($startDatetime === $endDatetime) {
                 $date = date(DATE_FORMAT, $startDatetime);
             } else {
                 $date = sprintf('%s - %s', date(DATE_FORMAT, $startDatetime), date(DATE_FORMAT, $endDatetime));
             }
+        } elseif ($startDatetime) {
+            $date = date(DATE_FORMAT, $startDatetime);
         }
 
         $details = [

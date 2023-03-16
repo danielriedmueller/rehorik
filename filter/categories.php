@@ -40,10 +40,12 @@ function custom_woocommerce_catalog_orderby($sortby)
 }
 
 add_filter('woocommerce_product_categories_widget_args', function(array $args) {
-    $catsIncluded = explode(',', $args['include']);
+    if (!empty($args['include'])) {
+        $catsIncluded = explode(',', $args['include']);
 
-    if (!empty($catsIncluded)) {
-        $args['include'] = implode(',', array_diff($catsIncluded, HIDE_CATEGORIES));
+        if (!empty($catsIncluded)) {
+            $args['include'] = implode(',', array_diff($catsIncluded, HIDE_CATEGORIES));
+        }
     }
 
     return $args;

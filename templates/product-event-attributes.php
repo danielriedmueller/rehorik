@@ -7,11 +7,15 @@ if (!$event) {
     return;
 }
 
-// TODO: Assume all tickets have shared capacity, take first ticket for ticket count
 $availableTickets = null;
+$time = null;
 $tickets = Tribe__Tickets__Tickets::get_all_event_tickets($event->ID);
-if (is_array($tickets) && sizeof($tickets) > 0) {
-    $availableTickets = $tickets[0]->available();
+if (!empty($tickets)) {
+    foreach ($tickets as $ticket) {
+        if ($ticket->ID === $product->get_id()) {
+            $availableTickets = $ticket->available();
+        }
+    }
 }
 
 $location = tribe_get_venue($event->ID);
@@ -46,7 +50,7 @@ $price = wc_price($product->get_price());
             <td colspan="2" class="available-tickets-attribute-cell">
                 <?php if ($availableTickets) : ?>
                     Noch
-                    <span><?= $availableTickets ?></span> <?php echo $availableTickets === 1 ? 'Platz' : 'Plätze' ?> verfügbar
+                    <span><?= $availableTickets ?></span> <?= $availableTickets === 1 ? 'Platz' : 'Plätze' ?> verfügbar
                 <?php else : ?>
                     Nicht länger verfügbar
                 <?php endif; ?>

@@ -45,7 +45,7 @@ get_template_part('templates/header/head', null, [
                         <td><a target="_blank" href="<?= MENU_STRAUBINGER ?>">Speisekarte</a></td>
                         <td>
                             <a target="_blank"
-                               href="https://app.resmio.com/rehorik-rosterei-kaffehaus/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Reservieren</a>
+                               href="https://app.resmio.com/rehorik-rosterei-kaffehaus/widget?backgroundColor=%235c0d2f&color=%23C6B47F&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23C6B47F&newsletterSignup=false">Reservieren</a>
                         </td>
                     </tr>
                     <tr>
@@ -64,7 +64,7 @@ get_template_part('templates/header/head', null, [
                         <td><a target="_blank" href="<?= MENU_190?>">Speisekarte</a></td>
                         <td>
                             <a target="_blank"
-                               href="https://app.resmio.com/cafe-190-grad/widget?backgroundColor=%235c0d2f&color=%23ceb67f&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23ceb67f&newsletterSignup=false">Reservieren</a>
+                               href="https://app.resmio.com/cafe-190-grad/widget?backgroundColor=%235c0d2f&color=%23C6B47F&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23C6B47F&newsletterSignup=false">Reservieren</a>
                         </td>
                     </tr>
                     <tr>

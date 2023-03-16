@@ -43,6 +43,8 @@ add_action('rehorik_product_preperation_recommendation', 'preperation_recommenda
 
 add_action('rehorik_product_origin', 'origin', 1); // Description
 
+add_action('rehorik_product_processing', 'processing', 1); // Description
+
 add_action('woocommerce_after_single_product', 'woocommerce_output_related_products', 10);
 
 function description(): void
@@ -51,7 +53,7 @@ function description(): void
 
     echo sprintf(
         '<div class="rehorik-product-description">%s</div>',
-        $product->get_description()
+        apply_filters('the_content', $product->get_description())
     );
 }
 
@@ -61,7 +63,7 @@ function short_description(): void
 
     echo sprintf(
         '<div class="rehorik-product-short-description">%s</div>',
-        $post->post_excerpt
+        apply_filters('the_content', $post->post_excerpt)
     );
 }
 
@@ -78,12 +80,28 @@ function origin(): void
         echo sprintf(
             '<div class="rehorik-product-origin weingut"><h2>Weingut %s</h2>%s</div>',
             $weingut,
-            $post->post_excerpt
+            apply_filters('the_content', $post->post_excerpt)
         );
-    } else if (!empty($origin)) {
+    } else {
+        if (!empty($origin)) {
+            echo sprintf(
+                '<div class="rehorik-product-origin"><h2>Herkunft</h2><div>%s</div></div>',
+                apply_filters('the_content', $origin)
+            );
+        }
+    }
+}
+
+function processing(): void
+{
+    global $post;
+
+    $preparation = get_post_meta($post->ID, 'rehorik_product_processing', true);
+
+    if (!empty($preparation)) {
         echo sprintf(
-            '<div class="rehorik-product-origin"><h2>Herkunft</h2><div>%s</div></div>',
-            $origin
+            '<div class="rehorik-product-processing"><h2>Aufbereitung</h2><div>%s</div></div>',
+            apply_filters('the_content', $preparation)
         );
     }
 }

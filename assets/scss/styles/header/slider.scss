@@ -52,9 +52,6 @@
       font-family: $font-family-black;
       font-size: $font-size-very-very-large;
       color: #fff;
-      @media all and (min-width: $medium-breakpoint + 1) {
-        min-width: 500px + $spacing-l;
-      }
     }
   }
 
