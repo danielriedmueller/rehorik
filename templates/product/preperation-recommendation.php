@@ -21,23 +21,25 @@ if (empty($type) || empty($recipe) || empty($category)) {
     return;
 }
 ?>
-<h2>Zubereitungsempfehlung</h2>
-<div class="description">
-    <div>Dich hat die Abenteuerlust fest im Griff? Dann empfehlen wir Dir, unseren <?= $title ?> in der
-        <strong><?= $type ?></strong> zuzubereiten. Hier erfährst Du mehr zur richtigen Zubereitung
-        von <?= $category ?>.
+<div class="rehorik-product-preperation-recommendation">
+    <h2>Zubereitungsempfehlung</h2>
+    <div class="description">
+        <div>Dich hat die Abenteuerlust fest im Griff? Dann empfehlen wir Dir, unseren <?= $title ?> in der
+            <strong><?= $type ?></strong> zuzubereiten. Hier erfährst Du mehr zur richtigen Zubereitung
+            von <?= $category ?>.
+        </div>
+        <div><strong>Rezept:</strong> <span><?= $recipe ?></span></div>
+        <div>Du hast keine <strong><?= $type ?></strong> daheim? Unser <?= $title ?> bringt Dich auch mit jeder anderen
+            Zubereitungsart zu Höchstleistungen - ganz so, wie DU es am Liebsten hast. Falls Du auf der Suche nach dem
+            richtigen
+            Kaffeezubehör bist – einfach einen persönlichen Beratungstermin vereinbaren und vorbeikommen.
+        </div>
     </div>
-    <div><strong>Rezept:</strong> <span><?= $recipe ?></span></div>
-    <div>Du hast keine <strong><?= $type ?></strong> daheim? Unser <?= $title ?> bringt Dich auch mit jeder anderen
-        Zubereitungsart zu Höchstleistungen - ganz so, wie DU es am Liebsten hast. Falls Du auf der Suche nach dem
-        richtigen
-        Kaffeezubehör bist – einfach einen persönlichen Beratungstermin vereinbaren und vorbeikommen.
+    <?php get_template_part('templates/product/video', null, ['video' => $video]);
+    ?>
+    <div class="make-appointment">
+        <a class="button" target="_blank"
+           href="https://app.resmio.com/rehorik-maschinenberatung/widget?backgroundColor=%235c0d2f&color=%23C6B47F&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23C6B47F&newsletterSignup=false">Beratungstermin
+            vereinbaren</a>
     </div>
-</div>
-<?php get_template_part('templates/product/video', null, ['video' => $video]);
-?>
-<div class="make-appointment">
-    <a class="button" target="_blank"
-       href="https://app.resmio.com/rehorik-maschinenberatung/widget?backgroundColor=%235c0d2f&color=%23C6B47F&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23C6B47F&newsletterSignup=false">Beratungstermin
-        vereinbaren</a>
 </div>
