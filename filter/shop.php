@@ -22,7 +22,7 @@ add_filter('woocommerce_show_page_title', function () {
 /**
  * Displays shipping estimates for WC shipping rates
  */
-add_filter('woocommerce_cart_shipping_method_full_label', function($label) {
+add_filter('woocommerce_cart_shipping_method_full_label', function ($label) {
     return $label . ' ' . getShippingDurationMessage();
 });
 
@@ -32,12 +32,14 @@ add_filter('woocommerce_cart_shipping_method_full_label', function($label) {
  * so on sites with large postmeta tables it is super slow
  * and is rarely useful anymore on any site
  */
-function s9_remove_post_custom_fields_metabox() {
-    foreach ( get_post_types( '', 'names' ) as $post_type ) {
-        remove_meta_box( 'postcustom' , $post_type , 'normal' );
+function s9_remove_post_custom_fields_metabox()
+{
+    foreach (get_post_types('', 'names') as $post_type) {
+        remove_meta_box('postcustom', $post_type, 'normal');
     }
 }
-add_action( 'admin_menu' , 's9_remove_post_custom_fields_metabox' );
+
+add_action('admin_menu', 's9_remove_post_custom_fields_metabox');
 
 /*
 * Reduce the strength requirement for woocommerce registration password.
@@ -47,6 +49,15 @@ add_action( 'admin_menu' , 's9_remove_post_custom_fields_metabox' );
 * 2 = Medium
 * 3 = Strong (default)
 */
-add_filter( 'woocommerce_min_password_strength', 'wpglorify_woocommerce_password_filter', 10 );
-function wpglorify_woocommerce_password_filter() {
-    return 2; } //2 represent medium strength password
+add_filter('woocommerce_min_password_strength', 'wpglorify_woocommerce_password_filter', 10);
+function wpglorify_woocommerce_password_filter()
+{
+    return 2;
+} //2 represent medium strength password
+
+/**
+ * Change number of products that are displayed per page (shop page)
+ */
+add_filter('loop_shop_per_page', function ($cols) {
+    return PRODUCTS_PER_PAGE;
+}, 20);

@@ -2,7 +2,7 @@
   ul.products.rehorik-products {
     @include gridView($product-gallery-width);
 
-    @media all and (min-width: $small-breakpoint + 1) {
+    @media all and (min-width: $medium-breakpoint + 1) {
       justify-content: flex-start;
     }
 

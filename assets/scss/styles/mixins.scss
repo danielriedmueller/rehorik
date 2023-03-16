@@ -3,10 +3,6 @@
   gap: var(--products-grid-gap);
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(min($item-width, 100%), $item-width));
-
-  > * {
-    width: 100%;
-  }
 }
 
 @mixin productLinearGradient($color-left, $color-right) {

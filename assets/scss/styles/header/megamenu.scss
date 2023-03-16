@@ -36,7 +36,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
   }
 
   > li.menu-item-has-children {
-    background: transparent url("../img/pfeil-gold-unten.svg") no-repeat center right $spacing-xs;
+    background: transparent url("../img/pfeile/pfeil-gold-unten.svg") no-repeat center right $spacing-xs;
     background-size: 10px;
 
     > a {
@@ -114,7 +114,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
 
       &:hover {
         background-color: $menu-hover-color;
-        background-image: url("../img/pfeil-rot-oben.svg");
+        background-image: url("../img/pfeile/pfeil-rot-oben.svg");
 
         a {
           color: $weinrot;
@@ -188,7 +188,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
         > a {
           font-family: $font-family-bold;
           width: 100%;
-          background-image: url("../img/pfeil-rot-unten.svg");
+          background-image: url("../img/pfeile/pfeil-rot-unten.svg");
           background-repeat: no-repeat;
           background-position: top 30px right var(--section-spacing-left-right);
           background-size: $icon-size;
@@ -196,7 +196,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
           // Touch on menu item with children
           &.open {
             background-color: $beigegold;
-            background-image: url("../img/pfeil-rot-oben.svg");
+            background-image: url("../img/pfeile/pfeil-rot-oben.svg");
             color: $weinrot;
 
             + ul.sub-menu {
@@ -208,7 +208,7 @@ header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
       }
 
       > li.menu-item-has-children > a {
-        background-image: url("../img/pfeil-gold-unten.svg");
+        background-image: url("../img/pfeile/pfeil-gold-unten.svg");
       }
 
       // Paddings

@@ -14,38 +14,29 @@ add_filter('product_cat_class', function ($classes, $class, $category) {
 }, 10, 3);
 
 /**
- * Add event date sorting option
+ * Change default sorting depending on category
+ *
+ * Add event date sorting option for events
  */
 add_filter('woocommerce_get_catalog_ordering_args', function ($args) {
-    if (isProductCategory(TICKET_CATEGORY_SLUG)) {
-        $args['orderby'] = 'meta_value';
-        $args['order'] = 'ASC';
-        $args['meta_key'] = TICKET_EVENT_DATE_START_META;
+    if ($args['orderby'] === 'default' || $args['orderby'] === 'menu_order title') {
+        if (isProductCategory(TICKET_CATEGORY_SLUG)) {
+            $args['orderby'] = 'meta_value';
+            $args['order'] = 'ASC';
+            $args['meta_key'] = TICKET_EVENT_DATE_START_META;
+        } else {
+            $args['orderby'] = 'popularity';
+        }
     }
 
     return $args;
 });
 
-add_filter('woocommerce_default_catalog_orderby_options', 'custom_woocommerce_catalog_orderby');
-add_filter('woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby');
-function custom_woocommerce_catalog_orderby($sortby)
-{
-    if (isProductCategory(TICKET_CATEGORY_SLUG)) {
-        $sortby = [];
-        $sortby['sort_by_event_date'] = 'Veranstaltungsdatum';
-    }
-
-
-    return $sortby;
-}
-
 add_filter('woocommerce_product_categories_widget_args', function(array $args) {
-    if (!empty($args['include'])) {
-        $catsIncluded = explode(',', $args['include']);
+    $catsIncluded = explode(',', $args['include']);
 
-        if (!empty($catsIncluded)) {
-            $args['include'] = implode(',', array_diff($catsIncluded, HIDE_CATEGORIES));
-        }
+    if (!empty($catsIncluded)) {
+        $args['include'] = implode(',', array_diff($catsIncluded, HIDE_CATEGORIES));
     }
 
     return $args;

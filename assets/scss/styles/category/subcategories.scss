@@ -6,26 +6,30 @@
   white-space: nowrap;
   max-width: 100%;
 
-  ul.rehorik-products-subcategories.rehorik-products.products {
+  ul.rehorik-products-subcategories {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
     grid-gap: var(--products-grid-gap);
-    justify-content: unset;
+    list-style: none;
 
     li.rehorik-product-subcategory {
       display: block;
       $size: $product-gallery-width / 2;
       flex: $size 0 0;
-      width: $size;
       border-radius: 0;
       overflow: visible;
 
       a {
+        display: flex;
+        flex-direction: column;
+
         img {
-          border-radius: $size;
+          border-radius: $border-radius;
           height: $size;
           width: $size;
+          object-fit: cover;
+          align-self: center;
         }
 
         h2 {
@@ -35,6 +39,7 @@
           background: transparent none;
           margin-top: $spacing-xxxs;
           padding: 0;
+          font-size: $font-size;
 
           span {
             white-space: normal;
@@ -48,7 +53,6 @@
 
           h2 {
             color: $font-color-accent-dark;
-            width: $size;
           }
         }
 

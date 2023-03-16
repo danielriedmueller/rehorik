@@ -44,7 +44,7 @@
     #rehorik-menu {
       opacity: 0;
       transform: translateX(100%);
-      transition: transform var(--animation-time), opacity var(--animation-time) linear;
+      transition: transform var(--animation-time), opacity var(--animation-time);
       pointer-events: none;
     }
 
