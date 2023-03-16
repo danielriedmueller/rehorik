@@ -1,0 +1,45 @@
+#sidebar.rehorik-sidebar {
+  flex: 0 0 $sidebar-width;
+  background: transparent url("../img/strichl-muster.png") no-repeat left top -65px;
+  padding: 80px 0 0 0;
+  color: $font-color-accent;
+
+  ul li, li {
+    list-style: none;
+  }
+
+  .widgettitle {
+    display: none;
+  }
+
+  > li.widget.woocommerce {
+    background: #fff none;
+  }
+
+  @media all and (min-width: $medium-breakpoint + 1) {
+    &::after {
+      content: "";
+      background: transparent url("../img/strichl-muster.png") no-repeat left top;
+      height: 142px;
+      max-height: 142px;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  li, a {
+    font-size: $font-size;
+    color: $font-color-accent;
+  }
+
+  h4 {
+    font-size: $font-size;
+    color: $font-color-accent;
+  }
+
+  form.woocommerce-ordering {
+    margin-top: $spacing;
+    margin-bottom: $spacing;
+    float: unset;
+  }
+}

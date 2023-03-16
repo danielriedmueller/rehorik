@@ -1,8 +1,4 @@
 (function () {
-    // Mobile menu breakpoint. Used also in css.
-    const mobileMenuBreakpoint = 1180;
-    if (!window.matchMedia(`(max-width: ${mobileMenuBreakpoint}px)`).matches) return;
-
     window.addEventListener('DOMContentLoaded', (event) => {
         // Mobile product filter button
         const sidebar = document.getElementById('sidebar');

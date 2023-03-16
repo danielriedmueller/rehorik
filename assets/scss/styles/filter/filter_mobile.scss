@@ -16,9 +16,8 @@ button#product-filter-button {
     }
 
     #sidebar {
-      opacity: 0;
       transition: transform var(--animation-time), opacity var(--animation-time);
-      pointer-events: none;
+
       position: fixed;
       right: 0;
       top: 0;
@@ -37,7 +36,9 @@ button#product-filter-button {
       }
 
       &:not(.show) {
+        opacity: 0;
         transform: translateX(100vw);
+        pointer-events: none;
       }
 
       button#product-filter-close-button {
@@ -57,6 +58,16 @@ button#product-filter-button {
         font-family: $font-family-bold;
         text-transform: uppercase;
         line-height: 0;
+      }
+
+      .wpfMainWrapper {
+        margin: 0;
+        padding: 0;
+
+        .wpfFilterButtons {
+          margin-top: $spacing-l;
+          text-align: right;
+        }
       }
     }
   }

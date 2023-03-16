@@ -1,34 +1,34 @@
-.rehorik .wpfMainWrapper {
-  background: transparent url("../img/strichl-muster-60px.png") no-repeat left top;
-  margin-bottom: $spacing-s;
-  padding-top: $spacing-xl;
-  color: $anthrazit;
+body.rehorik #main-content {
+  .wpfMainWrapper {
+    background: transparent none;
+    margin-bottom: $spacing-s;
+    padding-top: $spacing-xl;
+    color: $anthrazit;
 
-  .wpfFilterWrapper {
-    padding: 0;
+    .wpfFilterWrapper {
+      padding: 0;
+    }
+
+    .wpfTitleToggle {
+      padding-top: 5px;
+    }
+
+    .wpfFilterTitle {
+      text-transform: uppercase;
+      font-size: $font-size;
+      margin: $spacing-xs 0 0 0;
+    }
+
+    .wpfFilterVerScroll {
+      margin: $spacing-xs 0 0 0;
+    }
+
+    .wpfCount {
+      font-size: $font-size-small;
+      color: $tuerkis;
+    }
   }
 
-  .wpfTitleToggle {
-    padding-top: 5px;
-  }
-
-  .wpfFilterTitle {
-    text-transform: uppercase;
-    font-size: $font-size;
-    margin: $spacing-xs 0 0 0;
-  }
-
-  .wpfFilterVerScroll {
-    margin: $spacing-xs 0 0 0;
-  }
-
-  .wpfCount {
-    font-size: $font-size-small;
-    color: $tuerkis;
-  }
-}
-
-.rehorik {
   .wpfPreview.wpfPreviewLoader {
     position: absolute;
     left: 50%;
