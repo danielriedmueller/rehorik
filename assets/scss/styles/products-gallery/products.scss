@@ -108,23 +108,9 @@
         }
 
         td.available-tickets-attribute-cell {
-          height: 18px;
           text-align: center;
           span {
             color: $beigegold;
-          }
-
-          &.loading {
-            &::after {
-              animation: spin 2s linear infinite;
-              content: '';
-              display: block;
-              margin: auto;
-              background: transparent url("../img/product/strength_filled.svg") no-repeat center center;
-              background-size: 12px;
-              width: 12px;
-              height: 18px;
-            }
           }
         }
       }

@@ -7,12 +7,22 @@ if (!$event) {
     return;
 }
 
+$availableTickets = null;
+$time = null;
+$tickets = Tribe__Tickets__Tickets::get_all_event_tickets($event->ID);
+if (!empty($tickets)) {
+    foreach ($tickets as $ticket) {
+        if ($ticket->ID === $product->get_id()) {
+            $availableTickets = $ticket->available();
+        }
+    }
+}
+
 $location = tribe_get_venue($event->ID);
 
 $startDatetime = $product->get_meta(TICKET_EVENT_DATE_START_META);
 $endDatetime = $product->get_meta(TICKET_EVENT_DATE_END_META);
 
-$time = null;
 if ($startDatetime && $endDatetime) {
     $startDate = date('d.m.Y', $startDatetime);
     $endDate = date('d.m.Y', $endDatetime);
@@ -37,7 +47,14 @@ $price = wc_price($product->get_price());
             </td>
         </tr>
         <tr>
-            <td colspan="2" class="available-tickets-attribute-cell loading" data-ticket-id="<?= $product->get_id() ?>"></td>
+            <td colspan="2" class="available-tickets-attribute-cell">
+                <?php if ($availableTickets) : ?>
+                    Noch
+                    <span><?= $availableTickets ?></span> <?= $availableTickets === 1 ? 'Platz' : 'Plätze' ?> verfügbar
+                <?php else : ?>
+                    Nicht länger verfügbar
+                <?php endif; ?>
+            </td>
         </tr>
         <tr class="seperator">
             <td colspan="2">
