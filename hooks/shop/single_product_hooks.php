@@ -70,20 +70,17 @@ function short_description(): void
 function origin(): void
 {
     global $post;
-    global $product;
 
-    $origin = get_post_meta($post->ID, 'rehorik_product_origin', true);
+    if (!empty($origin = get_post_meta($post->ID, 'rehorik_product_origin', true))) {
+        global $product;
 
-    $weingut = $product->get_attribute('weingut');
-
-    if (!empty($weingut)) {
-        echo sprintf(
-            '<div class="rehorik-product-origin weingut"><h2>Weingut %s</h2>%s</div>',
-            $weingut,
-            apply_filters('the_content', $post->post_excerpt)
-        );
-    } else {
-        if (!empty($origin)) {
+        if (!empty($weingut = $product->get_attribute('weingut'))) {
+            echo sprintf(
+                '<div class="rehorik-product-origin weingut"><h2>Weingut %s</h2>%s</div>',
+                $weingut,
+                apply_filters('the_content', $origin)
+            );
+        } else {
             echo sprintf(
                 '<div class="rehorik-product-origin"><h2>Herkunft</h2><div>%s</div></div>',
                 apply_filters('the_content', $origin)
