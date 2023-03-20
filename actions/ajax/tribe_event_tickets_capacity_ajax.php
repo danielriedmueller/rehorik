@@ -16,17 +16,25 @@ function rehorik_tribe_events_get_ticket_capacity(): void
     }
 
     $resultTexts = [];
-
-    /** @var Tribe__Tickets__Tickets_Handler $tickets_handler */
-    $tickets_handler = tribe( 'tickets.handler' );
-
     foreach ($ticketIds as $ticketId) {
         if (!is_numeric($ticketId)) {
             $handleError();
             return;
         }
 
-        $availableTickets = $tickets_handler->get_ticket_max_purchase($ticketId);
+        $ticket = Tribe__Tickets__Tickets::load_ticket_object($ticketId);
+
+        if (!$ticket) {
+            $handleError();
+            return;
+        }
+
+        if ($ticket->date_is_later()) {
+            $resultTexts[$ticketId] = 'Nicht länger verfügbar';
+            continue;
+        }
+
+        $availableTickets = $ticket->available();
 
         if ($availableTickets && $availableTickets > 0) {
             $resultTexts[$ticketId] = sprintf(
