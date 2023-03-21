@@ -147,18 +147,13 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
     wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
 
-    wp_enqueue_script('cart-ajax', $assetsDir . 'js/cart_ajax.js', ['jquery'], 1, true);
-    wp_localize_script('cart-ajax', 'settings', [
+    wp_enqueue_script('ajax', $assetsDir . 'js/ajax.js', ['jquery'], 1, true);
+    wp_add_inline_script('ajax', 'const settings = ' . json_encode([
         'ajax_url' => admin_url('admin-ajax.php'),
         'add_nonce' => wp_create_nonce('rehorik-add-to-cart'),
         'update_nonce' => wp_create_nonce('rehorik-update-cart'),
-    ]);
-
-    wp_enqueue_script('tribe-event-tickets-capacity-ajax', $assetsDir . 'js/tribe_event_tickets_capacity_ajax.js', ['jquery'], 1, true);
-    wp_localize_script('tribe-event-tickets-capacity-ajax', 'settings', [
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('rehorik-tribe-events-ticket-capacity'),
-    ]);
+        'ticket_capacity_nonce' => wp_create_nonce('rehorik-tribe-events-ticket-capacity'),
+    ]), 'before');
 
     if (is_front_page()) {
         wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', ['jquery'], 1, true);
