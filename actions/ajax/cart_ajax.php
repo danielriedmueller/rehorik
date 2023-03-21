@@ -11,7 +11,7 @@ function rehorik_add_to_cart(): void
     $product = wc_get_product($product_id);
     $product_url = apply_filters('woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id);
 
-    if (!$product || !wp_verify_nonce($_POST['nonce'], 'rehorik-add-to-cart')) {
+    if (!$product) {
         handle_error($product_url);
         return;
     }
@@ -58,7 +58,7 @@ function rehorik_update_cart(): void
     $key = sanitize_text_field($_POST['cart_item_key']);
     $value = intval(sanitize_text_field($_POST['cart_item_value']));
 
-    if (!$key || $value < 0 || !wp_verify_nonce($_POST['nonce'], 'rehorik-update-cart') || !WC()->cart->get_cart_item($key)) {
+    if (!$key || $value < 0 || !WC()->cart->get_cart_item($key)) {
         handle_error($_SERVER['HTTP_REFERER']);
         return;
     }
