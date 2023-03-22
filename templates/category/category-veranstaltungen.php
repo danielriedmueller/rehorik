@@ -29,8 +29,8 @@ $eventInfos = [
     ],
     'kaffee-workshops' => [
         'img' => 'header-veranstaltungen-kaffee',
-        'claim' => 'FÜR KAFFEEINTERESSIERTE UND EIGENTLICH ALLE',
-        'intro' => 'Was ist eigentlich Cupping? Wie kannst Du Deine liebste Zubereitungsmethode noch verbessern? Und welche Wege hat Dein Kaffee hinter sich gelegt, bis er in Deiner Tasse gelandet ist? Dieser Kaffeeworkshop ist wie ein Kaffeeklatsch unter Freunden: Wir schlagen Dir jeden Monat ein Thema vor und Du entscheidest, was Dich interessiert. Sensoriktraining, Filterkaffee-Skills verbessern, Latte-Art-Crashkurs? Hier gibt‘s Antworten auf alle Deine Fragen.',
+        'claim' => 'EIN RAUM. TAUSEND IDEEN.',
+        'intro' => 'Wir blicken hinter die Bohne und tief in unsere Tassen. Vom ersten Samen bis zum finalen Schluck erleben wir Kaffee neu. In 60 – 90 Minuten schärfen wir unsere Sinne, stillen unsere Neugierde und blicken weit über den Tassenrand hinaus. Hier erfährst Du alles, was Du über Kaffee wissen wolltest. Hand’s on und ran an die Bohne!',
     ],
     'latte-art' => [
         'img' => 'header-veranstaltungen-kaffee',

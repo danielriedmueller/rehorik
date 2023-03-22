@@ -17,7 +17,6 @@
 
 defined('ABSPATH') || exit;
 ?>
-    <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
 <div class="thank-you">
     <div class="container">
         <h1>Danke!</h1>
