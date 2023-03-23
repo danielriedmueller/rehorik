@@ -32,9 +32,7 @@ add_action('rehorik_product_not_selling_notice', 'not_selling_notice', 1); // No
 
 add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
 
-add_action('rehorik_product_information', 'description', 1); // Description
-add_action('rehorik_product_information', 'title', 1); // Title
-add_action('rehorik_product_information', 'single_product_attributes', 1); // Attributes
+add_action('rehorik_product_information', 'product_information', 1); // Information
 
 add_action('rehorik_product_preperation_recommendation', 'preperation_recommendation', 1); // Preperation Recommendation
 
@@ -44,14 +42,9 @@ add_action('rehorik_product_processing', 'processing', 1); // Description
 
 add_action('woocommerce_after_single_product', 'woocommerce_output_related_products', 10);
 
-function description(): void
+function product_information(): void
 {
-    global $product;
-
-    echo sprintf(
-        '<div class="rehorik-product-description">%s</div>',
-        apply_filters('the_content', $product->get_description())
-    );
+    get_template_part('templates/product/information');
 }
 
 function short_description(): void
@@ -132,19 +125,6 @@ function preperation_recommendation(): void
     global $product;
 
     get_template_part('templates/product/preperation-recommendation', null, ['product' => $product]);
-}
-
-function title(): void
-{
-    the_title('<h2>', '</h2>');
-}
-
-function single_product_attributes(): void
-{
-    global $product;
-
-    // Manipulated by woocommerce_display_product_attributes filter
-    wc_display_product_attributes($product);
 }
 
 function product_video(): void
