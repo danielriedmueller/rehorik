@@ -12,7 +12,9 @@ $location = tribe_get_venue($event->ID);
 $startDatetime = $product->get_meta(TICKET_EVENT_DATE_START_META);
 $endDatetime = $product->get_meta(TICKET_EVENT_DATE_END_META);
 
+$date = null;
 $time = null;
+$isDateRange = false;
 if ($startDatetime && $endDatetime) {
     $startDate = date('d.m.Y', $startDatetime);
     $endDate = date('d.m.Y', $endDatetime);
@@ -21,7 +23,9 @@ if ($startDatetime && $endDatetime) {
         $date = $startDate;
         $time = sprintf('%s - %s', date('H:i', $startDatetime), date('H:i', $endDatetime));
     } else {
-        $date = sprintf('%s - %s', date(DATE_FORMAT, $startDatetime), date(DATE_FORMAT, $endDatetime));
+        $isDateRange = true;
+        $date = date(DATE_FORMAT, $startDatetime);
+        $time = date(DATE_FORMAT, $endDatetime);
     }
 }
 
@@ -46,13 +50,13 @@ $price = wc_price($product->get_price());
         </tr>
         <?php if ($date) : ?>
             <tr>
-                <td>DATUM</td>
+                <td><?= $isDateRange ? "Von" : "Datum" ?></td>
                 <td class="rehorik-product-attribute-list"><?= $date ?></td>
             </tr>
         <?php endif; ?>
         <?php if ($time) : ?>
             <tr>
-                <td>UHRZEIT</td>
+                <td><?= $isDateRange ? "Bis" : "Uhrzeit" ?></td>
                 <td class="rehorik-product-attribute-list"><?= $time ?></td>
             </tr>
         <?php endif; ?>

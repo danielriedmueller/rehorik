@@ -11,7 +11,7 @@
       padding-bottom: $spacing;
     }
 
-    div.rehorik-product-origin-country {
+    div.rehorik-product-additional-information-hint {
       text-transform: uppercase;
       font-size: $font-size-small;
       background-color: transparent;
@@ -58,7 +58,7 @@
     justify-content: space-between;
 
     .rehorik-product-attributes {
-      padding: 0 $spacing-s $spacing-s $spacing-s;
+      padding: 0 $spacing-s $spacing-xxs $spacing-s;
 
       flex-grow: 1;
       display: flex;
@@ -85,6 +85,7 @@
           font-size: $font-size-small;
           vertical-align: top;
           font-family: $font-family-bold;
+          white-space: nowrap;
         }
 
         tr td:first-child:not([colspan="2"]) {
