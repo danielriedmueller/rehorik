@@ -72,7 +72,15 @@ function origin(): void
             );
         } else {
             echo sprintf(
-                '<div class="rehorik-product-origin"><h2>Herkunft</h2><div>%s</div></div>',
+                '<div class="rehorik-product-origin">
+                            <h2>Herkunft</h2>
+                            <div>%s</div>
+                            <div class="origin-images">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>',
                 apply_filters('the_content', $origin)
             );
         }

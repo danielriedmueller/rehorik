@@ -1,0 +1,53 @@
+body.rehorik.woocommerce #main-content div.rehorik-product .rehorik-product-textarea-outer.dunkelbraun {
+  padding-bottom: 0;
+
+  .rehorik-product-origin .origin-images {
+    $height: 400px;
+    margin-top: var(--product-view-grid-gap-half);
+    display: grid;
+    gap: var(--product-view-grid-gap-half);
+    grid-template-columns: 1fr 1fr 2fr;
+     > div {
+       height: $height;
+       background-repeat: no-repeat;
+       width: 100%;
+       background-size: cover;
+     }
+
+    >:first-child {
+      background-image: url("../img/product/origin/origin-1-600x400px.webp");
+      background-position: bottom left;
+    }
+
+    >:nth-child(2) {
+      background-image: url("../img/product/origin/origin-2-600x400px.webp");
+      background-position: bottom center;
+    }
+
+    >:last-child {
+      background-image: url("../img/product/origin/origin-3-600x400px.webp");
+      background-position: bottom right;
+    }
+
+    @media all and (max-width: $medium-breakpoint) {
+      grid-template-columns: 1fr 1fr;
+
+      >:last-child {
+        display: none;
+      }
+    }
+
+    @media all and (max-width: $small-breakpoint) {
+      grid-template-columns: 1fr;
+
+      >:nth-child(2) {
+        display: none;
+      }
+
+      >:last-child {
+        display: none;
+      }
+    }
+  }
+
+}
