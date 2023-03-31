@@ -85,7 +85,6 @@
           font-size: $font-size-small;
           vertical-align: top;
           font-family: $font-family-bold;
-          white-space: nowrap;
         }
 
         tr td:first-child:not([colspan="2"]) {
@@ -97,9 +96,8 @@
           text-transform: none;
           width: 118px;
           font-family: $font-family-body;
-          padding: 0 0 0 $spacing-xxs;
+          padding: 4px 0 0 $spacing-xxs;
           line-height: $line-height-small;
-          padding-top: 4px;
         }
 
         td.rehorik-product-attribute-list ul {
