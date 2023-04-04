@@ -36,8 +36,8 @@ get_template_part('templates/header/head', null, [
                                     <td>09:00 - 18:00</td>
                                 </tr>
                                 <tr>
-                                    <td>SA. 25.03.</td>
-                                    <td>09:00 - 16:00</td>
+                                    <td>Karfreitag, Ostermontag</td>
+                                    <td>geschlossen</td>
                                 </tr>
                                 </tbody>
                             </table>

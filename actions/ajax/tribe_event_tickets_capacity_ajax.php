@@ -43,7 +43,11 @@ function rehorik_tribe_events_get_ticket_capacity(): void
                 $availableTickets === 1 ? 'Platz' : 'Plätze'
             );
         } else {
-            $resultTexts[$ticketId] = 'Nicht länger verfügbar';
+            if ($ticket->inventory() === -1) {
+                $resultTexts[$ticketId] = 'Unbegrenzt verfügbar';
+            } else {
+                $resultTexts[$ticketId] = 'Nicht länger verfügbar';
+            }
         }
     }
 

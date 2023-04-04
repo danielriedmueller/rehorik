@@ -1,7 +1,10 @@
 <?php
 show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
 
-const BAYERNWERK_COUPON_CODE = 'bayernwerkxmas22';
+const SPECIAL_COUPON_CODES = [
+    'bayernwerkxmas22',
+    'baerwurzquelle23',
+];
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 69;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
@@ -147,18 +150,13 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
     wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
 
-    wp_enqueue_script('cart-ajax', $assetsDir . 'js/cart_ajax.js', ['jquery'], 1, true);
-    wp_localize_script('cart-ajax', 'settings', [
+    wp_enqueue_script('ajax', $assetsDir . 'js/ajax.js', ['jquery'], 1, true);
+    wp_add_inline_script('ajax', 'const settings = ' . json_encode([
         'ajax_url' => admin_url('admin-ajax.php'),
         'add_nonce' => wp_create_nonce('rehorik-add-to-cart'),
         'update_nonce' => wp_create_nonce('rehorik-update-cart'),
-    ]);
-
-    wp_enqueue_script('tribe-event-tickets-capacity-ajax', $assetsDir . 'js/tribe_event_tickets_capacity_ajax.js', ['jquery'], 1, true);
-    wp_localize_script('tribe-event-tickets-capacity-ajax', 'settings', [
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('rehorik-tribe-events-ticket-capacity'),
-    ]);
+        'ticket_capacity_nonce' => wp_create_nonce('rehorik-tribe-events-ticket-capacity'),
+    ]), 'before');
 
     if (is_front_page()) {
         wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', ['jquery'], 1, true);
