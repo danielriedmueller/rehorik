@@ -67,6 +67,12 @@ add_action('admin_menu', function () {
         <div style="margin-top: 20px">
             <div id="status"></div>
         </div>
+        <div style="margin-top: 20px">
+            <fieldset>
+                <legend>Product CSV Import</legend>
+                <button class="rehorik-admin-action-button" data-action="import_products_csv">Import now</button>
+            </fieldset>
+        </div>
         <?php
     }, null, 3);
 });
