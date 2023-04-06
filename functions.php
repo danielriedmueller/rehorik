@@ -1,9 +1,12 @@
 <?php
 show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
 
-const BAYERNWERK_COUPON_CODE = 'bayernwerkxmas22';
+const SPECIAL_COUPON_CODES = [
+    'bayernwerkxmas22',
+    'baerwurzquelle23',
+];
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
-const FREE_SHIPPING_AMOUNT = 69;
+const FREE_SHIPPING_AMOUNT = 39;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
 const DEFAULT_MAX_PRODUCT_STOCK_INPUT = 100;
 const PRODUCTS_PER_PAGE = 200;
