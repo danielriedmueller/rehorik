@@ -5,6 +5,11 @@ require_once('shop/cart_hooks.php');
 require_once('shop/stripe_hooks.php');
 require_once('shop/products_gallery_hooks.php');
 
+/**
+ * @depreacated
+ * Replaced with plugin
+ * Legacy code until all coupons are used or updated
+ */
 function action_woocommerce_checkout_create_order_coupon_item( $item, $code, $coupon, $order ) {
     if ($coupon instanceof \WC_Coupon) {
         if ($coupon->get_discount_type() === 'fixed_cart' && !in_array($coupon->get_code(),SPECIAL_COUPON_CODES)) {
