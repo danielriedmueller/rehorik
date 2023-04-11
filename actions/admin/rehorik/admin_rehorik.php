@@ -65,13 +65,19 @@ add_action('admin_menu', function () {
             </fieldset>
         </div>
         <div style="margin-top: 20px">
-            <div id="status"></div>
+            <h3>Product CSV Import</h3>
+            <fieldset>
+                <?php
+                if (is_plugin_active('dr-csv-product-import/import.php'))  {
+                    echo do_shortcode( '[dr_csv_product_importer]' );
+                } else {
+                    echo 'Plugin dr-csv-product-import not active';
+                }
+                ?>
+            </fieldset>
         </div>
         <div style="margin-top: 20px">
-            <fieldset>
-                <legend>Product CSV Import</legend>
-                <button class="rehorik-admin-action-button" data-action="import_products_csv">Import now</button>
-            </fieldset>
+            <div id="status"></div>
         </div>
         <?php
     }, null, 3);
