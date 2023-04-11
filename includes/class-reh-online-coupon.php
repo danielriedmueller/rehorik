@@ -15,7 +15,7 @@ class Reh_Online_Coupon
         $coupon->set_code($code);
         $coupon->set_amount($value);
         $coupon->set_discount_type(
-            in_array('residual_value', wc_get_coupon_types()) ? 'residual_value' : 'fixed_cart'
+            in_array('residual_value', array_keys(wc_get_coupon_types())) ? 'residual_value' : 'fixed_cart'
         );
         $coupon->set_description('Erstellt durch Bestellung #' . $orderNumber);
 
