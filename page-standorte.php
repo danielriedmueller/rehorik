@@ -167,6 +167,7 @@ get_template_part('templates/header/head', null, [
         </div>
     </div>
 </div>
+<div id="locations-map"></div>
 <div id="locations-description">
     <div id="stammhaus">
         <div>
@@ -188,7 +189,7 @@ get_template_part('templates/header/head', null, [
             </div>
             <div class="location-img">
                 <img alt="Stammhaus"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/stammhaus-1000x900px.jpg' ?>">
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/stammhaus-1000x900px.webp' ?>">
             </div>
         </div>
     </div>
@@ -214,7 +215,7 @@ get_template_part('templates/header/head', null, [
             </div>
             <div class="location-img">
                 <img alt="Cafe 190"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/190-1000x746px.jpg' ?>">
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/190-1000x746px.webp' ?>">
             </div>
         </div>
     </div>
@@ -250,7 +251,7 @@ get_template_part('templates/header/head', null, [
             </div>
             <div class="location-img">
                 <img alt="Kaffeeladen"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/kaffeeladen-1000x642px.jpg' ?>">
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/kaffeeladen-1000x642px.webp' ?>">
             </div>
         </div>
     </div>
@@ -287,7 +288,7 @@ get_template_part('templates/header/head', null, [
             </div>
             <div class="location-img">
                 <img alt="Weinkeller"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/weinkeller-1000x642px.jpg' ?>">
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/weinkeller-1000x642px.webp' ?>">
             </div>
         </div>
     </div>
@@ -329,7 +330,7 @@ get_template_part('templates/header/head', null, [
             </div>
             <div class="location-img">
                 <img alt="Deliladen"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/deli-1000x900px.jpg' ?>">
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/deli-1000x900px.webp' ?>">
             </div>
         </div>
     </div>
@@ -362,7 +363,7 @@ get_template_part('templates/header/head', null, [
                 <div>Telefon 0941 / 297 99 996</div>
             </div>
             <div class="location-img">
-                <img alt="DEZ" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/dez-1000x766px.jpg' ?>">
+                <img alt="DEZ" src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/dez-1000x766px.webp' ?>">
             </div>
         </div>
     </div>
@@ -399,7 +400,7 @@ get_template_part('templates/header/head', null, [
             </div>
             <div class="location-img">
                 <img alt="Gesandtenstraße"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/gesandtenstrass-1000x809px.jpg' ?>">
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/gesandtenstrass-1000x809px.webp' ?>">
             </div>
         </div>
     </div>
@@ -437,7 +438,7 @@ get_template_part('templates/header/head', null, [
             </div>
             <div class="location-img">
                 <img alt="Kaffeehaus"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/straubinger-1000x766px.jpg' ?>">
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/standorte/straubinger-1000x766px.webp' ?>">
             </div>
         </div>
     </div>
