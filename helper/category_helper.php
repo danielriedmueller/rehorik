@@ -1,5 +1,5 @@
 <?php
-function getCategoryLink(string $slug): string
+function getCategoryLink($slug): string
 {
     $category = get_term_link($slug, 'product_cat');
 
