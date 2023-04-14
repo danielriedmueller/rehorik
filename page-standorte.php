@@ -1,11 +1,16 @@
 <?php
+if (!PLUGINS_ACTIVE) {
+    echo 'Plugins not active';
+    return;
+}
+
 get_template_part('templates/header/head', null, [
     'slider' => [
         [
             'claim' => 'Überall unterwegs',
             'img' => 'header-standorte',
             'buttons' => [
-                get_term_link(TICKET_CATEGORY_SLUG, 'product_cat') => 'Alle Events in unseren Standorten',
+                getCategoryLink(TICKET_CATEGORY_SLUG) => 'Alle Events in unseren Standorten',
             ],
         ],
     ],

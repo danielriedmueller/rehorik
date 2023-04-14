@@ -115,25 +115,30 @@ $priority = 1000;
 
 $baseDir = get_stylesheet_directory();
 
-require_once($baseDir . '/includes/class-reh-pdf-creator.php');
-require_once($baseDir . '/includes/class-reh-online-coupon.php');
-require_once($baseDir . '/includes/class-reh-api-products.php');
-require_once($baseDir . '/includes/class-reh-mini-cart.php');
-require_once($baseDir . '/includes/class-reh-product-feed.php');
-require_once($baseDir . '/helper/category_helper.php');
-require_once($baseDir . '/helper/shipping_helper.php');
-require_once($baseDir . '/helper/woocommerce_functions.php');
-require_once($baseDir . '/hooks/woocommerce.php');
-require_once($baseDir . '/filter/shop.php');
-require_once($baseDir . '/filter/categories.php');
-require_once($baseDir . '/filter/product_view.php');
-require_once($baseDir . '/filter/sitemap.php');
-require_once($baseDir . '/filter/payment_gateways.php');
-require_once($baseDir . '/filter/order_completed_email.php');
-require_once($baseDir . '/actions/woocommerce.php');
-require_once($baseDir . '/actions/rehorik.php');
-require_once($baseDir . '/actions/events.php');
-require_once($baseDir . '/actions/api/endpoints.php');
+// Theme depends on woocommerce
+define('PLUGINS_ACTIVE', in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins'))));
+
+if (PLUGINS_ACTIVE) {
+    require_once($baseDir . '/includes/class-reh-pdf-creator.php');
+    require_once($baseDir . '/includes/class-reh-online-coupon.php');
+    require_once($baseDir . '/includes/class-reh-api-products.php');
+    require_once($baseDir . '/includes/class-reh-mini-cart.php');
+    require_once($baseDir . '/includes/class-reh-product-feed.php');
+    require_once($baseDir . '/helper/category_helper.php');
+    require_once($baseDir . '/helper/shipping_helper.php');
+    require_once($baseDir . '/helper/woocommerce_functions.php');
+    require_once($baseDir . '/hooks/woocommerce.php');
+    require_once($baseDir . '/filter/shop.php');
+    require_once($baseDir . '/filter/categories.php');
+    require_once($baseDir . '/filter/product_view.php');
+    require_once($baseDir . '/filter/sitemap.php');
+    require_once($baseDir . '/filter/payment_gateways.php');
+    require_once($baseDir . '/filter/order_completed_email.php');
+    require_once($baseDir . '/actions/woocommerce.php');
+    require_once($baseDir . '/actions/rehorik.php');
+    require_once($baseDir . '/actions/events.php');
+    require_once($baseDir . '/actions/api/endpoints.php');
+}
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
@@ -152,11 +157,11 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_script('ajax', $assetsDir . 'js/ajax.js', ['jquery'], 1, true);
     wp_add_inline_script('ajax', 'const settings = ' . json_encode([
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'add_nonce' => wp_create_nonce('rehorik-add-to-cart'),
-        'update_nonce' => wp_create_nonce('rehorik-update-cart'),
-        'ticket_capacity_nonce' => wp_create_nonce('rehorik-tribe-events-ticket-capacity'),
-    ]), 'before');
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'add_nonce' => wp_create_nonce('rehorik-add-to-cart'),
+            'update_nonce' => wp_create_nonce('rehorik-update-cart'),
+            'ticket_capacity_nonce' => wp_create_nonce('rehorik-tribe-events-ticket-capacity'),
+        ]), 'before');
 
     if (is_front_page()) {
         wp_enqueue_script('orderbird-chooser', $assetsDir . 'js/orderbird_chooser.js', ['jquery'], 1, true);

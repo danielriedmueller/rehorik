@@ -1,4 +1,15 @@
 <?php
+function getCategoryLink(string $slug): string
+{
+    $category = get_term_link($slug, 'product_cat');
+
+    if ($category->has_errors()) {
+        return '/';
+    }
+
+    return $category;
+}
+
 /**
  * Checks if category page belongs to category
  *
@@ -124,6 +135,8 @@ function getShopFrontPageCategories(): array
         'hide_empty' => 0,
         'taxonomy' => 'product_cat'
     ]);
+
+    if (empty($categories)) return [];
 
     $keys = array_column($categories, 'slug');
 

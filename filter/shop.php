@@ -3,10 +3,8 @@
  * Adds class to body classes for shop page only.
  */
 add_filter('body_class', function ($classes) {
-    if (function_exists('is_shop')) {
-        if (is_shop()) {
-            return array_merge($classes, array('shop'));
-        }
+    if (is_shop()) {
+        return array_merge($classes, array('shop'));
     }
 
     return $classes;
