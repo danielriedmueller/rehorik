@@ -3,7 +3,7 @@ function getCategoryLink(string $slug): string
 {
     $category = get_term_link($slug, 'product_cat');
 
-    if ($category->has_errors()) {
+    if (is_wp_error($category)) {
         return '/';
     }
 
