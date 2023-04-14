@@ -5,8 +5,7 @@ get_template_part('templates/header/head', null, [
             'claim' => 'Überall unterwegs',
             'img' => 'header-standorte',
             'buttons' => [
-                get_term_link(get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat'),
-                    'product_cat') => 'Alle Events in unseren Standorten',
+                get_term_link(TICKET_CATEGORY_SLUG, 'product_cat') => 'Alle Events in unseren Standorten',
             ],
         ],
     ],

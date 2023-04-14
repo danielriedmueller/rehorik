@@ -12,8 +12,7 @@ get_template_part('templates/header/head', null, ['slider' => [
         'claim' => 'Kaffeerösterei seit 1928',
         'img'=> 'startseite-header-kaffee',
         'buttons' => [
-            get_term_link(get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'),
-                'product_cat') => 'Zum Kaffee'
+            get_term_link(COFFEE_CATEGORY_SLUG, 'product_cat') => 'Zum Kaffee'
         ]
     ]
 ]]);
