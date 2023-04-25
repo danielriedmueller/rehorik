@@ -1,0 +1,38 @@
+#vorhang-auf {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+      "news news"
+      "lets-talk-coffee coffee-knowledge"
+;
+  gap: 0;
+
+  > div {
+    padding: $spacing-l;
+  }
+
+  .news {
+    grid-area: news;
+    background-color: $anthrazit;
+    color: #fff;
+  }
+
+  .coffee-knowledge {
+    grid-area: coffee-knowledge;
+    background-color: $hellbraun;
+  }
+
+  .lets-talk-coffee {
+    grid-area: lets-talk-coffee;
+    background-color: $cappucino;
+  }
+
+  .vorhang-auf-post {
+    padding-top: $spacing;
+  }
+
+  .vorhang-auf-post:not(:last-child) {
+    padding-bottom: $spacing;
+    border-bottom: 1px solid #fff;
+  }
+}

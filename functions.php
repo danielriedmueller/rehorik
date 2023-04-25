@@ -21,7 +21,7 @@ const MENU_190 = '/speisekarte/Speisekarte190.pdf';
 const MENU_STRAUBINGER = '/speisekarte/SpeisekarteStraubinger.pdf';
 const INGREDIENT_AND_NUTRITION_INFORMATION = '/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe_2022.pdf';
 
-// Categories
+// Product Categories
 const COFFEE_CATEGORY_SLUG = 'kaffee';
 const WINE_CATEGORY_SLUG = 'wein';
 const SPIRITS_CATEGORY_SLUG = 'spirits';
@@ -52,6 +52,11 @@ const HIDE_CATEGORIES = [
     746, // 'delikatessen-onlineshop'
     513, // 'kaese-wurst'
 ];
+
+// Post Categories
+const NEWS_CATEGORY_SLUG = 'news';
+const LETS_TALK_COFFEE_CATEGORY_SLUG = 'lets-talk-coffee';
+const COFFEE_KNOWLEDGE_CATEGORY_SLUG = 'kaffeewissen';
 
 // Attributes
 const STRENGTH_ATTRIBUTE_SLUG = 'pa_staerke';
