@@ -1,13 +1,13 @@
 <?php
 
-function createPageTitle($suffix)
+function createPageTitle(): string
 {
-    $suffix = " - " . $suffix;
+
+    $suffix = " - " . get_bloginfo('name');
 
     if (is_product_category()) {
         return single_cat_title() . $suffix;
     }
-
 
     if (is_shop()) {
         return "Shop" . $suffix;
@@ -21,6 +21,14 @@ function createPageTitle($suffix)
 
     if (is_404()) {
         return "404" . $suffix;
+    }
+
+    if (is_category()) {
+        return single_cat_title() . $suffix;
+    }
+
+    if (empty(single_post_title())) {
+        return $suffix;
     }
 
     return single_post_title() . $suffix;
