@@ -1,9 +1,8 @@
 <?php
-
 /*
  * Transforms YouTube Video
  */
-function validateVideo($video)
+function validateVideo(string $video): string
 {
     /*
      * from: https://www.youtube.com/watch?v=RdGTPwIeOu8

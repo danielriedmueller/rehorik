@@ -15,9 +15,14 @@
  * @version     3.3.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+    exit;
 }
 
+// Show only on shop or category page
+if (is_shop() || is_product_category()) {
+    get_template_part('templates/loop/subcategories_chooser');
+    echo '<button id="product-filter-button">Filtern & Sortieren</button>';
+}
 ?>
 <ul class="rehorik-products products">

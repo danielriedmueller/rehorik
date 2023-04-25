@@ -1,0 +1,148 @@
+#page-container ul.products.rehorik-products {
+  li.product.rehorik-product {
+    overflow: hidden;
+    text-align: center;
+    width: $product-gallery-width;
+    height: $product-height;
+    border-radius: $border-radius;
+    margin: 0;
+
+    @media all and (max-width: $small-breakpoint) {
+      padding-bottom: $spacing;
+    }
+
+    div.rehorik-product-additional-information-hint {
+      text-transform: uppercase;
+      font-size: $font-size-small;
+      background-color: transparent;
+      font-family: $font-family-body;
+      padding: 0 $spacing-xs;
+    }
+
+    .onsale {
+      background: transparent url("../img/green-texture.png") repeat left top !important;
+      border-radius: $border-radius;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      text-transform: uppercase;
+      font-size: $font-size;
+      padding: $spacing-xs;
+      line-height: 0;
+      right: 0;
+      top: $spacing-xs;
+      margin: 0;
+      min-height: 0;
+      min-width: 0;
+    }
+
+    a {
+      img {
+        margin: 0 0 $spacing-xxs 0;
+        width: $product-gallery-width;
+        height: auto;
+        object-fit: cover;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      h2 {
+        font-size: $font-size-large;
+        padding: 0 $spacing-xs;
+        margin: 0;
+        word-break: break-word;
+      }
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .rehorik-product-attributes {
+      padding: 0 $spacing-s $spacing-xxs $spacing-s;
+
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      .rehorik-product-min-price {
+        flex-grow: 1;
+        font-size: $font-size-small;
+        font-family: $font-family-bold;
+      }
+
+      table {
+        width: 100%;
+
+        tr {
+          margin: 0;
+        }
+
+        tr td {
+          text-align: left;
+          padding: 0;
+          text-transform: uppercase;
+          font-size: $font-size-small;
+          vertical-align: top;
+          font-family: $font-family-bold;
+        }
+
+        tr td:first-child:not([colspan="2"]) {
+          text-align: right;
+        }
+
+        td.rehorik-product-attribute-list, td.rehorik-product-gift-content-list {
+          font-size: $font-size-small;
+          text-transform: none;
+          width: 118px;
+          font-family: $font-family-body;
+          padding: 4px 0 0 $spacing-xxs;
+          line-height: $line-height-small;
+        }
+
+        td.rehorik-product-attribute-list ul {
+          text-align: left;
+          padding: 0;
+          font-size: $font-size-small;
+        }
+
+        td.available-tickets-attribute-cell {
+          height: 18px;
+          text-align: center;
+          span {
+            color: $beigegold;
+          }
+
+          &.loading {
+            &::after {
+              animation: spin 2s linear infinite;
+              content: '';
+              display: block;
+              margin: auto;
+              background: transparent url("../img/product/strength_filled.svg") no-repeat center center;
+              background-size: 12px;
+              width: 12px;
+              height: 18px;
+            }
+          }
+        }
+      }
+
+      .rehorik-product-ausbau {
+        margin-top: $spacing-s;
+        text-transform: uppercase;
+        font-size: $font-size-small;
+        line-height: $font-size-small;
+        font-family: $font-family-body;
+      }
+    }
+  }
+}
+
+.woocommerce .products ul, .woocommerce ul.products {
+  margin: 0;
+}
+
+.related.products .rehorik-products.products {
+  justify-content: center;
+}

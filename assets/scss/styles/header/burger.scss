@@ -1,0 +1,62 @@
+@media all and (min-width: $medium-breakpoint + 1) {
+  header.rehorik-header {
+    .hamburger-icon,
+    input#burger-button {
+      display: none;
+    }
+  }
+}
+
+// Mobile
+@media all and (max-width: $medium-breakpoint) {
+  header.rehorik-header {
+    height: $top-bar-height;
+  }
+
+  body.rehorik:not(.has-slider) {
+    #page-container {
+      padding-top: $top-bar-height;
+    }
+
+    header.rehorik-header {
+      background-color: $weinrot;
+    }
+  }
+
+  header.rehorik-header {
+    .hamburger-icon,
+    input#burger-button {
+      position: absolute;
+      top: $mobile-space-to-top;
+      right: var(--section-spacing-left-right);
+      padding: 0;
+      margin: 0;
+      width: $icon-size;
+      height: $icon-size;
+    }
+
+    .hamburger-icon {
+      background: transparent url("../img/menu/hamburger-icon.svg") no-repeat center center;
+      background-size: $icon-size;
+      z-index: 10;
+    }
+
+    #rehorik-menu {
+      opacity: 0;
+      transform: translateX(100%);
+      transition: transform var(--animation-time), opacity var(--animation-time);
+      pointer-events: none;
+    }
+
+    input#burger-button {
+      opacity: 0;
+      z-index: 20;
+
+      &:checked ~ #rehorik-menu {
+        pointer-events: all;
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}

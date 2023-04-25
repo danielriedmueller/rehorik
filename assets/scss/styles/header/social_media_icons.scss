@@ -1,0 +1,191 @@
+$element-height: 42px;
+
+#rehorik-social-media-icons {
+  position: absolute;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 13;
+
+  .rehorik-logo {
+    display: none;
+  }
+}
+
+@mixin white-with-background {
+  background: rgba(255, 255, 255, $opacity) none no-repeat center center;
+  border-bottom-right-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  padding: $spacing-xxs $spacing-xs $spacing-xxs $spacing;
+
+  .fb {
+    background-image: url("../img/svg/facebook.svg");
+
+    &:hover {
+      background-image: url("../img/svg/facebook_white.svg");
+    }
+  }
+
+  .yt {
+    background-image: url("../img/svg/youtube.svg");
+
+    &:hover {
+      background-image: url("../img/svg/youtube_white.svg");
+    }
+  }
+
+  .instagram {
+    background-image: url("../img/svg/instagram.svg");
+
+    &:hover {
+      background-image: url("../img/svg/instagram_white.svg");
+    }
+  }
+}
+
+@mixin white-with-background-reversed {
+  background: rgba(255, 255, 255, $opacity) none no-repeat center center;
+  border-bottom-left-radius: $border-radius;
+  border-top-left-radius: $border-radius;
+  padding: $spacing-xxs var(--section-spacing-left-right) $spacing-xxs $spacing-xs;
+
+  .fb {
+    background-image: url("../img/svg/facebook.svg");
+
+    &:hover {
+      background-image: url("../img/svg/facebook_white.svg");
+    }
+  }
+
+  .yt {
+    background-image: url("../img/svg/youtube.svg");
+
+    &:hover {
+      background-image: url("../img/svg/youtube_white.svg");
+    }
+  }
+
+  .instagram {
+    background-image: url("../img/svg/instagram.svg");
+
+    &:hover {
+      background-image: url("../img/svg/instagram_white.svg");
+    }
+  }
+}
+
+@mixin gold-without-background {
+  background: transparent none no-repeat center center;
+
+  .fb {
+    background-image: url("../img/svg/facebook_gold.svg");
+
+    &:hover {
+      background-image: url("../img/svg/facebook_white.svg");
+    }
+  }
+
+  .yt {
+    background-image: url("../img/svg/youtube_gold.svg");
+
+    &:hover {
+      background-image: url("../img/svg/youtube_white.svg");
+    }
+  }
+
+  .instagram {
+    background-image: url("../img/svg/instagram_gold.svg");
+
+    &:hover {
+      background-image: url("../img/svg/instagram_white.svg");
+    }
+  }
+}
+
+@mixin icon-size($size, $spacing) {
+  .fb, .yt, .instagram {
+    flex: 0 0 $size;
+    width: $size;
+    height: $size;
+    background-size: $size;
+
+    &:not(:last-child) {
+      margin: 0 $spacing 0 0;
+    }
+  }
+}
+
+#rehorik-social-media-icons {
+  display: none;
+}
+
+// mobile
+@media all and (max-width: $medium-breakpoint) {
+  #rehorik-menu #rehorik-social-media-icons {
+    @include white-with-background-reversed;
+    @include icon-size($icon-size, $spacing-s);
+
+    $height: 36px;
+    display: flex;
+    right: 0;
+    width: auto;
+    height: $height;
+    top: $mobile-space-to-top + $logo-size-small - $height;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+@media all and (min-width: $medium-breakpoint + 1) {
+  // desktop without slider
+  body:not(.has-slider) header.rehorik-header #rehorik-social-media-icons {
+    @include gold-without-background;
+    @include icon-size($spacing, $spacing-xs);
+
+    display: flex;
+    left: 0;
+    align-items: center;
+    height: $menu-height;
+    top: $top-bar-height;
+    width: $social-media-container-width;
+    padding: 0 $spacing-xs 0 $spacing;
+
+    @media all and (max-width: 1400px) {
+      display: none;
+    }
+  }
+
+  // desktop with slider
+  body.has-slider {
+    #rehorik-social-media-icons {
+      @include white-with-background;
+      @include icon-size($spacing, $spacing-xs);
+
+      display: flex;
+      left: 0;
+      top: $menu-height + $top-bar-height + $top-bar-height + $logo-size - $element-height - $spacing-xxs;
+
+      &.scrolled {
+        display: none;
+      }
+    }
+
+    header.rehorik-header #rehorik-social-media-icons {
+      display: none;
+
+      &.scrolled {
+        @include gold-without-background;
+
+        display: flex;
+        align-items: center;
+        height: $menu-height;
+        left: 0;
+        top: $top-bar-height;
+        width: $social-media-container-width;
+
+        @media all and (max-width: 1400px) {
+          display: none;
+        }
+      }
+    }
+  }
+}

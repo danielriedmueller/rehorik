@@ -1,4 +1,15 @@
 <?php
+function getCategoryLink($slug): string
+{
+    $category = get_term_link($slug, 'product_cat');
+
+    if (is_wp_error($category)) {
+        return '/';
+    }
+
+    return $category;
+}
+
 /**
  * Checks if category page belongs to category
  *
@@ -125,12 +136,12 @@ function getShopFrontPageCategories(): array
         'taxonomy' => 'product_cat'
     ]);
 
+    if (empty($categories)) return [];
+
     $keys = array_column($categories, 'slug');
 
-    // Frontpage categories
     return [
         $categories[array_search(MACHINE_CATEGORY_SLUG, $keys)],
-        $categories[array_search(GIFTS_CATEGORY_SLUG, $keys)],
         $categories[array_search(COUPON_CATEGORY_SLUG, $keys)],
         $categories[array_search(WINE_CATEGORY_SLUG, $keys)],
         $categories[array_search(SPIRITS_CATEGORY_SLUG, $keys)],

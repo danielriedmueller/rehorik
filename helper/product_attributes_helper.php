@@ -1,8 +1,23 @@
 <?php
 require_once('product_sigil_helper.php');
 
-function getOriginCountry(WC_Product $product): string
+function getAdditionalInformationHint(WC_Product $product, $isEventTicket = false): string
 {
+    if ($isEventTicket) {
+        if ($terms = get_the_terms($product->get_id(), 'product_cat')) {
+            $terms = array_filter($terms, function ($term) {
+                // Filter out parent categories
+                return $term->parent !== 0;
+            });
+
+            return implode(' - ', array_map(function (WP_Term $term) {
+                return $term->name;
+            } ,$terms));
+        }
+
+        return '';
+    }
+
     $region = $product->get_attribute(REGION_ATTRIBUTE_SLUG);
 
     $attributeArr = getAttributeArray($product, ORIGIN_COUNTRY_ATTRIBUTE_SLUG);

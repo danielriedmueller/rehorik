@@ -1,0 +1,70 @@
+@media all and (max-width: $medium-breakpoint) {
+  body.rehorik #main-content {
+    #sidebar {
+      opacity: 0;
+      transform: translateX(100vw);
+      pointer-events: none;
+      transition: transform var(--animation-time), opacity var(--animation-time);
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      overflow: scroll;
+      background: #fff none;
+      margin: 0;
+      padding: $top-bar-height var(--section-spacing-left-right) $spacing-l var(--section-spacing-left-right);
+      z-index: 12;
+
+      &.show {
+        pointer-events: all;
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      button#product-filter-close-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+        height: $top-bar-height;
+        flex: 0 0 $top-bar-height;
+        padding-left: $spacing * 2;
+        text-align: left;
+        background: $weinrot url("../img/pfeile/pfeil-rot.svg") no-repeat left $spacing center;
+        background-size: 10px;
+        color: $font-color-accent;
+        font-size: $font-size;
+        font-family: $font-family-bold;
+        text-transform: uppercase;
+        line-height: 0;
+      }
+
+      .wpfMainWrapper {
+        margin: 0;
+        padding: 0;
+
+        .wpfFilterButtons {
+          margin-top: $spacing-l;
+          text-align: right;
+        }
+      }
+    }
+
+    button#product-filter-close-button,
+    button#product-filter-button {
+      display: block;
+    }
+
+    button#product-filter-button {
+      margin: 0 auto $spacing-l auto;
+      width: $product-gallery-width;
+    }
+  }
+}
+
+button#product-filter-close-button,
+button#product-filter-button {
+  display: none;
+}

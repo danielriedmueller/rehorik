@@ -18,7 +18,7 @@ button.tribe-events-c-search__button {
   padding: $spacing-xxs;
   border: 1px solid $anthrazit;
   font-weight: normal;
-  font-family: $font-family-headline;
+  font-family: $font-family-bold;
 
   &:hover {
     background-color: $beigegold;
@@ -29,8 +29,8 @@ button.tribe-events-c-search__button {
 
 .rehorik-tribe-event-tickets a.tribe-common-c-btn.tribe-common-c-btn--small,
 .tribe-common-c-btn.tribe-common-c-btn--small.tribe-tickets__registration-submit,
-main#tribe-events .rehorik-tribe-event-tickets button.rehorik-tribe-event-tickets-add-to-cart-button,
-main#tribe-events .rehorik-tribe-event-tickets button.tribe-tickets__tickets-buy,
+#tribe-events .rehorik-tribe-event-tickets button.rehorik-tribe-event-tickets-add-to-cart-button,
+#tribe-events .rehorik-tribe-event-tickets button.tribe-tickets__tickets-buy,
 .tribe-checkout-backlinks a {
   font-family: $font-family-body;
   font-size: $font-size;

@@ -17,19 +17,19 @@
 .tribe-common .tribe-common-h5,
 .tribe-common .tribe-common-h6 {
   font-size: $font-size-large !important;
-  font-family: $font-family-headline;
+  font-family: $font-family-bold;
   color: $font-color-accent;
   padding: 0;
 }
 
 .tribe-common-h7 {
   text-transform: uppercase;
-  font-family: $font-family-headline;
+  font-family: $font-family-bold;
   font-size: $font-size;
   color: $font-color;
 }
 
-main#tribe-events {
+#tribe-events {
   padding: 0;
 
   #tribe-events-content {
@@ -47,7 +47,7 @@ main#tribe-events {
       max-width: unset;
 
       .rehorik-tribe-event-tickets-item .tribe-tickets__tickets-item-content-title {
-        font-family: $font-family-headline;
+        font-family: $font-family-bold;
       }
     }
 

@@ -1,0 +1,60 @@
+body.rehorik.woocommerce #main-content div.rehorik-product {
+  .rehorik-product-textarea-outer {
+    &.hellbraun {
+      background-color: $hellbraun;
+    }
+
+    &.dunkelbraun {
+      background-color: $dunkelbraun;
+    }
+  }
+
+  .rehorik-product-processing,
+  .rehorik-product-origin {
+    &.weingut {
+      padding-bottom: var(--product-view-grid-gap);
+    }
+
+    h2 {
+      grid-area: title;
+
+      text-align: left;
+      color: $font-color;
+      font-size: $font-size-large;
+      margin-bottom: var(--product-view-grid-gap-half);
+    }
+
+    > div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+
+      p {
+        text-align: justify;
+        margin: 0;
+      }
+
+      @media all and (min-width: $medium-breakpoint + 1) {
+        p {
+          // Left paragraphs
+          &:nth-child(2n + 1) {
+            &:not(:empty) {
+              margin: 0 var(--product-view-grid-gap-half) 0 0;
+            }
+          }
+
+          // Right paragraphs
+          &:nth-child(2n) {
+            &:not(:empty) {
+              margin: 0 0 0 var(--product-view-grid-gap-half);
+            }
+          }
+        }
+      }
+
+      @media all and (max-width: $medium-breakpoint) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

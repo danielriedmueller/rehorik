@@ -3,10 +3,8 @@
  * Adds class to body classes for shop page only.
  */
 add_filter('body_class', function ($classes) {
-    if (function_exists('is_shop')) {
-        if (is_shop()) {
-            return array_merge($classes, array('shop'));
-        }
+    if (is_shop()) {
+        return array_merge($classes, array('shop'));
     }
 
     return $classes;
@@ -22,7 +20,7 @@ add_filter('woocommerce_show_page_title', function () {
 /**
  * Displays shipping estimates for WC shipping rates
  */
-add_filter('woocommerce_cart_shipping_method_full_label', function($label) {
+add_filter('woocommerce_cart_shipping_method_full_label', function ($label) {
     return $label . ' ' . getShippingDurationMessage();
 });
 
@@ -32,26 +30,14 @@ add_filter('woocommerce_cart_shipping_method_full_label', function($label) {
  * so on sites with large postmeta tables it is super slow
  * and is rarely useful anymore on any site
  */
-function s9_remove_post_custom_fields_metabox() {
-    foreach ( get_post_types( '', 'names' ) as $post_type ) {
-        remove_meta_box( 'postcustom' , $post_type , 'normal' );
+function s9_remove_post_custom_fields_metabox()
+{
+    foreach (get_post_types('', 'names') as $post_type) {
+        remove_meta_box('postcustom', $post_type, 'normal');
     }
 }
-add_action( 'admin_menu' , 's9_remove_post_custom_fields_metabox' );
 
-/**
- * Add to cart message
- */
-add_filter( 'wc_add_to_cart_message_html', function( $message, $products ) {
-    $url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
-    $count = WC()->cart->get_cart_contents_count();
-    return sprintf(
-        '<div class="rehorik-add-to-cart-message"><span>Es %s <b>%s Artikel</b> in deinem Warenkorb</b></span><span><a href="%s"></a></span></div>',
-        $count === 1 ? 'ist' : 'sind',
-        $count,
-        esc_url($url)
-    );
-}, 10, 2);
+add_action('admin_menu', 's9_remove_post_custom_fields_metabox');
 
 /*
 * Reduce the strength requirement for woocommerce registration password.
@@ -61,6 +47,15 @@ add_filter( 'wc_add_to_cart_message_html', function( $message, $products ) {
 * 2 = Medium
 * 3 = Strong (default)
 */
-add_filter( 'woocommerce_min_password_strength', 'wpglorify_woocommerce_password_filter', 10 );
-function wpglorify_woocommerce_password_filter() {
-    return 2; } //2 represent medium strength password
+add_filter('woocommerce_min_password_strength', 'wpglorify_woocommerce_password_filter', 10);
+function wpglorify_woocommerce_password_filter()
+{
+    return 2;
+} //2 represent medium strength password
+
+/**
+ * Change number of products that are displayed per page (shop page)
+ */
+add_filter('loop_shop_per_page', function ($cols) {
+    return PRODUCTS_PER_PAGE;
+}, 20);

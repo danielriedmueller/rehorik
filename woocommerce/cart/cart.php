@@ -11,8 +11,8 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 7.0.1
+ * @package WooCommerce\Templates
+ * @version 7.4.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -61,9 +61,9 @@ get_template_part('templates/cart-header');
 						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
 						<?php
 						if ( ! $product_permalink ) {
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;' );
+							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
 						} else {
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_title() ), $cart_item, $cart_item_key ) );
+							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
 						}
 
                         do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
@@ -90,6 +90,7 @@ get_template_part('templates/cart-header');
 						} else {
 							$product_quantity = woocommerce_quantity_input(
 								array(
+                                    'classes' => 'ajax-update',
 									'input_name'   => "cart[{$cart_item_key}][qty]",
 									'input_value'  => $cart_item['quantity'],
 									'max_value'    => $_product->get_max_purchase_quantity(),

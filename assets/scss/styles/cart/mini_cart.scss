@@ -1,6 +1,6 @@
 #rehorik-mini-cart {
   opacity: 0;
-  transition: opacity var(--animation-time) linear;
+  transition: opacity var(--animation-time);
   pointer-events: none;
   position: fixed;
   top: 0;
@@ -10,7 +10,7 @@
   z-index: 102;
 
   h2 {
-    font-family: $font-family-headline;
+    font-family: $font-family-bold;
     font-size: $font-size-very-large;
     color: #fff;
     line-height: $line-height-small;
@@ -65,10 +65,10 @@
         bottom: 0;
         right: 0;
         margin: auto;
-        background: transparent url("../img/svg/strength_filled.svg") no-repeat center center;
+        background: transparent url("../img/product/strength_filled.svg") no-repeat center center;
         background-size: 28px;
         width: 28px;
-        height: 40px;
+        height: 41px;
       }
     }
   }

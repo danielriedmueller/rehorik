@@ -1,8 +1,8 @@
 <?php
 
-require_once 'lib/dompdf/autoload.inc.php';
-
-use Dompdf\Dompdf;
+if ( ! defined( 'ABSPATH' ) ) {
+    die( '-1' );
+}
 
 class Reh_Online_Coupon
 {
@@ -14,6 +14,9 @@ class Reh_Online_Coupon
 
         $coupon->set_code($code);
         $coupon->set_amount($value);
+        $coupon->set_discount_type(
+            in_array('residual_value', array_keys(wc_get_coupon_types())) ? 'residual_value' : 'fixed_cart'
+        );
         $coupon->set_description('Erstellt durch Bestellung #' . $orderNumber);
 
         $coupon->save();
@@ -21,6 +24,9 @@ class Reh_Online_Coupon
         return $code;
     }
 
+    /**
+     * @throws Exception
+     */
     public static function createCouponPdf(
         string $code,
         string $price,
@@ -28,37 +34,17 @@ class Reh_Online_Coupon
         int    $serialNumber
     ): ?string
     {
-        $dompdf = new Dompdf([
-            'enable_remote' => true,
-            'dpi' => 300
-        ]);
-        $assetsDir = get_stylesheet_directory_uri() . '/assets/';
-        $dompdf->getFontMetrics()->registerFont(
-            ['family' => 'Cond', 'style' => 'normal', 'weight' => 'normal'],
-            $assetsDir . '/fonts/cond.ttf'
+        $file = 'Rehorik-Online-Coupon-' . date('Ymd') . $serialNumber . '.pdf';
+
+        return Reh_Pdf_Creator::createPdf(
+            $file,
+            '/templates/pdf/coupon-pdf',
+            [
+                'code' => $code,
+                'price' => $price,
+                'name' => $name
+            ]
         );
-        $dompdf->getFontMetrics()->registerFont(
-            ['family' => 'Cond Bold', 'style' => 'normal', 'weight' => 'bold'],
-            $assetsDir . '/fonts/cond-bold.ttf'
-        );
-
-        $filePath = get_temp_dir() . 'Rehorik-Online-Coupon-' . date('Ymd') . $serialNumber . '.pdf';
-
-        ob_start();
-        get_template_part('/templates/online-coupon/coupon-pdf', null, [
-            'code' => $code,
-            'price' => $price,
-            'name' => $name
-        ]);
-        $dompdf->loadHtml(ob_get_clean());
-        $dompdf->setPaper('A4');
-        $dompdf->render();
-
-        if (file_put_contents($filePath, $dompdf->output())) {
-            return $filePath;
-        }
-
-        return null;
     }
 
     private static function generateCouponCode(): string

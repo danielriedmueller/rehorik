@@ -1,5 +1,5 @@
 .rehorik .wpfMainWrapper {
-  $width: 30px;
+  $width: 24px;
   $height: $width * 1.5;
 
   .wpfFilterWrapper {
@@ -49,14 +49,14 @@
       }
 
       &[data-term-slug="#{$i}"] .wpfCheckbox label {
-        background: transparent url("../img/svg/flavour.svg") no-repeat center center;
+        background: transparent url("../img/product/flavour.svg") no-repeat center center;
         background-size: $bgSize + 5;
         width: $bgSize + 5;
         background-position: left bottom;
       }
 
       &[data-term-slug="#{$i}"] .wpfCheckbox input:checked + label {
-        background: transparent url("../img/svg/flavour_filled.svg") no-repeat center center;
+        background: transparent url("../img/product/flavour_filled.svg") no-repeat center center;
         background-size: $bgSize + 5;
         width: $bgSize + 5;
         background-position: left bottom;
@@ -65,14 +65,14 @@
 
     .wpfFilterWrapper[data-get-attribute="wpf_filter_staerke"] .wpfFilterContent li {
       &[data-term-slug="#{$i}"] .wpfCheckbox label {
-        background: transparent url("../img/svg/strength.svg") no-repeat center center;
+        background: transparent url("../img/product/strength.svg") no-repeat center center;
         background-size: $bgSize;
         width: $bgSize;
         background-position: left bottom;
       }
 
       &[data-term-slug="#{$i}"] .wpfCheckbox input:checked + label {
-        background: transparent url("../img/svg/strength_filled.svg") no-repeat center center;
+        background: transparent url("../img/product/strength_filled.svg") no-repeat center center;
         background-size: $bgSize;
         width: $bgSize;
         background-position: left bottom;

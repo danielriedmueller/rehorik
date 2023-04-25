@@ -1,0 +1,231 @@
+@media all and (min-width: $medium-breakpoint + 1) {
+  header.rehorik-header .menu-hauptmenue-container,
+  header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
+    height: 100%;
+  }
+}
+
+header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
+  display: flex;
+  position: relative;
+  li {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    a {
+      width: fit-content;
+      width: -moz-fit-content;
+      color: $font-color-accent;
+      font-size: $font-size;
+    }
+
+    .hide-for-desktop {
+      @media all and (min-width: $medium-breakpoint + 1) {
+        display: none;
+      }
+    }
+  }
+
+  // Top level menu items
+  > li.menu-item {
+    text-transform: uppercase;
+
+    a {
+      height: 100%;
+      padding: 0 $spacing-s;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  > li.menu-item-has-children {
+    background: transparent url("../img/pfeile/pfeil-gold-unten.svg") no-repeat center right $spacing-xs;
+    background-size: 10px;
+
+    > a {
+      font-family: $font-family-bold;
+    }
+  }
+
+  // Second Level menu items
+  > li.menu-item-has-children > ul.sub-menu {
+    display: none;
+    position: absolute;
+    top: $menu-height;
+    left: 0;
+    min-width: 100%;
+    flex-direction: column;
+    list-style: none;
+    border-radius: 0;
+    background-color: $menu-hover-color;
+    color: #fff;
+
+    grid-template-columns: repeat(3, minmax(max-content, 1fr));
+    align-items: flex-start;
+    justify-items: flex-start;
+
+    a {
+      color: $weinrot;
+    }
+
+    li.menu-item {
+      text-transform: none;
+      width: 100%;
+
+      a {
+        padding: $spacing-s $spacing;
+        width: 100%;
+      }
+    }
+
+    > li.menu-item {
+      &:only-child {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        width: 100%;
+
+        a {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // Third Level menu items
+  > li.menu-item-has-children > ul.sub-menu > li.menu-item-has-children {
+    > ul.sub-menu {
+      li.menu-item {
+        a {
+          padding: $spacing-s $spacing;
+        }
+      }
+    }
+  }
+}
+
+// Desktop Hover
+@media all and (min-width: $medium-breakpoint + 1) {
+  header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu {
+    > li.menu-item-has-children {
+      > a {
+        padding-right: $spacing-l;
+      }
+
+      > ul.sub-menu > li.menu-item > a {
+        font-family: $font-family-bold;
+      }
+
+      &:hover {
+        background-color: $menu-hover-color;
+        background-image: url("../img/pfeile/pfeil-rot-oben.svg");
+
+        a {
+          color: $weinrot;
+        }
+
+        > ul.sub-menu {
+          display: grid;
+        }
+      }
+    }
+
+    // Second Level menu items
+    > li.menu-item-has-children > ul.sub-menu {
+      > li.menu-item {
+        > a:hover {
+          background-color: $menu-sub-item-hover-color;
+          color: $beigegold;
+        }
+      }
+    }
+
+    // Third Level menu items
+    > li.menu-item-has-children > ul.sub-menu > li.menu-item-has-children {
+      > ul.sub-menu {
+        li.menu-item {
+          a {
+            &:hover {
+              background-color: $menu-sub-item-hover-color;
+              color: $beigegold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile
+@media all and (max-width: $medium-breakpoint) {
+  header.rehorik-header .menu-hauptmenue-container {
+    background: transparent url("../img/menu/burger-hand.jpg") no-repeat bottom right var(--section-spacing-left-right);
+    background-size: 230px;
+    @media all and (max-width: 375px) {
+      background-size: 160px;
+    }
+
+    $item-spacing: $spacing-s;
+
+    ul.menu#menu-hauptmenue {
+      flex-direction: column;
+      background-color: transparent;
+
+      li.menu-item:not(.menu-item-has-children) {
+        font-weight: normal;
+      }
+
+      > li.menu-item {
+        background-color: transparent;
+        border: none;
+      }
+
+      li.menu-item-has-children {
+        background: transparent none;
+
+        ul.sub-menu {
+          display: none;
+          position: initial;
+          border: 0;
+        }
+
+        > a {
+          font-family: $font-family-bold;
+          width: 100%;
+          background-image: url("../img/pfeile/pfeil-rot-unten.svg");
+          background-repeat: no-repeat;
+          background-position: top 30px right var(--section-spacing-left-right);
+          background-size: $icon-size;
+
+          // Touch on menu item with children
+          &.open {
+            background-color: $beigegold;
+            background-image: url("../img/pfeile/pfeil-rot-oben.svg");
+            color: $weinrot;
+
+            + ul.sub-menu {
+              display: block;
+              background: $beigegold;
+            }
+          }
+        }
+      }
+
+      > li.menu-item-has-children > a {
+        background-image: url("../img/pfeile/pfeil-gold-unten.svg");
+      }
+
+      // Paddings
+      li.menu-item a {
+        padding: $item-spacing 0 $item-spacing var(--section-spacing-left-right);
+      }
+
+      // 2nd Level
+      > li.menu-item-has-children > ul.sub-menu > li.menu-item-has-children > ul.sub-menu > li.menu-item > a {
+        padding: $item-spacing 0 $item-spacing calc(var(--section-spacing-left-right) + #{$spacing-l});
+      }
+    }
+  }
+}
+

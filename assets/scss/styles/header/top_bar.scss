@@ -1,0 +1,240 @@
+#top-bar {
+  height: $top-bar-height;
+  background-color: transparent;
+  width: 100%;
+  order: 0;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  color: #fff;
+  font-size: $font-size-small;
+  font-family: $font-family-bold;
+  white-space: nowrap;
+
+  .left {
+    justify-self: start;
+    padding-left: 28px;
+  }
+
+  .center {
+    justify-self: center;
+
+    display: flex;
+    align-items: center;
+
+    > *:not(:last-child) {
+      margin-right: $spacing-xl;
+    }
+  }
+
+  .right {
+    justify-self: end;
+    padding-right: $spacing;
+
+    display: flex;
+    align-items: center;
+
+    > *:not(:last-child) {
+      margin-right: $spacing;
+    }
+  }
+
+  $icon-gap-to-text: $spacing-xs;
+
+  // Calendar menu item
+  .rehorik-calendar-icon {
+    font-size: 0;
+    display: block;
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/kalender-white.svg");
+    background-size: $icon-size;
+    width: $icon-size;
+    padding-left: $icon-size + $icon-gap-to-text;
+
+    &:hover {
+      color: $beigegold;
+      background-image: url("../img/menu/kalender.svg");
+    }
+  }
+
+  // My account menu item
+  .rehorik-user-icon {
+    font-size: 0;
+    display: block;
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-image: url("../img/menu/konto-white.svg");
+    background-size: $icon-size - 2px;
+    width: $icon-size - 2px;
+    padding-left: $icon-size + $icon-gap-to-text;
+
+    &:hover {
+      color: $beigegold;
+      background-image: url("../img/menu/konto.svg");
+    }
+  }
+
+  .bean-icon {
+    display: flex;
+    align-items: center;
+
+    > span {
+      display: inline-block;
+      background: transparent url("../img/product/strength_filled_white.svg") no-repeat center center;
+      background-size: $icon-size - 6px;
+      width: $icon-size;
+      height: $icon-size + 1;
+      margin-right: $icon-gap-to-text - 6px;
+    }
+  }
+
+  .help-icon {
+    background: transparent url("../img/menu/hilfe-kontakt-white.svg") no-repeat left center;
+    background-size: $icon-size + 2px;
+    padding-left: $icon-size + $icon-gap-to-text;
+  }
+
+  .shipping-icon {
+    background: transparent url("../img/menu/versandkostenfrei-white.svg") no-repeat left center;
+    background-size: $icon-size + 5px;
+    padding-left: $icon-size + $icon-gap-to-text;
+  }
+
+  // Mobile
+  @media all and (max-width: $medium-breakpoint) {
+    flex-grow: 1;
+    z-index: 30;
+    min-height: 200px;
+    background-color: $anthrazit;
+    font-size: $font-size;
+    font-weight: normal;
+    color: $beigegold;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: $spacing-xl var(--section-spacing-left-right);
+
+    .right {
+      position: absolute;
+      top: $mobile-space-to-top + $logo-size-small + $spacing-s;
+      right: var(--section-spacing-left-right);
+      padding: 0;
+      align-items: flex-end;
+
+      height: $icon-size;
+      > div, > a {
+        display: inline-block;
+        padding: 0;
+        width: $icon-size;
+        height: $icon-size;
+
+        &:not(:last-child) {
+          margin-right: $spacing-s;
+        }
+      }
+
+      .rehorik-product-search-widget {
+        position: relative;
+        width: $icon-size;
+
+        &::before {
+          content: "";
+          padding-bottom: 100%;
+          display: block;
+        }
+
+        .dgwt-wcas-search-wrapp {
+          min-width: unset;
+          position: absolute;
+          height: 100%;
+          top: 0;
+          left: 0;
+
+          form.dgwt-wcas-search-form {
+            height: 100%;
+
+            .dgwt-wcas-sf-wrapp {
+              height: 100%;
+
+              svg.dgwt-wcas-ico-magnifier {
+                margin: auto auto;
+                height: 100%;
+                width: $icon-size;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                max-width: unset;
+                max-height: unset;
+
+                path {
+                  fill: $beigegold;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .rehorik-cart {
+        .rehorik-cart-info {
+          top: -2px;
+          background-image: url("../img/cart/warenkorb.svg");
+
+          &:hover {
+            background-image: url("../img/cart/warenkorb-white.svg");
+          }
+        }
+      }
+
+      .rehorik-user-icon {
+        background-image: url("../img/menu/konto.svg");
+
+        &:hover {
+          background-image: url("../img/menu/konto-white.svg");
+        }
+      }
+
+      .rehorik-calendar-icon {
+        background-image: url("../img/menu/kalender.svg");
+
+        &:hover {
+          background-image: url("../img/svg/kalender-white.svg");
+        }
+      }
+    }
+
+    .left {
+      padding-left: 0;
+      margin-bottom: $spacing-s;
+
+      .help-icon {
+        background-image: url("../img/menu/hilfe-kontakt.svg");
+      }
+    }
+
+    .center {
+      padding-left: 0;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .shipping-icon {
+        margin-right: 0;
+
+        background-image: url("../img/menu/versandkostenfrei.svg");
+      }
+
+      .bean-icon {
+        margin-right: 0;
+        margin-bottom: $spacing-s;
+
+        > span {
+          background-image: url("../img/product/strength_filled.svg");
+        }
+      }
+    }
+  }
+}

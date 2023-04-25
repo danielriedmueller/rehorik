@@ -1,0 +1,82 @@
+.rehorik {
+  .rehorik-product-search-widget {
+    .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input,
+    .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:hover,
+    .rehorik .dgwt-wcas-search-wrapp .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:focus {
+      border: none;
+      color: #fff;
+      background-color: transparent;
+      border-radius: $border-radius;
+      font-style: normal;
+      opacity: 1;
+      font-size: $font-size-small;
+      font-family: $font-family-bold;
+      text-transform: none;
+      padding-right: 0;
+
+      &::placeholder {
+        color: #fff;
+        font-style: normal;
+        font-family: $font-family-bold;
+        opacity: 1;
+        font-size: $font-size-small;
+        text-transform: none;
+      }
+
+      @media all and (max-width: $medium-breakpoint) {
+        &::placeholder {
+          font-size: 0;
+        }
+      }
+
+      &:focus {
+        &::placeholder {
+          opacity: $opacity;
+        }
+      }
+    }
+
+    .dgwt-wcas-no-submit.dgwt-wcas-search-wrapp .dgwt-wcas-ico-magnifier path, .dgwt-wcas-search-wrapp .dgwt-wcas-close path {
+      fill: #fff;
+    }
+
+    .dgwt-wcas-no-submit .dgwt-wcas-ico-magnifier {
+      opacity: 1;
+    }
+
+    .dgwt-wcas-search-wrapp {
+      max-width: none;
+    }
+  }
+
+  .dgwt-wcas-details-wrapp {
+    padding-top: $spacing;
+  }
+
+  .dgwt-wcas-suggestions-wrapp, .dgwt-wcas-details-wrapp, .dgwt-wcas-suggestion, .dgwt-wcas-datails-title, .dgwt-wcas-details-more-products {
+    border-color: $beigegold !important;
+
+    .dgwt-wcas-st-title {
+      strong {
+        font-weight: normal;
+        color: $font-color;
+      }
+    }
+  }
+
+  .dgwt-wcas-product-details {
+    div.quantity {
+      input, select {
+        height: $spacing-l !important;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+
+      & + .add_to_cart_inline a {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+    }
+  }
+}
+

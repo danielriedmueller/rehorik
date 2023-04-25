@@ -2,30 +2,47 @@
 @import "styles/settings";
 @import "styles/woocommerce";
 @import "styles/container";
-@import "styles/products";
-@import "styles/products_grid";
-@import "styles/header";
+@import "styles/button";
+@import "styles/input";
+
+// Header
+@import "styles/header/header";
+@import "styles/header/menu";
+@import "styles/header/social_media_icons";
+@import "styles/header/rehorik_logo";
+@import "styles/header/top_bar";
+@import "styles/header/megamenu";
+@import "styles/header/burger";
+@import "styles/header/slider";
+@import "styles/header/product_search";
+
+@import "styles/products-gallery/products";
+@import "styles/products-gallery/products_grid";
+@import "styles/filter/sidebar_mobile";
 @import "styles/footer";
 @import "styles/main";
 @import "styles/locations";
 @import "styles/cart/cart";
 @import "styles/cart/cart_totals";
 @import "styles/cart/coupon";
-@import "styles/input";
-@import "styles/button";
-@import "styles/sidebar";
-@import "styles/rehorik_logo";
+@import "styles/filter/sidebar";
+@import "styles/filter/ordering";
 @import "styles/featured_products";
 @import "styles/product/product";
+@import "styles/product/product_header";
+@import "styles/product/title";
 @import "styles/product/gallery";
 @import "styles/product/video";
 @import "styles/product/variations";
 @import "styles/product/cup_of_coffee_price";
 @import "styles/product/add_to_cart";
+@import "styles/product/add_to_cart_button";
 @import "styles/product/meta";
 @import "styles/product/grid_attributes";
 @import "styles/product/hugo_head";
 @import "styles/product/coffee_strength_flavour";
+@import "styles/product/preperation_recommendation";
+@import "styles/product/additional_textareas";
 @import "styles/banner";
 @import "styles/checkout/checkout";
 @import "styles/checkout/payment";
@@ -35,9 +52,7 @@
 @import "styles/product/information";
 @import "styles/category/category";
 @import "styles/category/custom_category_page";
-@import "styles/category/lieferservice_category_page";
 @import "styles/category/veranstaltungen_category_page";
-@import "styles/product_search";
 @import "styles/page_title";
 @import "styles/cart/cart_info";
 @import "styles/events/events";
@@ -53,24 +68,18 @@
 @import "styles/events/button";
 @import "styles/events/dropdown";
 @import "styles/events/modal";
-@import "styles/social_media_icons";
-@import "styles/slider";
-@import "styles/mixins";
 @import "styles/events/notices";
 @import "styles/cart/shipping";
-@import "styles/hint";
 @import "styles/newsletter_sign_up";
 @import "styles/special_category";
 @import "styles/chooser";
 @import "styles/page/introduction";
 @import "styles/page/timeline";
 @import "styles/product/mahlgrade";
-@import "styles/product/goes_with";
-@import "styles/events/upcoming_events";
-@import "styles/product/add_to_cart_message";
 @import "styles/user/orders";
 @import "styles/user/myaccount_navigation";
 @import "styles/page/locations_table";
+@import "styles/page/locations_map";
 @import "styles/page/locations_description";
 @import "styles/page/page_neue_roesterei";
 @import "styles/user/delete_me";
@@ -86,6 +95,9 @@
 @import "styles/cart/mini_cart";
 @import "styles/cart/mini_cart_content";
 @import "styles/cart/mini_cart_item_list";
+@import "styles/category/frontpage_categories";
+@import "styles/category/subcategories";
+@import "styles/product/origin";
 @import "styles/page/jobs";
 
 @font-face {
@@ -93,6 +105,7 @@
   src: url(../fonts/cond.otf);
   font-style: normal;
   font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -100,6 +113,7 @@
   src: url(../fonts/cond-bold.otf);
   font-style: normal;
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
@@ -107,6 +121,7 @@
   src: url(../fonts/cond-black.otf);
   font-style: normal;
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
@@ -136,6 +151,7 @@ html, body {
   background: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -143,7 +159,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-headline;
+  font-family: $font-family-bold;
   margin: 0;
   padding: 0;
   line-height: $line-height;
@@ -173,6 +189,11 @@ h3, h4 {
 
 h5, h6 {
   font-size: $font-size;
+  text-transform: uppercase;
+}
+
+strong {
+  font-family: $font-family-bold;
   text-transform: uppercase;
 }
 
@@ -222,7 +243,6 @@ table {
 }
 
 #page-container {
-  padding-top: $menu-height;
   position: relative;
 }
 

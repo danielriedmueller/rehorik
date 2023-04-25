@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+    die( '-1' );
+}
+
 require_once('model/model-reh-mini-cart-item.php');
 
 use model\Reh_Mini_Cart_Item;
@@ -6,8 +11,10 @@ use model\Reh_Mini_Cart_Item;
 class Reh_Mini_Cart
 {
     protected static $_instance = null;
-    public static function instance() {
-        if ( is_null( self::$_instance ) ) {
+
+    public static function instance()
+    {
+        if (is_null(self::$_instance)) {
             self::$_instance = new self();
         }
         return self::$_instance;
