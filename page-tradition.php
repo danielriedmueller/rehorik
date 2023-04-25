@@ -1,4 +1,9 @@
 <?php
+if (!PLUGINS_ACTIVE) {
+    echo 'Plugins not active';
+    return;
+}
+
 get_template_part('templates/header/head', null, [
     'slider' => [
         [
