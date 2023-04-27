@@ -13,25 +13,43 @@ get_template_part('templates/header/head', null, [
     <div>
         <div>
             <h2>Das sind wir</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-                ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
-                fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis
-                vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
-                elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,</p>
+            <p>Wir als Firma Rehorik wollen mit bestem Kaffee, gutem Wein und hochwertigen Delikatessen Menschen
+                begeistern.</p>
+            <p>Wir probieren viel, entdecken neu und geben unser Wissen in Seminaren und Tastings weiter.
+                Über die Jahre ist eine Marke entstanden, die eine Brücke zwischen Tradition und Startup schlägt.</p>
+            <p>Wir lieben diesen Mix aus Erfahrungen, Teamwork, Leidenschaft für jedes Produkt, den gemeinsamen
+                Espresso beim morgendlichen Meeting und der ein oder anderen kleinen Party!</p>
+            <p></p>
         </div>
     </div>
     <div>
         <div>
-            <h2>Wir suchen ab sofort</h2>
-            <?php
-            if ( have_posts() ) {
-                while ( have_posts() ) {
-                    the_post();
-                    the_content();
-                }
-            }
-            ?>
+            <h2>Zur Unterstützung unseres Teams, insbesondere in der Produktion, suchen wir ab sofort</h2>
+            <div class="job-description">
+                <h3>- Eine/n Produktionshelfer/In-</h3>
+                <strong>Deine Aufgaben:</strong>
+                <ul>
+                    <li>Vorplanung von Bestellungen</li>
+                    <li>Abwicklung der Aufträge</li>
+                    <li>Zusammenarbeit mit Rösterei und Lager</li>
+                </ul>
+                <strong>Das bringst du mit:</strong>
+                <ul>
+                    <li>Vorplanung von Bestellungen</li>
+                    <li>Abwicklung der Aufträge</li>
+                    <li>Zusammenarbeit mit Rösterei und Lager</li>
+                </ul>
+                <strong>Deine Vorteile:</strong>
+                <ul>
+                    <li>Vorplanung von Bestellungen</li>
+                    <li>Abwicklung der Aufträge</li>
+                    <li>Zusammenarbeit mit Rösterei und Lager</li>
+                </ul>
+                <p>
+                    Dein Kopfkino arbeitet und du siehst dich schon mit Espresso Tasse neue Aufträge koordinieren ?
+                    Dann sende uns eine Email mit kurzem Lebenslauf und deiner Motivation für diese Stelle an: <a href="mailto:<?= JOBS_MAIL ?>"><?= JOBS_MAIL ?></a>
+                </p>
+            </div>
         </div>
     </div>
     <div>

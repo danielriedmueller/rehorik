@@ -15,6 +15,10 @@
         padding: $spacing-l var(--section-spacing-left-right);
       }
 
+      div.job-description {
+        text-align: justify;
+      }
+
       h2 {
         margin-bottom: $spacing-s;
       }
