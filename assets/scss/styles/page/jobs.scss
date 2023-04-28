@@ -21,6 +21,11 @@
   div.job-description {
     text-align: justify;
 
+    @media all and (min-width: $small-breakpoint + 1) {
+      background: transparent url("../img/pages/jobs/produktionshelfer-in.webp") no-repeat center right;
+      background-size: 360px;
+    }
+
     > div:not(:last-child) {
       margin: $spacing 0;
     }
