@@ -32,8 +32,8 @@
     @media all and (max-width: $small-breakpoint) {
       flex-direction: column;
       padding-right: 0;
-      padding-bottom: $hugo-head-size;
-      background-position: bottom right;
+      padding-bottom: $hugo-head-size + $spacing;
+      background-position: bottom center;
     }
 
     a {
