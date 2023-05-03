@@ -1,7 +1,7 @@
 #jobs {
   div.intro {
     text-align: justify;
-    background: transparent url("../img/svg/hugo_head_gold.svg") no-repeat center right;
+    background: transparent url("../img/svg/hugo_head.svg") no-repeat center right;
     $hugo-head-size: 100px;
     background-size: $hugo-head-size;
     padding-right: $hugo-head-size + $section-spacing-small;
@@ -15,16 +15,16 @@
   }
 
   div.job-description-outer {
-    background-color: $beigegold;
+    background: $beigegold url("../img/pages/jobs/produktionshelfer-in.webp") no-repeat center right;
+    background-size: 360px;
+
+    @media all and (max-width: $small-breakpoint) {
+      background-image: none;
+    }
   }
 
   div.job-description {
     text-align: justify;
-
-    @media all and (min-width: $small-breakpoint + 1) {
-      background: transparent url("../img/pages/jobs/produktionshelfer-in.webp") no-repeat center right;
-      background-size: 360px;
-    }
 
     > div:not(:last-child) {
       margin: $spacing 0;
@@ -50,6 +50,11 @@
     h2 {
       margin-top: 0 ;
     }
+  }
+
+  span.center {
+    text-align: center;
+    display: block;
   }
 
   h2 {
