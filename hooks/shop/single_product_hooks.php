@@ -11,8 +11,6 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 
-
-
 add_action('rehorik_product_title', 'woocommerce_template_single_title', 1); // Title
 add_action('rehorik_product_title', 'quality_name', 2); // Quality Name
 add_action('rehorik_product_title', 'title_claim', 3); // Claim

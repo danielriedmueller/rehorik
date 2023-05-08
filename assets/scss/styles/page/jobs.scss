@@ -1,32 +1,79 @@
 #jobs {
-  > div {
-    &:nth-child(2) {
-      background-color: $beigegold;
+  div.intro {
+    text-align: justify;
+    background: transparent url("../img/svg/hugo_head_gold.svg") no-repeat center right;
+    $hugo-head-size: 100px;
+    background-size: $hugo-head-size;
+    padding-right: $hugo-head-size + $section-spacing-small;
+    min-height: $hugo-head-size;
+
+    @media all and (max-width: $small-breakpoint) {
+      padding-right: 0;
+      padding-bottom: $hugo-head-size + $spacing;
+      background-position: bottom center;
+    }
+  }
+
+  div.job-description-outer {
+    background-color: $beigegold;
+  }
+
+  div.job-description {
+    text-align: justify;
+
+    @media all and (min-width: $small-breakpoint + 1) {
+      background: transparent url("../img/pages/jobs/produktionshelfer-in.webp") no-repeat center right;
+      background-size: 360px;
     }
 
-    > div {
+    > div:not(:last-child) {
+      margin: $spacing 0;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    h5 {
       text-align: center;
-      max-width: $max-width-small;
-      margin: auto;
-      padding: $spacing-xl 0;
+    }
+  }
 
-      @media all and (max-width: $medium-breakpoint) {
-        flex-direction: column;
-        padding: $spacing-l var(--section-spacing-left-right);
-      }
+  div.apply-now {
+    text-align: center;
 
-      div.job-description {
-        text-align: justify;
-      }
+    a.button {
+      margin-top: $spacing-s;
+      display: inline-block;
+    }
 
-      h2 {
-        margin-bottom: $spacing-s;
-      }
+    h2 {
+      margin-top: 0 ;
+    }
+  }
 
-      a.button {
-        margin-top: $spacing-s;
-        display: inline-block;
-      }
+  h2 {
+    margin: $spacing-s 0;
+
+    @media all and (max-width: $small-breakpoint) {
+      font-size: $font-size-large;
+    }
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  ul {
+    font-size: $font-size;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 0 0 0 $spacing-xxs;
+      background: transparent url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIGZpbGw9IiMzOTM1MzYiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTIyLjg4cHgiIGhlaWdodD0iMTIyLjg4cHgiIHZpZXdCb3g9IjAgMCAxMjIuODggMTIyLjg4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjIuODggMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYxLjQzOCwwYzMzLjkzLDAsNjEuNDQxLDI3LjUxMiw2MS40NDEsNjEuNDQxIGMwLDMzLjkyOS0yNy41MTIsNjEuNDM4LTYxLjQ0MSw2MS40MzhDMjcuNTEyLDEyMi44OCwwLDk1LjM3LDAsNjEuNDQxQzAsMjcuNTEyLDI3LjUxMiwwLDYxLjQzOCwwTDYxLjQzOCwweiIvPjwvZz48L3N2Zz4=") no-repeat top 15px left;
+      background-size: 2px;
     }
   }
 }
