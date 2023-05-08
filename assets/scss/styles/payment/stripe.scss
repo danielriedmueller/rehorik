@@ -1,8 +1,8 @@
-// Stripe Button
+// PayPal Button
 .rehorik {
   #wc-stripe-payment-request-wrapper {
     z-index: 10;
-    width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
+    width: $product-view-cart-button-width;
   }
 }
 
@@ -17,6 +17,7 @@
 .rehorik.woocommerce-checkout {
   #wc-stripe-payment-request-wrapper {
     margin-left: auto;
+    margin-bottom: $spacing-xxs;
   }
 }
 
