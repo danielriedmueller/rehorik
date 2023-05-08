@@ -5,9 +5,11 @@
     const $miniCartClose = $('#mini-cart-close');
     const showMiniCart = () => {
         $miniCart.addClass('show');
+        document.body.style.overflow = 'hidden';
     };
     const hideMiniCart = () => {
         $miniCart.removeClass('show').removeClass('updated');
+        document.body.style.overflow = 'scroll';
     };
     const toggleMiniCart = () => {
         if ($miniCart.hasClass('show')) {

@@ -1,7 +1,7 @@
 (function () {
     // Mobile menu breakpoint. Used also in css.
-    const mobileMenuBreakpoint = 1180;
-    if (!window.matchMedia(`(max-width: ${mobileMenuBreakpoint}px)`).matches) return;
+    const mobileMenuBreakpoint = 1035;
+    if (window.matchMedia(`(min-width: ${mobileMenuBreakpoint + 1}px)`).matches) return;
 
     window.addEventListener('DOMContentLoaded', (event) => {
         const menuItems = document.querySelectorAll('.menu-item-has-children > a');

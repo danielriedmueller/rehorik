@@ -2,9 +2,7 @@
   position: relative;
   background: transparent url("../img/thankyou/header-bestellung-danke-hintergrund-1080x720px.jpg") repeat top left;
 
-  padding-top: 150px;
   @media all and (max-width: $medium-breakpoint) {
-    padding-top: 100px;
     padding-bottom: 450px;
   }
 

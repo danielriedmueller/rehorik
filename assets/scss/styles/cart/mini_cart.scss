@@ -1,6 +1,6 @@
 #rehorik-mini-cart {
   opacity: 0;
-  transition: opacity var(--animation-time) linear;
+  transition: opacity var(--animation-time);
   pointer-events: none;
   position: fixed;
   top: 0;
@@ -68,7 +68,7 @@
         background: transparent url("../img/product/strength_filled.svg") no-repeat center center;
         background-size: 28px;
         width: 28px;
-        height: 40px;
+        height: 41px;
       }
     }
   }

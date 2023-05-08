@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+    die( '-1' );
+}
+
 class Reh_Api_Products
 {
     // Fields from plugin Germanized

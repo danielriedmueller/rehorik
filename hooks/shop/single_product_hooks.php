@@ -35,24 +35,19 @@ add_action('rehorik_product_not_selling_notice', 'not_selling_notice', 1); // No
 
 add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head
 
-add_action('rehorik_product_information', 'description', 1); // Description
-add_action('rehorik_product_information', 'title', 1); // Title
-add_action('rehorik_product_information', 'single_product_attributes', 1); // Attributes
+add_action('rehorik_product_information', 'product_information', 1); // Information
 
 add_action('rehorik_product_preperation_recommendation', 'preperation_recommendation', 1); // Preperation Recommendation
 
 add_action('rehorik_product_origin', 'origin', 1); // Description
 
+add_action('rehorik_product_processing', 'processing', 1); // Description
+
 add_action('woocommerce_after_single_product', 'woocommerce_output_related_products', 10);
 
-function description(): void
+function product_information(): void
 {
-    global $product;
-
-    echo sprintf(
-        '<div class="rehorik-product-description">%s</div>',
-        $product->get_description()
-    );
+    get_template_part('templates/product/information');
 }
 
 function short_description(): void
@@ -61,29 +56,50 @@ function short_description(): void
 
     echo sprintf(
         '<div class="rehorik-product-short-description">%s</div>',
-        $post->post_excerpt
+        apply_filters('the_content', $post->post_excerpt)
     );
 }
 
 function origin(): void
 {
     global $post;
-    global $product;
 
-    $origin = get_post_meta($post->ID, 'rehorik_product_origin', true);
+    if (!empty($origin = get_post_meta($post->ID, 'rehorik_product_origin', true))) {
+        global $product;
 
-    $weingut = $product->get_attribute('weingut');
+        if (!empty($weingut = $product->get_attribute('weingut'))) {
+            echo sprintf(
+                '<div class="rehorik-product-origin weingut"><h2>Weingut %s</h2>%s</div>',
+                $weingut,
+                apply_filters('the_content', $origin)
+            );
+        } else {
+            echo sprintf(
+                '<div class="rehorik-product-origin">
+                            <h2>Herkunft</h2>
+                            <div>%s</div>
+                            <div class="origin-images">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>',
+                apply_filters('the_content', $origin)
+            );
+        }
+    }
+}
 
-    if (!empty($weingut)) {
+function processing(): void
+{
+    global $post;
+
+    $preparation = get_post_meta($post->ID, 'rehorik_product_processing', true);
+
+    if (!empty($preparation)) {
         echo sprintf(
-            '<div class="rehorik-product-origin weingut"><h2>Weingut %s</h2>%s</div>',
-            $weingut,
-            $post->post_excerpt
-        );
-    } else if (!empty($origin)) {
-        echo sprintf(
-            '<div class="rehorik-product-origin"><h2>Herkunft</h2><div>%s</div></div>',
-            $origin
+            '<div class="rehorik-product-processing"><h2>Aufbereitung</h2><div>%s</div></div>',
+            apply_filters('the_content', $preparation)
         );
     }
 }
@@ -120,19 +136,6 @@ function preperation_recommendation(): void
     global $product;
 
     get_template_part('templates/product/preperation-recommendation', null, ['product' => $product]);
-}
-
-function title(): void
-{
-    the_title('<h2>', '</h2>');
-}
-
-function single_product_attributes(): void
-{
-    global $product;
-
-    // Manipulated by woocommerce_display_product_attributes filter
-    wc_display_product_attributes($product);
 }
 
 function product_video(): void

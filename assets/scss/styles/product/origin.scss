@@ -1,78 +1,53 @@
-body.rehorik.woocommerce #main-content div.rehorik-product {
-  .rehorik-product-origin-outer {
-    padding-bottom: 0;
-    background-color: $hellbraun;
-  }
+body.rehorik.woocommerce #main-content div.rehorik-product .rehorik-product-textarea-outer.dunkelbraun {
+  padding-bottom: 0;
 
-  .rehorik-product-origin {
-    &.weingut {
-      padding-bottom: var(--product-view-grid-gap);
+  .rehorik-product-origin .origin-images {
+    $height: 400px;
+    margin-top: var(--product-view-grid-gap-half);
+    display: grid;
+    gap: var(--product-view-grid-gap-half);
+    grid-template-columns: 1fr 1fr 2fr;
+     > div {
+       height: $height;
+       background-repeat: no-repeat;
+       width: 100%;
+       background-size: cover;
+     }
+
+    >:first-child {
+      background-image: url("../img/product/origin/origin-1-600x400px.webp");
+      background-position: bottom left;
     }
 
-    h2 {
-      grid-area: title;
-
-      text-align: left;
-      color: $font-color;
-      font-size: $font-size-large;
-      margin-bottom: var(--product-view-grid-gap-half);
+    >:nth-child(2) {
+      background-image: url("../img/product/origin/origin-2-600x400px.webp");
+      background-position: bottom center;
     }
 
-    > div {
-      display: grid;
+    >:last-child {
+      background-image: url("../img/product/origin/origin-3-600x400px.webp");
+      background-position: bottom right;
+    }
+
+    @media all and (max-width: $medium-breakpoint) {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-      grid-template-areas:
-          "left right"
-          "images images";
 
-      .origin-text-left {
-        &:not(:empty) {
-          margin: 0 var(--product-view-grid-gap-half) var(--product-view-grid-gap) 0;
-        }
+      >:last-child {
+        display: none;
+      }
+    }
 
-        text-align: justify;
-        grid-area: left;
+    @media all and (max-width: $small-breakpoint) {
+      grid-template-columns: 1fr;
+
+      >:nth-child(2) {
+        display: none;
       }
 
-      .origin-text-right {
-        &:not(:empty) {
-          margin: 0 0 var(--product-view-grid-gap) var(--product-view-grid-gap-half);
-        }
-
-        text-align: justify;
-        grid-area: right;
-      }
-
-      .origin-images {
-        grid-area: images;
-        display: flex;
-        grid-gap: $spacing-s;
-        align-items: flex-end;
-        justify-content: space-between;
-
-        @media all and (max-width: $medium-breakpoint) {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        img {
-          border-radius: 0;
-          padding: 0;
-          margin: 0;
-        }
-      }
-
-      @media all and (max-width: $medium-breakpoint) {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "left"
-            "right"
-            "images";
-
-        .origin-text-left:not(:empty) {margin: 0 0 var(--product-view-grid-gap-half) 0;}
-        .origin-text-right:not(:empty) {margin: 0 0 var(--product-view-grid-gap-half) 0;}
+      >:last-child {
+        display: none;
       }
     }
   }
+
 }

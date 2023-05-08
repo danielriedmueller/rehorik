@@ -4,10 +4,11 @@
   > div:first-child {
     order: 1;
     flex-grow: 1;
+    overflow: hidden;
   }
 
   #sidebar {
-    margin: 0 var(--section-spacing-top-bottom) 0 0;
+    margin: 0 var(--products-grid-gap) 0 0;
   }
 
   @media all and (max-width: $small-breakpoint) {

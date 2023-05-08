@@ -15,7 +15,7 @@ $hasSlider = !empty($args['slider']);
           type="image/x-icon"/>
     <link rel="apple-touch-icon" href="<?= get_stylesheet_directory_uri() . '/assets/img/logos/apple-touch-icon.png' ?>">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#CEB67F">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#C6B47F">
     <meta name="apple-mobile-web-app-title" content="Rehorik">
     <meta name="description"
           content="Kaffee aus eigener Traditions-Rösterei seit vier Generationen vom Hause Rehorik. Wir führen auch eine hervorragend sortierte Wein- und Spirituosenauswahl."/>

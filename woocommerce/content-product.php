@@ -16,6 +16,7 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php');
 
 global $product;
 
@@ -24,7 +25,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 
-require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php');
+$isEventTicket = isItCategory($product, TICKET_CATEGORY_SLUG);
+$additionalInformationHint = getAdditionalInformationHint($product, $isEventTicket);
+
 ?>
 <li <?php wc_product_class([
     'rehorik-product',
@@ -50,10 +53,7 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
-    echo sprintf(
-        '<div class="rehorik-product-origin-country">%s</div>',
-        getOriginCountry($product)
-    );
+    echo "<div class='rehorik-product-additional-information-hint'>$additionalInformationHint</div>";
 
 	/**
 	 * Hook: woocommerce_shop_loop_item_title.
@@ -78,7 +78,7 @@ require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
 
-    if (isItCategory($product, TICKET_CATEGORY_SLUG)) {
+    if ($isEventTicket) {
         get_template_part('templates/product-event-attributes');
     } else {
         get_template_part('templates/product-list-attributes');

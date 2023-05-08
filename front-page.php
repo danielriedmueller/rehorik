@@ -1,15 +1,10 @@
 <?php
+if (!PLUGINS_ACTIVE) {
+    echo 'Plugins not active';
+    return;
+}
+
 get_template_part('templates/header/head', null, ['slider' => [
-    [
-        'claim' => 'EMPOWERMENT VON FRAUEN IN DER WERTSCHÖPFUNGSKETTE DES KAFFEES',
-        'primary' => true,
-        'classes' => 'slider-item-weltfrauentag',
-        'img'=> 'header-weltfrauentag',
-        'buttons' => [
-            '/seminar/workshop-starke-frauen-starker-kaffee-empowerment-von-frauen-in-der-wertschoepfungskette-des-kaffees' => 'Starke Frauen',
-            '/produkt/java-nica' => 'Starker Kaffee'
-        ]
-    ],
     [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
         'img'=> 'startseite-header-roesterei',
@@ -22,8 +17,7 @@ get_template_part('templates/header/head', null, ['slider' => [
         'claim' => 'Kaffeerösterei seit 1928',
         'img'=> 'startseite-header-kaffee',
         'buttons' => [
-            get_term_link(get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'),
-                'product_cat') => 'Zum Kaffee'
+            getCategoryLink(COFFEE_CATEGORY_SLUG) => 'Zum Kaffee'
         ]
     ]
 ]]);
