@@ -1,41 +1,19 @@
-// PayPal Button
-.rehorik {
-  #wc-stripe-payment-request-wrapper {
-    z-index: 10;
-    width: $product-view-cart-button-width;
-  }
-}
-
-.rehorik:not(.single-product) {
-  #wc-stripe-payment-request-wrapper {
-    @media all and (max-width: $medium-breakpoint) {
-      width: 100%;
-    }
-  }
-}
-
-.rehorik.woocommerce-checkout {
-  #wc-stripe-payment-request-wrapper {
-    margin-left: auto;
-    margin-bottom: $spacing-xxs;
-  }
-}
-
+// Dont style checkout page
 .rehorik:not(.woocommerce-checkout) {
   #wc-stripe-payment-request-wrapper {
     margin-top: $spacing-xs;
+    padding: 0 !important;
+
     height: 35px;
+
     > div {
       height: 35px;
     }
+
   }
-}
 
-#wc-stripe-payment-request-wrapper {
-  padding: 0 !important;
-}
-
-// Stripe
-#wc-stripe-payment-request-button-separator {
-  display: none !important;
+  // Stripe
+  #wc-stripe-payment-request-button-separator {
+    display: none !important;
+  }
 }
