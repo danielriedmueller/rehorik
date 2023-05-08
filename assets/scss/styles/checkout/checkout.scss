@@ -3,6 +3,8 @@
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "notice notice"
+    "stripe stripe"
+    "stripe-seperator stripe-seperator"
     "details review"
 ;
 
@@ -11,9 +13,20 @@
     grid-template-columns: 1fr;
     grid-template-areas:
     "notice"
+    "stripe"
+    "stripe-seperator"
     "details"
     "review"
   ;
+  }
+
+  // Stripe checkout button
+  #wc-stripe-payment-request-wrapper {
+    grid-area: stripe;
+  }
+
+  #wc-stripe-payment-request-button-separator {
+    grid-area: stripe-seperator;
   }
 
   #customer_details {
