@@ -29,3 +29,12 @@
     }
   }
 }
+
+#wc-stripe-payment-request-wrapper {
+  padding: 0 !important;
+}
+
+// Stripe
+#wc-stripe-payment-request-button-separator {
+  display: none !important;
+}
