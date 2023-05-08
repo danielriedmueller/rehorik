@@ -6,12 +6,12 @@
     border: none;
 
     li.wc_payment_method {
-      margin-bottom: $spacing-xs;
+      margin-bottom: $spacing-xxs;
 
       label {
         text-transform: uppercase;
         font-size: $font-size;
-        display: inline-block;
+        display: inline;
         margin: 0;
         padding: 0;
         cursor: pointer;
