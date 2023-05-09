@@ -1,14 +1,27 @@
-// Dont style checkout page
+.rehorik #wc-stripe-payment-request-wrapper {
+  padding: 0 !important;
+}
+
+.rehorik #wc-stripe-payment-request-button-separator {
+  padding: 0 !important;
+  margin: $spacing-s 0 0 0 !important;
+}
+
+
 .rehorik:not(.woocommerce-checkout) {
   #wc-stripe-payment-request-wrapper {
     margin-top: $spacing-xs;
-    padding: 0 !important;
-
     height: 35px;
 
     > div {
       height: 35px;
       width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
+    }
+
+    &.woocommerce-cart {
+      @media all and (max-width: $medium-breakpoint) {
+        width: 100%;
+      }
     }
   }
 
