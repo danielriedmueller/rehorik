@@ -7,7 +7,6 @@
   margin: $spacing-s 0 0 0 !important;
 }
 
-
 .rehorik:not(.woocommerce-checkout) {
   #wc-stripe-payment-request-wrapper {
     margin-top: $spacing-xs;
@@ -17,16 +16,19 @@
       height: 35px;
       width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
     }
-
-    &.woocommerce-cart {
-      @media all and (max-width: $medium-breakpoint) {
-        width: 100%;
-      }
-    }
   }
 
-  // Stripe
   #wc-stripe-payment-request-button-separator {
     display: none !important;
   }
 }
+
+@media all and (max-width: $medium-breakpoint) {
+  // Cart
+  .rehorik.woocommerce-cart #wc-stripe-payment-request-wrapper > div {
+    width: 100%;
+  }
+}
+
+
+
