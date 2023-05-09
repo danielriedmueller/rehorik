@@ -19,8 +19,10 @@
     }
 
     &.woocommerce-cart {
-      @media all and (max-width: $medium-breakpoint) {
-        width: 100%;
+      > div {
+        @media all and (max-width: $medium-breakpoint) {
+          width: 100%;
+        }
       }
     }
   }
