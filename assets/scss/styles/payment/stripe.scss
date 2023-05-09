@@ -8,8 +8,8 @@
 
     > div {
       height: 35px;
+      width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
     }
-
   }
 
   // Stripe
