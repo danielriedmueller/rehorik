@@ -7,7 +7,7 @@ footer {
   }
 
   .container > div {
-    @include gridView($footer-items-width);
+    @include gridView(var(--footer-items-width));
 
     h3 {
       margin: 0 0 $spacing 0;
