@@ -21,9 +21,8 @@ get_template_part('templates/header/head', null, [
     <div class="job-description-outer">
         <div class="container">
             <div class="job-description">
-                <h5>Zur Unterstützung unseres Teams, insbesondere in der Produktion, suchen wir ab sofort</h5>
-                <h2>- Eine/n Produktionshelfer/In-</h2>
-
+                <span class="center">Zur Unterstützung unseres Teams, insbesondere in der Produktion, suchen wir ab sofort</span>
+                <h2>Eine/n Produktionshelfer/In</h2>
                 <div>
                     <strong>Deine Aufgaben:</strong>
                     <ul>
