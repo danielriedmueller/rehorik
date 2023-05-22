@@ -129,6 +129,10 @@ get_template_part('templates/header/head', null, [
                                     <td>MO. - SA.</td>
                                     <td>09:30 - 20:00</td>
                                 </tr>
+                                <tr>
+                                    <td>Do., 25.05.</td>
+                                    <td>09:30 - 19:00</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </td>
