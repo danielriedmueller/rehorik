@@ -82,12 +82,17 @@ add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachme
             $date = date(DATE_FORMAT, $startDatetime);
         }
 
+        $location = tribe_get_venue($attendee['event_id']);
+        if (tribe_address_exists($attendee['event_id'])) {
+            $location .= ' | ' . tribe_get_full_address($attendee['event_id']);
+        }
+
         $details = [
             'ticket_id' => $attendee['ticket_id'],
             'ticket_name' => $attendee['ticket_name'],
             'holder_name' => $attendee['holder_name'],
             'event_id' => $attendee['event_id'],
-            'location' => tribe_get_venue($attendee['event_id']),
+            'location' => $location,
             'organizer' => tribe_get_organizer($attendee['event_id']),
             'date' => $date,
             'qr_ticket_id' => $attendee['qr_ticket_id'],
