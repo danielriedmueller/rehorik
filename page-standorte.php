@@ -40,7 +40,7 @@ get_template_part('templates/header/head', null, [
                                     <td>09:00 - 18:00</td>
                                 </tr>
                                 <tr>
-                                    <td>Karfreitag, Ostermontag</td>
+                                    <td>Sonn- & Feiertage</td>
                                     <td>geschlossen</td>
                                 </tr>
                                 </tbody>
@@ -128,6 +128,10 @@ get_template_part('templates/header/head', null, [
                                 <tr>
                                     <td>MO. - SA.</td>
                                     <td>09:30 - 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Do., 25.05.</td>
+                                    <td>09:30 - 19:00</td>
                                 </tr>
                                 </tbody>
                             </table>
