@@ -63,17 +63,12 @@ body {
 	padding: 0;
 }
 
-#outer_wrapper > tr:first-child > td:first-child {
-	width: 0;
-}
-
 #wrapper {
 	background-color: #fff;
+	margin: 0;
 	padding: <?= $spacing ?> 0;
 	-webkit-text-size-adjust: none !important;
 	width: 100%;
-	margin: 0 auto;
-	max-width: 590px;
 }
 
 section, table td,table, #wrapper, body, div.ticket, div.qr-code {
