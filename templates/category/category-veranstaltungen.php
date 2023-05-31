@@ -3,8 +3,7 @@ defined('ABSPATH') || exit;
 
 $eventInfos = [
     'coffee-culture-festival' => [
-        'img' => 'header-coffee-culture-festival',
-        'claim' => 'Coffee Culture Festival'
+        'img' => 'header-coffee-culture-festival'
     ],
     'veranstaltungen' => [
         'img' => 'header-veranstaltungen',
