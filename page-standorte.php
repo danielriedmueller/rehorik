@@ -383,8 +383,7 @@ get_template_part('templates/header/head', null, [
                     Gesandtenstraße.
                     Hier sind die Regale voll - von Weinen aus Europa und Übersee bis zu Sekt und Spirituosen.
                     Natürlich gibt es auch unseren Kaffee
-                    in gewohnter Qualität und Frische. Den Espresso des Monats kannst du Dir übrigens direkt
-                    zubereiten lassen.</p>
+                    in gewohnter Qualität und Frische.</p>
                 <div><b>ÖFFNUNGSZEITEN</b></div>
                 <table class="mb-s">
                     <tbody>
