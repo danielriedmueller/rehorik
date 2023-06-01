@@ -1,11 +1,9 @@
 <?php
 $imgPathPrefix = 'url(/wp-content/themes/rehorik/assets/img/slider/';
-$imgLargePathSuffix = '-1920x600px.jpg';
-$imgMediumPathSuffix = '-1080x600px.jpg';
-$imgSmallPathSuffix = '-375x485px.jpg';
+$imgLargePathSuffix = '-1920x600px.webp';
+$imgMediumPathSuffix = '-1080x600px.webp';
+$imgSmallPathSuffix = '-375x485px.webp';
 $imgPathSuffix = ')';
-
-$letItSnow = false;
 ?>
 <div class="slider-outer">
     <?php if (sizeof($args['items']) > 1) : ?>
@@ -67,13 +65,6 @@ $letItSnow = false;
                     </div>
                 </div>
             <?php endif; ?>
-        </div>
-    <?php endif; ?>
-    <?php if($letItSnow): ?>
-        <div class="slider-snow">
-            <?php for ($i = 0; $i < 199; $i++): ?>
-                <div class="snowflake"></div>
-            <?php endfor; ?>
         </div>
     <?php endif; ?>
 </div>
