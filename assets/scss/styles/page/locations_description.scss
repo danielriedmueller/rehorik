@@ -1,6 +1,30 @@
 #locations-description {
   padding: var(--section-spacing-top-bottom) 0;
 
+  > div.test {
+    max-width: $max-width-small;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: repeat(6, minmax(min-content, 10px));
+    padding: $spacing-l 0;
+
+    @media all and (max-width: $medium-breakpoint) {
+      flex-direction: column;
+      padding: $spacing var(--section-spacing-left-right);
+    }
+
+    > * {
+      grid-column: 1;
+    }
+
+    .wp-block-image {
+      grid-column: 2;
+      grid-row: 1 / span 7;
+      padding-left: $spacing;
+    }
+  }
+
   > div > div {
     max-width: $max-width-small;
     margin: auto;

@@ -4,6 +4,21 @@ if (!PLUGINS_ACTIVE) {
     return;
 }
 
+require_once(get_stylesheet_directory() . '/helper/page_helper.php');
+
+$blocks = parse_blocks(get_the_content());
+$table = '<table></table>';
+$locations = [];
+foreach ($blocks as $block) {
+    if ($block['blockName'] === 'core/table') {
+        $table = merge_inner_blocks([$block]);
+    }
+
+    if ($block['blockName'] === 'core/columns') {
+        $locations[] = merge_inner_blocks([$block]);
+    }
+}
+
 get_template_part('templates/header/head', null, [
     'slider' => [
         [
@@ -23,6 +38,7 @@ get_template_part('templates/header/head', null, [
     <div class="container max-width-small">
         <div class="rehorik-page-introduction locations">
             <div class="table-outer">
+                <?= $table ?>
                 <table id="locations-table">
                     <tbody>
                     <tr>
@@ -177,6 +193,9 @@ get_template_part('templates/header/head', null, [
 </div>
 <div id="locations-map"></div>
 <div id="locations-description">
+    <?php foreach ($locations as $location): ?>
+        <div class="test"><?= $location ?></div>
+    <?php endforeach; ?>
     <div id="stammhaus">
         <div>
             <div class="location-text">
