@@ -9,7 +9,6 @@
     background-image: none;
   }
 
-
   .table-outer {
     overflow-x: auto;
     overflow-y: hidden;
@@ -50,10 +49,14 @@
           padding: $padding-top-bottom 0;
         }
 
-        border: 1px solid $beigegold;
-        border-top: none;
-        border-left: none;
-        border-right: none;
+        border: none;
+
+        &:not(:empty) {
+          border: 1px solid $beigegold;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+        }
 
         &:first-child {
           min-width: 205px;
@@ -115,20 +118,12 @@
           padding: $padding-top-bottom 0 0 0;
         }
 
-        border-bottom: none;
-
         &:first-child {
           padding: $padding-top-bottom $padding-side 0 0;
 
           @media all and (max-width: $medium-breakpoint) {
             padding: $padding-top-bottom 0 0 0;
           }
-        }
-      }
-
-      > tr:nth-child(2) {
-        td:nth-child(4), td:nth-child(5) {
-          border-bottom: none;
         }
       }
     }
