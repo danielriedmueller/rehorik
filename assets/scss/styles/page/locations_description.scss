@@ -1,30 +1,6 @@
 #locations-description {
   padding: var(--section-spacing-top-bottom) 0;
 
-  > div.test {
-    max-width: $max-width-small;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 35% 65%;
-    grid-template-rows: repeat(6, minmax(min-content, 10px));
-    padding: $spacing-l 0;
-
-    @media all and (max-width: $medium-breakpoint) {
-      flex-direction: column;
-      padding: $spacing var(--section-spacing-left-right);
-    }
-
-    > * {
-      grid-column: 1;
-    }
-
-    .wp-block-image {
-      grid-column: 2;
-      grid-row: 1 / span 7;
-      padding-left: $spacing;
-    }
-  }
-
   > div > div {
     max-width: $max-width-small;
     margin: auto;
@@ -37,122 +13,86 @@
     }
   }
 
-  p, div {
+  p {
     text-align: justify;
+    padding-bottom: $spacing-s;
   }
 
-  h4, h5 {
-    color: $font-color;
-    font-size: $font-size-large;
-    padding: 0;
-    font-weight: normal;
-    text-align: left;
-  }
-
-  h4 {
+  h2, h3 {
     text-transform: uppercase;
+    text-align: left;
+    font-family: $font-family-bold;
   }
 
-  h5 {
+  h2 {
+    font-size: $font-size-large;
     color: $beigegold;
   }
 
-  .location-text {
-    order: 2;
-
-    td {
-      padding-right: $spacing-s;
-    }
+  h2:first-child {
+    color: $font-color;
   }
 
-  @media all and (max-width: $medium-breakpoint) {
-    .location-text,
-    .location-img {
-      width: 100% !important;
-    }
+  h3 {
+    font-size: $font-size;
   }
 
-  .location-img {
-    order: 3;
+  figure, img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-
+  .location {
     @media all and (max-width: $medium-breakpoint) {
-      order: 1;
-      margin: 0 0 $spacing 0 !important;
+      .location-part:first-child {
+        order: 2;
+      }
+
+      .location-part:last-child {
+        order: 1;
+        margin: 0 0 $spacing 0 !important;
+      }
     }
-  }
 
-  #deliladen {
-    background-color: $beigegold;
-    padding: $spacing-xl 0;
+    @media all and (min-width: $medium-breakpoint + 1) {
+      .location-part:first-child {
+        order: 2;
+      }
 
-    h5 {
+      .location-part:last-child {
+        order: 3;
+        margin-left: $spacing;
+      }
+
+      &:nth-child(2n + 5) {
+        .location-part:first-child {
+          order: 3;
+        }
+
+        .location-part:last-child {
+          order: 2;
+          margin-left: 0;
+          margin-right: $spacing;
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      background-color: $beigegold;
+
+      h2 {
+        color: #fff;
+      }
+    }
+
+    &:nth-child(7) {
+      background-color: $weinrot;
       color: #fff;
-    }
 
-    td {
-      padding-right: $spacing-xxs;
-    }
-  }
-
-  #dez {
-    padding: $spacing-xl 0;
-  }
-
-  #weinkeller {
-    padding: $spacing 0 $spacing-xl 0;
-  }
-
-  #gesandtenstrasse {
-    background-color: $weinrot;
-    padding: $spacing-xl 0;
-
-    h4, h5, div, p {
-      color: #fff;
-    }
-  }
-
-  #kaffeehaus {
-    padding: $spacing-xl 0 0 0;
-  }
-
-  #stammhaus, #deliladen, #gesandtenstrasse {
-    .location-text {
-      width: 35%;
-    }
-
-    .location-img {
-      width: 65%;
-      margin-left: $spacing;
-    }
-  }
-
-  #cafe190, #kaffeeladen, #weinkeller {
-    .location-text {
-      width: 50%;
-    }
-
-    .location-img {
-      width: 50%;
-      order: 1;
-      margin-right: $spacing;
-    }
-  }
-
-  #dez, #kaffeehaus {
-    .location-text {
-      width: 35%;
-    }
-
-    .location-img {
-      width: 65%;
-      order: 1;
-      margin-right: $spacing;
+      h2, h3, p, div {
+        color: #fff;
+      }
     }
   }
 }

@@ -41,7 +41,7 @@ function merge_inner_blocks($blocks) {
     foreach ($blocks as $block) {
         if (!empty($block['innerBlocks'])) {
             $html .= merge_inner_blocks($block['innerBlocks']);
-        } else {
+        } else if (!empty($block['innerHTML'])) {
             $html .= $block['innerHTML'];
         }
     }
