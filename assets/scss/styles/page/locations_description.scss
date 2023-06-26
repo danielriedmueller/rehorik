@@ -1,5 +1,5 @@
 #locations-description {
-  padding: var(--section-spacing-top-bottom) 0;
+  padding: var(--section-spacing-top-bottom) 0 0 0;
 
   > div > div {
     max-width: $max-width-small;
@@ -58,6 +58,7 @@
     @media all and (min-width: $medium-breakpoint + 1) {
       .location-part:first-child {
         order: 2;
+        flex: 0 0 550px;
       }
 
       .location-part:last-child {

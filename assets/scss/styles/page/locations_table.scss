@@ -110,22 +110,6 @@
           }
         }
       }
-
-      > tr:last-child > td {
-        padding: $padding-top-bottom $padding-side 0 $padding-side;
-
-        @media all and (max-width: $medium-breakpoint) {
-          padding: $padding-top-bottom 0 0 0;
-        }
-
-        &:first-child {
-          padding: $padding-top-bottom $padding-side 0 0;
-
-          @media all and (max-width: $medium-breakpoint) {
-            padding: $padding-top-bottom 0 0 0;
-          }
-        }
-      }
     }
   }
 }
