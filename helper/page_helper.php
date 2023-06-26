@@ -2,7 +2,6 @@
 
 function createPageTitle(): string
 {
-
     $suffix = " - " . get_bloginfo('name');
 
     if (is_product_category()) {

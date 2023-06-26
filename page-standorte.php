@@ -1,9 +1,4 @@
 <?php
-if (!PLUGINS_ACTIVE) {
-    echo 'Plugins not active';
-    return;
-}
-
 require_once(get_stylesheet_directory() . '/helper/page_helper.php');
 
 $blocks = parse_blocks(get_the_content());
