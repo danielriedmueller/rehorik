@@ -3,6 +3,8 @@ add_action('wp_ajax_rehorik_ajax_add_to_cart', 'rehorik_add_to_cart');
 add_action('wp_ajax_nopriv_rehorik_ajax_add_to_cart', 'rehorik_add_to_cart');
 add_action('wp_ajax_rehorik_ajax_update_cart', 'rehorik_update_cart');
 add_action('wp_ajax_nopriv_rehorik_ajax_update_cart', 'rehorik_update_cart');
+add_action('wp_ajax_rehorik_ajax_update_shipping_method', 'rehorik_update_shipping_method');
+add_action('wp_ajax_nopriv_rehorik_ajax_update_shipping_method', 'rehorik_update_shipping_method');
 
 function rehorik_add_to_cart(): void
 {
@@ -64,6 +66,21 @@ function rehorik_update_cart(): void
     }
 
     WC()->cart->set_quantity($key, $value);
+    WC_AJAX::get_refreshed_fragments();
+}
+
+function rehorik_update_shipping_method(): void
+{
+    $value = sanitize_text_field($_POST['shipping_method']);
+
+    if (empty($value) || !wp_verify_nonce($_POST['nonce'], 'rehorik-update-shipping-method')) {
+        handle_error($_SERVER['HTTP_REFERER']);
+        return;
+    }
+
+    WC()->session->set('chosen_shipping_methods', [$value]);
+    WC()->cart->calculate_shipping();
+    WC()->cart->calculate_totals();
     WC_AJAX::get_refreshed_fragments();
 }
 

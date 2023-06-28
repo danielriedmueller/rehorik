@@ -1,3 +1,4 @@
+// Cart
 .rehorik-shipping-methods {
   ul#shipping_method {
     .amount {
@@ -5,11 +6,52 @@
     }
 
     li {
-      margin-bottom: $spacing-s;
+      margin-bottom: $spacing-xs;
+
+      input {
+        vertical-align: middle;
+        margin: 0 $spacing-xxs 0 0;
+      }
 
       small {
         font-size: $font-size-small;
         margin-top: $spacing-xs;
+        font-weight: normal;
+        color: #767676;
+      }
+    }
+  }
+}
+
+// Mini cart
+#rehorik-mini-cart .mini-cart-content ul.woocommerce-shipping-methods {
+  list-style: none;
+  margin: $spacing-xs 0;
+
+  input {
+    margin-right: $spacing-xxs;
+  }
+
+  li {
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+
+    label {
+      width: 100%;
+      display: block;
+      position: relative;
+
+      .woocommerce-Price-amount.amount {
+        font-weight: normal;
+        position: absolute;
+        right: 0;
+      }
+
+      small {
+        font-size: $font-size-small;
+        font-weight: normal;
+        color: #767676;
       }
     }
   }
