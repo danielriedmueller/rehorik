@@ -6,14 +6,6 @@ if (!PLUGINS_ACTIVE) {
 
 get_template_part('templates/header/head', null, ['slider' => [
     [
-        'claim' => 'Coffee Culture Festival',
-        'img'=> 'header-coffee-culture-festival',
-        'buttons' => [
-            '/seminar/coffee-culture-festival' => 'am 01.07.2023 / 10 - 22 Uhr',
-            'https://www.rehorik.de/Coffee_Culture_Festival_Programm.pdf' => 'Programm'
-        ]
-    ],
-    [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
         'img'=> 'startseite-header-roesterei',
         'buttons' => [
