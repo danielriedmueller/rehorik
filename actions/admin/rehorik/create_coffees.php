@@ -44,14 +44,12 @@ add_action('wp_ajax_create_coffees', function () {
 
         $skuPartsGrind = [
             '0' => 'ganze-bohne',
-            '1' => 'aeropress',
-            '2' => 'stempelkanne',
-            '3' => 'karlsbader',
-            '4' => 'ibric',
-            '5' => 'siebtraeger',
-            '6' => 'herdkaennchen',
-            '7' => 'handfilter',
-            '8' => 'filtermaschine'
+            '1' => 'ibric',
+            '2' => 'siebtraeger-herdkaennchen',
+            '4' => 'aeropress',
+            '5' => 'filtermaschine-handfilter',
+            '8' => 'stempelkanne',
+            '13' => 'karlsbader-coldbrew',
         ];
 
         $message = '';
