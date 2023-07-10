@@ -1,12 +1,5 @@
 @import "../mixins";
 
-// 3 Columns for coffee variations
-body.rehorik.woocommerce div.product.rehorik-product.product_cat-filterkaffee form.cart table.variations ul,
-body.rehorik.woocommerce div.product.rehorik-product.product_cat-espresso form.cart table.variations ul,
-body.rehorik.woocommerce div.product.rehorik-product.product_cat-crema form.cart table.variations ul {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
 body.rehorik.woocommerce div.product.rehorik-product {
   form.cart {
     margin-bottom: 0;
