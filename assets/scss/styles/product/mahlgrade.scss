@@ -1,37 +1,71 @@
 body.rehorik.woocommerce div.product.rehorik-product form.cart {
   table.variations ul[data-attribute_name="attribute_pa_mahlgrad"] {
     li {
-      padding-left: $spacing;
       background-size: $spacing-s;
       background-repeat: no-repeat;
-      background-position: $spacing-xxs center;
 
       &:hover, &.selected {
         background-color: $weinrot;
       }
-    }
 
-    $mahlgrade: [
+      $mahlgrade: [
       'aeropress',
       'chemex-klein',
       'chemex-gross',
-      'coldbrew',
-      'filtermaschine',
       'ganze-bohne',
-      'handfilter',
-      'herdkaennchen',
       'ibric',
-      'karlsbader',
-      'siebtraeger',
       'stempelkanne'
     ];
 
-    @each $mahlgrad in $mahlgrade {
-      li[data-value='#{$mahlgrad}'] {
-        background-image: url("../img/mahlgrade/#{$mahlgrad}.svg");
+      @each $mahlgrad in $mahlgrade {
+        &[data-value='#{$mahlgrad}'] {
+          background-position: $spacing-xxs center;
+          padding-left: 0;
+          background-image: url("../img/mahlgrade/#{$mahlgrad}.svg");
 
-        &:hover, &.selected {
-          background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg");
+          &:hover, &.selected {
+            background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg");
+          }
+        }
+      }
+
+      @function str-split($string, $separator) {
+        $split-arr: ();
+        $index: str-index($string, $separator);
+        @while $index != null {
+          $item: str-slice($string, 1, $index - 1);
+          $split-arr: append($split-arr, $item);
+          $string: str-slice($string, $index + 1);
+          $index: str-index($string, $separator);
+        }
+        $split-arr: append($split-arr, $string);
+        @return $split-arr;
+      }
+
+      $mahlgrade-double: [
+      'siebtraeger-herdkaennchen',
+      'filtermaschine-handfilter',
+      'karlsbader-coldbrew'
+    ];
+
+      @each $mahlgrad in $mahlgrade-double {
+        &[data-value='#{$mahlgrad}'] {
+          background-position: $spacing-xxs center, 30px center;
+          padding-left: $spacing-xl;
+          $result: str-split($mahlgrad, "-");
+          background-image: url("../img/mahlgrade/#{nth($result, 1)}.svg"), url("../img/mahlgrade/#{nth($result, 2)}.svg");
+
+          &:hover, &.selected {
+            background-image: url("../img/mahlgrade/selected/#{nth($result, 1)}.svg"), url("../img/mahlgrade/selected/#{nth($result, 2)}.svg");
+          }
+
+          > div {
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+          }
         }
       }
     }

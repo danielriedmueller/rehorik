@@ -2,6 +2,9 @@
 defined('ABSPATH') || exit;
 
 $eventInfos = [
+    'unsere-feste' => [
+        'img' => 'header-unsere-feste'
+    ],
     'veranstaltungen' => [
         'img' => 'header-veranstaltungen',
         'claim' => 'FEIERT, GENIESST & LERNT MIT UNS!',

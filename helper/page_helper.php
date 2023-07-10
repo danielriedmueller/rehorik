@@ -2,7 +2,6 @@
 
 function createPageTitle(): string
 {
-
     $suffix = " - " . get_bloginfo('name');
 
     if (is_product_category()) {
@@ -32,4 +31,19 @@ function createPageTitle(): string
     }
 
     return single_post_title() . $suffix;
+}
+
+// Merge page blocks into echoable HTML
+function merge_inner_blocks($blocks) {
+    $html = '';
+
+    foreach ($blocks as $block) {
+        if (!empty($block['innerBlocks'])) {
+            $html .= merge_inner_blocks($block['innerBlocks']);
+        } else if (!empty($block['innerHTML'])) {
+            $html .= $block['innerHTML'];
+        }
+    }
+
+    return $html;
 }
