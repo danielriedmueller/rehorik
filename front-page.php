@@ -6,10 +6,10 @@ if (!PLUGINS_ACTIVE) {
 
 get_template_part('templates/header/head', null, ['slider' => [
     [
-        'claim' => 'VINO SUMMER SALE',
+        'claim' => 'vino summer sale',
         'img'=> 'header-vino-summer-sale',
         'buttons' => [
-            '/seminar/vino-summer-sale' => 'Schaut vorbei!',
+            '/seminar/vino-summer-sale' => '29.07.23 / Straubinger Str. 62A',
         ]
     ],
     [
