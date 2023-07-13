@@ -6,6 +6,13 @@ if (!PLUGINS_ACTIVE) {
 
 get_template_part('templates/header/head', null, ['slider' => [
     [
+        'claim' => 'VINO SUMMER SALE',
+        'img'=> 'header-vino-summer-sale',
+        'buttons' => [
+            '/seminar/vino-summer-sale' => 'Schaut vorbei!',
+        ]
+    ],
+    [
         'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
         'img'=> 'startseite-header-roesterei',
         'buttons' => [
