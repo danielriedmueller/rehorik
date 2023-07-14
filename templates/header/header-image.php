@@ -1,15 +1,15 @@
 <?php
-if (empty($args['items'])) return;
-$items = $args['items'];
+if (empty($args['data'])) return;
+$data = $args['data'];
+$imageLarge = !empty($data[Reh_Page_Header::META_HEADER_IMAGE_LARGE]) ? $data[Reh_Page_Header::META_HEADER_IMAGE_LARGE] : '';
+$imageSmall = !empty($data[Reh_Page_Header::META_HEADER_IMAGE_SMALL]) ? $data[Reh_Page_Header::META_HEADER_IMAGE_SMALL] : (!empty($data[Reh_Page_Header::META_HEADER_IMAGE_LARGE]) ? $data[Reh_Page_Header::META_HEADER_IMAGE_LARGE] : '');
+$claim = $data[Reh_Page_Header::META_HEADER_CLAIM];
+
 ?>
-<div class="slider-image"
-     style='
-     --image-large:url("<?= !empty($items['large']) ? $items['large'] : '' ?>");
-     --image-small:url("<?= !empty($items['small']) ? $items['small'] : (!empty($items['large']) ? $items['large'] : '') ?>");'
-></div>
+<div class="slider-image" style='--image-large:url("<?= $imageLarge ?>");--image-small:url("<?= $imageSmall ?>");'></div>
 <div class="slider-claim">
-    <?php if (!empty($item['claim'])): ?>
-        <div class="slider-title"><h1><?= $item['claim'] ?></h1></div>
+    <?php if (!empty($claim)): ?>
+        <div class="slider-title"><h1><?= $claim ?></h1></div>
     <?php endif; ?>
     <?php if (!empty($item['buttons'])): ?>
         <div class="auto-width button-container">
@@ -21,7 +21,6 @@ $items = $args['items'];
         </div>
     <?php endif; ?>
 </div>
-<a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
 <?php
 if (!empty($item['buttons']))
 get_template_part('templates/introduction', null, [

@@ -1,16 +1,17 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
-    die( '-1' );
+if (!defined('ABSPATH')) {
+    die('-1');
 }
 
 class Reh_Page_Header
 {
     protected static $_instance = null;
     private $nonce = 'reh_page_header_nonce';
-    const META_HEADER_IMAGE_LARGE = 'reh_page_header_large';
-    const META_HEADER_IMAGE_SMALL = 'reh_page_header_small';
-    const META_HEADER_CLAIM = 'reh_page_header_claim';
+    const META_PAGE_HEADER = 'reh_meta_page_header';
+    const META_HEADER_IMAGE_LARGE = 'image_large';
+    const META_HEADER_IMAGE_SMALL = 'image_small';
+    const META_HEADER_CLAIM = 'claim';
 
     public static function instance()
     {
@@ -23,11 +24,13 @@ class Reh_Page_Header
     /**
      * @throws Exception
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->init();
     }
 
-    public function init() {
+    public function init()
+    {
         add_action('admin_enqueue_scripts', function () {
             $assetsDir = get_stylesheet_directory_uri() . '/assets/';
             wp_enqueue_script('page-header', $assetsDir . 'js/page_header.js', ['jquery'], 1, true);
@@ -36,41 +39,77 @@ class Reh_Page_Header
         add_action('save_post', [$this, 'savePageHeaderMetaBox']);
     }
 
-    public function addPageHeaderMetaBox() {
+    public function addPageHeaderMetaBox()
+    {
         add_meta_box(
-            self::META_HEADER_IMAGE_LARGE,
+            self::META_PAGE_HEADER,
             'Page Header',
-            [$this, 'pageHeaderMetaBox'],
+            [$this, 'renderMetaBox'],
             'page',
             'side'
         );
     }
 
-    public function pageHeaderMetaBox($post) {
-        wp_nonce_field( $this->nonce . '_action', $this->nonce );
-        $metaImageURL = get_post_meta($post->ID, self::META_HEADER_IMAGE_LARGE, true);
+    private function getDefaultValues()
+    {
+        return [
+            self::META_HEADER_IMAGE_LARGE => '',
+            self::META_HEADER_IMAGE_SMALL => '',
+            self::META_HEADER_CLAIM => '',
+        ];
+    }
 
-        // Output the custom meta field HTML
+    public function renderMetaBox($post)
+    {
+        wp_nonce_field($this->nonce . '_action', $this->nonce);
+        $values = get_post_meta($post->ID, self::META_PAGE_HEADER, true);
+        $defaults = $this->getDefaultValues();
+        $values = wp_parse_args($values, $defaults);
         ?>
-        <div class="your-meta-field-wrapper">
-            <label for="meta-image-url">Meta Image URL</label>
-            <input type="text" id="meta-image-url" name="<?= self::META_HEADER_IMAGE_LARGE ?>" value="<?= esc_attr($metaImageURL); ?>" readonly />
-
-            <img id="meta-image-preview" src="<?php echo esc_attr($metaImageURL); ?>" alt="Meta Image Preview" style="max-width: 200px; height: auto;" />
-
-            <button id="open-meta-image-uploader" class="button">Choose Image</button>
-        </div>
+            <fieldset>
+                <div>
+                    <label for="meta-page-header-image-large">Desktop (1920x600px)</label>
+                    <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_LARGE ?>]"
+                           id="meta-page-header-image-large"
+                           value="<?= esc_attr($values[self::META_HEADER_IMAGE_LARGE]); ?>" hidden/>
+                    <img
+                        id="meta-page-header-image-preview-large"
+                        src="<?php echo esc_attr($values[self::META_HEADER_IMAGE_LARGE]); ?>"
+                        style="<?php if(empty($values[self::META_HEADER_IMAGE_LARGE])) : ?>display: none;<?php endif; ?>"
+                    />
+                    <button class="open-meta-image-uploader button" data-size="large">Bild auswählen</button>
+                </div>
+                <div>
+                    <label for="meta-page-header-image-small">Mobil (375x485px)</label>
+                    <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_SMALL ?>]"
+                           id="meta-page-header-image-small"
+                           value="<?= esc_attr($values[self::META_HEADER_IMAGE_SMALL]); ?>" hidden/>
+                    <img
+                        id="meta-page-header-image-preview-small"
+                        src="<?php echo esc_attr($values[self::META_HEADER_IMAGE_SMALL]); ?>"
+                        style="<?php if(empty($values[self::META_HEADER_IMAGE_SMALL])) : ?>display: none;<?php endif; ?>"
+                    />
+                    <button class="open-meta-image-uploader button" data-size="small">Bild auswählen</button>
+                </div>
+                <div>
+                    <label for="meta-page-header-claim">Claim</label>
+                    <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_CLAIM ?>]"
+                           id="meta-page-header-claim"
+                           value="<?= esc_attr($values[self::META_HEADER_CLAIM]); ?>"/>
+                </div>
+            </fieldset>
         <?php
     }
 
-    public function savePageHeaderMetaBox(int $post_id) {
+    public function savePageHeaderMetaBox(int $post_id)
+    {
         // Check if our nonce is set.
         if (!isset($_POST[$this->nonce])) {
             return;
         }
 
         // Verify that the nonce is valid.
-        if (!wp_verify_nonce($_POST[$this->nonce], $this->nonce. '_action')) {
+        if (!wp_verify_nonce($_POST[$this->nonce], $this->nonce . '_action')) {
             return;
         }
 
@@ -85,18 +124,17 @@ class Reh_Page_Header
         }
 
         // Make sure that it is set.
-        if (!isset($_POST[self::META_HEADER_IMAGE_LARGE])) {
+        if (!isset($_POST[self::META_PAGE_HEADER])) {
             return;
         }
 
-        // Sanitize user input.
-        $my_data = sanitize_text_field($_POST[self::META_HEADER_IMAGE_LARGE]);
+        $value = sanitize_text_field($_POST[self::META_PAGE_HEADER]);
 
         // Update the meta field in the database.
-        update_post_meta($post_id, self::META_HEADER_IMAGE_LARGE, $my_data);
+        update_post_meta($post_id, self::META_PAGE_HEADER, $value);
     }
 }
 
-add_action( 'admin_init', function () {
+add_action('admin_init', function () {
     Reh_Page_Header::instance();
 });

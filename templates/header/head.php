@@ -1,12 +1,7 @@
 <?php
 require_once(get_stylesheet_directory() . '/helper/page_helper.php');
-
-$headerData = [
-    'large' => get_post_meta(get_the_ID(), Reh_Page_Header::META_HEADER_IMAGE_LARGE, true),
-    'small' => get_post_meta(get_the_ID(), Reh_Page_Header::META_HEADER_IMAGE_SMALL, true),
-    'claim' => get_post_meta(get_the_ID(), Reh_Page_Header::META_HEADER_CLAIM, true),
-];
-$hasHeaderImage = !empty($headerData['large']) || !empty($headerData['small']);
+$headerData = get_post_meta(get_the_ID(), Reh_Page_Header::META_PAGE_HEADER, true);
+$hasHeaderImage = !empty($headerData[Reh_Page_Header::META_HEADER_IMAGE_LARGE]) || !empty($headerData[Reh_Page_Header::META_HEADER_IMAGE_SMALL]);
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -40,3 +35,6 @@ $hasHeaderImage = !empty($headerData['large']) || !empty($headerData['small']);
     get_template_part('templates/header/menu');
     get_template_part('templates/header/header-image', null, ['data' => $headerData]);
     ?>
+    <?php if($hasHeaderImage): ?>
+        <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
+    <?php endif; ?>

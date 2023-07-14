@@ -5,18 +5,13 @@ jQuery(document).ready(function($) {
     // Function to handle the media uploader
     function openMetaImageUploader(event) {
         event.preventDefault();
-
-        // If the media frame already exists, reopen it
-        if (metaImageFrame) {
-            metaImageFrame.open();
-            return;
-        }
+        const size = $(this).data('size');
 
         // Create a new media frame
         metaImageFrame = wp.media({
-            title: 'Select Meta Image',
+            title: 'Bild auswählen',
             button: {
-                text: 'Choose Image'
+                text: 'Bild auswählen'
             },
             multiple: false // Set to true if you want to allow multiple image selection
         });
@@ -24,8 +19,9 @@ jQuery(document).ready(function($) {
         // When an image is selected, run a callback
         metaImageFrame.on('select', function() {
             var attachment = metaImageFrame.state().get('selection').first().toJSON();
-            $('#meta-image-preview').attr('src', attachment.url);
-            $('#meta-image-url').val(attachment.url);
+            console.log('#meta-page-header-image-' + size)
+            $('#meta-page-header-image-preview-' + size).attr('src', attachment.url).show();
+            $('#meta-page-header-image-' + size).val(attachment.url);
         });
 
         // Open the media frame
@@ -33,5 +29,5 @@ jQuery(document).ready(function($) {
     }
 
     // Attach the event listener to the button or element that triggers the media uploader
-    $('#open-meta-image-uploader').on('click', openMetaImageUploader);
+    $('.open-meta-image-uploader').on('click', openMetaImageUploader);
 });
