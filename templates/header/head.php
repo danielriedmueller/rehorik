@@ -1,7 +1,11 @@
 <?php
 require_once(get_stylesheet_directory() . '/helper/page_helper.php');
 
-$hasSlider = !empty($args['slider']);
+
+$slider = [
+    'large' => get_post_meta(get_the_ID(), Reh_Page_Header::META_IMAGE_LARGE, true),
+];
+$hasSlider = !empty($slider['large']) || !empty($slider['medium']) || !empty($slider['small']);
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -32,6 +36,11 @@ $hasSlider = !empty($args['slider']);
 <body <?php body_class('rehorik' . ($hasSlider ? ' has-slider' : '')); ?>>
 <div id="page-container">
     <?php
-    if ($hasSlider) get_template_part('templates/header/slider', null, ['items' => $args['slider']]);
     get_template_part('templates/header/menu');
+
+    if ($hasSlider) get_template_part('templates/header/header-image', null, ['items' => $slider]);
+    get_template_part('templates/introduction', null, [
+        'text' => '<span>Hier findest Du die perfekten Geschenke für befreundete Feinschmecker:innen oder Schmankerl für verwandte Genießer:innen. Wir haben das Beste aus unseren Wein- und Delikatessenregalen geholt und schon mal ein paar Geschenke zusammengestellt.
+</span><span>Mit unserem bruchsicheren Versand überleben Rehorik Weihnachtsgeschenke auch die wildeste Schlittenfahrt, direkt zu Deiner Familie, Deinen Kolleg:innen oder Freund:innen nach Hause. Das Weihnachtswichtel-Team wünscht viel Spaß beim Verschenken!</span>',
+    ]);
     ?>
