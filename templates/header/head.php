@@ -1,11 +1,12 @@
 <?php
 require_once(get_stylesheet_directory() . '/helper/page_helper.php');
 
-
-$slider = [
-    'large' => get_post_meta(get_the_ID(), Reh_Page_Header::META_IMAGE_LARGE, true),
+$headerData = [
+    'large' => get_post_meta(get_the_ID(), Reh_Page_Header::META_HEADER_IMAGE_LARGE, true),
+    'small' => get_post_meta(get_the_ID(), Reh_Page_Header::META_HEADER_IMAGE_SMALL, true),
+    'claim' => get_post_meta(get_the_ID(), Reh_Page_Header::META_HEADER_CLAIM, true),
 ];
-$hasSlider = !empty($slider['large']) || !empty($slider['medium']) || !empty($slider['small']);
+$hasHeaderImage = !empty($headerData['large']) || !empty($headerData['small']);
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -33,14 +34,9 @@ $hasSlider = !empty($slider['large']) || !empty($slider['medium']) || !empty($sl
     <meta property="og:site_name" content="Rehorik"/>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class('rehorik' . ($hasSlider ? ' has-slider' : '')); ?>>
+<body <?php body_class('rehorik' . ($hasHeaderImage ? ' has-header-image' : '')); ?>>
 <div id="page-container">
     <?php
     get_template_part('templates/header/menu');
-
-    if ($hasSlider) get_template_part('templates/header/header-image', null, ['items' => $slider]);
-    get_template_part('templates/introduction', null, [
-        'text' => '<span>Hier findest Du die perfekten Geschenke für befreundete Feinschmecker:innen oder Schmankerl für verwandte Genießer:innen. Wir haben das Beste aus unseren Wein- und Delikatessenregalen geholt und schon mal ein paar Geschenke zusammengestellt.
-</span><span>Mit unserem bruchsicheren Versand überleben Rehorik Weihnachtsgeschenke auch die wildeste Schlittenfahrt, direkt zu Deiner Familie, Deinen Kolleg:innen oder Freund:innen nach Hause. Das Weihnachtswichtel-Team wünscht viel Spaß beim Verschenken!</span>',
-    ]);
+    get_template_part('templates/header/header-image', null, ['data' => $headerData]);
     ?>

@@ -8,12 +8,9 @@ class Reh_Page_Header
 {
     protected static $_instance = null;
     private $nonce = 'reh_page_header_nonce';
-    const META_IMAGE_LARGE = 'reh_page_header_large';
-    private $metaImageMedium = 'reh_page_header_medium';
-    private $metaImageSmall = 'reh_page_header_small';
-    private $metaClaim = 'reh_page_header_claim';
-    private $metaIntroduction = 'reh_page_header_introduction';
-    private $metaButtons = 'reh_page_header_buttons';
+    const META_HEADER_IMAGE_LARGE = 'reh_page_header_large';
+    const META_HEADER_IMAGE_SMALL = 'reh_page_header_small';
+    const META_HEADER_CLAIM = 'reh_page_header_claim';
 
     public static function instance()
     {
@@ -41,7 +38,7 @@ class Reh_Page_Header
 
     public function addPageHeaderMetaBox() {
         add_meta_box(
-            self::META_IMAGE_LARGE,
+            self::META_HEADER_IMAGE_LARGE,
             'Page Header',
             [$this, 'pageHeaderMetaBox'],
             'page',
@@ -51,13 +48,13 @@ class Reh_Page_Header
 
     public function pageHeaderMetaBox($post) {
         wp_nonce_field( $this->nonce . '_action', $this->nonce );
-        $metaImageURL = get_post_meta($post->ID, self::META_IMAGE_LARGE, true);
+        $metaImageURL = get_post_meta($post->ID, self::META_HEADER_IMAGE_LARGE, true);
 
         // Output the custom meta field HTML
         ?>
         <div class="your-meta-field-wrapper">
             <label for="meta-image-url">Meta Image URL</label>
-            <input type="text" id="meta-image-url" name="<?= self::META_IMAGE_LARGE ?>" value="<?= esc_attr($metaImageURL); ?>" readonly />
+            <input type="text" id="meta-image-url" name="<?= self::META_HEADER_IMAGE_LARGE ?>" value="<?= esc_attr($metaImageURL); ?>" readonly />
 
             <img id="meta-image-preview" src="<?php echo esc_attr($metaImageURL); ?>" alt="Meta Image Preview" style="max-width: 200px; height: auto;" />
 
@@ -88,15 +85,15 @@ class Reh_Page_Header
         }
 
         // Make sure that it is set.
-        if (!isset($_POST[self::META_IMAGE_LARGE])) {
+        if (!isset($_POST[self::META_HEADER_IMAGE_LARGE])) {
             return;
         }
 
         // Sanitize user input.
-        $my_data = sanitize_text_field($_POST[self::META_IMAGE_LARGE]);
+        $my_data = sanitize_text_field($_POST[self::META_HEADER_IMAGE_LARGE]);
 
         // Update the meta field in the database.
-        update_post_meta($post_id, self::META_IMAGE_LARGE, $my_data);
+        update_post_meta($post_id, self::META_HEADER_IMAGE_LARGE, $my_data);
     }
 }
 

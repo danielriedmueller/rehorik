@@ -4,16 +4,14 @@ $items = $args['items'];
 ?>
 <div class="slider-image"
      style='
-     <?php if (isset($items['large'])): ?>--image-large:<?= $items['large'] ?>;<?php endif; ?>
-     <?php if (isset($items['medium'])): ?>--image-large:<?= $items['medium'] ?>;<?php endif; ?>
-     <?php if (isset($items['small'])): ?>--image-large:<?= $items['small'] ?>;<?php endif; ?>
-         '
+     --image-large:url("<?= !empty($items['large']) ? $items['large'] : '' ?>");
+     --image-small:url("<?= !empty($items['small']) ? $items['small'] : (!empty($items['large']) ? $items['large'] : '') ?>");'
 ></div>
 <div class="slider-claim">
-    <?php if (isset($item['claim'])): ?>
+    <?php if (!empty($item['claim'])): ?>
         <div class="slider-title"><h1><?= $item['claim'] ?></h1></div>
     <?php endif; ?>
-    <?php if (isset($item['buttons'])): ?>
+    <?php if (!empty($item['buttons'])): ?>
         <div class="auto-width button-container">
             <div>
                 <?php foreach ($item['buttons'] as $link => $text): ?>
@@ -24,3 +22,10 @@ $items = $args['items'];
     <?php endif; ?>
 </div>
 <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
+<?php
+if (!empty($item['buttons']))
+get_template_part('templates/introduction', null, [
+    'text' => '<span>Hier findest Du die perfekten Geschenke für befreundete Feinschmecker:innen oder Schmankerl für verwandte Genießer:innen. Wir haben das Beste aus unseren Wein- und Delikatessenregalen geholt und schon mal ein paar Geschenke zusammengestellt.
+</span><span>Mit unserem bruchsicheren Versand überleben Rehorik Weihnachtsgeschenke auch die wildeste Schlittenfahrt, direkt zu Deiner Familie, Deinen Kolleg:innen oder Freund:innen nach Hause. Das Weihnachtswichtel-Team wünscht viel Spaß beim Verschenken!</span>',
+]);
+?>

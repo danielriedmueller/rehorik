@@ -1,7 +1,7 @@
 // Transparent header
 // Desktop
 @media all and (min-width: $medium-breakpoint + 1) {
-  body.rehorik.has-slider {
+  body.rehorik.has-header-image {
     #page-container {
       padding-top: 0;
 
@@ -25,7 +25,7 @@
     }
   }
 
-  body.rehorik:not(.has-slider) {
+  body.rehorik:not(.has-header-image) {
     #page-container {
       padding-top: $top-bar-height + $menu-height;
 
@@ -43,7 +43,7 @@
 
 // Mobile
 @media all and (max-width: $medium-breakpoint) {
-  body.rehorik.has-slider #page-container header.rehorik-header {
+  body.rehorik.has-header-image #page-container header.rehorik-header {
     @for $i from 1 through 218 {
       &[data-ypos="#{$i}"] {
         background-color: rgba(92, 13, 47, $i / 100);
