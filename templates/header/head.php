@@ -1,7 +1,18 @@
 <?php
 require_once(get_stylesheet_directory() . '/helper/page_helper.php');
-$headerData = get_post_meta(get_the_ID(), Reh_Page_Header::META_PAGE_HEADER, true);
-$hasHeaderImage = !empty($headerData[Reh_Page_Header::META_HEADER_IMAGE_LARGE]) || !empty($headerData[Reh_Page_Header::META_HEADER_IMAGE_SMALL]);
+$id = get_queried_object();
+
+$headerData = null;
+if ($term = get_queried_object()) {
+    if ($term->taxonomy === 'product_cat') {
+        $headerData = get_term_meta($term->term_id, Reh_Page_Header_Image::META_PAGE_HEADER, true);
+    }
+}
+if (!$headerData) {
+    $headerData = get_post_meta(get_the_ID(), Reh_Page_Header_Image::META_PAGE_HEADER, true);
+}
+
+$hasHeaderImage = !empty($headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE]) || !empty($headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL]);
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -33,7 +44,7 @@ $hasHeaderImage = !empty($headerData[Reh_Page_Header::META_HEADER_IMAGE_LARGE]) 
 <div id="page-container">
     <?php
     get_template_part('templates/header/menu');
-    get_template_part('templates/header/header-image', null, ['data' => $headerData]);
+    get_template_part('templates/header/page-header-image', null, ['data' => $headerData]);
     ?>
     <?php if($hasHeaderImage): ?>
         <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>

@@ -1,0 +1,108 @@
+#page-header-image-outer {
+  position: relative;
+
+  .page-header-image {
+    width: auto;
+    height: var(--slider-height);
+    background-repeat: no-repeat;
+    $opacity: 0.7;
+    background-image: linear-gradient(180deg, rgba(0,0,0,$opacity) 0%, rgba(0,0,0,0) 40%), var(--image-large);
+    object-fit: cover;
+    background-size: cover;
+
+    @media all and (max-width: $small-breakpoint) {
+      background-image: var(--image-small);
+    }
+  }
+
+  .page-header-claim {
+    overflow: hidden;
+    max-width: 550px;
+    @media all and (max-width: $small-breakpoint) {
+      max-width: 350px;
+    }
+    padding: 0 var(--section-spacing-left-right);
+    display: inline-block;
+    position: absolute;
+
+    bottom: var(--section-spacing-top-bottom);
+    right: 10%;
+
+    @media all and (max-width: $medium-breakpoint) {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+
+    .page-header-title {
+      h1, h2 {
+        font-family: $font-family-black;
+        font-size: $font-size-very-very-large;
+        color: #fff;
+      }
+    }
+
+    .auto-width {
+      display: flex;
+    }
+
+    .auto-width div {
+      flex-grow: 1;
+      width: 0;
+    }
+
+    .button-container div {
+      display: flex;
+      justify-content: space-evenly;
+
+      margin-top: $spacing-s;
+
+      @media all and (max-width: $small-breakpoint) {
+        margin-top: $spacing-s;
+      }
+
+      .button {
+        transition: none;
+        font-family: $font-family-bold;
+        background-color: $weinrot;
+        color: $beigegold;
+        padding: $spacing-xxs $spacing-xs;
+        min-width: 200px;
+        text-align: center;
+        display: inline-block;
+
+        &:hover {
+          background-color: $beigegold;
+          color: #fff;
+        }
+
+        &:first-child:last-child {
+          width: 100%;
+        }
+      }
+
+      .button:nth-child(2) {
+        background-color: $beigegold;
+        color: #fff;
+
+        &:hover {
+          background-color: $weinrot;
+          color: $beigegold;
+        }
+      }
+
+      @media all and (max-width: $small-breakpoint) {
+        flex-direction: column;
+        align-items: center;
+
+        .button {
+          width: 100%;
+        }
+
+        .button:first-child:not(:last-child) {
+          margin-bottom: $spacing-s;
+        }
+      }
+    }
+  }
+}
