@@ -12,6 +12,10 @@ class Reh_Page_Header_Image
     const META_HEADER_IMAGE_LARGE = 'image_large';
     const META_HEADER_IMAGE_SMALL = 'image_small';
     const META_HEADER_CLAIM = 'claim';
+    const META_HEADER_BUTTON_1 = 'button_1';
+    const META_HEADER_BUTTON_2 = 'button_2';
+    const META_HEADER_BUTTON_LINK = 'button_link';
+    const META_HEADER_BUTTON_TEXT = 'button_text';
 
     public static function instance()
     {
@@ -45,7 +49,7 @@ class Reh_Page_Header_Image
     {
         add_meta_box(
             self::META_PAGE_HEADER,
-            'Page Header',
+            'Headerbild',
             [$this, 'renderMetaBox'],
             'page',
             'side'
@@ -78,17 +82,33 @@ class Reh_Page_Header_Image
 
         $defaults = $this->getDefaultValues();
         $values = wp_parse_args($values, $defaults);
+        $imageLarge = esc_attr($values[self::META_HEADER_IMAGE_LARGE] ?? '');
+        $imageSmall = esc_attr($values[self::META_HEADER_IMAGE_SMALL] ?? '');
+        $claim = esc_attr($values[self::META_HEADER_CLAIM] ?? '');
+        $button1_link = isset($values[self::META_HEADER_BUTTON_1])
+            ? esc_attr($values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_LINK] ?? '')
+            : '';
+        $button1_text = isset($values[self::META_HEADER_BUTTON_1])
+            ? esc_attr($values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_TEXT] ?? '')
+            : '';
+        $button2_link = isset($values[self::META_HEADER_BUTTON_2])
+            ? esc_attr($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_LINK] ?? '')
+            : '';
+        $button2_text = isset($values[self::META_HEADER_BUTTON_2])
+            ? esc_attr($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT] ?? '')
+            : '';
+
         ?>
         <fieldset>
             <div>
                 <label for="meta-page-header-image-large">Desktop (1920x600px)</label>
                 <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_LARGE ?>]"
                        id="meta-page-header-image-large"
-                       value="<?= esc_attr($values[self::META_HEADER_IMAGE_LARGE]); ?>" hidden/>
+                       value="<?= $imageLarge ?>" hidden/>
                 <img
                     id="meta-page-header-image-preview-large"
-                    src="<?php echo esc_attr($values[self::META_HEADER_IMAGE_LARGE]); ?>"
-                    style="<?php if (empty($values[self::META_HEADER_IMAGE_LARGE])) : ?>display: none;<?php endif; ?>"
+                    src="<?= $imageLarge ?>"
+                    style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
                 />
                 <button class="open-meta-image-uploader button" data-size="large">Bild auswählen</button>
             </div>
@@ -96,11 +116,11 @@ class Reh_Page_Header_Image
                 <label for="meta-page-header-image-small">Mobil (375x485px)</label>
                 <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_SMALL ?>]"
                        id="meta-page-header-image-small"
-                       value="<?= esc_attr($values[self::META_HEADER_IMAGE_SMALL]); ?>" hidden/>
+                       value="<?= $imageSmall ?>" hidden/>
                 <img
                     id="meta-page-header-image-preview-small"
-                    src="<?php echo esc_attr($values[self::META_HEADER_IMAGE_SMALL]); ?>"
-                    style="<?php if (empty($values[self::META_HEADER_IMAGE_SMALL])) : ?>display: none;<?php endif; ?>"
+                    src="<?= $imageSmall ?>"
+                    style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
                 />
                 <button class="open-meta-image-uploader button" data-size="small">Bild auswählen</button>
             </div>
@@ -108,7 +128,29 @@ class Reh_Page_Header_Image
                 <label for="meta-page-header-claim">Claim</label>
                 <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_CLAIM ?>]"
                        id="meta-page-header-claim"
-                       value="<?= esc_attr($values[self::META_HEADER_CLAIM]); ?>"/>
+                       value="<?= $claim ?>"/>
+            </div>
+            <div>
+                <label for="meta-page-header-button-1-link">Button #1</label>
+                <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_1 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
+                       id="meta-page-header-button-1-link"
+                       placeholder="Link"
+                       value="<?= $button1_link ?>"/>
+                <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_1 ?>][<?= self::META_HEADER_BUTTON_TEXT ?>]"
+                       id="meta-page-header-button-1-text"
+                       placeholder="Text"
+                       value="<?= $button1_text ?>"/>
+            </div>
+            <div>
+                <label for="meta-page-header-button-2-link">Button #2</label>
+                <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_2 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
+                       id="meta-page-header-button-2-link"
+                       placeholder="Link"
+                       value="<?= $button2_link ?>"/>
+                <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_2 ?>][<?= self::META_HEADER_BUTTON_TEXT ?>]"
+                       id="meta-page-header-button-2-text"
+                       placeholder="Text"
+                       value="<?= $button2_text ?>"/>
             </div>
         </fieldset>
         <?php
