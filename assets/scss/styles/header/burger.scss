@@ -13,7 +13,7 @@
     height: $top-bar-height;
   }
 
-  body.rehorik:not(.has-slider) {
+  body.rehorik:not(.has-header-image) {
     #page-container {
       padding-top: $top-bar-height;
     }

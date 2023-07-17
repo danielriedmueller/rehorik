@@ -1,7 +1,18 @@
 <?php
 require_once(get_stylesheet_directory() . '/helper/page_helper.php');
+$id = get_queried_object();
 
-$hasSlider = !empty($args['slider']);
+$headerData = null;
+if ($term = get_queried_object()) {
+    if ($term->taxonomy === 'product_cat') {
+        $headerData = get_term_meta($term->term_id, Reh_Page_Header_Image::META_PAGE_HEADER, true);
+    }
+}
+if (!$headerData) {
+    $headerData = get_post_meta(get_the_ID(), Reh_Page_Header_Image::META_PAGE_HEADER, true);
+}
+
+$hasHeaderImage = !empty($headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE]) || !empty($headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL]);
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -29,9 +40,12 @@ $hasSlider = !empty($args['slider']);
     <meta property="og:site_name" content="Rehorik"/>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class('rehorik' . ($hasSlider ? ' has-slider' : '')); ?>>
+<body <?php body_class('rehorik' . ($hasHeaderImage ? ' has-header-image' : '')); ?>>
 <div id="page-container">
     <?php
-    if ($hasSlider) get_template_part('templates/header/slider', null, ['items' => $args['slider']]);
     get_template_part('templates/header/menu');
+    get_template_part('templates/header/page-header-image', null, ['data' => $headerData]);
     ?>
+    <?php if($hasHeaderImage): ?>
+        <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
+    <?php endif; ?>
