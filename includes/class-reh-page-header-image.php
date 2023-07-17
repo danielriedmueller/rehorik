@@ -54,7 +54,8 @@ class Reh_Page_Header_Image
             'Headerbild',
             [$this, 'renderMetaBox'],
             'page',
-            'side'
+            'normal',
+            'high'
         );
     }
 
@@ -103,44 +104,48 @@ class Reh_Page_Header_Image
 
         ?>
         <fieldset id="page-header-form">
-            <legend>Headerbild</legend>
+            <legend class="page-header-form-title">Headerbild</legend>
             <label>
-                Desktop (1920x600px)
+                <span>Desktop (1920x600px)</span>
                 <input
                     type="text"
+                    id="meta-page-header-image-large"
                     name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_LARGE ?>]"
                     value="<?= $imageLarge ?>"
                     hidden
                 />
+                <button class="open-meta-image-uploader button" data-size="large">Bild auswählen</button>
                 <img
                     src="<?= $imageLarge ?>"
+                    id="meta-page-header-image-preview-large"
                     style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
                 />
-                <button class="open-meta-image-uploader button" data-size="large">Bild auswählen</button>
             </label>
             <label>
-                Mobil (375x485px)
+                <span>Mobil (375x485px)</span>
                 <input
                     type="text"
+                    id="meta-page-header-image-small"
                     name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_SMALL ?>]"
                     value="<?= $imageSmall ?>"
                     hidden
                 />
+                <button class="open-meta-image-uploader button" data-size="small">Bild auswählen</button>
                 <img
                     src="<?= $imageSmall ?>"
+                    id="meta-page-header-image-preview-small"
                     style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
                 />
-                <button class="open-meta-image-uploader button" data-size="small">Bild auswählen</button>
             </label>
             <label>
-                Claim
+                <span>Claim</span>
                 <input
                     type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_CLAIM ?>]"
                     value="<?= $claim ?>"
                 />
             </label>
             <label>
-                Button #1
+                <span>Button #1</span>
                 <input type="text"
                        name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_1 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
                        placeholder="Link"
@@ -152,7 +157,8 @@ class Reh_Page_Header_Image
                        value="<?= $button1_text ?>"
                 />
             </label>
-            <label>Button #2
+            <label>
+                <span>Button #2</span>
                 <input type="text"
                        name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_2 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
                        placeholder="Link"
@@ -165,10 +171,8 @@ class Reh_Page_Header_Image
                 />
             </label>
             <label>
-                Intro
-                <textarea name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_INTRO ?>]">
-                    <?= $intro ?>
-                </textarea>
+                <span>Intro</span>
+                <textarea name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_INTRO ?>]"><?= $intro ?></textarea>
             </label>
         </fieldset>
         <?php
