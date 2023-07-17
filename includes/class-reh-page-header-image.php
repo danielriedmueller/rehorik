@@ -39,6 +39,7 @@ class Reh_Page_Header_Image
         add_action('admin_enqueue_scripts', function () {
             $assetsDir = get_stylesheet_directory_uri() . '/assets/';
             wp_enqueue_script('page-header', $assetsDir . 'js/page_header.js', ['jquery'], 1, true);
+            wp_enqueue_style('page-header', $assetsDir . 'css/page-header-admin.css', false, 1);
         });
         add_action('add_meta_boxes', [$this, 'addPageHeaderMetaBox']);
         add_action('save_post', [$this, 'savePageHeaderMetaBox']);
@@ -101,7 +102,8 @@ class Reh_Page_Header_Image
         $intro = esc_attr($values[self::META_HEADER_INTRO] ?? '');
 
         ?>
-        <fieldset>
+        <fieldset id="page-header-form">
+            <legend>Headerbild</legend>
             <label>
                 Desktop (1920x600px)
                 <input
@@ -164,11 +166,9 @@ class Reh_Page_Header_Image
             </label>
             <label>
                 Intro
-                <textarea
-                    rows="3"
-                    cols="1"
-                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_INTRO ?>]"
-                ><?= $intro ?></textarea>
+                <textarea name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_INTRO ?>]">
+                    <?= $intro ?>
+                </textarea>
             </label>
         </fieldset>
         <?php

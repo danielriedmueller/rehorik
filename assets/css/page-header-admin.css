@@ -1,0 +1,13 @@
+#page-header-form {
+    margin-top: 20px;
+}
+
+#page-header-form legend {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#page-header-form label {
+    display: block;
+    margin-bottom: 15px;
+}
