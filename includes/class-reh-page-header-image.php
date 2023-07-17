@@ -12,6 +12,7 @@ class Reh_Page_Header_Image
     const META_HEADER_IMAGE_LARGE = 'image_large';
     const META_HEADER_IMAGE_SMALL = 'image_small';
     const META_HEADER_CLAIM = 'claim';
+    const META_HEADER_INTRO = 'intro';
     const META_HEADER_BUTTON_1 = 'button_1';
     const META_HEADER_BUTTON_2 = 'button_2';
     const META_HEADER_BUTTON_LINK = 'button_link';
@@ -97,61 +98,78 @@ class Reh_Page_Header_Image
         $button2_text = isset($values[self::META_HEADER_BUTTON_2])
             ? esc_attr($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT] ?? '')
             : '';
+        $intro = esc_attr($values[self::META_HEADER_INTRO] ?? '');
 
         ?>
         <fieldset>
-            <div>
-                <label for="meta-page-header-image-large">Desktop (1920x600px)</label>
-                <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_LARGE ?>]"
-                       id="meta-page-header-image-large"
-                       value="<?= $imageLarge ?>" hidden/>
+            <label>
+                Desktop (1920x600px)
+                <input
+                    type="text"
+                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_LARGE ?>]"
+                    value="<?= $imageLarge ?>"
+                    hidden
+                />
                 <img
-                    id="meta-page-header-image-preview-large"
                     src="<?= $imageLarge ?>"
                     style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
                 />
                 <button class="open-meta-image-uploader button" data-size="large">Bild auswählen</button>
-            </div>
-            <div>
-                <label for="meta-page-header-image-small">Mobil (375x485px)</label>
-                <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_SMALL ?>]"
-                       id="meta-page-header-image-small"
-                       value="<?= $imageSmall ?>" hidden/>
+            </label>
+            <label>
+                Mobil (375x485px)
+                <input
+                    type="text"
+                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_SMALL ?>]"
+                    value="<?= $imageSmall ?>"
+                    hidden
+                />
                 <img
-                    id="meta-page-header-image-preview-small"
                     src="<?= $imageSmall ?>"
                     style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
                 />
                 <button class="open-meta-image-uploader button" data-size="small">Bild auswählen</button>
-            </div>
-            <div>
-                <label for="meta-page-header-claim">Claim</label>
-                <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_CLAIM ?>]"
-                       id="meta-page-header-claim"
-                       value="<?= $claim ?>"/>
-            </div>
-            <div>
-                <label for="meta-page-header-button-1-link">Button #1</label>
-                <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_1 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
-                       id="meta-page-header-button-1-link"
+            </label>
+            <label>
+                Claim
+                <input
+                    type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_CLAIM ?>]"
+                    value="<?= $claim ?>"
+                />
+            </label>
+            <label>
+                Button #1
+                <input type="text"
+                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_1 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
                        placeholder="Link"
-                       value="<?= $button1_link ?>"/>
-                <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_1 ?>][<?= self::META_HEADER_BUTTON_TEXT ?>]"
-                       id="meta-page-header-button-1-text"
+                       value="<?= $button1_link ?>"
+                />
+                <input type="text"
+                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_1 ?>][<?= self::META_HEADER_BUTTON_TEXT ?>]"
                        placeholder="Text"
-                       value="<?= $button1_text ?>"/>
-            </div>
-            <div>
-                <label for="meta-page-header-button-2-link">Button #2</label>
-                <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_2 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
-                       id="meta-page-header-button-2-link"
+                       value="<?= $button1_text ?>"
+                />
+            </label>
+            <label>Button #2
+                <input type="text"
+                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_2 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
                        placeholder="Link"
-                       value="<?= $button2_link ?>"/>
-                <input type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_2 ?>][<?= self::META_HEADER_BUTTON_TEXT ?>]"
-                       id="meta-page-header-button-2-text"
+                       value="<?= $button2_link ?>"
+                />
+                <input type="text"
+                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_2 ?>][<?= self::META_HEADER_BUTTON_TEXT ?>]"
                        placeholder="Text"
-                       value="<?= $button2_text ?>"/>
-            </div>
+                       value="<?= $button2_text ?>"
+                />
+            </label>
+            <label>
+                Intro
+                <textarea
+                    rows="3"
+                    cols="1"
+                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_INTRO ?>]"
+                ><?= $intro ?></textarea>
+            </label>
         </fieldset>
         <?php
     }
