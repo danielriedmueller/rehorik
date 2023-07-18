@@ -10,6 +10,7 @@ get_template_part('templates/header/head', null, ['slider' => [
         'img'=> 'header-vino-summer-sale',
         'buttons' => [
             '/seminar/vino-summer-sale' => '29.07.23 / Straubinger Str. 62A',
+            '/Vino%20Summer%20Sale%20Weinliste%20A4%20DIGITAL.pdf' => 'Weinliste',
         ]
     ],
     [
