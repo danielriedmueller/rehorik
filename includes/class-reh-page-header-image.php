@@ -70,6 +70,15 @@ class Reh_Page_Header_Image
             self::META_HEADER_IMAGE_LARGE => '',
             self::META_HEADER_IMAGE_SMALL => '',
             self::META_HEADER_CLAIM => '',
+            self::META_HEADER_INTRO => '',
+            self::META_HEADER_BUTTON_1 => [
+                self::META_HEADER_BUTTON_LINK => '',
+                self::META_HEADER_BUTTON_TEXT => '',
+            ],
+            self::META_HEADER_BUTTON_2 => [
+                self::META_HEADER_BUTTON_LINK => '',
+                self::META_HEADER_BUTTON_TEXT => '',
+            ],
         ];
     }
 
@@ -106,7 +115,7 @@ class Reh_Page_Header_Image
         <fieldset id="page-header-form">
             <legend class="page-header-form-title">Headerbild</legend>
             <label>
-                <span>Desktop (1920x600px)</span>
+                <span>Desktop (1920x600px)*</span>
                 <input
                     type="text"
                     id="meta-page-header-image-large"
@@ -114,15 +123,20 @@ class Reh_Page_Header_Image
                     value="<?= $imageLarge ?>"
                     hidden
                 />
-                <button class="open-meta-image-uploader button" data-size="large">Bild auswählen</button>
                 <img
                     src="<?= $imageLarge ?>"
                     id="meta-page-header-image-preview-large"
                     style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
                 />
+                <button class="open-meta-image-uploader button" data-size="large">Bild auswählen</button>
+                <button
+                    id="meta-page-header-image-remove-large"
+                    class="remove-meta-image button"
+                    data-size="large"
+                    style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>">Bild entfernen</button>
             </label>
             <label>
-                <span>Mobil (375x485px)</span>
+                <span>Mobil (375x485px)*</span>
                 <input
                     type="text"
                     id="meta-page-header-image-small"
@@ -130,12 +144,17 @@ class Reh_Page_Header_Image
                     value="<?= $imageSmall ?>"
                     hidden
                 />
-                <button class="open-meta-image-uploader button" data-size="small">Bild auswählen</button>
                 <img
                     src="<?= $imageSmall ?>"
                     id="meta-page-header-image-preview-small"
                     style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
                 />
+                <button class="open-meta-image-uploader button" data-size="small">Bild auswählen</button>
+                <button
+                    id="meta-page-header-image-remove-small"
+                    class="remove-meta-image button"
+                    data-size="small"
+                    style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>">Bild entfernen</button>
             </label>
             <label>
                 <span>Claim</span>
@@ -147,27 +166,27 @@ class Reh_Page_Header_Image
             <label>
                 <span>Button #1</span>
                 <input type="text"
-                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_1 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
-                       placeholder="Link"
-                       value="<?= $button1_link ?>"
+                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_1 ?>][<?= self::META_HEADER_BUTTON_TEXT ?>]"
+                       placeholder="Text*"
+                       value="<?= $button1_text ?>"
                 />
                 <input type="text"
-                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_1 ?>][<?= self::META_HEADER_BUTTON_TEXT ?>]"
-                       placeholder="Text"
-                       value="<?= $button1_text ?>"
+                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_1 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
+                       placeholder="Link*"
+                       value="<?= $button1_link ?>"
                 />
             </label>
             <label>
                 <span>Button #2</span>
                 <input type="text"
-                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_2 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
-                       placeholder="Link"
-                       value="<?= $button2_link ?>"
+                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_2 ?>][<?= self::META_HEADER_BUTTON_TEXT ?>]"
+                       placeholder="Text*"
+                       value="<?= $button2_text ?>"
                 />
                 <input type="text"
-                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_2 ?>][<?= self::META_HEADER_BUTTON_TEXT ?>]"
-                       placeholder="Text"
-                       value="<?= $button2_text ?>"
+                       name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_BUTTON_2 ?>][<?= self::META_HEADER_BUTTON_LINK ?>]"
+                       placeholder="Link*"
+                       value="<?= $button2_link ?>"
                 />
             </label>
             <label>
@@ -184,7 +203,7 @@ class Reh_Page_Header_Image
             return;
         }
 
-        update_post_meta($post_id, self::META_PAGE_HEADER, sanitize_text_field($_POST[self::META_PAGE_HEADER]));
+        update_post_meta($post_id, self::META_PAGE_HEADER, $this->sanitize($_POST[self::META_PAGE_HEADER]));
     }
 
     public function saveCatHeaderMetaBox(int $term_id)
@@ -193,7 +212,7 @@ class Reh_Page_Header_Image
             return;
         }
 
-        update_term_meta($term_id, self::META_PAGE_HEADER, sanitize_text_field($_POST[self::META_PAGE_HEADER]));
+        update_term_meta($term_id, self::META_PAGE_HEADER, $this->sanitize($_POST[self::META_PAGE_HEADER]));
     }
 
     private function validate()
@@ -215,6 +234,26 @@ class Reh_Page_Header_Image
         }
 
         return true;
+    }
+
+    private function sanitize($values)
+    {
+        $values[self::META_HEADER_IMAGE_LARGE] = sanitize_text_field($values[self::META_HEADER_IMAGE_LARGE]);
+        $values[self::META_HEADER_IMAGE_SMALL] = sanitize_text_field($values[self::META_HEADER_IMAGE_SMALL]);
+        $values[self::META_HEADER_CLAIM] = sanitize_text_field($values[self::META_HEADER_CLAIM]);
+        $values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_TEXT] = sanitize_text_field($values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_TEXT]);
+        $values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_LINK] = sanitize_text_field($values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_LINK]);
+        $values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT] = sanitize_text_field($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT]);
+        $values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_LINK] = sanitize_text_field($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_LINK]);
+        $values[self::META_HEADER_INTRO] = sanitize_textarea_field($values[self::META_HEADER_INTRO]);
+
+        return $values;
+    }
+
+    public static function hasHeaderImage($headerData)
+    {
+        return !empty($headerData[self::META_HEADER_IMAGE_LARGE])
+            || !empty($headerData[self::META_HEADER_IMAGE_SMALL]);
     }
 }
 
