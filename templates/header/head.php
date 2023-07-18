@@ -12,7 +12,7 @@ if (!$headerData) {
     $headerData = get_post_meta(get_the_ID(), Reh_Page_Header_Image::META_PAGE_HEADER, true);
 }
 
-$hasHeaderImage = !empty($headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE]) || !empty($headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL]);
+$hasHeaderImage = Reh_Page_Header_Image::hasHeaderImage($headerData);
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>

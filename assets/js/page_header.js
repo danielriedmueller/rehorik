@@ -19,15 +19,24 @@ jQuery(document).ready(function($) {
         // When an image is selected, run a callback
         metaImageFrame.on('select', function() {
             var attachment = metaImageFrame.state().get('selection').first().toJSON();
-            console.log('#meta-page-header-image-' + size)
             $('#meta-page-header-image-preview-' + size).attr('src', attachment.url).show();
             $('#meta-page-header-image-' + size).val(attachment.url);
+            $('#meta-page-header-image-remove-' + size).show();
         });
 
         // Open the media frame
         metaImageFrame.open();
     }
 
+    function removeMetaImage(event) {
+        event.preventDefault();
+        const size = $(this).data('size');
+        $('#meta-page-header-image-preview-' + size).attr('src', '').hide();
+        $('#meta-page-header-image-' + size).val('');
+        $(this).hide();
+    }
+
     // Attach the event listener to the button or element that triggers the media uploader
     $('.open-meta-image-uploader').on('click', openMetaImageUploader);
+    $('.remove-meta-image').on('click', removeMetaImage);
 });
