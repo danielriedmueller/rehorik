@@ -124,6 +124,13 @@ do_action('woocommerce_before_mini_cart');
             <?php do_action('woocommerce_widget_shopping_cart_buttons'); ?>
         </div>
 
+        <div class="mini-cart-payment-methods">
+            <fieldset>
+                <legend>Schnell und sicher bezahlen</legend>
+                <?php get_template_part('templates/payment-methods'); ?>
+            </fieldset>
+        </div>
+
     <?php else : ?>
         <p class="woocommerce-mini-cart__empty-message"><?php esc_html_e('No products in the cart.', 'woocommerce'); ?></p>
     <?php endif; ?>

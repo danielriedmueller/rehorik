@@ -7,6 +7,7 @@ div.rehorik-product.detail-view form.cart.variations_form .woocommerce-variation
   grid-template-columns: min-content $product-view-cart-button-quantity-width $product-view-cart-button-width;
   grid-template-areas:
     "price quantity button"
+    ". stripe stripe"
     ". paypal paypal"
     ". cup-of-coffee cup-of-coffee"
     ". meta meta";
@@ -16,6 +17,7 @@ div.rehorik-product.detail-view form.cart.variations_form .woocommerce-variation
     grid-template-areas:
     "price price"
     "quantity button"
+    "stripe stripe"
     "paypal paypal"
     "cup-of-coffee cup-of-coffee"
     "meta meta";
@@ -130,6 +132,12 @@ div.rehorik-product.detail-view form.cart.variations_form .woocommerce-variation
     margin: $spacing-xs 0 0 0;
   }
 
+  // Stripe
+  #wc-stripe-payment-request-wrapper {
+    grid-area: stripe;
+    margin: $spacing-xs 0 0 0;
+  }
+
   .rehorik-cup-of-coffee-price-outer {
     grid-area: cup-of-coffee;
     margin: $spacing-xxs 0 0 0;
@@ -139,10 +147,5 @@ div.rehorik-product.detail-view form.cart.variations_form .woocommerce-variation
     grid-area: meta;
 
     margin: $spacing-xxs 0 0 0;
-  }
-
-  // Stripe
-  #wc-stripe-payment-request-button-separator {
-    display: none;
   }
 }

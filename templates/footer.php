@@ -16,8 +16,7 @@ get_template_part('templates/rehorik-locations');
             <div>
                 <div>
                     <h3>Zahlungsarten</h3>
-                    <p>Vorkasse</p>
-                    <p>Paypal, Kreditkarte</p>
+                    <?php get_template_part('templates/payment-methods'); ?>
                 </div>
             </div>
             <div>

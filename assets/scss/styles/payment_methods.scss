@@ -1,0 +1,93 @@
+.payment-methods {
+  @include gridView(var(--payment-methods-width));
+  gap: (var(--payment-methods-gap));
+
+  > div {
+    height: var(--payment-methods-height);
+    background-repeat: no-repeat;
+    background-size: var(--payment-methods-width);
+    background-position: center center;
+  }
+
+  .paypal {
+    background-image: url("../img/zahlungsmethoden/paypal.svg");
+  }
+
+  .apple-pay {
+    background-image: url("../img/zahlungsmethoden/applepay.svg");
+  }
+
+  .google-pay {
+    background-image: url("../img/zahlungsmethoden/googlepay.svg");
+  }
+
+  .visa {
+    background-image: url("../img/zahlungsmethoden/visa.svg");
+  }
+
+  .mastercard {
+    background-image: url("../img/zahlungsmethoden/mastercard.svg");
+  }
+
+  .american-express {
+    background-image: url("../img/zahlungsmethoden/amex.svg");
+  }
+
+  .giropay {
+    background-image: url("../img/zahlungsmethoden/giropay.svg");
+  }
+
+  .sofort {
+    background-image: url("../img/zahlungsmethoden/sofort.svg");
+  }
+
+  .vorkasse {
+    background-image: url("../img/zahlungsmethoden/vorkasse.svg");
+  }
+
+  .sepa {
+    background-image: url("../img/zahlungsmethoden/sepa.svg");
+  }
+}
+
+footer .payment-methods {
+  justify-content: flex-start;
+  --payment-methods-width: 44px;
+  --payment-methods-height: 34px;
+  --payment-methods-gap: #{$spacing-l};
+}
+
+#rehorik-mini-cart .mini-cart-payment-methods {
+  margin-top: $spacing-xl;
+
+  fieldset {
+    padding: $spacing-xxs;
+    margin: 0;
+    border-color: $beigegold;
+    border-radius: $border-radius;
+    border-width: 1px;
+
+    legend {
+      font-size: $font-size-small;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 $spacing-xs;
+      color: $beigegold;
+      text-transform: uppercase;
+    }
+  }
+
+  .payment-methods {
+    --payment-methods-width: 50px;
+    --payment-methods-height: 39px;
+    --payment-methods-gap: #{$spacing-s};
+
+    @media all and (max-width: $small-breakpoint) {
+      --payment-methods-width: 43px;
+      --payment-methods-height: 33px;
+      --payment-methods-gap: #{$spacing-xxs};
+    }
+  }
+}
+

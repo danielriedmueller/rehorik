@@ -1,0 +1,34 @@
+.rehorik #wc-stripe-payment-request-wrapper {
+  padding: 0 !important;
+}
+
+.rehorik #wc-stripe-payment-request-button-separator {
+  padding: 0 !important;
+  margin: $spacing-s 0 0 0 !important;
+}
+
+.rehorik:not(.woocommerce-checkout) {
+  #wc-stripe-payment-request-wrapper {
+    margin-top: $spacing-xs;
+    height: 35px;
+
+    > div {
+      height: 35px;
+      width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
+    }
+  }
+
+  #wc-stripe-payment-request-button-separator {
+    display: none !important;
+  }
+}
+
+@media all and (max-width: $medium-breakpoint) {
+  // Cart
+  .rehorik.woocommerce-cart #wc-stripe-payment-request-wrapper > div {
+    width: 100%;
+  }
+}
+
+
+

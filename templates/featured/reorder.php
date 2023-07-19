@@ -1,7 +1,6 @@
 <?php
-$reh_mini_cart = Reh_Mini_Cart::instance();
-$userId = $reh_mini_cart->getCurrentUserId();
-$items = $reh_mini_cart->getReorderItems($userId);
+$userId = Reh_Mini_Cart::getCurrentUserId();
+$items = Reh_Mini_Cart::getReorderItems($userId);
 ?>
 <h2>
     <?php if(!$userId) : ?>
