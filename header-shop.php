@@ -1,5 +1,5 @@
 <?php
-get_template_part('templates/header/head');
+get_header();
 if (!is_product()) {
     get_template_part('templates/page-title');
 }

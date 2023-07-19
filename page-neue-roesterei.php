@@ -3,15 +3,7 @@ if (!PLUGINS_ACTIVE) {
     echo 'Plugins not active';
     return;
 }
-
-get_template_part('templates/header/head', null, [
-    'slider' => [
-        [
-            'claim' => get_the_title(),
-            'img' => 'header-straub',
-        ],
-    ],
-]);
+get_header();
 ?>
 <div id="page-neue-roesterei">
     <div>

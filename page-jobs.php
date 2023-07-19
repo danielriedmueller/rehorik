@@ -9,15 +9,7 @@ foreach ($blocks as $block) {
     }
 }
 
-get_template_part('templates/header/head', null, [
-    'slider' => [
-        [
-            'claim' => 'Jobs & Karriere',
-            'img' => 'header-weltfrauentag',
-            'buttons' => [],
-        ],
-    ],
-]);
+get_header();
 ?>
 <div id="jobs">
     <div class="container">

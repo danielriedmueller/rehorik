@@ -4,32 +4,8 @@ if (!PLUGINS_ACTIVE) {
     return;
 }
 
-get_template_part('templates/header/head', null, ['slider' => [
-    [
-        'claim' => 'vino summer sale',
-        'img'=> 'header-vino-summer-sale',
-        'buttons' => [
-            '/seminar/vino-summer-sale' => '29.07.23 / Straubinger Str. 62A',
-            '/Vino%20Summer%20Sale%20Weinliste%20A4%20DIGITAL.pdf' => 'Weinliste',
-        ]
-    ],
-    [
-        'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
-        'img'=> 'startseite-header-roesterei',
-        'buttons' => [
-            '/tradition' => 'Tradition',
-            '/standorte' => 'Standorte'
-        ]
-    ],
-    [
-        'claim' => 'Kaffeerösterei seit 1928',
-        'img'=> 'startseite-header-kaffee',
-        'buttons' => [
-            getCategoryLink(COFFEE_CATEGORY_SLUG) => 'Zum Kaffee'
-        ]
-    ]
-]]);
-get_template_part('templates/featured/slider')
+get_header();
+get_template_part('templates/featured/slider');
 ?>
 <div class="marketing-banner">
     <div class="container">

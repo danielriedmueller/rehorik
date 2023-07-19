@@ -18,21 +18,9 @@ foreach ($blocks as $block) {
     }
 }
 
-get_template_part('templates/header/head', null, [
-    'slider' => [
-        [
-            'claim' => 'Überall unterwegs',
-            'img' => 'header-standorte',
-            'buttons' => [
-                getCategoryLink(TICKET_CATEGORY_SLUG) => 'Alle Events in unseren Standorten',
-            ],
-        ],
-    ],
-]);
+get_header();
+get_template_part('templates/page-title');
 ?>
-<div class="page-title-outer">
-    <div class='page-title'><h1><?= the_title() ?></h1></div>
-</div>
 <div class="rehorik-page-introduction-outer">
     <div class="container max-width-small">
         <div class="rehorik-page-introduction locations">
