@@ -13,6 +13,12 @@
   }
 }
 
+.rehorik ul.wc_stripe_product_payment_methods {
+  button {
+    padding: 0;
+  }
+}
+
 .rehorik:not(.woocommerce-checkout) {
   .wc-stripe-product-checkout-container {
     .wc_stripe_cart_payment_methods {
