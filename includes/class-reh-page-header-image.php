@@ -18,6 +18,8 @@ class Reh_Page_Header_Image
     const META_HEADER_BUTTON_LINK = 'button_link';
     const META_HEADER_BUTTON_TEXT = 'button_text';
 
+    const META_HEADER_SHOW_TITLE = 'show_title';
+
     public static function instance()
     {
         if (is_null(self::$_instance)) {
@@ -79,6 +81,7 @@ class Reh_Page_Header_Image
                 self::META_HEADER_BUTTON_LINK => '',
                 self::META_HEADER_BUTTON_TEXT => '',
             ],
+            self::META_HEADER_SHOW_TITLE => false,
         ];
     }
 
@@ -110,7 +113,7 @@ class Reh_Page_Header_Image
             ? esc_attr($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT] ?? '')
             : '';
         $intro = esc_attr($values[self::META_HEADER_INTRO] ?? '');
-
+        $showTitle = $values[self::META_HEADER_SHOW_TITLE] ?? false;
         ?>
         <fieldset id="page-header-form">
             <legend class="page-header-form-title">Headerbild</legend>
@@ -192,6 +195,14 @@ class Reh_Page_Header_Image
             <label>
                 <span>Intro</span>
                 <textarea name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_INTRO ?>]"><?= $intro ?></textarea>
+            </label>
+            <label>
+                <span>Titel anzeigen?</span>
+                <input
+                    type="checkbox"
+                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_SHOW_TITLE ?>]"
+                    <?php if ($showTitle): ?>checked<?php endif; ?>
+                >
             </label>
         </fieldset>
         <?php

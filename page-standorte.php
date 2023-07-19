@@ -19,7 +19,6 @@ foreach ($blocks as $block) {
 }
 
 get_header();
-get_template_part('templates/page-title');
 ?>
 <div class="rehorik-page-introduction-outer">
     <div class="container max-width-small">

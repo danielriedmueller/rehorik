@@ -5,7 +5,6 @@ if (!PLUGINS_ACTIVE) {
 }
 
 get_header();
-get_template_part('templates/page-title');
 ?>
 <div class="container max-width-small">
     <div id="timeline-outer">
