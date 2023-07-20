@@ -253,9 +253,7 @@ class Reh_Page_Header_Image
         $values[self::META_HEADER_IMAGE_SMALL] = sanitize_text_field($values[self::META_HEADER_IMAGE_SMALL]);
         $values[self::META_HEADER_CLAIM] = sanitize_text_field($values[self::META_HEADER_CLAIM]);
         $values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_TEXT] = sanitize_text_field($values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_TEXT]);
-        $values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_LINK] = sanitize_text_field($values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_LINK]);
         $values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT] = sanitize_text_field($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT]);
-        $values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_LINK] = sanitize_text_field($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_LINK]);
         $values[self::META_HEADER_INTRO] = sanitize_textarea_field($values[self::META_HEADER_INTRO]);
 
         return $values;
