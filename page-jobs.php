@@ -12,14 +12,6 @@ foreach ($blocks as $block) {
 get_header();
 ?>
 <div id="jobs">
-    <div class="container">
-        <div class="intro">Wir als Firma Rehorik wollen mit bestem Kaffee, gutem Wein und hochwertigen Delikatessen
-            Menschen begeistern. Wir probieren viel, entdecken neu und geben unser Wissen in Seminaren und Tastings
-            weiter. Über die Jahre ist eine Marke entstanden, die eine Brücke zwischen Tradition und Startup schlägt.
-            Wir lieben diesen Mix aus Erfahrungen, Teamwork, Leidenschaft für jedes Produkt, den gemeinsamen Espresso
-            beim morgendlichen Meeting und der ein oder anderen kleinen Party!
-        </div>
-    </div>
     <?php foreach ($jobs as $job): ?>
         <div class="job-description-outer">
             <div class="container">

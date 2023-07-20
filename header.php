@@ -3,9 +3,11 @@ require_once(get_stylesheet_directory() . '/helper/page_helper.php');
 $id = get_queried_object();
 
 $headerData = null;
+$pageTitle = get_the_title();
 if ($term = get_queried_object()) {
     if ($term->taxonomy === 'product_cat') {
         $headerData = get_term_meta($term->term_id, Reh_Page_Header_Image::META_PAGE_HEADER, true);
+        $pageTitle = $term->name;
     }
 }
 if (!$headerData) {
@@ -52,7 +54,7 @@ $showTitle = $headerData[Reh_Page_Header_Image::META_HEADER_SHOW_TITLE] ?? false
     ?>
     <?php if ($showTitle): ?>
         <div class="page-title-outer">
-            <div class="page-title"><h1><?= get_the_title(); ?></h1></div>
+            <div class="page-title"><h1><?= $pageTitle; ?></h1></div>
         </div>
     <?php endif; ?>
     <?php if ($hasHeaderImage): ?>
