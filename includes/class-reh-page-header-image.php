@@ -101,13 +101,13 @@ class Reh_Page_Header_Image
         $imageSmall = esc_attr($values[self::META_HEADER_IMAGE_SMALL] ?? '');
         $claim = esc_attr($values[self::META_HEADER_CLAIM] ?? '');
         $button1_link = isset($values[self::META_HEADER_BUTTON_1])
-            ? esc_attr($values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_LINK] ?? '')
+            ? $values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_LINK] ?? ''
             : '';
         $button1_text = isset($values[self::META_HEADER_BUTTON_1])
             ? esc_attr($values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_TEXT] ?? '')
             : '';
         $button2_link = isset($values[self::META_HEADER_BUTTON_2])
-            ? esc_attr($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_LINK] ?? '')
+            ? $values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_LINK] ?? ''
             : '';
         $button2_text = isset($values[self::META_HEADER_BUTTON_2])
             ? esc_attr($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT] ?? '')
