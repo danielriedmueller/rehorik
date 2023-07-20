@@ -27,5 +27,12 @@
     > div {
       height: 35px;
     }
+
+    @media all and (max-width: $medium-breakpoint) {
+      height: 45px;
+      > div {
+        height: 45px;
+      }
+    }
   }
 }
