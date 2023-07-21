@@ -18,8 +18,6 @@ const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
 const EVENT_EMAIL = 'events@rehorik.de';
 
 // PDFs
-const MENU_190 = '/speisekarte/Speisekarte190.pdf';
-const MENU_STRAUBINGER = '/speisekarte/SpeisekarteStraubinger.pdf';
 const INGREDIENT_AND_NUTRITION_INFORMATION = '/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe_2022.pdf';
 
 // Product Categories
