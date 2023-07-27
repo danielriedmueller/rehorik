@@ -32,15 +32,7 @@ if (post_password_required()) {
 }
 require_once(get_stylesheet_directory() . '/helper/product_attributes_helper.php');
 ?>
-<div id="product-<?php the_ID(); ?>"
-    <?php
-    $class = 'rehorik-product detail-view';
-    if (isProductOfTheMonth($product)) {
-        $class .= " " . getProductOfTheMonthClass($product);
-    }
-    wc_product_class($class, $product);
-    ?>
->
+<div id="product-<?php the_ID(); ?>"<?php wc_product_class('rehorik-product detail-view', $product); ?>>
     <div class="rehorik-product-header">
         <div class="rehorik-product-title"><?php do_action('rehorik_product_title'); ?></div>
         <div class="rehorik-product-gallery"><?php do_action('rehorik_product_gallery'); ?></div>
