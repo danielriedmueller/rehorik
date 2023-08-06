@@ -101,16 +101,14 @@ do_action('woocommerce_before_mini_cart');
                 <span>Zwischensumme:</span>
                 <?php wc_cart_totals_subtotal_html(); ?>
             </div>
-
-            <div>
-                <?php wc_cart_totals_shipping_html(); ?>
-                <div class="rehorik-shipping-rest-amount"><?php
-                    /**
-                     *
-                     * do_action('render_rest_amount_for_free_shipping');
-                     */
-                ?></div>
-            </div>
+            <?php if ($cart->needs_shipping()): ?>
+                <div class="rehorik-shipping-methods">
+                    <?php
+                    $cart->calculate_totals();
+                    wc_cart_totals_shipping_html();
+                    ?>
+                </div>
+             <?php endif; ?>
 
             <?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
         </div>
@@ -136,4 +134,5 @@ do_action('woocommerce_before_mini_cart');
     <?php endif; ?>
 
     <?php do_action('woocommerce_after_mini_cart'); ?>
+
 </div>

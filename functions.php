@@ -165,6 +165,7 @@ add_action('wp_enqueue_scripts', function () {
             'ajax_url' => admin_url('admin-ajax.php'),
             'add_nonce' => wp_create_nonce('rehorik-add-to-cart'),
             'update_nonce' => wp_create_nonce('rehorik-update-cart'),
+            'select_shipping_method_nonce' => wp_create_nonce('rehorik-select-shipping-method'),
             'ticket_capacity_nonce' => wp_create_nonce('rehorik-tribe-events-ticket-capacity'),
         ]), 'before');
 

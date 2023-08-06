@@ -111,19 +111,4 @@ defined( 'ABSPATH' ) || exit;
     </div>
 
     <?php do_action( 'woocommerce_after_cart_totals' ); ?>
-
-    <div class="rehorik-shipping-rest-amount">
-        <?php
-        /**
-            $shippingMethods = WC()->session->get( 'chosen_shipping_methods' );
-            if ($shippingMethods) {
-                if (count($shippingMethods) > 0) {
-                    if (!empty($shippingMethods[0])) {
-                        do_action('render_rest_amount_for_free_shipping');
-                    }
-                }
-            }
-         * */
-        ?>
-    </div>
 </div>

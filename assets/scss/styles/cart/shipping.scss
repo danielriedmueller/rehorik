@@ -1,16 +1,33 @@
 .rehorik-shipping-methods {
   ul#shipping_method {
+    list-style: none outside;
+
     .amount {
       font-weight: normal;
     }
 
     li {
-      margin-bottom: $spacing-s;
+      margin: 0 0 $spacing-s 0;
+      line-height: 18px;
+      text-align: right;
 
       small {
         font-size: $font-size-small;
         margin-top: $spacing-xs;
+        color: #767676;
       }
     }
   }
+}
+
+.mini-cart-subtotal .rehorik-shipping-methods {
+  margin: $spacing-xs 0;
+}
+
+.rehorik-shipping-rest-amount {
+  color: $font-color-accent;
+  font-size: $font-size;
+  margin: 0;
+  text-align: left;
+  font-family: $font-family-body;
 }

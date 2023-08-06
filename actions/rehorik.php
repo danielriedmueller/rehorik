@@ -17,9 +17,12 @@ add_action('render_rest_amount_for_free_shipping', function () {
     $restAmount = getAmountTillFreeShipping();
     $restAmount = str_replace('.', ',', $restAmount);
 
-    if ($restAmount > 0) {
-        echo 'Nur noch <span>' . $restAmount . ' &euro;</span> bis zum kostenlosen Versand!';
-    }
+    echo sprintf(
+        '<div class="rehorik-shipping-rest-amount">%s</div>',
+        $restAmount > 0
+            ? "Noch ${restAmount} &euro; bis zum kostenlosen Versand"
+            : "Kostenloser Versand!"
+    );
 });
 
 //Remove JQuery migrate
