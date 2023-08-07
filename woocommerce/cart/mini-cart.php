@@ -103,6 +103,7 @@ do_action('woocommerce_before_mini_cart');
             </div>
             <?php if ($cart->needs_shipping()): ?>
                 <div class="rehorik-shipping-methods">
+                    <span>Versand:</span>
                     <?php
                     $cart->calculate_totals();
                     wc_cart_totals_shipping_html();
