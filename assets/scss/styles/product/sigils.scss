@@ -37,20 +37,28 @@ body:not(.rehorik.single-product) .sigil-container {
     }
   }
 
-  > .biosigil {
+  > .biosiegel {
     background-image: url("../img/siegel/biosiegel.svg");
   }
 
-  > .vegansigil {
+  > .vegan {
     background-image: url("../img/siegel/icon-vegan.svg");
   }
 
-  > .biodynamicsigil {
+  > .biodynamisch {
     background-image: url("../img/siegel/icon-biodynamisch.svg");
   }
 
-  > .regionalsigil {
+  > .regional {
     background-image: url("../img/siegel/icon-regional.svg");
+  }
+
+  > .sommeliers-choice {
+    background-image: url("../img/siegel/sommeliers-choice.svg");
+  }
+
+  > .perfektes-dinner {
+    background-image: url("../img/siegel/perfektes-dinner.svg");
   }
 
   > .product-of-month {
@@ -59,6 +67,10 @@ body:not(.rehorik.single-product) .sigil-container {
     &.wine-of-month {
       background-image: url("../img/siegel/wineofmonth.svg");
     }
+  }
+
+  > .baumwolle {
+    background-image: url("../img/siegel/icon-cotton.svg");
   }
 
   > .event-online {
@@ -85,34 +97,37 @@ body:not(.rehorik.single-product) .sigil-container {
     height: calc(var(--sigil-size) / #{$aspectRatio});
   }
 
-  > .biosigil {
+  > .biosiegel {
     display: flex;
     align-items: flex-end;
     font-family: "Myriad Pro Regular", serif;
     line-height: 3px;
 
     $font-size: 11px;
+    color: #fff;
     font-size: $font-size;
     background-image: url("../img/siegel/biosiegel.svg");
     height: calc(var(--sigil-size) / #{$aspectRatio} + #{$font-size});
   }
 
-  > .biosigil-de {
-    $aspectRatio: 1.19422;
-    height: calc(var(--sigil-size) / #{$aspectRatio});
-    background-image: url("../img/siegel/biosiegel-de.svg");
-  }
-
-  > .vegansigil {
+  > .vegan {
     background-image: url("../img/siegel/icon-vegan.svg");
   }
 
-  > .biodynamicsigil {
+  > .biodynamisch {
     background-image: url("../img/siegel/icon-biodynamisch.svg");
   }
 
-  > .regionalsigil {
+  > .regional {
     background-image: url("../img/siegel/icon-regional.svg");
+  }
+
+  > .sommeliers-choice {
+    background-image: url("../img/siegel/sommeliers-choice.svg");
+  }
+
+  > .perfektes-dinner {
+    background-image: url("../img/siegel/perfektes-dinner.svg");
   }
 
   > .product-of-month {
@@ -123,9 +138,18 @@ body:not(.rehorik.single-product) .sigil-container {
     }
   }
 
-  > .cottonsigil {
+  > .baumwolle {
     $aspectRatio: 1.483;
     height: calc(var(--sigil-size) / #{$aspectRatio});
     background-image: url("../img/siegel/icon-cotton.svg");
+  }
+}
+
+// White font for biosigil on coffees
+.rehorik.single-product .rehorik-product.product_cat-filterkaffee .sigil-container,
+.rehorik.single-product .rehorik-product.product_cat-espresso .sigil-container,
+.rehorik.single-product .rehorik-product.product_cat-crema .sigil-container {
+  > .biosiegel {
+    color: $font-color;
   }
 }

@@ -5,9 +5,11 @@ $id = get_queried_object();
 $headerData = null;
 $pageTitle = get_the_title();
 if ($term = get_queried_object()) {
-    if ($term->taxonomy === 'product_cat') {
-        $headerData = get_term_meta($term->term_id, Reh_Page_Header_Image::META_PAGE_HEADER, true);
-        $pageTitle = $term->name;
+    if (isset($term->taxonomy)) {
+        if ($term->taxonomy === 'product_cat') {
+            $headerData = get_term_meta($term->term_id, Reh_Page_Header_Image::META_PAGE_HEADER, true);
+            $pageTitle = $term->name;
+        }
     }
 }
 if (!$headerData) {
