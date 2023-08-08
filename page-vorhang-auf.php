@@ -1,12 +1,5 @@
 <?php
-get_template_part('templates/header/head', null, [
-    'slider' => [
-        [
-            'claim' => 'VORHANG AUF!',
-            'img' => 'header-neue-roesterei',
-        ],
-    ],
-]);
+get_header();
 
 $postsPerPage = 3;
 

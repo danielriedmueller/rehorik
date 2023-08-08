@@ -1,10 +1,10 @@
 <?php
 if (isProductCategory(TICKET_CATEGORY_SLUG)) {
-    get_template_part('templates/veranstaltungen/veranstaltungen-footer');
+    get_template_part('templates/footer/veranstaltungen-footer');
 }
 
 if (isProductCategory(GIFTS_CATEGORY_SLUG)) {
-    get_template_part('templates/category/geschenke-footer');
+    get_template_part('templates/footer/geschenke-footer');
 }
 
 get_template_part('templates/newsletter-sign-up');

@@ -133,7 +133,7 @@ div.rehorik-product.detail-view form.cart.variations_form .woocommerce-variation
   }
 
   // Stripe
-  #wc-stripe-payment-request-wrapper {
+  .wc-stripe-product-checkout-container {
     grid-area: stripe;
     margin: $spacing-xs 0 0 0;
   }

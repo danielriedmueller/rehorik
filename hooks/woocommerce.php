@@ -2,7 +2,6 @@
 require_once('shop/single_product_hooks.php');
 require_once('middleware/order_completed_webhook.php');
 require_once('shop/cart_hooks.php');
-require_once('shop/stripe_hooks.php');
 require_once('shop/products_gallery_hooks.php');
 
 /**

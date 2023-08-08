@@ -16,7 +16,6 @@ get_header();
     }
     ?>
 <?php else: ?>
-    <?php get_template_part('templates/page-title'); ?>
     <div class="container">
         <?php
         if ( have_posts() ) {
