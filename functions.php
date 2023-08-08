@@ -1,6 +1,16 @@
 <?php
 show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
 
+function allow_unsafe_urls ( $args ) {
+    $args['reject_unsafe_urls'] = false;
+    return $args;
+} ;
+
+add_filter( 'http_request_args', 'allow_unsafe_urls' );
+add_filter( 'http_request_host_is_external', function() {
+    return true;
+} );
+
 const SPECIAL_COUPON_CODES = [
     'bayernwerkxmas22',
     'baerwurzquelle23',
