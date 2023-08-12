@@ -160,6 +160,9 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
     wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
 
+    wp_enqueue_script( 'wc-cart-fragments' );
+    wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
+
     wp_enqueue_script('ajax', $assetsDir . 'js/ajax.js', ['jquery'], 1, true);
     wp_add_inline_script('ajax', 'const settings = ' . json_encode([
             'ajax_url' => admin_url('admin-ajax.php'),
