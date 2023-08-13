@@ -183,13 +183,6 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 add_action('init', function () {
-    add_filter( 'deprecated_constructor_trigger_error', '__return_false' );
-    add_filter( 'deprecated_function_trigger_error', '__return_false' );
-    add_filter( 'deprecated_file_trigger_error', '__return_false' );
-    add_filter( 'deprecated_argument_trigger_error', '__return_false' );
-    add_filter( 'deprecated_hook_trigger_error', '__return_false' );
-    error_reporting(E_ALL & ~E_WARNING & ~E_DEPRECATED & ~E_USER_DEPRECATED & ~E_NOTICE);
-
     register_nav_menus([
         'main' => 'Hauptmenü'
     ]);
