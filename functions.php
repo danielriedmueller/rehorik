@@ -171,10 +171,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('ajax', $assetsDir . 'js/ajax.js', ['jquery'], 1, true);
     wp_add_inline_script('ajax', 'const settings = ' . json_encode([
             'ajax_url' => admin_url('admin-ajax.php'),
-            'add_nonce' => wp_create_nonce('rehorik-add-to-cart'),
-            'update_nonce' => wp_create_nonce('rehorik-update-cart'),
-            'select_shipping_method_nonce' => wp_create_nonce('rehorik-select-shipping-method'),
-            'ticket_capacity_nonce' => wp_create_nonce('rehorik-tribe-events-ticket-capacity'),
+            'reh_nonce' => wp_create_nonce('reh-nonce'),
         ]), 'before');
 
     if (is_front_page()) {

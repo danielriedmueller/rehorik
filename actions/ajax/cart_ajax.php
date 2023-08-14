@@ -10,8 +10,8 @@ function rehorik_select_shipping_method(): void
 {
     $shipping_method = $_POST['shipping_method'];
 
-    if (!wp_verify_nonce($_POST['nonce'], 'rehorik-select-shipping-method')) {
-        handle_error($_SERVER['HTTP_REFERER'], "Nonce not found");
+     if (!check_ajax_referer('reh-nonce', 'nonce', false)) {
+        handle_error($_SERVER['HTTP_REFERER'], "Invalid nonce");
         return;
     }
 
@@ -27,8 +27,8 @@ function rehorik_add_to_cart(): void
     $product = wc_get_product($product_id);
     $product_url = apply_filters('woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id);
 
-    if (!wp_verify_nonce($_POST['nonce'], 'rehorik-add-to-cart')) {
-        handle_error($product_url, 'Nonce not found');
+    if (!check_ajax_referer('reh-nonce', 'nonce', false)) {
+        handle_error($product_url, 'Invalid nonce');
         return;
     }
 
@@ -79,8 +79,8 @@ function rehorik_update_cart(): void
     $key = sanitize_text_field($_POST['cart_item_key']);
     $value = intval(sanitize_text_field($_POST['cart_item_value']));
 
-    if (!wp_verify_nonce($_POST['nonce'], 'rehorik-update-cart')) {
-        handle_error($_SERVER['HTTP_REFERER'], "Nonce not found");
+    if (!check_ajax_referer('reh-nonce', 'nonce', false)) {
+        handle_error($_SERVER['HTTP_REFERER'], "Invalid nonce");
         return;
     }
 
