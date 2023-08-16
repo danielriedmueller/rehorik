@@ -100,7 +100,7 @@ function handle_error($redirectUrl, $message): void
         IT_SUPPORT_EMAIL,
         IT_SUPPORT_EMAIL
     );
-    error_log($message . ': ' . json_encode($_REQUEST) . PHP_EOL, 3, get_stylesheet_directory() . '/reh-debug.log');
+    error_log(date('Y-m-d-H-i-s') . ': ' . $message . ' ' . json_encode($_REQUEST) . PHP_EOL, 3, get_stylesheet_directory() . '/reh-debug.log');
     wc_add_notice($error_contact_msg, 'error');
     wp_send_json([
         'error' => true,
