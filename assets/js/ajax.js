@@ -43,7 +43,7 @@
             url: settings.ajax_url,
             data: {
                 action: 'rehorik_ajax_add_to_cart',
-                nonce: settings.add_nonce,
+                nonce: settings.reh_nonce,
                 product_id: product_id,
                 quantity: product_qty,
                 variation_id: variation_id,
@@ -86,7 +86,7 @@
                 url: settings.ajax_url,
                 data: {
                     action: 'rehorik_ajax_update_cart',
-                    nonce: settings.update_nonce,
+                    nonce: settings.reh_nonce,
                     cart_item_key: cart_item_key,
                     cart_item_value: cart_item_value,
                 },
@@ -127,7 +127,7 @@
             url: settings.ajax_url,
             data: {
                 action: 'rehorik_ajax_add_to_cart',
-                nonce: settings.add_nonce,
+                nonce: settings.reh_nonce,
                 product_id: product_id,
                 quantity: product_qty,
                 variation_id: variation_id,
@@ -162,7 +162,7 @@
             url: settings.ajax_url,
             data: {
                 action: 'rehorik_ajax_select_shipping_method',
-                nonce: settings.select_shipping_method_nonce,
+                nonce: settings.reh_nonce,
                 shipping_method: shipping_method
             },
             beforeSend: function (response) {
@@ -206,7 +206,7 @@
             url: settings.ajax_url,
             data: {
                 action: 'rehorik_ajax_tribe_events_get_ticket_capacity',
-                nonce: settings.ticket_capacity_nonce,
+                nonce: settings.reh_nonce,
                 ticket_ids: ticketIds,
             },
             complete: function (response) {

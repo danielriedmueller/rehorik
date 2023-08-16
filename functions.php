@@ -1,4 +1,9 @@
 <?php
+// Disable deprecation notices so we can get a better idea of what's going on in our log.
+// These hooks are all in wp-includes/functions.php.
+// Note that these hooks don't stop WooCommerce from logging deprecation notices on AJAX
+// or REST API calls as it makes its own calls to `error_log()` from within
+// woocommerce/includes/wc-deprecated-functions.php.
 show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
 
 function allow_unsafe_urls ( $args ) {
@@ -170,13 +175,13 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
     wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
 
-    wp_enqueue_script('ajax', $assetsDir . 'js/ajax.js', ['jquery'], 1, true);
+    wp_enqueue_script( 'wc-cart-fragments' );
+    wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
+
+    wp_enqueue_script('ajax', $assetsDir . 'js/ajax.js', ['jquery'], 1.1, true);
     wp_add_inline_script('ajax', 'const settings = ' . json_encode([
             'ajax_url' => admin_url('admin-ajax.php'),
-            'add_nonce' => wp_create_nonce('rehorik-add-to-cart'),
-            'update_nonce' => wp_create_nonce('rehorik-update-cart'),
-            'select_shipping_method_nonce' => wp_create_nonce('rehorik-select-shipping-method'),
-            'ticket_capacity_nonce' => wp_create_nonce('rehorik-tribe-events-ticket-capacity'),
+            'reh_nonce' => wp_create_nonce('reh-nonce'),
         ]), 'before');
 
     if (is_front_page()) {

@@ -1,9 +1,17 @@
 <?php
 $userId = Reh_Mini_Cart::getCurrentUserId();
+$buyAgain = false;
+if ($userId) {
+    $buyAgain = true;
+}
 $items = Reh_Mini_Cart::getReorderItems($userId);
+if ($userId && empty($items)) {
+    $items = Reh_Mini_Cart::getReorderItems(null);
+    $buyAgain = false;
+}
 ?>
 <h2>
-    <?php if(!$userId) : ?>
+    <?php if(!$buyAgain) : ?>
         Andere kauften auch:
     <?php else: ?>
         Nochmal kaufen?
