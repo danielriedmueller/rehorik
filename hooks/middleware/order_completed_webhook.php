@@ -26,5 +26,3 @@ add_filter('woocommerce_webhook_topic_hooks', function ($topic_hooks) {
 
     return $topic_hooks;
 });
-
-add_filter( 'woocommerce_webhook_deliver_async', '__return_false' );
