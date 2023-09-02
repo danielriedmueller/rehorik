@@ -18,7 +18,7 @@ const PRODUCTS_PER_PAGE = 200;
 const CONTACT_MAIL = 'kaffee@rehorik.de';
 const JOBS_MAIL = 'bewerbung@rehorik.de';
 const CONTACT_PHONE = '0941 / 788 353 0';
-const IT_SUPPORT_EMAIL = 'it@rehorik.de';
+const IT_SUPPORT_EMAIL = 'kaffee@rehorik.de';
 const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
 const EVENT_EMAIL = 'events@rehorik.de';
 
