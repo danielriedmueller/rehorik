@@ -2,7 +2,7 @@
 <div id="special-category">
     <p><b>Wo:</b> Rehorik Café 190° | <a target="_blank" href="https://goo.gl/maps/nAmqc8nwH3hGWkWY6">Am Brixener Hof
             6</a></p>
-    <p><b>Preis:</b> 18 Euro, nur Abendkasse</p>
+    <p><b>Preis:</b> 23 Euro, nur Abendkasse</p>
     <p><b>Wann:</b> Jeden vorletzten Samstag im Monat, ab 13:00 Uhr.</p>
     <p><b>Was wir uns hier schon wieder ausgedacht haben?</b></p>
     <div class="golden-box">
