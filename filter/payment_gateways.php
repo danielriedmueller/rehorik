@@ -31,6 +31,30 @@ add_filter('woocommerce_available_payment_gateways', function($available_gateway
 });
 
 /**
+ * No local pickup if every product is virtual.
+ */
+add_filter('woocommerce_package_rates', function($rates) {
+    if (!isset($rates['local_pickup'])) {
+        return $rates;
+    }
+
+    $unset = true;
+    foreach (WC()->cart->get_cart_contents() as $values) {
+        $product = wc_get_product($values['product_id']);
+        if (!$product->is_virtual()) {
+            $unset = false;
+            break;
+        }
+    }
+
+    if ($unset === true) {
+        unset($rates['local_pickup']);
+    }
+
+    return $rates;
+});
+
+/**
  * For cash payment, set order status to completed automatically.
  */
 add_action('woocommerce_thankyou', function ($order_id) {
