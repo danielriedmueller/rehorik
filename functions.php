@@ -23,7 +23,7 @@ const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
 const EVENT_EMAIL = 'events@rehorik.de';
 
 // PDFs
-const INGREDIENT_AND_NUTRITION_INFORMATION = '/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe_2022.pdf';
+const INGREDIENT_AND_NUTRITION_INFORMATION = '/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe.pdf';
 
 // Product Categories
 const COFFEE_CATEGORY_SLUG = 'kaffee';
