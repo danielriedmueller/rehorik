@@ -7,15 +7,36 @@
     }
 
     li {
-      margin: 0 0 $spacing-s 0;
+      margin: $spacing-xs 0 $spacing-xs 0;
       line-height: 18px;
-      text-align: right;
+      display: flex;
 
-      span {
-        font-size: $font-size-small;
-        margin-top: $spacing-xxxs;
-        color: #767676;
-        padding-left: 70px;
+      input {
+        flex: 0 0 $spacing-xs;
+        margin: 0 $spacing-xs 0 0;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        line-height: $spacing;
+        text-align: left;
+        flex: 0 1 100%;
+
+        span:first-child {
+          flex: 0;
+        }
+
+        .rehorik-shipping-hint {
+          font-size: $font-size-small;
+          color: #767676;
+          order: 5;
+          margin-left: $spacing-xs;
+        }
+
+        .woocommerce-Price-amount.amount {
+          margin-left: $spacing-xxxs
+        }
       }
     }
   }
