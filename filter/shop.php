@@ -23,7 +23,7 @@ add_filter('woocommerce_shipping_rate_label', function (string $label, WC_Shippi
         $message = 'Abholbar in 2 Werktagen zwischen 9 - 18 Uhr im Kaffeehaus, Straubinger Str. 62A';
     }
 
-    return "$label<br><span>$message</span>";
+    return "<span>$label</span><span class='rehorik-shipping-hint'>$message</span>";
 }, 10, 2);
 
 /**
