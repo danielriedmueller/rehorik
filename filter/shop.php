@@ -17,12 +17,13 @@ add_filter('woocommerce_show_page_title', function () {
     return false;
 });
 
-/**
- * Displays shipping estimates for WC shipping rates
- */
-add_filter('woocommerce_cart_shipping_method_full_label', function ($label) {
-    return $label . ' ' . getShippingDurationMessage();
-});
+add_filter('woocommerce_shipping_rate_label', function (string $label, WC_Shipping_Rate $method) {
+    if ($method->get_method_id() === 'local_pickup') {
+        return $label . ' <br /><small>Abholbar in 2 Werktagen zwischen 9 - 18 Uhr im Kaffeehaus, Straubinger Str. 62A</small>';
+    }
+
+    return $label . ' <br /><small>Lieferzeit: 3 - 5 Werktage</small>';
+}, 10, 2);
 
 /**
  * Remove Ancient Custom Fields metabox from post editor

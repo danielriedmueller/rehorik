@@ -28,12 +28,12 @@ const PRODUCTS_PER_PAGE = 200;
 const CONTACT_MAIL = 'kaffee@rehorik.de';
 const JOBS_MAIL = 'bewerbung@rehorik.de';
 const CONTACT_PHONE = '0941 / 788 353 0';
-const IT_SUPPORT_EMAIL = 'it@rehorik.de';
+const IT_SUPPORT_EMAIL = 'kaffee@rehorik.de';
 const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
 const EVENT_EMAIL = 'events@rehorik.de';
 
 // PDFs
-const INGREDIENT_AND_NUTRITION_INFORMATION = '/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe_2022.pdf';
+const INGREDIENT_AND_NUTRITION_INFORMATION = '/wp-content/uploads/2023/11/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe.pdf';
 
 // Product Categories
 const COFFEE_CATEGORY_SLUG = 'kaffee';
@@ -111,9 +111,6 @@ const ORDER_ITEM_COUPON_CODE = 'order_item_coupon_code';
 // Payment methods
 const PAYMENT_METHOD_CASH = 'cod';
 const PAYMENT_METHOD_DIRECT_TRANSFER = 'bacs';
-
-// Default shipping
-const SHIPPING_DURATION_MESSAGE = '3 - 5 Werktage';
 
 // Pages
 const STANDORTE_PAGE_ID = 26672;

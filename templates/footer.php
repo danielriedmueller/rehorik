@@ -28,9 +28,9 @@ get_template_part('templates/rehorik-locations');
                     <p>
                         <img alt="Logo DPD" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-dpd.svg' ?>">
                     </p>
-                    <p>Versandkosten DHL: 5,8 €</p>
+                    <p>Versandkosten DHL: 7,5 €</p>
                     <p>Versandkosten DPD: 3,5 €</p>
-                    <p>Kostenloser Versand ab: <?= FREE_SHIPPING_AMOUNT ?> €</p>
+                    <p>Kostenloser Versand mit DPD ab: <?= FREE_SHIPPING_AMOUNT ?> €</p>
                     <p><small>* Alle Preise sind inkl. MwSt., zzgl. Versand</small></p>
                 </div>
             </div>
