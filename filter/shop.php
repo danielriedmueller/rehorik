@@ -18,9 +18,9 @@ add_filter('woocommerce_show_page_title', function () {
 });
 
 add_filter('woocommerce_shipping_rate_label', function (string $label, WC_Shipping_Rate $method) {
-    $message = 'Lieferzeit: 3 - 5 Werktage';
+    $message = ' Lieferzeit: 3 - 5 Werktage';
     if ($method->get_method_id() === 'local_pickup') {
-        $message = 'Abholbar in 2 Werktagen zwischen 9 - 18 Uhr im Kaffeehaus, Straubinger Str. 62A';
+        $message = ' in 2 Werktagen zwischen 9 - 18 Uhr im Kaffeehaus, Straubinger Str. 62A';
     }
 
     return "<span>$label</span><span class='rehorik-shipping-hint'>$message</span>";
