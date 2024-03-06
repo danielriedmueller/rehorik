@@ -10,7 +10,19 @@ if (!isset($args['description'])) {
 
 $product = $args['product'];
 
-$mergeDescriptions = function ($description, $shortDescription, $claim) {
+$mergeDescriptions = function ($product) {
+	$description = $product->get_description();
+    $shortDescription = $product->get_short_description();
+    $claim = $product->get_meta('reh_product_title_claim');
+
+    // Check if product is event
+    if (empty($description)) {
+		$event = tribe_events_get_ticket_event($product->get_id());
+        if ($event) {
+            $description = $event->post_content;
+        }
+    }
+
     $cleanUpText = function($text) {
         if (empty($text)) {
             return "";
@@ -51,7 +63,7 @@ $mergeDescriptions = function ($description, $shortDescription, $claim) {
             echo "<span class='claim'>${claim}</span>";
         } ?>
         <?php if ($args['description']): ?>
-        <span class="description"><?= $mergeDescriptions($product->get_description(), $product->get_short_description(), $product->get_meta('reh_product_title_claim')) ?></span>
+        <span class="description"><?= $mergeDescriptions($product) ?></span>
         <?php endif; ?>
         <span class="learn-more"><a href="<?= $product->get_permalink() ?>">erfahre mehr</a></span>
     </div>
