@@ -5,6 +5,7 @@
 // or REST API calls as it makes its own calls to `error_log()` from within
 // woocommerce/includes/wc-deprecated-functions.php.
 show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
+add_filter( 'wp_is_application_passwords_available', '__return_true' );
 
 const SPECIAL_COUPON_CODES = [
     'bayernwerkxmas22',
