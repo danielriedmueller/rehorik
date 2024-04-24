@@ -25,22 +25,19 @@ add_filter('woocommerce_email_additional_content_customer_completed_order', func
     WC_Email_Customer_Completed_Order $email) {
 
     $hasCoupon = false;
-    $hasShippableProducts = false;
+    $hasShippableProducts = $order->needs_shipping_address();
 
     foreach ($order->get_items() as $item) {
-        if ($hasCoupon && $hasShippableProducts) {
+        if ($hasCoupon) {
             continue;
         }
 
         /** @var WC_Order_Item_Product $item */
         if ($item instanceof WC_Order_Item_Product) {
             $product = $item->get_product();
-            if (!$hasCoupon && isItCategory($product, COUPON_CATEGORY_SLUG)) {
+            if (isItCategory($product, COUPON_CATEGORY_SLUG)) {
                 $hasCoupon = true;
-            }
-
-            if (!$hasShippableProducts && !$product->is_virtual()) {
-                $hasShippableProducts = true;
+                break;
             }
         }
     }

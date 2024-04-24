@@ -1,10 +1,10 @@
 <?php
 if (isProductCategory(TICKET_CATEGORY_SLUG)) {
-    get_template_part('templates/veranstaltungen/veranstaltungen-footer');
+    get_template_part('templates/footer/veranstaltungen-footer');
 }
 
 if (isProductCategory(GIFTS_CATEGORY_SLUG)) {
-    get_template_part('templates/category/geschenke-footer');
+    get_template_part('templates/footer/geschenke-footer');
 }
 
 get_template_part('templates/newsletter-sign-up');
@@ -16,18 +16,21 @@ get_template_part('templates/rehorik-locations');
             <div>
                 <div>
                     <h3>Zahlungsarten</h3>
-                    <p>Vorkasse</p>
-                    <p>Paypal, Kreditkarte</p>
+                    <?php get_template_part('templates/payment-methods'); ?>
                 </div>
             </div>
             <div>
-                <div>
-                    <h3>Versand</h3>
-                    <p>Wir versenden mit DHL</p>
-                    <p><img alt="Logo DHL"
-                            src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-dhl.svg' ?>"></p>
-                    <p>Versandkosten: 5,80 €</p>
-                    <p>Kostenloser Versand ab: <?= FREE_SHIPPING_AMOUNT ?> €</p>
+                <div class="shippingpartner">
+                    <h3>Versandpartner</h3>
+                    <p>
+                        <img alt="Logo DHL" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-dhl.svg' ?>">
+                    </p>
+                    <p>
+                        <img alt="Logo DPD" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-dpd.svg' ?>">
+                    </p>
+                    <p>Versandkosten DHL: 7,5 €</p>
+                    <p>Versandkosten DPD: 3,5 €</p>
+                    <p>Kostenloser Versand mit DPD ab: <?= FREE_SHIPPING_AMOUNT ?> €</p>
                     <p><small>* Alle Preise sind inkl. MwSt., zzgl. Versand</small></p>
                 </div>
             </div>

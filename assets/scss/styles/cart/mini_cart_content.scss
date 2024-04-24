@@ -68,8 +68,8 @@
       }
 
       .mini-cart-subtotal {
-        padding: $spacing-l 0;
-        margin: $spacing-l 0;
+        padding: $spacing 0;
+        margin: $spacing 0;
         border-bottom: 1px solid $beigegold;
         border-top: 1px solid $beigegold;
 
@@ -77,34 +77,6 @@
           display: flex;
           justify-content: space-between;
           padding: 0;
-        }
-
-        ul.woocommerce-shipping-methods {
-          list-style: none;
-
-          li {
-            margin: 0;
-            label {
-              width: 100%;
-              display: block;
-              position: relative;
-
-              .woocommerce-Price-amount.amount {
-                font-weight: normal;
-                position: absolute;
-                right: 0;
-              }
-
-              small {
-                font-size: $font-size;
-                font-weight: normal;
-              }
-            }
-          }
-        }
-
-        .rehorik-shipping-rest-amount, #shipping_method label[for*="free_shipping"] {
-          color: $beigegold;
         }
 
         p.shipping-costs-cart-info {

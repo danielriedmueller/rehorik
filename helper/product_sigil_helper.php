@@ -1,36 +1,63 @@
 <?php
 
-function hasSigils(WC_Product $product): bool {
-    return isProductOfTheMonth($product) || hasBioSigil($product) || hasVeganSigil($product) || hasBiodynamicSigil($product) || hasRegionalSigil($product) || hasCottonSigil($product);
+function getSigils(WC_Product $product): array
+{
+    $attributes = $product->get_attributes();
+    $sigils = [];
+
+    if (!isset($attributes[GUETESIEGEL_ATTRIBUTE_SLUG])) {
+        return $sigils;
+    }
+
+    foreach ($attributes[GUETESIEGEL_ATTRIBUTE_SLUG]->get_terms() as $term) {
+        $text = '';
+        $class = $term->slug;
+
+        // Skip biosiegel if no controlcode is set
+        if ($term->slug === 'biosiegel') {
+            $controlCode = generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
+
+            if (empty($controlCode)) {
+                continue;
+            }
+
+            $text = $controlCode;
+        }
+
+        if ($term->slug === 'produkt-des-monats') {
+            $class = getProductOfTheMonthClass($product);
+        }
+
+        $sigils[] = [
+            'title' => $term->name,
+            'class' => $class,
+            'text' => $text,
+        ];
+    }
+
+    return $sigils;
 }
 
-function isProductOfTheMonth(WC_Product $product): bool {
+function isProductOfTheMonth(WC_Product $product): bool
+{
     return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Produkt des Monats');
 }
 
-function hasBioSigil(WC_Product $product): bool {
-    $value = generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
+function getProductOfTheMonthClass(WC_Product $product): string
+{
+    if (isProductOfTheMonth($product)) {
+        if (isItCategory($product, WINE_CATEGORY_SLUG)) {
+            return "product-of-month wine-of-month";
+        }
 
-    return !empty($value) && str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Biosiegel');
+        return "product-of-month";
+    }
+
+    return "";
 }
 
-function hasVeganSigil(WC_Product $product): bool {
-    return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Vegan');
-}
-
-function hasBiodynamicSigil(WC_Product $product): bool {
-    return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Biodynamisch');
-}
-
-function hasRegionalSigil(WC_Product $product): bool {
-    return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), 'Regional');
-}
-
-function hasCottonSigil(WC_Product $product): bool {
-    return str_contains($product->get_attribute(GUETESIEGEL_ATTRIBUTE_SLUG), '100% Baumwolle');
-}
-
-function isEventOnline($eventId): bool {
+function isEventOnline($eventId): bool
+{
     if (!function_exists('tribe_events_get_ticket_event')) {
         return false;
     }
@@ -45,19 +72,8 @@ function isEventOnline($eventId): bool {
     return !!$isOnline;
 }
 
-function getProductOfTheMonthClass(WC_Product $product): string {
-    if (isProductOfTheMonth($product)) {
-        if (isItCategory($product, WINE_CATEGORY_SLUG)) {
-           return "product-of-month wine-of-month";
-        }
-
-        return "product-of-month";
-    }
-
-    return "";
-}
-
-function getIsEventOnlineClass(WC_Product $product): string {
+function getIsEventOnlineClass(WC_Product $product): string
+{
     if (!function_exists('tribe_events_get_ticket_event')) {
         return "";
     }
@@ -69,32 +85,6 @@ function getIsEventOnlineClass(WC_Product $product): string {
     }
 
     return isEventOnline($event->ID) ? "event-online" : "";
-}
-
-function getBioSigilClass(WC_Product $product): string {
-    return hasBioSigil($product) ? "biosigil" : "";
-}
-
-function getVeganSigilClass(WC_Product $product): string {
-    return hasVeganSigil($product) ? "vegansigil" : "";
-}
-
-function getBiodynamicSigilClass(WC_Product $product): string {
-    return hasBiodynamicSigil($product) ? "biodynamicsigil" : "";
-}
-
-function getRegionalSigilClass(WC_Product $product): string {
-    return hasRegionalSigil($product) ? "regionalsigil" : "";
-}
-
-function getCottonSigilClass(WC_Product $product): string {
-    return hasCottonSigil($product) ? "cottonsigil" : "";
-}
-
-function getBioSigilControlcode(WC_Product $product): string {
-    $value = generateBioSigilControlcode($product->get_attribute(BIOSIGIL_ATTRIBUTE_SLUG));
-
-    return !empty($value) ? $value : "";
 }
 
 /**
@@ -110,7 +100,8 @@ function getBioSigilControlcode(WC_Product $product): string {
 function generateBioSigilControlcode(
     string $value,
     string $defaultIsoPart = "DE-ÖKO-"
-): string {
+): string
+{
     // Append default iso part if given value is reference number>
     if (is_numeric($value)) {
         $value = $defaultIsoPart . $value;
@@ -125,7 +116,8 @@ function generateBioSigilControlcode(
  * @param string $value
  * @return bool
  */
-function validateBioSigilControlcode(string $value): bool {
+function validateBioSigilControlcode(string $value): bool
+{
     if (empty($value)) {
         return false;
     }

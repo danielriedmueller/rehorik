@@ -1,8 +1,5 @@
 <?php
-get_template_part('templates/header/head');
-if (!is_product()) {
-    get_template_part('templates/page-title');
-}
+get_header();
 ?>
 <div class="container">
     <div id="main-content">

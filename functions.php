@@ -1,4 +1,9 @@
 <?php
+// Disable deprecation notices so we can get a better idea of what's going on in our log.
+// These hooks are all in wp-includes/functions.php.
+// Note that these hooks don't stop WooCommerce from logging deprecation notices on AJAX
+// or REST API calls as it makes its own calls to `error_log()` from within
+// woocommerce/includes/wc-deprecated-functions.php.
 show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
 add_filter( 'wp_is_application_passwords_available', '__return_true' );
 
@@ -14,14 +19,12 @@ const PRODUCTS_PER_PAGE = 200;
 const CONTACT_MAIL = 'kaffee@rehorik.de';
 const JOBS_MAIL = 'bewerbung@rehorik.de';
 const CONTACT_PHONE = '0941 / 788 353 0';
-const IT_SUPPORT_EMAIL = 'it@rehorik.de';
+const IT_SUPPORT_EMAIL = 'kaffee@rehorik.de';
 const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
 const EVENT_EMAIL = 'events@rehorik.de';
 
 // PDFs
-const MENU_190 = '/speisekarte/Speisekarte190.pdf';
-const MENU_STRAUBINGER = '/speisekarte/SpeisekarteStraubinger.pdf';
-const INGREDIENT_AND_NUTRITION_INFORMATION = '/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe_2022.pdf';
+const INGREDIENT_AND_NUTRITION_INFORMATION = '/wp-content/uploads/2023/11/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe.pdf';
 
 // Product Categories
 const COFFEE_CATEGORY_SLUG = 'kaffee';
@@ -100,9 +103,6 @@ const ORDER_ITEM_COUPON_CODE = 'order_item_coupon_code';
 const PAYMENT_METHOD_CASH = 'cod';
 const PAYMENT_METHOD_DIRECT_TRANSFER = 'bacs';
 
-// Default shipping
-const SHIPPING_DURATION_MESSAGE = '3 - 5 Werktage';
-
 // Pages
 const STANDORTE_PAGE_ID = 26672;
 const LOGIN_PAGE_ID = 667;
@@ -131,8 +131,8 @@ if (PLUGINS_ACTIVE) {
     require_once($baseDir . '/includes/class-reh-api-products.php');
     require_once($baseDir . '/includes/class-reh-mini-cart.php');
     require_once($baseDir . '/includes/class-reh-product-feed.php');
+    require_once($baseDir . '/includes/class-reh-page-header-image.php');
     require_once($baseDir . '/helper/category_helper.php');
-    require_once($baseDir . '/helper/shipping_helper.php');
     require_once($baseDir . '/helper/woocommerce_functions.php');
     require_once($baseDir . '/hooks/woocommerce.php');
     require_once($baseDir . '/filter/shop.php');
@@ -149,7 +149,7 @@ if (PLUGINS_ACTIVE) {
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 1.98);
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 2.01);
     wp_enqueue_script('mobile-menu', $assetsDir . 'js/mobile_menu.js', [], 1, true);
     wp_enqueue_script('mobile-filter', $assetsDir . 'js/mobile_filter.js', [], 1, true);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);
@@ -162,12 +162,13 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
     wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
 
-    wp_enqueue_script('ajax', $assetsDir . 'js/ajax.js', ['jquery'], 1, true);
+    wp_enqueue_script( 'wc-cart-fragments' );
+    wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
+
+    wp_enqueue_script('ajax', $assetsDir . 'js/ajax.js', ['jquery'], 1.1, true);
     wp_add_inline_script('ajax', 'const settings = ' . json_encode([
             'ajax_url' => admin_url('admin-ajax.php'),
-            'add_nonce' => wp_create_nonce('rehorik-add-to-cart'),
-            'update_nonce' => wp_create_nonce('rehorik-update-cart'),
-            'ticket_capacity_nonce' => wp_create_nonce('rehorik-tribe-events-ticket-capacity'),
+            'reh_nonce' => wp_create_nonce('reh-nonce'),
         ]), 'before');
 
     if (is_front_page()) {

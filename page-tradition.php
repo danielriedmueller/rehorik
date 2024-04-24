@@ -4,36 +4,7 @@ if (!PLUGINS_ACTIVE) {
     return;
 }
 
-get_template_part('templates/header/head', null, [
-    'slider' => [
-        [
-            'claim' => 'Vom Ursprung inspiriert',
-            'img' => 'header-tradition',
-            'buttons' => [
-                '/produkt/karlsbader-mischung' => 'Unsere Karslbader Mischung',
-            ],
-        ],
-        [
-            'claim' => 'Bis heute weitergelebt',
-            'img' => 'startseite-header-roesterei',
-            'buttons' => [
-                '/produkt/hochlandmischung' => 'Regensburger Mischung',
-            ],
-        ],
-    ],
-]);
-get_template_part('templates/introduction', null, [
-    'text' => 'Seit vier Generationen lebt Rehorik Kaffee, Wein und Feinkost. Damit hat Hugo Rehorik vor über 90 Jahren
-                begonnen. Und wir
-                tun es immer noch. Deshalb wissen wir genau, wie es geht und worauf wir achten müssen: Wo kommen die
-                Produkte her? Wie
-                werden sie produziert? Und besonders wichtig: Überzeugt uns die Qualität? Das überprüfen wir regelmäßig.
-                Wir
-                besuchen Kaffeebauern und Produzenten weltweit. Wir schauen uns um, probieren aus und bringen mit, was
-                uns gefällt – seit
-                1928 als familiengeführtes Unternehmen.',
-]);
-get_template_part('templates/page-title');
+get_header();
 ?>
 <div class="container max-width-small">
     <div id="timeline-outer">

@@ -29,13 +29,16 @@ if ($unitAmount) {
     }
 
     if (is_array($unitPrice) && array_key_exists('price', $unitPrice)) {
-        $min = min(array_filter($unitPrice['price']));
-        $max = max(array_filter($unitPrice['price']));
+		$priceArray = array_filter($unitPrice['price']);
+		if (!empty($priceArray)) {
+			$min = min(array_filter($unitPrice['price']));
+			$max = max(array_filter($unitPrice['price']));
 
-        $priceForOneCupMin =  number_format($min * $multiplier * $unitBase, 3);
-        $priceForOneCupMax = number_format($max * $multiplier * $unitBase, 3);
+			$priceForOneCupMin =  number_format($min * $multiplier * $unitBase, 3);
+			$priceForOneCupMax = number_format($max * $multiplier * $unitBase, 3);
 
-        $formattedPriceRange = wc_format_price_range($priceForOneCupMin, $priceForOneCupMax);
+			$formattedPriceRange = wc_format_price_range($priceForOneCupMin, $priceForOneCupMax);
+		};
     }
 
     if (!empty($formattedPriceRange)) {

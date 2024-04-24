@@ -28,6 +28,7 @@ add_action('woocommerce_after_add_to_cart_button', 'woocommerce_template_single_
 add_filter('woocommerce_paypal_payments_single_product_renderer_hook', function () {
     return 'woocommerce_after_add_to_cart_button';
 }); // Filter for rendering PayPal Button
+
 add_action('rehorik_product_not_selling_notice', 'not_selling_notice', 1); // Notice if product is not selling
 
 add_action('woocommerce_single_product_summary', 'hugo_head', 50); // Hugo Head

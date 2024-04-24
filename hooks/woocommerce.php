@@ -4,7 +4,7 @@ require_once('shop/cart_hooks.php');
 require_once('shop/products_gallery_hooks.php');
 
 /**
- * @depreacated
+ * @deprecated
  * Replaced with plugin
  * Legacy code until all coupons are used or updated
  */

@@ -54,9 +54,11 @@
   border-radius: $border-radius;
 }
 
+// Info banner
 .woocommerce {
   .woocommerce-error,
   .woocommerce-info,
+  .wc-block-components-notice-banner.is-info,
   .woocommerce-message {
     background-color: #fff;
     color: $font-color;
@@ -72,6 +74,10 @@
     a {
       color: $font-color-accent-dark;
     }
+  }
+
+  .wc-block-components-notice-banner.is-info > svg {
+    background-color: $beigegold;
   }
 }
 
