@@ -1,18 +1,13 @@
 <?php ?>
 <div id="special-category">
-    <p><b>Wo:</b> Rehorik Café 190° | <a target="_blank" href="https://goo.gl/maps/nAmqc8nwH3hGWkWY6">Am Brixener Hof
-            6</a></p>
-    <p><b>Preis:</b> 18 Euro, nur Abendkasse</p>
-    <p><b>Wann:</b> Jeden vorletzten Samstag im Monat, ab 13:00 Uhr.</p>
-    <p><b>Was wir uns hier schon wieder ausgedacht haben?</b></p>
-    <div class="golden-box">
-        <div>
-            Eigentlich ganz einfach: Du bekommst ein schwarzes Weinglas und eine Bewertungsskala. Dann verkostest Du
-            Weine, ohne zu wissen, um was es sich handelt. Es ist dabei nicht wichtig, die Rebsorte zu erkennen oder das Anbaugebiet. Wichtig ist nur Dein Geschmack. Denn der Wein, der von Euch am besten bewertet wird, wird unser
-            Wein des Monats.
-            Kleiner Bonus obendrauf: Pack einfach den Bewertungsbogen ein und schau bei einem unserer Standorte vorbei. Dort bekommst Du dann 10% Rabatt auf unseren Wein des Monats.
-        </div>
-    </div>
+    <?php
+	$page_id = 42403;
+	$page = get_post($page_id);
+	if ($page) {
+		$content = apply_filters('the_content', $page->post_content);
+		echo $content;
+	}
+    ?>
     <div class="flex-images mt">
         <div><img alt="Black & Wine 1"
                   src="<?= get_stylesheet_directory_uri() . '/assets/img/veranstaltungen/blackandwine/bw-1.jpg' ?>">

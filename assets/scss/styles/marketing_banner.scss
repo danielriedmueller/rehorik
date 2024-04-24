@@ -1,15 +1,15 @@
 .marketing-banner {
   position: relative;
 
-  background: transparent url("../img/marketing/breitbild-chemex-1920x390px.jpg") no-repeat center center;
+  background: transparent url("../img/marketing/breitbild-chemex-1920x390px.webp") no-repeat center center;
   background-size: cover;
 
   @media all and (max-width: 1080px) and (min-width: 376px) {
-    background-image: url("../img/marketing/breitbild-chemex-1080x390px.jpg");
+    background-image: url("../img/marketing/breitbild-chemex-1080x390px.webp");
   }
 
   @media all and (max-width: 375px) {
-    background-image: url("../img/marketing/breitbild-chemex-375x390px.jpg");
+    background-image: url("../img/marketing/breitbild-chemex-375x390px.webp");
   }
 
   &.weinachtsmarkt {

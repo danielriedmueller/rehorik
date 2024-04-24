@@ -1,0 +1,40 @@
+// PayPal Button
+.rehorik {
+  .ppc-button-wrapper {
+    z-index: 10;
+    position: relative;
+    width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
+  }
+}
+
+.rehorik:not(.single-product) {
+  .ppc-button-wrapper {
+    @media all and (max-width: $medium-breakpoint) {
+      width: 100%;
+    }
+  }
+}
+
+.rehorik.woocommerce-checkout {
+  .ppc-button-wrapper {
+    order: 7;
+    margin-left: auto;
+  }
+}
+
+.rehorik:not(.woocommerce-checkout) {
+  .ppc-button-wrapper {
+    margin-top: $spacing-xs;
+    height: 35px;
+    > div {
+      height: 35px;
+    }
+
+    @media all and (max-width: $medium-breakpoint) {
+      height: 45px;
+      > div {
+        height: 45px;
+      }
+    }
+  }
+}

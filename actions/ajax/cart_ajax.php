@@ -3,6 +3,22 @@ add_action('wp_ajax_rehorik_ajax_add_to_cart', 'rehorik_add_to_cart');
 add_action('wp_ajax_nopriv_rehorik_ajax_add_to_cart', 'rehorik_add_to_cart');
 add_action('wp_ajax_rehorik_ajax_update_cart', 'rehorik_update_cart');
 add_action('wp_ajax_nopriv_rehorik_ajax_update_cart', 'rehorik_update_cart');
+add_action('wp_ajax_rehorik_ajax_select_shipping_method', 'rehorik_select_shipping_method');
+add_action('wp_ajax_nopriv_rehorik_ajax_select_shipping_method', 'rehorik_select_shipping_method');
+
+function rehorik_select_shipping_method(): void
+{
+    $shipping_method = $_POST['shipping_method'];
+
+     if (!check_ajax_referer('reh-nonce', 'nonce', false)) {
+        handle_error($_SERVER['HTTP_REFERER'], "Invalid nonce");
+        return;
+    }
+
+    WC()->session->set( 'chosen_shipping_methods', [$shipping_method] );
+    WC()->cart->calculate_totals();
+    WC_AJAX::get_refreshed_fragments();
+}
 
 function rehorik_add_to_cart(): void
 {
@@ -11,8 +27,13 @@ function rehorik_add_to_cart(): void
     $product = wc_get_product($product_id);
     $product_url = apply_filters('woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id);
 
-    if (!$product || !wp_verify_nonce($_POST['nonce'], 'rehorik-add-to-cart')) {
-        handle_error($product_url);
+    if (!check_ajax_referer('reh-nonce', 'nonce', false)) {
+        handle_error($product_url, 'Invalid nonce');
+        return;
+    }
+
+    if (!$product) {
+        handle_error($product_url, "Product $product_id not found");
         return;
     }
 
@@ -20,7 +41,7 @@ function rehorik_add_to_cart(): void
 
     if (('variable' === $type && $variation_id === 0)
         || 'variable' !== $type && $variation_id !== 0) {
-        handle_error($product_url);
+        handle_error($product_url, "Variation $variation_id not found");
         return;
     }
 
@@ -49,7 +70,7 @@ function rehorik_add_to_cart(): void
         do_action('woocommerce_ajax_added_to_cart', $product_id);
         WC_AJAX::get_refreshed_fragments();
     } else {
-        handle_error($product_url);
+        handle_error($product_url, "Product $product_id could not be added to cart");
     }
 }
 
@@ -58,8 +79,13 @@ function rehorik_update_cart(): void
     $key = sanitize_text_field($_POST['cart_item_key']);
     $value = intval(sanitize_text_field($_POST['cart_item_value']));
 
-    if (!$key || $value < 0 || !wp_verify_nonce($_POST['nonce'], 'rehorik-update-cart') || !WC()->cart->get_cart_item($key)) {
-        handle_error($_SERVER['HTTP_REFERER']);
+    if (!check_ajax_referer('reh-nonce', 'nonce', false)) {
+        handle_error($_SERVER['HTTP_REFERER'], "Invalid nonce");
+        return;
+    }
+
+    if (!$key || $value < 0 || !WC()->cart->get_cart_item($key)) {
+        handle_error($_SERVER['HTTP_REFERER'], "Cart item $key, $value not found");
         return;
     }
 
@@ -67,14 +93,14 @@ function rehorik_update_cart(): void
     WC_AJAX::get_refreshed_fragments();
 }
 
-function handle_error($redirectUrl): void
+function handle_error($redirectUrl, $message): void
 {
     $error_contact_msg = sprintf(
         'Hoppla, hier gibts ein technisches Problem. Bitte schreibe uns eine Mail an <a href="%s">%s</a> und wir schauen uns die Sache an oder probiere es einfach später nochmal.',
         IT_SUPPORT_EMAIL,
         IT_SUPPORT_EMAIL
     );
-
+    error_log(date('Y-m-d-H-i-s') . ': ' . $message . ' ' . json_encode($_REQUEST) . PHP_EOL, 3, get_stylesheet_directory() . '/reh-debug.log');
     wc_add_notice($error_contact_msg, 'error');
     wp_send_json([
         'error' => true,

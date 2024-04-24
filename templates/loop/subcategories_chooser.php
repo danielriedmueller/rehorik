@@ -1,6 +1,5 @@
 <?php
 $subcategories = null;
-$taxonomy = 'product_cat';
 if (is_product_category() || is_shop()) {
     $cats = woocommerce_get_product_subcategories(get_queried_object_id());
     if (empty($cats)) {
@@ -15,7 +14,7 @@ if (is_product_category() || is_shop()) {
         <ul class="rehorik-products-subcategories">
             <?php foreach ($cats as $term) : ?>
                 <li class="rehorik-product-subcategory product-category product">
-                    <a href="<?php echo get_term_link($term, $taxonomy); ?>">
+                    <a href="<?php echo getCategoryLink($term); ?>">
                         <?php
                         woocommerce_subcategory_thumbnail($term);
                         woocommerce_template_loop_category_title($term);

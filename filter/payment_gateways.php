@@ -1,6 +1,6 @@
 <?php
 
-add_filter('woocommerce_available_payment_gateways', function($available_gateways) {
+add_filter('woocommerce_available_payment_gateways', function ($available_gateways) {
     // Cash payment should be disallowed for non-company users
     if (array_key_exists(PAYMENT_METHOD_CASH, $available_gateways)) {
         if (!isCashPaymentAllowed()) {
@@ -8,16 +8,15 @@ add_filter('woocommerce_available_payment_gateways', function($available_gateway
         }
     }
 
-    // Direct transfer payment should be disallowed for event tickets
     if (!is_checkout()) {
         return $available_gateways;
     }
 
+    // Direct transfer payment should be disallowed for virtual products
     $unset = false;
     foreach (WC()->cart->get_cart_contents() as $values) {
         $product = wc_get_product($values['product_id']);
-        $eventCatId = get_term_by('slug', TICKET_CATEGORY_SLUG, 'product_cat')->term_id;
-        if ($product->is_virtual() && in_array($eventCatId, $product->get_category_ids())) {
+        if ($product->is_virtual()) {
             $unset = true;
             break;
         }

@@ -1,26 +1,19 @@
 <?php
-get_template_part('templates/header/head', null, [
-    'slider' => [
-        [
-            'claim' => 'REHORIK KAFFEE<br>INTERGALAKTISCH GUT',
-            'img' => 'header-neue-roesterei',
-        ],
-    ],
-]);
+if (!PLUGINS_ACTIVE) {
+    echo 'Plugins not active';
+    return;
+}
+get_header();
 ?>
-<div class="page-title-outer">
-    <div class='page-title'><h1><?= the_title() ?></h1></div>
-</div>
 <div id="page-neue-roesterei">
     <div>
         <div class="container max-width-small">
             <div>
-                <div><img alt="Rehorik Neue Roesterei"
-                          src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_Baustelle_11.jpg' ?>">
+                <div><img alt="Rehorik Roesterei und Kaffeehaus"
+                          src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/roesterei-kaffeehaus-643px-6.webp' ?>">
                 </div>
                 <div>
-                    <p class="mb-s">Die letzten Monate waren wir fleißig.<br>
-                        Was dabei herauskam? Eine schicke neue Rösterei mit Kaffeebar und Restaurantbetrieb in der
+                    <p class="mb-s">Die Rehorik Rösterei mit Kaffeehaus und Restaurantbetrieb in der
                         <b>Straubinger Straße 62 a</b>.<br>
                         Kleines Zuckerl on top: Ab sofort kannst Du Filterwasser bei uns abfüllen. Kanister
                         mitbringen, Wasser abzapfen, fertig. Und für alle Nachtschwärmer:innen: Parties, Dinners &
@@ -68,8 +61,8 @@ get_template_part('templates/header/head', null, [
                         Und weil jede Bohne ihr eigenes Röstprofil hat, nutzen wir nun beide Techniken. Durch eine
                         verglaste Wand für alle sichtbar – das ist Showrösten vom Allerfeinsten.
                     </p>
-                    <img class="mb-s" alt="Rehorik Neue Roesterei"
-                         src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_Roesterei-kaffeehaus-1.jpg' ?>">
+                    <img class="mb-s" alt="Rehorik Roesterei und Kaffeehaus"
+                         src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/roesterei-kaffeehaus-643px-8.webp' ?>">
                     <p class="mb-s">
                         Und es geht noch mehr: Probiere Dich an der Kaffeebar durch unser Kaffeesortiment oder komm
                         zum Mittagessen auf eine Bowl vorbei. Dein Weinvorrat ist geplündert? In unserem
@@ -77,8 +70,8 @@ get_template_part('templates/header/head', null, [
                         der Suche nach der perfekten Espressomaschine oder dem richtigen Kaffeezubehör bist – wir
                         bringen einiges an Kaffeeequipment und viel Erfahrung mit, um Dich vor Ort zu beraten.
                     </p>
-                    <img class="mb-s" alt="Rehorik Neue Roesterei"
-                         src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_Baustelle_9.jpg' ?>">
+                    <img class="mb-s" alt="Rehorik Roesterei und Kaffeehaus"
+                         src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/roesterei-kaffeehaus-500px-2.webp' ?>">
                     <p>
                         <b>» KOKUMI «</b> kommt aus dem Japanischen und bedeutet so viel wie <b>» Mundfülle «</b> –
                         ein intensives, ausgewogenes Geschmackserlebnis. Und genau das bekommst Du von unserem
@@ -91,12 +84,12 @@ get_template_part('templates/header/head', null, [
                     </p>
                 </div>
                 <div>
-                    <img class="mb-s" alt="Rehorik Neue Roesterei"
-                         src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_Roesterei-kaffeehaus-3.jpg' ?>">
-                    <img class="mb-s" alt="Rehorik Neue Roesterei"
-                         src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_Roesterei-kaffeehaus-2.jpg' ?>">
-                    <img alt="Rehorik Neue Roesterei"
-                         src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_Roesterei-kaffeehaus-4.jpg' ?>">
+                    <img class="mb-s" alt="Rehorik Roesterei und Kaffeehaus"
+                         src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/roesterei-kaffeehaus-500px-7.webp' ?>">
+                    <img class="mb-s" alt="Rehorik Roesterei und Kaffeehaus"
+                         src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/roesterei-kaffeehaus-666px-1.webp' ?>">
+                    <img alt="Rehorik Roesterei und Kaffeehaus"
+                         src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/roesterei-kaffeehaus-573px-3.webp' ?>">
                 </div>
             </div>
         </div>
@@ -104,14 +97,14 @@ get_template_part('templates/header/head', null, [
     <div>
         <div class="container max-width-small">
             <div>
-                <img alt="Rehorik Neue Roesterei"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/speisekarte-neue-roesterei-deckblatt.jpg' ?>">
-                <img alt="Rehorik Neue Roesterei"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_rosterei-kaffeehaus-10.jpg' ?>">
-                <img alt="Rehorik Neue Roesterei"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_rosterei-kaffeehaus-13.jpg' ?>">
-                <img alt="Rehorik Neue Roesterei"
-                     src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/Rehorik_rosterei-kaffeehaus-11.jpg' ?>">
+                <img alt="Rehorik Roesterei und Kaffeehaus"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/roesterei-kaffeehaus-420px-9.webp' ?>">
+                <img alt="Rehorik Roesterei und Kaffeehaus"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/roesterei-kaffeehaus-500px-4.webp' ?>">
+                <img alt="Rehorik Roesterei und Kaffeehaus"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/roesterei-kaffeehaus-420px-5.webp' ?>">
+                <img alt="Rehorik Roesterei und Kaffeehaus"
+                     src="<?= get_stylesheet_directory_uri() . '/assets/img/pages/roesterei/roesterei-kaffeehaus-420px-4.webp' ?>">
             </div>
         </div>
     </div>

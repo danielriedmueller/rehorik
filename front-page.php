@@ -1,23 +1,11 @@
 <?php
-get_template_part('templates/header/head', null, ['slider' => [
-    [
-        'claim' => 'TRADITION, QUALITÄT & LEIDENSCHAFT',
-        'img'=> 'startseite-header-roesterei',
-        'buttons' => [
-            '/tradition' => 'Tradition',
-            '/standorte' => 'Standorte'
-        ]
-    ],
-    [
-        'claim' => 'Kaffeerösterei seit 1928',
-        'img'=> 'startseite-header-kaffee',
-        'buttons' => [
-            get_term_link(get_term_by('slug', COFFEE_CATEGORY_SLUG, 'product_cat'),
-                'product_cat') => 'Zum Kaffee'
-        ]
-    ]
-]]);
-get_template_part('templates/featured/slider')
+if (!PLUGINS_ACTIVE) {
+    echo 'Plugins not active';
+    return;
+}
+
+get_header();
+get_template_part('templates/featured/slider');
 ?>
 <div class="marketing-banner">
     <div class="container">

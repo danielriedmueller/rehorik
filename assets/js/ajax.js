@@ -43,7 +43,7 @@
             url: settings.ajax_url,
             data: {
                 action: 'rehorik_ajax_add_to_cart',
-                nonce: settings.add_nonce,
+                nonce: settings.reh_nonce,
                 product_id: product_id,
                 quantity: product_qty,
                 variation_id: variation_id,
@@ -86,7 +86,7 @@
                 url: settings.ajax_url,
                 data: {
                     action: 'rehorik_ajax_update_cart',
-                    nonce: settings.update_nonce,
+                    nonce: settings.reh_nonce,
                     cart_item_key: cart_item_key,
                     cart_item_value: cart_item_value,
                 },
@@ -127,7 +127,7 @@
             url: settings.ajax_url,
             data: {
                 action: 'rehorik_ajax_add_to_cart',
-                nonce: settings.add_nonce,
+                nonce: settings.reh_nonce,
                 product_id: product_id,
                 quantity: product_qty,
                 variation_id: variation_id,
@@ -153,9 +153,42 @@
         });
     }
 
+    const selectShippingMethod = (e) => {
+        const shipping_method = $(e.currentTarget).val();
+        const me = $(e.currentTarget);
+        const miniCart = me.parents('#rehorik-mini-cart');
+        $.ajax({
+            type: 'post',
+            url: settings.ajax_url,
+            data: {
+                action: 'rehorik_ajax_select_shipping_method',
+                nonce: settings.reh_nonce,
+                shipping_method: shipping_method
+            },
+            beforeSend: function (response) {
+                miniCart.addClass('loading').removeClass('updated');
+            },
+            complete: function (response) {
+                miniCart.removeClass('loading').addClass('updated');
+            },
+            success: function (response) {
+                if (response.error && response.redirect_url) {
+                    window.location = response.redirect_url;
+                } else {
+                    $(document.body).trigger('added_to_cart', [
+                        response.fragments,
+                        response.cart_hash,
+                        me
+                    ]);
+                }
+            }
+        });
+    }
+
     $(document).on('click', 'button.single_add_to_cart_button:not(.disabled)', addToCart);
     $(document).on('change', 'select.rehorik-quantity.ajax-update:not(.disabled)', updateCart);
     $(document).on('click', 'button.add-to-cart-recent-order-item', addToCartRecentOrderItem);
+    $(document).on('change', 'select.shipping_method, :input[name^=shipping_method]', selectShippingMethod);
 
     const ticketCapacityElements = $('td.available-tickets-attribute-cell[data-ticket-id]');
     const ticketIds = ticketCapacityElements.map((index, element) => element.getAttribute('data-ticket-id')).get();
@@ -173,7 +206,7 @@
             url: settings.ajax_url,
             data: {
                 action: 'rehorik_ajax_tribe_events_get_ticket_capacity',
-                nonce: settings.ticket_capacity_nonce,
+                nonce: settings.reh_nonce,
                 ticket_ids: ticketIds,
             },
             complete: function (response) {

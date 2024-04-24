@@ -1,7 +1,11 @@
 (function ($) {
+    const $miniCart = $('#rehorik-mini-cart');
+    if ($miniCart.length === 0) {
+        return;
+    }
+
     const $cartButton = $('.rehorik-cart');
     const $overlayButton = $('#mini-cart-overlay');
-    const $miniCart = $('#rehorik-mini-cart');
     const $miniCartClose = $('#mini-cart-close');
     const showMiniCart = () => {
         $miniCart.addClass('show');

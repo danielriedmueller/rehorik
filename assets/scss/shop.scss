@@ -47,6 +47,8 @@
 @import "styles/checkout/checkout";
 @import "styles/checkout/payment";
 @import "styles/checkout/review_order";
+@import "styles/payment/paypal";
+@import "styles/payment/stripe";
 @import "styles/category/categories";
 @import "styles/product/sigils";
 @import "styles/product/information";
@@ -79,15 +81,15 @@
 @import "styles/user/orders";
 @import "styles/user/myaccount_navigation";
 @import "styles/page/locations_table";
+@import "styles/page/locations_map";
 @import "styles/page/locations_description";
-@import "styles/page/page_neue_roesterei";
+@import "styles/page/neue_roesterei";
 @import "styles/user/delete_me";
 @import "styles/checkout/order_overview";
 @import "styles/filter/coffee_strength_flavour_filter";
 @import "styles/filter/filter";
 @import "styles/product/not_selling_notice";
 @import "styles/marketing_banner";
-@import "styles/paypal";
 @import "styles/snow";
 @import "styles/checkout/thank_you";
 @import "styles/product/quantity";
@@ -97,6 +99,10 @@
 @import "styles/category/frontpage_categories";
 @import "styles/category/subcategories";
 @import "styles/product/origin";
+@import "styles/page/vorhang_auf";
+@import "styles/page/jobs";
+@import "styles/payment_methods";
+@import "styles/header/page-header-image";
 
 @font-face {
   font-family: "Cond";
@@ -227,6 +233,10 @@ hr {
 ul {
   margin: 0;
   padding: 0;
+}
+
+li {
+  list-style-position: inside;
 }
 
 img {

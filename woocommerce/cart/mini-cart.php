@@ -14,7 +14,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 5.2.0
+ * @version 7.8.0
  */
 
 use model\Reh_Mini_Cart_Item;
@@ -101,16 +101,15 @@ do_action('woocommerce_before_mini_cart');
                 <span>Zwischensumme:</span>
                 <?php wc_cart_totals_subtotal_html(); ?>
             </div>
-
-            <div>
-                <?php wc_cart_totals_shipping_html(); ?>
-                <div class="rehorik-shipping-rest-amount"><?php
-                    /**
-                     *
-                     * do_action('render_rest_amount_for_free_shipping');
-                     */
-                ?></div>
-            </div>
+            <?php if ($cart->needs_shipping()): ?>
+                <div class="rehorik-shipping-methods">
+                    <span>Versand:</span>
+                    <?php
+                    $cart->calculate_totals();
+                    wc_cart_totals_shipping_html();
+                    ?>
+                </div>
+             <?php endif; ?>
 
             <?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
         </div>
@@ -124,9 +123,17 @@ do_action('woocommerce_before_mini_cart');
             <?php do_action('woocommerce_widget_shopping_cart_buttons'); ?>
         </div>
 
+        <div class="mini-cart-payment-methods">
+            <fieldset>
+                <legend>Schnell und sicher bezahlen</legend>
+                <?php get_template_part('templates/payment-methods'); ?>
+            </fieldset>
+        </div>
+
     <?php else : ?>
         <p class="woocommerce-mini-cart__empty-message"><?php esc_html_e('No products in the cart.', 'woocommerce'); ?></p>
     <?php endif; ?>
 
     <?php do_action('woocommerce_after_mini_cart'); ?>
+
 </div>

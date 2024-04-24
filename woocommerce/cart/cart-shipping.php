@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 
 $formatted_destination    = isset( $formatted_destination ) ? $formatted_destination : WC()->countries->get_formatted_address( $package['destination'], ', ' );
 $has_calculated_shipping  = ! empty( $has_calculated_shipping );
-$show_shipping_calculator = ! empty( $show_shipping_calculator );
+$show_shipping_calculator = false;
 $calculator_text          = '';
 ?>
 <tr class="woocommerce-shipping-totals shipping rehorik-shipping-methods">
@@ -92,5 +92,7 @@ $calculator_text          = '';
 		<?php if ( $show_shipping_calculator ) : ?>
 			<?php woocommerce_shipping_calculator( $calculator_text ); ?>
 		<?php endif; ?>
+
+		<?php do_action('render_rest_amount_for_free_shipping'); ?>
 	</td>
 </tr>

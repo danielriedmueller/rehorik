@@ -3,10 +3,8 @@
  * Adds class to body classes for shop page only.
  */
 add_filter('body_class', function ($classes) {
-    if (function_exists('is_shop')) {
-        if (is_shop()) {
-            return array_merge($classes, array('shop'));
-        }
+    if (is_shop()) {
+        return array_merge($classes, array('shop'));
     }
 
     return $classes;
@@ -19,12 +17,14 @@ add_filter('woocommerce_show_page_title', function () {
     return false;
 });
 
-/**
- * Displays shipping estimates for WC shipping rates
- */
-add_filter('woocommerce_cart_shipping_method_full_label', function ($label) {
-    return $label . ' ' . getShippingDurationMessage();
-});
+add_filter('woocommerce_shipping_rate_label', function (string $label, WC_Shipping_Rate $method) {
+    $message = ' Lieferzeit: 3 - 5 Werktage';
+    if ($method->get_method_id() === 'local_pickup') {
+        $message = ' in 2 Werktagen zwischen 9 - 18 Uhr im Kaffeehaus, Straubinger Str. 62A';
+    }
+
+    return "<span>$label</span><span class='rehorik-shipping-hint'>$message</span>";
+}, 10, 2);
 
 /**
  * Remove Ancient Custom Fields metabox from post editor

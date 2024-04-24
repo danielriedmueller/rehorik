@@ -137,7 +137,7 @@ $element-height: 42px;
 
 @media all and (min-width: $medium-breakpoint + 1) {
   // desktop without slider
-  body:not(.has-slider) header.rehorik-header #rehorik-social-media-icons {
+  body:not(.has-header-image) header.rehorik-header #rehorik-social-media-icons {
     @include gold-without-background;
     @include icon-size($spacing, $spacing-xs);
 
@@ -155,7 +155,7 @@ $element-height: 42px;
   }
 
   // desktop with slider
-  body.has-slider {
+  body.has-header-image {
     #rehorik-social-media-icons {
       @include white-with-background;
       @include icon-size($spacing, $spacing-xs);

@@ -25,22 +25,19 @@ add_filter('woocommerce_email_additional_content_customer_completed_order', func
     WC_Email_Customer_Completed_Order $email) {
 
     $hasCoupon = false;
-    $hasShippableProducts = false;
+    $hasShippableProducts = $order->needs_shipping_address();
 
     foreach ($order->get_items() as $item) {
-        if ($hasCoupon && $hasShippableProducts) {
+        if ($hasCoupon) {
             continue;
         }
 
         /** @var WC_Order_Item_Product $item */
         if ($item instanceof WC_Order_Item_Product) {
             $product = $item->get_product();
-            if (!$hasCoupon && isItCategory($product, COUPON_CATEGORY_SLUG)) {
+            if (isItCategory($product, COUPON_CATEGORY_SLUG)) {
                 $hasCoupon = true;
-            }
-
-            if (!$hasShippableProducts && !$product->is_virtual()) {
-                $hasShippableProducts = true;
+                break;
             }
         }
     }
@@ -82,12 +79,17 @@ add_filter('tribe_tickets_plus_woo_email_attachments', function (array $attachme
             $date = date(DATE_FORMAT, $startDatetime);
         }
 
+        $location = tribe_get_venue($attendee['event_id']);
+        if (tribe_address_exists($attendee['event_id'])) {
+            $location .= ' | ' . tribe_get_full_address($attendee['event_id']);
+        }
+
         $details = [
             'ticket_id' => $attendee['ticket_id'],
             'ticket_name' => $attendee['ticket_name'],
             'holder_name' => $attendee['holder_name'],
             'event_id' => $attendee['event_id'],
-            'location' => tribe_get_venue($attendee['event_id']),
+            'location' => $location,
             'organizer' => tribe_get_organizer($attendee['event_id']),
             'date' => $date,
             'qr_ticket_id' => $attendee['qr_ticket_id'],
