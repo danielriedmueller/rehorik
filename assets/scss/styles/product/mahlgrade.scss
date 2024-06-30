@@ -1,22 +1,13 @@
-@mixin mahlgradItem($mahlgrad) {
-  box-sizing: border-box;
-  font-size: $font-size-small;
-  width: 100%;
-  height: 40px;
-  padding-left: $spacing;
-  background-size: $spacing-s;
-  background-repeat: no-repeat;
-  background-position: $spacing-xxs center;
-  background-image: url("../img/mahlgrade/#{$mahlgrad}.svg");
-}
-
-@mixin mahlgradItemSelected($mahlgrad) {
-  @include mahlgradItem($mahlgrad);
-  background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg");
-}
-
 body.rehorik.woocommerce div.product.rehorik-product form.cart {
   table.variations ul[data-attribute_name="attribute_pa_mahlgrad"] {
+    grid-template-areas:
+        "ganze-bohne stempelkanne stempelkanne"
+        "ibric herdkaennchen herdkaennchen"
+        "karlsbader coldbrew aeropress"
+        "filtermaschine filtermaschine filtermaschine"
+  ;
+
+
     li {
       height: fit-content;
 
@@ -41,64 +32,48 @@ body.rehorik.woocommerce div.product.rehorik-product form.cart {
 
     @each $mahlgrad in $mahlgrade {
       li[data-value='#{$mahlgrad}'] {
+        grid-area: unquote($mahlgrad);;
+
         > div {
-          @include mahlgradItem($mahlgrad);
+          box-sizing: border-box;
+          font-size: $font-size-small;
+          width: 100%;
+          padding-left: $spacing-s;
+          background-size: $spacing-s;
+          background-repeat: no-repeat;
+          background-position: $spacing-xxs center;
+          background-image: url("../img/mahlgrade/#{$mahlgrad}.svg");
+
+          @if $mahlgrad == 'stempelkanne' {
+            background-image: url("../img/mahlgrade/#{$mahlgrad}.svg"), url("../img/mahlgrade/chemex-gross.svg");
+            background-position: $spacing-xxs center, $spacing-s + $spacing-xxs + $spacing-xxs center;
+          }
+
+          @if $mahlgrad == 'herdkaennchen' {
+            background-image: url("../img/mahlgrade/#{$mahlgrad}.svg"), url("../img/mahlgrade/siebtraeger.svg");
+            background-position: $spacing-xxs center, $spacing-s + $spacing-xxs + $spacing-xxs center;
+          }
+
+          @if $mahlgrad == 'filtermaschine' {
+            background-image: url("../img/mahlgrade/#{$mahlgrad}.svg"), url("../img/mahlgrade/handfilter.svg"), url("../img/mahlgrade/chemex-klein.svg");
+            background-position: $spacing-xxs center, $spacing-s + $spacing-xxs + $spacing-xxs center, $spacing-s + $spacing-s + $spacing-xxs + $spacing-xxs + $spacing-xxs center;
+          }
         }
 
         &:hover, &.selected {
           > div {
-            @include mahlgradItemSelected($mahlgrad);
-          }
-        }
+            background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg");
 
-        @if $mahlgrad == 'stempelkanne' {
-          &::after {
-            content: 'Chemex gro\00DF';
-            display: block;
-            @include mahlgradItem('chemex-gross');
-          }
-
-          &:hover, &.selected {
-            &::after {
-              @include mahlgradItemSelected('chemex-gross');
-            }
-          }
-        }
-
-        @if $mahlgrad == 'herdkaennchen' {
-          &::after {
-            content: 'Siebträger';
-            display: block;
-            @include mahlgradItem('siebtraeger');
-          }
-
-          &:hover, &.selected {
-            &::after {
-              @include mahlgradItemSelected('siebtraeger');
-            }
-          }
-        }
-
-        @if $mahlgrad == 'filtermaschine' {
-          &::after {
-            content: 'Handfilter';
-            display: block;
-            @include mahlgradItem('handfilter');
-          }
-
-          &::before {
-            content: 'Chemex klein';
-            display: block;
-            @include mahlgradItem('chemex-klein');
-          }
-
-          &:hover, &.selected {
-            &::after {
-              @include mahlgradItemSelected('handfilter');
+            @if $mahlgrad == 'stempelkanne' {
+              background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg"), url("../img/mahlgrade/selected/chemex-gross.svg");
             }
 
-            &::before {
-              @include mahlgradItemSelected('chemex-klein');
+            @if $mahlgrad == 'herdkaennchen' {
+              background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg"), url("../img/mahlgrade/selected/siebtraeger.svg");
+            }
+
+            @if $mahlgrad == 'filtermaschine' {
+              background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg"), url("../img/mahlgrade/selected/handfilter.svg"), url("../img/mahlgrade/selected/chemex-klein.svg");
             }
           }
         }
