@@ -1,37 +1,106 @@
+@mixin mahlgradItem($mahlgrad) {
+  box-sizing: border-box;
+  font-size: $font-size-small;
+  width: 100%;
+  height: 40px;
+  padding-left: $spacing;
+  background-size: $spacing-s;
+  background-repeat: no-repeat;
+  background-position: $spacing-xxs center;
+  background-image: url("../img/mahlgrade/#{$mahlgrad}.svg");
+}
+
+@mixin mahlgradItemSelected($mahlgrad) {
+  @include mahlgradItem($mahlgrad);
+  background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg");
+}
+
 body.rehorik.woocommerce div.product.rehorik-product form.cart {
   table.variations ul[data-attribute_name="attribute_pa_mahlgrad"] {
     li {
-      padding-left: $spacing;
-      background-size: $spacing-s;
-      background-repeat: no-repeat;
-      background-position: $spacing-xxs center;
+      height: fit-content;
 
       &:hover, &.selected {
         background-color: $weinrot;
       }
     }
 
+    // filtermaschine (8), handfilter (7) and chemex-klein (1) is the same => use filtermaschine
+    // herdkaennchen (6) and siebtraeger (5) is the same => use herdkaennchen
+    // stempelkanne (10) and chemex-gross (0) is the same => use stempelkanne
     $mahlgrade: [
       'aeropress',
-      'chemex-klein',
-      'chemex-gross',
       'coldbrew',
       'filtermaschine',
       'ganze-bohne',
-      'handfilter',
       'herdkaennchen',
       'ibric',
       'karlsbader',
-      'siebtraeger',
       'stempelkanne'
     ];
 
     @each $mahlgrad in $mahlgrade {
       li[data-value='#{$mahlgrad}'] {
-        background-image: url("../img/mahlgrade/#{$mahlgrad}.svg");
+        > div {
+          @include mahlgradItem($mahlgrad);
+        }
 
         &:hover, &.selected {
-          background-image: url("../img/mahlgrade/selected/#{$mahlgrad}.svg");
+          > div {
+            @include mahlgradItemSelected($mahlgrad);
+          }
+        }
+
+        @if $mahlgrad == 'stempelkanne' {
+          &::after {
+            content: 'Chemex gro\00DF';
+            display: block;
+            @include mahlgradItem('chemex-gross');
+          }
+
+          &:hover, &.selected {
+            &::after {
+              @include mahlgradItemSelected('chemex-gross');
+            }
+          }
+        }
+
+        @if $mahlgrad == 'herdkaennchen' {
+          &::after {
+            content: 'Siebträger';
+            display: block;
+            @include mahlgradItem('siebtraeger');
+          }
+
+          &:hover, &.selected {
+            &::after {
+              @include mahlgradItemSelected('siebtraeger');
+            }
+          }
+        }
+
+        @if $mahlgrad == 'filtermaschine' {
+          &::after {
+            content: 'Handfilter';
+            display: block;
+            @include mahlgradItem('handfilter');
+          }
+
+          &::before {
+            content: 'Chemex klein';
+            display: block;
+            @include mahlgradItem('chemex-klein');
+          }
+
+          &:hover, &.selected {
+            &::after {
+              @include mahlgradItemSelected('handfilter');
+            }
+
+            &::before {
+              @include mahlgradItemSelected('chemex-klein');
+            }
+          }
         }
       }
     }
