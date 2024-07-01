@@ -1,7 +1,6 @@
 <?php
 require_once('delete_past_events.php');
 require_once('product_feed.php');
-require_once('create_coffees.php');
 
 add_action('admin_enqueue_scripts', function ($hook) {
     if ($hook == 'toplevel_page_rehorik-admin') {
@@ -17,13 +16,6 @@ add_action('admin_menu', function () {
         $feeds = array_diff(scandir(Reh_Product_Feed::get_feed_path()), array('.', '..'));
         ?>
         <h2>Rehorik Admin</h2>
-        <div style="margin-top: 20px">
-            <fieldset>
-                <legend>Create Coffees</legend>
-                <button class="rehorik-admin-action-button" data-action="create_coffees">Do it!
-                </button>
-            </fieldset>
-        </div>
         <div style="margin-top: 20px">
             <fieldset>
                 <legend>Event Tickets</legend>
@@ -70,6 +62,18 @@ add_action('admin_menu', function () {
                         </ul>
                     </div>
                 <?php endif; ?>
+            </fieldset>
+        </div>
+        <div style="margin-top: 20px">
+            <h3>Product CSV Import</h3>
+            <fieldset>
+                <?php
+                if (is_plugin_active('dr-csv-product-import/import.php'))  {
+                    echo do_shortcode( '[dr_csv_product_importer]' );
+                } else {
+                    echo 'Plugin dr-csv-product-import not active';
+                }
+                ?>
             </fieldset>
         </div>
         <div style="margin-top: 20px">
