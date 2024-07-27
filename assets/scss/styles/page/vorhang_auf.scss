@@ -7,7 +7,7 @@
   gap: 0;
 
   > div {
-    padding: var(--section-spacing-top-bottom) var(--section-spacing-left-right);
+    padding: $spacing-l;
   }
 
   @media all and (max-width: $small-breakpoint) {
@@ -16,6 +16,10 @@
       "news"
       "lets-talk-coffee"
       "coffee-knowledge";
+
+    > div {
+      padding: var(--section-spacing-top-bottom) var(--section-spacing-left-right);
+    }
   }
 
   .news {
