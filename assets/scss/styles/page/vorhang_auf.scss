@@ -3,9 +3,16 @@
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
       "news news"
-      "lets-talk-coffee coffee-knowledge"
-;
+      "lets-talk-coffee coffee-knowledge";
   gap: 0;
+
+  @media all and (max-width: $small-breakpoint) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "news"
+      "lets-talk-coffee"
+      "coffee-knowledge";
+  }
 
   > div {
     padding: $spacing-l;
@@ -35,4 +42,13 @@
     padding-bottom: $spacing;
     border-bottom: 1px solid #fff;
   }
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+header.rehorik-header .menu-hauptmenue-container #menu-hauptmenue.menu > li.vorhang-auf > a {
+  font-family: $font-family-bold;
 }
