@@ -1,5 +1,9 @@
 body.single-post {
-  .container {
+  .container.post-container {
+    h1, h2 {
+        margin-bottom: $spacing-s;
+    }
+
     p {
       margin: $spacing-s 0;
       padding: 0;

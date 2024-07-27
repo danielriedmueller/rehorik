@@ -1,9 +1,10 @@
 <?php
 require_once(get_stylesheet_directory() . '/helper/page_helper.php');
 $id = get_queried_object();
-
-$headerData = null;
 $pageTitle = get_the_title();
+
+$headerData = $args;
+
 if ($term = get_queried_object()) {
     if (isset($term->taxonomy)) {
         if ($term->taxonomy === 'product_cat') {
