@@ -2,6 +2,7 @@ body.single-post {
   .container.post-container {
     h1, h2 {
         margin-bottom: $spacing-s;
+        text-align: left;
     }
 
     p {
