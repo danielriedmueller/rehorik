@@ -6,16 +6,16 @@
       "lets-talk-coffee coffee-knowledge";
   gap: 0;
 
+  > div {
+    padding: var(--section-spacing-top-bottom) var(--section-spacing-left-right);
+  }
+
   @media all and (max-width: $small-breakpoint) {
     grid-template-columns: 1fr;
     grid-template-areas:
       "news"
       "lets-talk-coffee"
       "coffee-knowledge";
-  }
-
-  > div {
-    padding: $spacing-l;
   }
 
   .news {
