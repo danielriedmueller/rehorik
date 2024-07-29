@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
       "news news"
-      "lets-talk-coffee coffee-knowledge";
+      "lets-talk-about coffee-knowledge";
   gap: 0;
 
   > div {
@@ -14,7 +14,7 @@
     grid-template-columns: 1fr;
     grid-template-areas:
       "news"
-      "lets-talk-coffee"
+      "lets-talk-about"
       "coffee-knowledge";
 
     > div {
