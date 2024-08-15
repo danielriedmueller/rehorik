@@ -24,6 +24,15 @@ $showTitle = $headerData[Reh_Page_Header_Image::META_HEADER_SHOW_TITLE] ?? false
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+    <?php if (defined('DISABLE_GOOGLE_ANALYTICS') ? DISABLE_GOOGLE_ANALYTICS : true): ?>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8QBGV3Q"
+                          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-M8QBGV3Q');</script>
+    <?php endif; ?>
     <title><?= createPageTitle() ?></title>
     <meta charset="<?php bloginfo('charset'); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
