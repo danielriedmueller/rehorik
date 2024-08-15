@@ -50,9 +50,16 @@ $attributes[PUMP_TYPE_ATTRIBUTE_SLUG] = $product->get_attribute(PUMP_TYPE_ATTRIB
 $attributes[CONSTRUCTION_TYPE_ATTRIBUTE_SLUG] = $product->get_attribute(CONSTRUCTION_TYPE_ATTRIBUTE_SLUG);
 
 $attributes = array_filter($attributes);
+
+$saleInfo = $product->get_attribute(SALE_INFO_ATTRIBUTE_SLUG);
+if ($saleInfo) {
+    $priceDisplay = $saleInfo;
+} else {
+    $priceDisplay = ($product->is_type('variable') ? "ab " : "") . $price . ((!$product->is_virtual() && $product->is_taxable()) ? " *" : "");
+}
 ?>
 <div class="rehorik-product-attributes">
-    <div class='rehorik-product-min-price'><?= ($product->is_type('variable') ? "ab " : "") . $price . ((!$product->is_virtual() && $product->is_taxable()) ? " *" : "") ?></div>
+    <div class='rehorik-product-min-price'><?= $priceDisplay ?></div>
     <table>
         <tbody>
             <?php if($strength): ?>
