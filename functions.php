@@ -63,6 +63,9 @@ const LETS_TALK_COFFEE_CATEGORY_SLUG = 'lets-talk-about';
 const COFFEE_KNOWLEDGE_CATEGORY_SLUG = 'kaffeewissen';
 
 // Attributes
+const SALE_INFO_ATTRIBUTE_SLUG = 'pa_verkaufsinformation';
+const PUMP_TYPE_ATTRIBUTE_SLUG = 'pumpentyp';
+const CONSTRUCTION_TYPE_ATTRIBUTE_SLUG = 'bauart';
 const STRENGTH_ATTRIBUTE_SLUG = 'pa_staerke';
 const VARIETIES_ATTRIBUTE_SLUG = 'pa_sorte';
 const GRAPE_VARIETY_ATTRIBUTE_SLUG = 'pa_rebsorte';

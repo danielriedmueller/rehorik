@@ -44,6 +44,11 @@ $attributes[FLAVOUR_ATTRIBUTE_SLUG] = $product->get_attribute(FLAVOUR_ATTRIBUTE_
 $attributes[MANUFACTURER_ATTRIBUTE_SLUG] = $product->get_attribute(MANUFACTURER_ATTRIBUTE_SLUG);
 $attributes[MILCHART_ATTRIBUTE_SLUG] = $product->get_attribute(MILCHART_ATTRIBUTE_SLUG);
 $attributes[HERSTELLUNG_ATTRIBUTE_SLUG] = $product->get_attribute(HERSTELLUNG_ATTRIBUTE_SLUG);
+
+// Machine attributes
+$attributes[PUMP_TYPE_ATTRIBUTE_SLUG] = $product->get_attribute(PUMP_TYPE_ATTRIBUTE_SLUG);
+$attributes[CONSTRUCTION_TYPE_ATTRIBUTE_SLUG] = $product->get_attribute(CONSTRUCTION_TYPE_ATTRIBUTE_SLUG);
+
 $attributes = array_filter($attributes);
 ?>
 <div class="rehorik-product-attributes">

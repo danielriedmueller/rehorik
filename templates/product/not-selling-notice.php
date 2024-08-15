@@ -1,5 +1,6 @@
 <?php
 global $product;
+$saleInfo = $product->get_attribute(SALE_INFO_ATTRIBUTE_SLUG);
 ?>
 <div class="not-selling-notice">
     <p>Um Dir eine optimale Beratung geben zu können, verkaufen wir dir die Maschinen nicht online. Gerne führen wir Dich in die Welt der Siebträgermaschinen persönlich ein.</p>
@@ -13,5 +14,11 @@ global $product;
             rjs.parentNode.insertBefore(js, rjs);
         }(document, "script"));
     </script>
-    <?php 'ab' . woocommerce_template_single_price(); ?>
+    <?php
+    if ($saleInfo) {
+        echo "<p class='price'>$saleInfo</p>";
+    } else {
+        woocommerce_template_single_price();
+    }
+    ?>
 </div>
