@@ -25,8 +25,8 @@ $knowledge = get_posts([
     <div class="news">
         <?php get_template_part('templates/vorhang-auf-posts', null, ['title' => 'News', 'posts' => $news]) ?>
     </div>
-    <div class="lets-talk-coffee">
-        <?php get_template_part('templates/vorhang-auf-posts', null, ['title' => 'Lets talk coffee', 'posts' => $talkCoffee]) ?>
+    <div class="lets-talk-about">
+        <?php get_template_part('templates/vorhang-auf-posts', null, ['title' => 'Let‘s Talk About', 'posts' => $talkCoffee]) ?>
     </div>
     <div class="coffee-knowledge">
         <?php get_template_part('templates/vorhang-auf-posts', null, ['title' => 'Kaffeewissen', 'posts' => $knowledge]) ?>

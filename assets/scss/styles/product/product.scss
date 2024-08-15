@@ -23,32 +23,3 @@ body.rehorik.single-product #page-container > .container {
     padding: var(--product-view-grid-gap) var(--section-spacing-left-right);
   }
 }
-
-/**
- * Exception for machine category
- * Prepend "ab" to price
-*/
-.rehorik.single-product .rehorik-product.product.detail-view.product_cat-maschinen-equipment {
-  #resmio-rehorik-maschinenberatung {
-    margin-left: -7px;
-  }
-
-  .not-selling-notice p.price {
-    color: $font-color;
-    font-family: $font-family-bold;
-    font-size: $font-size-very-very-large;
-    line-height: 44px;
-    padding: 0;
-    margin-right: var(--product-view-grid-gap-half);
-
-    > span {
-      font-size: $font-size-very-very-large;
-      font-family: $font-family-bold;
-      line-height: 44px;
-    }
-
-    > span::before {
-      content: "ab ";
-    }
-  }
-}

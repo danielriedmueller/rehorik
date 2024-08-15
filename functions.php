@@ -69,10 +69,13 @@ const HIDE_CATEGORIES = [
 
 // Post Categories
 const NEWS_CATEGORY_SLUG = 'news';
-const LETS_TALK_COFFEE_CATEGORY_SLUG = 'lets-talk-coffee';
+const LETS_TALK_COFFEE_CATEGORY_SLUG = 'lets-talk-about';
 const COFFEE_KNOWLEDGE_CATEGORY_SLUG = 'kaffeewissen';
 
 // Attributes
+const SALE_INFO_ATTRIBUTE_SLUG = 'pa_verkaufsinformation';
+const PUMP_TYPE_ATTRIBUTE_SLUG = 'pumpentyp';
+const CONSTRUCTION_TYPE_ATTRIBUTE_SLUG = 'bauart';
 const STRENGTH_ATTRIBUTE_SLUG = 'pa_staerke';
 const VARIETIES_ATTRIBUTE_SLUG = 'pa_sorte';
 const GRAPE_VARIETY_ATTRIBUTE_SLUG = 'pa_rebsorte';
@@ -158,7 +161,7 @@ if (PLUGINS_ACTIVE) {
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 2.01);
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 2.03);
     wp_enqueue_script('mobile-menu', $assetsDir . 'js/mobile_menu.js', [], 1, true);
     wp_enqueue_script('mobile-filter', $assetsDir . 'js/mobile_filter.js', [], 1, true);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);
