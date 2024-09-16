@@ -49,6 +49,7 @@ $showTitle = $headerData[Reh_Page_Header_Image::META_HEADER_SHOW_TITLE] ?? false
     <?php wp_head(); ?>
 </head>
 <body <?php body_class('rehorik' . ($hasHeaderImage ? ' has-header-image' : '')); ?>>
+<?php if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); } ?>
 <div id="page-container">
     <?php
     get_template_part('templates/header/menu');
