@@ -11,8 +11,6 @@ class Reh_Page_Header_Image
     const META_PAGE_HEADER = 'reh_meta_page_header';
     const META_HEADER_IMAGE_LARGE = 'image_large';
     const META_HEADER_IMAGE_SMALL = 'image_small';
-    private const META_HEADER_VIDEO_LARGE = 'video_large';
-    private const META_HEADER_VIDEO_SMALL = 'video_small';
     const META_HEADER_CLAIM = 'claim';
     const META_HEADER_INTRO = 'intro';
     const META_HEADER_BUTTON_1 = 'button_1';
@@ -55,8 +53,7 @@ class Reh_Page_Header_Image
     public static function hasHeaderImage($headerData)
     {
         return !empty($headerData[self::META_HEADER_IMAGE_LARGE])
-            || !empty($headerData[self::META_HEADER_IMAGE_SMALL])
-            ;
+            || !empty($headerData[self::META_HEADER_IMAGE_SMALL]);
     }
 
     /**
@@ -82,12 +79,6 @@ class Reh_Page_Header_Image
             if (!empty($large)) {
                 $small = $large;
             }
-        }
-
-        if (Reh_Page_Header_Image::isVideo($small)) {
-            get_template_part('templates/header/page-header-video-component', null, [Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE => $large, Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL => $small]);
-
-            return;
         }
 
         get_template_part('templates/header/page-header-image-component', null, [Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE => $large, Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL => $small]);
@@ -155,13 +146,8 @@ class Reh_Page_Header_Image
 
         $defaults = $this->getDefaultValues();
         $values = wp_parse_args($values, $defaults);
-
         $imageLarge = esc_attr($values[self::META_HEADER_IMAGE_LARGE] ?? '');
         $imageSmall = esc_attr($values[self::META_HEADER_IMAGE_SMALL] ?? '');
-
-        $videoLarge = esc_attr($values[self::META_HEADER_VIDEO_LARGE] ?? '');
-        $videoSmall = esc_attr($values[self::META_HEADER_VIDEO_SMALL] ?? '');
-
         $claim = esc_attr($values[self::META_HEADER_CLAIM] ?? '');
         $button1_link = isset($values[self::META_HEADER_BUTTON_1])
             ? $values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_LINK] ?? ''
@@ -179,119 +165,74 @@ class Reh_Page_Header_Image
         $showTitle = $values[self::META_HEADER_SHOW_TITLE] ?? false;
         ?>
         <fieldset id="page-header-form">
-            <!-- Toggle checkbox for switching between images and videos -->
-            <div class="toggle-container">
-                <input type="checkbox" id="media-toggle" <?php  ?> />
-                <label for="media-toggle" class="toggle-label"><span></span></label>
-
-                <!-- Wrap both image and video content in a single container for sibling matching -->
-                <div class="media-content-container">
-                    <!-- Image Upload Section -->
-                    <div class="toggle-content" id="image-content">
-                        <!-- Desktop Image -->
-                        <label>
-                            <span>Desktop Bild (1920x600px)*</span>
-                            <input
-                                    type="text"
-                                    id="meta-page-header-image-large"
-                                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_LARGE ?>]"
-                                    value="<?= $imageLarge ?>"
-                                    hidden
-                            />
-                            <img
-                                    src="<?= $imageLarge ?>"
-                                    id="meta-page-header-image-preview-large"
-                                    style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
-                            />
-                            <button class="open-meta-image-uploader button" data-size="large">Bild auswählen</button>
-                            <button
-                                    id="meta-page-header-image-remove-large"
-                                    class="remove-meta-image button"
-                                    data-size="large"
-                                    style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
-                            >Bild entfernen</button>
-                        </label>
-
-                        <!-- Mobile Image -->
-                        <label>
-                            <span>Mobile Bild (375x485px)*</span>
-                            <input
-                                    type="text"
-                                    id="meta-page-header-image-small"
-                                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_SMALL ?>]"
-                                    value="<?= $imageSmall ?>"
-                                    hidden
-                            />
-                            <img
-                                    src="<?= $imageSmall ?>"
-                                    id="meta-page-header-image-preview-small"
-                                    style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
-                            />
-                            <button class="open-meta-image-uploader button" data-size="small">Bild auswählen</button>
-                            <button
-                                    id="meta-page-header-image-remove-small"
-                                    class="remove-meta-image button"
-                                    data-size="small"
-                                    style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
-                            >Bild entfernen</button>
-                        </label>
-                    </div>
-
-                    <!-- Video Upload Section -->
-                    <div class="toggle-content" id="video-content">
-                        <!-- Desktop Video -->
-                        <label>
-                            <span>Desktop Video*</span>
-                            <input
-                                    type="text"
-                                    id="meta-page-header-video-large"
-                                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_VIDEO_LARGE ?>]"
-                                    value="<?= $videoLarge ?>"
-                                    hidden
-                            />
-                            <video
-                                    src="<?= $videoLarge ?>"
-                                    id="meta-page-header-video-preview-large"
-                                    controls
-                                    style="<?php if (empty($videoLarge)) : ?>display: none;<?php endif; ?>"
-                            ></video>
-                            <button class="open-meta-video-uploader button" data-size="large">Video auswählen</button>
-                            <button
-                                    id="meta-page-header-video-remove-large"
-                                    class="remove-meta-video button"
-                                    data-size="large"
-                                    style="<?php if (empty($videoLarge)) : ?>display: none;<?php endif; ?>"
-                            >Video entfernen</button>
-                        </label>
-
-                        <!-- Mobile Video -->
-                        <label>
-                            <span>Mobile Video*</span>
-                            <input
-                                    type="text"
-                                    id="meta-page-header-video-small"
-                                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_VIDEO_SMALL ?>]"
-                                    value="<?= $videoSmall ?>"
-                                    hidden
-                            />
-                            <video
-                                    src="<?= $videoSmall ?>"
-                                    id="meta-page-header-video-preview-small"
-                                    controls
-                                    style="<?php if (empty($videoSmall)) : ?>display: none;<?php endif; ?>"
-                            ></video>
-                            <button class="open-meta-video-uploader button" data-size="small">Video auswählen</button>
-                            <button
-                                    id="meta-page-header-video-remove-small"
-                                    class="remove-meta-video button"
-                                    data-size="small"
-                                    style="<?php if (empty($videoSmall)) : ?>display: none;<?php endif; ?>"
-                            >Video entfernen</button>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        <label>
+            <legend class="page-header-form-title">Headerbild</legend>
+            <label>
+                <span>Desktop (1920x600px)*</span>
+                <input
+                        type="text"
+                        id="meta-page-header-image-large"
+                        name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_LARGE ?>]"
+                        value="<?= $imageLarge ?>"
+                        hidden
+                />
+                <?php if (Reh_Page_Header_Image::isVideo($imageLarge)) : ?>
+                    <video
+                            id="meta-page-header-image-preview-large"
+                            style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
+                            controls
+                    >
+                        <source src="<?= $imageLarge ?>">
+                        Your browser does not support the video tag.
+                    </video>
+                <?php else: ?>
+                    <img
+                            src="<?= $imageLarge ?>"
+                            id="meta-page-header-image-preview-large"
+                            style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
+                    />
+                <?php endif; ?>
+                <button class="open-meta-image-uploader button" data-size="large">Bild/Video auswählen</button>
+                <button
+                        id="meta-page-header-image-remove-large"
+                        class="remove-meta-image button"
+                        data-size="large"
+                        style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>">Bild/Video entfernen
+                </button>
+            </label>
+            <label>
+                <span>Mobil (375x485px)*</span>
+                <input
+                        type="text"
+                        id="meta-page-header-image-small"
+                        name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_SMALL ?>]"
+                        value="<?= $imageSmall ?>"
+                        hidden
+                />
+                <?php if (Reh_Page_Header_Image::isVideo($imageSmall)) : ?>
+                    <video
+                            id="meta-page-header-image-preview-small"
+                            style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
+                            controls
+                    >
+                        <source src="<?= $imageSmall ?>">
+                        Your browser does not support the video tag.
+                    </video>
+                <?php else: ?>
+                    <img
+                            src="<?= $imageSmall ?>"
+                            id="meta-page-header-image-preview-small"
+                            style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
+                    />
+                <?php endif; ?>
+                <button class="open-meta-image-uploader button" data-size="small">Bild/Video auswählen</button>
+                <button
+                        id="meta-page-header-image-remove-small"
+                        class="remove-meta-image button"
+                        data-size="small"
+                        style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>">Bild/Video entfernen
+                </button>
+            </label>
+            <label>
                 <span>Claim</span>
                 <input
                         type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_CLAIM ?>]"
@@ -381,20 +322,8 @@ class Reh_Page_Header_Image
 
     private function sanitize($values)
     {
-        $videoLarge = sanitize_text_field($values[self::META_HEADER_VIDEO_LARGE]);
-        $videoSmall = sanitize_text_field($values[self::META_HEADER_VIDEO_SMALL]);
-
-        unset($values[self::META_HEADER_VIDEO_LARGE]);
-        unset($values[self::META_HEADER_VIDEO_SMALL]);
-
-        if (!empty($videoLarge) || !empty($videoSmall)) {
-            $values[self::META_HEADER_IMAGE_LARGE] = $videoLarge;
-            $values[self::META_HEADER_IMAGE_SMALL] = $videoSmall;
-        } else {
-            $values[self::META_HEADER_IMAGE_LARGE] = sanitize_text_field($values[self::META_HEADER_IMAGE_LARGE]);
-            $values[self::META_HEADER_IMAGE_SMALL] = sanitize_text_field($values[self::META_HEADER_IMAGE_SMALL]);
-        }
-
+        $values[self::META_HEADER_IMAGE_LARGE] = sanitize_text_field($values[self::META_HEADER_IMAGE_LARGE]);
+        $values[self::META_HEADER_IMAGE_SMALL] = sanitize_text_field($values[self::META_HEADER_IMAGE_SMALL]);
         $values[self::META_HEADER_CLAIM] = sanitize_text_field($values[self::META_HEADER_CLAIM]);
         $values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_TEXT] = sanitize_text_field($values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_TEXT]);
         $values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT] = sanitize_text_field($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT]);

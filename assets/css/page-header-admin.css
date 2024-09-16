@@ -1,3 +1,11 @@
+#page-header-form legend {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#page-header-form .page-header-form-title {
+    display: none;
+}
 
 #page-header-form label {
     display: flex;
@@ -6,9 +14,8 @@
     margin-bottom: 15px;
 }
 
-#page-header-form img {
-    height: 100px;
-    width: 100px;
+#page-header-form img, #page-header-form video {
+    max-width: 300px;
 }
 
 #page-header-form span {
@@ -22,59 +29,6 @@ form#edittag fieldset#page-header-form {
     border: 1px solid #ccc;
 }
 
-#page-header-form .toggle-container {
-    display: block;
-    margin-bottom: 10px;
-}
-
-#page-header-form .toggle-label {
-    cursor: pointer;
-    padding: 10px;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    display: inline-block;;
-}
-
-#page-header-form input[type="checkbox"] {
-    display: none;
-}
-
-#page-header-form input[type="checkbox"]:checked + .toggle-label span::before {
-    content: "Bild verwenden";
-}
-
-#page-header-form input[type="checkbox"]:not(:checked) + .toggle-label span::before {
-    content: "Video verwenden";
-}
-
-#page-header-form input[type="checkbox"]:checked + .toggle-label {
-    background-color: #ddd;
-}
-
-#page-header-form .media-content-container {
-    position: relative;
-}
-
-#page-header-form #video-content {
-    display: none;
-}
-
-#page-header-form input[type="checkbox"]:checked ~ .media-content-container #video-content {
-    display: block;
-}
-
-#page-header-form input[type="checkbox"]:checked ~ .media-content-container #image-content {
-    display: none;
-}
-
-#page-header-form input[type="checkbox"]:not(:checked) ~ .media-content-container #video-content {
-    display: none;
-}
-
-#page-header-form input[type="checkbox"]:not(:checked) ~ .media-content-container #image-content {
-    display: block;
-}
-
-#page-header-form #image-content {
+form#edittag #page-header-form .page-header-form-title {
     display: block;
 }
