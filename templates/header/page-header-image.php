@@ -16,7 +16,7 @@ $hasButton_2 = !empty($button_2_link) && !empty($button_2_text);
 
 ?>
 <div id="page-header-image-outer">
-    <?php Reh_Page_Header_Image::renderImageComponent($data); ?>
+    <?php Reh_Page_Header_Image::render($data); ?>
     <div class="page-header-claim">
         <?php if (!empty($claim)): ?>
             <div class="page-header-title"><h1><?= $claim ?></h1></div>
