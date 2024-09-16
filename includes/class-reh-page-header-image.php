@@ -49,7 +49,49 @@ class Reh_Page_Header_Image
         add_action('edited_product_cat', [$this, 'saveCatHeaderMetaBox']);
     }
 
-    public function addPageHeaderMetaBox()
+
+    public static function hasHeaderImage($headerData)
+    {
+        return !empty($headerData[self::META_HEADER_IMAGE_LARGE])
+            || !empty($headerData[self::META_HEADER_IMAGE_SMALL]);
+    }
+
+
+    /**
+     * Either render image or video container
+     *
+     * @param $headerData
+     * @return void
+     */
+    public static function renderImageComponent($headerData): void
+    {
+        $large = !empty($headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE]) ? $headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE] : (!empty($data[Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL]) ? $headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL] : '');
+        $small = !empty($headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL]) ? $headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL] : (!empty($data[Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE]) ? $headerData[Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE] : '');
+
+        if (Reh_Page_Header_Image::isVideo($large)) {
+            get_template_part('templates/header/page-header-video-component', null, [Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE => $large, Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL => $small]);
+
+            return;
+        }
+
+        get_template_part('templates/header/page-header-image-component', null, [Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE => $large, Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL => $small]);
+    }
+
+    public static function isVideo($path): bool
+    {
+        $videoExtensions = ['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv', 'webm'];
+
+        // Extract the file extension from the string
+        $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+
+        if (in_array($extension, $videoExtensions)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function addPageHeaderMetaBox(): void
     {
         add_meta_box(
             self::META_PAGE_HEADER,
@@ -85,7 +127,7 @@ class Reh_Page_Header_Image
         ];
     }
 
-    public function renderMetaBox($post)
+    public function renderMetaBox($post): void
     {
         wp_nonce_field($this->nonce . '_action', $this->nonce);
 
@@ -120,50 +162,52 @@ class Reh_Page_Header_Image
             <label>
                 <span>Desktop (1920x600px)*</span>
                 <input
-                    type="text"
-                    id="meta-page-header-image-large"
-                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_LARGE ?>]"
-                    value="<?= $imageLarge ?>"
-                    hidden
+                        type="text"
+                        id="meta-page-header-image-large"
+                        name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_LARGE ?>]"
+                        value="<?= $imageLarge ?>"
+                        hidden
                 />
                 <img
-                    src="<?= $imageLarge ?>"
-                    id="meta-page-header-image-preview-large"
-                    style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
+                        src="<?= $imageLarge ?>"
+                        id="meta-page-header-image-preview-large"
+                        style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
                 />
                 <button class="open-meta-image-uploader button" data-size="large">Bild auswählen</button>
                 <button
-                    id="meta-page-header-image-remove-large"
-                    class="remove-meta-image button"
-                    data-size="large"
-                    style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>">Bild entfernen</button>
+                        id="meta-page-header-image-remove-large"
+                        class="remove-meta-image button"
+                        data-size="large"
+                        style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>">Bild entfernen
+                </button>
             </label>
             <label>
                 <span>Mobil (375x485px)*</span>
                 <input
-                    type="text"
-                    id="meta-page-header-image-small"
-                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_SMALL ?>]"
-                    value="<?= $imageSmall ?>"
-                    hidden
+                        type="text"
+                        id="meta-page-header-image-small"
+                        name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_SMALL ?>]"
+                        value="<?= $imageSmall ?>"
+                        hidden
                 />
                 <img
-                    src="<?= $imageSmall ?>"
-                    id="meta-page-header-image-preview-small"
-                    style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
+                        src="<?= $imageSmall ?>"
+                        id="meta-page-header-image-preview-small"
+                        style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
                 />
                 <button class="open-meta-image-uploader button" data-size="small">Bild auswählen</button>
                 <button
-                    id="meta-page-header-image-remove-small"
-                    class="remove-meta-image button"
-                    data-size="small"
-                    style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>">Bild entfernen</button>
+                        id="meta-page-header-image-remove-small"
+                        class="remove-meta-image button"
+                        data-size="small"
+                        style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>">Bild entfernen
+                </button>
             </label>
             <label>
                 <span>Claim</span>
                 <input
-                    type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_CLAIM ?>]"
-                    value="<?= $claim ?>"
+                        type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_CLAIM ?>]"
+                        value="<?= $claim ?>"
                 />
             </label>
             <label>
@@ -199,9 +243,9 @@ class Reh_Page_Header_Image
             <label>
                 <span>Titel anzeigen?</span>
                 <input
-                    type="checkbox"
-                    name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_SHOW_TITLE ?>]"
-                    <?php if ($showTitle): ?>checked<?php endif; ?>
+                        type="checkbox"
+                        name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_SHOW_TITLE ?>]"
+                        <?php if ($showTitle): ?>checked<?php endif; ?>
                 >
             </label>
         </fieldset>
@@ -257,12 +301,6 @@ class Reh_Page_Header_Image
         $values[self::META_HEADER_INTRO] = sanitize_textarea_field($values[self::META_HEADER_INTRO]);
 
         return $values;
-    }
-
-    public static function hasHeaderImage($headerData)
-    {
-        return !empty($headerData[self::META_HEADER_IMAGE_LARGE])
-            || !empty($headerData[self::META_HEADER_IMAGE_SMALL]);
     }
 }
 
