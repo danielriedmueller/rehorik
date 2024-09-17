@@ -22,3 +22,9 @@ function validateVideo(string $video): string
 
     return $video;
 }
+
+function enableAutoplay(string $video): string
+{
+    $video = validateVideo($video);
+    return $video . '?autoplay=1&mute=1&controls=0&loop=1&playlist=' . substr($video, strrpos($video, '/') + 1);
+}

@@ -4,6 +4,8 @@ if (!defined('ABSPATH')) {
     die('-1');
 }
 
+require_once(get_stylesheet_directory() . '/helper/video_helper.php');
+
 class Reh_Page_Header_Image
 {
     protected static $_instance = null;
@@ -19,6 +21,9 @@ class Reh_Page_Header_Image
     const META_HEADER_BUTTON_TEXT = 'button_text';
 
     const META_HEADER_SHOW_TITLE = 'show_title';
+
+    private const META_HEADER_IMAGE_YOUTUBE_SMALL = 'youtube_small';
+    private const META_HEADER_IMAGE_YOUTUBE_LARGE = 'youtube_large';
 
     public static function instance()
     {
@@ -84,7 +89,7 @@ class Reh_Page_Header_Image
         get_template_part('templates/header/page-header-image-component', null, [Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE => $large, Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL => $small]);
     }
 
-    public static function isVideo($path): bool
+    public static function isLocalVideo($path): bool
     {
         $videoExtensions = ['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv', 'webm'];
 
@@ -96,6 +101,11 @@ class Reh_Page_Header_Image
         }
 
         return false;
+    }
+
+    public static function isYoutube($path): bool
+    {
+        return str_contains($path, 'youtube.com') || str_contains($path, 'youtu.be');
     }
 
     public function addPageHeaderMetaBox(): void
@@ -163,6 +173,8 @@ class Reh_Page_Header_Image
             : '';
         $intro = esc_attr($values[self::META_HEADER_INTRO] ?? '');
         $showTitle = $values[self::META_HEADER_SHOW_TITLE] ?? false;
+        $youtubeSmall = $values[self::META_HEADER_IMAGE_YOUTUBE_SMALL] ?? '';
+        $youtubeLarge = $values[self::META_HEADER_IMAGE_YOUTUBE_LARGE] ?? '';
         ?>
         <fieldset id="page-header-form">
             <legend class="page-header-form-title">Headerbild</legend>
@@ -175,7 +187,7 @@ class Reh_Page_Header_Image
                         value="<?= $imageLarge ?>"
                         hidden
                 />
-                <?php if (Reh_Page_Header_Image::isVideo($imageLarge)) : ?>
+                <?php if (Reh_Page_Header_Image::isLocalVideo($imageLarge)) : ?>
                     <video
                             id="meta-page-header-image-preview-large"
                             style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
@@ -198,6 +210,13 @@ class Reh_Page_Header_Image
                         data-size="large"
                         style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>">Bild/Video entfernen
                 </button>
+                <label>
+                    Oder Link zu Youtube Video
+                    <input
+                            type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_YOUTUBE_LARGE ?>]"
+                            value="<?= $youtubeLarge ?>"
+                    />
+                </label>
             </label>
             <label>
                 <span>Mobil (375x485px)*</span>
@@ -208,7 +227,7 @@ class Reh_Page_Header_Image
                         value="<?= $imageSmall ?>"
                         hidden
                 />
-                <?php if (Reh_Page_Header_Image::isVideo($imageSmall)) : ?>
+                <?php if (Reh_Page_Header_Image::isLocalVideo($imageSmall)) : ?>
                     <video
                             id="meta-page-header-image-preview-small"
                             style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
@@ -231,6 +250,13 @@ class Reh_Page_Header_Image
                         data-size="small"
                         style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>">Bild/Video entfernen
                 </button>
+                <label>
+                    Oder Link zu Youtube Video
+                    <input
+                            type="text" name="<?= self::META_PAGE_HEADER ?>[<?= self::META_HEADER_IMAGE_YOUTUBE_SMALL ?>]"
+                            value="<?= $youtubeSmall ?>"
+                    />
+                </label>
             </label>
             <label>
                 <span>Claim</span>
@@ -328,6 +354,14 @@ class Reh_Page_Header_Image
         $values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_TEXT] = sanitize_text_field($values[self::META_HEADER_BUTTON_1][self::META_HEADER_BUTTON_TEXT]);
         $values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT] = sanitize_text_field($values[self::META_HEADER_BUTTON_2][self::META_HEADER_BUTTON_TEXT]);
         $values[self::META_HEADER_INTRO] = sanitize_textarea_field($values[self::META_HEADER_INTRO]);
+
+        if (isset($values[self::META_HEADER_IMAGE_YOUTUBE_SMALL])) {
+            $values[self::META_HEADER_IMAGE_SMALL] = enableAutoplay($values[self::META_HEADER_IMAGE_YOUTUBE_SMALL]);
+        }
+
+        if (isset($values[self::META_HEADER_IMAGE_YOUTUBE_LARGE])) {
+            $values[self::META_HEADER_IMAGE_YOUTUBE_LARGE] = enableAutoplay($values[self::META_HEADER_IMAGE_YOUTUBE_LARGE]);
+        }
 
         return $values;
     }
