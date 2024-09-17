@@ -360,7 +360,7 @@ class Reh_Page_Header_Image
         }
 
         if (isset($values[self::META_HEADER_IMAGE_YOUTUBE_LARGE])) {
-            $values[self::META_HEADER_IMAGE_YOUTUBE_LARGE] = enableAutoplay($values[self::META_HEADER_IMAGE_YOUTUBE_LARGE]);
+            $values[self::META_HEADER_IMAGE_LARGE] = enableAutoplay($values[self::META_HEADER_IMAGE_YOUTUBE_LARGE]);
         }
 
         return $values;
