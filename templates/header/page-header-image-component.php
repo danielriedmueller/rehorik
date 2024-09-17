@@ -23,7 +23,7 @@ $large = $args[Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE];
         <video autoplay muted loop><source src="<?= $large ?>" media="(min-width: 768px)"></video>
     <?php elseif (Reh_Page_Header_Image::isYoutube($large)): ?>
         <iframe
-                src="<?= $small ?>"
+                src="<?= $large ?>"
                 frameBorder="0"
                 allowFullScreen
                 allow="autoplay"
