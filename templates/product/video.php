@@ -1,5 +1,5 @@
 <?php
-$video = Reh_Page_Video_Helper::validateVideo($args['video']);
+$video = Reh_Page_Video_Helper::sanitizeVideo($args['video']);
 ?>
 <?php if (!empty($video)): ?>
     <div class="rehorik-product-video">

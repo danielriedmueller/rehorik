@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
  */
 class Reh_Page_Video_Helper
 {
-    public static function validateVideo(string $video): string
+    public static function sanitizeVideo(string $video): string
     {
         /*
          * from: https://www.youtube.com/watch?v=RdGTPwIeOu8
@@ -30,9 +30,17 @@ class Reh_Page_Video_Helper
         return $video;
     }
 
-    public static function enableAutoplay(string $video): string
+    public static function isLocalVideo($path): bool
     {
-        $video = self::validateVideo($video);
-        return $video . '?autoplay=1&mute=1&controls=0&loop=1&modestbranding=1&playlist=' . substr($video, strrpos($video, '/') + 1);
+        $videoExtensions = ['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv', 'webm'];
+
+        // Extract the file extension from the string
+        $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+
+        if (in_array($extension, $videoExtensions)) {
+            return true;
+        }
+
+        return false;
     }
 }
