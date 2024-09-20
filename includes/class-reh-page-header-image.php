@@ -161,7 +161,7 @@ class Reh_Page_Header_Image
                         value="<?= $imageLarge ?>"
                         hidden
                 />
-                <?php if (Reh_Page_Header_Image::isLocalVideo($imageLarge)) : ?>
+                <?php if (Reh_Page_Video_Helper::isLocalVideo($imageLarge)) : ?>
                     <video
                             id="meta-page-header-image-preview-large"
                             style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
@@ -194,7 +194,7 @@ class Reh_Page_Header_Image
                         value="<?= $imageSmall ?>"
                         hidden
                 />
-                <?php if (Reh_Page_Header_Image::isLocalVideo($imageSmall)) : ?>
+                <?php if (Reh_Page_Video_Helper::isLocalVideo($imageSmall)) : ?>
                     <video
                             id="meta-page-header-image-preview-small"
                             style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
