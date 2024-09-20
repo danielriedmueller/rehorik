@@ -134,6 +134,7 @@ if (PLUGINS_ACTIVE) {
     require_once($baseDir . '/includes/class-reh-mini-cart.php');
     require_once($baseDir . '/includes/class-reh-product-feed.php');
     require_once($baseDir . '/includes/class-reh-page-header-image.php');
+    require_once($baseDir . '/includes/class-reh-video-helper.php');
     require_once($baseDir . '/helper/category_helper.php');
     require_once($baseDir . '/helper/woocommerce_functions.php');
     require_once($baseDir . '/hooks/woocommerce.php');

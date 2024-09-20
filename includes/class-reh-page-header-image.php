@@ -4,8 +4,6 @@ if (!defined('ABSPATH')) {
     die('-1');
 }
 
-require_once(get_stylesheet_directory() . '/helper/video_helper.php');
-
 class Reh_Page_Header_Image
 {
     protected static $_instance = null;
@@ -356,11 +354,11 @@ class Reh_Page_Header_Image
         $values[self::META_HEADER_INTRO] = sanitize_textarea_field($values[self::META_HEADER_INTRO]);
 
         if (isset($values[self::META_HEADER_IMAGE_YOUTUBE_SMALL])) {
-            $values[self::META_HEADER_IMAGE_SMALL] = enableAutoplay($values[self::META_HEADER_IMAGE_YOUTUBE_SMALL]);
+            $values[self::META_HEADER_IMAGE_SMALL] = Reh_Page_Video_Helper::validateVideo($values[self::META_HEADER_IMAGE_YOUTUBE_SMALL]);
         }
 
         if (isset($values[self::META_HEADER_IMAGE_YOUTUBE_LARGE])) {
-            $values[self::META_HEADER_IMAGE_LARGE] = enableAutoplay($values[self::META_HEADER_IMAGE_YOUTUBE_LARGE]);
+            $values[self::META_HEADER_IMAGE_LARGE] = Reh_Page_Video_Helper::validateVideo($values[self::META_HEADER_IMAGE_YOUTUBE_LARGE]);
         }
 
         return $values;

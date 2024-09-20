@@ -1,8 +1,8 @@
 <?php
 if (empty($args)) return;
 
-$small = $args[Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL];
-$large = $args[Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE];
+$small = Reh_Page_Video_Helper::enableAutoplay($args[Reh_Page_Header_Image::META_HEADER_IMAGE_SMALL]);
+$large = Reh_Page_Video_Helper::enableAutoplay($args[Reh_Page_Header_Image::META_HEADER_IMAGE_LARGE]);
 ?>
 <div class="page-header-image small">
     <?php if (Reh_Page_Header_Image::isLocalVideo($small)): ?>
