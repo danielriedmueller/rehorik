@@ -7,7 +7,7 @@ $headerData = $args;
 
 if ($term = get_queried_object()) {
     if (isset($term->taxonomy)) {
-        if ($term->taxonomy === 'product_cat') {
+        if ($term->taxonomy === 'product_cat' || $term->taxonomy === 'category') {
             $headerData = get_term_meta($term->term_id, Reh_Page_Header_Image::META_PAGE_HEADER, true);
             $pageTitle = $term->name;
         }

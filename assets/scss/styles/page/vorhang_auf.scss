@@ -1,10 +1,14 @@
 #vorhang-auf {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
+
+  &:not(.category) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
       "news news"
       "lets-talk-about coffee-knowledge";
-  gap: 0;
+    gap: 0;
+  }
+
 
   > div {
     padding: $spacing-l;
@@ -26,30 +30,54 @@
     grid-area: news;
     background-color: $anthrazit;
     color: #fff;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .coffee-knowledge {
     grid-area: coffee-knowledge;
     background-color: $hellbraun;
+    a {
+      color: $font-color;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .lets-talk-about {
     grid-area: lets-talk-about;
     background-color: $cappucino;
+    a {
+      color: $font-color;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .vorhang-auf-post {
     padding-top: $spacing;
   }
 
-  .vorhang-auf-post:not(:last-child) {
+  .vorhang-auf-post:not(:last-of-type) {
     padding-bottom: $spacing;
     border-bottom: 1px solid #fff;
   }
 
-  a {
+  a.more-posts {
     color: #fff;
     text-decoration: underline;
+    float: right;
+    margin-top: $spacing;
   }
 }
 
