@@ -6,7 +6,7 @@ $large = Reh_Page_Video_Helper::sanitizeVideo($args[Reh_Page_Header_Image::META_
 ?>
 <div class="page-header-image small">
     <?php if (Reh_Page_Video_Helper::isLocalVideo($small)): ?>
-        <video autoplay muted loop playsinline><source src="<?= $small ?>" media="(max-width: 767px)" type="video/mp4"></video>
+        <video autoplay muted loop playsinline><source src="<?= $small ?>" media="(max-width: 767px)"></video>
     <?php else: ?>
         <div style='--image:url("<?= $small ?>");'></div>
     <?php endif; ?>
