@@ -134,6 +134,7 @@ if (PLUGINS_ACTIVE) {
     require_once($baseDir . '/includes/class-reh-mini-cart.php');
     require_once($baseDir . '/includes/class-reh-product-feed.php');
     require_once($baseDir . '/includes/class-reh-page-header-image.php');
+    require_once($baseDir . '/includes/class-reh-video-helper.php');
     require_once($baseDir . '/helper/category_helper.php');
     require_once($baseDir . '/helper/woocommerce_functions.php');
     require_once($baseDir . '/hooks/woocommerce.php');
@@ -158,7 +159,6 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('overwrite-woocommerce', $assetsDir . 'js/overwrite_woocommerce.js', ['jquery'], 1, true);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);
     wp_enqueue_script('scroll', $assetsDir . 'js/scroll.js', false, 1, true);
-    wp_enqueue_script('product-cat-video', $assetsDir . 'js/product_cat_video.js', false, 1, true);
     wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
     wp_enqueue_script('tiny-slider-js', $assetsDir . 'js/res/tiny-slider-min-2.9.4.js', null, 1, true);
     wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
