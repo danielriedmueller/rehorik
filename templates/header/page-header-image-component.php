@@ -6,14 +6,14 @@ $large = Reh_Page_Video_Helper::sanitizeVideo($args[Reh_Page_Header_Image::META_
 ?>
 <div class="page-header-image small">
     <?php if (Reh_Page_Video_Helper::isLocalVideo($small)): ?>
-        <video autoplay muted loop><source src="<?= $small ?>" media="(max-width: 767px)"></video>
+        <video autoplay muted loop playsinline><source src="<?= $small ?>" media="(max-width: 767px)"></video>
     <?php else: ?>
         <div style='--image:url("<?= $small ?>");'></div>
     <?php endif; ?>
 </div>
 <div class="page-header-image large">
     <?php if (Reh_Page_Video_Helper::isLocalVideo($large)): ?>
-        <video autoplay muted loop><source src="<?= $large ?>" media="(min-width: 768px)"></video>
+        <video autoplay muted loop playsinline><source src="<?= $large ?>" media="(min-width: 768px)"></video>
     <?php else: ?>
         <div style='--image:url("<?= $large ?>");'></div>
     <?php endif; ?>
