@@ -6,7 +6,7 @@ if (isProductCategory(TICKET_CATEGORY_SLUG)) {
 if (isProductCategory(GIFTS_CATEGORY_SLUG)) {
     get_template_part('templates/footer/geschenke-footer');
 }
-
+get_template_part('templates/category/term_description');
 get_template_part('templates/newsletter-sign-up');
 get_template_part('templates/rehorik-locations');
 ?>
