@@ -89,6 +89,14 @@ body.rehorik.tax-product_cat div.rehorik-category-description {
 
   h1, h2, h3, h4 {
     text-align: left;
-    text-transform: none;
+    color: $font-color;
+  }
+
+  h1 {
+    margin-bottom: $spacing-s;
+  }
+
+  h2, h3, h4 {
+    margin: $spacing-xs 0;
   }
 }
