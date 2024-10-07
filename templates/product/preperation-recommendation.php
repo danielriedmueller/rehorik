@@ -35,11 +35,8 @@ if (empty($type) || empty($recipe) || empty($category)) {
             Kaffeezubehör bist – einfach einen persönlichen Beratungstermin vereinbaren und vorbeikommen.
         </div>
     </div>
-    <?php get_template_part('templates/product/video', null, ['video' => $video]);
+    <?php
+    get_template_part('templates/product/video', null, ['video' => $video]);
+    get_template_part('templates/product/make-machine-appointment');
     ?>
-    <div class="make-appointment">
-        <a class="button" target="_blank"
-           href="https://app.resmio.com/rehorik-maschinenberatung/widget?backgroundColor=%235c0d2f&color=%23C6B47F&commentsDisabled=true&facebookLogin=false&&linkBackgroundColor=%23C6B47F&newsletterSignup=false">Beratungstermin
-            vereinbaren</a>
-    </div>
 </div>

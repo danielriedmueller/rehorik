@@ -1,0 +1,13 @@
+.make-appointment {
+  a.button {
+    margin: var(--product-view-grid-gap-half) var(--product-view-grid-gap-half) 0 0;
+    text-align: justify;
+    width: 180px;
+    height: 72px;
+    background: transparent url("../img/beratungstermin-button-180x72px.jpg") no-repeat center center;
+
+    &:hover {
+      background: transparent url("../img/beratungstermin-button-180x72px.jpg") no-repeat center center;
+    }
+  }
+}
