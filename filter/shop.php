@@ -61,3 +61,11 @@ function wpglorify_woocommerce_password_filter()
 add_filter('loop_shop_per_page', function ($cols) {
     return PRODUCTS_PER_PAGE;
 }, 20);
+
+
+/**
+ * Override event tickets hiding meta box settings
+ */
+add_filter('tec_tickets_admin_tickets_screen_options_show_screen', function ($show) {
+    return true;
+}, 20);
