@@ -49,6 +49,11 @@ $attributes[HERSTELLUNG_ATTRIBUTE_SLUG] = $product->get_attribute(HERSTELLUNG_AT
 $attributes[PUMP_TYPE_ATTRIBUTE_SLUG] = $product->get_attribute(PUMP_TYPE_ATTRIBUTE_SLUG);
 $attributes[CONSTRUCTION_TYPE_ATTRIBUTE_SLUG] = $product->get_attribute(CONSTRUCTION_TYPE_ATTRIBUTE_SLUG);
 
+// Mill attributes
+$attributes['mahlwerkart'] = $product->get_attribute('mahlwerkart');
+$attributes['mahlwerkdurchmesser'] = $product->get_attribute('mahlwerkdurchmesser');
+$attributes['dosierung'] = $product->get_attribute('dosierung');
+
 $attributes = array_filter($attributes);
 
 $saleInfo = $product->get_attribute(SALE_INFO_ATTRIBUTE_SLUG);
