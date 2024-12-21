@@ -39,4 +39,7 @@
             </div>
         </div>
     </div>
+    <div class="container all-locations-button">
+        <a class="button invers" href="/standorte">Unsere Standorte entdecken</a>
+    </div>
 </div>
