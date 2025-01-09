@@ -6,10 +6,7 @@
 // woocommerce/includes/wc-deprecated-functions.php.
 show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
 
-const SPECIAL_COUPON_CODES = [
-    'bayernwerkxmas22',
-    'baerwurzquelle23',
-];
+const SPECIAL_COUPON_CODES = [];
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 39;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
