@@ -10,7 +10,7 @@ function rehorik_tribe_events_get_ticket_capacity(): void
 
     $ticketIds = $_POST['ticket_ids'];
 
-    if (!is_array($ticketIds) || !wp_verify_nonce($_POST['nonce'], 'rehorik-tribe-events-ticket-capacity')) {
+    if (!is_array($ticketIds) || !wp_verify_nonce($_POST['nonce'], 'reh-nonce')) {
         $handleError();
         return;
     }

@@ -23,14 +23,14 @@ get_header();
                         <tbody>
                         <tr>
                             <td>MO. - FR.</td>
-                            <td>08:00 - 18:00 Uhr</td>
+                            <td>08:30 - 18:00 Uhr</td>
                         </tr>
                         <tr>
                             <td>SA.</td>
                             <td>09:00 - 18:00 Uhr</td>
                         </tr>
                         <tr>
-                            <td>SO.</td>
+                            <td>SO. & Feiertage</td>
                             <td>Geschlossen</td>
                         </tr>
                         </tbody>

@@ -2,6 +2,7 @@
 .rehorik {
   .ppc-button-wrapper {
     z-index: 10;
+    position: relative;
     width: $product-view-cart-button-quantity-width + $product-view-cart-button-width;
   }
 }
@@ -16,6 +17,7 @@
 
 .rehorik.woocommerce-checkout {
   .ppc-button-wrapper {
+    order: 7;
     margin-left: auto;
   }
 }

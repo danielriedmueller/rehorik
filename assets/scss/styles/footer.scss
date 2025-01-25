@@ -25,4 +25,8 @@ footer {
   @media all and (max-width: $very-small-breakpoint) {
     background-image: url("../img/footer/footer-mobil-375px.jpg");
   }
+
+  .shippingpartner img {
+    width: 150px;
+  }
 }

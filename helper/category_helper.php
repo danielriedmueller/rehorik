@@ -209,11 +209,6 @@ function woocommerce_template_loop_category_title($category)
         </span>
     </h2>
     <?php
-    if (!empty($category->description)) {
-        ?>
-            <div class="rehorik-category-description"><?= $category->description ?></div>
-        <?php
-    }
 }
 
 /**

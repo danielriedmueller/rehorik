@@ -14,9 +14,8 @@
     margin-bottom: 15px;
 }
 
-#page-header-form img {
-    height: 100px;
-    width: 100px;
+#page-header-form img, #page-header-form video {
+    max-width: 300px;
 }
 
 #page-header-form span {

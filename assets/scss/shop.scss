@@ -103,6 +103,9 @@
 @import "styles/page/jobs";
 @import "styles/payment_methods";
 @import "styles/header/page-header-image";
+@import "styles/post";
+@import "styles/product/maschinen";
+@import "styles/product/make_appointment";
 
 @font-face {
   font-family: "Cond";
@@ -210,13 +213,18 @@ a {
   }
 }
 
-p {
+p:not(:empty) {
   padding-bottom: $spacing-xxs;
   margin: 0;
 
   a {
     font-family: $font-family-body;
   }
+}
+
+p:empty {
+  margin: 0;
+  padding: 0;
 }
 
 span {
@@ -233,6 +241,10 @@ hr {
 ul {
   margin: 0;
   padding: 0;
+}
+
+li {
+  list-style-position: inside;
 }
 
 img {

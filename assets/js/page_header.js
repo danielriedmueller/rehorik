@@ -9,9 +9,9 @@ jQuery(document).ready(function($) {
 
         // Create a new media frame
         metaImageFrame = wp.media({
-            title: 'Bild auswählen',
+            title: 'Bild/Video auswählen',
             button: {
-                text: 'Bild auswählen'
+                text: 'Bild/Video auswählen'
             },
             multiple: false // Set to true if you want to allow multiple image selection
         });
@@ -19,7 +19,18 @@ jQuery(document).ready(function($) {
         // When an image is selected, run a callback
         metaImageFrame.on('select', function() {
             var attachment = metaImageFrame.state().get('selection').first().toJSON();
-            $('#meta-page-header-image-preview-' + size).attr('src', attachment.url).show();
+            $('#meta-page-header-image-preview-' + size).remove();
+
+            if (attachment.type === 'video') {
+                var $previewElement = $('<video id="meta-page-header-image-preview-' + size + '" controls><source></video>');
+                $previewElement.attr('src', attachment.url).show();
+                $('#meta-page-header-image-' + size).after($previewElement);
+            } else {
+                var $previewElement = $('<img id="meta-page-header-image-preview-' + size + '">');
+                $previewElement.attr('src', attachment.url).show();
+                $('#meta-page-header-image-' + size).after($previewElement);
+            }
+
             $('#meta-page-header-image-' + size).val(attachment.url);
             $('#meta-page-header-image-remove-' + size).show();
         });

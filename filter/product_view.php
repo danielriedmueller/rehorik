@@ -26,6 +26,10 @@ add_filter('woocommerce_attribute', function ($formatted_values, $attribute, $va
  * Remove weight and others
  */
 add_filter('woocommerce_display_product_attributes', function ($productAttributes, $product) {
+    if (isItCategory($product, MACHINE_CATEGORY_SLUG)) {
+        return $productAttributes;
+    }
+
     /**
      * If Bohnenkomposition (Mischung or Sortenrein) is present, it becomes the label for Sorte
      */

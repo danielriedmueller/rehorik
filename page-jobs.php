@@ -16,7 +16,6 @@ get_header();
         <div class="job-description-outer">
             <div class="container">
                 <div class="job-description">
-                    <span class="center">Zur Unterstützung unseres Teams, insbesondere in der Produktion, suchen wir ab sofort</span>
                     <?= $job ?>
                 </div>
             </div>

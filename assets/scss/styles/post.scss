@@ -1,0 +1,13 @@
+body.single-post {
+  .container.post-container {
+    h1, h2 {
+        margin-bottom: $spacing-s;
+        text-align: left;
+    }
+
+    p {
+      margin: $spacing-s 0;
+      padding: 0;
+    }
+  }
+}

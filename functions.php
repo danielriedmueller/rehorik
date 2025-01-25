@@ -2,19 +2,17 @@
 show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
 
 function allow_unsafe_urls ( $args ) {
-    $args['reject_unsafe_urls'] = false;
-    return $args;
+	$args['reject_unsafe_urls'] = false;
+	return $args;
 } ;
 
 add_filter( 'http_request_args', 'allow_unsafe_urls' );
 add_filter( 'http_request_host_is_external', function() {
-    return true;
+	return true;
 } );
 
-const SPECIAL_COUPON_CODES = [
-    'bayernwerkxmas22',
-    'baerwurzquelle23',
-];
+
+const SPECIAL_COUPON_CODES = [];
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
 const FREE_SHIPPING_AMOUNT = 39;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
@@ -23,12 +21,12 @@ const PRODUCTS_PER_PAGE = 200;
 const CONTACT_MAIL = 'kaffee@rehorik.de';
 const JOBS_MAIL = 'bewerbung@rehorik.de';
 const CONTACT_PHONE = '0941 / 788 353 0';
-const IT_SUPPORT_EMAIL = 'it@rehorik.de';
+const IT_SUPPORT_EMAIL = 'kaffee@rehorik.de';
 const BARISTASTORE_EMAIL = 'baristastore@rehorik.de';
 const EVENT_EMAIL = 'events@rehorik.de';
 
 // PDFs
-const INGREDIENT_AND_NUTRITION_INFORMATION = '/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe_2022.pdf';
+const INGREDIENT_AND_NUTRITION_INFORMATION = '/wp-content/uploads/2023/11/Rehorik_Geschenkkoerbe_Allergene_und_Inhaltsstoffe.pdf';
 
 // Product Categories
 const COFFEE_CATEGORY_SLUG = 'kaffee';
@@ -37,7 +35,7 @@ const SPIRITS_CATEGORY_SLUG = 'spirits';
 const COFFEE_CREMA_CATEGORY_SLUG = 'crema';
 const COFFEE_ESPRESSO_CATEGORY_SLUG = 'espresso';
 const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
-const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
+const MACHINE_CATEGORY_SLUG = 'siebtraegermaschinen';
 const BLACK_AND_WINE = 'blackwine';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
 const GIFTS_CATEGORY_SLUG = 'geschenke';
@@ -64,10 +62,13 @@ const HIDE_CATEGORIES = [
 
 // Post Categories
 const NEWS_CATEGORY_SLUG = 'news';
-const LETS_TALK_COFFEE_CATEGORY_SLUG = 'lets-talk-coffee';
+const LETS_TALK_COFFEE_CATEGORY_SLUG = 'lets-talk-about';
 const COFFEE_KNOWLEDGE_CATEGORY_SLUG = 'kaffeewissen';
 
 // Attributes
+const SALE_INFO_ATTRIBUTE_SLUG = 'pa_verkaufsinformation';
+const PUMP_TYPE_ATTRIBUTE_SLUG = 'pumpentyp';
+const CONSTRUCTION_TYPE_ATTRIBUTE_SLUG = 'bauart';
 const STRENGTH_ATTRIBUTE_SLUG = 'pa_staerke';
 const VARIETIES_ATTRIBUTE_SLUG = 'pa_sorte';
 const GRAPE_VARIETY_ATTRIBUTE_SLUG = 'pa_rebsorte';
@@ -107,9 +108,6 @@ const ORDER_ITEM_COUPON_CODE = 'order_item_coupon_code';
 const PAYMENT_METHOD_CASH = 'cod';
 const PAYMENT_METHOD_DIRECT_TRANSFER = 'bacs';
 
-// Default shipping
-const SHIPPING_DURATION_MESSAGE = '3 - 5 Werktage';
-
 // Pages
 const STANDORTE_PAGE_ID = 26672;
 const LOGIN_PAGE_ID = 667;
@@ -139,8 +137,8 @@ if (PLUGINS_ACTIVE) {
     require_once($baseDir . '/includes/class-reh-mini-cart.php');
     require_once($baseDir . '/includes/class-reh-product-feed.php');
     require_once($baseDir . '/includes/class-reh-page-header-image.php');
+    require_once($baseDir . '/includes/class-reh-video-helper.php');
     require_once($baseDir . '/helper/category_helper.php');
-    require_once($baseDir . '/helper/shipping_helper.php');
     require_once($baseDir . '/helper/woocommerce_functions.php');
     require_once($baseDir . '/hooks/woocommerce.php');
     require_once($baseDir . '/filter/shop.php');
@@ -157,26 +155,25 @@ if (PLUGINS_ACTIVE) {
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 2.01);
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 2.05);
     wp_enqueue_script('mobile-menu', $assetsDir . 'js/mobile_menu.js', [], 1, true);
     wp_enqueue_script('mobile-filter', $assetsDir . 'js/mobile_filter.js', [], 1, true);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);
     wp_enqueue_script('overwrite-woocommerce', $assetsDir . 'js/overwrite_woocommerce.js', ['jquery'], 1, true);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);
     wp_enqueue_script('scroll', $assetsDir . 'js/scroll.js', false, 1, true);
-    wp_enqueue_script('product-cat-video', $assetsDir . 'js/product_cat_video.js', false, 1, true);
     wp_enqueue_style('slider-css', $assetsDir . 'css/tiny-slider.css', false, 1, 'all');
     wp_enqueue_script('tiny-slider-js', $assetsDir . 'js/res/tiny-slider-min-2.9.4.js', null, 1, true);
     wp_enqueue_script('slider-js', $assetsDir . 'js/slider.js', null, 1, true);
     wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
 
-    wp_enqueue_script('ajax', $assetsDir . 'js/ajax.js', ['jquery'], 1, true);
+    wp_enqueue_script( 'wc-cart-fragments' );
+    wp_enqueue_script('mini-cart', $assetsDir . 'js/mini_cart.js', ['jquery'], 1, true);
+
+    wp_enqueue_script('ajax', $assetsDir . 'js/ajax.js', ['jquery'], 1.1, true);
     wp_add_inline_script('ajax', 'const settings = ' . json_encode([
             'ajax_url' => admin_url('admin-ajax.php'),
-            'add_nonce' => wp_create_nonce('rehorik-add-to-cart'),
-            'update_nonce' => wp_create_nonce('rehorik-update-cart'),
-            'select_shipping_method_nonce' => wp_create_nonce('rehorik-select-shipping-method'),
-            'ticket_capacity_nonce' => wp_create_nonce('rehorik-tribe-events-ticket-capacity'),
+            'reh_nonce' => wp_create_nonce('reh-nonce'),
         ]), 'before');
 
     if (is_front_page()) {

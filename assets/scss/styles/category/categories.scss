@@ -30,7 +30,7 @@ ul.rehorik-products.products {
       &:hover {
         filter: sepia(80%);
 
-        &+h2, &~.rehorik-category-description {
+        &+h2 {
           color: #fff;
         }
       }
@@ -81,16 +81,22 @@ ul.rehorik-products.products {
       text-transform: uppercase;
       padding: 0 0 $spacing 0;
     }
+  }
+}
 
-    div.rehorik-category-description {
-      flex-grow: 1;
-      height: 100%;
-      pointer-events: none;
-      background: transparent linear-gradient(180deg, rgba(0,0,0,$opacity) 10%, rgba(0,0,0,0) 50%);
-      color: $product-alternative-header-text-color;
-      padding: $spacing-xs;
-      font-size: $font-size;
-      position: absolute;
-    }
+body.rehorik.tax-product_cat div.rehorik-category-description {
+  background-color: $beigegold;
+
+  h1, h2, h3, h4 {
+    text-align: left;
+    color: $font-color;
+  }
+
+  h1 {
+    margin-bottom: $spacing-s;
+  }
+
+  h2, h3, h4 {
+    margin: $spacing-xs 0;
   }
 }
