@@ -8,7 +8,7 @@ if (isProductCategory(GIFTS_CATEGORY_SLUG)) {
 }
 get_template_part('templates/category/term_description');
 get_template_part('templates/newsletter-sign-up');
-get_template_part('templates/rehorik-locations');
+
 ?>
 <footer>
     <div class="container">
@@ -31,7 +31,7 @@ get_template_part('templates/rehorik-locations');
                     <p>Versandkosten DHL: 7,5 €</p>
                     <p>Versandkosten DPD: 3,5 €</p>
                     <p>Kostenloser Versand mit DPD ab: <?= FREE_SHIPPING_AMOUNT ?> €</p>
-                    <p><small>* Alle Preise sind inkl. MwSt., zzgl. Versand</small></p>
+                    <p><small>* Alle Preise sind inkl. MwSt., zzgl. <a href="/versandarten">Versand</a></small></p>
                 </div>
             </div>
             <div>

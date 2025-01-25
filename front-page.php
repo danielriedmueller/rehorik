@@ -5,6 +5,7 @@ if (!PLUGINS_ACTIVE) {
 }
 
 get_header();
+get_template_part('templates/rehorik-locations');
 get_template_part('templates/featured/slider');
 ?>
 <div class="marketing-banner">
