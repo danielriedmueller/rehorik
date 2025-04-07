@@ -281,52 +281,58 @@ add_action('wp_ajax_update_coffee_price', function () {
         ],
     ];
 
-    foreach ($newPrices as $coffee => $newPrice) {
-        $product_id = wc_get_product_id_by_sku($coffee);
-        /** @var WC_Product $product */
-        $product = wc_get_product($product_id);
+	try {
+		foreach ($newPrices as $coffee => $newPrice) {
+			$product_id = wc_get_product_id_by_sku($coffee);
+			/** @var WC_Product $product */
+			$product = wc_get_product($product_id);
 
-        if (!$product) {
-            continue;
-        }
+			if (!$product) {
+				continue;
+			}
 
-        if (!$product->is_type('variable')) {
-            continue;
-        }
+			if (!$product->is_type('variable')) {
+				continue;
+			}
 
-        foreach ($product->get_children() as $childId) {
-            $child = wc_get_product($childId);
+			foreach ($product->get_children() as $childId) {
+				$child = wc_get_product($childId);
 
-            $gzd_product = wc_gzd_get_gzd_product($child);
-            //$gzd_product->set_default_delivery_time_slug('');
+				$gzd_product = wc_gzd_get_gzd_product($child);
+				//$gzd_product->set_default_delivery_time_slug('');
 
-            $unit = $gzd_product->get_unit_product();
-            if ($unit !== '0.25' && $unit !== '0.5' && $unit !== '1') {
-                continue;
-            }
+				$unit = $gzd_product->get_unit_product();
+				if ($unit !== '0.25' && $unit !== '0.5' && $unit !== '1') {
+					continue;
+				}
 
-            if ($unit === '0.25' && $newPrice[0]) {
-                $gzd_product->get_wc_product()->set_regular_price($newPrice[0]);
-                $unitPrice = $newPrice[0] / (float)$unit;
-                $gzd_product->set_unit_price_regular($unitPrice);
-                $gzd_product->set_unit_price($unitPrice);
-            }
+				if ($unit === '0.25' && $newPrice[0]) {
+					$gzd_product->get_wc_product()->set_regular_price($newPrice[0]);
+					$unitPrice = $newPrice[0] / (float)$unit;
+					$gzd_product->set_unit_price_regular($unitPrice);
+					$gzd_product->set_unit_price($unitPrice);
+				}
 
-            if ($unit === '0.5' && $newPrice[1]) {
-                $gzd_product->get_wc_product()->set_regular_price($newPrice[1]);
-                $unitPrice = $newPrice[1] / (float)$unit;
-                $gzd_product->set_unit_price_regular($unitPrice);
-                $gzd_product->set_unit_price($unitPrice);
-            }
+				if ($unit === '0.5' && $newPrice[1]) {
+					$gzd_product->get_wc_product()->set_regular_price($newPrice[1]);
+					$unitPrice = $newPrice[1] / (float)$unit;
+					$gzd_product->set_unit_price_regular($unitPrice);
+					$gzd_product->set_unit_price($unitPrice);
+				}
 
-            if ($unit === '1' && $newPrice[2]) {
-                $gzd_product->get_wc_product()->set_regular_price($newPrice[2]);
-                $gzd_product->set_unit_price_regular($newPrice[2]);
-                $gzd_product->set_unit_price($newPrice[2]);
-            }
+				if ($unit === '1' && $newPrice[2]) {
+					$gzd_product->get_wc_product()->set_regular_price($newPrice[2]);
+					$gzd_product->set_unit_price_regular($newPrice[2]);
+					$gzd_product->set_unit_price($newPrice[2]);
+				}
 
-            $gzd_product->get_wc_product()->save();
-            $gzd_product->save();
-        }
-    }
+				$gzd_product->get_wc_product()->save();
+				$gzd_product->save();
+			}
+		}
+		wp_send_json_success(['message' => 'updating coffee prices']);
+	} catch (Exception $e) {
+		wp_send_json_error($e->getMessage());
+	}
+
 });
