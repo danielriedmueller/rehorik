@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html class="krachlimo" <?php language_attributes(); ?>>
 <head>
     <title>Krachlimo</title>
     <meta charset="<?php bloginfo('charset'); ?>"/>
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri() . '/assets/css/krachlimo.css' ?>">
     <?php wp_head(); ?>
 </head>
-<body class="krachlimo">
+<body>
 <header>
     <a href="/krachlimo" id="logo"></a>
     <nav>

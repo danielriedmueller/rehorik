@@ -1,79 +1,94 @@
 :root {
   --primary-color: #eb9800;
   --font-color: #2e371b;
-  --spacing: 80px;
+  --spacing: 75px;
   --logo-size: 200px;
+  --logo-size-small: 100px;
 }
 
-body.krachlimo {
-  background-color: var(--primary-color);
-  color: var(--font-color);
+html.krachlimo {
+  margin: 0 !important;
 
-  img {
-    border-radius: 0;
-  }
-
-  a {
+  body {
+    background-color: var(--primary-color);
     color: var(--font-color);
-    font-size: 25px;
-    text-transform: lowercase;
-  }
 
-  header {
-    display: flex;
-    gap: 160px;
-    justify-content: space-between;
-    padding: var(--spacing);
-
-    #logo {
-      background: transparent url("../img/krachlimo/logo.webp") no-repeat center center;
-      background-size: contain;
-      flex: var(--logo-size) 0 0;
-      width: var(--logo-size);
-      height: calc(var(--logo-size) * 0.52);
+    img {
+      border-radius: 0;
     }
 
-    nav {
-      align-self: end;
-      justify-content: space-between;
+    a {
+      color: var(--font-color);
+      font-size: 25px;
+      text-transform: lowercase;
+    }
+
+    header {
       display: flex;
-      flex: 1 0 0;
-    }
-  }
-
-  main {
-    padding: var(--spacing);
-  }
-
-  footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing);
-    padding: var(--spacing);
-    background: none;
-
-    > div {
+      flex-wrap: wrap;
       gap: var(--spacing);
+      justify-content: space-between;
+      padding: var(--spacing);
+
+      #logo {
+        background: transparent url("../img/krachlimo/logo.webp") no-repeat center center;
+        background-size: contain;
+        flex: var(--logo-size) 0 0;
+        width: var(--logo-size);
+        height: calc(var(--logo-size) * 0.52);
+      }
+
+      nav {
+        align-self: end;
+        justify-content: end;
+        gap: var(--spacing);
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 0 0;
+      }
+    }
+
+    main {
+      padding: var(--spacing);
+    }
+
+    footer {
       display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing);
+      padding: var(--spacing);
+      background: none;
+
+      > div {
+        gap: var(--spacing);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      #rehorik-logo, #riedenburger-logo {
+        background: transparent none no-repeat center center / contain;
+        width: var(--logo-size-small);
+        height: var(--logo-size-small);
+      }
+
+      #rehorik-logo {
+        position: unset;
+        top: unset;
+        left: unset;
+        background-image: url("../img/logos/logo.svg");
+      }
+
+      #riedenburger-logo {
+        background-image: url("../img/krachlimo/riedenburger-logo.png");
+      }
     }
 
-    #rehorik-logo, #riedenburger-logo {
-      background: transparent none no-repeat center center / contain;
-      flex: var(--logo-size) 0 0;
-      width: var(--logo-size);
-    }
-
-    #rehorik-logo {
-      position: unset;
-      background-image: url("../img/logos/logo.svg");
-    }
-
-    #riedenburger-logo {
-      background-image: url("../img/krachlimo/riedenburger-logo.png");
-    }
   }
 
 }
+
 
