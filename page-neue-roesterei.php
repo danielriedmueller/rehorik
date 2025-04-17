@@ -22,11 +22,7 @@ get_header();
                     <table class="mb-s">
                         <tbody>
                         <tr>
-                            <td>MO. - FR.</td>
-                            <td>08:30 - 18:00 Uhr</td>
-                        </tr>
-                        <tr>
-                            <td>SA.</td>
+                            <td>MO. - SA.</td>
                             <td>09:00 - 18:00 Uhr</td>
                         </tr>
                         <tr>
