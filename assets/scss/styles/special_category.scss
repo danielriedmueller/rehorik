@@ -21,38 +21,6 @@ div#special-category {
     color: $font-color;
   }
 
-  .golden-box {
-    background: $beigegold url("../img/stripes-600px.png") no-repeat top center;
-    padding: ($spacing-s + 30px) $spacing-s $spacing-s $spacing-s;
-    margin: 0 0 $spacing-s 0;
-  }
-
-  &.weinachtsmarkt {
-    h2 {
-      text-align: left;
-    }
-
-    .golden-box {
-      background: transparent url("../img/veranstaltungen/weinachtsmarkt/weinachtsmarkt_tile.jpg") repeat top center;
-      padding: $spacing $spacing-xs;
-      margin: 0 0 $spacing-s 0;
-
-      ul {
-        list-style: none;
-        padding: 0;
-
-        li:before {
-          content: '\2606';
-          margin: 0 1em;
-        }
-
-        li {
-          color: #fff;
-        }
-      }
-    }
-  }
-
   .grid-dl {
     dl {
       margin: 0 0 $spacing-s 0;

@@ -16,20 +16,15 @@
  */
 
 defined('ABSPATH') || exit;
-
-if (isProductCategory(BLACK_AND_WINE)) {
-    get_template_part('templates/veranstaltungen/black-and-wine');
-} else {
-    get_template_part('templates/loop/subcategories_chooser');
+get_template_part('templates/loop/subcategories_chooser');
+?>
+<button id="product-filter-button">Filtern & Sortieren</button>
+<p class="woocommerce-info">
+    <?php
+    if (isProductCategory(TICKET_CATEGORY_SLUG)) {
+        echo "Momentan sind alle Termine ausgebucht.";
+    } else {
+        esc_html_e('No products were found matching your selection.', 'woocommerce');
+    }
     ?>
-    <button id="product-filter-button">Filtern & Sortieren</button>
-    <p class="woocommerce-info">
-        <?php
-        if (isProductCategory(TICKET_CATEGORY_SLUG)) {
-            echo "Momentan sind alle Termine ausgebucht.";
-        } else {
-            esc_html_e('No products were found matching your selection.', 'woocommerce');
-        }
-        ?>
-    </p>
-<?php } ?>
+</p>
