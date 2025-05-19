@@ -57,13 +57,13 @@ $showTitle = $headerData[Reh_Page_Header_Image::META_HEADER_SHOW_TITLE] ?? false
     <?php
     get_template_part('templates/header/menu');
     get_template_part('templates/header/page-header-image', null, ['data' => $headerData]);
-    if (!empty($intro)) get_template_part('templates/introduction', null, ['text' => $intro,]);
     ?>
     <?php if ($showTitle): ?>
         <div class="page-title-outer">
             <div class="page-title"><h1><?= $pageTitle; ?></h1></div>
         </div>
     <?php endif; ?>
+    <?php if (!empty($intro)) get_template_part('templates/introduction', null, ['text' => $intro,]); ?>
     <?php if ($hasHeaderImage): ?>
         <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
     <?php endif; ?>
