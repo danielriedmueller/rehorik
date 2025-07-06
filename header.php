@@ -46,6 +46,7 @@ $showTitle = $headerData[Reh_Page_Header_Image::META_HEADER_SHOW_TITLE] ?? false
           content="Kaffee aus eigener Traditions-Rösterei seit vier Generationen vom Hause Rehorik. Wir führen auch eine hervorragend sortierte Wein- und Spirituosenauswahl."/>
     <meta property="og:url" content="https://www.rehorik.de/"/>
     <meta property="og:site_name" content="Rehorik"/>
+    <script src="https://auth.accessibleai.eu/storage/v1/object/public/cdn/vae.min.js" data-token="eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYW5vbiIsIndlYnNpdGVfaWQiOiIwM2NjNWE3YS0yMTIzLTRkZmYtOWRmMy05Y2M2MzQzODllODkiLCJhbGxvd2VkX2RvbWFpbiI6InJlaG9yaWsuZGUiLCJpYXQiOjE3NTE0NTI3NTQsImV4cCI6MTc4Mjk4ODc1NCwiaXNzIjoic3VwYWJhc2UiLCJhdWQiOiJhdXRoZW50aWNhdGVkIn0.L6foRSqOQfWVI7ogftyyjT8k0DP1PQ91VrzglpQfzzU" async></script>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class('rehorik' . ($hasHeaderImage ? ' has-header-image' : '')); ?>>
