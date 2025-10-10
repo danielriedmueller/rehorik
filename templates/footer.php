@@ -47,6 +47,7 @@ get_template_part('templates/newsletter-sign-up');
             <div>
                 <div>
                     <h3>Rechtliches</h3>
+                    <p><a href="<?= get_page_link(BARRIEREFREIHEIT_PAGE_ID) ?>">Barrierefreiheit</a></p>
                     <p><a href="<?= get_page_link(WIDERRUFSBELEHRUNG_PAGE_ID) ?>">Widerrufsbelehrung</a></p>
                     <p><a href="<?= get_page_link(DATENSCHUTZ_PAGE_ID) ?>">Datenschutz</a></p>
                     <p><a href="<?= get_page_link(IMPRESSUM_PAGE_ID) ?>">Impressum</a></p>
