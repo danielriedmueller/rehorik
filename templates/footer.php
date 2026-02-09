@@ -25,12 +25,8 @@ get_template_part('templates/newsletter-sign-up');
                     <p>
                         <img alt="Logo DHL" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-dhl.svg' ?>">
                     </p>
-                    <p>
-                        <img alt="Logo DPD" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-dpd.svg' ?>">
-                    </p>
                     <p>Versandkosten DHL: 6,5 €</p>
-                    <p>Versandkosten DPD: 6,5 €</p>
-                    <p>Kostenloser Versand mit DHL und DPD ab: <?= FREE_SHIPPING_AMOUNT ?> €</p>
+                    <p>Kostenloser Versand mit DHL ab: <?= FREE_SHIPPING_AMOUNT ?> €</p>
                     <p><small>* Alle Preise sind inkl. MwSt., zzgl. <a href="/versandarten">Versand</a></small></p>
                 </div>
             </div>
