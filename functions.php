@@ -4,7 +4,6 @@
 // Note that these hooks don't stop WooCommerce from logging deprecation notices on AJAX
 // or REST API calls as it makes its own calls to `error_log()` from within
 // woocommerce/includes/wc-deprecated-functions.php.
-show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
 
 const SPECIAL_COUPON_CODES = [];
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
@@ -181,6 +180,15 @@ add_action('init', function () {
     register_nav_menus([
         'main' => 'Hauptmenü'
     ]);
+});
+
+// Hide admin bar for user DEZ, otherwise use default behavior
+add_action('after_setup_theme', function () {
+    if (get_current_user_id() === 2997) {
+        show_admin_bar(false);
+        return;
+    }
+    show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
 });
 
 /**
