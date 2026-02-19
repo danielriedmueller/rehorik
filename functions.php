@@ -182,13 +182,13 @@ add_action('init', function () {
     ]);
 });
 
-// Hide admin bar for user DEZ, otherwise use default behavior
-add_action('after_setup_theme', function () {
-    if (get_current_user_id() === 2997) {
-        show_admin_bar(false);
-        return;
+// Hide admin bar for shop managers, otherwise use default behavior
+add_filter('show_admin_bar', function ($show) {
+    $user = wp_get_current_user();
+    if (in_array('shop_manager', $user->roles, true)) {
+        return false;
     }
-    show_admin_bar(defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : true);
+    return defined('SHOW_ADMIN_BAR') ? SHOW_ADMIN_BAR : $show;
 });
 
 /**
