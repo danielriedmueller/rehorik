@@ -27,7 +27,7 @@ add_action('render_rest_amount_for_free_shipping', function () {
 
     echo sprintf(
         '<div class="rehorik-shipping-rest-amount">%s</div>',
-        $restAmount > 0 ? "Noch ${restAmount} &euro; bis zum kostenlosen Versand" : "Kostenloser Versand möglich!"
+        $restAmount > 0 ? "Noch $restAmount &euro; bis zum kostenlosen Versand" : "Kostenloser Versand möglich!"
     );
 });
 

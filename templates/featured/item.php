@@ -60,7 +60,7 @@ $mergeDescriptions = function ($product) {
         <span class="category"><?= getSubCategories($product, true) ?></span>
         <h3><a href="<?= $product->get_permalink() ?>"><?= $product->get_title() ?></a></h3>
         <?php if($claim = $product->get_meta('reh_product_title_claim')) {
-            echo "<span class='claim'>${claim}</span>";
+            echo "<span class='claim'>$claim</span>";
         } ?>
         <?php if ($args['description']): ?>
         <span class="description"><?= $mergeDescriptions($product) ?></span>

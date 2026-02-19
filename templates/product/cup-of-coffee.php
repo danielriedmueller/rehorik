@@ -42,6 +42,6 @@ if ($unitAmount) {
     }
 
     if (!empty($formattedPriceRange)) {
-        echo "<div class='rehorik-cup-of-coffee-price-outer'>Eine Tasse Kaffee kostet nur <span class='rehorik-cup-of-coffee-price'>${formattedPriceRange}</span> (${oneCupOfCoffeeInGrams} g)</div>";
+        echo "<div class='rehorik-cup-of-coffee-price-outer'>Eine Tasse Kaffee kostet nur <span class='rehorik-cup-of-coffee-price'>$formattedPriceRange</span> ($oneCupOfCoffeeInGrams g)</div>";
     }
 }
