@@ -63,9 +63,9 @@ function getStrengthFlavourHtml($level, $class) {
     $result = '<div class="rehorik-product-strength-flavour-container">';
     for ($i = 1; $i <= $maxStrengthValue; $i++) {
         if ($i <= (int)$level) {
-            $result .= "<span class='rehorik-coffee-${class}-${i}-filled'></span>";
+            $result .= "<span class='rehorik-coffee-$class-$i-filled'></span>";
         } else {
-            $result .= "<span class='rehorik-coffee-${class}-${i}'></span>";
+            $result .= "<span class='rehorik-coffee-$class-$i'></span>";
         }
     }
     $result .= '</div>';

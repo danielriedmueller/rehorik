@@ -30,7 +30,6 @@ const COFFEE_CREMA_CATEGORY_SLUG = 'crema';
 const COFFEE_ESPRESSO_CATEGORY_SLUG = 'espresso';
 const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
 const MACHINE_CATEGORY_SLUG = 'siebtraegermaschinen';
-const BLACK_AND_WINE = 'blackwine';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
 const GIFTS_CATEGORY_SLUG = 'geschenke';
 const COUPON_CATEGORY_SLUG = 'gutscheine';
