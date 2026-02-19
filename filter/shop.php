@@ -18,7 +18,7 @@ add_filter('woocommerce_show_page_title', function () {
 });
 
 add_filter('woocommerce_shipping_rate_label', function (string $label, WC_Shipping_Rate $method) {
-    $message = ' Lieferzeit: 3 - 5 Werktage';
+    $message = ' Lieferzeit: 5 - 7 Werktage';
     if ($method->get_method_id() === 'local_pickup') {
         $message = ' in 2 Werktagen zwischen 9 - 18 Uhr im Kaffeehaus, Straubinger Str. 62A';
     }
@@ -60,4 +60,12 @@ function wpglorify_woocommerce_password_filter()
  */
 add_filter('loop_shop_per_page', function ($cols) {
     return PRODUCTS_PER_PAGE;
+}, 20);
+
+
+/**
+ * Override event tickets hiding meta box settings
+ */
+add_filter('tec_tickets_admin_tickets_screen_options_show_screen', function ($show) {
+    return true;
 }, 20);

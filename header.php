@@ -3,11 +3,14 @@ require_once(get_stylesheet_directory() . '/helper/page_helper.php');
 $id = get_queried_object();
 $pageTitle = get_the_title();
 
+$metaDescDefault = "Kaffee aus eigener Traditions-Rösterei seit vier Generationen vom Hause Rehorik. Wir führen auch eine hervorragend sortierte Wein- und Spirituosenauswahl.";
+$metaDescription = $args['metadesc'] ?? $metaDescDefault;
+
 $headerData = $args;
 
 if ($term = get_queried_object()) {
     if (isset($term->taxonomy)) {
-        if ($term->taxonomy === 'product_cat') {
+        if ($term->taxonomy === 'product_cat' || $term->taxonomy === 'category') {
             $headerData = get_term_meta($term->term_id, Reh_Page_Header_Image::META_PAGE_HEADER, true);
             $pageTitle = $term->name;
         }
@@ -36,31 +39,31 @@ $showTitle = $headerData[Reh_Page_Header_Image::META_HEADER_SHOW_TITLE] ?? false
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#C6B47F">
     <meta name="apple-mobile-web-app-title" content="Rehorik">
-    <meta name="description"
-          content="Kaffee aus eigener Traditions-Rösterei seit vier Generationen vom Hause Rehorik. Wir führen auch eine hervorragend sortierte Wein- und Spirituosenauswahl."/>
+    <meta name="description" content="<?= $metaDescription ?>"/>
     <meta name='robots' content='index, follow, archive'/>
     <meta property="og:locale" content="de_DE"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Kaffee, Wein &amp; Feinkost aus Regensburg - Rehorik"/>
-    <meta property="og:description"
-          content="Kaffee aus eigener Traditions-Rösterei seit vier Generationen vom Hause Rehorik. Wir führen auch eine hervorragend sortierte Wein- und Spirituosenauswahl."/>
+    <meta property="og:description" content="<?= $metaDescription ?>"/>
     <meta property="og:url" content="https://www.rehorik.de/"/>
     <meta property="og:site_name" content="Rehorik"/>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class('rehorik' . ($hasHeaderImage ? ' has-header-image' : '')); ?>>
-<?php if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); } ?>
+<?php if (function_exists('gtm4wp_the_gtm_tag')) {
+    gtm4wp_the_gtm_tag();
+} ?>
 <div id="page-container">
     <?php
     get_template_part('templates/header/menu');
     get_template_part('templates/header/page-header-image', null, ['data' => $headerData]);
-    if (!empty($intro)) get_template_part('templates/introduction', null, ['text' => $intro,]);
     ?>
     <?php if ($showTitle): ?>
         <div class="page-title-outer">
             <div class="page-title"><h1><?= $pageTitle; ?></h1></div>
         </div>
     <?php endif; ?>
+    <?php if (!empty($intro)) get_template_part('templates/introduction', null, ['text' => $intro,]); ?>
     <?php if ($hasHeaderImage): ?>
         <a id="rehorik-logo" href="<?php echo get_home_url(); ?>"></a>
     <?php endif; ?>

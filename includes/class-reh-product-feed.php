@@ -14,7 +14,7 @@ class Reh_Product_Feed
     const CRON_HOOK = 'reh_product_feed';
     const DIR_NAME = 'reh-feed';
 
-    const SHIPPING_COST = '5.80';
+    const SHIPPING_COST = '6.50';
 
     const GOOGLE_WINE_CATEGORY = [
         'id' => 421,

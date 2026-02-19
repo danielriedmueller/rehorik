@@ -39,12 +39,17 @@ class Reh_Page_Header_Image
     public function init()
     {
         add_action('admin_enqueue_scripts', function () {
+            wp_enqueue_media();
             $assetsDir = get_stylesheet_directory_uri() . '/assets/';
             wp_enqueue_script('page-header', $assetsDir . 'js/page_header.js', ['jquery'], 1, true);
             wp_enqueue_style('page-header', $assetsDir . 'css/page-header-admin.css', false, 1);
         });
         add_action('add_meta_boxes', [$this, 'addPageHeaderMetaBox']);
         add_action('save_post', [$this, 'savePageHeaderMetaBox']);
+
+        add_action('category_edit_form_fields', [$this, 'addCatHeaderMetaBox']);
+        add_action('edited_category', [$this, 'saveCatHeaderMetaBox']);
+
         add_action('product_cat_edit_form_fields', [$this, 'addCatHeaderMetaBox']);
         add_action('edited_product_cat', [$this, 'saveCatHeaderMetaBox']);
     }
@@ -177,11 +182,12 @@ class Reh_Page_Header_Image
                             style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>"
                     />
                 <?php endif; ?>
-                <button class="open-meta-image-uploader button" data-size="large">Bild/Video auswählen</button>
+                <button class="open-meta-image-uploader button" type="button" data-size="large">Bild/Video auswählen</button>
                 <button
                         id="meta-page-header-image-remove-large"
                         class="remove-meta-image button"
                         data-size="large"
+                        type="button"
                         style="<?php if (empty($imageLarge)) : ?>display: none;<?php endif; ?>">Bild/Video entfernen
                 </button>
             </label>
@@ -210,11 +216,12 @@ class Reh_Page_Header_Image
                             style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>"
                     />
                 <?php endif; ?>
-                <button class="open-meta-image-uploader button" data-size="small">Bild/Video auswählen</button>
+                <button class="open-meta-image-uploader button" type="button" data-size="small">Bild/Video auswählen</button>
                 <button
                         id="meta-page-header-image-remove-small"
                         class="remove-meta-image button"
                         data-size="small"
+                        type="button"
                         style="<?php if (empty($imageSmall)) : ?>display: none;<?php endif; ?>">Bild/Video entfernen
                 </button>
             </label>

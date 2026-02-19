@@ -12,9 +12,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see https://docs.woocommerce.com/document/template-structure/
+ * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 3.6.0
+ * @version 9.3.0
  */
 
 defined('ABSPATH') || exit;
@@ -23,7 +23,7 @@ if (!$product_attributes) {
     return;
 }
 ?>
-<div class="rehorik-product-attributes product-detail-view-attributes">
+<div class="rehorik-product-attributes product-detail-view-attributes" aria-label="<?php esc_attr_e( 'Product Details', 'woocommerce' ); ?>">
     <?php foreach ($product_attributes as $product_attribute_key => $product_attribute) : ?>
         <div class="label"><strong><?php echo wp_kses_post($product_attribute['label']); ?></strong></div>
         <div><?php echo wp_kses_post($product_attribute['value']); ?></div>

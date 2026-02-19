@@ -6,9 +6,9 @@ if (isProductCategory(TICKET_CATEGORY_SLUG)) {
 if (isProductCategory(GIFTS_CATEGORY_SLUG)) {
     get_template_part('templates/footer/geschenke-footer');
 }
-
+get_template_part('templates/category/term_description');
 get_template_part('templates/newsletter-sign-up');
-get_template_part('templates/rehorik-locations');
+
 ?>
 <footer>
     <div class="container">
@@ -25,13 +25,9 @@ get_template_part('templates/rehorik-locations');
                     <p>
                         <img alt="Logo DHL" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-dhl.svg' ?>">
                     </p>
-                    <p>
-                        <img alt="Logo DPD" src="<?= get_stylesheet_directory_uri() . '/assets/img/footer/logo-dpd.svg' ?>">
-                    </p>
-                    <p>Versandkosten DHL: 7,5 €</p>
-                    <p>Versandkosten DPD: 3,5 €</p>
-                    <p>Kostenloser Versand mit DPD ab: <?= FREE_SHIPPING_AMOUNT ?> €</p>
-                    <p><small>* Alle Preise sind inkl. MwSt., zzgl. Versand</small></p>
+                    <p>Versandkosten DHL: 6,5 €</p>
+                    <p>Kostenloser Versand mit DHL ab: <?= FREE_SHIPPING_AMOUNT ?> €</p>
+                    <p><small>* Alle Preise sind inkl. MwSt., zzgl. <a href="/versandarten">Versand</a></small></p>
                 </div>
             </div>
             <div>
@@ -47,6 +43,7 @@ get_template_part('templates/rehorik-locations');
             <div>
                 <div>
                     <h3>Rechtliches</h3>
+                    <p><a href="<?= get_page_link(BARRIEREFREIHEIT_PAGE_ID) ?>">Barrierefreiheit</a></p>
                     <p><a href="<?= get_page_link(WIDERRUFSBELEHRUNG_PAGE_ID) ?>">Widerrufsbelehrung</a></p>
                     <p><a href="<?= get_page_link(DATENSCHUTZ_PAGE_ID) ?>">Datenschutz</a></p>
                     <p><a href="<?= get_page_link(IMPRESSUM_PAGE_ID) ?>">Impressum</a></p>

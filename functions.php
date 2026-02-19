@@ -16,12 +16,9 @@ add_filter( 'http_request_host_is_external', function() {
     return true;
 } );
 
-const SPECIAL_COUPON_CODES = [
-    'bayernwerkxmas22',
-    'baerwurzquelle23',
-];
+const SPECIAL_COUPON_CODES = [];
 const ONE_CUP_OF_COFFEE_IN_GRAMS = 10;
-const FREE_SHIPPING_AMOUNT = 39;
+const FREE_SHIPPING_AMOUNT = 55;
 const MAX_DISPLAY_ORIGIN_COUNTRIES = 1;
 const DEFAULT_MAX_PRODUCT_STOCK_INPUT = 100;
 const PRODUCTS_PER_PAGE = 200;
@@ -42,8 +39,7 @@ const SPIRITS_CATEGORY_SLUG = 'spirits';
 const COFFEE_CREMA_CATEGORY_SLUG = 'crema';
 const COFFEE_ESPRESSO_CATEGORY_SLUG = 'espresso';
 const COFFEE_FILTERKAFFEE_CATEGORY_SLUG = 'filterkaffee';
-const MACHINE_CATEGORY_SLUG = 'maschinen-equipment';
-const BLACK_AND_WINE = 'blackwine';
+const MACHINE_CATEGORY_SLUG = 'siebtraegermaschinen';
 const TICKET_CATEGORY_SLUG = 'veranstaltungen';
 const GIFTS_CATEGORY_SLUG = 'geschenke';
 const COUPON_CATEGORY_SLUG = 'gutscheine';
@@ -120,6 +116,8 @@ const STANDORTE_PAGE_ID = 26672;
 const LOGIN_PAGE_ID = 667;
 const AGB_PAGE_ID = 13644;
 const WIDERRUFSBELEHRUNG_PAGE_ID = 682;
+
+const BARRIEREFREIHEIT_PAGE_ID = 59287;
 const IMPRESSUM_PAGE_ID = 681;
 const DATENSCHUTZ_PAGE_ID = 680;
 
@@ -162,7 +160,7 @@ if (PLUGINS_ACTIVE) {
 
 add_action('wp_enqueue_scripts', function () {
     $assetsDir = get_stylesheet_directory_uri() . '/assets/';
-    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 2.03);
+    wp_enqueue_style('shop', $assetsDir . 'css/shop.css', false, 2.05);
     wp_enqueue_script('mobile-menu', $assetsDir . 'js/mobile_menu.js', [], 1, true);
     wp_enqueue_script('mobile-filter', $assetsDir . 'js/mobile_filter.js', [], 1, true);
     wp_enqueue_script('product-variation-update', $assetsDir . 'js/product_variation_update.js', ['jquery'], 1, true);

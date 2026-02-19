@@ -40,6 +40,14 @@ $element-height: 42px;
       background-image: url("../img/svg/instagram_white.svg");
     }
   }
+
+  .linkedin {
+    background-image: url("../img/svg/linkedin.svg");
+
+    &:hover {
+      background-image: url("../img/svg/linkedin_white.svg");
+    }
+  }
 }
 
 @mixin white-with-background-reversed {
@@ -71,6 +79,14 @@ $element-height: 42px;
       background-image: url("../img/svg/instagram_white.svg");
     }
   }
+
+  .linkedin {
+    background-image: url("../img/svg/linkedin.svg");
+
+    &:hover {
+      background-image: url("../img/svg/linkedin_white.svg");
+    }
+  }
 }
 
 @mixin gold-without-background {
@@ -99,10 +115,18 @@ $element-height: 42px;
       background-image: url("../img/svg/instagram_white.svg");
     }
   }
+
+  .linkedin {
+    background-image: url("../img/svg/linkedin_gold.svg");
+
+    &:hover {
+      background-image: url("../img/svg/linkedin_white.svg");
+    }
+  }
 }
 
 @mixin icon-size($size, $spacing) {
-  .fb, .yt, .instagram {
+  .fb, .yt, .instagram, .linkedin {
     flex: 0 0 $size;
     width: $size;
     height: $size;
