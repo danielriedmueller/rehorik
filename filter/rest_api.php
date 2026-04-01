@@ -13,7 +13,7 @@ add_filter('rest_pre_dispatch', function ($result, WP_REST_Server $server, WP_RE
         return new WP_Error(
             'rest_forbidden',
             'You are not allowed to access user data.',
-            ['status' => 401]
+            ['status' => 403]
         );
     }
 
