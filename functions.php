@@ -141,6 +141,7 @@ if (PLUGINS_ACTIVE) {
     require_once($baseDir . '/filter/sitemap.php');
     require_once($baseDir . '/filter/payment_gateways.php');
     require_once($baseDir . '/filter/order_completed_email.php');
+    require_once($baseDir . '/filter/rest_api.php');
     require_once($baseDir . '/actions/woocommerce.php');
     require_once($baseDir . '/actions/rehorik.php');
     require_once($baseDir . '/actions/events.php');
